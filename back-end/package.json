@@ -1,6 +1,13 @@
 {
-  "name": "back-end",
+  "name": "pos.be.com",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.9.3"
+  }
 }
