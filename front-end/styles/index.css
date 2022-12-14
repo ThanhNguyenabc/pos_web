@@ -1,14 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@layer base {
+  @font-face {
+    font-family: 'Inter';
+    src: url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  }
+  body {
+    color: #344054
+  }
 }
+
 
 .flex-colo{
   @apply flex flex-col justify-center items-center
@@ -16,4 +18,50 @@ body {
 
 .flex-rows{
   @apply flex flex-row justify-center items-center
+}
+
+.txt-sm {
+  @apply text-sm font-normal
+} 
+.txt-sm-bold {
+  @apply text-sm font-semibold
+}
+.txt-sm-link {
+  @apply text-sm font-medium underline
+}
+
+.txt-md {
+  @apply text-base font-normal
+} 
+.txt-md-bold {
+  @apply text-base font-semibold
+}
+.txt-md-link {
+  @apply text-base font-medium underline
+}
+
+.txt-large {
+  @apply text-xl font-normal
+} 
+.txt-large-bold {
+  @apply text-xl font-semibold
+}
+.txt-large-link {
+  @apply text-xl font-medium underline
+}
+
+.txt-heading-xsmal {
+  @apply text-2xl font-bold 
+}
+
+.txt-heading-smal {
+  @apply text-3xl font-bold 
+}
+
+.txt-heading-medium {
+  @apply text-4xl font-bold 
+}
+
+.txt-heading-medium {
+  @apply text-5xl font-extrabold	 
 }
