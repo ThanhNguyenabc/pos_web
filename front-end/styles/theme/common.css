@@ -1,0 +1,11 @@
+.flex-column {
+  @apply flex flex-col justify-items-center;
+}
+
+.flex-rows {
+  @apply flex flex-row  justify-items-center;
+}
+
+.container-lg-screen {
+  @apply lg:container lg:mx-auto;
+}

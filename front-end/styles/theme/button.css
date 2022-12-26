@@ -1,0 +1,33 @@
+.btn {
+  @apply min-h-min normal-case;
+}
+
+.btn-sm-primary {
+  @apply btn btn-primary h-10 text-sm;
+}
+
+.btn-md-primary {
+  @apply btn btn-primary h-12 text-base;
+}
+
+.btn-lg-primary {
+  @apply btn btn-primary h-14 text-xl;
+}
+
+.btn-outline {
+  @apply hover:bg-white hover:text-black border-neutral-300 
+  bg-white  
+  text-neutral-900;
+}
+
+.btn-sm-outline {
+  @apply btn btn-outline h-10 text-sm;
+}
+
+.btn-md-outline {
+  @apply btn btn-outline h-12 text-base;
+}
+
+.btn-lg-outline {
+  @apply btn btn-outline h-14 text-xl;
+}
