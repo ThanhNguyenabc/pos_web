@@ -1,25 +1,21 @@
-import {
-  BannerImage,
-  IcCheck,
-  IcChervonRight,
-  IcRightArrow,
-} from "assets/AssetUtil";
+import { BannerImage, IcCheck, IcRightArrow } from "assets/AssetUtil";
 import FeatureSection from "components/elements/home/FeatureSection";
-import ClientSection from "components/ClientSection";
-import { FindYourPosSection } from "components/FindYourPosSection";
+import ClientSection from "components/common/ClientSection";
 import Image from "next/image";
 import BusinessCategorySection from "components/elements/home/BusinessCategorySection";
 import { Button } from "components/common/Button";
 import MetricSection from "components/common/MetricSection";
 import { FooterCTA } from "components/common/FooterCTA";
+import { useRouter } from "next/router";
 
 const FeatureData = ["24/7 Support", "Free training", "Seamless Installments"];
 
 const Home = () => {
+  const router = useRouter();
+
   return (
     <>
       <div className="flex flex-col lg:flex-row bg-gradient-to-b from-[#FF5A22] to-[#FFA722] lg:pt-4">
-
         <div className="flex flex-1 flex-col justify-center items-center text-white px-4 pt-10 ">
           <div className="lg:max-w-lg">
             <p
@@ -38,6 +34,7 @@ const Home = () => {
                 title="Find your POS"
                 type="SOLID_MEDIUM"
                 background={`bg-neutral-900`}
+                onClick={() => router.push("/questionnaire")}
               />
               <Button
                 classname="w-full md:w-fit"
@@ -70,7 +67,6 @@ const Home = () => {
       <div className="h-px bg-neutral-300" />
       <BusinessCategorySection />
       <FeatureSection />
-      {/* <ClientSection /> */}
       <MetricSection
         heading="What sets us apart from other companies?"
         titleColor=" text-secondary"
@@ -80,18 +76,22 @@ const Home = () => {
           { title: "1000", content: "Over 1000 Clients" },
         ]}
       />
-      <div className="flex flex-col gap-6 items-center px-4 my-12">
-        <h2 className="txt-heading-medium md:text-5xl ">Our Top POS Systems</h2>
-        <p className="txt-md md:text-xl">
-          We are flexible when it comes to working with any point-of-sale
-          company. Here's a list of our top providers in the industry.
-        </p>
-        <button className="btn-sm-outline h-12">
-          POS Review
-          <Image src={IcRightArrow} alt="" className="ml-2.5" />
-        </button>
-      </div>
 
+      <ClientSection
+        body={
+          <>
+            <p className="txt-md md:text-xl text-neutral-700">
+              We are flexible when it comes to working with any point-of-sale
+              company. Here's a list of our top providers in the industry.
+            </p>
+            <Button
+              title="POS Review"
+              type="OUTLINE_MEDIUM"
+              rightIcon={<Image height={13} src={IcRightArrow} alt="" />}
+            />
+          </>
+        }
+      />
       <FooterCTA
         background="bg-accent"
         actions={
@@ -107,9 +107,9 @@ const Home = () => {
         }
         title={
           <>
-            <h3 className="">
+            <h3>
               Real advice
-              <span className="text-secondary "> from real people</span>{" "}
+              <span className="text-secondary "> from real people</span>
             </h3>
           </>
         }
