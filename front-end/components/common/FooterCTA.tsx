@@ -15,15 +15,21 @@ export const FooterCTA = ({
 }: FooterCTAProps) => {
   return (
     <div
-      className={`px-4 py-14 w-full gap-6 md:rounded-2xl md:gap-8 lg:mb-14 lg:gap-10 inline-flex flex-col justify-center items-center text-center font-bold  font-['Inter'] ${background}`}
+      className={`px-4 py-14 w-full gap-6 md:rounded-2xl 
+      flex flex-col justify-center items-center text-center font-bold  
+      font-['Inter']
+      md:gap-8 md:my-20
+      lg:gap-10 lg:py-20
+      lg:px-[120px]
+      ${background}`}
     >
-      <div className="w-full">
-        <div className="txt-heading-medium md:text-5xl md:font-extrabold">
+      <div className="w-full flex flex-col gap-4 items-center">
+        <div className="txt-heading-medium md:text-5xl md:font-extrabold md:leading-[56px] max-w-[860px]">
           {title}
-        </div>
-        {des && <p className="txt-md-bold md:text-xl mt-4">{des}</p>}
+        </div>  
+        {des && <p className="txt-md md:text-xl text-neutral-700">{des}</p>}
       </div>
-      <div className="w-full flex flex-col md:flex-row gap-4 md:gap-8 lg:gap-10 justify-center ">
+      <div className="w-full flex flex-col md:flex-row gap-4 justify-center ">
         {actions}
       </div>
     </div>

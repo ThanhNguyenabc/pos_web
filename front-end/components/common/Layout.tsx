@@ -7,9 +7,9 @@ export const Layout = ({ children }: { children: ReactElement }) => {
   return (
     <div className="drawer">
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-      <div className="flex-column drawer-content h-screen">
+      <div className="flex flex-col drawer-content">
         <Header />
-        <main className=" container-lg-screen flex-grow">{children}</main>
+        <main className="container-lg-screen">{children}</main>
         <Footer />
       </div>
       <div className="drawer-side ">

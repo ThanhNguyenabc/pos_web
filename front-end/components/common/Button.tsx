@@ -62,11 +62,10 @@ export const Button = ({
   return (
     <button
       onClick={onClick}
-      className={twMerge(`btn normal-case px-4 h-12 gap-2 inline-flex  
+      className={twMerge(`btn btn-active normal-case px-4 h-12 gap-2 inline-flex  
       font-semibold font-['Inter'] ${
         background ? "text-white" : "text-neutral-900"
-      }  ${customStyle} ${classname} hover:${background ?? "bg-white"}
-     }`)}
+      }  ${customStyle} ${classname} hover:${background ?? "bg-white"}`)}
     >
       <div className="flex items-center">
         {leftIcon && <div className="mr-2">{leftIcon}</div>}

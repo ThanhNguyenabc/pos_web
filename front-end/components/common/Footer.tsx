@@ -9,7 +9,7 @@ const styles = {
 
 const Footer = () => {
   return (
-    <div className=" bg-neutral-dark">
+    <div className="bg-neutral-dark">
       <footer className="container-lg-screen flex-column text-[##98A2B3] px-4 py-12 md:px-8 lg:px-[120px] lg:pt-20 md:pt-14">
         <div className="footer">
           <Image
