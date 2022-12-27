@@ -8,6 +8,8 @@ import {
   POS2Img,
 } from "assets/AssetUtil";
 import { Button } from "components/common/Button";
+import ClientSection from "components/common/ClientSection";
+import { FooterCTA } from "components/common/FooterCTA";
 import Hero from "components/common/Hero";
 import MetricSection from "components/common/MetricSection";
 import Image from "next/image";
@@ -31,6 +33,22 @@ const FeatureData = [
     title: "Ease of use software",
   },
 ];
+
+const ThreeStep = [
+  {
+    step: 1,
+    desc: "Merchant is willing to go on the Cash Discount Program which leads to zero processing fees!",
+  },
+  {
+    step: 2,
+    desc: "Qualify a review of the merchant’s most recent three month credit card processing statements",
+  },
+  {
+    step: 3,
+    desc: "Merchant’s Credit Card Processing Application (must apply with our recommended processing company)",
+  },
+];
+
 const FreePOS = () => (
   <div className="flex-column">
     <div className="flex flex-col lg:flex-row bg-secondary lg:pt-24">
@@ -97,60 +115,45 @@ const FreePOS = () => (
         classname="md:flex-row md:text-start md:items-start"
       >
         <div className=" flex flex-col gap-4 md:gap-6 ">
-          <div className="card bg-base-100">
-            <div className="card-body p-4 flex-row items-center txt-sm gap-6">
-              <div
-                className={`[box-shadow:0px_0px_0px_1px_rgba(208,_213,_221,_1)_inset] [box-shadow-width:1px] 
-              px-4 py-2.5 w-10 h-10 justify-center items-center rounded-lg text-center font-semibold  text-neutral-900`}
-              >
-                <p className="flex-1 leading-5">1</p>
+          {ThreeStep.map((item, index) => (
+            <div className="card bg-base-100">
+              <div className="card-body p-4 flex-row txt-sm md:text-xl gap-6">
+                <div
+                  className={`[box-shadow:0px_0px_0px_1px_rgba(208,_213,_221,_1)_inset] [box-shadow-width:1px] 
+              px-4 py-2.5 w-10 h-10 mt-1 rounded-lg font-semibold  text-neutral-900`}
+                >
+                  <p className="flex-1 leading-5">{item.step}</p>
+                </div>
+                <p className="text-left">{item.desc}</p>
               </div>
-              <p className="text-left">
-                Merchant is willing to go on the Cash Discount Program which
-                leads to zero processing fees!
-              </p>
             </div>
-          </div>
-          <div className="card bg-base-100">
-            <div className="card-body p-4 flex-row items-center txt-sm gap-6">
-              <div
-                className={`[box-shadow:0px_0px_0px_1px_rgba(208,_213,_221,_1)_inset] [box-shadow-width:1px] 
-              px-4 py-2.5 w-10 h-10 justify-center items-center rounded-lg text-center font-semibold  text-neutral-900`}
-              >
-                <p className="flex-1 leading-5">2</p>
-              </div>
-              <p className="text-left">
-                Qualify a review of the merchant’s most recent three month
-                credit card processing statements
-              </p>
-            </div>
-          </div>
-          <div className="card bg-base-100">
-            <div className="card-body p-4 flex-row items-center txt-sm gap-6">
-              <div
-                className={`[box-shadow:0px_0px_0px_1px_rgba(208,_213,_221,_1)_inset] [box-shadow-width:1px] 
-              px-4 py-2.5 w-10 h-10 justify-center items-center rounded-lg text-center font-semibold  text-neutral-900`}
-              >
-                <p className="flex-1 leading-5">3</p>
-              </div>
-              <p className="text-left">
-                Merchant’s Credit Card Processing Application (must apply with
-                our recommended processing company)
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </Hero>
       <Image src={BannerImage} alt="" className=" max-h-[995px]" />
     </div>
-    <MetricSection
-      heading="What sets us apart from other companies?"
-      titleColor="text-success"
-      itemSection={[
-        { title: "20+", content: "Over 20 years experience" },
-        { title: "1,000+", content: "Over 1000 Clients" },
-        { title: "50", content: "Available in all 50 states" },
-      ]}
+    <ClientSection />
+
+    <FooterCTA
+      background="bg-accent"
+      actions={
+        <>
+          <Button
+            classname="w-full md:w-fit"
+            title="Get Started now"
+            type="SOLID_MEDIUM"
+            background={`bg-primary`}
+          />
+        </>
+      }
+      title={
+        <>
+          <h3>
+            <span className="text-secondary "> FREE</span> point-of-sale &
+            terminals of your choice available!
+          </h3>
+        </>
+      }
     />
   </div>
 );
