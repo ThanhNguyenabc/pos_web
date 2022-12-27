@@ -11,7 +11,7 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "components/common/Button";
 
-const Categories = [
+export const Categories = [
   {
     name: "Pizza",
     link: PizzeriaCategory,
@@ -37,6 +37,7 @@ const Categories = [
     link: BusinessCategory,
   },
 ];
+
 const BusinessCategorySection = () => {
   return (
     <div className="px-4 my-12">
