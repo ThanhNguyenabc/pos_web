@@ -17,6 +17,20 @@ export { default as EasyUsingImg } from "./images/easy_use.png";
 export { default as HardwareImg } from "./images/hardware.png";
 export { default as SupportImg } from "./images/support.png";
 export { default as DashboardImg } from "./images/dashboard.png";
+export { default as CloverImg } from "./images/clover.png";
+export { default as ExtouchImg } from "./images/exa_touch.png";
+export { default as LightSpeedImg } from "./images/light_speed.png";
+export { default as Station1Img } from "./images/station_1.jpg";
+export { default as Station2Img } from "./images/station_2.jpg";
+export { default as Station3Img } from "./images/station_3.jpg";
+export { default as HandHeld1Img } from "./images/handheld_1.jpg";
+export { default as HandHeld2Img } from "./images/handheld_2.jpg";
+export { default as HandHeld3Img } from "./images/handheld_3.jpg";
+export { default as BreadMeImg } from "./images/breadme.jpg";
+export { default as ToastImg } from "./images/toast.png";
+export { default as RevelImg } from "./images/revel_img.jpg";
+export { default as OvviImg } from "./images/ovvi.jpg";
+
 
 // export icons
 export { default as IcMenu } from "./icons/ic_menu.svg";
@@ -29,3 +43,11 @@ export { default as IcRightArrow } from "./icons/ic_right_arrow.svg";
 export { default as IcCheck } from "./icons/ic_check.svg";
 export { default as IcClose } from "./icons/ic_close.svg";
 export { default as IcChervonRight } from "./icons/ic_chervon_right.svg";
+export { default as IcBack } from "./icons/ic_back.svg";
+export { default as IcStore } from "./icons/ic_store.svg";
+export { default as IcCreditCard } from "./icons/ic_creditcard.svg";
+export { default as IcDiscount } from "./icons/ic_discount.svg";
+export { default as IcAmericanFlag } from "./icons/ic_american_flag.svg";
+export { default as IcApple } from "./icons/ic_apple.svg";
+export { default as IcWindow } from "./icons/ic_window.svg";
+export { default as IcFreePOS } from "./icons/ic_pos_free.svg";
