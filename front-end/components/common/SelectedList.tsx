@@ -30,7 +30,7 @@ const SelectedList = <T extends object | string>({
   return (
     <div
       className={twMerge(
-        `grid grid-cols-1  gap-4 px-4 items-center justify-center md:gap-6 ${classname} }`
+        `grid grid-cols-1 gap-4 px-4 items-center justify-center md:gap-6 ${classname} }`
       )}
     >
       {data.map((item: T, index) => {

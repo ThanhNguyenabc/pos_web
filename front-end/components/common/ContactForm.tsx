@@ -19,6 +19,7 @@ interface ContactFormProps {
   showZipCode?: boolean;
   showMessage?: boolean;
   onDataChanged?: (info: ContactInfo) => {};
+  classname?: string
 }
 
 const ContactForm = ({
@@ -27,10 +28,11 @@ const ContactForm = ({
   showEmail = true,
   nameTitle,
   phoneTitle,
+  classname,
   onDataChanged,
 }: ContactFormProps) => {
   return (
-    <div className="flex flex-col px-4 gap-6">
+    <div className={`flex flex-col px-4 gap-6 ${classname}`}>
       <Input
         label={nameTitle || "Your name"}
         inputProps={{

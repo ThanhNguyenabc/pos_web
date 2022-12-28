@@ -12,6 +12,9 @@ import ClientSection from "components/common/ClientSection";
 import { FooterCTA } from "components/common/FooterCTA";
 import Hero from "components/common/Hero";
 import MetricSection from "components/common/MetricSection";
+import FindPOSModal, {
+  FindPOSModalId,
+} from "components/elements/find_pos_modal/FindPOSModal";
 import RequestDemoPOS, {
   RequestDemoModalId,
 } from "components/elements/request_demo_pos/RequestDemoPOS";
@@ -52,9 +55,14 @@ const ThreeStep = [
   },
 ];
 
+const openFindPOSModal = () => {
+  document.getElementById(FindPOSModalId)?.click();
+};
+
 const FreePOS = () => (
   <div className="flex-column">
     <RequestDemoPOS />
+    <FindPOSModal />
     <div className="flex flex-col lg:flex-row bg-secondary lg:pt-24">
       <div className="flex flex-1 flex-col justify-center items-center text-white px-4 pt-10 ">
         <div className="lg:max-w-lg">
@@ -73,6 +81,7 @@ const FreePOS = () => (
               title="Get started"
               type="SOLID_MEDIUM"
               background={`bg-primary`}
+              onClick={openFindPOSModal}
             />
             <Button
               classname="w-full md:w-fit"
@@ -117,6 +126,7 @@ const FreePOS = () => (
             title="Get started"
             type="SOLID_MEDIUM"
             background={`bg-primary`}
+            onClick={openFindPOSModal}
           />
         }
         classname="md:flex-row md:text-start md:items-start"
@@ -150,6 +160,7 @@ const FreePOS = () => (
             title="Get Started now"
             type="SOLID_MEDIUM"
             background={`bg-primary`}
+            onClick={openFindPOSModal}
           />
         </>
       }

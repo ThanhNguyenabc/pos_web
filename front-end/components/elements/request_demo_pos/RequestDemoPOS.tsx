@@ -28,10 +28,9 @@ const RequestDemoPOS = () => {
       <SelectedList
         data={Categories}
         classname={"mt-5 md:grid-cols-2"}
-        itemclassname={"md:w-[240px]"}
         itemBuilder={(item, index: number) => {
           return (
-            <div className="flex flex-row items-center p-3 gap-4 lg:p-6 md:flex-col md:justify-center lg:h-[190px]">
+            <div className="flex w-full flex-row items-center p-3 gap-4 lg:p-6 md:flex-col md:justify-center lg:h-[190px]">
               <Image
                 src={item.link}
                 className="w-[84px] h-[56px] md:w-[120px] md:h-20"
