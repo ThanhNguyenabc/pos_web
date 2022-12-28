@@ -1,16 +1,9 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { IcChervonRight, IcFreePOS } from "assets/AssetUtil";
+import { POSCardProps } from "./POSCard";
 
-interface POSCardProps {
-  logo: StaticImageData;
-  systemos: Array<StaticImageData>;
-  rating: number;
-  desc?: string;
-  onCardClick?: () => void;
-}
-
-export const POSCard = ({
+export const POSCardMobile = ({
   logo,
   systemos,
   rating,
@@ -21,7 +14,7 @@ export const POSCard = ({
   return (
     <div
       onClick={onCardClick}
-      className={`card pr-3 pt-3 inline-flex flex-col items-center rounded-2xl drop-shadow-lg cursor-pointer`}
+      className={`card bg-white pr-3 pt-3 inline-flex flex-col rounded-2xl drop-shadow-lg cursor-pointer md:hidden`}
     >
       <div className="gap-3 flex flex-col items-start">
         <div className="w-full pl-3 flex flex-row h-10 items-center justify-between ">

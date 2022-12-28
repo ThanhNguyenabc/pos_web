@@ -12,6 +12,7 @@ import HandHeldQuestion from "components/elements/questionnaire/HandheldQuestion
 import ContactForm, { ContactInfo } from "components/common/ContactForm";
 import CashDiscountQuestion from "components/elements/questionnaire/CashDiscountQuestion";
 import { Button } from "components/common/Button";
+import QuestionnaireSuccess from "components/elements/questionnaire/QuestionnaireSuccess";
 
 type QuestionnaireState = {
   showQuestions: boolean;
@@ -53,6 +54,7 @@ interface QuestionData {
 }
 
 const Questionnaire = () => {
+  const [isSubmit, setSubmit] = useState(false);
   const updateQuestionData = (data: QuestionData) => {
     setQuestionState((preState) => ({
       ...preState,
@@ -83,9 +85,17 @@ const Questionnaire = () => {
     }));
   };
 
+  const onSubmit = () => {
+    setSubmit(true);
+  };
+
   return (
     <QuestionnaireContext.Provider value={questionSate}>
-      <div className="flex flex-col lg:flex-row min-h-[95vh]">
+      <div
+        className={`flex flex-col lg:flex-row min-h-[95vh] ${
+          isSubmit ? "hidden" : "flex"
+        }`}
+      >
         <Introduction
           classname={`hidden lg:flex lg:bg-gradient-to-b  lg:from-[#FF5A22] lg:to-[#FFA722] ${
             questionSate.showQuestions ? "hidden" : "flex"
@@ -121,10 +131,12 @@ const Questionnaire = () => {
               classname={`mx-4 mt-16 hidden ${
                 questionSate.cQuestionIndex == PAGES.length - 1 ? "flex" : ""
               } md:h-16 md:text-xl`}
+              onClick={onSubmit}
             />
           </div>
         </div>
       </div>
+      <QuestionnaireSuccess classname={`${isSubmit ? "flex" : "hidden"}`} />
     </QuestionnaireContext.Provider>
   );
 };

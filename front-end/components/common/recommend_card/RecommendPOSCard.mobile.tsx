@@ -1,24 +1,25 @@
 import Image, { StaticImageData } from "next/image";
 import React from "react";
-import { BreadMeBtn } from "./BreadmeBtn";
-import PricingBtn from "./PricingBtn";
+import { BreadMeBtn } from "../BreadmeBtn";
+import { twMerge } from "tailwind-merge";
+import { POSCardProps } from "../pos_card/POSCard";
 
-interface RecommendPOSCardProps {
-  logo: StaticImageData;
-  systemos: Array<StaticImageData>;
-  rating: number;
-  desc?: string;
-}
-const RecommendPOSCard = ({
+const RecommendPOSCardMobile = ({
   logo,
   systemos,
   rating,
   desc,
-}: RecommendPOSCardProps) => {
+  classname = "",
+  onCardClick,
+}: POSCardProps) => {
   const valueProgress = rating * 10;
+
   return (
     <div
-      className={`card gap-4 inline-flex flex-col items-center rounded-2xl p-4 drop-shadow-lg bg-green-300`}
+      onClick={onCardClick}
+      className={twMerge(
+        `bg-white card gap-4 inline-flex flex-col rounded-2xl p-4 drop-shadow-lg cursor-pointer md:hidden lg:hidden ${classname}`
+      )}
     >
       <div className="gap-2 flex flex-col items-start">
         <div className=" w-full flex flex-row h-10 items-center justify-between ">
@@ -33,11 +34,11 @@ const RecommendPOSCard = ({
               className="radial-progress text-primary border-neutral-200 "
               style={{ "--value": valueProgress, "--size": "2.5rem" }}
             >
-              <p className=" text-neutral-900">{rating}</p>
+              <p className="txt-sm-bold text-neutral-900">{rating}</p>
             </div>
           </div>
         </div>
-        <p className="w-full text-sm text-neutral-700 ">{desc}</p>
+        <p className="w-full text-sm text-left text-neutral-700 ">{desc}</p>
       </div>
       <div className="flex gap-2 w-full">
         <BreadMeBtn />
@@ -47,4 +48,4 @@ const RecommendPOSCard = ({
   );
 };
 
-export default RecommendPOSCard;
+export default RecommendPOSCardMobile;
