@@ -7,7 +7,7 @@ import { Menu } from "./MenuDrawer";
 
 const Header = () => {
   return (
-    <div className="container-lg-screen flex justify-between items-center px-6 py-4 ">
+    <div className="container-lg-screen flex flex-row w-full justify-between items-center px-6 py-4 ">
       <div className="flex">
         <label htmlFor="my-drawer" className="py-2 mr-5 lg:hidden">
           <Image src={IcMenu} alt="" id="my-drawer" />
