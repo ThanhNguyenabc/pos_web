@@ -18,7 +18,7 @@ export const FindYourPosSection = ({
     >
       <p className={`txt-heading-large text-center ${titlestyle}`}>
         Real advice from
-        <span className="text-secondary"> real people </span>
+        <span className="text-secondary"> real people </span> 
       </p>
       <p className="text-center">
         Speak with a consultant today to find the best POS for your business

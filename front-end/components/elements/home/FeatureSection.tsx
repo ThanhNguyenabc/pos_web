@@ -36,7 +36,7 @@ const data = [
 ];
 const FeatureSection = () => {
   return (
-    <div className="flex-column gap-12 lg:flex-row lg:gap-8 px-4 py-12">
+    <div className="flex-column gap-12 lg:flex-row lg:gap-8 px-4 py-12 lg:mx-[120px]">
       <div className="flex-1">
         <h2 className="txt-heading-medium">
           Helping you <span className="text-secondary">compare & find</span> the

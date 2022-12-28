@@ -40,7 +40,7 @@ export const Categories = [
 
 const BusinessCategorySection = () => {
   return (
-    <div className="px-4 my-12">
+    <div className="flex flex-col px-4 my-12 lg:mx-[120px]">
       <div className="flex justify-between ">
         <p className="txt-heading-medium flex-1 text-center md:text-left max-w-md">
           <span className="text-secondary">Point-of-sale</span> for all business

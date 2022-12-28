@@ -7,5 +7,5 @@
 }
 
 .container-lg-screen {
-  @apply lg:container lg:mx-auto;
+  @apply 2xl:container lg:mx-auto;
 }
