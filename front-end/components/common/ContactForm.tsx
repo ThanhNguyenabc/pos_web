@@ -13,33 +13,41 @@ export interface ContactInfo {
 }
 
 interface ContactFormProps {
+  nameTitle?: string;
+  phoneTitle?: string;
+  showEmail?: boolean;
   showZipCode?: boolean;
   showMessage?: boolean;
   onDataChanged?: (info: ContactInfo) => {};
 }
 
 const ContactForm = ({
-  showMessage,
-  showZipCode,
+  showMessage = false,
+  showZipCode = false,
+  showEmail = true,
+  nameTitle,
+  phoneTitle,
   onDataChanged,
 }: ContactFormProps) => {
   return (
     <div className="flex flex-col px-4 gap-6">
       <Input
-        label="Your name"
+        label={nameTitle || "Your name"}
         inputProps={{
           onChange: (data) => {},
         }}
       />
-      <Input
-        label="Email"
-        inputProps={{
-          onChange: (data) => {},
-        }}
-      />
+      {showEmail && (
+        <Input
+          label="Email"
+          inputProps={{
+            onChange: (data) => {},
+          }}
+        />
+      )}
       <div className="flex flex-row gap-6">
         <Input
-          label="Your  Phone number"
+          label={phoneTitle || "Your Phone number"}
           leftIcon={<Image src={IcAmericanFlag} alt="flag" />}
           inputProps={{
             type: "tel",

@@ -12,6 +12,9 @@ import ClientSection from "components/common/ClientSection";
 import { FooterCTA } from "components/common/FooterCTA";
 import Hero from "components/common/Hero";
 import MetricSection from "components/common/MetricSection";
+import RequestDemoPOS, {
+  RequestDemoModalId,
+} from "components/elements/request_demo_pos/RequestDemoPOS";
 import Image from "next/image";
 
 import React from "react";
@@ -51,6 +54,7 @@ const ThreeStep = [
 
 const FreePOS = () => (
   <div className="flex-column">
+    <RequestDemoPOS />
     <div className="flex flex-col lg:flex-row bg-secondary lg:pt-24">
       <div className="flex flex-1 flex-col justify-center items-center text-white px-4 pt-10 ">
         <div className="lg:max-w-lg">
@@ -75,6 +79,9 @@ const FreePOS = () => (
               title="Request a Demo"
               type="SOLID_MEDIUM"
               rightIcon={<Image height={13} src={IcRightArrow} alt="" />}
+              onClick={() =>
+                document.getElementById(RequestDemoModalId)?.click()
+              }
             />
           </div>
         </div>

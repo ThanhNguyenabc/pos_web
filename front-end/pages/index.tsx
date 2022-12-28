@@ -1,4 +1,11 @@
-import { BannerImage, IcCheck, IcRightArrow } from "assets/AssetUtil";
+import {
+  BannerImage,
+  IcApple,
+  IcCheck,
+  IcCheckbox,
+  IcRightArrow,
+  RevelImg,
+} from "assets/AssetUtil";
 import FeatureSection from "components/elements/home/FeatureSection";
 import ClientSection from "components/common/ClientSection";
 import Image from "next/image";
@@ -7,6 +14,11 @@ import { Button } from "components/common/Button";
 import MetricSection from "components/common/MetricSection";
 import { FooterCTA } from "components/common/FooterCTA";
 import { useRouter } from "next/router";
+import RecommendPOSCard from "components/common/recommend_card/RecommendPOSCard";
+import ColorUtils from "utils/ColorUtils";
+import QuestionnaireSuccess from "components/elements/questionnaire/QuestionnaireSuccess";
+import RequestDemoPOS from "components/elements/request_demo_pos/RequestDemoPOS";
+import FindPOSModal from "components/elements/find_pos_modal/FindPOSModal";
 
 const FeatureData = ["24/7 Support", "Free training", "Seamless Installments"];
 
@@ -15,6 +27,8 @@ const Home = () => {
 
   return (
     <>
+      <FindPOSModal />
+      {/* <RequestDemoPOS /> */}
       <div className="flex flex-col lg:flex-row bg-gradient-to-b from-[#FF5A22] to-[#FFA722] lg:pt-4">
         <div className="flex flex-1 flex-col justify-center items-center text-white px-4 pt-10 ">
           <div className="lg:max-w-lg">
@@ -40,6 +54,7 @@ const Home = () => {
                 classname="w-full md:w-fit"
                 title="Get POS for free"
                 type="SOLID_MEDIUM"
+                onClick={() => router.push("/freepos")}
                 rightIcon={<Image height={13} src={IcRightArrow} alt="" />}
               />
             </div>

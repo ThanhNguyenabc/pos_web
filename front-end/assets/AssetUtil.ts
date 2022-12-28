@@ -51,3 +51,4 @@ export { default as IcApple } from "./icons/ic_apple.svg";
 export { default as IcWindow } from "./icons/ic_window.svg";
 export { default as IcFreePOS } from "./icons/ic_pos_free.svg";
 export { default as IcCheckbox } from "./icons/ic_checkbox.svg";
+export { default as IcMail } from "./icons/ic_mail.svg";

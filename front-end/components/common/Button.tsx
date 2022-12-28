@@ -67,7 +67,7 @@ export const Button = ({
         background ? "text-white" : "text-neutral-900"
       }  ${customStyle} ${classname} hover:${background ?? "bg-white"}`)}
     >
-      <div className="flex flex-row w-full h-auto items-center justify-center gap-2">
+      <div className="flex flex-row w-full h-auto items-center justify-center">
         {leftIcon && <div className="mr-2">{leftIcon}</div>}
         {text}
         {rightIcon && <div className="ml-2">{rightIcon}</div>}
