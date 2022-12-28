@@ -31,7 +31,6 @@ export { default as ToastImg } from "./images/toast.png";
 export { default as RevelImg } from "./images/revel_img.jpg";
 export { default as OvviImg } from "./images/ovvi.jpg";
 
-
 // export icons
 export { default as IcMenu } from "./icons/ic_menu.svg";
 export { default as IcMobileLogo } from "./icons/ic_mobile_logo.svg";
@@ -51,3 +50,4 @@ export { default as IcAmericanFlag } from "./icons/ic_american_flag.svg";
 export { default as IcApple } from "./icons/ic_apple.svg";
 export { default as IcWindow } from "./icons/ic_window.svg";
 export { default as IcFreePOS } from "./icons/ic_pos_free.svg";
+export { default as IcCheckbox } from "./icons/ic_checkbox.svg";
