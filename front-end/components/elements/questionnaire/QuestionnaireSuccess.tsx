@@ -1,11 +1,14 @@
 import { RevelImg, IcApple } from "assets/AssetUtil";
 import POSCard from "components/common/pos_card/POSCard";
 import RecommendPOSCard from "components/common/recommend_card/RecommendPOSCard";
+import { useRouter } from "next/router";
 import React from "react";
 interface QuestionnaireSuccessProps {
   classname?: string;
 }
 const QuestionnaireSuccess = ({ classname }: QuestionnaireSuccessProps) => {
+  const router = useRouter();
+
   return (
     <div className={`flex flex-col w-full bg-neutral-100 ${classname}`}>
       <div className=" flex flex-col bg-[#D1FADF] gap-2 h-[240px] p-4 pt-6 items-center text-center md:p-8 md:pt-14 xl:px-[120px]">
@@ -56,6 +59,9 @@ const QuestionnaireSuccess = ({ classname }: QuestionnaireSuccessProps) => {
             "Potential glitches with weak internet",
             "No modifiers to modifiers feature",
           ]}
+          onCardClick={() => {
+            router.push("/posdetail");
+          }}
         />
         <POSCard
           logo={RevelImg}
@@ -74,6 +80,9 @@ const QuestionnaireSuccess = ({ classname }: QuestionnaireSuccessProps) => {
             "Potential glitches with weak internet",
             "No modifiers to modifiers feature",
           ]}
+          onCardClick={() => {
+            router.push("/posdetail");
+          }}
         />
         <POSCard
           logo={RevelImg}
@@ -92,6 +101,9 @@ const QuestionnaireSuccess = ({ classname }: QuestionnaireSuccessProps) => {
             "Potential glitches with weak internet",
             "No modifiers to modifiers feature",
           ]}
+          onCardClick={() => {
+            router.push("/posdetail");
+          }}
         />
       </div>
     </div>
