@@ -6,8 +6,8 @@
   @apply flex flex-row  justify-items-center;
 }
 
-.container-lg-screen {
-  @apply 2xl:container lg:mx-auto;
+.container-screen {
+  @apply container lg:mx-auto;
 }
 
 .tab-active {

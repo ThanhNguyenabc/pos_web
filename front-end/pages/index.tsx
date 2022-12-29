@@ -19,16 +19,26 @@ import ColorUtils from "utils/ColorUtils";
 import QuestionnaireSuccess from "components/elements/questionnaire/QuestionnaireSuccess";
 import RequestDemoPOS from "components/elements/request_demo_pos/RequestDemoPOS";
 import FindPOSModal from "components/elements/find_pos_modal/FindPOSModal";
+import POSDetail from "pages/posdetail";
 
 const FeatureData = ["24/7 Support", "Free training", "Seamless Installments"];
 
 const Home = () => {
   const router = useRouter();
 
+  const findPOS = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    router.push("/questionnaire");
+  };
+
+  const getPOSFree = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    router.push("/freepos");
+  };
   return (
     <>
       <FindPOSModal />
-      {/* <RequestDemoPOS /> */}
+     
       <div className="flex flex-col lg:flex-row bg-gradient-to-b from-[#FF5A22] to-[#FFA722] lg:pt-4">
         <div className="flex flex-1 flex-col justify-center items-center text-white px-4 pt-10 ">
           <div className="lg:max-w-lg">
@@ -48,13 +58,13 @@ const Home = () => {
                 title="Find your POS"
                 type="SOLID_MEDIUM"
                 background={`bg-neutral-900`}
-                onClick={() => router.push("/questionnaire")}
+                onClick={findPOS}
               />
               <Button
                 classname="w-full md:w-fit"
                 title="Get POS for free"
                 type="SOLID_MEDIUM"
-                onClick={() => router.push("/freepos")}
+                onClick={getPOSFree}
                 rightIcon={<Image height={13} src={IcRightArrow} alt="" />}
               />
             </div>
@@ -116,8 +126,13 @@ const Home = () => {
               title="Find your POS"
               type="SOLID_MEDIUM"
               background={`bg-primary`}
+              onClick={findPOS}
             />
-            <Button title="Get POS for free" type="SOLID_MEDIUM" />
+            <Button
+              title="Get POS for free"
+              type="SOLID_MEDIUM"
+              onClick={getPOSFree}
+            />
           </>
         }
         title={

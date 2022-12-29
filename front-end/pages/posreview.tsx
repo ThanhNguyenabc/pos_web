@@ -9,6 +9,7 @@ import {
 import POSCard from "components/common/pos_card/POSCard";
 import TabList from "components/common/TabList";
 import { Categories } from "components/elements/home/BusinessCategorySection";
+import { useRouter } from "next/router";
 import React from "react";
 import ColorUtils from "utils/ColorUtils";
 import { MockupData } from "utils/StringUtil";
@@ -24,6 +25,7 @@ const Tabs = [
 ];
 
 const POSReview = () => {
+  const route = useRouter();
   return (
     <div className="flex flex-col pb-12 bg-neutral-100">
       <div className=" flex flex-col py-12 bg-white mb-6 px-4 lg:items-center text-center md:py-14 md:px-8 md:gap-6">
@@ -43,7 +45,12 @@ const POSReview = () => {
 
       <div className="flex flex-col px-4 gap-4 md:px-8 md:gap-6 items-center">
         {MockupData.map((item) => (
-          <POSCard {...item} />
+          <POSCard
+            {...item}
+            onCardClick={() => {
+              route.push("/posdetail");
+            }}
+          />
         ))}
       </div>
     </div>
