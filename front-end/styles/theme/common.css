@@ -9,3 +9,7 @@
 .container-lg-screen {
   @apply 2xl:container lg:mx-auto;
 }
+
+.tab-active {
+  @apply bg-black;
+}

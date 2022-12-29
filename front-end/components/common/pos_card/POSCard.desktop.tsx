@@ -4,6 +4,7 @@ import { BreadMeBtn } from "../BreadmeBtn";
 import ColorUtils from "utils/ColorUtils";
 import { twMerge } from "tailwind-merge";
 import { POSCardProps } from "./POSCard";
+import PricingBtn from "../PricingBtn";
 
 const POSCardDesktop = ({
   logo,
@@ -20,7 +21,7 @@ const POSCardDesktop = ({
     <div
       onClick={onCardClick}
       className={twMerge(
-        `hidden w-full h-[244px] bg-white cursor-pointer card gap-6 flex-row rounded-2xl p-6 drop-shadow-lg lg:flex ${classname}`
+        `hidden max-w-[1200px] h-[244px] bg-white cursor-pointer card gap-6 flex-row rounded-2xl p-6 drop-shadow-lg lg:flex ${classname}`
       )}
     >
       <div
@@ -31,7 +32,7 @@ const POSCardDesktop = ({
       </div>
 
       <div className="flex flex-col items-start gap-2 flex-1">
-        <Image src={logo} alt="logo-pos" className="h-[60px]" />
+        <Image src={logo} alt="logo-pos" className="w-[120px] h-[60px]" />
         <p className="text-sm text-left text-neutral-900">{desc}</p>
         <div className="flex items-center gap-4">
           {systemos.map((item) => (
@@ -89,7 +90,12 @@ const POSCardDesktop = ({
       </div>
       <div className="flex gap-4">
         <BreadMeBtn />
-        <BreadMeBtn />
+        <PricingBtn
+          logo={logo}
+          title="Monthly"
+          desc={"$75/mo"}
+          color={ColorUtils.secondary}
+        />
       </div>
     </div>
   );

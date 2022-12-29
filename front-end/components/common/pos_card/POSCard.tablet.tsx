@@ -3,6 +3,8 @@ import Image from "next/image";
 import { POSCardProps } from "../recommend_card/RecommendPOSCard";
 import { BreadMeBtn } from "../BreadmeBtn";
 import { twMerge } from "tailwind-merge";
+import PricingBtn from "../PricingBtn";
+import ColorUtils from "utils/ColorUtils";
 
 const POSCardTablet = ({
   logo,
@@ -27,7 +29,7 @@ const POSCardTablet = ({
         <p className="txt-large-bold text-neutral-900">{rating}</p>
       </div>
       <div className="flex flex-col flex-1 items-start gap-2">
-        <Image src={logo} alt="logo-pos" className="h-[60px]" />
+        <Image src={logo} alt="logo-pos" className="w-[120px] h-[60px]" />
         <p className="text-sm text-left text-neutral-900">{desc}</p>
         <div className="flex items-center gap-4">
           {systemos.map((item) => (
@@ -37,7 +39,12 @@ const POSCardTablet = ({
       </div>
       <div className="flex gap-2">
         <BreadMeBtn />
-        <BreadMeBtn />
+        <PricingBtn
+          logo={logo}
+          title="Monthly"
+          desc={"$75/mo"}
+          color={ColorUtils.secondary}
+        />
       </div>
     </div>
   );

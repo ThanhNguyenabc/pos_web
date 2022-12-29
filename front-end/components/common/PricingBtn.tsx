@@ -1,9 +1,10 @@
 import Image, { StaticImageData } from "next/image";
 import React, { ReactElement } from "react";
 import { twMerge } from "tailwind-merge";
+import ColorUtils from "utils/ColorUtils";
 import { Button } from "./Button";
 interface PricingBtnProps {
-  color: string;
+  color?: string;
   logo: StaticImageData;
   onClick?: () => void;
   desc: ReactElement | string;
@@ -16,10 +17,12 @@ const PricingBtn = ({
   color = "secondary",
   onClick,
 }: PricingBtnProps) => {
-  const bodercolor = "border-" + color;
   return (
     <div
-      className={`w-full h-full bg-white flex flex-col items-center ${bodercolor} border-2 rounded-lg `}
+      className={`w-full h-full bg-white flex flex-col items-center border-2 rounded-lg `}
+      style={{
+        borderColor: color,
+      }}
     >
       <div className="flex flex-col p-2 gap-1 items-center md:py-4">
         <Image src={logo} className="w-20 h-10" alt="" />
@@ -31,8 +34,11 @@ const PricingBtn = ({
         classname="w-full rounded-none no-animation rounded-b-md md:p-5  md:h-[60px]"
         type="SOLID_MEDIUM"
         title="Get Started"
-        background={`bg-${color}`}
         onClick={onClick}
+        style={{
+          backgroundColor: color,
+          color: "white",
+        }}
       />
     </div>
   );

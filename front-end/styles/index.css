@@ -1,10 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "./theme/common.css";
-@import "./theme/text.css";
-@import "./theme/button.css";
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
 @layer base {
   @font-face {
     font-family: "Inter";
@@ -16,3 +13,8 @@
     font-family: "Inter", sans-serif;
   }
 }
+
+@import "./theme/common.css";
+@import "./theme/text.css";
+@import "./theme/button.css";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");

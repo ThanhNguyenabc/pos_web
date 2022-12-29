@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { HtmlHTMLAttributes, ReactElement } from "react";
 import { twMerge } from "tailwind-merge";
 interface ButtonProps {
   type:
@@ -17,6 +17,7 @@ interface ButtonProps {
   background?: string;
   onClick?: () => void;
   classname?: string;
+  style?: React.CSSProperties;
 }
 
 export const Button = ({
@@ -27,6 +28,7 @@ export const Button = ({
   onClick,
   title: text,
   classname = "",
+  style,
 }: ButtonProps) => {
   let customStyle = `${background || "bg-white"} `;
   const solidStyle = `border-none px-5`;
@@ -61,6 +63,7 @@ export const Button = ({
 
   return (
     <button
+      style={style}
       onClick={onClick}
       className={twMerge(`btn btn-active normal-case px-4 h-12 inline-flex
       font-semibold font-['Inter'] ${
