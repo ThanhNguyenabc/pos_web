@@ -9,8 +9,8 @@ const styles = {
 
 const Footer = () => {
   return (
-    <div className="bg-neutral-dark">
-      <footer className="container-lg-screen flex-column text-[##98A2B3] lg:px-[120px] px-4 py-12 lg:pt-20 md:pt-14">
+    <div className="flex relative bg-neutral-dark">
+      <footer className="container-screen flex-column text-[##98A2B3] lg:px-[120px] px-4 py-12 lg:pt-20 md:pt-14">
         <div className="footer">
           <Image
             src={FooterLogo}

@@ -25,22 +25,26 @@ export const Menu = {
     route: About,
     title: "About",
   },
-  blog: {
-    route: Blog,
-    title: "Blog",
-  },
+  // blog: {
+  //   route: Blog,
+  //   title: "Blog",
+  // },
 };
 
-export const closeDrawer = () => {
-  document.getElementById("my-drawer")?.click();
-};
-
-const MainMenuItem = ({ route, title }: { route: string; title: string }) => {
+const MainMenuItem = ({
+  route,
+  title,
+  onClickItem,
+}: {
+  route: string;
+  title: string;
+  onClickItem?: () => void;
+}) => {
   return (
     <li>
       <Link
         href={route}
-        onClick={closeDrawer}
+        onClick={onClickItem}
         className=" flex justify-between txt-large-bold"
       >
         {title}
@@ -50,12 +54,20 @@ const MainMenuItem = ({ route, title }: { route: string; title: string }) => {
   );
 };
 
-const SubMenuItem = ({ route, title }: { route: string; title: string }) => {
+const SubMenuItem = ({
+  route,
+  title,
+  onClickItem,
+}: {
+  route: string;
+  title: string;
+  onClickItem?: () => void;
+}) => {
   return (
     <li>
       <Link
         href={route}
-        onClick={closeDrawer}
+        onClick={onClickItem}
         className="txt-md text-neutral-700"
       >
         {title}
@@ -64,25 +76,29 @@ const SubMenuItem = ({ route, title }: { route: string; title: string }) => {
   );
 };
 
-const MenuDrawer = () => {
+interface MenuDrawerProps {
+  onClose?: () => void;
+}
+
+const MenuDrawer = ({ onClose }: MenuDrawerProps) => {
   return (
-    <div className="flex-column bg-base-100">
+    <div className="flex-column bg-base-100 ">
       <div className="flex justify-between py-5 px-4">
         <Image src={IcMobileLogo} alt="logo-icon" />
 
-        <button onClick={closeDrawer}>
+        <button onClick={onClose}>
           <Image src={IcClose} alt="" />
         </button>
       </div>
       <ul className="menu w-full border-y-2 border-neutral-200 py-9 ">
-        <MainMenuItem {...Menu["home"]} />
-        <MainMenuItem {...Menu["freepos"]} />
-        <MainMenuItem {...Menu["posreview"]} />
+        <MainMenuItem {...Menu["home"]} onClickItem={onClose} />
+        <MainMenuItem {...Menu["freepos"]} onClickItem={onClose} />
+        <MainMenuItem {...Menu["posreview"]} onClickItem={onClose} />
       </ul>
       <ul className="menu w-full py-6">
-        <SubMenuItem {...Menu["about"]} />
-        <SubMenuItem {...Menu["contact"]} />
-        <SubMenuItem {...Menu["blog"]} />
+        <SubMenuItem {...Menu["about"]} onClickItem={onClose} />
+        <SubMenuItem {...Menu["contact"]} onClickItem={onClose} />
+        {/* <SubMenuItem {...Menu["blog"]} /> */}
       </ul>
     </div>
   );

@@ -3,16 +3,26 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Button } from "./Button";
-import { Menu } from "./MenuDrawer";
+import MenuDrawer, { Menu } from "./MenuDrawer";
+import "react-modern-drawer/dist/index.css";
+import Drawer from "react-modern-drawer";
 
 const Header = () => {
-  return (
-    <div className="container-lg-screen flex flex-row w-full justify-between items-center px-6 py-4 ">
-      <div className="flex">
-        <label htmlFor="my-drawer" className="py-2 mr-5 lg:hidden">
-          <Image src={IcMenu} alt="" id="my-drawer" />
-        </label>
+  const [isOpen, setIsOpen] = React.useState(false);
 
+  const toggleDrawer = () => {
+    setIsOpen((prevState) => !prevState);
+  };
+
+  return (
+    <div className="container-screen flex flex-row w-full justify-between items-center px-6 py-4 ">
+      <div className="flex">
+        <Drawer open={isOpen} direction="left" onClose={toggleDrawer}>
+          <MenuDrawer onClose={toggleDrawer} />
+        </Drawer>
+        <button className="py-2 mr-5 lg:hidden" onClick={toggleDrawer}>
+          <Image src={IcMenu} alt="" id="my-drawer" />
+        </button>
         <Link href={Menu["home"].route}>
           <Image src={IcMobileLogo} alt="" className="md:hidden" />
           <Image
@@ -35,9 +45,9 @@ const Header = () => {
         <li className="ml-3 txt-md-bold">
           <Link href={Menu["about"].route}>{Menu["about"].title}</Link>
         </li>
-        <li className="ml-3 txt-md-bold">
+        {/* <li className="ml-3 txt-md-bold">
           <Link href={Menu["blog"].route}>{Menu["blog"].title}</Link>
-        </li>
+        </li> */}
         <li className="ml-3 txt-md-bold">
           <Link href={Menu["contact"].route}>{Menu["contact"].title}</Link>
         </li>
