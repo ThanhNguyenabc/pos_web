@@ -67,7 +67,7 @@ const Home = () => {
             />
           </div>
         </div>
-        <div className="flex-1 block">
+        <div className="flex-1 block xl:mt-4">
           <Image src={BannerImage} alt="" className="w-full h-full" />
         </div>
       </div>

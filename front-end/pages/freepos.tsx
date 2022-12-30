@@ -63,47 +63,44 @@ const FreePOS = () => (
   <div className="flex-column">
     <RequestDemoPOS />
     <FindPOSModal />
-    <div className="flex flex-col lg:flex-row bg-secondary lg:pt-24">
-      <div className="flex flex-1 flex-col justify-center items-center text-white px-4 pt-10 ">
-        <div className="lg:max-w-lg">
+    <div className="flex flex-col bg-secondary xl:flex-row">
+      <div className="flex flex-col flex-1 px-4 py-12 gap-10 items-center md:px-8 md:py-14 xl:items-start xl:p-[120px]">
+        <div className=" flex flex-col gap-6 text-white text-center items-center xl:text-start">
           <p
-            className={`txt-heading-large md:txt-heading-xlarge text-center lg:text-start text-white`}
+            className={`txt-heading-medium text-white max-w-3xl md:font-extrabold md:text-6xl md:leading-[68px]`}
           >
             <span className="text-primary">FREE</span> point-of-sale & terminals
             of your choice available!
           </p>
-          <p className="txt-md-bold text-center pt-4 lg:text-start mb-6 md:txt-large-bold  md:mt-6 md:mb-12">
-            Speak with a consultant today to find the best POS for your business
+          <p className="txt-md md:text-xl">
+            There are many qualified POS systems out there and BestPOS is here
+            to help you find the perfect match!
           </p>
-          <div className="flex flex-col md:flex-row justify-center lg:justify-start gap-4 mb-10">
-            <Button
-              classname="w-full md:w-fit"
-              title="Get started"
-              type="SOLID_MEDIUM"
-              background={`bg-primary`}
-              onClick={openFindPOSModal}
-            />
-            <Button
-              classname="w-full md:w-fit"
-              title="Request a Demo"
-              type="SOLID_MEDIUM"
-              rightIcon={<Image height={13} src={IcRightArrow} alt="" />}
-              onClick={() =>
-                document.getElementById(RequestDemoModalId)?.click()
-              }
-            />
-          </div>
+        </div>
+        <div className="flex flex-col md:flex-row justify-center lg:justify-start gap-4 w-full md:w-fit">
+          <Button
+            title="Get started"
+            type="SOLID_MEDIUM"
+            background={`bg-primary`}
+            onClick={openFindPOSModal}
+          />
+          <Button
+            title="Request a Demo"
+            type="SOLID_MEDIUM"
+            rightIcon={<Image height={13} src={IcRightArrow} alt="" />}
+            onClick={() => document.getElementById(RequestDemoModalId)?.click()}
+          />
         </div>
       </div>
-      <div className="flex-1">
-        <Image src={POS2Img} alt="" className="w-full" />
+      <div className="flex-1 xl:mt-24">
+        <Image src={POS2Img} alt="" className="w-full h-full" />
       </div>
     </div>
     <Hero
       title="How we evaluate point of sale software"
       subTitle="We take into consideration the most important aspects of choosing the best POS for your business"
     >
-      <div className="w-full grid grid-cols-2 lg:grid-cols-4 text-neutral-900 gap-10 ">
+      <div className="w-full grid grid-cols-2 gap-10 md:gap-16 xl:grid-cols-4 xl:gap-8">
         {FeatureData.map((item) => (
           <div className="flex-1 gap-4 md:gap-6 flex flex-col items-center flex-grow self-stretch">
             <Image
@@ -117,23 +114,28 @@ const FreePOS = () => (
       </div>
     </Hero>
 
-    <div className=" bg-neutral-100">
+    <div className="flex flex-col bg-neutral-100">
       <Hero
-        title={`With these three easy steps your business may be qualified for a FREE POS system.`}
+        title={
+          <>
+            With these three easy steps your business may be qualified for a{" "}
+            <span className=" text-secondary">FREE POS system.</span>
+          </>
+        }
         subCmp={
           <Button
-            classname="w-fit self-center md:self-start"
+            classname="self-center md:w-[200px] xl:self-start"
             title="Get started"
             type="SOLID_MEDIUM"
             background={`bg-primary`}
             onClick={openFindPOSModal}
           />
         }
-        classname="md:flex-row md:text-start md:items-start"
+        classname="xl:flex-row xl:text-start xl:items-start"
       >
-        <div className=" flex flex-col gap-4 md:gap-6 ">
+        <div className=" flex flex-col gap-4 md:gap-6">
           {ThreeStep.map((item, index) => (
-            <div className="card bg-base-100">
+            <div className="card bg-base-100 drop-shadow-lg">
               <div className="card-body p-4 flex-row txt-sm md:text-xl gap-6">
                 <div
                   className={`[box-shadow:0px_0px_0px_1px_rgba(208,_213,_221,_1)_inset] [box-shadow-width:1px] 
@@ -147,30 +149,25 @@ const FreePOS = () => (
           ))}
         </div>
       </Hero>
-      <Image src={BannerImage} alt="" className=" max-h-[995px]" />
+      <Image src={BannerImage} alt="" className=" max-h-[900px]" />
     </div>
     <ClientSection />
-
     <FooterCTA
       background="bg-accent"
       actions={
-        <>
-          <Button
-            classname="w-full md:w-fit"
-            title="Get Started now"
-            type="SOLID_MEDIUM"
-            background={`bg-primary`}
-            onClick={openFindPOSModal}
-          />
-        </>
+        <Button
+          classname="w-full md:w-fit"
+          title="Get Started now"
+          type="SOLID_MEDIUM"
+          background={`bg-primary`}
+          onClick={openFindPOSModal}
+        />
       }
       title={
-        <>
-          <h3>
-            <span className="text-secondary "> FREE</span> point-of-sale &
-            terminals of your choice available!
-          </h3>
-        </>
+        <h3>
+          <span className="text-secondary "> FREE</span> point-of-sale &
+          terminals of your choice available!
+        </h3>
       }
     />
   </div>
