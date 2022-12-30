@@ -1,5 +1,4 @@
 import React, { ReactElement, ReactNode } from "react";
-import { Button } from "./Button";
 
 interface FooterCTAProps {
   title?: ReactElement;
@@ -20,6 +19,7 @@ export const FooterCTA = ({
       md:gap-8 md:my-20 md:mx-8
       xl:gap-10 lg:my-20 
       xl:mx-[120px]
+      xl:mt-0
       ${background}`}
     >
       <div className="w-full flex flex-col gap-4 items-center">

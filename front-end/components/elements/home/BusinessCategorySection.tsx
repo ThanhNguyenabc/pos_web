@@ -49,7 +49,7 @@ const BusinessCategorySection = () => {
         <div className="hidden md:flex md:items-end">
           <Button
             title="View all"
-            type="OUTLINE_MEDIUM"
+            isOutLine={true}
             rightIcon={
               <Image className="ml-2.5" src={IcRightArrow} alt="view all" />
             }
@@ -74,7 +74,7 @@ const BusinessCategorySection = () => {
         <Button
           classname="w-full"
           title="View all"
-          type="OUTLINE_MEDIUM"
+          isOutLine={true}
           rightIcon={
             <Image className="ml-2.5" src={IcRightArrow} alt="view all" />
           }

@@ -63,12 +63,7 @@ const Header = () => {
           <p className="txt-sm text-neutral-600">Support 24/7</p>
           <p className="txt-md-bold xl:text-xl ">1-888-410-2188</p>
         </div>
-        <Button
-          type="SOLID_MEDIUM"
-          title="Find your POS"
-          background="bg-primary"
-          classname="hidden xl:block ml-10"
-        />
+        <Button title="Find your POS" classname="hidden xl:block ml-10" />
       </div>
     </div>
   );

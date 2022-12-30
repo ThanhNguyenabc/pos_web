@@ -8,4 +8,6 @@ module.exports = {
   warning: "#F79009",
   success: "#039855",
   error: "#D92D20",
+  neutral_900: "#101828",
+  neutral_dark: "#020202"
 };

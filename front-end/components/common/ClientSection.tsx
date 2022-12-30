@@ -6,7 +6,6 @@ import {
 } from "assets/AssetUtil";
 import Image from "next/image";
 import React, { ReactElement } from "react";
-import { Button } from "./Button";
 
 const ClientList = [
   CloverImg,

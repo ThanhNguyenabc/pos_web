@@ -78,15 +78,10 @@ const FreePOS = () => (
           </p>
         </div>
         <div className="flex flex-col md:flex-row justify-center lg:justify-start gap-4 w-full md:w-fit">
-          <Button
-            title="Get started"
-            type="SOLID_MEDIUM"
-            background={`bg-primary`}
-            onClick={openFindPOSModal}
-          />
+          <Button title="Get started" onClick={openFindPOSModal} />
           <Button
             title="Request a Demo"
-            type="SOLID_MEDIUM"
+            style={{ background: "white", color: "black" }}
             rightIcon={<Image height={13} src={IcRightArrow} alt="" />}
             onClick={() => document.getElementById(RequestDemoModalId)?.click()}
           />
@@ -126,8 +121,6 @@ const FreePOS = () => (
           <Button
             classname="self-center md:w-[200px] xl:self-start"
             title="Get started"
-            type="SOLID_MEDIUM"
-            background={`bg-primary`}
             onClick={openFindPOSModal}
           />
         }
@@ -158,8 +151,6 @@ const FreePOS = () => (
         <Button
           classname="w-full md:w-fit"
           title="Get Started now"
-          type="SOLID_MEDIUM"
-          background={`bg-primary`}
           onClick={openFindPOSModal}
         />
       }

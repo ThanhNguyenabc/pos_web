@@ -55,13 +55,12 @@ const Home = () => {
           <div className=" flex flex-col gap-4 md:gap-6 w-full md:w-fit md:flex-row">
             <Button
               title="Find your POS"
-              type="SOLID_MEDIUM"
-              background={`bg-neutral-900`}
+              style={{ background: ColorUtils.neutral_900 }}
               onClick={findPOS}
             />
             <Button
               title="Get POS for free"
-              type="SOLID_MEDIUM"
+              style={{ background: "white", color: "black" }}
               onClick={getPOSFree}
               rightIcon={<Image height={13} src={IcRightArrow} alt="" />}
             />
@@ -108,7 +107,7 @@ const Home = () => {
             </p>
             <Button
               title="POS Review"
-              type="OUTLINE_MEDIUM"
+              isOutLine = {true}
               rightIcon={<Image height={13} src={IcRightArrow} alt="" />}
             />
           </>
@@ -121,13 +120,11 @@ const Home = () => {
             <Button
               classname="w-full md:w-fit"
               title="Find your POS"
-              type="SOLID_MEDIUM"
-              background={`bg-primary`}
               onClick={findPOS}
             />
             <Button
               title="Get POS for free"
-              type="SOLID_MEDIUM"
+              style={{ background: "white", color: "black" }}
               onClick={getPOSFree}
             />
           </>

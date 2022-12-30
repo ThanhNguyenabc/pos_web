@@ -30,6 +30,7 @@ export { default as BreadMeImg } from "./images/breadme.jpg";
 export { default as ToastImg } from "./images/toast.png";
 export { default as RevelImg } from "./images/revel_img.jpg";
 export { default as OvviImg } from "./images/ovvi.jpg";
+export { default as BillingImg } from "./images/billing.png";
 
 // export icons
 export { default as IcMenu } from "./icons/ic_menu.svg";

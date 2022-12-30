@@ -1,28 +1,18 @@
 import React, { HtmlHTMLAttributes, ReactElement } from "react";
 import { twMerge } from "tailwind-merge";
+import ColorUtils from "utils/ColorUtils";
 interface ButtonProps {
-  type:
-    | "OUTLINE_SMALL"
-    | "OUTLINE_MEDIUM"
-    | "OUTLINE_LARGE"
-    | "OUTLINE_XLARGE"
-    | "SOLID_SMALL"
-    | "SOLID_MEDIUM"
-    | "SOLID_LARGE"
-    | "SOLID_XLARGE";
-
+  isOutLine?: boolean;
   leftIcon?: ReactElement;
   rightIcon?: ReactElement;
   title: string;
-  background?: string;
   onClick?: () => void;
   classname?: string;
   style?: React.CSSProperties;
 }
 
 export const Button = ({
-  type,
-  background,
+  isOutLine,
   leftIcon,
   rightIcon,
   onClick,
@@ -30,45 +20,17 @@ export const Button = ({
   classname = "",
   style,
 }: ButtonProps) => {
-  let customStyle = `${background || "bg-white"} `;
-  const solidStyle = `border-none px-5`;
-  const outlineStyle =
-    " text-neutral-900 hover:bg-white hover:text-black border-neutral-300";
-
-  switch (type) {
-    case "OUTLINE_SMALL":
-      customStyle += `text-sm ${outlineStyle}`;
-      break;
-    case "OUTLINE_MEDIUM":
-      customStyle += ` text-base ${outlineStyle}`;
-      break;
-    case "OUTLINE_LARGE":
-      customStyle += `text-xl ${outlineStyle}`;
-      break;
-    case "SOLID_SMALL":
-      customStyle += `text-sm h-10 ${solidStyle}`;
-      break;
-    case "SOLID_MEDIUM":
-      customStyle += `text-base h-12 ${solidStyle}`;
-      break;
-    case "SOLID_LARGE":
-      customStyle += `text-xl h-14 ${solidStyle}`;
-      break;
-    case "SOLID_XLARGE":
-      customStyle += `text-xl h-16 ${solidStyle}`;
-      break;
-    default:
-      break;
-  }
-
   return (
     <button
       style={style}
       onClick={onClick}
-      className={twMerge(`btn btn-active normal-case px-4 h-12 inline-flex
-      font-semibold font-['Inter'] ${
-        background ? "text-white" : "text-neutral-900"
-      }  ${customStyle} ${classname} hover:${background ?? "bg-white"}`)}
+      className={twMerge(
+        `btn text-base normal-case md:h-14 md:text-lg md:px-5  ${classname} ${
+          isOutLine
+            ? "btn-outline hover:bg-white hover:text-black"
+            : "btn-primary border-none"
+        }`
+      )}
     >
       <div className="flex flex-row w-full h-auto items-center justify-center">
         {leftIcon && <div className="mr-2">{leftIcon}</div>}

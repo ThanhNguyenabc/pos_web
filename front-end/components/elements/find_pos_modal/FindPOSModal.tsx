@@ -102,20 +102,17 @@ const FindPOSModal = () => {
                   } flex-row gap-4 p-4`}
                 >
                   <Button
-                    type="OUTLINE_MEDIUM"
                     title="Back"
                     classname={`mt-16 md:text-xl`}
                     leftIcon={<Image src={IcBack} alt="back" />}
                     onClick={onBack}
                   />
                   <Button
-                    type="SOLID_MEDIUM"
                     title={
                       formState.cQuestionIndex < PAGES.length - 1
                         ? "Next"
                         : "Submit"
                     }
-                    background="bg-primary"
                     classname={`flex-1 mt-16 md:text-xl`}
                     onClick={() => {
                       if (formState.cQuestionIndex < PAGES.length - 1) {

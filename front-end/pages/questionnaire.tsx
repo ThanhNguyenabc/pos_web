@@ -92,32 +92,36 @@ const Questionnaire = () => {
   return (
     <QuestionnaireContext.Provider value={questionSate}>
       <div
-        className={`flex flex-col lg:flex-row min-h-[95vh] ${
+        className={`flex w-full flex-1 flex-col min-h-screen xl:flex-row ${
           isSubmit ? "hidden" : "flex"
         }`}
       >
         <Introduction
-          classname={`hidden lg:flex lg:bg-gradient-to-b  lg:from-[#FF5A22] lg:to-[#FFA722] ${
+          classname={`hidde xl:flex xl:bg-gradient-to-b  xl:from-[#FF5A22] xl:to-[#FFA722] ${
             questionSate.showQuestions ? "hidden" : "flex"
           }`}
           onStart={onStart}
         />
+
         <div
-          className={`w-full flex-col flex-1 ${
+          className={`${
             questionSate.showQuestions ? "flex" : "hidden"
-          } lg:flex`}
+          } xl:flex w-full flex-1 flex-col`}
         >
           <progress
-            className="progress progress-secondary w-full"
+            className="progress progress-secondary w-full md:h-4"
             value={questionSate.cQuestionIndex + 1}
             max={PAGES.length}
           />
 
           <div className="w-full flex flex-col mb-6 p-4 gap-4 md:py-6 md:flex-row md:items-center md:gap-3">
-            <IconButton onClick={backButton}>
+            <IconButton
+              onClick={backButton}
+              classname={questionSate.cQuestionIndex > 0 ? "flex" : "hidden"}
+            >
               <Image src={IcBack} alt="back" />
             </IconButton>
-            <p className="flex-1 txt-heading-xsmal text-center mr-10">
+            <p className="flex-1  txt-heading-xsmal text-center mr-10 md:text-3xl">
               {Questions[questionSate.cQuestionIndex]}
             </p>
           </div>
@@ -125,10 +129,8 @@ const Questionnaire = () => {
           <div className="flex flex-col max-w-lg w-full self-center pb-6">
             {PAGES[questionSate.cQuestionIndex]}
             <Button
-              type="SOLID_MEDIUM"
               title="Submit"
-              background="bg-primary"
-              classname={`mx-4 mt-16 hidden ${
+              classname={`mx-4 mt-16 h-16 hidden ${
                 questionSate.cQuestionIndex == PAGES.length - 1 ? "flex" : ""
               } md:h-16 md:text-xl`}
               onClick={onSubmit}
