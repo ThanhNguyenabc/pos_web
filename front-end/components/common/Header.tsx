@@ -32,13 +32,13 @@ const Header = () => {
           <Image src={IcMenu} alt="" id="my-drawer" />
         </button>
         <Link href={Menu["home"].route}>
-          <Image src={IcMobileLogo} alt="" className="block xl:hidden" />
+          <Image src={IcMobileLogo} alt="" className="block md:hidden" />
           <Image
             src={Logo}
             width={150}
             height={32}
             alt="logo"
-            className="hidden xl:block"
+            className="hidden md:block"
           />
         </Link>
       </div>
@@ -60,15 +60,15 @@ const Header = () => {
           <Link href={Menu["contact"].route}>{Menu["contact"].title}</Link>
         </li>
       </ul>
-      <div className="flex">
+      <div className="flex flex-row justify-center items-center">
         <Image src={IcPhone} alt="" width={18} height={18} />
         <div className="ml-4">
           <p className="txt-sm text-neutral-600">Support 24/7</p>
-          <p className="txt-md-bold xl:text-xl ">1-888-410-2188</p>
+          <p className="txt-md-bold xl:text-xl">1-888-410-2188</p>
         </div>
         <Button
           title="Find your POS"
-          classname="hidden xl:block ml-10"
+          classname="hidden md:block ml-10 md:h-12 md:text-base"
           onClick={() => router.push(POSQuestionnaire)}
         />
       </div>
