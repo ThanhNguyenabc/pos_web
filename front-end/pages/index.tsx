@@ -20,6 +20,7 @@ import QuestionnaireSuccess from "components/elements/questionnaire/Questionnair
 import RequestDemoPOS from "components/elements/request_demo_pos/RequestDemoPOS";
 import FindPOSModal from "components/elements/find_pos_modal/FindPOSModal";
 import POSDetail from "pages/posdetail";
+import { FreePOS, POSQuestionnaire } from "utils/routes";
 
 const FeatureData = ["24/7 Support", "Free training", "Seamless Installments"];
 
@@ -28,13 +29,14 @@ const Home = () => {
 
   const findPOS = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    router.push("/questionnaire");
+    router.push(POSQuestionnaire);
   };
 
   const getPOSFree = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    router.push("/freepos");
+    router.push(FreePOS);
   };
+
   return (
     <>
       <FindPOSModal />

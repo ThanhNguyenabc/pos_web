@@ -10,6 +10,8 @@ import {
 import React from "react";
 import Image from "next/image";
 import { Button } from "components/common/Button";
+import { useRouter } from "next/router";
+import { POSReview } from "utils/routes";
 
 export const Categories = [
   {
@@ -39,6 +41,8 @@ export const Categories = [
 ];
 
 const BusinessCategorySection = () => {
+  const router = useRouter();
+
   return (
     <div className="flex flex-col px-4 py-12 gap-10 md:px-8 md:py-14 md:gap-8 xl:gap-16 xl:p-[120px]">
       <div className="flex justify-between ">
@@ -53,6 +57,7 @@ const BusinessCategorySection = () => {
             rightIcon={
               <Image className="ml-2.5" src={IcRightArrow} alt="view all" />
             }
+            onClick={() => router.push(POSReview)}
           />
         </div>
       </div>

@@ -6,8 +6,11 @@ import { Button } from "./Button";
 import MenuDrawer, { Menu } from "./MenuDrawer";
 import "react-modern-drawer/dist/index.css";
 import Drawer from "react-modern-drawer";
+import { POSQuestionnaire } from "utils/routes";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const router = useRouter();
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggleDrawer = () => {
@@ -63,7 +66,11 @@ const Header = () => {
           <p className="txt-sm text-neutral-600">Support 24/7</p>
           <p className="txt-md-bold xl:text-xl ">1-888-410-2188</p>
         </div>
-        <Button title="Find your POS" classname="hidden xl:block ml-10" />
+        <Button
+          title="Find your POS"
+          classname="hidden xl:block ml-10"
+          onClick={() => router.push(POSQuestionnaire)}
+        />
       </div>
     </div>
   );
