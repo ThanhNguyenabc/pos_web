@@ -97,7 +97,7 @@ const Questionnaire = () => {
         }`}
       >
         <Introduction
-          classname={`hidde xl:flex xl:bg-gradient-to-b  xl:from-[#FF5A22] xl:to-[#FFA722] ${
+          classname={`flex-1 hidde xl:flex xl:bg-gradient-to-b  xl:from-[#FF5A22] xl:to-[#FFA722] ${
             questionSate.showQuestions ? "hidden" : "flex"
           }`}
           onStart={onStart}

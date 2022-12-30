@@ -28,7 +28,7 @@ const Introduction = ({ classname, onStart }: IntroductionPorps) => {
   return (
     <div
       className={twMerge(
-        `flex flex-col min-h-screen bg-accent xl:justify-center xl:p-[120px] ${classname}`
+        `flex flex-col min-h-screen bg-accent xl:justify-center xl:m-auto ${classname}`
       )}
     >
       <div className="flex flex-col gap-6 px-4 py-12 mx-auto md:py-14 md:gap-10  max-w-lg ">
