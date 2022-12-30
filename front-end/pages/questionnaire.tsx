@@ -41,7 +41,7 @@ const PAGES = [
   <StationQuestion key={`station-key`} />,
   <HandHeldQuestion key={`handheld-key`} />,
   <CashDiscountQuestion key={`discount-key`} />,
-  <ContactForm key={`contact-key`} />,
+  <ContactForm key={`contact-key`} classname="px-4" />,
 ];
 
 interface QuestionData {
