@@ -13,7 +13,10 @@ const RecommendPOSCardMobile = ({
   onCardClick,
 }: POSCardProps) => {
   const valueProgress = rating * 10;
-
+  const radialStyle = {
+    "--value": valueProgress,
+    "--size": "2.5rem",
+  } as React.CSSProperties;
   return (
     <div
       onClick={onCardClick}
@@ -28,11 +31,16 @@ const RecommendPOSCardMobile = ({
           </div>
           <div className="flex items-center gap-4">
             {systemos.map((item, index) => (
-              <Image key={`image${index}`} src={item} alt="logo-system" className="w-6 h-6" />
+              <Image
+                key={`image${index}`}
+                src={item}
+                alt="logo-system"
+                className="w-6 h-6"
+              />
             ))}
             <div
               className="radial-progress text-primary border-neutral-200 "
-              style={{ "--value": valueProgress, "--size": "2.5rem" }}
+              style={radialStyle}
             >
               <p className="txt-sm-bold text-neutral-900">{rating}</p>
             </div>

@@ -17,6 +17,11 @@ const POSCardDesktop = ({
   onCardClick,
 }: POSCardProps) => {
   const valueProgress = rating * 10;
+  const radialStyle = {
+    "--value": valueProgress,
+    "--size": "3.75rem",
+  } as React.CSSProperties;
+
   return (
     <div
       onClick={onCardClick}
@@ -26,7 +31,7 @@ const POSCardDesktop = ({
     >
       <div
         className="radial-progress text-primary border-neutral-200 "
-        style={{ "--value": valueProgress, "--size": "3.75rem" }}
+        style={radialStyle}
       >
         <p className="txt-large-bold text-neutral-900">{rating}</p>
       </div>
