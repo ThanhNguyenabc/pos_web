@@ -41,8 +41,8 @@ const ExpertOpinion = ({ overal, rateItems, opinion }: ExpertOpinionProps) => {
             </p>
           </div>
           <div className="flex flex-col gap-4 flex-1 md:gap-8">
-            {rateItems.map((item) => (
-              <RatingItem {...item} />
+            {rateItems.map((item, index) => (
+              <RatingItem key={`key-${index}`} {...item} />
             ))}
           </div>
         </div>

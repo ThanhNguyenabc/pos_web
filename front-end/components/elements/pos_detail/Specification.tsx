@@ -12,8 +12,8 @@ const Specification = ({ items }: SpecificationProps) => {
       <p className="txt-heading-xsmal">Specifications</p>
       <table className="table w-full txt-md">
         <tbody>
-          {items.map((item) => (
-            <tr>
+          {items.map((item, index) => (
+            <tr key={`sp-${index}`}>
               <th className="font-semibold px-0">{item.title}</th>
               <td>{item.desc}</td>
             </tr>

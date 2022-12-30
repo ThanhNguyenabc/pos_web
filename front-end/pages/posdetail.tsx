@@ -33,8 +33,13 @@ const POSDetail = (props: POSDetailProps) => {
             Customizable POS system for retail, full & quick-service restaurants
           </p>
           <div className="flex items-center gap-3">
-            {props.info.system.map((item) => (
-              <Image src={item} alt="logo-system" className="w-6 h-6" />
+            {props.info.system.map((item, index) => (
+              <Image
+                key={`itemos-${index}`}
+                src={item}
+                alt="logo-system"
+                className="w-6 h-6"
+              />
             ))}
           </div>
         </div>

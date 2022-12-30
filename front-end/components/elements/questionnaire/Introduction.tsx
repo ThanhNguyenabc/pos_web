@@ -42,7 +42,7 @@ const Introduction = ({ classname, onStart }: IntroductionPorps) => {
         </p>
         <div className="flex flex-col gap-4">
           {Reason.map((item, index) => (
-            <div className="card bg-base-100">
+            <div key={`reason-${index}`} className="card bg-base-100">
               <div className="card-body p-4 flex-row items-center txt-md md:text-xl gap-4">
                 <Image src={item.icon} className="w-6 h-6" alt="" />
                 <p className="text-left">{item.desc}</p>

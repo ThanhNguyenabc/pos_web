@@ -109,7 +109,7 @@ const Home = () => {
             </p>
             <Button
               title="POS Review"
-              isOutLine = {true}
+              isOutLine={true}
               rightIcon={<Image height={13} src={IcRightArrow} alt="" />}
             />
           </>

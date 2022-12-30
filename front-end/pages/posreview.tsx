@@ -44,8 +44,9 @@ const POSReview = () => {
       </div>
 
       <div className="flex flex-col px-4 gap-4 md:px-8 md:gap-6 items-center">
-        {MockupData.map((item) => (
+        {MockupData.map((item, index) => (
           <POSCard
+            key={`card-item-${index}`}
             {...item}
             onCardClick={() => {
               route.push("/posdetail");

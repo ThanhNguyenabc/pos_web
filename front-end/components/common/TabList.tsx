@@ -33,6 +33,7 @@ const TabList = ({ tabList, onSelectedIndex }: TabListProps) => {
     <div className="flex flex-row gap-4 overflow-auto	">
       {tabList.map((item, index) => (
         <TabItem
+          key={`tab-${index}`}
           name={item}
           isSelected={index == selectIndex}
           onClick={() => setSelectIndex(index)}
