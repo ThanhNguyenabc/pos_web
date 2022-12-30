@@ -15,27 +15,32 @@ const Header = () => {
   };
 
   return (
-    <div className="container-screen flex flex-row w-full justify-between items-center px-6 py-4 ">
+    <div className="container-screen flex flex-row w-full justify-between items-center px-4 py-5 md:p-6">
       <div className="flex">
-        <Drawer open={isOpen} direction="left" onClose={toggleDrawer}>
+        <Drawer
+          open={isOpen}
+          direction="left"
+          onClose={toggleDrawer}
+          style={{ width: "300px" }}
+        >
           <MenuDrawer onClose={toggleDrawer} />
         </Drawer>
-        <button className="py-2 mr-5 lg:hidden" onClick={toggleDrawer}>
+        <button className="py-2 mr-5 xl:hidden" onClick={toggleDrawer}>
           <Image src={IcMenu} alt="" id="my-drawer" />
         </button>
         <Link href={Menu["home"].route}>
-          <Image src={IcMobileLogo} alt="" className="md:hidden" />
+          <Image src={IcMobileLogo} alt="" className="block xl:hidden" />
           <Image
             src={Logo}
             width={150}
             height={32}
             alt="logo"
-            className="hidden md:block"
+            className="hidden xl:block"
           />
         </Link>
       </div>
 
-      <ul className="menu menu-horizontal hidden lg:flex flex-1 text-neutral-900 ">
+      <ul className="menu menu-horizontal hidden xl:flex flex-1 text-neutral-900 ">
         <li className="ml-3 txt-md-bold">
           <Link href={Menu["freepos"].route}>{Menu["freepos"].title}</Link>
         </li>
@@ -56,7 +61,7 @@ const Header = () => {
         <Image src={IcPhone} alt="" width={18} height={18} />
         <div className="ml-4">
           <p className="txt-sm text-neutral-600">Support 24/7</p>
-          <p className="txt-md-bold lg:text-xl ">1-888-410-2188</p>
+          <p className="txt-md-bold xl:text-xl ">1-888-410-2188</p>
         </div>
         <Button
           type="SOLID_MEDIUM"

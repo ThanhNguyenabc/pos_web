@@ -16,16 +16,17 @@ const MetricSection = ({
 }: MetricSectionProps) => {
   return (
     <div
-      className={`w-full px-4 py-14 gap-12 lg:gap-20 inline-flex flex-col items-center text-center overflow-clip bg-neutral-100`}
+      className={`w-full px-4 py-14 gap-12 inline-flex flex-col 
+      items-center text-center bg-neutral-100 md:px-8 xl:p-[120px] xl:gap-20`}
     >
-      <p className="text-4xl font-bold m-0  text-neutral-900 md:text-5xl">
+      <p className="text-4xl max-w-3xl font-bold m-0  text-neutral-900 md:text-5xl md:font-extrabold md:leading-[56px]">
         {heading}
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
         {itemSection.map((item) => (
           <div className="w-full gap-4 flex flex-col items-center font-semibold">
             <p
-              className={`w-full text-5xl md:text-6xl lg:text-8xl m-0  ${titleColor}`}
+              className={`w-full text-5xl md:text-6xl xl:text-8xl  ${titleColor}`}
             >
               {item.title}
             </p>

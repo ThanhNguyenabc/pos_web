@@ -38,43 +38,40 @@ const Home = () => {
   return (
     <>
       <FindPOSModal />
-     
-      <div className="flex flex-col lg:flex-row bg-gradient-to-b from-[#FF5A22] to-[#FFA722] lg:pt-4">
-        <div className="flex flex-1 flex-col justify-center items-center text-white px-4 pt-10 ">
-          <div className="lg:max-w-lg">
+      <div className="flex flex-col xl:flex-row bg-gradient-to-b from-[#FF5A22] to-[#FFA722]">
+        <div className="flex flex-1 flex-col px-4 py-10 gap-4 md:gap-6 md:px-8 md:py-14 md:items-center xl:items-start xl:p-[120px]">
+          <div className=" flex flex-col items-center text-center gap-4 md:gap-6 xl:text-left ">
             <p
-              className={`txt-heading-large md:text-6xl md:leading-[68px] text-center lg:text-start text-white`}
+              className={`txt-heading-large md:text-6xl md:leading-[68px] text-white`}
             >
               Real advice from
               <span className="text-secondary"> real people</span>
             </p>
-            <p className="txt-md-bold text-center pt-4 lg:text-start mb-6 md:text-xl  md:mt-6 md:mb-12">
+            <p className="txt-md-bold text-white lg:text-start md:text-xl">
               Speak with a consultant today to find the best POS for your
               business
             </p>
-            <div className="flex flex-col md:flex-row justify-center lg:justify-start gap-4 mb-10">
-              <Button
-                classname="w-full md:w-fit"
-                title="Find your POS"
-                type="SOLID_MEDIUM"
-                background={`bg-neutral-900`}
-                onClick={findPOS}
-              />
-              <Button
-                classname="w-full md:w-fit"
-                title="Get POS for free"
-                type="SOLID_MEDIUM"
-                onClick={getPOSFree}
-                rightIcon={<Image height={13} src={IcRightArrow} alt="" />}
-              />
-            </div>
+          </div>
+          <div className=" flex flex-col gap-4 md:gap-6 w-full md:w-fit md:flex-row">
+            <Button
+              title="Find your POS"
+              type="SOLID_MEDIUM"
+              background={`bg-neutral-900`}
+              onClick={findPOS}
+            />
+            <Button
+              title="Get POS for free"
+              type="SOLID_MEDIUM"
+              onClick={getPOSFree}
+              rightIcon={<Image height={13} src={IcRightArrow} alt="" />}
+            />
           </div>
         </div>
-        <div className="flex-1">
+        <div className="flex-1 block">
           <Image src={BannerImage} alt="" className="w-full h-full" />
         </div>
       </div>
-      <div className="grid grid-cols-3 px-4 py-3 md:py-6">
+      <div className="grid grid-cols-3 px-4 py-3 md:py-6 md:px-8">
         {FeatureData.map((item, index) => {
           return (
             <div
@@ -96,9 +93,9 @@ const Home = () => {
         heading="What sets us apart from other companies?"
         titleColor=" text-secondary"
         itemSection={[
-          { title: "20+", content: "Over 20 years experience" },
+          { title: "30+", content: "Over 30 years experience" },
+          { title: "1000+", content: "Over 1000 Clients" },
           { title: "50", content: "Available in all 50 states" },
-          { title: "1000", content: "Over 1000 Clients" },
         ]}
       />
 

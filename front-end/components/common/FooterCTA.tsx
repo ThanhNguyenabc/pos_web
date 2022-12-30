@@ -15,12 +15,11 @@ export const FooterCTA = ({
 }: FooterCTAProps) => {
   return (
     <div
-      className={`px-4 py-14 gap-6 md:rounded-2xl 
-      flex flex-col justify-center items-center text-center font-bold  
-      font-['Inter']
-      md:gap-8 md:my-20
-      lg:gap-10 lg:py-20 
-      lg:mx-[120px]
+      className={`flex flex-col justify-center items-center px-4 py-14 gap-6 md:rounded-2xl 
+       text-center
+      md:gap-8 md:my-20 md:mx-8
+      xl:gap-10 lg:my-20 
+      xl:mx-[120px]
       ${background}`}
     >
       <div className="w-full flex flex-col gap-4 items-center">

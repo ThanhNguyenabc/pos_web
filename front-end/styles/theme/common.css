@@ -7,7 +7,7 @@
 }
 
 .container-screen {
-  @apply container lg:mx-auto;
+  @apply container mx-auto;
 }
 
 .tab-active {

@@ -40,9 +40,9 @@ export const Categories = [
 
 const BusinessCategorySection = () => {
   return (
-    <div className="flex flex-col px-4 my-12 lg:mx-[120px]">
+    <div className="flex flex-col px-4 py-12 gap-10 md:px-8 md:py-14 md:gap-8 xl:gap-16 xl:p-[120px]">
       <div className="flex justify-between ">
-        <p className="txt-heading-medium flex-1 text-center md:text-left max-w-md">
+        <p className="txt-heading-medium flex-1 text-center md:text-left max-w-xl md:text-5xl md:font-extrabold md:leading-[56px]">
           <span className="text-secondary">Point-of-sale</span> for all business
           categories
         </p>
@@ -57,10 +57,10 @@ const BusinessCategorySection = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-y-8 md:gap-x-8 py-10 md:py-12">
+      <div className="grid grid-cols-2 md:grid-cols-3  gap-4 md:gap-8  xl:grid-cols-6">
         {Categories.map((item, index) => {
           return (
-            <div className="card items-center py-4">
+            <div className="card items-center p-4 bg-neutral-100 md:p-6">
               <Image src={item.link} alt="pizza" width={120} />
               <div className="flex justify-items-center items-center h-full mt-2">
                 <h2 className="txt-md-bold  text-center ">{item.name}</h2>
