@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { POSCardProps } from "../recommend_card/RecommendPOSCard";
 import { BreadMeBtn } from "../BreadmeBtn";
 import { twMerge } from "tailwind-merge";
@@ -32,8 +32,13 @@ const POSCardTablet = ({
         <Image src={logo} alt="logo-pos" className="w-[120px] h-[60px]" />
         <p className="text-sm text-left text-neutral-900">{desc}</p>
         <div className="flex items-center gap-4">
-          {systemos.map((item) => (
-            <Image src={item} alt="logo-system" className="w-6 h-6" />
+          {systemos.map((item: StaticImageData, index: number) => (
+            <Image
+              key={`item-os-${index}`}
+              src={item}
+              alt="logo-system"
+              className="w-6 h-6"
+            />
           ))}
         </div>
       </div>

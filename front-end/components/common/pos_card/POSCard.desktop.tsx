@@ -35,8 +35,13 @@ const POSCardDesktop = ({
         <Image src={logo} alt="logo-pos" className="w-[120px] h-[60px]" />
         <p className="text-sm text-left text-neutral-900">{desc}</p>
         <div className="flex items-center gap-4">
-          {systemos.map((item) => (
-            <Image src={item} alt="logo-system" className="w-6 h-6" />
+          {systemos.map((item, index) => (
+            <Image
+              key={`item-os-${index}`}
+              src={item}
+              alt="logo-system"
+              className="w-6 h-6"
+            />
           ))}
         </div>
       </div>

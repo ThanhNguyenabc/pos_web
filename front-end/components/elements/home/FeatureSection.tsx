@@ -52,7 +52,7 @@ const FeatureSection = () => {
       <div className="flex flex-col flex-1 gap-10">
         {data.map((item, index) => {
           return (
-            <div className="hero p-0 m-0 ">
+            <div className="hero p-0 m-0 " key={`feature-${index}`}>
               <div className="hero-content flex-row p-0  gap-6 items-start ">
                 <Image
                   src={item.image}

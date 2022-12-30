@@ -65,7 +65,7 @@ const BusinessCategorySection = () => {
       <div className="grid grid-cols-2 md:grid-cols-3  gap-4 md:gap-8  xl:grid-cols-6">
         {Categories.map((item, index) => {
           return (
-            <div className="card items-center p-4 bg-neutral-100 md:p-6">
+            <div className="card items-center p-4 bg-neutral-100 md:p-6" key={`category-${index}`}>
               <Image src={item.link} alt="pizza" width={120} />
               <div className="flex justify-items-center items-center h-full mt-2">
                 <h2 className="txt-md-bold  text-center ">{item.name}</h2>

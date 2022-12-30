@@ -36,6 +36,7 @@ const SelectedList = <T extends object | string>({
       {data.map((item: T, index) => {
         return (
           <div
+            key={`item-${index}`}
             className={twMerge(
               `w-full card border-2 cursor-pointer mx-auto hover:border-secondary ${
                 cindex == index ? "border-secondary" : "border-neutral-100"

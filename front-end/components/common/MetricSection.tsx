@@ -23,8 +23,8 @@ const MetricSection = ({
         {heading}
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
-        {itemSection.map((item) => (
-          <div className="w-full gap-4 flex flex-col items-center font-semibold">
+        {itemSection.map((item, index) => (
+          <div key={`itemsection-${index}`} className="w-full gap-4 flex flex-col items-center font-semibold">
             <p
               className={`w-full text-5xl md:text-6xl xl:text-8xl  ${titleColor}`}
             >

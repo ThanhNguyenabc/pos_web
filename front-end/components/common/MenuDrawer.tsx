@@ -41,7 +41,7 @@ const MainMenuItem = ({
   onClickItem?: () => void;
 }) => {
   return (
-    <li>
+    <li key={`item-${title}`}>
       <Link
         href={route}
         onClick={onClickItem}
@@ -64,7 +64,7 @@ const SubMenuItem = ({
   onClickItem?: () => void;
 }) => {
   return (
-    <li>
+    <li key={`sub-item-${title}`}>
       <Link
         href={route}
         onClick={onClickItem}

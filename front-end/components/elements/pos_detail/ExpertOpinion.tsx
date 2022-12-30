@@ -7,7 +7,7 @@ interface ExpertOpinionProps {
 }
 const RatingItem = ({ name, rating }: { name: string; rating: number }) => {
   return (
-    <div className="flex flex-col gap-2">
+    <div key={`rate-item${name}`} className="flex flex-col gap-2">
       <div className=" flex flex-row justify-between">
         <p className="txt-md"> {name}</p>
         <p className="txt-md-bold"> {`${rating}`}</p>
