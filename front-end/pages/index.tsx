@@ -105,7 +105,8 @@ const Home = () => {
           <>
             <p className="txt-md md:text-xl text-neutral-700">
               We are flexible when it comes to working with any point-of-sale
-              company. Here's a list of our top providers in the industry.
+              company. Here&apos;s a list of our top providers in the
+              industry.
             </p>
             <Button
               title="POS Review"

@@ -35,7 +35,11 @@ const PAGE_TITLE = [
   "Your business information",
   "Your contact information",
 ];
-const PAGES = [<CreditCardVolume />, <BusinessInfo />, <PersonalInfo />];
+const PAGES = [
+  <CreditCardVolume key={`credit-key`} />,
+  <BusinessInfo key={`business-key`} />,
+  <PersonalInfo key={`personal-key`} />,
+];
 
 const FindPOSModal = () => {
   const [isSubmit, setSubmit] = useState(false);

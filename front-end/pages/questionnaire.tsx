@@ -36,12 +36,12 @@ const Questions = [
 ];
 
 const PAGES = [
-  <BusinessQuestion />,
-  <SaleSystemQuestion />,
-  <StationQuestion />,
-  <HandHeldQuestion />,
-  <CashDiscountQuestion />,
-  <ContactForm />,
+  <BusinessQuestion key={`business-key`} />,
+  <SaleSystemQuestion key={`salesystem-key`} />,
+  <StationQuestion key={`station-key`} />,
+  <HandHeldQuestion key={`handheld-key`} />,
+  <CashDiscountQuestion key={`discount-key`} />,
+  <ContactForm key={`contact-key`} />,
 ];
 
 interface QuestionData {
