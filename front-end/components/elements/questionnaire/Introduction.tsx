@@ -31,7 +31,7 @@ const Introduction = ({ classname, onStart }: IntroductionPorps) => {
         `flex flex-col min-h-screen bg-accent xl:justify-center xl:p-[120px] ${classname}`
       )}
     >
-      <div className="flex flex-col gap-6 px-4 py-12 md:py-14 md:gap-10 md:mx-auto max-w-lg ">
+      <div className="flex flex-col gap-6 px-4 py-12 mx-auto md:py-14 md:gap-10  max-w-lg ">
         <p className="txt-heading-small md:text-4xl xl:text-white">
           Fill out <span className="text-secondary">the questionnaire</span> and
           <span className="text-secondary"> see what POS works</span> best for

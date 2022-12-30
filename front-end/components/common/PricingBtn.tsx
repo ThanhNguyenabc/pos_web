@@ -1,8 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import React, { ReactElement } from "react";
-import { twMerge } from "tailwind-merge";
-import ColorUtils from "utils/ColorUtils";
 import { Button } from "./Button";
+
 interface PricingBtnProps {
   color?: string;
   logo: StaticImageData;
@@ -31,13 +30,11 @@ const PricingBtn = ({
       </div>
 
       <Button
-        classname="w-full rounded-none no-animation rounded-b-md md:p-5  md:h-[60px]"
-        type="SOLID_MEDIUM"
+        classname="w-full rounded-none no-animation rounded-b-sm md:p-5  md:h-[60px]"
         title="Get Started"
         onClick={onClick}
         style={{
           backgroundColor: color,
-          color: "white",
         }}
       />
     </div>

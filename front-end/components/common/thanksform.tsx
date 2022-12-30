@@ -20,7 +20,7 @@ const ThanksYouForm = () => {
         </svg>
       </div>
       <p className="txt-heading-xsmal">Thanks for filling out the form!</p>
-      <p className="txt-md  text-neutral-700">
+      <p className="txt-md  text-neutral-700 md:text-xl">
         We will review your information and get back to you in 1-2 business
         days.
       </p>

@@ -32,7 +32,7 @@ const ContactForm = ({
   onDataChanged,
 }: ContactFormProps) => {
   return (
-    <div className={`flex flex-col px-4 gap-6 ${classname}`}>
+    <div className={`flex flex-col gap-6 ${classname}`}>
       <Input
         label={nameTitle || "Your name"}
         inputProps={{

@@ -11,7 +11,7 @@ export const CreditCardVolume = () => {
       data={CreditCardVolumeData}
       itemBuilder={(item, index) => (
         <div className="p-4 border-neutral-300 ">
-          <p className="text-center txt-md-bold">{item}</p>
+          <p className="text-center txt-md-bold md:text-xl">{item}</p>
         </div>
       )}
       onItemSelected={(selectIndex) => {

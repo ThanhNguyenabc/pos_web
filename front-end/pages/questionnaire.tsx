@@ -114,14 +114,14 @@ const Questionnaire = () => {
             max={PAGES.length}
           />
 
-          <div className="w-full flex flex-col mb-6 p-4 gap-4 md:py-6 md:flex-row md:items-center md:gap-3">
+          <div className="w-full flex flex-col mb-6 p-4 gap-4 justify-center md:py-6 md:flex-row md:items-center md:gap-3">
             <IconButton
               onClick={backButton}
               classname={questionSate.cQuestionIndex > 0 ? "flex" : "hidden"}
             >
               <Image src={IcBack} alt="back" />
             </IconButton>
-            <p className="flex-1  txt-heading-xsmal text-center mr-10 md:text-3xl">
+            <p className="flex-1 txt-heading-xsmal text-center md:mr-10 md:text-3xl">
               {Questions[questionSate.cQuestionIndex]}
             </p>
           </div>

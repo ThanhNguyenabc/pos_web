@@ -30,7 +30,7 @@ interface TabListProps {
 const TabList = ({ tabList, onSelectedIndex }: TabListProps) => {
   const [selectIndex, setSelectIndex] = useState(0);
   return (
-    <div className="flex flex-row gap-4 overflow-auto  ">
+    <div className="flex flex-row gap-4 overflow-auto	">
       {tabList.map((item, index) => (
         <TabItem
           name={item}

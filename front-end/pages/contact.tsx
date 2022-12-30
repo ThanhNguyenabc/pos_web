@@ -1,9 +1,10 @@
-import { IcMail, IcPhone } from "assets/AssetUtil";
+import { IcLocation, IcMail, IcPhone } from "assets/AssetUtil";
 import { Button } from "components/common/Button";
 import ContactForm from "components/common/ContactForm";
 import Image, { StaticImageData } from "next/image";
 import React, { ReactElement } from "react";
 import ColorUtils from "utils/ColorUtils";
+import { IcLocation as ReactComponent } from "assets/AssetUtil";
 
 const ContactItem = ({
   icon,
@@ -114,12 +115,7 @@ const Contact = () => {
           showZipCode={true}
           classname=" px-0 mb-8"
         />
-        <Button
-          type="SOLID_MEDIUM"
-          title="Send Message"
-          classname="w-full"
-          background="bg-primary"
-        />
+        <Button title="Send Message" classname="w-full" />
       </div>
     </div>
   );
