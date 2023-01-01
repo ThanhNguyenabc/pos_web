@@ -40,11 +40,11 @@ const CommonQuestionData = [
 ];
 const CommonQuestion = () => {
   return (
-    <div className="flex flex-col px-4 py-12 gap-10">
-      <p className="txt-heading-small">
+    <div className="flex flex-col px-4 py-12 gap-10 md:px-8 mx-auto max-w-[768px] xl:py-[120px]">
+      <p className="txt-heading-small md:text-5xl md:font-extrabold">
         Common Questions About the Cash Discount Program
       </p>
-      <p className="txt-md text-neutral-700">
+      <p className="txt-md text-neutral-700 md:text-xl">
         Check out Frequently Asked Questions from other merchants just like you.
       </p>
 
@@ -56,8 +56,8 @@ const CommonQuestion = () => {
             <>
               <div className=" flex py-6 flex-row w-full items-start">
                 <div className="flex flex-1 flex-col gap-4">
-                  <p className="txt-md-bold">{item.title}</p>
-                  <p className={`${isSelect ? "flex" : "hidden"}`}>
+                  <p className="txt-md-bold md:text-xl">{item.title}</p>
+                  <p className={`${isSelect ? "flex" : "hidden"} md:text-xl`}>
                     {item.answer}
                   </p>
                 </div>

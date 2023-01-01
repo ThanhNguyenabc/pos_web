@@ -6,3 +6,4 @@ export const Contact = "/contact";
 export const FreePOS = "/freepos";
 export const POSReview = "/posreview";
 export const POSQuestionnaire = "/questionnaire";
+export const ProcessingFee = "/fee";

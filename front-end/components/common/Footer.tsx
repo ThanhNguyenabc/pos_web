@@ -2,7 +2,14 @@ import { FooterLogo, IcFb, IcInsta, IcLinkedLn } from "assets/AssetUtil";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { FreePOS, Home, POSQuestionnaire, About, Contact } from "utils/routes";
+import {
+  FreePOS,
+  Home,
+  POSQuestionnaire,
+  About,
+  Contact,
+  ProcessingFee,
+} from "utils/routes";
 
 const styles = {
   "footer-title": "font-semibold md:txt-lg-bold text-neutral-300",
@@ -35,7 +42,7 @@ const Footer = () => {
               <Link href={FreePOS} className="link link-hover">
                 Free POS
               </Link>
-              <Link href={Home} className="link link-hover">
+              <Link href={ProcessingFee} className="link link-hover">
                 0% Processing Fee
               </Link>
               <Link href={POSQuestionnaire} className="link link-hover">
