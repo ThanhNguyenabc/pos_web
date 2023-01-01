@@ -16,7 +16,7 @@ export const Button = ({
   leftIcon,
   rightIcon,
   onClick,
-  title: text,
+  title,
   classname = "",
   style,
 }: ButtonProps) => {
@@ -34,7 +34,7 @@ export const Button = ({
     >
       <div className="flex flex-row w-full h-auto items-center justify-center">
         {leftIcon && <div className="mr-2">{leftIcon}</div>}
-        {text}
+        {title}
         {rightIcon && <div className="ml-2">{rightIcon}</div>}
       </div>
     </button>

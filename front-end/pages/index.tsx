@@ -21,6 +21,7 @@ import RequestDemoPOS from "components/elements/request_demo_pos/RequestDemoPOS"
 import FindPOSModal from "components/elements/find_pos_modal/FindPOSModal";
 import POSDetail from "pages/posdetail";
 import { FreePOS, POSQuestionnaire } from "utils/routes";
+import ProcessingFee from "./fee";
 
 const FeatureData = ["24/7 Support", "Free training", "Seamless Installments"];
 
@@ -39,6 +40,7 @@ const Home = () => {
 
   return (
     <>
+      <ProcessingFee />
       <FindPOSModal />
       <div className="flex flex-col xl:flex-row bg-gradient-to-b from-[#FF5A22] to-[#FFA722]">
         <div className="flex flex-1 flex-col px-4 py-10 gap-4 md:gap-6 md:px-8 md:py-14 md:items-center xl:items-start xl:p-[120px]">
@@ -105,8 +107,7 @@ const Home = () => {
           <>
             <p className="txt-md md:text-xl text-neutral-700">
               We are flexible when it comes to working with any point-of-sale
-              company. Here&apos;s a list of our top providers in the
-              industry.
+              company. Here&apos;s a list of our top providers in the industry.
             </p>
             <Button
               title="POS Review"
@@ -133,12 +134,10 @@ const Home = () => {
           </>
         }
         title={
-          <>
-            <h3>
-              Real advice
-              <span className="text-secondary "> from real people</span>
-            </h3>
-          </>
+          <h3>
+            Real advice
+            <span className="text-secondary "> from real people</span>
+          </h3>
         }
         des={
           "Speak with a consultant today to find he best POS for your business"

@@ -97,7 +97,10 @@ const FreePOS = () => (
     >
       <div className="w-full grid grid-cols-2 gap-10 md:gap-16 xl:grid-cols-4 xl:gap-8">
         {FeatureData.map((item, index) => (
-          <div key={`feature-item-${index}`} className="flex-1 gap-4 md:gap-6 flex flex-col items-center flex-grow self-stretch">
+          <div
+            key={`feature-item-${index}`}
+            className="flex-1 gap-4 md:gap-6 flex flex-col items-center flex-grow self-stretch"
+          >
             <Image
               src={item.image}
               alt=""
@@ -128,7 +131,10 @@ const FreePOS = () => (
       >
         <div className=" flex flex-col gap-4 md:gap-6">
           {ThreeStep.map((item, index) => (
-            <div key={`step-${index}`} className="card bg-base-100 drop-shadow-lg">
+            <div
+              key={`step-${index}`}
+              className="card bg-base-100 drop-shadow-lg"
+            >
               <div className="card-body p-4 flex-row txt-sm md:text-xl gap-6">
                 <div
                   className={`[box-shadow:0px_0px_0px_1px_rgba(208,_213,_221,_1)_inset] [box-shadow-width:1px] 

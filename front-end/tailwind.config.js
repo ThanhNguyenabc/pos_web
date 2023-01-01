@@ -26,6 +26,9 @@ module.exports = {
           900: "#101828",
           dark: "#020202",
         },
+        green: {
+          100: "#D1FADF",
+        },
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],

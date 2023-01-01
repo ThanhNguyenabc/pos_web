@@ -1,4 +1,6 @@
 // export images
+import React from "react";
+
 export { default as Logo } from "./images/logo.jpg";
 export { default as FooterLogo } from "./images/bestpos.png";
 export { default as BannerImage } from "./images/pos.png";
@@ -54,3 +56,7 @@ export { default as IcFreePOS } from "./icons/ic_pos_free.svg";
 export { default as IcCheckbox } from "./icons/ic_checkbox.svg";
 export { default as IcLocation } from "./icons/ic_location.svg";
 export { default as IcMail } from "./icons/ic_mail.svg";
+export { default as IcChat } from "./icons/ic_chat.svg";
+export { default as IcSupport } from "./icons/ic_support.svg";
+export { default as IcPayZero } from "./icons/ic_pay_zero.svg";
+export { default as IcServiceFee } from "./icons/ic_service_fee.svg";
