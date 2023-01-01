@@ -10,8 +10,11 @@ import MetricSection from "components/common/MetricSection";
 import FeatureForFee from "components/elements/fee/FeatureForFee";
 import ReceiptOptionSection from "components/elements/fee/ReceiptOptionSection";
 import CommonQuestion from "components/elements/fee/CommonQuestion";
+import { useRouter } from "next/router";
+import { Contact } from "utils/routes";
 
 const ProcessingFee = () => {
+  const router = useRouter();
   return (
     <div className="flex flex-col">
       <div className="flex flex-col bg-green-100 xl:flex-row">
@@ -58,7 +61,7 @@ const ProcessingFee = () => {
           title="Contact US Today!"
           isOutLine
           rightIcon={<Image src={IcRightArrow} alt="icon" />}
-          onClick={() => document.getElementById(RequestDemoModalId)?.click()}
+          onClick={() => router.push(Contact)}
         />
       </div>
       <FeatureForFee />
@@ -72,7 +75,7 @@ const ProcessingFee = () => {
           { title: "50", content: "Available in all 50 states" },
         ]}
       />
-      <CommonQuestion  />
+      <CommonQuestion />
       <FooterCTA
         background="bg-green-100"
         actions={
