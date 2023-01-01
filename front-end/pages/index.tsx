@@ -40,7 +40,6 @@ const Home = () => {
 
   return (
     <>
-      <ProcessingFee />
       <FindPOSModal />
       <div className="flex flex-col xl:flex-row bg-gradient-to-b from-[#FF5A22] to-[#FFA722]">
         <div className="flex flex-1 flex-col px-4 py-10 gap-4 md:gap-6 md:px-8 md:py-14 md:items-center xl:items-start xl:p-[120px]">
