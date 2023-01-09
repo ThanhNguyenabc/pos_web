@@ -1,7 +1,8 @@
 import SelectedList from "components/common/SelectedList";
 import React from "react";
+import { CreditCardVolumeData } from "utils/StringUtil";
 import { FindPOSModalContext } from "./FindPOSModal";
-const CreditCardVolumeData = ["$10K - $49k", "$50K - $149k", "$150+"];
+
 
 export const CreditCardVolume = () => {
   const value = React.useContext(FindPOSModalContext);

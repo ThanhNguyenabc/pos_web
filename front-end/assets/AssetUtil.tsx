@@ -28,7 +28,7 @@ export { default as Station3Img } from "./images/station_3.jpg";
 export { default as HandHeld1Img } from "./images/handheld_1.jpg";
 export { default as HandHeld2Img } from "./images/handheld_2.jpg";
 export { default as HandHeld3Img } from "./images/handheld_3.jpg";
-export { default as BreadMeImg } from "./images/breadme.jpg";
+export { default as BreadMeImg } from "./images/breadme.png";
 export { default as ToastImg } from "./images/toast.png";
 export { default as RevelImg } from "./images/revel_img.jpg";
 export { default as OvviImg } from "./images/ovvi.jpg";

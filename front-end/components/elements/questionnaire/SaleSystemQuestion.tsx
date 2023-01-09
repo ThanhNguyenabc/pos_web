@@ -1,8 +1,7 @@
 import SelectedList from "components/common/SelectedList";
 import { QuestionnaireContext } from "pages/questionnaire";
 import React from "react";
-
-const SaleSystemData = ["Yes", "No"];
+import { YesNoQuestion } from "utils/StringUtil";
 
 const SaleSystemQuestion = () => {
   const value = React.useContext(QuestionnaireContext);
@@ -10,7 +9,7 @@ const SaleSystemQuestion = () => {
   return (
     <SelectedList
       selectIndex={value.questionData?.isOwnSaleSystemIndex}
-      data={SaleSystemData}
+      data={YesNoQuestion}
       itemclassname={"md:max-w-lg"}
       itemBuilder={(item, index) => (
         <div className="p-4 border-neutral-300 ">

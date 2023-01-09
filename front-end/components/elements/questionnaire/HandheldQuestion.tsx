@@ -10,21 +10,9 @@ import React from "react";
 import SelectedList from "../../common/SelectedList";
 import Image from "next/image";
 import { QuestionnaireContext } from "pages/questionnaire";
+import { HandHeldData } from "utils/StringUtil";
 
-export const HandHeldData = [
-  {
-    icon: HandHeld1Img,
-    content: "1 handhelds",
-  },
-  {
-    icon: HandHeld2Img,
-    content: "2-3 handhelds",
-  },
-  {
-    icon: HandHeld3Img,
-    content: "4+ handhelds",
-  },
-];
+
 
 const HandHeldQuestion = () => {
   const value = React.useContext(QuestionnaireContext);

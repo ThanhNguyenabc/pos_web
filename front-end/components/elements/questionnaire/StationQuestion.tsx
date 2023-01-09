@@ -3,21 +3,7 @@ import React from "react";
 import SelectedList from "../../common/SelectedList";
 import Image from "next/image";
 import { QuestionnaireContext } from "pages/questionnaire";
-
-export const StationData = [
-  {
-    icon: Station1Img,
-    content: "1 station",
-  },
-  {
-    icon: Station2Img,
-    content: "2-3 stations",
-  },
-  {
-    icon: Station3Img,
-    content: "4+ stations",
-  },
-];
+import { StationData } from "utils/StringUtil";
 
 const StationQuestion = () => {
   const value = React.useContext(QuestionnaireContext);
