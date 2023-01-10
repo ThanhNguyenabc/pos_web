@@ -1,5 +1,4 @@
-import { IcMail, IcPhone } from "assets/AssetUtil";
-import Image from "next/image";
+import { IcCheck, IcMail, IcPhone } from "assets/AssetUtil";
 import React from "react";
 
 const ThanksYouForm = () => {
@@ -28,13 +27,13 @@ const ThanksYouForm = () => {
         If you would like to learn more, feel free to contact us at
       </p>
       <div className="flex flex-row txt-sm font-medium  gap-4">
-        <div className="flex flex-row items-center gap-2">
-          <Image src={IcPhone} alt="phone" />
+        <div className="flex flex-row items-center gap-3">
+          <IcPhone className=" text-[20px] " />
           <p className="txt-sm-link font-medium">(888) 410-2188</p>
         </div>
         <p className="txt-sm font-medium">or</p>
-        <div className="flex flex-row items-center gap-2">
-          <Image src={IcMail} alt="mail" />
+        <div className="flex flex-row items-center gap-3">
+          <IcMail className=" text-[20px] " />
           <p className="txt-sm-link font-medium">info@bestpos.com</p>
         </div>
         <div></div>
