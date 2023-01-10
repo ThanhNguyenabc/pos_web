@@ -24,7 +24,7 @@ const PricingBtn = ({
       }}
     >
       <div className="flex flex-col p-2 gap-1 items-center md:py-4">
-        <Image src={logo} className="w-20 h-10" alt="" />
+        <Image src={logo} className="w-[100px] h-10 object-contain " alt="" />
         <p className="text-sm text-neutral-700 md:text-base ">{title}</p>
         <p className="text-md-bold text-neutral-900 md:text-xl">{desc}</p>
       </div>
