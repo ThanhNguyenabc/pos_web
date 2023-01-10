@@ -2,27 +2,34 @@ import { IcChervonRight, IcClose, IcMobileLogo } from "assets/AssetUtil";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { About, Blog, Contact, FreePOS, Home, POSReview } from "utils/routes";
+import {
+  AboutPage,
+  BlogPage,
+  ContactPage,
+  FreePOSPage,
+  HomePage,
+  POSReviewPage,
+} from "utils/routes";
 
 export const Menu = {
   home: {
-    route: Home,
+    route: HomePage,
     title: "Home",
   },
   freepos: {
-    route: FreePOS,
+    route: FreePOSPage,
     title: "Free POS",
   },
   posreview: {
-    route: POSReview,
+    route: POSReviewPage,
     title: "POS Reviews",
   },
   contact: {
-    route: Contact,
+    route: ContactPage,
     title: "Contact",
   },
   about: {
-    route: About,
+    route: AboutPage,
     title: "About",
   },
   // blog: {
@@ -48,7 +55,7 @@ const MainMenuItem = ({
         className=" flex justify-between txt-large-bold"
       >
         {title}
-        <Image src={IcChervonRight} alt="arrow" />
+        <IcChervonRight className="text-[12px]" />
       </Link>
     </li>
   );
@@ -84,10 +91,9 @@ const MenuDrawer = ({ onClose }: MenuDrawerProps) => {
   return (
     <div className="flex-column bg-base-100 ">
       <div className="flex justify-between py-5 px-4">
-        <Image src={IcMobileLogo} alt="logo-icon" />
-
+        <IcMobileLogo className="text-2xl" />
         <button onClick={onClose}>
-          <Image src={IcClose} alt="" />
+          <IcClose />
         </button>
       </div>
       <ul className="menu w-full border-y-2 border-neutral-200 py-9 ">

@@ -6,7 +6,7 @@ import { Button } from "./Button";
 import MenuDrawer, { Menu } from "./MenuDrawer";
 import "react-modern-drawer/dist/index.css";
 import Drawer from "react-modern-drawer";
-import { POSQuestionnaire } from "utils/routes";
+import { QuestionnairePage } from "utils/routes";
 import { useRouter } from "next/router";
 
 const Header = () => {
@@ -69,7 +69,7 @@ const Header = () => {
         <Button
           title="Find your POS"
           classname="hidden md:block ml-10 md:h-12 md:text-base"
-          onClick={() => router.push(POSQuestionnaire)}
+          onClick={() => router.push(QuestionnairePage)}
         />
       </div>
     </div>

@@ -9,7 +9,8 @@ interface SelectedList<T extends object | string> {
   itemBuilder: (item: T, index: number) => ReactElement;
   onItemSelected?: (index: number) => void;
   classname?: string;
-  itemclassname?: string;
+  itemListClassName?: string;
+  selectBorderColor?: string;
 }
 
 const SelectedList = <T extends object | string>({
@@ -17,8 +18,9 @@ const SelectedList = <T extends object | string>({
   onItemSelected,
   itemBuilder,
   classname = "",
-  itemclassname = "",
+  itemListClassName = "",
   selectIndex = -1,
+  selectBorderColor = "border-secondary",
 }: SelectedList<T>) => {
   const [cindex, setIndex] = useState<number>(selectIndex);
 
@@ -30,7 +32,7 @@ const SelectedList = <T extends object | string>({
   return (
     <div
       className={twMerge(
-        `grid grid-cols-1 gap-4 px-4 items-center justify-center md:gap-6 ${classname} }`
+        `grid grid-cols-1 gap-4 items-center justify-center ${classname} }`
       )}
     >
       {data.map((item: T, index) => {
@@ -38,9 +40,9 @@ const SelectedList = <T extends object | string>({
           <div
             key={`item-${index}`}
             className={twMerge(
-              `w-full card border-2 cursor-pointer mx-auto hover:border-secondary ${
-                cindex == index ? "border-secondary" : "border-neutral-100"
-              } ${itemclassname}`
+              `w-full card border-2 cursor-pointer  hover:border-secondary border-neutral-300 ${
+                cindex == index ? selectBorderColor : ""
+              }  ${itemListClassName}`
             )}
             onClick={() => onItemClick(index)}
           >

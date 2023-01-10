@@ -20,6 +20,7 @@ interface ContactFormProps {
   showMessage?: boolean;
   onDataChanged?: (info: ContactInfo) => {};
   classname?: string;
+  focusColor?: string;
 }
 
 const ContactForm = ({
@@ -30,10 +31,12 @@ const ContactForm = ({
   phoneTitle,
   classname,
   onDataChanged,
+  focusColor,
 }: ContactFormProps) => {
   return (
     <div className={`flex flex-col gap-6 ${classname}`}>
       <Input
+        focusColor={focusColor}
         label={nameTitle || "Your name"}
         inputProps={{
           onChange: (data) => {},
@@ -41,6 +44,7 @@ const ContactForm = ({
       />
       {showEmail && (
         <Input
+          focusColor={focusColor}
           label="Email"
           inputProps={{
             type: "email",
@@ -50,6 +54,7 @@ const ContactForm = ({
       )}
       <div className="flex flex-row gap-6">
         <Input
+          focusColor={focusColor}
           label={phoneTitle || "Your Phone number"}
           leftIcon={<IcAmericanFlag className="text-2xl" />}
           inputProps={{
@@ -59,6 +64,7 @@ const ContactForm = ({
         />
         {showZipCode && (
           <Input
+            focusColor={focusColor}
             label="Zip Code"
             inputProps={{
               maxLength: 5,

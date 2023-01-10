@@ -3,9 +3,15 @@ interface InputProps {
   label?: string;
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
   leftIcon?: ReactElement;
+  focusColor?: string;
 }
 
-const Input = ({ label, inputProps: inputprops, leftIcon }: InputProps) => {
+const Input = ({
+  label,
+  inputProps: inputprops,
+  leftIcon,
+  focusColor,
+}: InputProps) => {
   return (
     <div className="form-control w-full relative">
       {label && (
@@ -18,7 +24,7 @@ const Input = ({ label, inputProps: inputprops, leftIcon }: InputProps) => {
       )}
       <input
         {...inputprops}
-        className={`input input-bordered input-secondary w-full p-3 ${
+        className={`input input-bordered input-secondary ${focusColor} w-full p-3 ${
           leftIcon ? "pl-12" : ""
         }`}
       />
