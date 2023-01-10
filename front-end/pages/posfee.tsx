@@ -11,7 +11,7 @@ import FeatureForFee from "components/elements/fee/FeatureForFee";
 import ReceiptOptionSection from "components/elements/fee/ReceiptOptionSection";
 import CommonQuestion from "components/elements/fee/CommonQuestion";
 import { useRouter } from "next/router";
-import { Contact } from "utils/routes";
+import { BreadmePage, ContactPage } from "utils/routes";
 
 const ProcessingFee = () => {
   const router = useRouter();
@@ -35,9 +35,7 @@ const ProcessingFee = () => {
             <Button
               title="Get Started Now"
               style={{ background: ColorUtils.success }}
-              onClick={() =>
-                document.getElementById(RequestDemoModalId)?.click()
-              }
+              onClick={() => router.push(BreadmePage)}
             />
             <Button
               title="Request a Demo"
@@ -61,7 +59,7 @@ const ProcessingFee = () => {
           title="Contact US Today!"
           isOutLine
           rightIcon={<Image src={IcRightArrow} alt="icon" />}
-          onClick={() => router.push(Contact)}
+          onClick={() => router.push(ContactPage)}
         />
       </div>
       <FeatureForFee />
@@ -82,7 +80,7 @@ const ProcessingFee = () => {
           <Button
             title="Get Started Now"
             style={{ background: ColorUtils.success }}
-            onClick={() => {}}
+            onClick={() => router.push(BreadmePage)}
           />
         }
         title={

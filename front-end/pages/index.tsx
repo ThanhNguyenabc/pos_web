@@ -3,6 +3,7 @@ import {
   IcApple,
   IcCheck,
   IcCheckbox,
+  IcPhone,
   IcRightArrow,
   RevelImg,
 } from "assets/AssetUtil";
@@ -20,8 +21,10 @@ import QuestionnaireSuccess from "components/elements/questionnaire/Questionnair
 import RequestDemoPOS from "components/elements/request_demo_pos/RequestDemoPOS";
 import FindPOSModal from "components/elements/find_pos_modal/FindPOSModal";
 import POSDetail from "pages/posdetail";
-import { FreePOS, POSQuestionnaire } from "utils/routes";
-import ProcessingFee from "./fee";
+import { FreePOSPage, QuestionnairePage } from "utils/routes";
+import ProcessingFee from "./posfee";
+import BreadmeIntroduction from "components/elements/breadme/BreadmeIntroduction";
+import ThanksYouForm from "components/common/thanksform";
 
 const FeatureData = ["24/7 Support", "Free training", "Seamless Installments"];
 
@@ -30,12 +33,12 @@ const Home = () => {
 
   const findPOS = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    router.push(POSQuestionnaire);
+    router.push(QuestionnairePage);
   };
 
   const getPOSFree = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    router.push(FreePOS);
+    router.push(FreePOSPage);
   };
 
   return (
@@ -65,7 +68,7 @@ const Home = () => {
               title="Get POS for free"
               style={{ background: "white", color: "black" }}
               onClick={getPOSFree}
-              rightIcon={<Image height={13} src={IcRightArrow} alt="" />}
+              rightIcon={<IcRightArrow className=" text-xl " />}
             />
           </div>
         </div>
@@ -78,9 +81,9 @@ const Home = () => {
           return (
             <div
               key={`${index}-feature`}
-              className="flex flex-col justify-center  md:flex-row items-center gap-2 md:gap-3"
+              className="flex flex-col md:flex-row items-center gap-2 md:gap-3 mx-auto"
             >
-              <Image src={IcCheck} alt="" />
+              <IcCheck className="text-xl text-secondary" />
               <p className="txt-sm-bold md:text-base text-neutral-700 text-center">
                 {item}
               </p>
@@ -111,7 +114,7 @@ const Home = () => {
             <Button
               title="POS Review"
               isOutLine={true}
-              rightIcon={<Image height={13} src={IcRightArrow} alt="" />}
+              rightIcon={<IcRightArrow className=" text-xl " />}
             />
           </>
         }

@@ -1,9 +1,10 @@
-import { IcBack } from "assets/AssetUtil";
+import { BreadMeImg, IcBack } from "assets/AssetUtil";
 import IconButton from "components/common/IconButton";
 import Introduction from "components/elements/questionnaire/Introduction";
 import SelectedList from "components/common/SelectedList";
 import StationQuestion from "components/elements/questionnaire/StationQuestion";
 import StepView from "components/elements/questionnaire/StationQuestion";
+import Image from "next/image";
 import React, { useState } from "react";
 import BusinessQuestion from "components/elements/questionnaire/BusinessQuestion";
 import SaleSystemQuestion from "components/elements/questionnaire/SaleSystemQuestion";
@@ -12,49 +13,57 @@ import ContactForm, { ContactInfo } from "components/common/ContactForm";
 import CashDiscountQuestion from "components/elements/questionnaire/CashDiscountQuestion";
 import { Button } from "components/common/Button";
 import QuestionnaireSuccess from "components/elements/questionnaire/QuestionnaireSuccess";
+import BreadmeIntroduction from "components/elements/breadme/BreadmeIntroduction";
+import BreadmeCreditCard from "components/elements/breadme/BreadmeCreditCard";
+import BreadmeDiscountQuestion from "components/elements/breadme/BreadmeDiscount";
+import BreadmeStation from "components/elements/breadme/BreadmeStation";
+import BreadmeSaleSystem from "components/elements/breadme/BreadmeSaleSystem";
+import BreadmeContact from "components/elements/breadme/BreadmeContact";
+import ThanksYouForm from "components/common/thanksform";
 
-type QuestionnaireState = {
+type BreadmeState = {
   showQuestions: boolean;
   cQuestionIndex: number;
-  questionData?: QuestionData;
-  setQuestionData: (data: QuestionData) => void;
+  questionData?: BreadmeData;
+  setQuestionData: (data: BreadmeData) => void;
 };
-export const QuestionnaireContext = React.createContext<QuestionnaireState>({
+
+export const BreadmeContext = React.createContext<BreadmeState>({
   showQuestions: false,
   cQuestionIndex: 0,
   setQuestionData: () => {},
 });
 
 const Questions = [
-  "What best describes your business?",
-  "Do you currently own a point of sale system?",
-  "How many stations do you require?",
-  "How many handhelds do you require?",
+  "What’s your total credit card processing volume?",
   "Are you currently on the cash discount program?",
-  "Connect today!",
+  "How many stations are you looking for?",
+  "What point of sale system do you currently use?",
+  "How us contact to you?",
+  "",
 ];
 
 const PAGES = [
-  <BusinessQuestion key={`business-key`} />,
-  <SaleSystemQuestion key={`salesystem-key`} />,
-  <StationQuestion key={`station-key`} />,
-  <HandHeldQuestion key={`handheld-key`} />,
-  <CashDiscountQuestion key={`discount-key`} />,
-  <ContactForm key={`contact-key`} classname="px-4" />,
+  <BreadmeCreditCard key={"breadme-credit-card"} />,
+  <BreadmeDiscountQuestion key={"breadme-discount"} />,
+  <BreadmeStation key={"breadme-station"} />,
+  <BreadmeSaleSystem key={"breadme-sale-system"} />,
+  <BreadmeContact />,
+  <ThanksYouForm />,
 ];
 
-interface QuestionData {
-  businessId?: number;
-  numberStationIndex?: number;
-  handHeldIndex?: number;
-  contacInfo?: ContactInfo;
+interface BreadmeData {
+  creditCardVolumnId?: number;
   isDiscountIndex?: number;
-  isOwnSaleSystemIndex?: number;
+  numberStationIndex?: number;
+  saleSystemIndex?: number;
+  otherSaleSystem?: string;
+  contacInfo?: ContactInfo;
 }
 
 const Questionnaire = () => {
   const [isSubmit, setSubmit] = useState(false);
-  const updateQuestionData = (data: QuestionData) => {
+  const updateQuestionData = (data: BreadmeData) => {
     setQuestionState((preState) => ({
       ...preState,
       questionData: data,
@@ -62,7 +71,7 @@ const Questionnaire = () => {
     }));
   };
 
-  const [questionSate, setQuestionState] = useState<QuestionnaireState>({
+  const [questionSate, setQuestionState] = useState<BreadmeState>({
     showQuestions: false,
     cQuestionIndex: 0,
     setQuestionData: updateQuestionData,
@@ -89,56 +98,51 @@ const Questionnaire = () => {
   };
 
   return (
-    <QuestionnaireContext.Provider value={questionSate}>
+    <BreadmeContext.Provider value={questionSate}>
       <div
-        className={`flex w-full flex-1 flex-col min-h-screen xl:flex-row ${
-          isSubmit ? "hidden" : "flex"
+        className={`flex w-full flex-1 flex-col xl:flex-row ${
+          isSubmit ? "hidden" : ""
         }`}
       >
-        <Introduction
-          classname={`flex-1 hidden xl:flex xl:bg-gradient-to-b  xl:from-[#FF5A22] xl:to-[#FFA722] ${
+        <div
+          className={`${
             questionSate.showQuestions ? "hidden" : "flex"
-          }`}
-          onStart={onStart}
-        />
-
+          } flex-1 xl:flex xl:bg-green-100`}
+        >
+          <BreadmeIntroduction onStart={onStart} />
+        </div>
         <div
           className={`${
             questionSate.showQuestions ? "flex" : "hidden"
-          } xl:flex w-full flex-1 flex-col`}
+          } xl:flex flex-1 flex-col`}
         >
           <progress
-            className="progress progress-secondary w-full md:h-4"
+            className="progress progress-success w-full md:h-4"
             value={questionSate.cQuestionIndex + 1}
             max={PAGES.length}
           />
-
-          <div className="w-full flex flex-col mb-6 p-4 gap-4 justify-center md:py-6 md:flex-row md:items-center md:gap-3">
-            <IconButton
-              onClick={backButton}
-              classname={questionSate.cQuestionIndex > 0 ? "flex" : "hidden"}
-            >
-              <IcBack className="text-xl" />
+          <div className="w-full flex flex-row items-center justify-center p-4">
+            <IconButton onClick={backButton} classname="">
+              <IcBack />
             </IconButton>
-            <p className="flex-1 txt-heading-xsmal text-center md:mr-10 md:text-3xl">
+            <div className="flex-1 flex justify-center">
+              <Image
+                src={BreadMeImg}
+                className="h-10 object-contain self-center "
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="flex flex-col max-w-lg w-full mx-auto px-4 py-6 gap-6 md:gap-20">
+            <p className="flex-1 txt-heading-xsmal text-center md:text-3xl">
               {Questions[questionSate.cQuestionIndex]}
             </p>
-          </div>
-
-          <div className="flex flex-col max-w-lg w-full self-center pb-6">
             {PAGES[questionSate.cQuestionIndex]}
-            <Button
-              title="Submit"
-              classname={`mx-4 mt-16 h-16 hidden ${
-                questionSate.cQuestionIndex == PAGES.length - 1 ? "flex" : ""
-              } md:h-16 md:text-xl`}
-              onClick={onSubmit}
-            />
           </div>
         </div>
       </div>
       <QuestionnaireSuccess classname={`${isSubmit ? "flex" : "hidden"}`} />
-    </QuestionnaireContext.Provider>
+    </BreadmeContext.Provider>
   );
 };
 

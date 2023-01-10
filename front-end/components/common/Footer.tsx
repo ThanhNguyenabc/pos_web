@@ -3,12 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import {
-  FreePOS,
-  Home,
-  POSQuestionnaire,
-  About,
-  Contact,
-  ProcessingFee,
+  FreePOSPage,
+  HomePage,
+  QuestionnairePage,
+  AboutPage,
+  ContactPage,
+  ProcessingFeePage,
 } from "utils/routes";
 
 const styles = {
@@ -39,28 +39,28 @@ const Footer = () => {
             </div>
             <div className={`${styles["footer-section"]} grid-cols-1`}>
               <span className={styles["footer-title"]}>Resources</span>
-              <Link href={FreePOS} className="link link-hover">
+              <Link href={FreePOSPage} className="link link-hover">
                 Free POS
               </Link>
-              <Link href={ProcessingFee} className="link link-hover">
+              <Link href={ProcessingFeePage} className="link link-hover">
                 0% Processing Fee
               </Link>
-              <Link href={POSQuestionnaire} className="link link-hover">
+              <Link href={QuestionnairePage} className="link link-hover">
                 Questionnaire
               </Link>
-              <Link href={Home} className="link link-hover">
+              <Link href={HomePage} className="link link-hover">
                 Partner
               </Link>
             </div>
             <div className={`${styles["footer-section"]} grid-cols-1`}>
               <span className={styles["footer-title"]}>Company</span>
-              <Link href={About} className="link link-hover">
+              <Link href={AboutPage} className="link link-hover">
                 About us
               </Link>
-              <Link href={Contact} className="link link-hover">
+              <Link href={ContactPage} className="link link-hover">
                 Contact
               </Link>
-              <Link href={POSQuestionnaire} className="link link-hover">
+              <Link href={QuestionnairePage} className="link link-hover">
                 Questionnaire
               </Link>
             </div>
