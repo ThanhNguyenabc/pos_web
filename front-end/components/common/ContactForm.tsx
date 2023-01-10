@@ -19,7 +19,7 @@ interface ContactFormProps {
   showZipCode?: boolean;
   showMessage?: boolean;
   onDataChanged?: (info: ContactInfo) => {};
-  classname?: string
+  classname?: string;
 }
 
 const ContactForm = ({
@@ -43,6 +43,7 @@ const ContactForm = ({
         <Input
           label="Email"
           inputProps={{
+            type: "email",
             onChange: (data) => {},
           }}
         />
@@ -50,7 +51,7 @@ const ContactForm = ({
       <div className="flex flex-row gap-6">
         <Input
           label={phoneTitle || "Your Phone number"}
-          leftIcon={<Image src={IcAmericanFlag} alt="flag" />}
+          leftIcon={<IcAmericanFlag className="text-2xl" />}
           inputProps={{
             type: "tel",
             onChange: (data) => {},

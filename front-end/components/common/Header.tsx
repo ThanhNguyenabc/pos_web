@@ -29,10 +29,10 @@ const Header = () => {
           <MenuDrawer onClose={toggleDrawer} />
         </Drawer>
         <button className="py-2 mr-5 xl:hidden" onClick={toggleDrawer}>
-          <Image src={IcMenu} alt="" id="my-drawer" />
+          <IcMenu className="text-2xl" />
         </button>
         <Link href={Menu["home"].route}>
-          <Image src={IcMobileLogo} alt="" className="block md:hidden" />
+          <IcMobileLogo className="block md:hidden" />
           <Image
             src={Logo}
             width={150}
@@ -61,7 +61,7 @@ const Header = () => {
         </li>
       </ul>
       <div className="flex flex-row justify-center items-center">
-        <Image src={IcPhone} alt="" width={18} height={18} />
+        <IcPhone className="text-lg" />
         <div className="ml-4">
           <p className="txt-sm text-neutral-600">Support 24/7</p>
           <p className="txt-md-bold xl:text-xl">1-888-410-2188</p>
