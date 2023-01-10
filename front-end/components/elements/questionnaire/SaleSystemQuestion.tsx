@@ -10,7 +10,7 @@ const SaleSystemQuestion = () => {
     <SelectedList
       selectIndex={value.questionData?.isOwnSaleSystemIndex}
       data={YesNoQuestion}
-      itemclassname={"md:max-w-lg"}
+      itemListClassName={"md:max-w-lg"}
       itemBuilder={(item, index) => (
         <div className="p-4 border-neutral-300 ">
           <p className="text-center txt-md-bold">{item}</p>

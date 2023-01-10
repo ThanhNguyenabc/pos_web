@@ -4,15 +4,13 @@ import {
   HandHeld3Img,
   Station1Img,
   Station2Img,
-  Station3Img,
+  Station4Img,
 } from "assets/AssetUtil";
 import React from "react";
 import SelectedList from "../../common/SelectedList";
 import Image from "next/image";
 import { QuestionnaireContext } from "pages/questionnaire";
 import { HandHeldData } from "utils/StringUtil";
-
-
 
 const HandHeldQuestion = () => {
   const value = React.useContext(QuestionnaireContext);

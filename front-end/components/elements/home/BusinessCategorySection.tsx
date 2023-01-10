@@ -11,7 +11,7 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "components/common/Button";
 import { useRouter } from "next/router";
-import { POSReview } from "utils/routes";
+import { POSReviewPage } from "utils/routes";
 
 export const Categories = [
   {
@@ -54,10 +54,8 @@ const BusinessCategorySection = () => {
           <Button
             title="View all"
             isOutLine={true}
-            rightIcon={
-              <Image className="ml-2.5" src={IcRightArrow} alt="view all" />
-            }
-            onClick={() => router.push(POSReview)}
+            rightIcon={<IcRightArrow className="ml-2.5 text-xl" />}
+            onClick={() => router.push(POSReviewPage)}
           />
         </div>
       </div>
@@ -65,7 +63,10 @@ const BusinessCategorySection = () => {
       <div className="grid grid-cols-2 md:grid-cols-3  gap-4 md:gap-8  xl:grid-cols-6">
         {Categories.map((item, index) => {
           return (
-            <div className="card items-center p-4 bg-neutral-100 md:p-6" key={`category-${index}`}>
+            <div
+              className="card items-center p-4 bg-neutral-100 md:p-6"
+              key={`category-${index}`}
+            >
               <Image src={item.link} alt="pizza" width={120} />
               <div className="flex justify-items-center items-center h-full mt-2">
                 <h2 className="txt-md-bold  text-center ">{item.name}</h2>
@@ -80,9 +81,7 @@ const BusinessCategorySection = () => {
           classname="w-full"
           title="View all"
           isOutLine={true}
-          rightIcon={
-            <Image className="ml-2.5" src={IcRightArrow} alt="view all" />
-          }
+          rightIcon={<IcRightArrow className="ml-2.5 text-xl" />}
         />
       </div>
     </div>

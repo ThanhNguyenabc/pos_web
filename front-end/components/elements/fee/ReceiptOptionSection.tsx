@@ -1,10 +1,13 @@
 import { POS2Img } from "assets/AssetUtil";
 import { Button } from "components/common/Button";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React from "react";
 import ColorUtils from "utils/ColorUtils";
+import { BreadmePage } from "utils/routes";
 
 const ReceiptOptionSection = () => {
+  const router = useRouter();
   return (
     <div className="flex flex-col xl:flex-row-reverse">
       <div className="flex flex-1 flex-col px-4 py-12 gap-8 md:px-8 md:py-14 xl:p-[120px]">
@@ -21,6 +24,7 @@ const ReceiptOptionSection = () => {
           title="Get Started Now"
           classname="w-fit"
           style={{ background: ColorUtils.success }}
+          onClick={() => router.push(BreadmePage)}
         />
       </div>
       <div className="flex flex-1">
