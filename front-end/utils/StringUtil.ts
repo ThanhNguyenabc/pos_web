@@ -11,7 +11,8 @@ import {
   HandHeld3Img,
   Station1Img,
   Station2Img,
-  Station3Img,
+  Station4Img,
+  Station5Img,
 } from "assets/AssetUtil";
 
 export const BreakPoints = {
@@ -23,6 +24,22 @@ export const BreakPoints = {
 
 export const YesNoQuestion = ["Yes", "No"];
 export const CreditCardVolumeData = ["$10K - $50k", "$50K - $150k", "$150+"];
+
+export const BreadmeCreditCardVolumeData = [
+  "$25K - $50K",
+  "$50K - $100K",
+  "$100K - $150K",
+  "$150K+",
+];
+
+export const SaleSystem = [
+  "Revel System",
+  "Clover",
+  "Exatouch",
+  "Lightspeed",
+  "Aldelo Express",
+  "Other",
+];
 
 export const HandHeldData = [
   {
@@ -49,11 +66,25 @@ export const StationData = [
     content: "2-3 stations",
   },
   {
-    icon: Station3Img,
+    icon: Station4Img,
     content: "4+ stations",
   },
 ];
 
+export const BreadmeStationData = [
+  {
+    icon: Station2Img,
+    content: "0-3 stations",
+  },
+  {
+    icon: Station4Img,
+    content: "3-5 stations",
+  },
+  {
+    icon: Station5Img,
+    content: "5+ stations",
+  },
+];
 export const MockupData = [
   {
     logo: RevelImg,

@@ -11,7 +11,7 @@ const IconButton = ({ classname, children, onClick }: IconButtonProps) => {
     <button
       onClick={onClick}
       className={twMerge(
-        `btn btn-circle btn-outline hover:bg-white p-3 border-neutral-300 ${classname}`
+        ` text-neutral-900 btn btn-circle bg-white btn-outline p-3 border-neutral-300 ${classname}`
       )}
     >
       {children}
