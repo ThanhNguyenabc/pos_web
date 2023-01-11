@@ -11,10 +11,15 @@ import FeatureForFee from "components/elements/fee/FeatureForFee";
 import ReceiptOptionSection from "components/elements/fee/ReceiptOptionSection";
 import CommonQuestion from "components/elements/fee/CommonQuestion";
 import { useRouter } from "next/router";
-import { BreadmePage, ContactPage } from "utils/routes";
+import AppRoutes from "utils/routes";
 
 const ProcessingFee = () => {
   const router = useRouter();
+
+  const toBreadmePage = () => {
+    router.push(AppRoutes.BreadmePage);
+  };
+
   return (
     <div className="flex flex-col">
       <div className="flex flex-col bg-green-100 xl:flex-row">
@@ -35,7 +40,7 @@ const ProcessingFee = () => {
             <Button
               title="Get Started Now"
               style={{ background: ColorUtils.success }}
-              onClick={() => router.push(BreadmePage)}
+              onClick={toBreadmePage}
             />
             <Button
               title="Request a Demo"
@@ -58,8 +63,8 @@ const ProcessingFee = () => {
         <Button
           title="Contact US Today!"
           isOutLine
-          rightIcon={<Image src={IcRightArrow} alt="icon" />}
-          onClick={() => router.push(ContactPage)}
+          rightIcon={<IcRightArrow className="text-xl" />}
+          onClick={() => router.push(AppRoutes.ContactPage)}
         />
       </div>
       <FeatureForFee />
@@ -80,7 +85,7 @@ const ProcessingFee = () => {
           <Button
             title="Get Started Now"
             style={{ background: ColorUtils.success }}
-            onClick={() => router.push(BreadmePage)}
+            onClick={toBreadmePage}
           />
         }
         title={

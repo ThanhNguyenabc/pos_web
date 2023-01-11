@@ -77,7 +77,7 @@ const Questionnaire = () => {
     setQuestionData: updateQuestionData,
   });
 
-  const backButton = () => {
+  const onPressBack = () => {
     if (questionSate.cQuestionIndex > 0) {
       setQuestionState((preState) => ({
         ...preState,
@@ -122,15 +122,18 @@ const Questionnaire = () => {
             max={PAGES.length}
           />
           <div className="w-full flex flex-row items-center justify-center p-4">
-            <IconButton onClick={backButton} classname="">
-              <IcBack />
-            </IconButton>
-            <div className="flex-1 flex justify-center">
-              <Image
-                src={BreadMeImg}
-                className="h-10 object-contain self-center "
-                alt=""
-              />
+            <div
+              className={`flex ${
+                questionSate.cQuestionIndex > 0 ? "xl:flex" : "xl:"
+              }`}
+            >
+              <IconButton onClick={onPressBack}>
+                <IcBack className="text-xl" />
+              </IconButton>
+            </div>
+
+            <div className="flex-1 flex justify-center px-6">
+              <Image src={BreadMeImg} className="h-10 object-contain" alt="" />
             </div>
           </div>
           <div className="flex flex-col max-w-lg w-full mx-auto px-4 py-6 gap-6 md:gap-20">

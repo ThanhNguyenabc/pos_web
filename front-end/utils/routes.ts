@@ -1,10 +1,14 @@
-export const Dashboard = "/dashboard";
-export const HomePage = "/";
-export const AboutPage = "/about";
-export const BlogPage = "/blog";
-export const ContactPage = "/contact";
-export const FreePOSPage = "/freepos";
-export const POSReviewPage = "/posreview";
-export const QuestionnairePage = "/questionnaire";
-export const ProcessingFeePage = "/posfee";
-export const BreadmePage = "/breadme";
+class AppRoutes {
+  static Dashboard = "/dashboard";
+  static HomePage = "/";
+  static AboutPage = "/about";
+  static BlogPage = "/blog";
+  static ContactPage = "/contact";
+  static FreePOSPage = "/freepos";
+  static POSReviewPage = "/posreview";
+  static QuestionnairePage = "/questionnaire";
+  static ProcessingFeePage = "/posfee";
+  static BreadmePage = "/breadme";
+}
+
+export default AppRoutes;

@@ -21,10 +21,10 @@ import QuestionnaireSuccess from "components/elements/questionnaire/Questionnair
 import RequestDemoPOS from "components/elements/request_demo_pos/RequestDemoPOS";
 import FindPOSModal from "components/elements/find_pos_modal/FindPOSModal";
 import POSDetail from "pages/posdetail";
-import { FreePOSPage, QuestionnairePage } from "utils/routes";
 import ProcessingFee from "./posfee";
 import BreadmeIntroduction from "components/elements/breadme/BreadmeIntroduction";
 import ThanksYouForm from "components/common/thanksform";
+import AppRoutes from "utils/routes";
 
 const FeatureData = ["24/7 Support", "Free training", "Seamless Installments"];
 
@@ -33,12 +33,12 @@ const Home = () => {
 
   const findPOS = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    router.push(QuestionnairePage);
+    router.push(AppRoutes.QuestionnairePage);
   };
 
   const getPOSFree = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    router.push(FreePOSPage);
+    router.push(AppRoutes.FreePOSPage);
   };
 
   return (

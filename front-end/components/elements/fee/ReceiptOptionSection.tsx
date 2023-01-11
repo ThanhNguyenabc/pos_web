@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 import ColorUtils from "utils/ColorUtils";
-import { BreadmePage } from "utils/routes";
+import AppRoutes from "utils/routes";
 
 const ReceiptOptionSection = () => {
   const router = useRouter();
@@ -24,7 +24,7 @@ const ReceiptOptionSection = () => {
           title="Get Started Now"
           classname="w-fit"
           style={{ background: ColorUtils.success }}
-          onClick={() => router.push(BreadmePage)}
+          onClick={() => router.push(AppRoutes.BreadmePage)}
         />
       </div>
       <div className="flex flex-1">

@@ -11,7 +11,7 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "components/common/Button";
 import { useRouter } from "next/router";
-import { POSReviewPage } from "utils/routes";
+import AppRoutes from "utils/routes";
 
 export const Categories = [
   {
@@ -55,7 +55,7 @@ const BusinessCategorySection = () => {
             title="View all"
             isOutLine={true}
             rightIcon={<IcRightArrow className="ml-2.5 text-xl" />}
-            onClick={() => router.push(POSReviewPage)}
+            onClick={() => router.push(AppRoutes.POSReviewPage)}
           />
         </div>
       </div>
