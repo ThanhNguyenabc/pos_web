@@ -14,6 +14,38 @@ import {
   Station4Img,
   Station5Img,
 } from "assets/AssetUtil";
+import AppRoutes from "./routes";
+
+export const CategoryTabs = [
+  {
+    title: "All",
+    link: AppRoutes.Categories,
+  },
+  {
+    title: "Pizzeria",
+    link: AppRoutes.PizzeriaPOS,
+  },
+  {
+    title: "Quick Service Restaurants",
+    link: AppRoutes.QuickServicePOS,
+  },
+  {
+    title: "Retail Stores",
+    link: AppRoutes.RetailPOS,
+  },
+  {
+    title: "Full Service Restaurants",
+    link: AppRoutes.FullServicePOS,
+  },
+  {
+    title: "Bar & Night Clubs",
+    link: AppRoutes.ClubPOS,
+  },
+  {
+    title: "Small Businesses",
+    link: AppRoutes.SmallBusinessPOS,
+  },
+];
 
 export const BreakPoints = {
   sm: 640,

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import AppRoutes from "utils/routes";
+import { CategoryTabs } from "utils/StringUtil";
 
 const styles = {
   "footer-title": "font-semibold md:txt-lg-bold text-neutral-300",
@@ -23,12 +24,15 @@ const Footer = () => {
           <div className="footer grid-cols-2">
             <div className={`${styles["footer-section"]} grid-cols-0 `}>
               <span className={`${styles["footer-title"]}`}>POS Reviews</span>
-              <a className="link link-hover">Pizzeria</a>
-              <a className="link link-hover">Quick Service Restaurants</a>
-              <a className="link link-hover">Retail Stores</a>
-              <a className="link link-hover">Full Service Restaurants</a>
-              <a className="link link-hover">Bar & Night Clubs</a>
-              <a className="link link-hover">Small Businesses</a>
+              {CategoryTabs.map((item, index) => (
+                <Link
+                  key={`footer category ${index}`}
+                  href={item.link}
+                  className="link link-hover"
+                >
+                  {item.title}
+                </Link>
+              ))}
             </div>
             <div className={`${styles["footer-section"]} grid-cols-1`}>
               <span className={styles["footer-title"]}>Resources</span>

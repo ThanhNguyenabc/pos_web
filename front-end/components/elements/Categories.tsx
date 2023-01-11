@@ -1,38 +1,29 @@
-import {
-  CloverImg,
-  IcApple,
-  IcWindow,
-  LightSpeedImg,
-  OvviImg,
-  RevelImg,
-} from "assets/AssetUtil";
 import POSCard from "components/common/pos_card/POSCard";
 import TabList from "components/common/TabList";
-import { Categories } from "components/elements/home/BusinessCategorySection";
 import { useRouter } from "next/router";
+import { CategoryTabs, MockupData } from "utils/StringUtil";
 import React from "react";
-import ColorUtils from "utils/ColorUtils";
-import { MockupData } from "utils/StringUtil";
 
-const Tabs = [
-  "All",
-  "Pizzeria",
-  "Quick Service Restaurants",
-  "Retail Stores",
-  "Full Service Restaurants",
-  "Bar & Night Clubs",
-  "Small Businesses",
-];
+const Category = ({ categoryType }: { categoryType?: string }) => {
+  const router = useRouter();
+  const { type } = router.query;
 
-const POSReview = () => {
-  const route = useRouter();
+  const selectedTabIndex = CategoryTabs.findIndex(
+    (item) => item.link == router.asPath
+  );
   return (
     <div className="flex flex-col pb-12 bg-neutral-100">
       <div className=" flex flex-col py-12 bg-white mb-6 px-4 lg:items-center text-center md:py-14 md:px-8 md:gap-6">
-        <TabList tabList={Tabs} />
+        <TabList
+          tabList={CategoryTabs}
+          selectIndex={selectedTabIndex < 0 ? 0 : selectedTabIndex}
+          onSelectedIndex={(index) => {
+            router.push(CategoryTabs[index].link);
+          }}
+        />
         <p
           className="txt-heading-medium mt-10 md:mt-0 md:text-5xl md:font-extrabold m-0 p-0
-        "
+          "
         >
           <span className="text-secondary"> Best POS Systems</span> for Your
           Business
@@ -49,7 +40,7 @@ const POSReview = () => {
             key={`card-item-${index}`}
             {...item}
             onCardClick={() => {
-              route.push("/posdetail");
+              router.push("/posdetail");
             }}
           />
         ))}
@@ -58,4 +49,4 @@ const POSReview = () => {
   );
 };
 
-export default POSReview;
+export default Category;
