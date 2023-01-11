@@ -27,7 +27,7 @@ export const Button = ({
       className={twMerge(
         `btn text-base normal-case md:h-14 md:text-lg md:px-5  ${classname} ${
           isOutLine
-            ? "btn-outline hover:bg-white hover:text-black"
+            ? "btn-outline hover:bg-white hover:text-black bg-white"
             : "btn-primary border-none"
         }`
       )}

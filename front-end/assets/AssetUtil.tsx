@@ -34,6 +34,13 @@ export { default as ToastImg } from "./images/toast.png";
 export { default as RevelImg } from "./images/revel_img.jpg";
 export { default as OvviImg } from "./images/ovvi.jpg";
 export { default as BillingImg } from "./images/billing.png";
+export { default as AboutCoverImg } from "./images/about_bg.png";
+export { default as ATMImg } from "./images/atm.png";
+export { default as CloudSystemImg } from "./images/cloud_system.png";
+export { default as ExtraServiceImg } from "./images/extra_service.png";
+export { default as ITSolutionImg } from "./images/solutions.png";
+export { default as POSAboutImg } from "./images/pos_about.png";
+export { default as CreditCardImg } from "./images/credit_card.png";
 
 // export icons
 export { default as IcMenu } from "./icons/ic_menu.svg";

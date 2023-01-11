@@ -96,7 +96,7 @@ const Home = () => {
       <FeatureSection />
       <MetricSection
         heading="What sets us apart from other companies?"
-        titleColor=" text-secondary"
+        titleColor="text-secondary"
         itemSection={[
           { title: "30+", content: "Over 30 years experience" },
           { title: "1000+", content: "Over 1000 Clients" },

@@ -17,9 +17,9 @@ export const FooterCTA = ({
       className={`flex flex-col justify-center items-center px-4 py-14 gap-6 md:rounded-2xl 
        text-center
       md:gap-8 md:my-20 md:mx-8
-      xl:gap-10 lg:my-20 
+      xl:gap-10 
       xl:mx-[120px]
-      xl:mt-0
+      
       ${background}`}
     >
       <div className="w-full flex flex-col gap-4 items-center">
