@@ -19,7 +19,7 @@ import AppRoutes from "./routes";
 export const CategoryTabs = [
   {
     title: "All",
-    link: AppRoutes.Categories,
+    link: AppRoutes.CategoryPage,
   },
   {
     title: "Pizzeria",

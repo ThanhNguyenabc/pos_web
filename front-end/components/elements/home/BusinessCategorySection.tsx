@@ -55,7 +55,7 @@ const BusinessCategorySection = () => {
             title="View all"
             isOutLine={true}
             rightIcon={<IcRightArrow className="ml-2.5 text-xl" />}
-            onClick={() => router.push(AppRoutes.POSReviewPage)}
+            onClick={() => router.push(AppRoutes.CategoryPage)}
           />
         </div>
       </div>

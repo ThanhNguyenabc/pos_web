@@ -9,13 +9,13 @@ class AppRoutes {
   static ProcessingFeePage = "/posfee";
   static BreadmePage = "/breadme";
 
-  static Categories = "/categories";
-  static PizzeriaPOS = `${this.Categories}/pizzeria`;
-  static QuickServicePOS = `${this.Categories}/quick-service-restaurants`;
-  static RetailPOS = `${this.Categories}/retail-store`;
-  static FullServicePOS = `${this.Categories}/full-service`;
-  static ClubPOS = `${this.Categories}/bar-clubs`;
-  static SmallBusinessPOS = `${this.Categories}/small-business`;
+  static CategoryPage = "/categories";
+  static PizzeriaPOS = `${this.CategoryPage}/pizzeria`;
+  static QuickServicePOS = `${this.CategoryPage}/quick-service-restaurants`;
+  static RetailPOS = `${this.CategoryPage}/retail-store`;
+  static FullServicePOS = `${this.CategoryPage}/full-service`;
+  static ClubPOS = `${this.CategoryPage}/bar-clubs`;
+  static SmallBusinessPOS = `${this.CategoryPage}/small-business`;
 }
 
 export default AppRoutes;

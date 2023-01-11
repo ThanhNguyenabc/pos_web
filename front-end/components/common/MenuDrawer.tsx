@@ -14,7 +14,7 @@ export const Menu = {
     title: "Free POS",
   },
   posreview: {
-    route: AppRoutes.Categories,
+    route: AppRoutes.CategoryPage,
     title: "POS Reviews",
   },
   contact: {
