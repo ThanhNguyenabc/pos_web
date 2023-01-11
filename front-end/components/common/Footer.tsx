@@ -35,10 +35,16 @@ const Footer = () => {
               <Link href={AppRoutes.FreePOSPage} className="link link-hover">
                 Free POS
               </Link>
-              <Link href={AppRoutes.ProcessingFeePage} className="link link-hover">
+              <Link
+                href={AppRoutes.ProcessingFeePage}
+                className="link link-hover"
+              >
                 0% Processing Fee
               </Link>
-              <Link href={AppRoutes.QuestionnairePage} className="link link-hover">
+              <Link
+                href={AppRoutes.QuestionnairePage}
+                className="link link-hover"
+              >
                 Questionnaire
               </Link>
               <Link href={AppRoutes.HomePage} className="link link-hover">
@@ -53,7 +59,10 @@ const Footer = () => {
               <Link href={AppRoutes.ContactPage} className="link link-hover">
                 Contact
               </Link>
-              <Link href={AppRoutes.QuestionnairePage} className="link link-hover">
+              <Link
+                href={AppRoutes.QuestionnairePage}
+                className="link link-hover"
+              >
                 Questionnaire
               </Link>
             </div>
@@ -63,9 +72,15 @@ const Footer = () => {
         <div className="flex-rows text-neutral-600">
           <p className="flex-1">© 2022 BestPOS. All rights reserved.</p>
           <div className="flex ml-5 gap-6">
-            <Image src={IcFb} alt="facebook" />
-            <Image src={IcInsta} alt="instagram" />
-            <Image src={IcLinkedLn} alt="linkedln" />
+            <button>
+              <IcFb className="text-2xl" />
+            </button>
+            <button>
+              <IcInsta className="text-2xl" />
+            </button>
+            <button>
+              <IcLinkedLn className="text-2xl" />
+            </button>
           </div>
         </div>
       </footer>
