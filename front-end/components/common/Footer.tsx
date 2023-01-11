@@ -2,14 +2,7 @@ import { FooterLogo, IcFb, IcInsta, IcLinkedLn } from "assets/AssetUtil";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import {
-  FreePOSPage,
-  HomePage,
-  QuestionnairePage,
-  AboutPage,
-  ContactPage,
-  ProcessingFeePage,
-} from "utils/routes";
+import AppRoutes from "utils/routes";
 
 const styles = {
   "footer-title": "font-semibold md:txt-lg-bold text-neutral-300",
@@ -39,28 +32,28 @@ const Footer = () => {
             </div>
             <div className={`${styles["footer-section"]} grid-cols-1`}>
               <span className={styles["footer-title"]}>Resources</span>
-              <Link href={FreePOSPage} className="link link-hover">
+              <Link href={AppRoutes.FreePOSPage} className="link link-hover">
                 Free POS
               </Link>
-              <Link href={ProcessingFeePage} className="link link-hover">
+              <Link href={AppRoutes.ProcessingFeePage} className="link link-hover">
                 0% Processing Fee
               </Link>
-              <Link href={QuestionnairePage} className="link link-hover">
+              <Link href={AppRoutes.QuestionnairePage} className="link link-hover">
                 Questionnaire
               </Link>
-              <Link href={HomePage} className="link link-hover">
+              <Link href={AppRoutes.HomePage} className="link link-hover">
                 Partner
               </Link>
             </div>
             <div className={`${styles["footer-section"]} grid-cols-1`}>
               <span className={styles["footer-title"]}>Company</span>
-              <Link href={AboutPage} className="link link-hover">
+              <Link href={AppRoutes.AboutPage} className="link link-hover">
                 About us
               </Link>
-              <Link href={ContactPage} className="link link-hover">
+              <Link href={AppRoutes.ContactPage} className="link link-hover">
                 Contact
               </Link>
-              <Link href={QuestionnairePage} className="link link-hover">
+              <Link href={AppRoutes.QuestionnairePage} className="link link-hover">
                 Questionnaire
               </Link>
             </div>

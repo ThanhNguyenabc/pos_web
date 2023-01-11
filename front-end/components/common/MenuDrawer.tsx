@@ -2,34 +2,27 @@ import { IcChervonRight, IcClose, IcMobileLogo } from "assets/AssetUtil";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import {
-  AboutPage,
-  BlogPage,
-  ContactPage,
-  FreePOSPage,
-  HomePage,
-  POSReviewPage,
-} from "utils/routes";
+import AppRoutes from "utils/routes";
 
 export const Menu = {
   home: {
-    route: HomePage,
+    route: AppRoutes.HomePage,
     title: "Home",
   },
   freepos: {
-    route: FreePOSPage,
+    route: AppRoutes.FreePOSPage,
     title: "Free POS",
   },
   posreview: {
-    route: POSReviewPage,
+    route: AppRoutes.POSReviewPage,
     title: "POS Reviews",
   },
   contact: {
-    route: ContactPage,
+    route: AppRoutes.ContactPage,
     title: "Contact",
   },
   about: {
-    route: AboutPage,
+    route: AppRoutes.AboutPage,
     title: "About",
   },
   // blog: {
