@@ -30,14 +30,10 @@ const RecommendPOSCardMobile = ({
             <Image src={logo} alt="logo-pos" className="h-10 w-20" />
           </div>
           <div className="flex items-center gap-4">
-            {systemos.map((item, index) => (
-              <Image
-                key={`image${index}`}
-                src={item}
-                alt="logo-system"
-                className="w-6 h-6"
-              />
-            ))}
+            {systemos.map((item, index) => {
+              const Icon = item;
+              return <Icon key={`item-os-${index}`} className="w-6 h-6" />;
+            })}
             <div
               className="radial-progress text-primary border-neutral-200 "
               style={radialStyle}

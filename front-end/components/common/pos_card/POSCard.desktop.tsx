@@ -1,4 +1,8 @@
-import React from "react";
+import React, {
+  ReactComponentElement,
+  ReactElement,
+  ReactSVGElement,
+} from "react";
 import Image from "next/image";
 import { BreadMeBtn } from "../BreadmeBtn";
 import ColorUtils from "utils/ColorUtils";
@@ -40,14 +44,10 @@ const POSCardDesktop = ({
         <Image src={logo} alt="logo-pos" className="w-[120px] h-[60px]" />
         <p className="text-sm text-left text-neutral-900">{desc}</p>
         <div className="flex items-center gap-4">
-          {systemos.map((item, index) => (
-            <Image
-              key={`item-os-${index}`}
-              src={item}
-              alt="logo-system"
-              className="w-6 h-6"
-            />
-          ))}
+          {systemos.map((item, index) => {
+            const Icon = item;
+            return <Icon key={`item-os-${index}`} className="w-6 h-6" />;
+          })}
         </div>
       </div>
       <div className="flex flex-col flex-1 text-left">

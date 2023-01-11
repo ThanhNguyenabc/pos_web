@@ -37,14 +37,10 @@ const POSCardTablet = ({
         <Image src={logo} alt="logo-pos" className="w-[120px] h-[60px]" />
         <p className="text-sm text-left text-neutral-900">{desc}</p>
         <div className="flex items-center gap-4">
-          {systemos.map((item: StaticImageData, index: number) => (
-            <Image
-              key={`item-os-${index}`}
-              src={item}
-              alt="logo-system"
-              className="w-6 h-6"
-            />
-          ))}
+          {systemos.map((item, index) => {
+            const Icon = item;
+            return <Icon key={`item-os-${index}`} className="w-6 h-6" />;
+          })}
         </div>
       </div>
       <div className="flex gap-2">
