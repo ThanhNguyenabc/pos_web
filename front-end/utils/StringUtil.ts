@@ -22,10 +22,6 @@ export const CategoryTabs = [
     link: AppRoutes.CategoryPage,
   },
   {
-    title: "Pizzeria",
-    link: AppRoutes.PizzeriaPOS,
-  },
-  {
     title: "Quick Service Restaurants",
     link: AppRoutes.QuickServicePOS,
   },
@@ -46,13 +42,6 @@ export const CategoryTabs = [
     link: AppRoutes.SmallBusinessPOS,
   },
 ];
-
-export const BreakPoints = {
-  sm: 640,
-  md: 768,
-  lg: 1024,
-  xl: 1280,
-};
 
 export const YesNoQuestion = ["Yes", "No"];
 export const CreditCardVolumeData = ["$10K - $50k", "$50K - $150k", "$150+"];

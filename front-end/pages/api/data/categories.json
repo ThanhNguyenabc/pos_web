@@ -1,0 +1,98 @@
+{
+    "data": [
+        {
+            "id": "1e651739-b77a-44e0-a8b6-96001dfed6df",
+            "title": "Pizzeria",
+            "image": "pizzeria_img.png",
+            "products": [
+                "3503cf9d-ad9b-4fda-813d-383943e7d841",
+                "8a013776-d3c8-41b5-9688-39f981f41d7c",
+                "587824fd-deda-486d-9760-26811e16413f",
+                "3f1943c6-82ef-47fd-a6d6-64724cbc895c",
+                "f9e0ef04-4ac5-46f1-8d5c-16a904f14a31",
+                "8fdf75eb-4300-4e71-ab36-d3cf48e1010d",
+                "20621691-f5fb-4dd7-8276-0ac1f479d636",
+                "4a659923-91da-437f-af88-9c141a8516e0",
+                "f0ef18a8-1974-4f3a-a487-3c3c7dee212e",
+                "0fadfc8f-5e9a-46b4-97d4-036ad6e57cbe",
+                "f32ba2b0-9b6e-4261-bd45-4ea335ea9ea6"
+            ]
+        },
+        {
+            "id": "e9a81b23-f3fa-4cf1-9345-e0eaeb8de137",
+            "title": "Quick Service Restaurants",
+            "image": "quickservice_img.png",
+            "products": [
+                "3503cf9d-ad9b-4fda-813d-383943e7d841",
+                "8a013776-d3c8-41b5-9688-39f981f41d7c",
+                "587824fd-deda-486d-9760-26811e16413f",
+                "3f1943c6-82ef-47fd-a6d6-64724cbc895c",
+                "f9e0ef04-4ac5-46f1-8d5c-16a904f14a31",
+                "8fdf75eb-4300-4e71-ab36-d3cf48e1010d",
+                "20621691-f5fb-4dd7-8276-0ac1f479d636",
+                "4a659923-91da-437f-af88-9c141a8516e0",
+                "f0ef18a8-1974-4f3a-a487-3c3c7dee212e",
+                "0fadfc8f-5e9a-46b4-97d4-036ad6e57cbe",
+                "f32ba2b0-9b6e-4261-bd45-4ea335ea9ea6"
+            ]
+        },
+        {
+            "id": "01552be6-0ab3-41c8-ac03-09ffb4a03ca5",
+            "title": "Retail Stores",
+            "image": "retail_img.png",
+            "products": [
+                "3503cf9d-ad9b-4fda-813d-383943e7d841",
+                "0fadfc8f-5e9a-46b4-97d4-036ad6e57cbe",
+                "f0ef18a8-1974-4f3a-a487-3c3c7dee212e",
+                "3f1943c6-82ef-47fd-a6d6-64724cbc895c",
+                "f32ba2b0-9b6e-4261-bd45-4ea335ea9ea6"
+            ]
+        },
+        {
+            "id": "671507f9-e3ff-4b74-902c-afc8f1d85152",
+            "title": "Full Service Restaurants",
+            "image": "restaurant_img.png",
+            "products": [
+                "3503cf9d-ad9b-4fda-813d-383943e7d841",
+                "8a013776-d3c8-41b5-9688-39f981f41d7c",
+                "587824fd-deda-486d-9760-26811e16413f",
+                "3f1943c6-82ef-47fd-a6d6-64724cbc895c",
+                "f9e0ef04-4ac5-46f1-8d5c-16a904f14a31",
+                "8fdf75eb-4300-4e71-ab36-d3cf48e1010d",
+                "4a659923-91da-437f-af88-9c141a8516e0",
+                "f0ef18a8-1974-4f3a-a487-3c3c7dee212e",
+                "0fadfc8f-5e9a-46b4-97d4-036ad6e57cbe",
+                "f32ba2b0-9b6e-4261-bd45-4ea335ea9ea6"
+            ]
+        },
+        {
+            "id": "634a784d-70b5-497d-ae3b-bb675561a4f4",
+            "title": "Bar & Night Clubs",
+            "image": "bar_img.png",
+            "products": [
+                "f9e0ef04-4ac5-46f1-8d5c-16a904f14a31",
+                "8a013776-d3c8-41b5-9688-39f981f41d7c",
+                "4a659923-91da-437f-af88-9c141a8516e0",
+                "3503cf9d-ad9b-4fda-813d-383943e7d841",
+                "8fdf75eb-4300-4e71-ab36-d3cf48e1010d",
+                "20621691-f5fb-4dd7-8276-0ac1f479d636"
+            ]
+        },
+        {
+            "id": "256251e4-f6ea-46c5-8389-a796631f0138",
+            "title": "Small Businesses",
+            "image": "business_img.png",
+            "products": [
+                "8fdf75eb-4300-4e71-ab36-d3cf48e1010d",
+                "8a013776-d3c8-41b5-9688-39f981f41d7c",
+                "0fadfc8f-5e9a-46b4-97d4-036ad6e57cbe",
+                "3503cf9d-ad9b-4fda-813d-383943e7d841",
+                "c4304593-3e57-4938-93f8-cabe7f2ae140",
+                "587824fd-deda-486d-9760-26811e16413f",
+                "3f1943c6-82ef-47fd-a6d6-64724cbc895c",
+                "f0ef18a8-1974-4f3a-a487-3c3c7dee212e",
+                "20621691-f5fb-4dd7-8276-0ac1f479d636"
+            ]
+        }
+    ]
+}

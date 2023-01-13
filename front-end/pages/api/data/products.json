@@ -290,6 +290,219 @@
                 "Professional Installation - $695",
                 "Contracts depends on deal made with processing company"
             ]
+        },
+        {
+            "id": "587824fd-deda-486d-9760-26811e16413f",
+            "name": "Aldelo (Professional or Express)",
+            "monthly_price": 75,
+            "one_time_purchase": 1500,
+            "os_system": [
+                "iOS",
+                "android",
+                "window"
+            ],
+            "overview": "Cloud-based POS system best for small businesses or restaurants",
+            "intro": "Aldelo is a hybrid cloud-based software that can be displayed on Android or iPad.  Aldelo user are able to have backend control of their point-of-sale system remotely and have your business data stored outside of the hardware system. This ensures that if anything were to happen to your system, you never have to worry about losing any important information.",
+            "pros": [
+                "User-friendly system",
+                "East-to-use delivery features",
+                "On-site support"
+            ],
+            "cons": [
+                "Poor tech support",
+                "Expensive monthly fees",
+                "Lack of updates for Windows version systems",
+                "Extra cost to online and delivery service",
+                "Poor EMV compatibility"
+            ],
+            "expert_opinion": {
+                "comment": "Aldelo Express POS is a full-featured cloud-based restaurant technology platform that simplifies and enhances everyday restaurant operations. With merchant-facing and customer-facing integrated ordering and digital payments, Aldelo Express supports in-store, remote, and hybrid restaurant services.",
+                "easy": 9,
+                "value": 8.5,
+                "support": 6,
+                "functionality": 7.5,
+                "feedback": 7.5
+            },
+            "asset": "",
+            "pos_integrations": "Aldelo Express can offer a wide variety of add-ons and integrations to improve your point-of-sale. A lot of the integrations assist with management, online ordering, and many more remotely. ",
+            "software": "Aldelo is a hybrid cloud-based software that can be displayed on Android or iPad.  Aldelo user are able to have backend control of their point-of-sale system remotely and have your business data stored outside of the hardware system. This ensures that if anything were to happen to your system, you never have to worry about losing any important information.",
+            "payment_processing": "You are able to use a wide variety of payment processors which benefits the merchants by being able to choose a local reseller to help with remote and on-site servicing. ",
+            "pricing_desc": [
+                "$75 Monthly Software and Support Fee per station",
+                "Professional Installation - $695",
+                "Contracts depends on deal made with processing company"
+            ]
+        },
+        {
+            "id": "f0ef18a8-1974-4f3a-a487-3c3c7dee212e",
+            "name": "Lightspeed",
+            "monthly_price": 120,
+            "one_time_purchase": 2000,
+            "os_system": [
+                "iOS",
+                "android"
+            ],
+            "overview": "Cloud-based POS system that is great for retailers of all sizes",
+            "intro": "Lightspeed has both an Android and IOS option. It is a hybrid POS system that allows you to work even if offline and prevent data loss. If the device is disconnected from the internet, the POS will continue to operate normally and store data but it will not be able to accept credit card payments if the internet is down.",
+            "pros": [
+                "Has a 14-day free trial period",
+                "Easy-to-use platform",
+                "Custom built for restaurants",
+                "Various software series"
+            ],
+            "cons": [
+                "Very expensive software (monthly fees)",
+                "Reports of glitches",
+                "Poor customer service",
+                "No offline mode"
+            ],
+            "expert_opinion": {
+                "comment": "Lightspeed is a cloud-based POS solution designed for retail stores of all sizes. Suitable for retailers in industries such as apparel, footwear, jewelry, pet, sporting goods and home decor. ",
+                "easy": 8,
+                "value": 7.5,
+                "support": 7.5,
+                "functionality": 8,
+                "feedback": 8
+            },
+            "asset": "",
+            "pos_integrations": "Lightspeed has many integrations that allow you to have the best POS system for your business. You are able to sync reporting data with accounting platforms, provide a loyalty program, maintain inventory management, and so many more.",
+            "software": "Lightspeed has both an Android and IOS option. It is a hybrid POS system that allows you to work even if offline and prevent data loss. If the device is disconnected from the internet, the POS will continue to operate normally and store data but it will not be able to accept credit card payments if the internet is down.",
+            "payment_processing": "You are able to have different credit card processors - Lightspeed Payments, Vantiv triPOS, Cayan, Element Express, and Mercury Payment Services. Along with this you can also accept Apple and Android Pay. ",
+            "pricing_desc": [
+                "$120 Monthly Software and Support Fee per station",
+                "Professional Installation - $895",
+                "3 year contract required"
+            ]
+        },
+        {
+            "id": "4a659923-91da-437f-af88-9c141a8516e0",
+            "name": "Aloha",
+            "monthly_price": 150,
+            "one_time_purchase": 6500,
+            "os_system": [
+                "window"
+            ],
+            "overview": "Cloud-enabled platform great for any type of restaurants and bars",
+            "intro": "Aloha provides fixed, mobile POS stations and self-service kiosks. They are a cloud-based platform but when it comes to larger installations you may require a local onsite POS server hardware device. The POS will be able to store all information and synchronizes your data to the cloud. You will be able to access data remotely and even make customizations when not in the store.",
+            "pros": [
+                "Stable hardware & software",
+                "Great for resturants and bars",
+                "Great for large Enterpirses",
+                "Customizable menu",
+                "Compliant dual-pricing"
+            ],
+            "cons": [
+                "Very expensive hardware & monthly fees",
+                "No in-house system for online ordering servcie",
+                "Poor customer service",
+                "Customizable is time consuming & expensive "
+            ],
+            "expert_opinion": {
+                "comment": "Aloha POS is a restaurant point-of-sale system designed with larger, multi-location businesses in mind. It is a hybrid system with locally installed hardware that boasts a rich feature set including strong inventory management.",
+                "easy": 8,
+                "value": 7,
+                "support": 7,
+                "functionality": 9,
+                "feedback": 8.5
+            },
+            "asset": "",
+            "pos_integrations": "There are many integrations that can assist you with payment processing, online ordering, accounting, and so many more. With over 200 integrations, you can customize your POS to however you'd like.",
+            "software": "Aloha provides fixed, mobile POS stations and self-service kiosks. They are a cloud-based platform but when it comes to larger installations you may require a local onsite POS server hardware device. The POS will be able to store all information and synchronizes your data to the cloud. You will be able to access data remotely and even make customizations when not in the store.",
+            "payment_processing": "The Aloha POS system usually suggests for you to work with its in-house solutions but their are many benefits in working with a local card payment provider such as cheaper hardware and processing rates.  Please note that you would have to work with a provider that is compatible with Aloha's EMV gateway which is limited.",
+            "pricing_desc": [
+                "Some clients report pricing at around $150 per month, per terminal"
+            ]
+        },
+        {
+            "id": "20621691-f5fb-4dd7-8276-0ac1f479d636",
+            "name": "Upserve",
+            "monthly_price": 199,
+            "one_time_purchase": 2000,
+            "os_system": [
+                "iOS",
+                "android"
+            ],
+            "overview": "Great POS that provides you with full restaurant management platform",
+            "intro": "Upserve is a hybrid form of POS meaning that it is a cloud based system. While all reporting data and information can be stored and accessed in the cloud, the offline mode allows the software to store important data on your device in case the internet goes down. When operating in offline mode, you can swipe a card and the POS will encrypt it and will securely hold it until the internet is up and running again.",
+            "pros": [
+                "Great for small resturants",
+                "Sleek hardware",
+                "Bunch of add-ons & integrations",
+                "Interface is tailored for restaurant"
+            ],
+            "cons": [
+                "Poor for retail",
+                "Poor tech support",
+                "Expenavie Hardware",
+                "Reports of glicthes"
+            ],
+            "expert_opinion": {
+                "comment": "Upserve POS’s designers worked together to create an easy-to-use and POS system that would alleviate some of the major headaches faced by the restaurant/hospitality industry. It was created by former managers, bartenders, and servers. But with many reports of glitches and hardware issues, the system can be disruptive at times during operations.  ",
+                "easy": 8,
+                "value": 7.5,
+                "support": 7.5,
+                "functionality": 8,
+                "feedback": 8
+            },
+            "asset": "",
+            "pos_integrations": "Integrations and add-ons are a great feature of Upserve POS systems. Not only are you able to have upgrades for premium packages you have access to a giant range of integrations. Some of the integrations include in-depth analytics, managing scheduling and reservations, issue gift cards and many other features. Keep in mind that some add-ons may cost extra money but allow for you to have the best POS system suited for your business.",
+            "software": "Upserve is a hybrid form of POS meaning that it is a cloud based system. While all reporting data and information can be stored and accessed in the cloud, the offline mode allows the software to store important data on your device in case the internet goes down. When operating in offline mode, you can swipe a card and the POS will encrypt it and will securely hold it until the internet is up and running again.",
+            "payment_processing": "When using an Upserve POS, there is unfortunately not much flexibility when it comes to payment processing. You will need to use their processing platform and although it can be seen as a hassle, it has its benefits. It can be convenient having your POS and payment processing with the same company and they are even willing to price match to provide you a better rate in the beginning of your contract.",
+            "pricing_desc": [
+                "Core Monthly - $199 (Additional station $60)",
+                "Pro Monthly - $249 (Additional station $50)",
+                "Pro Plus Monthly - $399 (Additional station $40)"
+            ]
+        },
+        {
+            "id": "8fdf75eb-4300-4e71-ab36-d3cf48e1010d",
+            "name": "Toast",
+            "monthly_price": 69,
+            "one_time_purchase": 700,
+            "os_system": [
+                "android"
+            ],
+            "overview": "Toast is a easy-to-use software w/ a sleek station & handheld hardware",
+            "intro": "Upserve is a hybrid form of POS meaning that it is a cloud based system. While all reporting data and information can be stored and accessed in the cloud, the offline mode allows the software to store important data on your device in case the internet goes down. When operating in offline mode, you can swipe a card and the POS will encrypt it and will securely hold it until the internet is up and running again.",
+            "pros": [
+                "Inexpensive upfront cost to hardware",
+                "Easy to use back office",
+                "Low rates for card processing payments in the beginning",
+                "Has modifier to modifier feature.",
+                "Marketing to help repeat business",
+                "Digital ordering"
+            ],
+            "cons": [
+                "Poor tech support",
+                "No on-site support or training",
+                "Proprietary card processing which leads to high rates after a short period of time",
+                "Monthly servcie price hikes",
+                "Back office has poor multi location management features",
+                "Reports of glitches",
+                "Non-compliant dual pricing guest receipt."
+            ],
+            "expert_opinion": {
+                "comment": "Toast is an easy-to-use POS system built specifically for the restaurant industry. It has excellent feature sets, strong tableside ordering, and backoffice management. Managers tends to gravitate towards this system due to its simplicity and owners love it due to its low upfront costs. Down the line, the system can be frustrating due to its non-existing local servicing and high price hikes due to card payment processing being propriety with Toast.",
+                "easy": 9,
+                "value": 9,
+                "support": 6.5,
+                "functionality": 7.5,
+                "feedback": 8.5
+            },
+            "asset": "",
+            "pos_integrations": "There is a large range of add-ons and integrations that come with Toast. It allows you to customize your POS system to your liking and best suited for your business. Add-ons such as gift card program, loyalty program, payroll and online ordering will have additional monthly charges.",
+            "software": "Toast POS is an android cloud-based POS solution. There is a local LAN network for Toast clients and it provides a dedicated router for PCI standards compliance which ensures that all POS data is securely downloaded and stored on every connected device. Even if the internet connection may crash, all of your devices will still be able to work and you can still accept credit card payments but not gift cards.",
+            "payment_processing": "For Toast, you will need to use their in-house payment processor which can be inconvenient for businesses who already work with a company they enjoy. Toast is known for hiking their processing rates over a short time of being with them and you cannot change to another credit card processor.  But then again, having your POS and payment processor all within one company has its benefits such as user-friendly payment adjustments at pickup and deliveries.",
+            "pricing_desc": [
+                "Monthly Service charge depends on the package you choose.  Since Toast payment processing is in-house they are able to charge $0 per month for the first station but at a higher processing rate.  This is a start-up program.",
+                "$69 monthly service fee per station",
+                "$50 Gift Card Program (per month)",
+                "$25 Loyalty Program (per month)",
+                "$50 Online Ordering (per month)",
+                "$165 Online Ordering, Delivery & Takeout App (per month)",
+                "$250 Remote Installation",
+                "3 year contracts"
+            ]
         }
     ]
 }

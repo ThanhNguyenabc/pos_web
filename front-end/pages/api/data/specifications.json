@@ -1,0 +1,216 @@
+{
+    "data": {
+        "3503cf9d-ad9b-4fda-813d-383943e7d841": {
+            "id": "24c04c71-150b-49ad-a498-8b2ba72a4d57",
+            "productId": "3503cf9d-ad9b-4fda-813d-383943e7d841",
+            "productName": "Revel",
+            "bestFor": [
+                "Restaurants",
+                "Quick Service",
+                "Full Service",
+                "Bars & Retail"
+            ],
+            "businessSize": "Small, Medium, Large",
+            "posType": "iOS",
+            "softwareType": "Cloud/SaaS",
+            "freeTrial": "Demo Only",
+            "merchantService": "In-House or Bring Your Own",
+            "pricingModel": "Monthly Payment, Contract",
+            "priceRange": ""
+        },
+        "c4304593-3e57-4938-93f8-cabe7f2ae140": {
+            "id": "9fdadf02-1cce-4682-8e75-b5c32ac25c2f",
+            "productId": "c4304593-3e57-4938-93f8-cabe7f2ae140",
+            "productName": "Clover (Flex)",
+            "bestFor": [
+                "Small Business",
+                "Retail",
+                "Quick Service"
+            ],
+            "businessSize": "Small, Medium",
+            "posType": "Android",
+            "softwareType": "Cloud/SaaS",
+            "freeTrial": "Yes",
+            "merchantService": "In-House or Bring Your Own",
+            "pricingModel": "Monthly Payment, Contract",
+            "priceRange": ""
+        },
+        "0fadfc8f-5e9a-46b4-97d4-036ad6e57cbe": {
+            "id": "fa233e08-fa1a-44d0-84d1-8308672a52cf",
+            "productId": "0fadfc8f-5e9a-46b4-97d4-036ad6e57cbe",
+            "productName": "Clover Duo",
+            "bestFor": [
+                "Restaurants",
+                "Quick Service",
+                "Full Service",
+                "Retail",
+                "Small Business"
+            ],
+            "businessSize": "Small, Medium",
+            "posType": "Android",
+            "softwareType": "Cloud/SaaS",
+            "freeTrial": "Yes",
+            "merchantService": "In-House or Bring Your Own",
+            "pricingModel": "Monthly Payment, Contract",
+            "priceRange": ""
+        },
+        "f32ba2b0-9b6e-4261-bd45-4ea335ea9ea6": {
+            "id": "11b64961-0be6-43d9-8e38-37e0f2ac302a",
+            "productId": "f32ba2b0-9b6e-4261-bd45-4ea335ea9ea6",
+            "productName": "Exatouch",
+            "bestFor": [
+                "Quick Service",
+                "Retail",
+                "Small Business",
+                "Liqour Stores"
+            ],
+            "businessSize": "Small",
+            "posType": "Windows",
+            "softwareType": "Cloud",
+            "freeTrial": "Yes",
+            "merchantService": "In-House",
+            "pricingModel": "Monthly Payment, No Contract",
+            "priceRange": ""
+        },
+        "f9e0ef04-4ac5-46f1-8d5c-16a904f14a31": {
+            "id": "11b64961-0be6-43d9-8e38-37e0f2ac302a",
+            "productId": "f9e0ef04-4ac5-46f1-8d5c-16a904f14a31",
+            "productName": "Simphony",
+            "bestFor": [
+                "Restaurants",
+                "Quick Service",
+                "Bars",
+                "Retail"
+            ],
+            "businessSize": "Medium, Large",
+            "posType": "Windows",
+            "softwareType": "Cloud/SaaS, On Premise (Windows)",
+            "freeTrial": "Demo Only",
+            "merchantService": "Bring Your Own",
+            "pricingModel": "Monthly Payment, Annual Subscription, Contract",
+            "priceRange": ""
+        },
+        "8a013776-d3c8-41b5-9688-39f981f41d7c": {
+            "id": "13a7bace-f205-4c10-b584-943887ebedd4",
+            "productId": "8a013776-d3c8-41b5-9688-39f981f41d7c",
+            "productName": "Brink (Par)",
+            "bestFor": [
+                "Restaurants",
+                "Bar",
+                "Quick Service"
+            ],
+            "businessSize": "Small, Medium, Large",
+            "posType": "Windows",
+            "softwareType": "Cloud/SaaS",
+            "freeTrial": "Demo Only",
+            "merchantService": "Bring Your Own",
+            "pricingModel": "Monthly Payment",
+            "priceRange": ""
+        },
+        "3f1943c6-82ef-47fd-a6d6-64724cbc895c": {
+            "id": "262d5dff-d149-4df0-a97a-039efe46ad85",
+            "productId": "3f1943c6-82ef-47fd-a6d6-64724cbc895c",
+            "productName": "Ovvi",
+            "bestFor": [
+                "Restaurants",
+                "Quick Service"
+            ],
+            "businessSize": "Small, Medium",
+            "posType": "Android",
+            "softwareType": "Cloud/SaaS",
+            "freeTrial": "Yes",
+            "merchantService": "Bring Your Own",
+            "pricingModel": "Monthly Payment",
+            "priceRange": ""
+        },
+        "587824fd-deda-486d-9760-26811e16413f": {
+            "id": "3f2aa46a-92a4-49fd-b0f1-6282691072c5",
+            "productId": "587824fd-deda-486d-9760-26811e16413f",
+            "productName": "Aldelo",
+            "bestFor": [
+                "Restaurants",
+                "Quick Service",
+                "Full Service",
+                "Bars"
+            ],
+            "businessSize": "Small, Medium, Large",
+            "posType": "Android, iOS, Windows",
+            "softwareType": "Cloud/SaaS",
+            "freeTrial": "Yes",
+            "merchantService": "In-House or Bring Your Own",
+            "pricingModel": "Monthly Payment",
+            "priceRange": ""
+        },
+        "f0ef18a8-1974-4f3a-a487-3c3c7dee212e": {
+            "id": "add4ba7c-615c-45b6-9a8b-b8f2568ad8f2",
+            "productId": "f0ef18a8-1974-4f3a-a487-3c3c7dee212e",
+            "productName": "Lightspeed",
+            "bestFor": [
+                "Retail",
+                "Small Business",
+                "Ecommerce",
+                "Liqour Stores"
+            ],
+            "businessSize": "Small, Medium, Large",
+            "posType": "Android, iOS",
+            "softwareType": "Cloud/SaaS, On Premise (Mac)",
+            "freeTrial": "Yes",
+            "merchantService": "In-House or Bring Your Own",
+            "pricingModel": "Monthly Payment, Annual Subscription, Contract",
+            "priceRange": ""
+        },
+        "4a659923-91da-437f-af88-9c141a8516e0": {
+            "id": "7efa3a21-b045-4193-b7f5-0bf4d213d2eb",
+            "productId": "4a659923-91da-437f-af88-9c141a8516e0",
+            "productName": "Aloha",
+            "bestFor": [
+                "Restaurants",
+                "Quick Service",
+                "Full Service",
+                "Bars"
+            ],
+            "businessSize": "Medium, Large",
+            "posType": "Cloud, Windows",
+            "softwareType": "Cloud/SaaS, On Premise (Windows)",
+            "freeTrial": "Demo Only",
+            "merchantService": "In-House or Bring Your Own",
+            "pricingModel": "Monthly Payment, Contract",
+            "priceRange": ""
+        },
+        "20621691-f5fb-4dd7-8276-0ac1f479d636": {
+            "id": "2eeef06e-84c6-42b8-99ad-49d7b9b6b4c3",
+            "productId": "20621691-f5fb-4dd7-8276-0ac1f479d636",
+            "productName": "Upserve",
+            "bestFor": [
+                "Restaurants",
+                "Quick Service",
+                "Full Service",
+                "Bars"
+            ],
+            "businessSize": "Small, Medium",
+            "posType": "Android, iPad POS",
+            "softwareType": "Cloud/SaaS",
+            "freeTrial": "Demo Only",
+            "merchantService": "In-House Only",
+            "pricingModel": "Monthly Payment, Contract",
+            "priceRange": ""
+        },
+        "8fdf75eb-4300-4e71-ab36-d3cf48e1010d": {
+            "id": "0d72ff42-3099-4e33-9aab-c53a9d3d67a1",
+            "productId": "8fdf75eb-4300-4e71-ab36-d3cf48e1010d",
+            "productName": "Toast",
+            "bestFor": [
+                "Restaurants",
+                "Quick Service",
+                "Full Service"
+            ],
+            "businessSize": "Small, Medium",
+            "posType": "Android",
+            "softwareType": "Cloud/SaaS",
+            "freeTrial": "Demo Only",
+            "merchantService": "In-House Only",
+            "pricingModel": "Monthly Payment, Contract",
+            "priceRange": ""
+        }
+    }
+}
