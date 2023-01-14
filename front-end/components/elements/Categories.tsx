@@ -2,17 +2,33 @@ import POSCard from "components/common/pos_card/POSCard";
 import TabList from "components/common/TabList";
 import { useRouter } from "next/router";
 import { CategoryTabs, MockupData } from "utils/StringUtil";
-import React from "react";
+import React, { useEffect } from "react";
+import { AppProps } from "next/app";
+import useCategoryStore from "stores/category_store";
+import Loading from "components/common/loading/Loading";
+import useSWR from "swr";
+import AxiosInstance, { getPOSByCategory } from "api_client/axios_client";
+import { CategoryType } from "models/category_type";
+import AppRoutes from "utils/routes";
+import { getOverallRating } from "models/porduct";
 
-const Category = ({ categoryType }: { categoryType?: string }) => {
+const Category = (props: AppProps) => {
   const router = useRouter();
   const { type } = router.query;
 
+  const { data, error, isLoading } = useSWR(
+    type || CategoryType.popular,
+    getPOSByCategory
+  );
+
+  console.log("data");
+  console.log(data?.length);
   const selectedTabIndex = CategoryTabs.findIndex(
     (item) => item.link == router.asPath
   );
+
   return (
-    <div className="flex flex-col pb-12 bg-neutral-100">
+    <div className="flex flex-col pb-12 bg-neutral-100 flex-1">
       <div className=" flex flex-col py-12 bg-white mb-6 px-4 lg:items-center text-center md:py-14 md:px-8 md:gap-6">
         <TabList
           tabList={CategoryTabs}
@@ -34,16 +50,21 @@ const Category = ({ categoryType }: { categoryType?: string }) => {
         </p>
       </div>
 
-      <div className="flex flex-col px-4 gap-4 md:px-8 md:gap-6 items-center">
-        {MockupData.map((item, index) => (
-          <POSCard
-            key={`card-item-${index}`}
-            {...item}
-            onCardClick={() => {
-              router.push("/posdetail");
-            }}
-          />
-        ))}
+      <div className="flex flex-1 flex-col px-4 gap-4 md:px-8 md:gap-6 items-center">
+        {isLoading ? <Loading /> : <div></div>}
+
+        {data?.map((item, index) => {
+          return (
+            <POSCard
+              key={`card-item-${index}`}
+              data={item}
+              overallRating={getOverallRating(item.expert_opinion)}
+              onCardClick={() => {
+                router.push(`${AppRoutes.POSDetailPage}/${item.id}`);
+              }}
+            />
+          );
+        })}
       </div>
     </div>
   );

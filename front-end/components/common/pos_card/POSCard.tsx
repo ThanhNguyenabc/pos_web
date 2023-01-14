@@ -1,3 +1,4 @@
+import { Product } from "models/porduct";
 import { StaticImageData } from "next/image";
 import React, {
   ReactComponentElement,
@@ -9,12 +10,8 @@ import { POSCardMobile } from "./POSCard.mobile";
 import POSCardTablet from "./POSCard.tablet";
 
 export interface POSCardProps {
-  logo: StaticImageData;
-  systemos: Array<React.ElementType>;
-  rating: number;
-  desc?: string;
-  pros?: Array<string>;
-  cons?: Array<string>;
+  data: Product;
+  overallRating: number
   classname?: string;
   onCardClick?: () => void;
 }
