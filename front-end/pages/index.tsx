@@ -20,16 +20,22 @@ import ColorUtils from "utils/ColorUtils";
 import QuestionnaireSuccess from "components/elements/questionnaire/QuestionnaireSuccess";
 import RequestDemoPOS from "components/elements/request_demo_pos/RequestDemoPOS";
 import FindPOSModal from "components/elements/find_pos_modal/FindPOSModal";
-import POSDetail from "pages/posdetail";
+import POSDetail from "pages/pos-detail/[posId]";
 import ProcessingFee from "./posfee";
 import BreadmeIntroduction from "components/elements/breadme/BreadmeIntroduction";
 import ThanksYouForm from "components/common/thanksform";
 import AppRoutes from "utils/routes";
+import { getListCategory } from "api_client/axios_client";
+import useCategoryStore from "stores/category_store";
+import { Category } from "models/category";
+import { useEffect } from "react";
 
 const FeatureData = ["24/7 Support", "Free training", "Seamless Installments"];
 
-const Home = () => {
+const Home = ({ categories }: { categories: Array<Category> }) => {
   const router = useRouter();
+  const categoryStore = useCategoryStore((state) => state.setCategoriesList);
+  categoryStore(categories);
 
   const findPOS = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -149,4 +155,12 @@ const Home = () => {
   );
 };
 
+export async function getStaticProps() {
+  const response = await getListCategory();
+  return {
+    props: {
+      categories: response.data.data,
+    },
+  };
+}
 export default Home;
