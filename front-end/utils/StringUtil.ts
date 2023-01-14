@@ -13,32 +13,83 @@ import {
   Station2Img,
   Station4Img,
   Station5Img,
+  ExtouchImg,
+  SimphonyImg,
+  BrinkImg,
+  AldeloImg,
+  AlohaImg,
+  UpserveImg,
+  IcAndroid,
 } from "assets/AssetUtil";
+import { CategoryType } from "models/category_type";
+import { SystemOs } from "models/porduct";
+import { StaticImageData } from "next/image";
+import { ReactComponentElement, ReactElement } from "react";
 import AppRoutes from "./routes";
+
+export const getSystemIcon = (os: SystemOs): React.ElementType => {
+  switch (os) {
+    case SystemOs.iOS:
+      return IcApple;
+    case SystemOs.Android:
+      return IcAndroid;
+    case SystemOs.Window:
+      return IcWindow;
+  }
+};
+
+export const ProductIcons: { [key: string]: StaticImageData } = {
+  Revel: RevelImg,
+  "Clover Flex": CloverImg,
+  "Clover Duo": CloverImg,
+  Exatouch: ExtouchImg,
+  "Simphony (Oracle Micros)": SimphonyImg,
+  "Brink (Par)": BrinkImg,
+  Ovvi: OvviImg,
+  "Aldelo (Professional or Express)": AldeloImg,
+  Lightspeed: LightSpeedImg,
+  Aloha: AlohaImg,
+  Upserve: UpserveImg,
+  Toast: ToastImg,
+};
+
+export const ExpertReviewTitle: { [key: string]: string } = {
+  value: "Value",
+  feedback: "Feedback",
+  functionality: "Functionality",
+  support: "Support",
+  easy: "Easy to use",
+};
 
 export const CategoryTabs = [
   {
-    title: "All",
+    title: "Popular",
+    type: CategoryType.popular,
     link: AppRoutes.CategoryPage,
   },
   {
     title: "Quick Service Restaurants",
+    type: CategoryType.quick_service,
     link: AppRoutes.QuickServicePOS,
   },
   {
     title: "Retail Stores",
+    type: CategoryType.retail,
     link: AppRoutes.RetailPOS,
   },
   {
     title: "Full Service Restaurants",
+    type: CategoryType.full_service,
     link: AppRoutes.FullServicePOS,
   },
   {
     title: "Bar & Night Clubs",
+    type: CategoryType.club,
     link: AppRoutes.ClubPOS,
   },
   {
     title: "Small Businesses",
+    type: CategoryType.small_business,
     link: AppRoutes.SmallBusinessPOS,
   },
 ];

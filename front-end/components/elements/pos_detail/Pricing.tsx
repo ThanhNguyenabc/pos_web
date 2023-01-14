@@ -17,24 +17,34 @@ const PricingPerType = ({
     </div>
   );
 };
-const Pricing = () => {
+
+export interface PricingProps {
+  desc: Array<string>;
+  monthlyPrice: number;
+  oneTimePurchase: number;
+}
+
+const Pricing = ({ desc, monthlyPrice, oneTimePurchase }: PricingProps) => {
   return (
-    <div className="flex flex-col gap-6">
-      <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-6 md:gap-8">
+      <div className="flex flex-col gap-4 md:gap-8">
         <p className="txt-heading-xsmal">Pricing</p>
-        <p className="txt-md text-neutral-700">
-          Revel Systems software starts at $99 per month per terminal. Revel
-          isn’t overly transparent about its pricing. Revel’s monthly plans
-          start at $99 per month, but it appears this might be if you’re
-          ordering multiple terminals and only if you’re using their credit card
-          processing services.
-        </p>
+        <div className="flex flex-col">
+        {desc.map((item) => (
+          <p className="txt-md text-neutral-700">{item}</p>
+        ))}
+        </div>
+      
       </div>
       <div className="flex flex-row gap-4 w-full">
-        <PricingPerType plan="Basic plan" money={10} desc="Per Month" />
+        <PricingPerType
+          plan="Basic plan"
+          money={monthlyPrice}
+          desc="Per Month"
+        />
         <PricingPerType
           plan="One time purchase"
-          money={1295}
+          money={oneTimePurchase}
           desc="Per Station"
         />
       </div>
