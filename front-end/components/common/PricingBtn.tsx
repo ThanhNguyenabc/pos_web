@@ -4,7 +4,7 @@ import { Button } from "./Button";
 
 interface PricingBtnProps {
   color?: string;
-  logo: StaticImageData;
+  logo: StaticImageData | string;
   onClick?: () => void;
   desc: ReactElement | string;
   title?: string;
