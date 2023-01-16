@@ -16,10 +16,8 @@ import { Category } from "models/category";
 
 const FeatureData = ["24/7 Support", "Free training", "Seamless Installments"];
 
-const Home = ({ categories }: { categories: Array<Category> }) => {
+const Home = () => {
   const router = useRouter();
-  const categoryStore = useCategoryStore((state) => state.setCategoriesList);
-  categoryStore(categories);
 
   const findPOS = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -139,12 +137,4 @@ const Home = ({ categories }: { categories: Array<Category> }) => {
   );
 };
 
-export async function getStaticProps() {
-  const response = await getListCategory();
-  return {
-    props: {
-      categories: response.data.data,
-    },
-  };
-}
 export default Home;
