@@ -6,7 +6,7 @@ interface SpecificationProps {
     desc: string;
   }>;
 }
-const Specification = ({ items }: SpecificationProps) => {
+const SpecificationView = ({ items }: SpecificationProps) => {
   return (
     <div className="flex flex-col gap-6">
       <p className="txt-heading-xsmal">Specifications</p>
@@ -24,4 +24,4 @@ const Specification = ({ items }: SpecificationProps) => {
   );
 };
 
-export default Specification;
+export default SpecificationView;

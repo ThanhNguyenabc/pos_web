@@ -3,6 +3,7 @@ import { BreadMeBtn } from "components/common/BreadmeBtn";
 import { Button } from "components/common/Button";
 import PricingBtn from "components/common/PricingBtn";
 import { getOverallRating, Product, SystemOs } from "models/porduct";
+import { Specification } from "models/specification";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 import ColorUtils from "utils/ColorUtils";
@@ -10,35 +11,36 @@ import { getSystemIcon, ProductIcons } from "utils/StringUtil";
 import ExpertOpinion from "./ExpertOpinion";
 import POSIntroduction from "./Introduction";
 import Pricing from "./Pricing";
-import Specification from "./Specification";
+import SpecificationView from "./Specification";
 
 interface POSDetailProps {
-  data: Product;
+  product: Product;
+  specification: Specification;
 }
 
-export const POSDetail = ({ data }: POSDetailProps) => {
-  const overallRate = getOverallRating(data.expert_opinion);
+export const POSDetail = ({ product, specification }: POSDetailProps) => {
+  const overallRate = getOverallRating(product.expert_opinion);
 
   const rateItems = [
     {
       name: "Easy to use",
-      rating: data.expert_opinion.easy,
+      rating: product.expert_opinion.easy,
     },
     {
       name: "Value",
-      rating: data.expert_opinion.value,
+      rating: product.expert_opinion.value,
     },
     {
       name: "Support",
-      rating: data.expert_opinion.support,
+      rating: product.expert_opinion.support,
     },
     {
       name: "Functionality",
-      rating: data.expert_opinion.functionality,
+      rating: product.expert_opinion.functionality,
     },
     {
       name: "Feedback",
-      rating: data.expert_opinion.feedback,
+      rating: product.expert_opinion.feedback,
     },
   ];
   return (
@@ -46,7 +48,7 @@ export const POSDetail = ({ data }: POSDetailProps) => {
       <div className="flex bg-white h-fit max-w-[350px] flex-col gap-6 text-center md:gap-8 md:flex-row xl:flex-col">
         <div className="flex flex-col gap-2 items-center md:items-start md:text-left">
           <Image
-            src={ProductIcons[data.name]}
+            src={ProductIcons[product.name]}
             alt=""
             className="w-[160px] h-[80px]"
           />
@@ -54,7 +56,7 @@ export const POSDetail = ({ data }: POSDetailProps) => {
             Customizable POS system for retail, full & quick-service restaurants
           </p>
           <div className="flex items-center gap-3">
-            {data.os_system?.map((item, index) => {
+            {product.os_system?.map((item, index) => {
               const Icon = getSystemIcon(item);
               return <Icon key={`item-os-${index}`} className="w-6 h-6" />;
             })}
@@ -65,9 +67,9 @@ export const POSDetail = ({ data }: POSDetailProps) => {
           <div className="flex flex-row gap-2 md:gap-4">
             <BreadMeBtn />
             <PricingBtn
-              logo={ProductIcons[data.name]}
+              logo={ProductIcons[product.name]}
               title="Monthly"
-              desc={`$${data.monthly_price}/month`}
+              desc={`$${product.monthly_price}/month`}
               color={ColorUtils.secondary}
             />
           </div>
@@ -86,44 +88,46 @@ export const POSDetail = ({ data }: POSDetailProps) => {
                 />
               </svg>
             </div>
-            <p className="text-left txt-sm-bold">
-              {data.pricing_desc?.[0]}
-            </p>
+            <p className="text-left txt-sm-bold">{product.pricing_desc?.[0]}</p>
           </div>
         </div>
       </div>
       <div className="flex flex-col  gap-12 flex-1 bg-white md:gap-16">
-        <POSIntroduction pros={data.pros} cons={data.cons} desc={data.intro} />
+        <POSIntroduction
+          pros={product.pros}
+          cons={product.cons}
+          desc={product.intro}
+        />
         <ExpertOpinion
           overal={overallRate}
-          comment={data.expert_opinion.comment}
+          comment={product.expert_opinion.comment}
           rateItems={rateItems}
         />
-        <Specification
+        <SpecificationView
           items={[
             {
               title: "Business Size",
-              desc: "Small",
+              desc: specification.businessSize,
             },
             {
               title: "POS Type",
-              desc: "IOS",
+              desc: specification.posType,
             },
             {
               title: "Software type",
-              desc: "Cloud/SaaS",
+              desc: specification.softwareType,
             },
             {
               title: "Free Trial",
-              desc: "Demo Only",
+              desc: specification.freeTrial,
             },
             {
               title: "Merchant Services",
-              desc: "In-House, 3rd Party",
+              desc: specification.merchantService,
             },
             {
               title: "Pricing Model",
-              desc: "Monthly Payment, Contract",
+              desc: specification.pricingModel,
             },
             {
               title: "Price Range",
@@ -133,15 +137,17 @@ export const POSDetail = ({ data }: POSDetailProps) => {
         />
         <div className="flex flex-col gap-4 md:gap-8">
           <p className="txt-heading-xsmal">POS Integrations</p>
-          <p className="txt-md text-neutral-700">{data.pos_integrations}</p>
+          <p className="txt-md text-neutral-700">{product.pos_integrations}</p>
         </div>
         <div className="flex flex-col gap-4 md:gap-8">
           <p className="txt-heading-xsmal">Software</p>
-          <p className="txt-md text-neutral-700">{data.software}</p>
+          <p className="txt-md text-neutral-700">{product.software}</p>
         </div>
         <div className="flex flex-col gap-4 md:gap-8">
           <p className="txt-heading-xsmal">Payment Processing</p>
-          <p className="txt-md text-neutral-700">{data.payment_processing}</p>
+          <p className="txt-md text-neutral-700">
+            {product.payment_processing}
+          </p>
           <div className="flex flex-col p-4 gap-3 items-center border-success border-2 rounded-xl md:flex-row">
             <Image src={BreadMeImg} alt="" className="w-20" />
             <p className="txt-large-bold text-center flex-1 xl:text-start">
@@ -155,9 +161,9 @@ export const POSDetail = ({ data }: POSDetailProps) => {
           </div>
         </div>
         <Pricing
-          monthlyPrice={data.monthly_price}
-          desc={data.pricing_desc || []}
-          oneTimePurchase={data.one_time_purchase}
+          monthlyPrice={product.monthly_price}
+          desc={product.pricing_desc || []}
+          oneTimePurchase={product.one_time_purchase}
         />
       </div>
     </div>

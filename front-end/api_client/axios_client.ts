@@ -7,6 +7,7 @@ import { FreePOSContact } from "models/freepos_contact";
 import { Product } from "models/porduct";
 import { QuestionnaireContact } from "models/questionnaire_contact";
 import { RequestDemoContact } from "models/request_demo_contact";
+import { Specification } from "models/specification";
 
 const AxiosInstance = axios.create({
   baseURL: "http://localhost:3000/api",
@@ -32,6 +33,18 @@ export const getPOSByCategory = async (type: string) => {
 export const getPOSDetail = async (id: string) => {
   return await AxiosInstance.post<ApiResponse<Product>>("/productDetail", {
     posId: id,
+  })
+    .then((res) => {
+      return res.data.data;
+    })
+    .catch((error) => {
+      if (error.response.status !== 409) throw error;
+    });
+};
+
+export const getSpecification = async (productId: string) => {
+  return await AxiosInstance.post<ApiResponse<Specification>>("/specification", {
+    posId: productId,
   })
     .then((res) => {
       return res.data.data;
