@@ -12,17 +12,20 @@ import ContactForm, { ContactInfo } from "components/common/ContactForm";
 import CashDiscountQuestion from "components/elements/questionnaire/CashDiscountQuestion";
 import { Button } from "components/common/Button";
 import QuestionnaireSuccess from "components/elements/questionnaire/QuestionnaireSuccess";
+import Contact from "components/elements/questionnaire/Contact";
 
 type QuestionnaireState = {
   showQuestions: boolean;
   cQuestionIndex: number;
-  questionData?: QuestionData;
+  questionData: QuestionData;
   setQuestionData: (data: QuestionData) => void;
+  onSubmit?: (contactInfo: ContactInfo) => void;
 };
 export const QuestionnaireContext = React.createContext<QuestionnaireState>({
   showQuestions: false,
   cQuestionIndex: 0,
   setQuestionData: () => {},
+  questionData: {},
 });
 
 const Questions = [
@@ -40,7 +43,7 @@ const PAGES = [
   <StationQuestion key={`station-key`} />,
   <HandHeldQuestion key={`handheld-key`} />,
   <CashDiscountQuestion key={`discount-key`} />,
-  <ContactForm key={`contact-key`} classname="px-4" />,
+  <Contact />,
 ];
 
 interface QuestionData {
@@ -54,6 +57,7 @@ interface QuestionData {
 
 const Questionnaire = () => {
   const [isSubmit, setSubmit] = useState(false);
+
   const updateQuestionData = (data: QuestionData) => {
     setQuestionState((preState) => ({
       ...preState,
@@ -66,6 +70,7 @@ const Questionnaire = () => {
     showQuestions: false,
     cQuestionIndex: 0,
     setQuestionData: updateQuestionData,
+    questionData: {},
   });
 
   const backButton = () => {
@@ -82,10 +87,6 @@ const Questionnaire = () => {
       ...preState,
       showQuestions: true,
     }));
-  };
-
-  const onSubmit = () => {
-    setSubmit(true);
   };
 
   return (
@@ -125,19 +126,12 @@ const Questionnaire = () => {
             </p>
           </div>
 
-          <div className="flex flex-col max-w-lg w-full self-center pb-6">
+          <div className="flex flex-col max-w-lg w-full self-center pb-6 px-4 md:px-8 xl:p-0">
             {PAGES[questionSate.cQuestionIndex]}
-            <Button
-              title="Submit"
-              classname={`mx-4 mt-16 h-16 hidden ${
-                questionSate.cQuestionIndex == PAGES.length - 1 ? "flex" : ""
-              } md:h-16 md:text-xl`}
-              onClick={onSubmit}
-            />
           </div>
         </div>
       </div>
-      <QuestionnaireSuccess classname={`${isSubmit ? "flex" : "hidden"}`} />
+      {/* <QuestionnaireSuccess classname={`${isSubmit ? "flex" : "hidden"}`} /> */}
     </QuestionnaireContext.Provider>
   );
 };

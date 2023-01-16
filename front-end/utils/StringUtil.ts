@@ -61,6 +61,12 @@ export const ExpertReviewTitle: { [key: string]: string } = {
   easy: "Easy to use",
 };
 
+export const isValidPhoneNumber = (str: string) => str.length > 6;
+
+export const isValidEmail = (str: string) => {
+  const expression: RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+  return expression.test(str);
+};
 export const CategoryTabs = [
   {
     title: "Popular",
