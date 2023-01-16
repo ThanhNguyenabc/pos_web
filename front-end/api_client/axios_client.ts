@@ -10,7 +10,7 @@ import { RequestDemoContact } from "models/request_demo_contact";
 import { Specification } from "models/specification";
 
 const AxiosInstance = axios.create({
-  baseURL: "http://localhost:3000/api",
+  baseURL: `${process.env.NEXT_PUBLIC_BACKEND_URL}/api`,
 });
 
 export default AxiosInstance;
@@ -43,9 +43,12 @@ export const getPOSDetail = async (id: string) => {
 };
 
 export const getSpecification = async (productId: string) => {
-  return await AxiosInstance.post<ApiResponse<Specification>>("/specification", {
-    posId: productId,
-  })
+  return await AxiosInstance.post<ApiResponse<Specification>>(
+    "/specification",
+    {
+      posId: productId,
+    }
+  )
     .then((res) => {
       return res.data.data;
     })
@@ -54,7 +57,9 @@ export const getSpecification = async (productId: string) => {
     });
 };
 
-export const submitQuestionnaireContact = async (data: QuestionnaireContact) => {
+export const submitQuestionnaireContact = async (
+  data: QuestionnaireContact
+) => {
   return await AxiosInstance.post<ApiResponse<boolean>>("/questionnaire", data)
     .then((res) => {
       return res.data.data;
