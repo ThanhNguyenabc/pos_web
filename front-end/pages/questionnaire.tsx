@@ -131,7 +131,6 @@ const Questionnaire = () => {
           </div>
         </div>
       </div>
-      {/* <QuestionnaireSuccess classname={`${isSubmit ? "flex" : "hidden"}`} /> */}
     </QuestionnaireContext.Provider>
   );
 };

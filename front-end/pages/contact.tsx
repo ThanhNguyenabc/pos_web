@@ -97,7 +97,6 @@ const Contact = () => {
 
   return (
     <>
-      <ThankYouDialog />
       <div className="flex  flex-col py-12 gap-10 items-center  md:py-14">
         <div className="flex flex-col w-full px-4 md:px-8 gap-10">
           <div className="flex flex-col gap-4 items-center text-center">

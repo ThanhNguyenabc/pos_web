@@ -11,6 +11,7 @@ const StationQuestion = () => {
   return (
     <SelectedList
       selectIndex={value.questionData?.numberStationIndex}
+      classname={"md:grid-cols-3"}
       data={StationData}
       itemBuilder={(item, index: number) => {
         return (

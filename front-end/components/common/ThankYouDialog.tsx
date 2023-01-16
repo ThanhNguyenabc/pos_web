@@ -10,7 +10,7 @@ const ThankYouDialog = () => {
       <div className=" flex flex-col gap-6 items-center">
         <ThanksYouForm />
         <Button
-          classname="w-32"
+          classname="w-32 h-12"
           title="Ok"
           onClick={() => {
             document.getElementById(ThankyouModalId)?.click();

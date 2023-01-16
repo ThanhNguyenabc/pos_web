@@ -5,11 +5,18 @@ import { IcAmericanFlag } from "assets/AssetUtil";
 import { Button } from "components/common/Button";
 import ContactForm, { ContactInfo } from "components/common/ContactForm";
 import Input from "components/common/Input";
+import { ThankyouModalId } from "components/common/ThankYouDialog";
 import { QuestionnaireContact } from "models/questionnaire_contact";
 import { QuestionnaireContext } from "pages/questionnaire";
 import React, { useState } from "react";
 import useSwr from "swr";
-import { HandHeldData, isValidEmail, isValidPhoneNumber, StationData, YesNoQuestion } from "utils/StringUtil";
+import {
+  HandHeldData,
+  isValidEmail,
+  isValidPhoneNumber,
+  StationData,
+  YesNoQuestion,
+} from "utils/StringUtil";
 import { Categories } from "../home/BusinessCategorySection";
 
 const Contact = () => {
@@ -73,10 +80,8 @@ const Contact = () => {
         StationData[value.questionData.numberStationIndex || 0].content,
     };
 
-    await submitQuestionnaireContact(data).then((res) => {
-      console.log("success");
-      console.log(res);
-    });
+    await submitQuestionnaireContact(data);
+    document.getElementById(ThankyouModalId)?.click();
   };
 
   return (

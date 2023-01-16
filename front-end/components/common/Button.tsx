@@ -25,11 +25,11 @@ export const Button = ({
       style={style}
       onClick={onClick}
       className={twMerge(
-        `btn text-base normal-case md:h-14 md:text-lg md:px-5  ${classname} ${
+        `btn text-base normal-case md:h-14 md:text-lg md:px-5  ${
           isOutLine
             ? "btn-outline hover:bg-white hover:text-black bg-white"
             : "btn-primary border-none"
-        }`
+        }  ${classname} `
       )}
     >
       <div className="flex flex-row w-full h-auto items-center justify-center">
