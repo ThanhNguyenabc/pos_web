@@ -5,8 +5,10 @@ import PricingBtn from "components/common/PricingBtn";
 import { getOverallRating, Product, SystemOs } from "models/porduct";
 import { Specification } from "models/specification";
 import Image, { StaticImageData } from "next/image";
+import { useRouter } from "next/router";
 import React from "react";
 import ColorUtils from "utils/ColorUtils";
+import AppRoutes from "utils/routes";
 import { getSystemIcon, ProductIcons } from "utils/StringUtil";
 import ExpertOpinion from "./ExpertOpinion";
 import POSIntroduction from "./Introduction";
@@ -20,7 +22,7 @@ interface POSDetailProps {
 
 export const POSDetail = ({ product, specification }: POSDetailProps) => {
   const overallRate = getOverallRating(product.expert_opinion);
-
+  const router = useRouter();
   const rateItems = [
     {
       name: "Easy to use",
@@ -157,6 +159,7 @@ export const POSDetail = ({ product, specification }: POSDetailProps) => {
               title="Learn more"
               rightIcon={<IcRightArrow />}
               style={{ color: ColorUtils.success, background: "white" }}
+              onClick={() => router.push(AppRoutes.BreadmePage)}
             />
           </div>
         </div>
