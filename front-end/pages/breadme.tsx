@@ -1,18 +1,8 @@
 import { BreadMeImg, IcBack } from "assets/AssetUtil";
 import IconButton from "components/common/IconButton";
-import Introduction from "components/elements/questionnaire/Introduction";
-import SelectedList from "components/common/SelectedList";
-import StationQuestion from "components/elements/questionnaire/StationQuestion";
-import StepView from "components/elements/questionnaire/StationQuestion";
 import Image from "next/image";
 import React, { useState } from "react";
-import BusinessQuestion from "components/elements/questionnaire/BusinessQuestion";
-import SaleSystemQuestion from "components/elements/questionnaire/SaleSystemQuestion";
-import HandHeldQuestion from "components/elements/questionnaire/HandheldQuestion";
-import ContactForm, { ContactInfo } from "components/common/ContactForm";
-import CashDiscountQuestion from "components/elements/questionnaire/CashDiscountQuestion";
-import { Button } from "components/common/Button";
-import QuestionnaireSuccess from "components/elements/questionnaire/QuestionnaireSuccess";
+import { ContactInfo } from "components/common/ContactForm";
 import BreadmeIntroduction from "components/elements/breadme/BreadmeIntroduction";
 import BreadmeCreditCard from "components/elements/breadme/BreadmeCreditCard";
 import BreadmeDiscountQuestion from "components/elements/breadme/BreadmeDiscount";
@@ -50,8 +40,8 @@ const PAGES = [
   <BreadmeDiscountQuestion key={"breadme-discount"} />,
   <BreadmeStation key={"breadme-station"} />,
   <BreadmeSaleSystem key={"breadme-sale-system"} />,
-  <BreadmeContact />,
-  <ThanksYouForm />,
+  <BreadmeContact key={"breadme-contact"} />,
+  <ThanksYouForm key={`breadme-thankyou`} />,
 ];
 
 interface BreadmeData {

@@ -1,17 +1,13 @@
 import { IcBack } from "assets/AssetUtil";
 import IconButton from "components/common/IconButton";
 import Introduction from "components/elements/questionnaire/Introduction";
-import SelectedList from "components/common/SelectedList";
 import StationQuestion from "components/elements/questionnaire/StationQuestion";
-import StepView from "components/elements/questionnaire/StationQuestion";
 import React, { useState } from "react";
 import BusinessQuestion from "components/elements/questionnaire/BusinessQuestion";
 import SaleSystemQuestion from "components/elements/questionnaire/SaleSystemQuestion";
 import HandHeldQuestion from "components/elements/questionnaire/HandheldQuestion";
 import ContactForm, { ContactInfo } from "components/common/ContactForm";
 import CashDiscountQuestion from "components/elements/questionnaire/CashDiscountQuestion";
-import { Button } from "components/common/Button";
-import QuestionnaireSuccess from "components/elements/questionnaire/QuestionnaireSuccess";
 import Contact from "components/elements/questionnaire/Contact";
 
 type QuestionnaireState = {
@@ -43,7 +39,7 @@ const PAGES = [
   <StationQuestion key={`station-key`} />,
   <HandHeldQuestion key={`handheld-key`} />,
   <CashDiscountQuestion key={`discount-key`} />,
-  <Contact />,
+  <Contact key={"questionnaire-contact"} />,
 ];
 
 interface QuestionData {

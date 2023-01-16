@@ -30,11 +30,12 @@ const Pricing = ({ desc, monthlyPrice, oneTimePurchase }: PricingProps) => {
       <div className="flex flex-col gap-4 md:gap-8">
         <p className="txt-heading-xsmal">Pricing</p>
         <div className="flex flex-col">
-        {desc.map((item) => (
-          <p className="txt-md text-neutral-700">{item}</p>
-        ))}
+          {desc.map((item, index) => (
+            <p key={`${index}-desc`} className="txt-md text-neutral-700">
+              {item}
+            </p>
+          ))}
         </div>
-      
       </div>
       <div className="flex flex-row gap-4 w-full">
         <PricingPerType

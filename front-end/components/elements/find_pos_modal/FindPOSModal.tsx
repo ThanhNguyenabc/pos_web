@@ -41,7 +41,7 @@ const PAGES = [
   <CreditCardVolume key={`credit-key`} />,
   <BusinessInfo key={`business-key`} />,
   <PersonalInfo key={`personal-key`} />,
-  <ThanksYouForm />,
+  <ThanksYouForm  key={`thanks-form`}/>,
 ];
 
 const FindPOSModal = () => {
