@@ -3,6 +3,7 @@ import POSCard from "components/common/pos_card/POSCard";
 import RecommendPOSCard from "components/common/recommend_card/RecommendPOSCard";
 import { useRouter } from "next/router";
 import React from "react";
+
 interface QuestionnaireSuccessProps {
   classname?: string;
 }
@@ -17,9 +18,8 @@ const QuestionnaireSuccess = ({ classname }: QuestionnaireSuccessProps) => {
           Based on your business requirements, we recommend the following POS
           system
         </p>
-        <RecommendPOSCard
+        {/* <RecommendPOSCard
           classname="z-1 top-4"
-          logo={RevelImg}
           systemos={[IcApple]}
           rating={8}
           desc={
@@ -35,76 +35,13 @@ const QuestionnaireSuccess = ({ classname }: QuestionnaireSuccessProps) => {
             "Potential glitches with weak internet",
             "No modifiers to modifiers feature",
           ]}
-        />
+        /> */}
       </div>
 
       <div className="flex flex-col px-4 pb-10 pt-[270px] gap-4 md:pt-[170px]  xl:pt-[200px] md:px-8 md:gap-6 xl:px-[120px]">
         <p className="txt-large-bold">
           Other POS systems you can use based on your answers
         </p>
-        <POSCard
-          logo={RevelImg}
-          systemos={[IcApple]}
-          rating={8}
-          desc={
-            "Toast is a easy-to-use software with a sleek station & handheld hardware"
-          }
-          pros={[
-            "Customizable clouded system",
-            "Amazing local on-site support",
-            "Great back office management",
-          ]}
-          cons={[
-            "Doesn't work with Android",
-            "Potential glitches with weak internet",
-            "No modifiers to modifiers feature",
-          ]}
-          onCardClick={() => {
-            router.push("/posdetail");
-          }}
-        />
-        <POSCard
-          logo={RevelImg}
-          systemos={[IcApple]}
-          rating={8}
-          desc={
-            "Toast is a easy-to-use software with a sleek station & handheld hardware"
-          }
-          pros={[
-            "Customizable clouded system",
-            "Amazing local on-site support",
-            "Great back office management",
-          ]}
-          cons={[
-            "Doesn't work with Android",
-            "Potential glitches with weak internet",
-            "No modifiers to modifiers feature",
-          ]}
-          onCardClick={() => {
-            router.push("/posdetail");
-          }}
-        />
-        <POSCard
-          logo={RevelImg}
-          systemos={[IcApple]}
-          rating={8}
-          desc={
-            "Toast is a easy-to-use software with a sleek station & handheld hardware"
-          }
-          pros={[
-            "Customizable clouded system",
-            "Amazing local on-site support",
-            "Great back office management",
-          ]}
-          cons={[
-            "Doesn't work with Android",
-            "Potential glitches with weak internet",
-            "No modifiers to modifiers feature",
-          ]}
-          onCardClick={() => {
-            router.push("/posdetail");
-          }}
-        />
       </div>
     </div>
   );

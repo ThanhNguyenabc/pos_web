@@ -87,7 +87,7 @@ export const POSDetail = ({ data }: POSDetailProps) => {
               </svg>
             </div>
             <p className="text-left txt-sm-bold">
-              FREE for qualifying merchants or $2,500 per station.
+              {data.pricing_desc?.[0]}
             </p>
           </div>
         </div>

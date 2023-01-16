@@ -4,6 +4,7 @@ interface InputProps {
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
   leftIcon?: ReactElement;
   focusColor?: string;
+  errorMessage?: string;
 }
 
 const Input = ({
@@ -11,6 +12,7 @@ const Input = ({
   inputProps: inputprops,
   leftIcon,
   focusColor,
+  errorMessage,
 }: InputProps) => {
   return (
     <div className="form-control w-full relative">
@@ -20,7 +22,7 @@ const Input = ({
         </label>
       )}
       {leftIcon && (
-        <div className=" absolute bottom-3 left-3 w-6 h-6">{leftIcon}</div>
+        <div className={`absolute ${errorMessage ? "bottom-9" : "bottom-3"} left-3 w-6 h-6`}>{leftIcon}</div>
       )}
       <input
         {...inputprops}
@@ -28,6 +30,8 @@ const Input = ({
           leftIcon ? "pl-12" : ""
         }`}
       />
+
+      {errorMessage && <p className="mt-1 text-sm text-error">{errorMessage}</p>}
     </div>
   );
 };

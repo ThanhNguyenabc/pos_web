@@ -3,7 +3,6 @@ import React from "react";
 import { CreditCardVolumeData } from "utils/StringUtil";
 import { FindPOSModalContext } from "./FindPOSModal";
 
-
 export const CreditCardVolume = () => {
   const value = React.useContext(FindPOSModalContext);
   return (
@@ -20,6 +19,7 @@ export const CreditCardVolume = () => {
           ...value.data,
           creditVolumeId: selectIndex,
         });
+        value.nextPage();
       }}
     />
   );

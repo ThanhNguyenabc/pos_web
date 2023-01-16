@@ -1,6 +1,5 @@
 import { IcCreditCard, IcDiscount, IcStore } from "assets/AssetUtil";
 import { Button } from "components/common/Button";
-import Image from "next/image";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 import ColorUtils from "utils/ColorUtils";
@@ -41,14 +40,17 @@ const Introduction = ({ classname, onStart }: IntroductionPorps) => {
           You may qualify for a Free POS if:
         </p>
         <div className="flex flex-col gap-4">
-          {Reason.map((item, index) => (
-            <div key={`reason-${index}`} className="card bg-base-100">
-              <div className="card-body p-4 flex-row items-center txt-md md:text-xl gap-4">
-                <Image src={item.icon} className="w-6 h-6" alt="" />
-                <p className="text-left">{item.desc}</p>
+          {Reason.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div key={`reason-${index}`} className="card bg-base-100">
+                <div className="card-body p-4 flex-row items-center txt-md md:text-xl gap-4">
+                  <Icon className="w-6 h-6" />
+                  <p className="text-left">{item.desc}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
         <Button
           classname="mt-6 h-16 xl:hidden"

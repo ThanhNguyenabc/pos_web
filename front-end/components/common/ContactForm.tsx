@@ -2,6 +2,7 @@ import { IcAmericanFlag } from "assets/AssetUtil";
 import Image from "next/image";
 import { type } from "os";
 import React from "react";
+import { Button } from "./Button";
 import Input from "./Input";
 
 export interface ContactInfo {
@@ -84,6 +85,7 @@ const ContactForm = ({
           ></textarea>
         </div>
       )}
+
     </div>
   );
 };

@@ -1,0 +1,24 @@
+import React from "react";
+import { Button } from "./Button";
+import Modal from "./Modal";
+import ThanksYouForm from "./thanksform";
+export const ThankyouModalId = "thankyouModal";
+
+const ThankYouDialog = () => {
+  return (
+    <Modal modalId={ThankyouModalId}>
+      <div className=" flex flex-col gap-6 items-center">
+        <ThanksYouForm />
+        <Button
+          classname="w-32"
+          title="Ok"
+          onClick={() => {
+            document.getElementById(ThankyouModalId)?.click();
+          }}
+        />
+      </div>
+    </Modal>
+  );
+};
+
+export default ThankYouDialog;

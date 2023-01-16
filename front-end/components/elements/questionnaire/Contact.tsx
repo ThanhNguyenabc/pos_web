@@ -1,18 +1,20 @@
-import { submitForFreePOS } from "api_client/axios_client";
-import { IcAmericanFlag, IcBack } from "assets/AssetUtil";
+import AxiosInstance, {
+  submitQuestionnaireContact,
+} from "api_client/axios_client";
+import { IcAmericanFlag } from "assets/AssetUtil";
 import { Button } from "components/common/Button";
 import ContactForm, { ContactInfo } from "components/common/ContactForm";
 import Input from "components/common/Input";
+import { QuestionnaireContact } from "models/questionnaire_contact";
+import { QuestionnaireContext } from "pages/questionnaire";
 import React, { useState } from "react";
-import {
-  CreditCardVolumeData,
-  isValidEmail,
-  isValidPhoneNumber,
-} from "utils/StringUtil";
-import { FindPOSModalContext } from "./FindPOSModal";
+import useSwr from "swr";
+import { HandHeldData, isValidEmail, isValidPhoneNumber, StationData, YesNoQuestion } from "utils/StringUtil";
+import { Categories } from "../home/BusinessCategorySection";
 
-const PersonalInfo = () => {
-  const value = React.useContext(FindPOSModalContext);
+const Contact = () => {
+  const value = React.useContext(QuestionnaireContext);
+
   const [contactInfo, setContactInfo] = useState<
     ContactInfo & {
       nameError: string;
@@ -25,7 +27,7 @@ const PersonalInfo = () => {
     phoneError: "",
   });
 
-  const onSubmit = async () => {
+  const submit = async () => {
     const { name = "", email = "", phoneNumber = "" } = contactInfo;
 
     if (name.length <= 0) {
@@ -57,19 +59,28 @@ const PersonalInfo = () => {
       nameError: "",
     }));
 
-    await submitForFreePOS({
-      creditCardVolume: CreditCardVolumeData[value.data?.creditVolumeId || 0],
-      businessname: value.data?.businessName || "",
-      businessphone: value.data?.businessPhone || "",
-      personalPhone: phoneNumber,
-      email: email,
-      name: name,
+    const data: QuestionnaireContact = {
+      name: contactInfo.name || "",
+      email: contactInfo.email || "",
+      onDiscountProgram: YesNoQuestion[value.questionData.isDiscountIndex || 0],
+      phoneNumber: contactInfo.phoneNumber || "",
+      business: Categories[value.questionData.businessId || 0].name,
+      haveSaleSystem:
+        YesNoQuestion[value.questionData.isOwnSaleSystemIndex || 0],
+      numberOfHandheld:
+        HandHeldData[value.questionData.handHeldIndex || 0].content,
+      numberOfStations:
+        StationData[value.questionData.numberStationIndex || 0].content,
+    };
+
+    await submitQuestionnaireContact(data).then((res) => {
+      console.log("success");
+      console.log(res);
     });
-    value.nextPage();
   };
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className={`flex flex-col gap-6`}>
       <Input
         label={"Your name"}
         inputProps={{
@@ -117,22 +128,10 @@ const PersonalInfo = () => {
           contactInfo.phoneError.length > 0 ? contactInfo.phoneError : undefined
         }
       />
-      <div className={`flex flex-row gap-4`}>
-        <Button
-          title="Back"
-          isOutLine={true}
-          classname={`mt-16 md:text-xl`}
-          leftIcon={<IcBack />}
-          onClick={value.onBack}
-        />
-        <Button
-          title={"Submit"}
-          classname={`flex-1 mt-16 md:text-xl`}
-          onClick={onSubmit}
-        />
-      </div>
+
+      <Button title="Submit" classname={` mt-4`} onClick={submit} />
     </div>
   );
 };
 
-export default PersonalInfo;
+export default Contact;

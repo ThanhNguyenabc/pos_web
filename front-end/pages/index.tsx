@@ -1,11 +1,7 @@
 import {
   BannerImage,
-  IcApple,
   IcCheck,
-  IcCheckbox,
-  IcPhone,
-  IcRightArrow,
-  RevelImg,
+  IcRightArrow
 } from "assets/AssetUtil";
 import FeatureSection from "components/elements/home/FeatureSection";
 import ClientSection from "components/common/ClientSection";
@@ -15,20 +11,12 @@ import { Button } from "components/common/Button";
 import MetricSection from "components/common/MetricSection";
 import { FooterCTA } from "components/common/FooterCTA";
 import { useRouter } from "next/router";
-import RecommendPOSCard from "components/common/recommend_card/RecommendPOSCard";
 import ColorUtils from "utils/ColorUtils";
-import QuestionnaireSuccess from "components/elements/questionnaire/QuestionnaireSuccess";
-import RequestDemoPOS from "components/elements/request_demo_pos/RequestDemoPOS";
 import FindPOSModal from "components/elements/find_pos_modal/FindPOSModal";
-import POSDetail from "pages/pos-detail/[posId]";
-import ProcessingFee from "./posfee";
-import BreadmeIntroduction from "components/elements/breadme/BreadmeIntroduction";
-import ThanksYouForm from "components/common/thanksform";
 import AppRoutes from "utils/routes";
 import { getListCategory } from "api_client/axios_client";
 import useCategoryStore from "stores/category_store";
 import { Category } from "models/category";
-import { useEffect } from "react";
 
 const FeatureData = ["24/7 Support", "Free training", "Seamless Installments"];
 
