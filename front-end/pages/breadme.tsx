@@ -26,12 +26,14 @@ type BreadmeState = {
   cQuestionIndex: number;
   questionData?: BreadmeData;
   setQuestionData: (data: BreadmeData) => void;
+  nextPage: () => void;
 };
 
 export const BreadmeContext = React.createContext<BreadmeState>({
   showQuestions: false,
   cQuestionIndex: 0,
   setQuestionData: () => {},
+  nextPage: () => {},
 });
 
 const Questions = [
@@ -62,7 +64,6 @@ interface BreadmeData {
 }
 
 const Questionnaire = () => {
-  const [isSubmit, setSubmit] = useState(false);
   const updateQuestionData = (data: BreadmeData) => {
     setQuestionState((preState) => ({
       ...preState,
@@ -71,10 +72,18 @@ const Questionnaire = () => {
     }));
   };
 
+  const onNextPage = () => {
+    setQuestionState((preState) => ({
+      ...preState,
+      cQuestionIndex: preState.cQuestionIndex + 1,
+    }));
+  };
+
   const [questionSate, setQuestionState] = useState<BreadmeState>({
     showQuestions: false,
     cQuestionIndex: 0,
     setQuestionData: updateQuestionData,
+    nextPage: onNextPage,
   });
 
   const onPressBack = () => {
@@ -93,17 +102,9 @@ const Questionnaire = () => {
     }));
   };
 
-  const onSubmit = () => {
-    setSubmit(true);
-  };
-
   return (
     <BreadmeContext.Provider value={questionSate}>
-      <div
-        className={`flex w-full flex-1 flex-col xl:flex-row ${
-          isSubmit ? "hidden" : ""
-        }`}
-      >
+      <div className={`flex w-full flex-1 flex-col xl:flex-row`}>
         <div
           className={`${
             questionSate.showQuestions ? "hidden" : "flex"
@@ -124,7 +125,10 @@ const Questionnaire = () => {
           <div className="w-full flex flex-row items-center justify-center p-4">
             <div
               className={`flex ${
-                questionSate.cQuestionIndex > 0 ? "xl:flex" : "xl:"
+                questionSate.cQuestionIndex > 0 &&
+                questionSate.cQuestionIndex < PAGES.length - 1
+                  ? "xl:flex"
+                  : "hidden"
               }`}
             >
               <IconButton onClick={onPressBack}>
@@ -144,7 +148,6 @@ const Questionnaire = () => {
           </div>
         </div>
       </div>
-      <QuestionnaireSuccess classname={`${isSubmit ? "flex" : "hidden"}`} />
     </BreadmeContext.Provider>
   );
 };

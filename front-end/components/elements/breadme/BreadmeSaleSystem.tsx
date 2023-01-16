@@ -13,6 +13,7 @@ const BreadmeSaleSystem = () => {
   const [otherSystem, setOtherSystem] = useState(
     context.questionData?.otherSaleSystem ?? ""
   );
+
   const onNext = () => {
     context.setQuestionData({
       ...context.questionData,
@@ -21,6 +22,8 @@ const BreadmeSaleSystem = () => {
     });
   };
 
+  console.log("cIndexxx");
+  console.log(cIndex);
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
     setOtherSystem(newValue);

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { ApiResponse } from "models/api_response";
+import { BreadMeContact } from "models/breadme_contact";
 import { Category } from "models/category";
 import { ContactInfo } from "models/contact_info";
 import { FreePOSContact } from "models/freepos_contact";
@@ -72,6 +73,16 @@ export const submitForDemoPOS = async (data: RequestDemoContact) => {
 
 export const submitContact = async (data: ContactInfo) => {
   return await AxiosInstance.post<ApiResponse<boolean>>("/contact_info", data)
+    .then((res) => {
+      return res.data.data;
+    })
+    .catch((error) => {
+      if (error.response.status !== 409) throw error;
+    });
+};
+
+export const submitBreadme = async (data: BreadMeContact) => {
+  return await AxiosInstance.post<ApiResponse<boolean>>("/breadme", data)
     .then((res) => {
       return res.data.data;
     })
