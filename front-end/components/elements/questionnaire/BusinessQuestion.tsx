@@ -11,10 +11,9 @@ const BusinessQuestion = () => {
       selectIndex={value.questionData?.businessId}
       data={Categories}
       classname={"md:grid-cols-2"}
-      itemListClassName={"md:w-[240px]"}
       itemBuilder={(item, index: number) => {
         return (
-          <div className="flex flex-row items-center p-4 gap-4 lg:p-6 md:flex-col md:justify-center lg:h-[190px]">
+          <div className="flex md:h-[180px] flex-row items-center p-4 gap-4 lg:p-6 md:flex-col md:justify-center lg:h-[190px]">
             <Image
               src={item.link}
               className="w-[84px] h-[56px] md:w-[120px] md:h-20"

@@ -15,7 +15,7 @@ const StationQuestion = () => {
       data={StationData}
       itemBuilder={(item, index: number) => {
         return (
-          <div className="card-body flex flex-row items-center p-4 gap-4 lg:p-6 md:flex-col">
+          <div className="card-body md:h-[190px] flex flex-row items-center p-4 gap-4 lg:p-6 md:flex-col">
             <Image
               src={item.icon}
               className="w-16 h-16 md:w-[100px] md:h-[100px]"
