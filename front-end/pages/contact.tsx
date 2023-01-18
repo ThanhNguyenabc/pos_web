@@ -33,7 +33,7 @@ const ContactItem = ({
   );
 };
 
-const Contact = () => {
+const ContactPage = () => {
   const [contactInfo, setContactInfo] = useState<
     ContactInfo & {
       nameError: string;
@@ -265,4 +265,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactPage;

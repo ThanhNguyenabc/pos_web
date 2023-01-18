@@ -16,6 +16,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 import AppRoutes from "utils/routes";
+import { MetrictData } from "utils/StringUtil";
 
 const ServiceData = [
   {
@@ -55,6 +56,11 @@ const AboutPage = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     router.push(AppRoutes.FreePOSPage);
   };
+
+  const goToContactPage = () => {
+    router.push(AppRoutes.ContactPage);
+  };
+
   return (
     <div className="flex flex-col">
       <div className="flex flex-col px-4 py-12 md:px-8 md:py-14 xl:bg-neutral-100">
@@ -70,21 +76,27 @@ const AboutPage = () => {
           and software – free of charge.
         </p>
         <div className="flex flex-col gap-4 md:flex-row">
-          <Button title="Find your POS" />
+          <Button title="Find your POS" onClick={findPOS} />
           <Button
             title="Request A Demo"
             isOutLine
             rightIcon={<IcRightArrow className="text-xl" />}
+            onClick={getPOSFree}
           />
           <Button
             title="Contact Us"
             isOutLine
             rightIcon={<IcRightArrow className=" text-xl" />}
+            onClick={goToContactPage}
           />
         </div>
       </div>
 
-      <Image src={AboutCoverImg} alt="about-cover-image" className="xl:bg-neutral-100" />
+      <Image
+        src={AboutCoverImg}
+        alt="about-cover-image"
+        className="xl:bg-neutral-100"
+      />
       <div className="flex flex-col px-4 py-12 items-center text-center md:px-8 md:py-14 xl:p-[120px]">
         <p className="txt-md-bold text-primary">Our Services</p>
         <p className="txt-heading-small mt-4 mb-6  max-w-xl md:mb-8 md:text-5xl md:font-extrabold md:leading-[56px]">
@@ -116,18 +128,13 @@ const AboutPage = () => {
           classname="w-fit"
           title="Find your POS"
           rightIcon={<IcRightArrow className=" text-xl" />}
+          onClick={findPOS} 
         />
       </div>
       <MetricSection
-        heading="What sets us apart from other companies?"
-        titleColor=" text-secondary"
-        itemSection={[
-          { title: "30+", content: "Over 30 years experience" },
-          { title: "1000+", content: "Over 1000 Clients" },
-          { title: "50", content: "Available in all 50 states" },
-        ]}
+        heading={MetrictData.heading}
+        itemSection={MetrictData.sections}
       />
-
       <FooterCTA
         background="bg-accent"
         actions={

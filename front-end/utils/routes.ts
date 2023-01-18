@@ -1,22 +1,23 @@
+import { CategoryType } from "models/category_type";
+
 class AppRoutes {
-  static Dashboard = "/dashboard";
   static HomePage = "/";
   static AboutPage = "/about";
   static BlogPage = "/blog";
   static ContactPage = "/contact";
-  static FreePOSPage = "/freepos";
+  static FreePOSPage = "/free-pos";
   static QuestionnairePage = "/questionnaire";
-  static ProcessingFeePage = "/posfee";
-  static BreadmePage = "/breadme";
+  static BreadmePage = "/bread-me";
+  static BreadmeQuestionPage = "/bread-me-questions";
   static POSDetailPage = "/pos-detail";
 
   static CategoryPage = "/categories";
-  static PizzeriaPOS = `${this.CategoryPage}/pizzeria`;
-  static QuickServicePOS = `${this.CategoryPage}/quick-service-restaurants`;
-  static RetailPOS = `${this.CategoryPage}/retail-store`;
-  static FullServicePOS = `${this.CategoryPage}/full-service-restaurants`;
-  static ClubPOS = `${this.CategoryPage}/clubs`;
-  static SmallBusinessPOS = `${this.CategoryPage}/small-business`;
+  static PizzeriaPOS = `${this.CategoryPage}/${CategoryType.pizza}`;
+  static QuickServicePOS = `${this.CategoryPage}/${CategoryType.quick_service}`;
+  static RetailPOS = `${this.CategoryPage}/${CategoryType.retail}`;
+  static FullServicePOS = `${this.CategoryPage}/${CategoryType.full_service}`;
+  static ClubPOS = `${this.CategoryPage}/${CategoryType.club}`;
+  static SmallBusinessPOS = `${this.CategoryPage}/${CategoryType.small_business}`;
 }
 
 export default AppRoutes;

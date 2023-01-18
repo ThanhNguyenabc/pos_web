@@ -12,12 +12,13 @@ import ReceiptOptionSection from "components/elements/fee/ReceiptOptionSection";
 import CommonQuestion from "components/elements/fee/CommonQuestion";
 import { useRouter } from "next/router";
 import AppRoutes from "utils/routes";
+import { MetrictData } from "utils/StringUtil";
 
 const ProcessingFee = () => {
   const router = useRouter();
 
   const toBreadmePage = () => {
-    router.push(AppRoutes.BreadmePage);
+    router.push(AppRoutes.BreadmeQuestionPage);
   };
 
   return (
@@ -70,13 +71,9 @@ const ProcessingFee = () => {
       <FeatureForFee />
       <ReceiptOptionSection />
       <MetricSection
-        heading="What sets us apart from other companies?"
+        heading={MetrictData.heading}
         titleColor="text-success"
-        itemSection={[
-          { title: "30+", content: "Over 30 years experience" },
-          { title: "1000+", content: "Over 1000 Clients" },
-          { title: "50", content: "Available in all 50 states" },
-        ]}
+        itemSection={MetrictData.sections}
       />
       <CommonQuestion />
       <FooterCTA
@@ -91,7 +88,7 @@ const ProcessingFee = () => {
         title={
           <h3>
             Is the
-            <span className=" text-success "> Cash Discount Program</span>Right
+            <span className=" text-success "> Cash Discount Program</span> Right
             For Your Business?
           </h3>
         }

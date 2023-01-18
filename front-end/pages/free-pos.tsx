@@ -11,7 +11,6 @@ import { Button } from "components/common/Button";
 import ClientSection from "components/common/ClientSection";
 import { FooterCTA } from "components/common/FooterCTA";
 import Hero from "components/common/Hero";
-import MetricSection from "components/common/MetricSection";
 import FindPOSModal, {
   FindPOSModalId,
 } from "components/elements/find_pos_modal/FindPOSModal";
@@ -19,8 +18,8 @@ import RequestDemoPOS, {
   RequestDemoModalId,
 } from "components/elements/request_demo_pos/RequestDemoPOS";
 import Image from "next/image";
-
 import React from "react";
+
 const FeatureData = [
   {
     image: HardwareImg,
@@ -61,8 +60,7 @@ const openFindPOSModal = () => {
 
 const FreePOS = () => (
   <div className="flex-column">
-    <RequestDemoPOS />
-    <FindPOSModal />
+  
     <div className="flex flex-col bg-secondary xl:flex-row">
       <div className="flex flex-col flex-1 px-4 py-12 gap-10 items-center md:px-8 md:py-14 xl:items-start xl:p-[120px]">
         <div className=" flex flex-col gap-6 text-white text-center items-center xl:text-start">

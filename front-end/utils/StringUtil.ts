@@ -20,6 +20,12 @@ import {
   AlohaImg,
   UpserveImg,
   IcAndroid,
+  BusinessCategory,
+  BarCategory,
+  RestaurantCategory,
+  RetailCategory,
+  QuickServiceCategory,
+  PizzeriaCategory,
 } from "assets/AssetUtil";
 import { CategoryType } from "models/category_type";
 import { SystemOs } from "models/porduct";
@@ -67,36 +73,52 @@ export const isValidEmail = (str: string) => {
   const expression: RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
   return expression.test(str);
 };
-export const CategoryTabs = [
+
+export const MetrictData = {
+  heading: "What sets us apart from other companies?",
+  sections: [
+    { title: "30+", content: "Over 30 years experience" },
+    { title: "1000+", content: "Over 1000 Clients" },
+    { title: "50", content: "Available in all 50 states" },
+  ],
+};
+export const CategoryList = [
   {
-    title: "Popular",
-    type: CategoryType.popular,
-    link: AppRoutes.CategoryPage,
+    title: "Pizza",
+    type: CategoryType.pizza,
+    link: AppRoutes.PizzeriaPOS,
+    img: PizzeriaCategory,
   },
+
   {
     title: "Quick Service Restaurants",
     type: CategoryType.quick_service,
     link: AppRoutes.QuickServicePOS,
+    img: QuickServiceCategory,
   },
   {
     title: "Retail Stores",
     type: CategoryType.retail,
     link: AppRoutes.RetailPOS,
+    img: RetailCategory,
   },
   {
     title: "Full Service Restaurants",
     type: CategoryType.full_service,
     link: AppRoutes.FullServicePOS,
+    img: RestaurantCategory,
   },
   {
     title: "Bar & Night Clubs",
     type: CategoryType.club,
     link: AppRoutes.ClubPOS,
+    img: BarCategory,
   },
   {
     title: "Small Businesses",
     type: CategoryType.small_business,
     link: AppRoutes.SmallBusinessPOS,
+    img: BusinessCategory,
   },
 ];
 

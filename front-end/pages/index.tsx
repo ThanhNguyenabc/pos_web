@@ -8,11 +8,8 @@ import MetricSection from "components/common/MetricSection";
 import { FooterCTA } from "components/common/FooterCTA";
 import { useRouter } from "next/router";
 import ColorUtils from "utils/ColorUtils";
-import FindPOSModal from "components/elements/find_pos_modal/FindPOSModal";
 import AppRoutes from "utils/routes";
-import { getListCategory } from "api_client/axios_client";
-import useCategoryStore from "stores/category_store";
-import { Category } from "models/category";
+import { MetrictData } from "utils/StringUtil";
 
 const FeatureData = ["24/7 Support", "Free training", "Seamless Installments"];
 
@@ -31,7 +28,6 @@ const Home = () => {
 
   return (
     <>
-      <FindPOSModal />
       <div className="flex flex-col xl:flex-row bg-gradient-to-b from-[#FF5A22] to-[#FFA722]">
         <div className="flex flex-1 flex-col px-4 py-10 gap-4 md:gap-6 md:px-8 md:py-14 md:items-center xl:items-start xl:p-[120px]">
           <div className=" flex flex-col items-center text-center gap-4 md:gap-6 xl:text-left ">
@@ -83,13 +79,9 @@ const Home = () => {
       <BusinessCategorySection />
       <FeatureSection />
       <MetricSection
-        heading="What sets us apart from other companies?"
+        heading={MetrictData.heading}
         titleColor="text-secondary"
-        itemSection={[
-          { title: "30+", content: "Over 30 years experience" },
-          { title: "1000+", content: "Over 1000 Clients" },
-          { title: "50", content: "Available in all 50 states" },
-        ]}
+        itemSection={MetrictData.sections}
       />
 
       <ClientSection
@@ -102,7 +94,8 @@ const Home = () => {
             <Button
               title="POS Review"
               isOutLine={true}
-              rightIcon={<IcRightArrow className=" text-xl " />}
+              rightIcon={<IcRightArrow className="text-xl" />}
+              onClick={() => router.push(AppRoutes.CategoryPage)}
             />
           </>
         }
