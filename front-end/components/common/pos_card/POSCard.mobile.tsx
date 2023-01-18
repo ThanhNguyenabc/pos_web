@@ -18,7 +18,7 @@ export const POSCardMobile = ({
   return (
     <div
       onClick={onCardClick}
-      className={`card bg-white pr-3 pt-3 inline-flex flex-col rounded-2xl drop-shadow-lg cursor-pointer md:hidden`}
+      className={`card w-full bg-white pr-3 pt-3 inline-flex flex-col rounded-2xl drop-shadow-lg cursor-pointer md:hidden`}
     >
       <div className="gap-3 flex flex-col items-start">
         <div className="w-full pl-3 flex flex-row h-10 items-center justify-between ">

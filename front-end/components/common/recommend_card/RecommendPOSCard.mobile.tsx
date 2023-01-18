@@ -43,7 +43,9 @@ const RecommendPOSCardMobile = ({
             </div>
           </div>
         </div>
-        <p className="w-full text-sm text-left text-neutral-700 ">{data.overview}</p>
+        <p className="w-full text-sm text-left text-neutral-700 ">
+          {data.overview}
+        </p>
       </div>
       <div className="flex gap-2 w-full">
         <BreadMeBtn />
