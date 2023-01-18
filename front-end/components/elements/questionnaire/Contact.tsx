@@ -1,6 +1,4 @@
-import AxiosInstance, {
-  submitQuestionnaireContact,
-} from "api_client/axios_client";
+import { submitQuestionnaireContact } from "api_client/axios_client";
 import { IcAmericanFlag } from "assets/AssetUtil";
 import { Button } from "components/common/Button";
 import ContactForm, { ContactInfo } from "components/common/ContactForm";
@@ -9,15 +7,14 @@ import { ThankyouModalId } from "components/common/ThankYouDialog";
 import { QuestionnaireContact } from "models/questionnaire_contact";
 import { QuestionnaireContext } from "pages/questionnaire";
 import React, { useState } from "react";
-import useSwr from "swr";
 import {
+  CategoryList,
   HandHeldData,
   isValidEmail,
   isValidPhoneNumber,
   StationData,
   YesNoQuestion,
 } from "utils/StringUtil";
-import { Categories } from "../home/BusinessCategorySection";
 
 const Contact = () => {
   const value = React.useContext(QuestionnaireContext);
@@ -71,7 +68,7 @@ const Contact = () => {
       email: contactInfo.email || "",
       onDiscountProgram: YesNoQuestion[value.questionData.isDiscountIndex || 0],
       phoneNumber: contactInfo.phoneNumber || "",
-      business: Categories[value.questionData.businessId || 0].name,
+      business: CategoryList[value.questionData.businessId || 0].title,
       haveSaleSystem:
         YesNoQuestion[value.questionData.isOwnSaleSystemIndex || 0],
       numberOfHandheld:
