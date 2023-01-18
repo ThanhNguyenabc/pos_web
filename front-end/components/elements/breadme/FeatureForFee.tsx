@@ -1,8 +1,7 @@
 import { IcChat, IcPayZero, IcServiceFee, IcSupport } from "assets/AssetUtil";
-import Image from "next/image";
 import React from "react";
 
-const FeatureForFeeData = [
+const FeatureForBreadmeData = [
   {
     ic: IcChat,
     title: "Full Purchase Price",
@@ -25,7 +24,7 @@ const FeatureForFeeData = [
   },
 ];
 
-const FeatureForFee = () => {
+const BreadmeFeatureSection = () => {
   return (
     <div className="flex flex-col px-4 gap-12 py-14 md:px-8 xl:p-[120px] xl:gap-[120px] ">
       <p className="txt-heading-small md:text-5xl md:font-extrabold md:leading-[56px]">
@@ -33,23 +32,26 @@ const FeatureForFee = () => {
         <span className="text-success"> up to 100%</span> of their revenue
         without any fees.
       </p>
-      <div className="grid grid-cols-1  gap-y-6 md:grid-cols-2 md:gap-y-12 md:gap-x-8">
-        {FeatureForFeeData.map((item, index) => (
-          <div
-            key={`feature-section-${index}`}
-            className="flex flex-row gap-6 items-start md:flex-col"
-          >
-            <Image src={item.ic} alt="icon" className="w-14 h-14" />
 
-            <div className="flex flex-col gap-2 md:gap-4">
-              <p className="txt-md-bold md:text-xl">{item.title}</p>
-              <p className="txt-md text-neutral-600">{item.desc}</p>
+      <div className="grid grid-cols-1  gap-y-6 md:grid-cols-2 md:gap-y-12 md:gap-x-8">
+        {FeatureForBreadmeData.map((item, index) => {
+          const Icon = item.ic;
+          return (
+            <div
+              key={`feature-section-${index}`}
+              className="flex flex-row gap-6 items-start md:flex-col"
+            >
+              <Icon width={56} height={56} />
+              <div className="flex flex-col gap-2 md:gap-4">
+                <p className="txt-md-bold md:text-xl">{item.title}</p>
+                <p className="txt-md text-neutral-600">{item.desc}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
 };
 
-export default FeatureForFee;
+export default BreadmeFeatureSection;

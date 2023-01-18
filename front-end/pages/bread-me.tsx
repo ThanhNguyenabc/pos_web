@@ -7,17 +7,17 @@ import ColorUtils from "utils/ColorUtils";
 import Badge from "components/common/Badge";
 import { FooterCTA } from "components/common/FooterCTA";
 import MetricSection from "components/common/MetricSection";
-import FeatureForFee from "components/elements/fee/FeatureForFee";
-import ReceiptOptionSection from "components/elements/fee/ReceiptOptionSection";
-import CommonQuestion from "components/elements/fee/CommonQuestion";
+import BreadmeFeatureSection from "components/elements/breadme/FeatureForFee";
+import ReceiptOptionSection from "components/elements/breadme/ReceiptOptionSection";
+import CommonQuestion from "components/elements/breadme/CommonQuestion";
 import { useRouter } from "next/router";
 import AppRoutes from "utils/routes";
 import { MetrictData } from "utils/StringUtil";
 
-const ProcessingFee = () => {
+const BreadmePage = () => {
   const router = useRouter();
 
-  const toBreadmePage = () => {
+  const navigateToBreadmeQuestion = () => {
     router.push(AppRoutes.BreadmeQuestionPage);
   };
 
@@ -41,7 +41,7 @@ const ProcessingFee = () => {
             <Button
               title="Get Started Now"
               style={{ background: ColorUtils.success }}
-              onClick={toBreadmePage}
+              onClick={navigateToBreadmeQuestion}
             />
             <Button
               title="Request a Demo"
@@ -68,7 +68,7 @@ const ProcessingFee = () => {
           onClick={() => router.push(AppRoutes.ContactPage)}
         />
       </div>
-      <FeatureForFee />
+      <BreadmeFeatureSection />
       <ReceiptOptionSection />
       <MetricSection
         heading={MetrictData.heading}
@@ -82,7 +82,7 @@ const ProcessingFee = () => {
           <Button
             title="Get Started Now"
             style={{ background: ColorUtils.success }}
-            onClick={toBreadmePage}
+            onClick={navigateToBreadmeQuestion}
           />
         }
         title={
@@ -97,4 +97,4 @@ const ProcessingFee = () => {
   );
 };
 
-export default ProcessingFee;
+export default BreadmePage;

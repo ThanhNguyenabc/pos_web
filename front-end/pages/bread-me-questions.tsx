@@ -3,12 +3,12 @@ import IconButton from "components/common/IconButton";
 import Image from "next/image";
 import React, { useState } from "react";
 import { ContactInfo } from "components/common/ContactForm";
-import BreadmeIntroduction from "components/elements/breadme/BreadmeIntroduction";
-import BreadmeCreditCard from "components/elements/breadme/BreadmeCreditCard";
-import BreadmeDiscountQuestion from "components/elements/breadme/BreadmeDiscount";
-import BreadmeStation from "components/elements/breadme/BreadmeStation";
-import BreadmeSaleSystem from "components/elements/breadme/BreadmeSaleSystem";
-import BreadmeContact from "components/elements/breadme/BreadmeContact";
+import BreadmeIntroduction from "components/elements/breadme_question/BreadmeIntroduction";
+import BreadmeCreditCard from "components/elements/breadme_question/BreadmeCreditCard";
+import BreadmeDiscountQuestion from "components/elements/breadme_question/BreadmeDiscount";
+import BreadmeStation from "components/elements/breadme_question/BreadmeStation";
+import BreadmeSaleSystem from "components/elements/breadme_question/BreadmeSaleSystem";
+import BreadmeContact from "components/elements/breadme_question/BreadmeContact";
 import ThanksYouForm from "components/common/thanksform";
 
 type BreadmeState = {
