@@ -9,11 +9,7 @@ export const BreadMeBtn = () => {
       logo={BreadMeImg}
       color={ColorUtils.success}
       title="Get a POS"
-      desc={
-        <>
-          <span className="text-success">FREE</span>
-        </>
-      }
+      desc={<span className="text-success">FREE</span>}
     />
   );
 };

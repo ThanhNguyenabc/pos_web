@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import AppRoutes from "utils/routes";
-import { CategoryTabs } from "utils/StringUtil";
+import { CategoryList } from "utils/StringUtil";
 
 const styles = {
   "footer-title": "font-semibold md:txt-lg-bold text-neutral-300",
@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="footer grid-cols-2">
             <div className={`${styles["footer-section"]} grid-cols-0 `}>
               <span className={`${styles["footer-title"]}`}>POS Reviews</span>
-              {CategoryTabs.map((item, index) => (
+              {CategoryList.map((item, index) => (
                 <Link
                   key={`footer category ${index}`}
                   href={item.link}
@@ -39,10 +39,7 @@ const Footer = () => {
               <Link href={AppRoutes.FreePOSPage} className="link link-hover">
                 Free POS
               </Link>
-              <Link
-                href={AppRoutes.ProcessingFeePage}
-                className="link link-hover"
-              >
+              <Link href={AppRoutes.BreadmePage} className="link link-hover">
                 0% Processing Fee
               </Link>
               <Link

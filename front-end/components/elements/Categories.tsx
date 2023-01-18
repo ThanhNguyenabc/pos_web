@@ -1,16 +1,24 @@
 import POSCard from "components/common/pos_card/POSCard";
 import TabList from "components/common/TabList";
 import { useRouter } from "next/router";
-import { CategoryTabs, MockupData } from "utils/StringUtil";
-import React, { useEffect } from "react";
+import { CategoryList } from "utils/StringUtil";
+import React from "react";
 import { AppProps } from "next/app";
-import useCategoryStore from "stores/category_store";
 import Loading from "components/common/loading/Loading";
 import useSWR from "swr";
-import AxiosInstance, { getPOSByCategory } from "api_client/axios_client";
+import { getPOSByCategory } from "api_client/axios_client";
 import { CategoryType } from "models/category_type";
 import AppRoutes from "utils/routes";
 import { getOverallRating } from "models/porduct";
+
+const ALLTABS = [
+  {
+    title: "Popular",
+    type: CategoryType.popular,
+    link: AppRoutes.CategoryPage,
+  },
+  ...CategoryList,
+];
 
 const Category = (props: AppProps) => {
   const router = useRouter();
@@ -21,9 +29,7 @@ const Category = (props: AppProps) => {
     getPOSByCategory
   );
 
-  console.log("data");
-  console.log(data?.length);
-  const selectedTabIndex = CategoryTabs.findIndex(
+  const selectedTabIndex = ALLTABS.findIndex(
     (item) => item.link == router.asPath
   );
 
@@ -31,10 +37,10 @@ const Category = (props: AppProps) => {
     <div className="flex flex-col pb-12 bg-neutral-100 flex-1">
       <div className=" flex flex-col py-12 bg-white mb-6 px-4 lg:items-center text-center md:py-14 md:px-8 md:gap-6">
         <TabList
-          tabList={CategoryTabs}
+          tabList={ALLTABS}
           selectIndex={selectedTabIndex < 0 ? 0 : selectedTabIndex}
           onSelectedIndex={(index) => {
-            router.push(CategoryTabs[index].link);
+            router.push(ALLTABS[index].link);
           }}
         />
         <p

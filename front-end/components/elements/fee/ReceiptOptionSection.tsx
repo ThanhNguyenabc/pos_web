@@ -24,7 +24,7 @@ const ReceiptOptionSection = () => {
           title="Get Started Now"
           classname="w-fit"
           style={{ background: ColorUtils.success }}
-          onClick={() => router.push(AppRoutes.BreadmePage)}
+          onClick={() => router.push(AppRoutes.BreadmeQuestionPage)}
         />
       </div>
       <div className="flex flex-1">

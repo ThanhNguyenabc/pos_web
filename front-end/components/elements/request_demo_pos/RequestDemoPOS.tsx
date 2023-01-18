@@ -1,7 +1,6 @@
 import HeaderWithBack from "components/common/HeaderWithBack";
 import SelectedList from "components/common/SelectedList";
 import React, { useState } from "react";
-import { Categories } from "../home/BusinessCategorySection";
 import Image from "next/image";
 import ContactForm, { ContactInfo } from "components/common/ContactForm";
 import { Button } from "components/common/Button";
@@ -9,7 +8,7 @@ import ThanksYouForm from "components/common/thanksform";
 import Modal from "components/common/Modal";
 import Input from "components/common/Input";
 import { IcAmericanFlag } from "assets/AssetUtil";
-import { isValidEmail, isValidPhoneNumber } from "utils/StringUtil";
+import { CategoryList, isValidEmail, isValidPhoneNumber } from "utils/StringUtil";
 import { submitForDemoPOS } from "api_client/axios_client";
 
 export const RequestDemoModalId = "requestDemoModal";
@@ -93,24 +92,24 @@ const RequestDemoPOS = () => {
     <div className="flex flex-col px-4 py-5">
       <p className="txt-md-bold mb-4 md:mb-6">Type of business</p>
       <SelectedList
-        data={Categories}
+        data={CategoryList}
         classname={" p-0 md:grid-cols-2"}
         itemBuilder={(item, index: number) => {
           return (
             <div className="flex w-full h-[152px] flex-row items-center p-3 gap-4 md:flex-col md:justify-center">
               <Image
-                src={item.link}
+                src={item.img}
                 className="w-[84px] h-[56px] md:w-[120px] md:h-20"
                 alt="image"
               />
-              <p className="txt-md-bold md:text-center ">{item.name}</p>
+              <p className="txt-md-bold md:text-center ">{item.title}</p>
             </div>
           );
         }}
         onItemSelected={(index) => {
           setContactInfo((prev) => ({
             ...prev,
-            businessType: Categories[index].name,
+            businessType: CategoryList[index].type,
           }));
         }}
       />

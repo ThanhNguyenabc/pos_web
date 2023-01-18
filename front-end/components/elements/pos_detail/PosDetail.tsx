@@ -159,7 +159,7 @@ export const POSDetail = ({ product, specification }: POSDetailProps) => {
               title="Learn more"
               rightIcon={<IcRightArrow />}
               style={{ color: ColorUtils.success, background: "white" }}
-              onClick={() => router.push(AppRoutes.BreadmePage)}
+              onClick={() => router.push(AppRoutes.BreadmeQuestionPage)}
             />
           </div>
         </div>
