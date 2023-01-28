@@ -36,13 +36,13 @@ const data = [
 ];
 const FeatureSection = () => {
   return (
-    <div className="flex flex-col gap-10 px-4 py-12 md:px-8 md:py-14 xl:p-[120px] xl:flex-row xl:gap-12">
+    <div className="flex flex-col gap-10 px-4 py-12 md:px-8 md:py-14 lg:p-[100px] lg:flex-row lg:gap-12 xl:p-[120px]">
       <div className=" flex flex-col gap-6 flex-1">
         <h2 className="txt-heading-medium md:text-5xl md:font-extrabold md:leading-[56px] ">
           Helping you <span className="text-secondary">compare & find</span> the
           best POS system
         </h2>
-        <p className="txt-md text-justify md:text-xl text-neutral-700">
+        <p className="txt-md text-justify md:text-lg text-neutral-700">
           With the knowledge of our consultants who have been in the business
           for over 10 years, they will help you find the best point-of-sale
           system. Whether a big or small business, we will find the perfect

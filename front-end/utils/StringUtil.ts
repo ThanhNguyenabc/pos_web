@@ -78,8 +78,8 @@ export const MetrictData = {
   heading: "What sets us apart from other companies?",
   sections: [
     { title: "30+", content: "Over 30 years experience" },
-    { title: "1000+", content: "Over 1000 Clients" },
     { title: "50", content: "Available in all 50 states" },
+    { title: "1000+", content: "Over 1000 Clients" },
   ],
 };
 export const CategoryList = [

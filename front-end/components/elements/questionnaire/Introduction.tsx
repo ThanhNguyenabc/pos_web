@@ -27,16 +27,16 @@ const Introduction = ({ classname, onStart }: IntroductionPorps) => {
   return (
     <div
       className={twMerge(
-        `flex flex-col min-h-screen bg-accent xl:justify-center ${classname}`
+        `flex flex-col bg-accent ${classname}`
       )}
     >
-      <div className="flex flex-col gap-6 px-4 py-12 mx-auto md:py-14 md:gap-10  max-w-lg xl:m-auto">
-        <p className="txt-heading-small md:text-4xl xl:text-white">
+      <div className="flex flex-col gap-6 px-4 py-12 mx-auto md:py-14 md:gap-10 lg:py-20 max-w-lg">
+        <p className="txt-heading-small md:text-4xl lg:text-white">
           Fill out <span className="text-secondary">the questionnaire</span> and
           <span className="text-secondary"> see what POS works</span> best for
           your business!
         </p>
-        <p className="txt-large-bold xl:text-white">
+        <p className="txt-large-bold lg:text-white">
           You may qualify for a Free POS if:
         </p>
         <div className="flex flex-col gap-4">
@@ -53,7 +53,7 @@ const Introduction = ({ classname, onStart }: IntroductionPorps) => {
           })}
         </div>
         <Button
-          classname="mt-6 h-16 xl:hidden"
+          classname="mt-6 h-16 lg:hidden"
           title="Get started!"
           style={{ background: ColorUtils.neutral_dark }}
           onClick={onStart}

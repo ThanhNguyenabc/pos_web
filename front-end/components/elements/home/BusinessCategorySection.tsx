@@ -11,9 +11,9 @@ const BusinessCategorySection = () => {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col px-4 py-12 gap-10 md:px-8 md:py-14 md:gap-8 xl:gap-16 xl:p-[120px]">
+    <div className="flex flex-col px-4 py-12 gap-10 md:px-8 md:py-14 md:gap-8 lg:gap-16  lg:p-[100px] xl:p-[120px]">
       <div className="flex justify-between ">
-        <p className="txt-heading-medium flex-1 text-center md:text-left max-w-xl md:text-5xl md:font-extrabold md:leading-[56px]">
+        <p className="txt-heading-medium flex-1 text-center md:text-left max-w-lg md:text-5xl md:font-extrabold md:leading-[56px]">
           <span className="text-secondary">Point-of-sale</span> for all business
           categories
         </p>
@@ -28,7 +28,7 @@ const BusinessCategorySection = () => {
       </div>
       <List
         data={CategoryList}
-        classname="grid-cols-2 md:grid-cols-3 xl:grid-cols-6"
+        classname="grid-cols-2 md:grid-cols-3 lg:grid-cols-6"
         itemBuilder={(item, index) => {
           return (
             <div
@@ -37,7 +37,7 @@ const BusinessCategorySection = () => {
             >
               <Image src={item.img} alt="pizza" width={120} />
               <div className="flex justify-items-center items-center h-full mt-2">
-                <h2 className="txt-md-bold  text-center ">{item.title}</h2>
+                <h2 className="txt-md-bold text-center ">{item.title}</h2>
               </div>
             </div>
           );
