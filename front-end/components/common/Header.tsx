@@ -28,7 +28,7 @@ const Header = () => {
         >
           <MenuDrawer onClose={toggleDrawer} />
         </Drawer>
-        <button className="py-2 mr-5 xl:hidden" onClick={toggleDrawer}>
+        <button className="py-2 mr-5 lg:hidden" onClick={toggleDrawer}>
           <IcMenu className="text-2xl" />
         </button>
         <Link href={Menu["home"].route}>
@@ -43,7 +43,7 @@ const Header = () => {
         </Link>
       </div>
 
-      <ul className="menu menu-horizontal hidden xl:flex flex-1 text-neutral-900 ">
+      <ul className="menu menu-horizontal hidden lg:flex flex-1 text-neutral-900 ">
         <li className="ml-3 txt-md-bold">
           <Link href={Menu["freepos"].route}>{Menu["freepos"].title}</Link>
         </li>
@@ -64,7 +64,7 @@ const Header = () => {
         <IcPhone className="text-lg" />
         <div className="ml-4">
           <p className="txt-sm text-neutral-600">Support 24/7</p>
-          <p className="txt-md-bold xl:text-xl">1-888-410-2188</p>
+          <p className="txt-md-bold lg:text-xl">1-888-410-2188</p>
         </div>
         <Button
           title="Find your POS"

@@ -7,7 +7,7 @@ export const Layout = ({ children }: { children: ReactElement }) => {
   return (
     <div className="flex flex-col drawer-content max-h-fit">
       <Header />
-      <div className="flex flex-col container mx-auto min-h-[90vh]">
+      <div className="flex flex-col container mx-auto min-h-[85vh]">
         {children}
       </div>
       <Footer />

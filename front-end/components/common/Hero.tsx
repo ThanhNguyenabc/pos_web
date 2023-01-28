@@ -16,7 +16,7 @@ const Hero = ({ children, subTitle, title, classname, subCmp }: HeroProps) => {
       md:px-8 
       md:gap-16 
       md:py-14
-      xl:p-[120px] ${classname}
+      lg:p-[100px] xl:p-[120px] ${classname}
       `)}
     >
       <div className="w-full gap-6 flex flex-col md:items-center">

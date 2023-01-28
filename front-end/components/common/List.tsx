@@ -7,7 +7,7 @@ interface ListProps<T> {
   itemBuilder: (item: T, index: number, isSelect?: boolean) => ReactElement;
   onItemSelected?: (index: number) => void;
   classname?: string;
-  itemclassname?: string;
+  itemClassname?: string;
   showDivider?: boolean;
 }
 
@@ -18,7 +18,7 @@ const List = <T extends object | string>({
   showDivider,
   onItemSelected,
   classname,
-  itemclassname,
+   itemClassname,
 }: ListProps<T>) => {
   const [cindex, setIndex] = useState<number>(selectIndex);
 
@@ -33,7 +33,7 @@ const List = <T extends object | string>({
         return (
           <div
             key={`item-list-${index}`}
-            className="flex cursor-pointer flex-col"
+            className={`w-full flex cursor-pointer flex-col ${itemClassname}`}
             onClick={() => {
               onItemClick(index);
               onItemSelected && onItemSelected(index);

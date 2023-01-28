@@ -48,7 +48,7 @@ const Footer = () => {
               >
                 Questionnaire
               </Link>
-              <Link href={AppRoutes.HomePage} className="link link-hover">
+              <Link href={AppRoutes.PartnerPage} className="link link-hover">
                 Partner
               </Link>
             </div>
