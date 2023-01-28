@@ -9,7 +9,6 @@ import { FooterCTA } from "components/common/FooterCTA";
 import { useRouter } from "next/router";
 import ColorUtils from "utils/ColorUtils";
 import AppRoutes from "utils/routes";
-import { MetrictData } from "utils/StringUtil";
 
 const FeatureData = ["24/7 Support", "Free training", "Seamless Installments"];
 
@@ -28,35 +27,35 @@ const Home = () => {
 
   return (
     <>
-      <div className="flex flex-col xl:flex-row bg-gradient-to-b from-[#FF5A22] to-[#FFA722]">
-        <div className="flex flex-1 flex-col px-4 py-10 gap-4 md:gap-6 md:px-8 md:py-14 md:items-center xl:items-start xl:p-[120px]">
-          <div className=" flex flex-col items-center text-center gap-4 md:gap-6 xl:text-left ">
+      <div className="flex flex-col lg:flex-row bg-gradient-to-b from-[#FF5A22] to-[#FFA722]">
+        <div className="flex flex-1 flex-col px-4 py-10 gap-4 md:gap-6 md:px-8 md:py-14 md:items-center lg:items-start lg:p-[100px] xl:p-[120px] ">
+          <div className=" flex flex-col text-center gap-4 md:gap-6 lg:text-left ">
             <p
               className={`txt-heading-large md:text-6xl md:leading-[68px] text-white`}
             >
               Real advice from
               <span className="text-secondary"> real people</span>
             </p>
-            <p className="txt-md-bold text-white lg:text-start md:text-xl">
+            <p className="txt-md-bold text-white lg:text-start md:text-lg">
               Speak with a consultant today to find the best POS for your
               business
             </p>
-          </div>
-          <div className=" flex flex-col gap-4 md:gap-6 w-full md:w-fit md:flex-row">
-            <Button
-              title="Find your POS"
-              style={{ background: ColorUtils.neutral_900 }}
-              onClick={findPOS}
-            />
-            <Button
-              title="Get POS for free"
-              style={{ background: "white", color: "black" }}
-              onClick={getPOSFree}
-              rightIcon={<IcRightArrow className=" text-xl " />}
-            />
+            <div className="flex flex-col self-center gap-4 md:gap-6 w-full md:w-fit md:flex-row lg:self-start">
+              <Button
+                title="Find your POS"
+                style={{ background: ColorUtils.neutral_900 }}
+                onClick={findPOS}
+              />
+              <Button
+                title="Get POS for free"
+                style={{ background: "white", color: "black" }}
+                onClick={getPOSFree}
+                rightIcon={<IcRightArrow className=" text-lg " />}
+              />
+            </div>
           </div>
         </div>
-        <div className="flex-1 block xl:mt-4">
+        <div className="flex-1 block lg:mt-4">
           <Image src={BannerImage} alt="" className="w-full h-full" />
         </div>
       </div>
@@ -67,7 +66,7 @@ const Home = () => {
               key={`${index}-feature`}
               className="flex flex-col md:flex-row items-center gap-2 md:gap-3 mx-auto"
             >
-              <IcCheck className="text-xl text-secondary" />
+              <IcCheck className="text-lg text-secondary" />
               <p className="txt-sm-bold md:text-base text-neutral-700 text-center">
                 {item}
               </p>
@@ -78,23 +77,19 @@ const Home = () => {
       <div className="h-px bg-neutral-300" />
       <BusinessCategorySection />
       <FeatureSection />
-      <MetricSection
-        heading={MetrictData.heading}
-        titleColor="text-secondary"
-        itemSection={MetrictData.sections}
-      />
+      <MetricSection titleColor="text-secondary" />
 
       <ClientSection
         body={
           <>
-            <p className="txt-md md:text-xl text-neutral-700">
+            <p className="txt-md md:text-lg text-neutral-700">
               We are flexible when it comes to working with any point-of-sale
               company. Here&apos;s a list of our top providers in the industry.
             </p>
             <Button
               title="POS Review"
               isOutLine={true}
-              rightIcon={<IcRightArrow className="text-xl" />}
+              rightIcon={<IcRightArrow className="text-lg" />}
               onClick={() => router.push(AppRoutes.CategoryPage)}
             />
           </>

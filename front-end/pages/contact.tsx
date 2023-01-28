@@ -107,7 +107,7 @@ const ContactPage = () => {
               Our friendly team is always here to chat.
             </p>
           </div>
-          <div className="flex flex-col gap-10 md:flex-row md:justify-between xl:mx-[120px]">
+          <div className="flex flex-col gap-10 md:flex-row md:justify-between lg:mx-[100px] xl:mx-[120px]">
             <ContactItem
               icon={<IcMail className="w-6 h-6" />}
               title="Email"

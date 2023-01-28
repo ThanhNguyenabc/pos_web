@@ -94,18 +94,18 @@ const Questionnaire = () => {
 
   return (
     <BreadmeContext.Provider value={questionSate}>
-      <div className={`flex w-full flex-1 flex-col xl:flex-row`}>
+      <div className={`flex w-full flex-1 flex-col lg:flex-row`}>
         <div
           className={`${
             questionSate.showQuestions ? "hidden" : "flex"
-          } flex-1 xl:flex xl:bg-green-100`}
+          } flex-1 lg:flex lg:bg-green-100`}
         >
           <BreadmeIntroduction onStart={onStart} />
         </div>
         <div
           className={`${
             questionSate.showQuestions ? "flex" : "hidden"
-          } xl:flex flex-1 flex-col`}
+          } lg:flex flex-1 flex-col`}
         >
           <progress
             className="progress progress-success w-full md:h-4"

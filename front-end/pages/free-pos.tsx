@@ -61,9 +61,9 @@ const openFindPOSModal = () => {
 const FreePOS = () => (
   <div className="flex-column">
   
-    <div className="flex flex-col bg-secondary xl:flex-row">
-      <div className="flex flex-col flex-1 px-4 py-12 gap-10 items-center md:px-8 md:py-14 xl:items-start xl:p-[120px]">
-        <div className=" flex flex-col gap-6 text-white text-center items-center xl:text-start">
+    <div className="flex flex-col bg-secondary lg:flex-row">
+      <div className="flex flex-col flex-1 px-4 py-12 gap-10 items-center md:px-8 md:py-14 lg:items-start lg:p-[100px] xl:p-[120px]">
+        <div className=" flex flex-col gap-6 text-white text-center items-center lg:text-start">
           <p
             className={`txt-heading-medium text-white max-w-3xl md:font-extrabold md:text-6xl md:leading-[68px]`}
           >
@@ -85,7 +85,7 @@ const FreePOS = () => (
           />
         </div>
       </div>
-      <div className="flex-1 xl:mt-24">
+      <div className="flex-1 lg:mt-24">
         <Image src={POS2Img} alt="" className="w-full h-full" />
       </div>
     </div>
@@ -93,7 +93,7 @@ const FreePOS = () => (
       title="How we evaluate point of sale software"
       subTitle="We take into consideration the most important aspects of choosing the best POS for your business"
     >
-      <div className="w-full grid grid-cols-2 gap-10 md:gap-16 xl:grid-cols-4 xl:gap-8">
+      <div className="w-full grid grid-cols-2 gap-10 md:gap-16 lg:grid-cols-4 lg:gap-8">
         {FeatureData.map((item, index) => (
           <div
             key={`feature-item-${index}`}
@@ -114,18 +114,18 @@ const FreePOS = () => (
       <Hero
         title={
           <>
-            With these three easy steps your business may be qualified for a{" "}
+            With these three easy steps your business may be qualified for a 
             <span className=" text-secondary">FREE POS system.</span>
           </>
         }
         subCmp={
           <Button
-            classname="self-center md:w-[200px] xl:self-start"
+            classname="self-center md:w-[200px] lg:self-start"
             title="Get started"
             onClick={openFindPOSModal}
           />
         }
-        classname="xl:flex-row xl:text-start xl:items-start"
+        classname="lg:flex-row lg:text-start lg:items-start"
       >
         <div className=" flex flex-col gap-4 md:gap-6">
           {ThreeStep.map((item, index) => (

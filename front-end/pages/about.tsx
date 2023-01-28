@@ -16,7 +16,6 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 import AppRoutes from "utils/routes";
-import { MetrictData } from "utils/StringUtil";
 
 const ServiceData = [
   {
@@ -63,7 +62,7 @@ const AboutPage = () => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col px-4 py-12 md:px-8 md:py-14 xl:bg-neutral-100">
+      <div className="flex flex-col px-4 py-12 md:px-8 md:py-14 lg:bg-neutral-100">
         <p className="txt-heading-medium md:font-extrabold md:text-6xl md:leading-[68px]">
           About Us
         </p>
@@ -95,9 +94,9 @@ const AboutPage = () => {
       <Image
         src={AboutCoverImg}
         alt="about-cover-image"
-        className="xl:bg-neutral-100"
+        className="lg:bg-neutral-100"
       />
-      <div className="flex flex-col px-4 py-12 items-center text-center md:px-8 md:py-14 xl:p-[120px]">
+      <div className="flex flex-col px-4 py-12 items-center text-center md:px-8 md:py-14 lg:p-[100px] xl:p-[120px]">
         <p className="txt-md-bold text-primary">Our Services</p>
         <p className="txt-heading-small mt-4 mb-6  max-w-xl md:mb-8 md:text-5xl md:font-extrabold md:leading-[56px]">
           <span className=" text-secondary">Unparalleled Service</span> via
@@ -128,13 +127,10 @@ const AboutPage = () => {
           classname="w-fit"
           title="Find your POS"
           rightIcon={<IcRightArrow className=" text-xl" />}
-          onClick={findPOS} 
+          onClick={findPOS}
         />
       </div>
-      <MetricSection
-        heading={MetrictData.heading}
-        itemSection={MetrictData.sections}
-      />
+      <MetricSection />
       <FooterCTA
         background="bg-accent"
         actions={

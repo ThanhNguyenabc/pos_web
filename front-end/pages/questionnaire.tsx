@@ -88,12 +88,12 @@ const Questionnaire = () => {
   return (
     <QuestionnaireContext.Provider value={questionSate}>
       <div
-        className={`flex w-full flex-1 flex-col min-h-screen xl:flex-row ${
+        className={`flex w-full flex-1 flex-col min-h-screen lg:flex-row ${
           isSubmit ? "hidden" : "flex"
         }`}
       >
         <Introduction
-          classname={`flex-1 hidden xl:flex xl:bg-gradient-to-b  xl:from-[#FF5A22] xl:to-[#FFA722] ${
+          classname={`flex-1 hidden lg:flex lg:bg-gradient-to-b  lg:from-[#FF5A22] lg:to-[#FFA722] ${
             questionSate.showQuestions ? "hidden" : "flex"
           }`}
           onStart={onStart}
@@ -102,7 +102,7 @@ const Questionnaire = () => {
         <div
           className={`${
             questionSate.showQuestions ? "flex" : "hidden"
-          } xl:flex w-full flex-1 flex-col`}
+          } lg:flex w-full flex-1 flex-col`}
         >
           <progress
             className="progress progress-secondary w-full md:h-4"
@@ -122,7 +122,7 @@ const Questionnaire = () => {
             </p>
           </div>
 
-          <div className="flex flex-col max-w-lg w-full self-center pb-6 px-4 md:px-8 xl:p-0">
+          <div className="flex flex-col max-w-lg w-full self-center pb-6 px-4 md:px-8 lg:p-0 lg:pb-12">
             {PAGES[questionSate.cQuestionIndex]}
           </div>
         </div>
