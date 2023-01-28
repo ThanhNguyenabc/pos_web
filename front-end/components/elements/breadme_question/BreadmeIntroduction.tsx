@@ -51,7 +51,7 @@ const BreadmeFeatureItem = ({
 const BreadmeIntroduction = ({ onStart }: { onStart?: () => void }) => {
   return (
     <div
-      className={`flex flex-col px-4 py-12 gap-10 w-full max-w-lg mx-auto md:py-14 md:gap-12 xl:py-20 `}
+      className={`flex flex-col px-4 py-12 gap-10 w-full max-w-lg mx-auto md:py-14 md:gap-12 lg:py-20 `}
     >
       <Image src={BreadMeImg} alt="" />
       <div className="flex flex-col gap-6">
@@ -72,7 +72,7 @@ const BreadmeIntroduction = ({ onStart }: { onStart?: () => void }) => {
       </div>
       <Button
         onClick={onStart}
-        classname="xl:hidden"
+        classname="lg:hidden"
         title="Get started!"
         style={{
           background: ColorUtils.neutral_dark,

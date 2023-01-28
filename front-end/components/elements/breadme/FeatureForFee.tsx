@@ -26,7 +26,7 @@ const FeatureForBreadmeData = [
 
 const BreadmeFeatureSection = () => {
   return (
-    <div className="flex flex-col px-4 gap-12 py-14 md:px-8 xl:p-[120px] xl:gap-[120px] ">
+    <div className="flex flex-col px-4 gap-12 py-14 md:px-8  lg:p-[100px] lg:gap-[100px] xl:p-[120px] xl:gap-[120px]">
       <p className="txt-heading-small md:text-5xl md:font-extrabold md:leading-[56px]">
         Allow merchants to collect
         <span className="text-success"> up to 100%</span> of their revenue

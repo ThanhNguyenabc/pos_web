@@ -9,8 +9,8 @@ import AppRoutes from "utils/routes";
 const ReceiptOptionSection = () => {
   const router = useRouter();
   return (
-    <div className="flex flex-col xl:flex-row-reverse">
-      <div className="flex flex-1 flex-col px-4 py-12 gap-8 md:px-8 md:py-14 xl:p-[120px]">
+    <div className="flex flex-col lg:flex-row-reverse">
+      <div className="flex flex-1 flex-col px-4 py-12 gap-8 md:px-8 md:py-14 lg:p-[100px] xl:p-[120px]">
         <p className="txt-heading-small md:text-5xl md:font-extrabold md:leading-[56px]">
           <span className=" text-success">Various</span> Cash Discount Receipt
           Options

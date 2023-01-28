@@ -40,7 +40,7 @@ const CommonQuestionData = [
 ];
 const CommonQuestion = () => {
   return (
-    <div className="flex flex-col px-4 py-12 gap-10 md:px-8 mx-auto max-w-[768px] xl:py-[120px]">
+    <div className="flex flex-col px-4 py-12 gap-10 md:px-8 mx-auto max-w-[768px] lg:pt-[100px] xl:pt-[120px]">
       <p className="txt-heading-small md:text-5xl md:font-extrabold md:leading-[56px]">
         Common Questions About the Cash Discount Program
       </p>
