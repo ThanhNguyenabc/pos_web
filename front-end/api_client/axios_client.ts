@@ -26,7 +26,7 @@ export const getPOSByCategory = async (type: string) => {
       return res.data.data;
     })
     .catch((error) => {
-      if (error.response.status !== 409) throw error;
+      console.log("error = ", error);
     });
 };
 
@@ -38,7 +38,7 @@ export const getPOSDetail = async (id: string) => {
       return res.data.data;
     })
     .catch((error) => {
-      if (error.response.status !== 409) throw error;
+      console.log("error = ", error);
     });
 };
 
@@ -53,7 +53,7 @@ export const getSpecification = async (productId: string) => {
       return res.data.data;
     })
     .catch((error) => {
-      if (error.response.status !== 409) throw error;
+      console.log("error = ", error);
     });
 };
 
@@ -65,7 +65,7 @@ export const submitQuestionnaireContact = async (
       return res.data.data;
     })
     .catch((error) => {
-      if (error.response.status !== 409) throw error;
+      console.log("error = ", error);
     });
 };
 
@@ -75,7 +75,7 @@ export const submitForFreePOS = async (data: FreePOSContact) => {
       return res.data.data;
     })
     .catch((error) => {
-      if (error.response.status !== 409) throw error;
+      console.log("error = ", error);
     });
 };
 
@@ -85,7 +85,7 @@ export const submitForDemoPOS = async (data: RequestDemoContact) => {
       return res.data.data;
     })
     .catch((error) => {
-      if (error.response.status !== 409) throw error;
+      console.log("error = ", error);
     });
 };
 
@@ -95,7 +95,7 @@ export const submitContact = async (data: ContactInfo) => {
       return res.data.data;
     })
     .catch((error) => {
-      if (error.response.status !== 409) throw error;
+      console.log("error = ", error);
     });
 };
 
@@ -105,6 +105,6 @@ export const submitBreadme = async (data: BreadMeContact) => {
       return res.data.data;
     })
     .catch((error) => {
-      if (error.response.status !== 409) throw error;
+      console.log("error = ", error);
     });
 };
