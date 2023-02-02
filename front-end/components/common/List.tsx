@@ -18,7 +18,7 @@ const List = <T extends object | string>({
   showDivider,
   onItemSelected,
   classname,
-   itemClassname,
+  itemClassname,
 }: ListProps<T>) => {
   const [cindex, setIndex] = useState<number>(selectIndex);
 
