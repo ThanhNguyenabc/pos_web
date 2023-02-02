@@ -1,4 +1,4 @@
-.txt-sm {
+/* .txt-sm {
   @apply text-sm font-normal;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .txt-heading-small {
-  @apply text-3xl font-bold leading-[38px];
+  @apply text-3xl font-bold leading-[36px];
 }
 
 .txt-heading-medium {
@@ -52,4 +52,4 @@
 
 .txt-heading-xlarge {
   @apply text-6xl font-extrabold  text-neutral-900 leading-[68px];
-}
+} */

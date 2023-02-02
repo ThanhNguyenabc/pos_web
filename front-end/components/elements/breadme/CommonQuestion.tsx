@@ -1,10 +1,8 @@
 import { IcApple } from "assets/AssetUtil";
 import List from "components/common/List";
-import Image from "next/image";
 import React from "react";
 import IcMinus from "assets/icons/ic_minus.svg";
 import IcPLus from "assets/icons/ic_plus.svg";
-import ColorUtils from "utils/ColorUtils";
 
 const CommonQuestionData = [
   {
@@ -40,7 +38,7 @@ const CommonQuestionData = [
 ];
 const CommonQuestion = () => {
   return (
-    <div className="flex flex-col px-4 py-12 gap-10 md:px-8 mx-auto max-w-[768px] lg:pt-[100px] xl:pt-[120px]">
+    <div className="flex flex-col px-4 py-12 gap-10 md:px-8 mx-auto max-w-[768px] lg:py-[100px] xl:py-[120px]">
       <p className="txt-heading-small md:text-5xl md:font-extrabold md:leading-[56px]">
         Common Questions About the Cash Discount Program
       </p>

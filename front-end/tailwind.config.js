@@ -11,10 +11,6 @@ module.exports = {
     "./components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    "screens" :{
-      ...defaultTheme.screens,
-      "lg" : "1200px"},
-
     container: {
       screens: {
         "2xl": "1440px",
