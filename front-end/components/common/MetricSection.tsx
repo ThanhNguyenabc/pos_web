@@ -11,7 +11,9 @@ const MetricSection = ({
   titleColor = "text-secondary",
 }: MetricSectionProps) => {
   return (
-    <HeroSection className={`gap-12 text-center bg-neutral-100 lg:gap-20`}>
+    <HeroSection
+      className={`gap-12 text-center items-center bg-neutral-100 lg:gap-20`}
+    >
       <p className="text-4xl max-w-3xl font-bold md:text-5xl md:font-extrabold md:leading-[56px]">
         {MetrictData.heading}
       </p>
