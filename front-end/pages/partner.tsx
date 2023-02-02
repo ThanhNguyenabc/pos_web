@@ -6,6 +6,9 @@ import { FooterCTA } from "components/common/FooterCTA";
 import HeroSection from "components/common/HeroSection";
 import List from "components/common/List";
 import MetricSection from "components/common/MetricSection";
+import ApplyPartnerDialog, {
+  ApplyPartnerDialogId,
+} from "components/elements/partner/ApplyPartnerDialog";
 import ReviewerSection from "components/elements/partner/ReviewerSection";
 import Image from "next/image";
 import React from "react";
@@ -33,76 +36,86 @@ const PartnerProgram = [
   },
 ];
 
+const openApplyForm = () => {
+  document.getElementById(ApplyPartnerDialogId)?.click();
+};
+
 const PartnerPage = () => {
   return (
-    <div className="flex flex-col">
-      <div className="flex flex-col lg:flex-row">
-        <div className="flex flex-col flex-1 px-4 py-14 md:px-8  xl:p-0">
-          <div className=" text-center md:text-start lg:max-w-[480px] m-auto w-full">
-            <h3 className="txt-heading-large">Partner with BestPOS</h3>
-            <p className="txt-md text-neutral-700 mt-6 mb-12 md:text-xl">
-              The Program is designed specifically for agents, offering you
-              unparalleled flexibility and in-depth resources that can’t be
-              matched by anyone in the industry.
-            </p>
-            <Button classname="w-full md:w-fit" title="Become a Partner" />
+    <>
+      <ApplyPartnerDialog />
+      <div className="flex flex-col">
+        <div className="flex flex-col lg:flex-row">
+          <div className="flex flex-col flex-1 px-4 py-14 md:px-8  xl:p-0">
+            <div className=" text-center md:text-start lg:max-w-[480px] m-auto w-full">
+              <h3 className="txt-heading-large">Partner with BestPOS</h3>
+              <p className="txt-md text-neutral-700 mt-6 mb-12 md:text-xl">
+                The Program is designed specifically for agents, offering you
+                unparalleled flexibility and in-depth resources that can’t be
+                matched by anyone in the industry.
+              </p>
+              <Button
+                classname="w-full md:w-fit"
+                title="Become a Partner"
+                onClick={openApplyForm}
+              />
+            </div>
+          </div>
+          <div className="flex-1">
+            <Image
+              src={PartnerImg}
+              alt="partner image"
+              className=" aspect-[4/3] w-full  lg:h-full lg:max-h-[608px]"
+            />
           </div>
         </div>
-        <div className="flex-1">
-          <Image
-            src={PartnerImg}
-            alt="partner image"
-            className=" aspect-[4/3] w-full  lg:h-full lg:max-h-[608px]"
-          />
-        </div>
+
+        <HeroSection className="gap-12">
+          <h3 className="text-center txt-heading-medium md:txt-heading-large">
+            Agent Program
+          </h3>
+          <List
+            classname="gap-12 md:grid-cols-2 lg:gap-y-20 lg:gap-x-16"
+            data={PartnerProgram}
+            itemBuilder={(item, index, isSelectItem) => {
+              return (
+                <div className={` flex flex-col`}>
+                  <p className="mb-4 txt-heading-xsmal md:txt-heading-small">
+                    {item.title}
+                  </p>
+                  <p className="txt-md md:text-xl">{item.desc}</p>
+                </div>
+              );
+            }}
+          ></List>
+        </HeroSection>
+        <MetricSection titleColor="text-secondary" />
+        <ReviewerSection
+          reviews={[
+            {
+              avatar: ReviewerImg,
+              name: "Bryan",
+              jobTitle: "Owner of Beginnings",
+              comment:
+                "The competitive products and services that BestPOS provides made it easy for me to secure new clients",
+            },
+          ]}
+        />
+        <ClientSection />
+        <FooterCTA
+          background="bg-neutral-100"
+          actions={
+            <Button
+              classname="w-full md:w-fit"
+              title="Become a Partner"
+              onClick={openApplyForm}
+            />
+          }
+          title={<h3>Ready to join our partner program?</h3>}
+          des="Help your clients scale by transforming customersupport from a cost center to a profit generator."
+        />
       </div>
-
-      <HeroSection className="gap-12">
-        <h3 className="text-center txt-heading-medium md:txt-heading-large">
-          Agent Program
-        </h3>
-        <List
-          classname="gap-12 md:grid-cols-2 lg:gap-y-20 lg:gap-x-16"
-          data={PartnerProgram}
-          itemBuilder={(item, index, isSelectItem) => {
-            return (
-              <div className={` flex flex-col`}>
-                <p className="mb-4 txt-heading-xsmal md:txt-heading-small">
-                  {item.title}
-                </p>
-                <p className="txt-md md:text-xl">{item.desc}</p>
-              </div>
-            );
-          }}
-        ></List>
-      </HeroSection>
-
-      <MetricSection titleColor="text-secondary" />
-      <ReviewerSection
-        reviews={[
-          {
-            avatar: ReviewerImg,
-            name: "Bryan",
-            jobTitle: "Owner of Beginnings",
-            comment:
-              "The competitive products and services that BestPOS provides made it easy for me to secure new clients",
-          },
-        ]}
-      />
-      <ClientSection />
-      <FooterCTA
-        background="bg-neutral-100"
-        actions={
-          <Button
-            classname="w-full md:w-fit"
-            title="Become a Partner"
-            onClick={() => {}}
-          />
-        }
-        title={<h3>Ready to join our partner program?</h3>}
-        des="Help your clients scale by transforming customersupport from a cost center to a profit generator."
-      />
-    </div>
+    </>
   );
 };
 

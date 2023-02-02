@@ -108,3 +108,13 @@ export const submitBreadme = async (data: BreadMeContact) => {
       console.log("error = ", error);
     });
 };
+
+export const applyPartner = async (data: ContactInfo) => {
+  return await AxiosInstance.post<ApiResponse<boolean>>("/applypartner", data)
+    .then((res) => {
+      return res.data.data;
+    })
+    .catch((error) => {
+      console.log("error = ", error);
+    });
+};
