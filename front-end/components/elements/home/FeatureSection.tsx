@@ -4,6 +4,7 @@ import {
   PricingImg,
   ScheduleImg,
 } from "assets/AssetUtil";
+import HeroSection from "components/common/HeroSection";
 import Image from "next/image";
 import React from "react";
 
@@ -36,7 +37,7 @@ const data = [
 ];
 const FeatureSection = () => {
   return (
-    <div className="flex flex-col gap-10 px-4 py-12 md:px-8 md:py-14 lg:p-[100px] lg:flex-row lg:gap-12 xl:p-[120px]">
+    <HeroSection className="gap-10 lg:flex-row lg:gap-12">
       <div className=" flex flex-col gap-6 flex-1">
         <h2 className="txt-heading-medium md:text-5xl md:font-extrabold md:leading-[56px] ">
           Helping you <span className="text-secondary">compare & find</span> the
@@ -56,7 +57,7 @@ const FeatureSection = () => {
               <div className="hero-content flex-row p-0  gap-6 items-start ">
                 <Image
                   src={item.image}
-                  className = "w-16 h-16 md:w-20 md:h-20"
+                  className="w-16 h-16 md:w-20 md:h-20"
                   width={64}
                   height={64}
                   alt={`${item.title}`}
@@ -74,7 +75,7 @@ const FeatureSection = () => {
           );
         })}
       </div>
-    </div>
+    </HeroSection>
   );
 };
 

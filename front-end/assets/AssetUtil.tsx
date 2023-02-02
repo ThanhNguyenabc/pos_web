@@ -47,6 +47,7 @@ export { default as AlohaImg } from "./images/aloha-pos.png";
 export { default as ToastImg } from "./images/toast-pos.png";
 export { default as UpserveImg } from "./images/upserve-pos.png";
 export { default as PartnerImg } from "./images/partner.jpg";
+export { default as ReviewerImg } from "./images/reviewer.png";
 
 // export icons
 export { default as IcMenu } from "./icons/ic_menu.svg";

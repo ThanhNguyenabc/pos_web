@@ -16,7 +16,7 @@ export const FooterCTA = ({
     <div
       className={`flex flex-col justify-center items-center px-4 py-14 gap-6 md:rounded-2xl 
        text-center
-      md:gap-8 md:my-20 md:mx-8
+      md:gap-8 md:mb-20 md:mx-8
       lg:gap-10 
       lg:mx-[100px] 
       xl:mx-[120px]
@@ -26,7 +26,9 @@ export const FooterCTA = ({
         <div className="txt-heading-medium md:text-5xl md:font-extrabold md:leading-[56px] max-w-[860px]">
           {title}
         </div>
-        {des && <p className="txt-md md:text-lg text-neutral-700">{des}</p>}
+        {des && (
+          <p className="txt-md-bold md:text-lg text-neutral-700">{des}</p>
+        )}
       </div>
       <div className="w-full flex flex-col md:flex-row gap-4 justify-center ">
         {actions}

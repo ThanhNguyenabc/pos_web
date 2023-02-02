@@ -60,7 +60,6 @@ const openFindPOSModal = () => {
 
 const FreePOS = () => (
   <div className="flex-column">
-  
     <div className="flex flex-col bg-secondary lg:flex-row">
       <div className="flex flex-col flex-1 px-4 py-12 gap-10 items-center md:px-8 md:py-14 lg:items-start lg:p-[100px] xl:p-[120px]">
         <div className=" flex flex-col gap-6 text-white text-center items-center lg:text-start">
@@ -114,7 +113,7 @@ const FreePOS = () => (
       <Hero
         title={
           <>
-            With these three easy steps your business may be qualified for a 
+            With these three easy steps your business may be qualified for a
             <span className=" text-secondary">FREE POS system.</span>
           </>
         }
