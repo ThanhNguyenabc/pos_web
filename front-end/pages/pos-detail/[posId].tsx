@@ -4,7 +4,7 @@ import AxiosInstance, {
 } from "api_client/axios_client";
 import { IcApple, RevelImg } from "assets/AssetUtil";
 import { POSDetail } from "components/elements/pos_detail/PosDetail";
-import { getOverallRating, Product } from "models/porduct";
+import { getOverallRating, Product } from "models/product.model";
 import { Specification } from "models/specification";
 import { GetServerSidePropsContext } from "next";
 import React from "react";

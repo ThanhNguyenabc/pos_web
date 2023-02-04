@@ -9,7 +9,7 @@ import useSWR from "swr";
 import { getPOSByCategory } from "api_client/axios_client";
 import { CategoryType } from "models/category_type";
 import AppRoutes from "utils/routes";
-import { getOverallRating } from "models/porduct";
+import { getOverallRating } from "models/product.model";
 
 const ALLTABS = [
   {

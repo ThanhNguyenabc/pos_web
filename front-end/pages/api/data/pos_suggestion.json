@@ -1,0 +1,914 @@
+{
+    "restaurant,yes,1,0,yes": {
+        "products": [
+            "c4304593",
+            "3f1943c6",
+            "3503cf9d",
+            "587824fd"
+        ]
+    },
+    "restaurant,yes,1,1,yes": {
+        "products": [
+            "c4304593",
+            "3f1943c6",
+            "3503cf9d",
+            "587824fd"
+        ]
+    },
+    "restaurant,yes,1,2-3,yes": {
+        "products": [
+            "c4304593",
+            "3503cf9d",
+            "3f1943c6",
+            "587824fd"
+        ]
+    },
+    "restaurant,yes,1,4+,yes": {
+        "products": [
+            "587824fd",
+            "3f1943c6",
+            "3503cf9d",
+            "c4304593"
+        ]
+    },
+    "restaurant,yes,2-3,0,yes": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "3f1943c6",
+            "587824fd"
+        ]
+    },
+    "restaurant,yes,2-3,1,yes": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "3f1943c6",
+            "587824fd"
+        ]
+    },
+    "restaurant,yes,2-3,2-3,yes": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "3f1943c6",
+            "c4304593"
+        ]
+    },
+    "restaurant,yes,2-3,4+,yes": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "c4304593",
+            "3f1943c6"
+        ]
+    },
+    "restaurant,yes,4+,0,yes": {
+        "products": [
+            "8a013776",
+            "3503cf9d",
+            "3f1943c6",
+            "f9e0ef04"
+        ]
+    },
+    "restaurant,yes,4+,1,yes": {
+        "products": [
+            "8a013776",
+            "3503cf9d",
+            "3f1943c6",
+            "f9e0ef04"
+        ]
+    },
+    "restaurant,yes,4+,2-3,yes": {
+        "products": [
+            "8a013776",
+            "3503cf9d",
+            "3f1943c6",
+            "f9e0ef04"
+        ]
+    },
+    "restaurant,yes,4+,4+,yes": {
+        "products": [
+            "8a013776",
+            "3503cf9d",
+            "3f1943c6",
+            "f9e0ef04"
+        ]
+    },
+    "restaurant,yes,1,0,no": {
+        "products": [
+            "587824fd",
+            "3f1943c6",
+            "c4304593",
+            "8fdf75eb"
+        ]
+    },
+    "restaurant,yes,1,1,no": {
+        "products": [
+            "587824fd",
+            "3f1943c6",
+            "c4304593",
+            "8fdf75eb"
+        ]
+    },
+    "restaurant,yes,1,2-3,no": {
+        "products": [
+            "587824fd",
+            "3f1943c6",
+            "c4304593",
+            "8fdf75eb"
+        ]
+    },
+    "restaurant,yes,1,4+,no": {
+        "products": [
+            "587824fd",
+            "3f1943c6",
+            "c4304593",
+            "8fdf75eb"
+        ]
+    },
+    "restaurant,yes,2-3,0,no": {
+        "products": [
+            "c4304593",
+            "3f1943c6",
+            "8fdf75eb",
+            "587824fd"
+        ]
+    },
+    "restaurant,yes,2-3,1,no": {
+        "products": [
+            "c4304593",
+            "3f1943c6",
+            "8fdf75eb",
+            "587824fd"
+        ]
+    },
+    "restaurant,yes,2-3,2-3,no": {
+        "products": [
+            "c4304593",
+            "3f1943c6",
+            "8fdf75eb",
+            "587824fd"
+        ]
+    },
+    "restaurant,yes,2-3,4+,no": {
+        "products": [
+            "c4304593",
+            "3f1943c6",
+            "8fdf75eb",
+            "587824fd"
+        ]
+    },
+    "restaurant,yes,4+,0,no": {
+        "products": [
+            "8a013776",
+            "f9e0ef04",
+            "3503cf9d",
+            "587824fd"
+        ]
+    },
+    "restaurant,no,1,0,_": {
+        "products": [
+            "c4304593",
+            "3f1943c6",
+            "8fdf75eb",
+            "587824fd"
+        ]
+    },
+    "restaurant,no,1,1,_": {
+        "products": [
+            "c4304593",
+            "3f1943c6",
+            "8fdf75eb",
+            "587824fd"
+        ]
+    },
+    "restaurant,no,1,2-3,_": {
+        "products": [
+            "c4304593",
+            "3f1943c6",
+            "8fdf75eb",
+            "587824fd"
+        ]
+    },
+    "restaurant,no,1,4+,_": {
+        "products": [
+            "c4304593",
+            "3f1943c6",
+            "8fdf75eb",
+            "587824fd"
+        ]
+    },
+    "restaurant,no,2-3,0,_": {
+        "products": [
+            "c4304593",
+            "3f1943c6",
+            "3503cf9d",
+            "8fdf75eb"
+        ]
+    },
+    "restaurant,no,2-3,1,_": {
+        "products": [
+            "c4304593",
+            "3f1943c6",
+            "3503cf9d",
+            "8fdf75eb"
+        ]
+    },
+    "restaurant,no,2-3,2-3,_": {
+        "products": [
+            "c4304593",
+            "3f1943c6",
+            "3503cf9d",
+            "8fdf75eb"
+        ]
+    },
+    "restaurant,no,2-3,4+,_": {
+        "products": [
+            "c4304593",
+            "3f1943c6",
+            "3503cf9d",
+            "8fdf75eb"
+        ]
+    },
+    "restaurant,no,4+,0,_": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "c4304593",
+            "8fdf75eb"
+        ]
+    },
+    "restaurant,no,4+,1,_": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "c4304593",
+            "8fdf75eb"
+        ]
+    },
+    "restaurant,no,4+,2-3,_": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "c4304593",
+            "8fdf75eb"
+        ]
+    },
+    "restaurant,no,4+,4+,_": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "c4304593",
+            "8fdf75eb"
+        ]
+    },
+    "quickservice,yes,1,0,yes": {
+        "products": [
+            "8fdf75eb",
+            "3f1943c6",
+            "20621691",
+            "587824fd"
+        ]
+    },
+    "quickservice,yes,1,1,yes": {
+        "products": [
+            "8fdf75eb",
+            "3503cf9d",
+            "c4304593",
+            "587824fd"
+        ]
+    },
+    "quickservice,yes,1,2-3,yes": {
+        "products": [
+            "3503cf9d",
+            "8fdf75eb",
+            "3f1943c6",
+            "c4304593"
+        ]
+    },
+    "quickservice,yes,1,4+,yes": {
+        "products": [
+            "3503cf9d",
+            "3f1943c6",
+            "8fdf75eb",
+            "c4304593"
+        ]
+    },
+    "quickservice,yes,2-3,0,yes": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "587824fd",
+            "8fdf75eb"
+        ]
+    },
+    "quickservice,yes,2-3,1,yes": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "c4304593",
+            "8fdf75eb"
+        ]
+    },
+    "quickservice,yes,2-3,2-3,yes": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "3f1943c6",
+            "587824fd"
+        ]
+    },
+    "quickservice,yes,2-3,4+,yes": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "3f1943c6",
+            "8fdf75eb"
+        ]
+    },
+    "quickservice,yes,4+,0,yes": {
+        "products": [
+            "8a013776",
+            "3503cf9d",
+            "4a659923",
+            "587824fd"
+        ]
+    },
+    "quickservice,yes,4+,1,yes": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "3f1943c6",
+            "587824fd"
+        ]
+    },
+    "quickservice,yes,4+,2-3,yes": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "c4304593",
+            "587824fd"
+        ]
+    },
+    "quickservice,yes,4+,4+,yes": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "3f1943c6",
+            "8fdf75eb"
+        ]
+    },
+    "quickservice,yes,1,0,no": {
+        "products": [
+            "8fdf75eb",
+            "3f1943c6",
+            "c4304593",
+            "587824fd"
+        ]
+    },
+    "quickservice,yes,1,1,no": {
+        "products": [
+            "3503cf9d",
+            "3f1943c6",
+            "8a013776",
+            "8fdf75eb"
+        ]
+    },
+    "quickservice,yes,1,2-3,no": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "3f1943c6",
+            "c4304593"
+        ]
+    },
+    "quickservice,yes,1,4+,no": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "3f1943c6",
+            "c4304593"
+        ]
+    },
+    "quickservice,yes,2-3,0,no": {
+        "products": [
+            "8a013776",
+            "3503cf9d",
+            "3f1943c6",
+            "4a659923"
+        ]
+    },
+    "quickservice,yes,2-3,1,no": {
+        "products": [
+            "8a013776",
+            "3503cf9d",
+            "3f1943c6",
+            "587824fd"
+        ]
+    },
+    "quickservice,yes,2-3,2-3,no": {
+        "products": [
+            "8a013776",
+            "3503cf9d",
+            "3f1943c6",
+            "587824fd"
+        ]
+    },
+    "quickservice,yes,2-3,4+,no": {
+        "products": [
+            "c4304593",
+            "3f1943c6",
+            "c4304593",
+            "587824fd"
+        ]
+    },
+    "quickservice,yes,4+,0,no": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "587824fd",
+            "4a659923"
+        ]
+    },
+    "quickservice,yes,4+,1,no": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "3f1943c6",
+            "f9e0ef04"
+        ]
+    },
+    "quickservice,yes,4+,2-3,no": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "3f1943c6",
+            "f9e0ef04"
+        ]
+    },
+    "quickservice,yes,4+,4+,no": {
+        "products": [
+            "8a013776",
+            "f9e0ef04",
+            "3503cf9d",
+            "c4304593"
+        ]
+    },
+    "quickservice,no,1,0,_": {
+        "products": [
+            "c4304593",
+            "587824fd",
+            "3f1943c6",
+            "8fdf75eb"
+        ]
+    },
+    "quickservice,no,1,1,_": {
+        "products": [
+            "c4304593",
+            "8fdf75eb",
+            "3f1943c6",
+            "3503cf9d"
+        ]
+    },
+    "quickservice,no,1,2-3,_": {
+        "products": [
+            "c4304593",
+            "3503cf9d",
+            "3f1943c6",
+            "8fdf75eb"
+        ]
+    },
+    "quickservice,no,1,4+,_": {
+        "products": [
+            "c4304593",
+            "3503cf9d",
+            "3f1943c6",
+            "8fdf75eb"
+        ]
+    },
+    "quickservice,no,2-3,0,_": {
+        "products": [
+            "8a013776",
+            "3503cf9d",
+            "3f1943c6",
+            "587824fd"
+        ]
+    },
+    "quickservice,no,2-3,1,_": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "3f1943c6",
+            "587824fd"
+        ]
+    },
+    "quickservice,no,2-3,2-3,_": {
+        "products": [
+            "8a013776",
+            "3503cf9d",
+            "3f1943c6",
+            "c4304593"
+        ]
+    },
+    "quickservice,no,2-3,4+,_": {
+        "products": [
+            "8a013776",
+            "3503cf9d",
+            "3f1943c6",
+            "c4304593"
+        ]
+    },
+    "quickservice,no,4+,0,_": {
+        "products": [
+            "8a013776",
+            "f9e0ef04",
+            "3503cf9d",
+            "4a659923"
+        ]
+    },
+    "quickservice,no,4+,1,_": {
+        "products": [
+            "8a013776",
+            "f9e0ef04",
+            "3503cf9d",
+            "8fdf75eb"
+        ]
+    },
+    "quickservice,no,4+,2-3,_": {
+        "products": [
+            "8a013776",
+            "f9e0ef04",
+            "3503cf9d",
+            "c4304593"
+        ]
+    },
+    "quickservice,no,4+,4+,_": {
+        "products": [
+            "8a013776",
+            "f9e0ef04",
+            "3503cf9d",
+            "c4304593"
+        ]
+    },
+    "small-business,yes,1,0,yes": {
+        "products": [
+            "f32ba2b0",
+            "c4304593",
+            "3f1943c6",
+            "f0ef18a8"
+        ]
+    },
+    "small-business,yes,1,1,yes": {
+        "products": [
+            "c4304593",
+            "3503cf9d",
+            "3f1943c6",
+            "20621691"
+        ]
+    },
+    "small-business,yes,1,2-3,yes": {
+        "products": [
+            "c4304593",
+            "3503cf9d",
+            "3f1943c6",
+            "20621691"
+        ]
+    },
+    "small-business,yes,1,4+,yes": {
+        "products": [
+            "f32ba2b0",
+            "c4304593",
+            "3f1943c6",
+            "f0ef18a8"
+        ]
+    },
+    "small-business,yes,2-3,0,yes": {
+        "products": [
+            "c4304593",
+            "3503cf9d",
+            "f32ba2b0",
+            "8fdf75eb"
+        ]
+    },
+    "small-business,yes,2-3,1,yes": {
+        "products": [
+            "c4304593",
+            "3503cf9d",
+            "8fdf75eb",
+            "f32ba2b0"
+        ]
+    },
+    "small-business,yes,2-3,2-3,yes": {
+        "products": [
+            "c4304593",
+            "3503cf9d",
+            "f32ba2b0",
+            "8fdf75eb"
+        ]
+    },
+    "small-business,yes,2-3,4+,yes": {
+        "products": [
+            "c4304593",
+            "3503cf9d",
+            "f32ba2b0",
+            "8fdf75eb"
+        ]
+    },
+    "small-business,yes,4+,0,yes": {
+        "products": [
+            "c4304593",
+            "3f1943c6",
+            "f0ef18a8",
+            "3503cf9d"
+        ]
+    },
+    "small-business,yes,4+,1,yes": {
+        "products": [
+            "3503cf9d",
+            "c4304593",
+            "3f1943c6",
+            "8a013776"
+        ]
+    },
+    "small-business,yes,4+,2-3,yes": {
+        "products": [
+            "c4304593",
+            "3503cf9d",
+            "8a013776",
+            "3f1943c6"
+        ]
+    },
+    "small-business,yes,4+,4+,yes": {
+        "products": [
+            "c4304593",
+            "3503cf9d",
+            "8a013776",
+            "8fdf75eb"
+        ]
+    },
+    "small-business,yes,1,0,no": {
+        "products": [
+            "f32ba2b0",
+            "c4304593",
+            "587824fd",
+            "3f1943c6"
+        ]
+    },
+    "small-business,yes,1,1,no": {
+        "products": [
+            "f32ba2b0",
+            "c4304593",
+            "3f1943c6",
+            "587824fd"
+        ]
+    },
+    "small-business,yes,1,2-3,no": {
+        "products": [
+            "f32ba2b0",
+            "c4304593",
+            "587824fd",
+            "3f1943c6"
+        ]
+    },
+    "small-business,yes,1,4+,no": {
+        "products": [
+            "f32ba2b0",
+            "c4304593",
+            "3f1943c6",
+            "f0ef18a8"
+        ]
+    },
+    "small-business,yes,2-3,0,no": {
+        "products": [
+            "c4304593",
+            "3503cf9d",
+            "f32ba2b0",
+            "8fdf75eb"
+        ]
+    },
+    "small-business,yes,2-3,1,no": {
+        "products": [
+            "3503cf9d",
+            "c4304593",
+            "3f1943c6",
+            "8a013776"
+        ]
+    },
+    "small-business,yes,2-3,2-3,no": {
+        "products": [
+            "3503cf9d",
+            "c4304593",
+            "3f1943c6",
+            "8a013776"
+        ]
+    },
+    "small-business,yes,2-3,4+,no": {
+        "products": [
+            "c4304593",
+            "3503cf9d",
+            "8a013776",
+            "8fdf75eb"
+        ]
+    },
+    "small-business,yes,4+,0,no": {
+        "products": [
+            "c4304593",
+            "3f1943c6",
+            "f0ef18a8",
+            "3503cf9d"
+        ]
+    },
+    "small-business,yes,4+,1,no": {
+        "products": [
+            "8a013776",
+            "3503cf9d",
+            "c4304593",
+            "3f1943c6"
+        ]
+    },
+    "small-business,yes,4+,2-3,no": {
+        "products": [
+            "8a013776",
+            "3503cf9d",
+            "c4304593",
+            "3f1943c6"
+        ]
+    },
+    "small-business,yes,4+,4+,no": {
+        "products": [
+            "8a013776",
+            "3503cf9d",
+            "c4304593",
+            "3f1943c6"
+        ]
+    },
+    "small-business,no,1,0,_": {
+        "products": [
+            "f32ba2b0",
+            "c4304593",
+            "3f1943c6",
+            "f0ef18a8"
+        ]
+    },
+    "small-business,no,1,1,_": {
+        "products": [
+            "c4304593",
+            "8fdf75eb",
+            "3503cf9d",
+            "3f1943c6"
+        ]
+    },
+    "small-business,no,1,2-3,_": {
+        "products": [
+            "8fdf75eb",
+            "3503cf9d",
+            "c4304593",
+            "8a013776"
+        ]
+    },
+    "small-business,no,1,4+,_": {
+        "products": [
+            "8fdf75eb",
+            "c4304593",
+            "3503cf9d",
+            "8a013776"
+        ]
+    },
+    "small-business,no,2-3,0,_": {
+        "products": [
+            "8a013776",
+            "3503cf9d",
+            "c4304593",
+            "587824fd"
+        ]
+    },
+    "small-business,no,2-3,1,_": {
+        "products": [
+            "8a013776",
+            "c4304593",
+            "587824fd",
+            "3503cf9d"
+        ]
+    },
+    "small-business,no,2-3,2-3,_": {
+        "products": [
+            "8a013776",
+            "3503cf9d",
+            "c4304593",
+            "8fdf75eb"
+        ]
+    },
+    "small-business,no,2-3,4+,_": {
+        "products": [
+            "c4304593",
+            "3503cf9d",
+            "8a013776",
+            "8fdf75eb"
+        ]
+    },
+    "small-business,no,4+,0,_": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "c4304593",
+            "f32ba2b0"
+        ]
+    },
+    "small-business,no,4+,1,_": {
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "8fdf75eb",
+            "c4304593"
+        ]
+    },
+    "small-business,no,4+,2-3,_": {
+        "products": [
+            "8fdf75eb",
+            "3503cf9d",
+            "8a013776",
+            "c4304593"
+        ]
+    },
+    "small-business,no,4+,4+,_": {
+        "products": [
+            "c4304593",
+            "3503cf9d",
+            "8a013776",
+            "8fdf75eb"
+        ]
+    },
+    "retail,yes,1,_,yes": {
+        "products": [
+            "f32ba2b0",
+            "c4304593",
+            "3503cf9d",
+            "f0ef18a8"
+        ]
+    },
+    "retail,yes,2-3,_,yes": {
+        "products": [
+            "c4304593",
+            "f32ba2b0",
+            "3503cf9d",
+            "f0ef18a8"
+        ]
+    },
+    "retail,yes,4+,_,yes": {
+        "products": [
+            "c4304593",
+            "f32ba2b0",
+            "3503cf9d",
+            "f0ef18a8"
+        ]
+    },
+    "retail,yes,1,_,no": {
+        "products": [
+            "f32ba2b0",
+            "c4304593",
+            "3503cf9d",
+            "3f1943c6"
+        ]
+    },
+    "retail,yes,2-3,_,no": {
+        "products": [
+            "c4304593",
+            "f32ba2b0",
+            "3503cf9d",
+            "f0ef18a8"
+        ]
+    },
+    "retail,yes,4+,_,no": {
+        "products": [
+            "c4304593",
+            "f32ba2b0",
+            "3503cf9d",
+            "f0ef18a8"
+        ]
+    },
+    "retail,no,1,_,_": {
+        "products": [
+            "f32ba2b0",
+            "c4304593",
+            "3503cf9d",
+            "3f1943c6"
+        ]
+    },
+    "retail,no,2-3,_,_": {
+        "products": [
+            "f32ba2b0",
+            "c4304593",
+            "3503cf9d",
+            "3f1943c6"
+        ]
+    },
+    "retail,no,4+,_,_": {
+        "products": [
+            "c4304593",
+            "f32ba2b0",
+            "3503cf9d",
+            "3f1943c6"
+        ]
+    }
+}

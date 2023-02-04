@@ -2,7 +2,7 @@ import { BreadMeImg, IcRightArrow } from "assets/AssetUtil";
 import { BreadMeBtn } from "components/common/BreadmeBtn";
 import { Button } from "components/common/Button";
 import PricingBtn from "components/common/PricingBtn";
-import { getOverallRating, Product, SystemOs } from "models/porduct";
+import { getOverallRating, Product, SystemOs } from "models/product.model";
 import { Specification } from "models/specification";
 import Image, { StaticImageData } from "next/image";
 import { useRouter } from "next/router";
