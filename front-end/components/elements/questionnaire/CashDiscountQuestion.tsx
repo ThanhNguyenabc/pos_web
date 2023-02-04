@@ -1,14 +1,14 @@
 import SelectedList from "components/common/SelectedList";
-import { QuestionnaireContext } from "pages/questionnaire";
 import React from "react";
+import useQuestionnaireStore from "stores/questionnaire_store";
 import { YesNoQuestion } from "utils/StringUtil";
 
 const CashDiscountQuestion = () => {
-  const value = React.useContext(QuestionnaireContext);
+  const questionnaireStore = useQuestionnaireStore();
 
   return (
     <SelectedList
-      selectIndex={value.questionData?.isDiscountIndex}
+      selectIndex={questionnaireStore.data?.discountIndex}
       data={YesNoQuestion}
       itemBuilder={(item, index) => (
         <div className="p-4 border-neutral-300 ">
@@ -16,9 +16,9 @@ const CashDiscountQuestion = () => {
         </div>
       )}
       onItemSelected={(selectIndex) => {
-        value.setQuestionData({
-          ...value.questionData,
-          isDiscountIndex: selectIndex,
+        questionnaireStore.setQuestionData({
+          ...questionnaireStore.data,
+          discountIndex: selectIndex,
         });
       }}
     />

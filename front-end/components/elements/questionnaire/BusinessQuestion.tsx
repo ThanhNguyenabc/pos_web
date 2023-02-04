@@ -1,15 +1,22 @@
 import SelectedList from "components/common/SelectedList";
 import React from "react";
 import Image from "next/image";
-import { QuestionnaireContext } from "pages/questionnaire";
 import { CategoryList } from "utils/StringUtil";
+import useQuestionnaireStore from "stores/questionnaire_store";
+
+export const QuestionList = [
+  { ...CategoryList[3], title: "Restaurant" },
+  CategoryList[2],
+  { ...CategoryList[1], title: "Quick Service" },
+  CategoryList[5],
+];
 
 const BusinessQuestion = () => {
-  const value = React.useContext(QuestionnaireContext);
+  const questionnaireStore = useQuestionnaireStore();
   return (
     <SelectedList
-      selectIndex={value.questionData?.businessId}
-      data={CategoryList}
+      selectIndex={questionnaireStore.data?.businessId}
+      data={QuestionList}
       classname={"md:grid-cols-2"}
       itemBuilder={(item, index: number) => {
         return (
@@ -24,8 +31,8 @@ const BusinessQuestion = () => {
         );
       }}
       onItemSelected={(selectedIndex) => {
-        value.setQuestionData({
-          ...value.questionData,
+        questionnaireStore.setQuestionData({
+          ...questionnaireStore.data,
           businessId: selectedIndex,
         });
       }}

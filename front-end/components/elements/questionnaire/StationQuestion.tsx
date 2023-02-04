@@ -2,15 +2,18 @@ import { Station1Img, Station2Img, Station4Img } from "assets/AssetUtil";
 import React from "react";
 import SelectedList from "../../common/SelectedList";
 import Image from "next/image";
-import { QuestionnaireContext } from "pages/questionnaire";
-import { StationData } from "utils/StringUtil";
+import { StationData, YesNoQuestion } from "utils/StringUtil";
+import useQuestionnaireStore from "stores/questionnaire_store";
+import { QuestionList } from "./BusinessQuestion";
+import { CategoryType } from "models/category_type";
 
 const StationQuestion = () => {
-  const value = React.useContext(QuestionnaireContext);
+  const questionnaireStore = useQuestionnaireStore();
+  const data = questionnaireStore.data;
 
   return (
     <SelectedList
-      selectIndex={value.questionData?.numberStationIndex}
+      selectIndex={data?.numberStationIndex}
       classname={"md:grid-cols-3"}
       data={StationData}
       itemBuilder={(item, index: number) => {
@@ -21,15 +24,28 @@ const StationQuestion = () => {
               className="w-16 h-16 md:w-[100px] md:h-[100px]"
               alt="image"
             />
-            <p className="txt-md-bold md:text-center">{item.content}</p>
+            <p className="txt-md-bold md:text-center">
+              {item.content} stations
+            </p>
           </div>
         );
       }}
       onItemSelected={(selectedIndex) => {
-        value.setQuestionData({
-          ...value.questionData,
-          numberStationIndex: selectedIndex,
-        });
+        let businessType = QuestionList[data.businessId].type;
+        let isHaveSaleSystem = YesNoQuestion[data.saleSystemIndex] == "Yes";
+        let nextPageNumber = 1;
+
+        if (businessType == CategoryType.retail) {
+          nextPageNumber = isHaveSaleSystem ? 2 : 3;
+        }
+
+        questionnaireStore.setQuestionData(
+          {
+            ...questionnaireStore.data,
+            numberStationIndex: selectedIndex,
+          },
+          nextPageNumber
+        );
       }}
     />
   );

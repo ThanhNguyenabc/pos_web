@@ -1,23 +1,28 @@
 import { submitQuestionnaireContact } from "api_client/axios_client";
-import { IcAmericanFlag } from "assets/AssetUtil";
+import { CloverImg, IcAmericanFlag } from "assets/AssetUtil";
 import { Button } from "components/common/Button";
 import ContactForm, { ContactInfo } from "components/common/ContactForm";
 import Input from "components/common/Input";
 import { ThankyouModalId } from "components/common/ThankYouDialog";
 import { QuestionnaireContact } from "models/questionnaire_contact";
-import { QuestionnaireContext } from "pages/questionnaire";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
+import useProductStore from "stores/product_store";
+import useQuestionnaireStore from "stores/questionnaire_store";
+import AppRoutes from "utils/routes";
 import {
-  CategoryList,
   HandHeldData,
   isValidEmail,
   isValidPhoneNumber,
   StationData,
   YesNoQuestion,
 } from "utils/StringUtil";
+import { QuestionList } from "./BusinessQuestion";
 
-const Contact = () => {
-  const value = React.useContext(QuestionnaireContext);
+const QuestionnaireContact = () => {
+  const questionnaireStore = useQuestionnaireStore();
+  const productStore = useProductStore();
+  const router = useRouter();
 
   const [contactInfo, setContactInfo] = useState<
     ContactInfo & {
@@ -66,19 +71,31 @@ const Contact = () => {
     const data: QuestionnaireContact = {
       name: contactInfo.name || "",
       email: contactInfo.email || "",
-      onDiscountProgram: YesNoQuestion[value.questionData.isDiscountIndex || 0],
       phoneNumber: contactInfo.phoneNumber || "",
-      business: CategoryList[value.questionData.businessId || 0].title,
-      haveSaleSystem:
-        YesNoQuestion[value.questionData.isOwnSaleSystemIndex || 0],
-      numberOfHandheld:
-        HandHeldData[value.questionData.handHeldIndex || 0].content,
+      business: QuestionList[questionnaireStore.data.businessId].title,
+      haveSaleSystem: YesNoQuestion[questionnaireStore.data.saleSystemIndex],
       numberOfStations:
-        StationData[value.questionData.numberStationIndex || 0].content,
+        StationData[questionnaireStore.data.numberStationIndex].content,
+      numberOfHandheld:
+        questionnaireStore.data.handHeldIndex != undefined
+          ? HandHeldData[questionnaireStore.data.handHeldIndex].content
+          : "_",
+      onDiscountProgram:
+        questionnaireStore.data.discountIndex != undefined
+          ? YesNoQuestion[questionnaireStore.data.discountIndex]
+          : "_",
     };
 
-    await submitQuestionnaireContact(data);
-    document.getElementById(ThankyouModalId)?.click();
+    console.log("data -------------");
+
+    console.log("request data = ", data);
+    console.log(
+      HandHeldData[questionnaireStore.data.handHeldIndex || 0].content
+    );
+
+    let suggestProduct = await submitQuestionnaireContact(data);
+    productStore.setSuggestPOSList(suggestProduct);
+    router.push(AppRoutes.SuggestPOSPage);
   };
 
   return (
@@ -136,4 +153,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default QuestionnaireContact;

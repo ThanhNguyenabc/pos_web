@@ -1,14 +1,14 @@
 import SelectedList from "components/common/SelectedList";
-import { QuestionnaireContext } from "pages/questionnaire";
 import React from "react";
+import useQuestionnaireStore from "stores/questionnaire_store";
 import { YesNoQuestion } from "utils/StringUtil";
 
 const SaleSystemQuestion = () => {
-  const value = React.useContext(QuestionnaireContext);
+  const questionnaireStore = useQuestionnaireStore();
 
   return (
     <SelectedList
-      selectIndex={value.questionData?.isOwnSaleSystemIndex}
+      selectIndex={questionnaireStore.data.saleSystemIndex}
       data={YesNoQuestion}
       itemListClassName={"md:max-w-lg"}
       itemBuilder={(item, index) => (
@@ -17,9 +17,9 @@ const SaleSystemQuestion = () => {
         </div>
       )}
       onItemSelected={(selectedIndex) => {
-        value.setQuestionData({
-          ...value.questionData,
-          isOwnSaleSystemIndex: selectedIndex,
+        questionnaireStore.setQuestionData({
+          ...questionnaireStore.data,
+          saleSystemIndex: selectedIndex,
         });
       }}
     />
