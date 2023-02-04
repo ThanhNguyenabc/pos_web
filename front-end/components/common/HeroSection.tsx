@@ -11,7 +11,7 @@ interface HeroSectionProps {
 const HeroSection = ({ className, style, children }: HeroSectionProps) => {
   return (
     <Box
-      className={`flex flex-col py-14 md:py-16 lg:p-[85px] xl:p-[120px] ${className}`}
+      className={`py-14 md:py-16 lg:p-[85px] xl:p-[120px] ${className}`}
       style={style}
     >
       {children}

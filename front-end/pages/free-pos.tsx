@@ -11,6 +11,7 @@ import { Button } from "components/common/Button";
 import ClientSection from "components/common/ClientSection";
 import { FooterCTA } from "components/common/FooterCTA";
 import Hero from "components/common/Hero";
+import HeroSection from "components/common/HeroSection";
 import FindPOSModal, {
   FindPOSModalId,
 } from "components/elements/find_pos_modal/FindPOSModal";
@@ -60,21 +61,19 @@ const openFindPOSModal = () => {
 
 const FreePOS = () => (
   <div className="flex-column">
-    <div className="flex flex-col bg-secondary lg:flex-row">
-      <div className="flex flex-col flex-1 px-4 py-12 gap-10 items-center md:px-8 md:py-14 lg:items-start lg:p-[100px] xl:p-[120px]">
-        <div className=" flex flex-col gap-6 text-white text-center items-center lg:text-start">
-          <p
-            className={`txt-heading-medium text-white max-w-3xl md:font-extrabold md:text-6xl md:leading-[68px]`}
-          >
-            <span className="text-primary">FREE</span> point-of-sale & terminals
-            of your choice available!
-          </p>
-          <p className="txt-md md:text-xl">
-            There are many qualified POS systems out there and BestPOS is here
-            to help you find the perfect match!
-          </p>
-        </div>
-        <div className="flex flex-col md:flex-row justify-center lg:justify-start gap-4 w-full md:w-fit">
+    <div className="flex flex-col flex-1 w-full bg-secondary  lg:flex-row">
+      <HeroSection className=" flex-1 gap-4 text-white text-center md:gap-6 lg:text-left lg:p-0">
+        <p
+          className={`txt-heading-medium text-white max-w-3xl md:font-extrabold md:text-6xl md:leading-[68px]`}
+        >
+          <span className="text-primary">FREE</span> point-of-sale & terminals
+          of your choice available!
+        </p>
+        <p className="txt-md md:text-xl">
+          There are many qualified POS systems out there and BestPOS is here to
+          help you find the perfect match!
+        </p>
+        <div className="flex flex-col self-center gap-4 md:gap-6 w-full md:w-fit md:flex-row lg:self-start">
           <Button title="Get started" onClick={openFindPOSModal} />
           <Button
             title="Request a Demo"
@@ -83,11 +82,12 @@ const FreePOS = () => (
             onClick={() => document.getElementById(RequestDemoModalId)?.click()}
           />
         </div>
-      </div>
-      <div className="flex-1 lg:mt-24">
-        <Image src={POS2Img} alt="" className="w-full h-full" />
+      </HeroSection>
+      <div className="flex lg:w-[40vw] pt-[50px] ">
+        <Image src={POS2Img} alt="" className="aspect-[4/3]" />
       </div>
     </div>
+
     <Hero
       title="How we evaluate point of sale software"
       subTitle="We take into consideration the most important aspects of choosing the best POS for your business"

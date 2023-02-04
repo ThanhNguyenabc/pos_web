@@ -46,7 +46,7 @@ const PartnerPage = () => {
       <ApplyPartnerDialog />
       <div className="flex flex-col">
         <div className="flex flex-col lg:flex-row">
-          <div className="flex flex-col flex-1 px-4 py-14 md:px-8  xl:p-0">
+          <div className="flex flex-col flex-1 px-4 py-14 md:px-8 xl:p-0">
             <div className=" text-center md:text-start lg:max-w-[480px] m-auto w-full">
               <h3 className="txt-heading-large">Partner with BestPOS</h3>
               <p className="txt-md text-neutral-700 mt-6 mb-12 md:text-xl">
