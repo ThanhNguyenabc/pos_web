@@ -28,7 +28,7 @@ import {
   PizzeriaCategory,
 } from "assets/AssetUtil";
 import { CategoryType } from "models/category_type";
-import { SystemOs } from "models/porduct";
+import { SystemOs } from "models/product.model";
 import { StaticImageData } from "next/image";
 import { ReactComponentElement, ReactElement } from "react";
 import AppRoutes from "./routes";
@@ -115,7 +115,7 @@ export const CategoryList = [
     img: BarCategory,
   },
   {
-    title: "Small Businesses",
+    title: "Small Business",
     type: CategoryType.small_business,
     link: AppRoutes.SmallBusinessPOS,
     img: BusinessCategory,
@@ -144,30 +144,30 @@ export const SaleSystem = [
 export const HandHeldData = [
   {
     icon: HandHeld1Img,
-    content: "1 handhelds",
+    content: "1",
   },
   {
     icon: HandHeld2Img,
-    content: "2-3 handhelds",
+    content: "2-3",
   },
   {
     icon: HandHeld3Img,
-    content: "4+ handhelds",
+    content: "4+",
   },
 ];
 
 export const StationData = [
   {
     icon: Station1Img,
-    content: "1 station",
+    content: "1",
   },
   {
     icon: Station2Img,
-    content: "2-3 stations",
+    content: "2-3",
   },
   {
     icon: Station4Img,
-    content: "4+ stations",
+    content: "4+",
   },
 ];
 

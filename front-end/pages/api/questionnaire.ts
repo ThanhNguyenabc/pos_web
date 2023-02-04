@@ -2,6 +2,16 @@ import { NextApiRequest, NextApiResponse } from "next";
 import fs from "fs";
 import { createFolder, questionnairePath } from "utils/file_helper";
 import { QuestionnaireContact } from "models/questionnaire_contact";
+import POSSuggestion from "./data/pos_suggestion.json";
+import ProductData from "./data/products.json";
+import { Product } from "models/product.model";
+
+const businessTypeMapper = {
+  Restaurant: "restaurant",
+  "Retail Stores": "retail",
+  "Quick Service": "quickservice",
+  "Small Business": "small-business",
+};
 
 export default async function handler(
   req: NextApiRequest,
@@ -39,7 +49,23 @@ export default async function handler(
         fs.writeFile(fileName, content.join("\n"), (err) => {});
       });
 
-      res.status(200).json({ data: true });
+      const suggestKey = `${
+        businessTypeMapper[business as keyof typeof businessTypeMapper]
+      },${haveSaleSystem.toLowerCase()},${numberOfStations},${numberOfHandheld},${onDiscountProgram.toLowerCase()}`;
+
+      console.log("suggest key ==== ", suggestKey);
+      const suggestedProduct =
+        POSSuggestion[suggestKey as keyof typeof POSSuggestion].products || [];
+      console.log("all product keys = ", suggestedProduct);
+
+      let result: Array<object> = [];
+
+      ProductData.forEach((item) => {
+        if (suggestedProduct.includes(item.id)) {
+          result.push(item);
+        }
+      });
+      res.status(200).json({ data: result });
     default:
       break;
   }

@@ -11,6 +11,7 @@ class AppRoutes {
   static BreadmeQuestionPage = "/bread-me-questions";
   static POSDetailPage = "/pos-detail";
   static PartnerPage = "/partner";
+  static SuggestPOSPage = "/suggest-pos";
 
   static CategoryPage = "/categories";
   static PizzeriaPOS = `${this.CategoryPage}/${CategoryType.pizza}`;
