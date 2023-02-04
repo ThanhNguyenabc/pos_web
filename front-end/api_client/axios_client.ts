@@ -4,7 +4,7 @@ import { BreadMeContact } from "models/breadme_contact";
 import { Category } from "models/category";
 import { ContactInfo } from "models/contact_info";
 import { FreePOSContact } from "models/freepos_contact";
-import { Product } from "models/porduct";
+import { Product } from "models/product.model";
 import { QuestionnaireContact } from "models/questionnaire_contact";
 import { RequestDemoContact } from "models/request_demo_contact";
 import { Specification } from "models/specification";
@@ -60,13 +60,16 @@ export const getSpecification = async (productId: string) => {
 export const submitQuestionnaireContact = async (
   data: QuestionnaireContact
 ) => {
-  return await AxiosInstance.post<ApiResponse<boolean>>("/questionnaire", data)
-    .then((res) => {
-      return res.data.data;
-    })
-    .catch((error) => {
-      console.log("error = ", error);
-    });
+  try {
+    const response = await AxiosInstance.post<ApiResponse<Array<Product>>>(
+      "/questionnaire",
+      data
+    );
+    return response.data.data;
+  } catch (error) {
+    console.log("error = ", error);
+  }
+  return [];
 };
 
 export const submitForFreePOS = async (data: FreePOSContact) => {

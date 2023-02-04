@@ -4,6 +4,8 @@ import { BreadMeBtn } from "../BreadmeBtn";
 import { twMerge } from "tailwind-merge";
 import { POSCardProps } from "../pos_card/POSCard";
 import { getSystemIcon, ProductIcons } from "utils/StringUtil";
+import PricingBtn from "../PricingBtn";
+import ColorUtils from "utils/ColorUtils";
 
 const RecommendPOSCardMobile = ({
   data,
@@ -49,7 +51,12 @@ const RecommendPOSCardMobile = ({
       </div>
       <div className="flex gap-2 w-full">
         <BreadMeBtn />
-        <BreadMeBtn />
+        <PricingBtn
+          logo={ProductIcons[data.name]}
+          title="Monthly"
+          color={ColorUtils.secondary}
+          desc={`$${data.monthly_price}/month`}
+        />
       </div>
     </div>
   );

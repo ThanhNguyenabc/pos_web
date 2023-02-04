@@ -1,4 +1,4 @@
-import { Product } from "models/porduct";
+import { Product } from "models/product.model";
 import { StaticImageData } from "next/image";
 import React, {
   ReactComponentElement,
@@ -11,7 +11,7 @@ import POSCardTablet from "./POSCard.tablet";
 
 export interface POSCardProps {
   data: Product;
-  overallRating: number
+  overallRating: number;
   classname?: string;
   onCardClick?: () => void;
 }

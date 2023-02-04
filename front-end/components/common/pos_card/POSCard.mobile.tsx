@@ -43,14 +43,14 @@ export const POSCardMobile = ({
         <p className="w-full pl-3 text-sm text-neutral-700 ">{data.overview}</p>
         <div className="flex w-full flex-row h-8 justify-between ">
           <div className="flex flex-row bg-success flex-1 items-center justify-center gap-1 text-white rounded-bl-2xl">
-            <Image src={IcFreePOS} alt="" />
+            <IcFreePOS className="text-2xl" />
             <p className=" text-xs font-semibold ">Get a POS FREE</p>
           </div>
           <div className="flex bg-secondary flex-1 items-center justify-center text-white rounded-tr-2xl">
             <p className=" text-xs font-semibold ">$75 Monthly</p>
           </div>
           <div className="flex w-12 justify-end pr-3 ">
-            <Image src={IcChervonRight} alt="" />
+            <IcChervonRight className="text-2xl" />
           </div>
         </div>
       </div>
