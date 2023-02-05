@@ -24,6 +24,6 @@
     "tailwind.config.js",
     "custom.d.ts",    
     "utils/ColorUtils.js"
-  ],
+, "server.js"  ],
   "exclude": ["node_modules"]
 }

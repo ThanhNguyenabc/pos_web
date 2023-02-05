@@ -1,6 +1,5 @@
 import SelectedList from "components/common/SelectedList";
 import { BreadmeContext } from "pages/bread-me-questions";
-import { QuestionnaireContext } from "pages/questionnaire";
 import React from "react";
 import { YesNoQuestion } from "utils/StringUtil";
 

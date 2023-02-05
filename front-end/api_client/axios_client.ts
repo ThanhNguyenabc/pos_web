@@ -10,7 +10,7 @@ import { RequestDemoContact } from "models/request_demo_contact";
 import { Specification } from "models/specification";
 
 const AxiosInstance = axios.create({
-  baseURL: `${process.env.NEXT_PUBLIC_BACKEND_URL}/api`,
+  baseURL: `${process.env.NEXT_PUBLIC_HOST}:${process.env.NEXT_PUBLIC_PORT}/api`,
 });
 
 export default AxiosInstance;
