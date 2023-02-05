@@ -29,32 +29,35 @@ const Home = () => {
   return (
     <>
       <div className="flex flex-col bg-gradient-to-b from-[#FF5A22] to-[#FFA722] lg:flex-row lg:max-h-[640px]">
-        <HeroSection className="gap-4 flex-1 lg:w-[55vw] text-center md:gap-6 lg:text-left">
-          <p
-            className={`txt-heading-large md:text-6xl md:leading-[68px] text-white`}
-          >
-            Real advice from
-            <span className="text-secondary"> real people</span>
-          </p>
-          <p className="txt-md-bold text-white lg:text-start md:text-lg">
-            Speak with a consultant today to find the best POS for your business
-          </p>
-          <div className="flex flex-col self-center gap-4 md:gap-6 w-full md:w-fit md:flex-row lg:self-start">
-            <Button
-              title="Find your POS"
-              style={{ background: ColorUtils.neutral_900 }}
-              onClick={findPOS}
-            />
-            <Button
-              title="Get POS for free"
-              style={{ background: "white", color: "black" }}
-              onClick={getPOSFree}
-              rightIcon={<IcRightArrow className=" text-lg " />}
-            />
+        <HeroSection className="flex-1">
+          <div className="flex flex-col gap-4 text-center md:gap-6 lg:text-left lg:max-w-[530px] ">
+            <p
+              className={`txt-heading-large md:text-6xl md:leading-[68px] text-white`}
+            >
+              Real advice from
+              <span className="text-secondary"> real people</span>
+            </p>
+            <p className="txt-md-bold text-white lg:text-start md:text-lg">
+              Speak with a consultant today to find the best POS for your
+              business
+            </p>
+            <div className="flex flex-col self-center gap-4 md:gap-6 w-full md:w-fit md:flex-row lg:self-start">
+              <Button
+                title="Find your POS"
+                style={{ background: ColorUtils.neutral_900 }}
+                onClick={findPOS}
+              />
+              <Button
+                title="Get POS for free"
+                style={{ background: "white", color: "black" }}
+                onClick={getPOSFree}
+                rightIcon={<IcRightArrow className=" text-lg " />}
+              />
+            </div>
           </div>
         </HeroSection>
         <div className=" flex flex-1 pt-4">
-          <Image src={BannerImage} alt="" className=" aspect-[1/1]" />
+          <Image src={BannerImage} alt="" className=" aspect-[4/3]" />
         </div>
       </div>
 

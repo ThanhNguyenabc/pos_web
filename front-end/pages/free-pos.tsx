@@ -61,8 +61,8 @@ const openFindPOSModal = () => {
 
 const FreePOS = () => (
   <div className="flex-column">
-    <div className="flex flex-col flex-1 w-full bg-secondary  lg:flex-row">
-      <HeroSection className=" flex-1 gap-4 text-white text-center md:gap-6 lg:text-left lg:p-0">
+    <div className="flex flex-col flex-1  bg-secondary  lg:flex-row">
+      <HeroSection className=" flex-1 lg:w-[55vw] gap-4 text-white text-center md:gap-6 lg:text-left lg:p-0">
         <p
           className={`txt-heading-medium text-white max-w-3xl md:font-extrabold md:text-6xl md:leading-[68px]`}
         >
@@ -83,7 +83,7 @@ const FreePOS = () => (
           />
         </div>
       </HeroSection>
-      <div className="flex lg:w-[40vw] pt-[50px] ">
+      <div className="flex flex-1 pt-[50px] ">
         <Image src={POS2Img} alt="" className="aspect-[4/3]" />
       </div>
     </div>
