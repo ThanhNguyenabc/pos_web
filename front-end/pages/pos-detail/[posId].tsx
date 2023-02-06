@@ -2,32 +2,33 @@ import AxiosInstance, {
   getPOSDetail,
   getSpecification,
 } from "api_client/axios_client";
-import { IcApple, RevelImg } from "assets/AssetUtil";
 import { POSDetail } from "components/elements/pos_detail/PosDetail";
-import { getOverallRating, Product } from "models/product.model";
-import { Specification } from "models/specification";
-import { GetServerSidePropsContext } from "next";
 import React from "react";
-import { getSystemIcon, ProductIcons } from "utils/StringUtil";
+import useSWR from "swr";
+import { useRouter } from "next/router";
+import Loading from "components/common/loading/Loading";
 
-const POSDetailPage = (props: {
-  product: Product;
-  specification: Specification;
-}) => {
-  return <POSDetail {...props} />;
+const POSDetailPage = () => {
+  const router = useRouter();
+  const { posId = "" } = router.query;
+  const { data: productData } = useSWR(`${posId}`, getPOSDetail);
+  const { data: specificationData } = useSWR(`/api/specification`, () =>
+    getSpecification(posId as string)
+  );
+
+
+  if (productData?.data && specificationData?.data)
+    return (
+      <POSDetail
+        product={productData.data}
+        specification={specificationData.data}
+      />
+    );
+  return (
+    <div className="flex justify-center mt-8">
+      <Loading />
+    </div>
+  );
 };
 
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const { posId = "" } = context.query;
-  const data = await Promise.all([
-    getPOSDetail(posId as string),
-    getSpecification(posId as string),
-  ]);
-  return {
-    props: {
-      product: data[0],
-      specification: data[1],
-    },
-  };
-}
 export default POSDetailPage;

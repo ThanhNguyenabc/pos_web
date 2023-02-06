@@ -31,30 +31,35 @@ export const getPOSByCategory = async (type: string) => {
 };
 
 export const getPOSDetail = async (id: string) => {
-  return await AxiosInstance.post<ApiResponse<Product>>("/productDetail", {
-    posId: id,
-  })
-    .then((res) => {
-      return res.data.data;
-    })
-    .catch((error) => {
-      console.log("error = ", error);
-    });
+  try {
+    let data = await AxiosInstance.post<ApiResponse<Product>>(
+      "/productDetail",
+      {
+        posId: id,
+      }
+    );
+
+    return data.data;
+  } catch (error) {
+    console.log("error = ", error);
+  }
+  return null;
 };
 
 export const getSpecification = async (productId: string) => {
-  return await AxiosInstance.post<ApiResponse<Specification>>(
-    "/specification",
-    {
-      posId: productId,
-    }
-  )
-    .then((res) => {
-      return res.data.data;
-    })
-    .catch((error) => {
-      console.log("error = ", error);
-    });
+  try {
+    let data = await AxiosInstance.post<ApiResponse<Specification>>(
+      "/specification",
+      {
+        posId: productId,
+      }
+    );
+
+    return data.data;
+  } catch (error) {
+    console.log("error =", error);
+  }
+  return null;
 };
 
 export const submitQuestionnaireContact = async (

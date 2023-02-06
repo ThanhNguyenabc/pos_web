@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { NextRequest } from "next/server";
 import ProductData from "./data/products.json";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
