@@ -103,7 +103,7 @@ const PartnerPage = () => {
         />
         <ClientSection />
         <FooterCTA
-          background="bg-neutral-100"
+          className="bg-neutral-100"
           actions={
             <Button
               classname="w-full md:w-fit"

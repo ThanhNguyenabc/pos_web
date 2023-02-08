@@ -149,7 +149,7 @@ const FreePOS = () => (
     </div>
     <ClientSection />
     <FooterCTA
-      background="bg-accent"
+      className="bg-accent"
       actions={
         <Button
           classname="w-full md:w-fit"

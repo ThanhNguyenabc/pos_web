@@ -1,16 +1,17 @@
 import React, { ReactElement, ReactNode } from "react";
+import HeroSection from "./HeroSection";
 
 interface FooterCTAProps {
   title?: ReactElement;
   des?: string;
-  background: string;
+  className?: string;
   actions?: ReactElement;
 }
 export const FooterCTA = ({
   title,
   actions,
-  background,
   des,
+  className,
 }: FooterCTAProps) => {
   return (
     <div
@@ -19,8 +20,8 @@ export const FooterCTA = ({
       md:gap-8 md:mb-20 md:mx-8
       lg:gap-10 
       lg:mx-[100px] 
-      xl:mx-[120px]
-      ${background}`}
+      xl:mx-[120px] bg-accent 
+      ${className}`}
     >
       <div className="w-full flex flex-col gap-4 items-center">
         <div className="txt-heading-medium md:text-5xl md:font-extrabold md:leading-[56px] max-w-[860px]">

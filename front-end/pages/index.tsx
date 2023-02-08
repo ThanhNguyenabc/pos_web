@@ -98,7 +98,6 @@ const Home = () => {
         }
       />
       <FooterCTA
-        background="bg-accent"
         actions={
           <>
             <Button

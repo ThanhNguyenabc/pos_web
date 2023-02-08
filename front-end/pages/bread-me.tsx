@@ -74,7 +74,7 @@ const BreadmePage = () => {
       />
       <CommonQuestion />
       <FooterCTA
-        background="bg-green-100"
+        className="bg-green-100"
         actions={
           <Button
             title="Get Started Now"
