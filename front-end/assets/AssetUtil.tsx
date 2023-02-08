@@ -48,10 +48,10 @@ export { default as ToastImg } from "./images/toast-pos.png";
 export { default as UpserveImg } from "./images/upserve-pos.png";
 export { default as PartnerImg } from "./images/partner.jpg";
 export { default as ReviewerImg } from "./images/reviewer.png";
+export { default as MobileLogoImg } from "./images/mobile_logo.png";
 
 // export icons
 export { default as IcMenu } from "./icons/ic_menu.svg";
-export { default as IcMobileLogo } from "./icons/ic_mobile_logo.svg";
 export { default as IcPhone } from "./icons/ic_phone.svg";
 export { default as IcFb } from "./icons/ic_fb.svg";
 export { default as IcLinkedLn } from "./icons/ic_linkedln.svg";

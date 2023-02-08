@@ -1,4 +1,4 @@
-import { IcMenu, Logo, IcMobileLogo, IcPhone } from "assets/AssetUtil";
+import { IcMenu, Logo, IcPhone, MobileLogoImg } from "assets/AssetUtil";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <div className="container-screen flex flex-row w-full justify-between items-center px-4 py-5 md:p-6">
-      <div className="flex">
+      <div className="flex justify-center items-center">
         <Drawer
           open={isOpen}
           direction="left"
@@ -32,7 +32,7 @@ const Header = () => {
           <IcMenu className="text-2xl" />
         </button>
         <Link href={Menu["home"].route}>
-          <IcMobileLogo className="block md:hidden" />
+          <Image src={MobileLogoImg} alt="mobile-logo" className="w-8 h-8 md:hidden" />
           <Image
             src={Logo}
             width={150}
