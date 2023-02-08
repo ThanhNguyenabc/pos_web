@@ -132,7 +132,7 @@ const AboutPage = () => {
       </div>
       <MetricSection />
       <FooterCTA
-        className="md:my-20"
+        className="bg-accent md:my-20"
         actions={
           <>
             <Button title="Find your POS" onClick={findPOS} />
