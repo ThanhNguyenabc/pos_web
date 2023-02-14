@@ -18,6 +18,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        ...Colors,
         neutral: {
           100: "#F2F4F7",
           300: "#D0D5DD",
@@ -37,7 +38,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require("daisyui")],
+  
+  plugins: [require("daisyui"), require('@tailwindcss/typography'),],
   daisyui: {
     themes: [
       {

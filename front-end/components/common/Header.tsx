@@ -32,7 +32,11 @@ const Header = () => {
           <IcMenu className="text-2xl" />
         </button>
         <Link href={Menu["home"].route}>
-          <Image src={MobileLogoImg} alt="mobile-logo" className="w-8 h-8 md:hidden" />
+          <Image
+            src={MobileLogoImg}
+            alt="mobile-logo"
+            className="w-8 h-8 md:hidden"
+          />
           <Image
             src={Logo}
             width={150}
@@ -53,9 +57,9 @@ const Header = () => {
         <li className="ml-3 txt-md-bold">
           <Link href={Menu["about"].route}>{Menu["about"].title}</Link>
         </li>
-        {/* <li className="ml-3 txt-md-bold">
+        <li className="ml-3 txt-md-bold">
           <Link href={Menu["blog"].route}>{Menu["blog"].title}</Link>
-        </li> */}
+        </li>
         <li className="ml-3 txt-md-bold">
           <Link href={Menu["contact"].route}>{Menu["contact"].title}</Link>
         </li>

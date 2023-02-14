@@ -9,6 +9,9 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    domains: ['blog.bestpos.com']
+  }
 };
 
 module.exports = nextConfig;

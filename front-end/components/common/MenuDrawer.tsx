@@ -25,10 +25,10 @@ export const Menu = {
     route: AppRoutes.AboutPage,
     title: "About",
   },
-  // blog: {
-  //   route: Blog,
-  //   title: "Blog",
-  // },
+  blog: {
+    route: AppRoutes.BlogPage,
+    title: "Blog",
+  },
 };
 
 const MainMenuItem = ({
@@ -97,7 +97,7 @@ const MenuDrawer = ({ onClose }: MenuDrawerProps) => {
       <ul className="menu w-full py-6">
         <SubMenuItem {...Menu["about"]} onClickItem={onClose} />
         <SubMenuItem {...Menu["contact"]} onClickItem={onClose} />
-        {/* <SubMenuItem {...Menu["blog"]} /> */}
+        <SubMenuItem {...Menu["blog"]} />
       </ul>
     </div>
   );

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { ApiResponse } from "models/api_response";
+import { Blog } from "models/blog";
 import { BreadMeContact } from "models/breadme_contact";
 import { Category } from "models/category";
 import { ContactInfo } from "models/contact_info";
@@ -121,6 +122,30 @@ export const applyPartner = async (data: ContactInfo) => {
   return await AxiosInstance.post<ApiResponse<boolean>>("/applypartner", data)
     .then((res) => {
       return res.data.data;
+    })
+    .catch((error) => {
+      console.log("error = ", error);
+    });
+};
+
+export const getBlogPosts = async () => {
+  return await AxiosInstance.get<Array<Blog>>("/posts", {
+    baseURL: process.env.NEXT_PUBLIC_WORDPRESS_HOST,
+  })
+    .then((res) => {
+      return res.data;
+    })
+    .catch((error) => {
+      console.log("error = ", error);
+    });
+};
+
+export const getBlogDetail = async (id: string) => {
+  return await AxiosInstance.get<Blog>(`/posts/${id}`, {
+    baseURL: process.env.NEXT_PUBLIC_WORDPRESS_HOST,
+  })
+    .then((res) => {
+      return res.data;
     })
     .catch((error) => {
       console.log("error = ", error);
