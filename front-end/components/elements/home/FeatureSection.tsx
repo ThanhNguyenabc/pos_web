@@ -38,7 +38,7 @@ const data = [
 const FeatureSection = () => {
   return (
     <HeroSection className="gap-10 lg:flex-row lg:gap-12">
-      <div className=" flex flex-col gap-6 flex-1">
+      <div className=" flex flex-col gap-6 flex-1 lg:pr-[100px]">
         <h2 className="txt-heading-medium md:text-5xl md:font-extrabold md:leading-[56px] ">
           Helping you <span className="text-secondary">compare & find</span> the
           best POS system
@@ -50,11 +50,11 @@ const FeatureSection = () => {
           match for you!
         </p>
       </div>
-      <div className="flex flex-col flex-1 gap-10">
+      <div className="flex flex-col flex-1 gap-10 lg:gap-16">
         {data.map((item, index) => {
           return (
             <div className="hero p-0 m-0 " key={`feature-${index}`}>
-              <div className="hero-content flex-row p-0  gap-6 items-start ">
+              <div className="hero-content flex-row p-0 gap-6 items-start ">
                 <Image
                   src={item.image}
                   className="w-16 h-16 md:w-20 md:h-20"

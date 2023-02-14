@@ -12,7 +12,7 @@ const styles = {
 
 const Footer = () => {
   return (
-    <div className="flex relative bg-neutral-dark">
+    <div className="flex relative bg-neutral-900">
       <footer className="container-screen flex-column text-neutral-400 py-12 px-4 md:px-8 lg:py-16 lg:px-[120px] lg:pt-20 md:py-14">
         <div>
           <Image
@@ -60,11 +60,8 @@ const Footer = () => {
               <Link href={AppRoutes.ContactPage} className="link link-hover">
                 Contact
               </Link>
-              <Link
-                href={AppRoutes.QuestionnairePage}
-                className="link link-hover"
-              >
-                Questionnaire
+              <Link href={AppRoutes.BlogPage} className="link link-hover">
+                Blog
               </Link>
             </div>
           </div>

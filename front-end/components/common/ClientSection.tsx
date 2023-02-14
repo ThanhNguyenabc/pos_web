@@ -22,7 +22,7 @@ interface ClientSectionProps {
 const ClientSection = ({ body }: ClientSectionProps) => {
   return (
     <div className="flex flex-col gap-12 py-14 md:py-14 md:gap-12 lg:gap-16 lg:py-[100px] xl:py-[120px]">
-      <div className=" gap-6 flex flex-col items-center text-center px-4 md:px-8">
+      <div className=" gap-6 flex flex-col items-center text-center px-4 md:px-8 lg:w-[768px] mx-auto">
         <p className="txt-heading-medium md:text-5xl md:font-extrabold ">
           Our Top POS Systems
         </p>
