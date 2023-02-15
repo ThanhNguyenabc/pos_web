@@ -28,7 +28,7 @@ export { default as HandHeld2Img } from "./images/handheld_2.jpg";
 export { default as HandHeld3Img } from "./images/handheld_3.jpg";
 export { default as BreadMeImg } from "./images/breadme.png";
 export { default as BillingImg } from "./images/billing.png";
-export { default as AboutCoverImg } from "./images/about_bg.png";
+export { default as AboutCoverImg } from "./images/about_cover.png";
 export { default as ATMImg } from "./images/atm.png";
 export { default as CloudSystemImg } from "./images/cloud_system.png";
 export { default as ExtraServiceImg } from "./images/extra_service.png";
@@ -49,8 +49,11 @@ export { default as UpserveImg } from "./images/upserve-pos.png";
 export { default as PartnerImg } from "./images/partner.jpg";
 export { default as ReviewerImg } from "./images/reviewer.png";
 export { default as MobileLogoImg } from "./images/mobile_logo.png";
+export { default as HomePageReviewImg } from "./images/homepage_review_img.png";
 
 // export icons
+export { default as IcRating } from "./icons/ic_rating.svg";
+
 export { default as IcMenu } from "./icons/ic_menu.svg";
 export { default as IcPhone } from "./icons/ic_phone.svg";
 export { default as IcFb } from "./icons/ic_fb.svg";
