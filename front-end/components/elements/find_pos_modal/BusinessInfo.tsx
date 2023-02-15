@@ -69,6 +69,7 @@ const BusinessInfo = () => {
       />
       <Input
         label={"Business Phone number"}
+        leftIcon={<IcAmericanFlag className=" text-2xl" />}
         inputProps={{
           value: businessContact.businessPhone,
           type: "tel",

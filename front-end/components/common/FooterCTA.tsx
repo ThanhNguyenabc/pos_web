@@ -28,10 +28,10 @@ export const FooterCTA = ({
           {title}
         </div>
         {des && (
-          <p className="txt-md-bold md:text-lg text-neutral-700">{des}</p>
+          <p className="txt-md-bold md:text-xl text-neutral-700">{des}</p>
         )}
       </div>
-      <div className="w-full flex flex-col md:flex-row gap-4 justify-center ">
+      <div className="w-full flex flex-col md:flex-row gap-4 justify-center">
         {actions}
       </div>
     </div>

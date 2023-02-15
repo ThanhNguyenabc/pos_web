@@ -1,4 +1,9 @@
-import { BannerImage, IcCheck, IcRightArrow } from "assets/AssetUtil";
+import {
+  BannerImage,
+  HomePageReviewImg,
+  IcCheck,
+  IcRightArrow,
+} from "assets/AssetUtil";
 import FeatureSection from "components/elements/home/FeatureSection";
 import ClientSection from "components/common/ClientSection";
 import Image from "next/image";
@@ -10,6 +15,7 @@ import { useRouter } from "next/router";
 import ColorUtils from "utils/ColorUtils";
 import AppRoutes from "utils/routes";
 import HeroSection from "components/common/HeroSection";
+import ReviewerSection from "components/elements/partner/ReviewerSection";
 
 const FeatureData = ["24/7 Support", "Free training", "Seamless Installments"];
 
@@ -45,7 +51,9 @@ const Home = () => {
               <Button
                 classname="md:h-16"
                 title="Find your POS"
-                style={{ background: ColorUtils.neutral_900 }}
+                style={{
+                  background: ColorUtils["neutral-900"],
+                }}
                 onClick={findPOS}
               />
               <Button
@@ -83,6 +91,22 @@ const Home = () => {
       <FeatureSection />
       <MetricSection titleColor="text-secondary" />
 
+      <HeroSection className="mx-auto lg:px-[100px]">
+        <ReviewerSection
+          reviews={[
+            {
+              title: "Switched from Micros to Revel Systems",
+              jobTitle: "Owner of Beginnings",
+              name: "Ben",
+              rating: 5,
+              avatar: HomePageReviewImg,
+              comment:
+                "I was reluctant to switch from Micros to Revel but it was the best move I’ve made in the 20 years of business. I even qualified for free monthly service fees.",
+            },
+          ]}
+        />
+      </HeroSection>
+
       <ClientSection
         body={
           <>
@@ -104,12 +128,13 @@ const Home = () => {
         actions={
           <>
             <Button
-              classname="w-full md:w-fit"
+              classname="w-full md:w-fit md:h-16"
               title="Find your POS"
               onClick={findPOS}
             />
             <Button
               title="Get POS for free"
+              classname="md:h-16"
               style={{ background: "white", color: "black" }}
               onClick={getPOSFree}
               rightIcon={<IcRightArrow className="text-lg" />}

@@ -18,7 +18,7 @@ const Header = () => {
   };
 
   return (
-    <div className="container-screen flex flex-row w-full justify-between items-center px-4 py-5 md:p-6">
+    <div className="container-screen flex flex-row w-full justify-between items-center px-4 py-[14px] md:p-6">
       <div className="flex justify-center items-center">
         <Drawer
           open={isOpen}
@@ -72,7 +72,7 @@ const Header = () => {
         </div>
         <Button
           title="Find your POS"
-          classname="hidden md:block ml-10 md:h-12 md:text-base"
+          classname="hidden md:block ml-10 md:h-12 md:text-base lg:text-base"
           onClick={() => router.push(AppRoutes.QuestionnairePage)}
         />
       </div>

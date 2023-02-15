@@ -2,9 +2,8 @@ import { Station1Img, Station2Img, Station4Img } from "assets/AssetUtil";
 import React from "react";
 import SelectedList from "../../common/SelectedList";
 import Image from "next/image";
-import { StationData, YesNoQuestion } from "utils/StringUtil";
+import { BusinessTypes, StationData, YesNoQuestion } from "utils/StringUtil";
 import useQuestionnaireStore from "stores/questionnaire_store";
-import { QuestionList } from "./BusinessQuestion";
 import { CategoryType } from "models/category_type";
 
 const StationQuestion = () => {
@@ -31,7 +30,7 @@ const StationQuestion = () => {
         );
       }}
       onItemSelected={(selectedIndex) => {
-        let businessType = QuestionList[data.businessId].type;
+        let businessType = BusinessTypes[data.businessId].type;
         let isHaveSaleSystem = YesNoQuestion[data.saleSystemIndex] == "Yes";
         let nextPageNumber = 1;
 

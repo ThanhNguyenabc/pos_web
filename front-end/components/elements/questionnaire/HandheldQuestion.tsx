@@ -3,7 +3,6 @@ import SelectedList from "../../common/SelectedList";
 import Image from "next/image";
 import { HandHeldData, YesNoQuestion } from "utils/StringUtil";
 import useQuestionnaireStore from "stores/questionnaire_store";
-import { QuestionList } from "./BusinessQuestion";
 
 const HandHeldQuestion = () => {
   const questionnaireStore = useQuestionnaireStore();

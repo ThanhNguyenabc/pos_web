@@ -10,6 +10,7 @@ import {
 } from "assets/AssetUtil";
 import { Button } from "components/common/Button";
 import { FooterCTA } from "components/common/FooterCTA";
+import HeroSection from "components/common/HeroSection";
 import List from "components/common/List";
 import MetricSection from "components/common/MetricSection";
 import Image from "next/image";
@@ -62,11 +63,11 @@ const AboutPage = () => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col px-4 py-12 md:px-8 md:py-14 lg:bg-neutral-100">
-        <p className="txt-heading-medium md:font-extrabold md:text-6xl md:leading-[68px]">
+      <HeroSection className="flex flex-col px-4 py-12 md:px-8 md:py-14 lg:bg-neutral-100">
+        <p className="txt-heading-medium text-center md:font-extrabold md:text-6xl md:leading-[68px]">
           About Us
         </p>
-        <p className="txt-md text-neutral-700 mt-4 mb-10 md:mt-6 md:mb-12 md:text-xl">
+        <p className="txt-md text-neutral-700 mt-4 mb-10 md:mt-6 md:mb-12 md:text-xl lg:max-w-[800px]">
           Best POS offers a wide variety of products and services to assist our
           merchants, as well as industry-tailored options that few competitors
           can (or will) match. <br /> <br /> To complement our services, and to
@@ -75,21 +76,23 @@ const AboutPage = () => {
           and software – free of charge.
         </p>
         <div className="flex flex-col gap-4 md:flex-row">
-          <Button title="Find your POS" onClick={findPOS} />
+          <Button title="Find your POS" onClick={findPOS} classname="md:h-16" />
           <Button
             title="Request A Demo"
+            classname="md:h-16"
             isOutLine
             rightIcon={<IcRightArrow className="text-xl" />}
             onClick={getPOSFree}
           />
           <Button
             title="Contact Us"
+            classname="md:h-16"
             isOutLine
             rightIcon={<IcRightArrow className=" text-xl" />}
             onClick={goToContactPage}
           />
         </div>
-      </div>
+      </HeroSection>
 
       <Image
         src={AboutCoverImg}
@@ -102,9 +105,9 @@ const AboutPage = () => {
           <span className=" text-secondary">Unparalleled Service</span> via
           E-mail & Phone.
         </p>
-        <p className="txt-md mb-6 max-w-3xl md:text-xl">
+        <p className="txt-md mb-6 max-w-3xl md:text-xl text-neutral-700">
           Our team is dedicated in helping with the initial point-of-sale set up
-          as well as being your reoccurring tech support liaison with your new
+          as well as being your reoccurringtech support liaison with your new
           point-of-sale system.
         </p>
         <List
@@ -124,9 +127,8 @@ const AboutPage = () => {
           }}
         />
         <Button
-          classname="w-fit"
+          classname="w-fit md:h-16"
           title="Find your POS"
-          rightIcon={<IcRightArrow className=" text-xl" />}
           onClick={findPOS}
         />
       </div>
@@ -135,9 +137,14 @@ const AboutPage = () => {
         className="bg-accent md:my-20"
         actions={
           <>
-            <Button title="Find your POS" onClick={findPOS} />
+            <Button
+              title="Find your POS"
+              onClick={findPOS}
+              classname="md:h-16"
+            />
             <Button
               title="Get POS for free"
+              classname="md:h-16"
               style={{ background: "white", color: "black" }}
               onClick={getPOSFree}
             />

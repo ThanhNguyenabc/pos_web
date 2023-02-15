@@ -6,6 +6,7 @@ import { CreditCardVolume } from "./CreditCardVolume";
 import PersonalInfo from "./PersonalInfo";
 import HeaderWithBack from "components/common/HeaderWithBack";
 import Modal from "components/common/Modal";
+import Progress from "components/common/progress";
 
 interface FindPOSData {
   creditVolumeId?: number;
@@ -41,7 +42,7 @@ const PAGES = [
   <CreditCardVolume key={`credit-key`} />,
   <BusinessInfo key={`business-key`} />,
   <PersonalInfo key={`personal-key`} />,
-  <ThanksYouForm  key={`thanks-form`}/>,
+  <ThanksYouForm key={`thanks-form`} />,
 ];
 
 const FindPOSModal = () => {
@@ -85,12 +86,12 @@ const FindPOSModal = () => {
           <HeaderWithBack title="Get Free POS" onClose={onClose} />
 
           <div className="flex flex-col gap-6 h-full">
-            <progress
-              className={`progress progress-secondary w-full md:h-4 ${
-                formState.cQuestionIndex == PAGES.length - 1 ? "hidden" : "flex"
-              }`}
+            <Progress
               value={formState.cQuestionIndex + 1}
               max={PAGES.length}
+              className={`${
+                formState.cQuestionIndex == PAGES.length - 1 ? "hidden" : "flex"
+              }`}
             />
             <p className="txt-heading-xsmal text-center px-4 mt-6 md:mt-10 md:text-3xl">
               {PAGE_TITLE[formState.cQuestionIndex]}

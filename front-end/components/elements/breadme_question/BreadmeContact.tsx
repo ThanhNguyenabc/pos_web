@@ -124,7 +124,7 @@ const BreadmeContact = () => {
 
       <Input
         label={"Your Phone number"}
-        leftIcon={<IcAmericanFlag className="text-2xl" />}
+        leftIcon={<IcAmericanFlag className=" text-2xl" />}
         inputProps={{
           type: "tel",
           onChange: (e: React.ChangeEvent<HTMLInputElement>) => {

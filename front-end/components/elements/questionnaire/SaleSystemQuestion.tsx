@@ -12,8 +12,8 @@ const SaleSystemQuestion = () => {
       data={YesNoQuestion}
       itemListClassName={"md:max-w-lg"}
       itemBuilder={(item, index) => (
-        <div className="p-4 border-neutral-300 ">
-          <p className="text-center txt-md-bold">{item}</p>
+        <div className="p-4 border-neutral-300 h-14 md:h-16">
+          <p className="text-center txt-md-bold md:text-xl">{item}</p>
         </div>
       )}
       onItemSelected={(selectedIndex) => {

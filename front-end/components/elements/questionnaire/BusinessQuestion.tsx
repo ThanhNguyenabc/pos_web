@@ -1,22 +1,17 @@
 import SelectedList from "components/common/SelectedList";
 import React from "react";
 import Image from "next/image";
-import { CategoryList } from "utils/StringUtil";
+import { BusinessTypes } from "utils/StringUtil";
 import useQuestionnaireStore from "stores/questionnaire_store";
 
-export const QuestionList = [
-  { ...CategoryList[3], title: "Restaurant" },
-  CategoryList[2],
-  { ...CategoryList[1], title: "Quick Service" },
-  CategoryList[5],
-];
+
 
 const BusinessQuestion = () => {
   const questionnaireStore = useQuestionnaireStore();
   return (
     <SelectedList
       selectIndex={questionnaireStore.data?.businessId}
-      data={QuestionList}
+      data={BusinessTypes}
       classname={"md:grid-cols-2"}
       itemBuilder={(item, index: number) => {
         return (

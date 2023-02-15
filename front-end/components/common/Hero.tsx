@@ -19,9 +19,9 @@ const Hero = ({ children, subTitle, title, classname, subCmp }: HeroProps) => {
       lg:p-[100px] xl:p-[120px] ${classname}
       `)}
     >
-      <div className="w-full gap-6 flex flex-col md:items-center">
+      <div className="w-full gap-6 flex flex-col md:items-center max-w-[750px]">
         <p
-          className={`txt-heading-small max-w-3xl md:text-5xl md:font-extrabold md:leading-[56px] `}
+          className={`txt-heading-small md:text-5xl md:font-extrabold md:leading-[56px] `}
         >
           {title}
         </p>

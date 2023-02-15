@@ -69,14 +69,13 @@ const BreadmePage = () => {
       </div>
       <BreadmeFeatureSection />
       <ReceiptOptionSection />
-      <MetricSection
-        titleColor="text-success"
-      />
+      <MetricSection titleColor="text-success" />
       <CommonQuestion />
       <FooterCTA
         className="bg-green-100"
         actions={
           <Button
+            classname="md:h-16"
             title="Get Started Now"
             style={{ background: ColorUtils.success }}
             onClick={navigateToBreadmeQuestion}

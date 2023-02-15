@@ -122,6 +122,13 @@ export const CategoryList = [
   },
 ];
 
+export const BusinessTypes = [
+  { ...CategoryList[3], title: "Restaurant" },
+  CategoryList[2],
+  { ...CategoryList[1], title: "Quick Service" },
+  CategoryList[5],
+];
+
 export const YesNoQuestion = ["Yes", "No"];
 export const CreditCardVolumeData = ["$10K - $50k", "$50K - $150k", "$150+"];
 

@@ -1,9 +1,8 @@
 import { submitQuestionnaireContact } from "api_client/axios_client";
-import { CloverImg, IcAmericanFlag } from "assets/AssetUtil";
+import { IcAmericanFlag } from "assets/AssetUtil";
 import { Button } from "components/common/Button";
 import ContactForm, { ContactInfo } from "components/common/ContactForm";
 import Input from "components/common/Input";
-import { ThankyouModalId } from "components/common/ThankYouDialog";
 import { QuestionnaireContact } from "models/questionnaire_contact";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
@@ -11,13 +10,13 @@ import useProductStore from "stores/product_store";
 import useQuestionnaireStore from "stores/questionnaire_store";
 import AppRoutes from "utils/routes";
 import {
+  BusinessTypes,
   HandHeldData,
   isValidEmail,
   isValidPhoneNumber,
   StationData,
   YesNoQuestion,
 } from "utils/StringUtil";
-import { QuestionList } from "./BusinessQuestion";
 
 const QuestionnaireContact = () => {
   const questionnaireStore = useQuestionnaireStore();
@@ -42,7 +41,7 @@ const QuestionnaireContact = () => {
     if (name.length <= 0) {
       setContactInfo((prev) => ({
         ...prev,
-        nameError: "Your name is not empty",
+        nameError: "Contact name is not empty",
       }));
       return;
     }
@@ -72,7 +71,7 @@ const QuestionnaireContact = () => {
       name: contactInfo.name || "",
       email: contactInfo.email || "",
       phoneNumber: contactInfo.phoneNumber || "",
-      business: QuestionList[questionnaireStore.data.businessId].title,
+      business: BusinessTypes[questionnaireStore.data.businessId].title,
       haveSaleSystem: YesNoQuestion[questionnaireStore.data.saleSystemIndex],
       numberOfStations:
         StationData[questionnaireStore.data.numberStationIndex].content,
@@ -101,7 +100,7 @@ const QuestionnaireContact = () => {
   return (
     <div className={`flex flex-col gap-6`}>
       <Input
-        label={"Your name"}
+        label={"Contact name"}
         inputProps={{
           onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
             setContactInfo((prev) => ({

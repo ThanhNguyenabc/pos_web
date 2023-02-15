@@ -4,9 +4,6 @@ import BlogCard from "components/elements/blog/BlogCard";
 import React from "react";
 import useSwr from "swr";
 import moment from "moment";
-import HeroSection from "components/common/HeroSection";
-import { FooterCTA } from "components/common/FooterCTA";
-import useBlogStore from "stores/blog_store";
 import Loading from "components/common/loading/Loading";
 
 const BlogPage = () => {

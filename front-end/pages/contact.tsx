@@ -5,9 +5,7 @@ import React, { ReactElement, useState } from "react";
 import Input from "components/common/Input";
 import { isValidEmail, isValidPhoneNumber } from "utils/StringUtil";
 import { submitContact } from "api_client/axios_client";
-import ThankYouDialog, {
-  ThankyouModalId,
-} from "components/common/ThankYouDialog";
+import { ThankyouModalId } from "components/common/ThankYouDialog";
 
 const ContactItem = ({
   icon,
@@ -27,7 +25,7 @@ const ContactItem = ({
       </div>
       <p className="txt-md-bold md:text-xl">{title}</p>
       <p className="txt-md text-neutral-600">{desc}</p>
-      <p className="txt-md-bold text-secondary">{subDesc}</p>
+      <p className="txt-md-bold text-secondary md:max-w-[200px]">{subDesc}</p>
     </div>
   );
 };
@@ -125,7 +123,7 @@ const ContactPage = () => {
               icon={<IcPhone className="w-5 h-5" />}
               title="Phone"
               desc="Mon-Fri from 8am to 5pm."
-              subDesc="i+1 888-410-2188"
+              subDesc="+1 888-410-2188"
             />
           </div>
         </div>
@@ -134,7 +132,7 @@ const ContactPage = () => {
           <p className="txt-heading-small text-center md:text-5xl md:font-extrabold">
             Get in touch
           </p>
-          <p className="txt-md mt-4 mb-10 text-center md:mt-5 md:text-xl">
+          <p className="txt-md mt-4 mb-10 text-center md:mt-5 md:text-xl text-neutral-600">
             We’d love to hear from you. Please fill out this form.
           </p>
 
@@ -187,7 +185,6 @@ const ContactPage = () => {
                   contactInfo.phoneError ? contactInfo.phoneError : undefined
                 }
               />
-
               <Input
                 label="Zip Code"
                 inputProps={{
@@ -207,7 +204,7 @@ const ContactPage = () => {
                 <span className="label-text">Message</span>
               </label>
               <textarea
-                className="textarea textarea-secondary text-base p-3"
+                className="textarea textarea-secondary border-neutral-300 focus:outline-none focus:shadow-lg focus:border-secondary border-2 text-base p-3 h-[134px]"
                 placeholder="Leave us a message"
                 onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
                   setContactInfo((prev) => ({

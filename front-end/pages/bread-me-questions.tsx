@@ -10,6 +10,7 @@ import BreadmeStation from "components/elements/breadme_question/BreadmeStation"
 import BreadmeSaleSystem from "components/elements/breadme_question/BreadmeSaleSystem";
 import BreadmeContact from "components/elements/breadme_question/BreadmeContact";
 import ThanksYouForm from "components/common/thanksform";
+import Progress from "components/common/progress";
 
 type BreadmeState = {
   showQuestions: boolean;
@@ -107,10 +108,10 @@ const Questionnaire = () => {
             questionSate.showQuestions ? "flex" : "hidden"
           } lg:flex flex-1 flex-col`}
         >
-          <progress
-            className="progress progress-success w-full md:h-4"
+          <Progress
             value={questionSate.cQuestionIndex + 1}
             max={PAGES.length}
+            progressColor="bg-success"
           />
           <div className="w-full flex flex-row items-center justify-center p-4">
             <div

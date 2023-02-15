@@ -48,15 +48,17 @@ const PartnerPage = () => {
         <div className="flex flex-col lg:flex-row">
           <div className="flex flex-col flex-1 px-4 py-14 md:px-8 xl:p-0">
             <div className=" text-center md:text-start lg:max-w-[480px] m-auto w-full">
-              <h3 className="txt-heading-large">Partner with BestPOS</h3>
+              <h3 className="txt-heading-large md:txt-heading-xlarge">
+                Partner with BestPOS
+              </h3>
               <p className="txt-md text-neutral-700 mt-6 mb-12 md:text-xl">
                 The Program is designed specifically for agents, offering you
                 unparalleled flexibility and in-depth resources that can’t be
                 matched by anyone in the industry.
               </p>
               <Button
-                classname="w-full md:w-fit"
-                title="Become a Partner"
+                classname="w-full md:w-fit md:h-16"
+                title="Become an Agent"
                 onClick={openApplyForm}
               />
             </div>
@@ -83,30 +85,37 @@ const PartnerPage = () => {
                   <p className="mb-4 txt-heading-xsmal md:txt-heading-small">
                     {item.title}
                   </p>
-                  <p className="txt-md md:text-xl">{item.desc}</p>
+                  <p className="txt-md md:text-xl text-neutral-700">
+                    {item.desc}
+                  </p>
                 </div>
               );
             }}
           ></List>
         </HeroSection>
         <MetricSection titleColor="text-secondary" />
-        <ReviewerSection
-          reviews={[
-            {
-              avatar: ReviewerImg,
-              name: "Bryan",
-              jobTitle: "Owner of Beginnings",
-              comment:
-                "The competitive products and services that BestPOS provides made it easy for me to secure new clients",
-            },
-          ]}
-        />
+        <Box className="py-14 lg:pt-[120px] lg:pb-0">
+          <h3 className="mb-12 txt-heading-medium text-center md:txt-heading-large">
+            Be part of a community full of opportunity
+          </h3>
+          <ReviewerSection
+            reviews={[
+              {
+                avatar: ReviewerImg,
+                name: "Bryan",
+                jobTitle: "Owner of Beginnings",
+                comment:
+                  "The competitive products and services that BestPOS provides made it easy for me to secure new clients",
+              },
+            ]}
+          />
+        </Box>
         <ClientSection />
         <FooterCTA
           className="bg-neutral-100"
           actions={
             <Button
-              classname="w-full md:w-fit"
+              classname="w-full md:w-fit md:h-16"
               title="Become a Partner"
               onClick={openApplyForm}
             />

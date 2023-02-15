@@ -9,6 +9,8 @@ import HandHeldQuestion from "components/elements/questionnaire/HandheldQuestion
 import CashDiscountQuestion from "components/elements/questionnaire/CashDiscountQuestion";
 import QuestionnaireContact from "components/elements/questionnaire/QuestionnaireContact";
 import useQuestionnaireStore from "stores/questionnaire_store";
+import ColorUtils from "utils/ColorUtils";
+import Progress from "components/common/progress";
 
 const Questions = [
   "What best describes your business?",
@@ -59,12 +61,10 @@ const Questionnaire = () => {
           questionnaireState.isShowQuestion ? "flex" : "hidden"
         } lg:flex w-full flex-1 flex-col`}
       >
-        <progress
-          className="progress progress-secondary w-full md:h-4"
+        <Progress
           value={questionnaireState.currentQuestionIndex + 1}
           max={PAGES.length}
         />
-
         <div className="w-full flex flex-col mb-6 p-4 gap-4 justify-center md:py-6 md:flex-row md:items-center md:gap-3">
           <IconButton
             onClick={backButton}

@@ -25,11 +25,7 @@ interface IntroductionPorps {
 
 const Introduction = ({ classname, onStart }: IntroductionPorps) => {
   return (
-    <div
-      className={twMerge(
-        `flex flex-col bg-accent ${classname}`
-      )}
-    >
+    <div className={twMerge(`flex flex-col bg-accent ${classname}`)}>
       <div className="flex flex-col gap-6 px-4 py-12 mx-auto md:py-14 md:gap-10 lg:py-20 max-w-lg">
         <p className="txt-heading-small md:text-4xl lg:text-white">
           Fill out <span className="text-secondary">the questionnaire</span> and
@@ -44,7 +40,7 @@ const Introduction = ({ classname, onStart }: IntroductionPorps) => {
             const Icon = item.icon;
             return (
               <div key={`reason-${index}`} className="card bg-base-100">
-                <div className="card-body p-4 flex-row items-center txt-md md:text-xl gap-4">
+                <div className="card-body p-4 flex-row items-center txt-md gap-4">
                   <Icon className="w-6 h-6" />
                   <p className="text-left">{item.desc}</p>
                 </div>

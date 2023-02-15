@@ -10,6 +10,7 @@ import React from "react";
 import ColorUtils from "utils/ColorUtils";
 import AppRoutes from "utils/routes";
 import { getSystemIcon, ProductIcons } from "utils/StringUtil";
+import { RequestDemoModalId } from "../request_demo_pos/RequestDemoPOS";
 import ExpertOpinion from "./ExpertOpinion";
 import POSIntroduction from "./Introduction";
 import Pricing from "./Pricing";
@@ -73,6 +74,9 @@ export const POSDetail = ({ product, specification }: POSDetailProps) => {
               title="Monthly"
               desc={`$${product.monthly_price}/month`}
               color={ColorUtils.secondary}
+              onClick={() =>
+                document.getElementById(RequestDemoModalId)?.click()
+              }
             />
           </div>
           <div className="flex flex-row gap-3 items-center">

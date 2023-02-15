@@ -1,4 +1,5 @@
 import { applyPartner } from "api_client/axios_client";
+import { IcAmericanFlag } from "assets/AssetUtil";
 import { Button } from "components/common/Button";
 import HeaderWithBack from "components/common/HeaderWithBack";
 import Input from "components/common/Input";
@@ -134,6 +135,7 @@ const ApplyPartnerDialog = () => {
               />
               <Input
                 label={"Your Phone number"}
+                leftIcon={<IcAmericanFlag className=" text-2xl" />}
                 inputProps={{
                   type: "tel",
                   placeholder: "(555) 000-0000",

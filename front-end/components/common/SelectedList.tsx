@@ -40,7 +40,7 @@ const SelectedList = <T extends object | string>({
           <div
             key={`item-${index}`}
             className={twMerge(
-              `w-full card border-2 cursor-pointer  hover:border-secondary border-neutral-300 ${
+              `w-full card border-2 rounded-lg cursor-pointer  hover:border-secondary border-neutral-300 ${
                 cindex == index ? selectBorderColor : ""
               }  ${itemListClassName}`
             )}
