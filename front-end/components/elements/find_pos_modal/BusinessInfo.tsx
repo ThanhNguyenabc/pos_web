@@ -1,6 +1,7 @@
 import { IcAmericanFlag, IcBack, IcRightArrow } from "assets/AssetUtil";
 import { Button } from "components/common/Button";
 import Input from "components/common/Input";
+import PhoneNumberInput from "components/common/PhoneNumberInput";
 import React, { useState } from "react";
 import { isValidPhoneNumber } from "utils/StringUtil";
 import { FindPOSModalContext } from "./FindPOSModal";
@@ -67,23 +68,20 @@ const BusinessInfo = () => {
           businessContact.nameError ? businessContact.nameError : undefined
         }
       />
-      <Input
-        label={"Business Phone number"}
-        leftIcon={<IcAmericanFlag className=" text-2xl" />}
-        inputProps={{
-          value: businessContact.businessPhone,
-          type: "tel",
-          onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
-            setBusinessContact((preData) => ({
-              ...preData,
-              businessPhone: e.target.value,
-            }));
-          },
+
+      <PhoneNumberInput
+        title={"Business Phone number"}
+        onChangeValue={(value) => {
+          setBusinessContact((preData) => ({
+            ...preData,
+            businessPhone: value,
+          }));
         }}
         errorMessage={
           businessContact.phoneError ? businessContact.phoneError : undefined
         }
       />
+
       <div className={`flex flex-row gap-4 `}>
         <Button
           title="Back"

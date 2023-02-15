@@ -6,6 +6,8 @@ import Input from "components/common/Input";
 import { isValidEmail, isValidPhoneNumber } from "utils/StringUtil";
 import { submitContact } from "api_client/axios_client";
 import { ThankyouModalId } from "components/common/ThankYouDialog";
+import { formatUSAPhoneNumber } from "utils/NumberUtil";
+import PhoneNumberInput from "components/common/PhoneNumberInput";
 
 const ContactItem = ({
   icon,
@@ -169,17 +171,13 @@ const ContactPage = () => {
             />
 
             <div className="flex flex-row gap-6">
-              <Input
-                label={"Your Phone number"}
-                leftIcon={<IcAmericanFlag className="text-2xl" />}
-                inputProps={{
-                  type: "tel",
-                  onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
-                    setContactInfo((prev) => ({
-                      ...prev,
-                      phoneNumber: e.target.value,
-                    }));
-                  },
+              <PhoneNumberInput
+                title={"Your Phone number"}
+                onChangeValue={(value) => {
+                  setContactInfo((prev) => ({
+                    ...prev,
+                    phoneNumber: value,
+                  }));
                 }}
                 errorMessage={
                   contactInfo.phoneError ? contactInfo.phoneError : undefined

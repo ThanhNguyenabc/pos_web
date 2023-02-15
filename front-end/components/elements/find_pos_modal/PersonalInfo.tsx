@@ -3,6 +3,7 @@ import { IcAmericanFlag, IcBack } from "assets/AssetUtil";
 import { Button } from "components/common/Button";
 import ContactForm, { ContactInfo } from "components/common/ContactForm";
 import Input from "components/common/Input";
+import PhoneNumberInput from "components/common/PhoneNumberInput";
 import React, { useState } from "react";
 import {
   CreditCardVolumeData,
@@ -100,18 +101,13 @@ const PersonalInfo = () => {
           contactInfo.emailError.length > 0 ? contactInfo.emailError : undefined
         }
       />
-
-      <Input
-        label={"Your Phone number"}
-        leftIcon={<IcAmericanFlag className=" text-2xl" />}
-        inputProps={{
-          type: "tel",
-          onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
-            setContactInfo((prev) => ({
-              ...prev,
-              phoneNumber: e.target.value,
-            }));
-          },
+      <PhoneNumberInput
+        title={"Your Phone number"}
+        onChangeValue={(value) => {
+          setContactInfo((prev) => ({
+            ...prev,
+            phoneNumber: value,
+          }));
         }}
         errorMessage={
           contactInfo.phoneError.length > 0 ? contactInfo.phoneError : undefined

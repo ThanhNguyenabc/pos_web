@@ -3,6 +3,7 @@ import { IcAmericanFlag } from "assets/AssetUtil";
 import { Button } from "components/common/Button";
 import ContactForm, { ContactInfo } from "components/common/ContactForm";
 import Input from "components/common/Input";
+import PhoneNumberInput from "components/common/PhoneNumberInput";
 import { QuestionnaireContact } from "models/questionnaire_contact";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
@@ -130,17 +131,13 @@ const QuestionnaireContact = () => {
         }
       />
 
-      <Input
-        label={"Your Phone number"}
-        leftIcon={<IcAmericanFlag className="text-2xl" />}
-        inputProps={{
-          type: "tel",
-          onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
-            setContactInfo((prev) => ({
-              ...prev,
-              phoneNumber: e.target.value,
-            }));
-          },
+      <PhoneNumberInput
+        title={"Your Phone number"}
+        onChangeValue={(value) => {
+          setContactInfo((prev) => ({
+            ...prev,
+            phoneNumber: value,
+          }));
         }}
         errorMessage={
           contactInfo.phoneError.length > 0 ? contactInfo.phoneError : undefined

@@ -5,12 +5,13 @@ import React from "react";
 import useSwr from "swr";
 import moment from "moment";
 import Loading from "components/common/loading/Loading";
+import Subcriber from "components/elements/blog/Subcriber";
 
 const BlogPage = () => {
   const { data, isLoading } = useSwr("blog-posts", getBlogPosts);
   return (
-    <>
-      <Box className="items-center mx-auto max-w-[800px] pb-8">
+    <div className="flex flex-col h-full">
+      <Box className="items-center mx-auto max-w-[800px] mb-12 md:mb-0">
         <div className="flex flex-col gap-4 mb-8 text-center md:gap-6 md:mb-12 lg:mb-16">
           <h2 className="txt-heading-medium font-extrabold md:txt-heading-xlarge">
             BestPOS blog
@@ -39,7 +40,8 @@ const BlogPage = () => {
           })}
         </div>
       </Box>
-    </>
+      <Subcriber className=" lg:mb-[96px]" />
+    </div>
   );
 };
 

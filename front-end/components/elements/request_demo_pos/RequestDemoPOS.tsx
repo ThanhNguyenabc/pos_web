@@ -14,6 +14,7 @@ import {
   isValidPhoneNumber,
 } from "utils/StringUtil";
 import { submitForDemoPOS } from "api_client/axios_client";
+import PhoneNumberInput from "components/common/PhoneNumberInput";
 
 export const RequestDemoModalId = "requestDemoModal";
 
@@ -152,17 +153,13 @@ const RequestDemoPOS = () => {
           }
         />
 
-        <Input
-          label={"Your Phone number"}
-          leftIcon={<IcAmericanFlag className="text-2xl" />}
-          inputProps={{
-            type: "tel",
-            onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
-              setContactInfo((prev) => ({
-                ...prev,
-                phoneNumber: e.target.value,
-              }));
-            },
+        <PhoneNumberInput
+          title={"Your Phone number"}
+          onChangeValue={(value) => {
+            setContactInfo((prev) => ({
+              ...prev,
+              phoneNumber: value,
+            }));
           }}
           errorMessage={
             contactInfo.phoneError.length > 0

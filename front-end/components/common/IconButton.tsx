@@ -7,9 +7,6 @@ interface IconButtonProps {
   classname?: string;
 }
 const IconButton = ({ classname, children, onClick }: IconButtonProps) => {
-
-
-  
   return (
     <button
       onClick={onClick}

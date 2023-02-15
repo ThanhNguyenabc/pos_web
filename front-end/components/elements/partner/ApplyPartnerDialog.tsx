@@ -4,6 +4,7 @@ import { Button } from "components/common/Button";
 import HeaderWithBack from "components/common/HeaderWithBack";
 import Input from "components/common/Input";
 import Modal from "components/common/Modal";
+import PhoneNumberInput from "components/common/PhoneNumberInput";
 import ThanksYouForm from "components/common/thanksform";
 import { ContactInfo } from "models/contact_info";
 import { useRouter } from "next/router";
@@ -133,18 +134,13 @@ const ApplyPartnerDialog = () => {
                   contactInfo.emailError ? contactInfo.emailError : undefined
                 }
               />
-              <Input
-                label={"Your Phone number"}
-                leftIcon={<IcAmericanFlag className=" text-2xl" />}
-                inputProps={{
-                  type: "tel",
-                  placeholder: "(555) 000-0000",
-                  onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
-                    setContactInfo((prev) => ({
-                      ...prev,
-                      phone: e.target.value,
-                    }));
-                  },
+              <PhoneNumberInput
+                title={"Your Phone number"}
+                onChangeValue={(value) => {
+                  setContactInfo((prev) => ({
+                    ...prev,
+                    phone: value,
+                  }));
                 }}
                 errorMessage={
                   contactInfo.phoneError ? contactInfo.phoneError : undefined

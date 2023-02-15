@@ -3,6 +3,7 @@ import { IcAmericanFlag } from "assets/AssetUtil";
 import { Button } from "components/common/Button";
 import ContactForm from "components/common/ContactForm";
 import Input from "components/common/Input";
+import PhoneNumberInput from "components/common/PhoneNumberInput";
 import { ContactInfo } from "models/contact_info";
 import { BreadmeContext } from "pages/bread-me-questions";
 import React, { useContext, useState } from "react";
@@ -121,18 +122,12 @@ const BreadmeContact = () => {
           contactInfo.emailError.length > 0 ? contactInfo.emailError : undefined
         }
       />
-
-      <Input
-        label={"Your Phone number"}
-        leftIcon={<IcAmericanFlag className=" text-2xl" />}
-        inputProps={{
-          type: "tel",
-          onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
-            setContactInfo((prev) => ({
-              ...prev,
-              phone: e.target.value,
-            }));
-          },
+      <PhoneNumberInput
+        onChangeValue={(value) => {
+          setContactInfo((prev) => ({
+            ...prev,
+            phone: value,
+          }));
         }}
         errorMessage={
           contactInfo.phoneError.length > 0 ? contactInfo.phoneError : undefined

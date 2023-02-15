@@ -11,15 +11,15 @@ import HTMLReactParser, {
 } from "html-react-parser";
 import moment from "moment";
 import Writer from "components/elements/blog/Writer";
+import { FooterCTA } from "components/common/FooterCTA";
+import Subcriber from "components/elements/blog/Subcriber";
 
 const BlogDetail = () => {
   const router = useRouter();
   const { slug, id } = router.query;
-  console.log(router.query);
-  console.log("first");
-  console.log(id);
-  const { data, isLoading } = useSwr(id, getBlogDetail);
 
+  const { data, isLoading } = useSwr(id, getBlogDetail);
+  const author = "Admin";
   const date = moment(data?.date).format("YYYY-MM-DD");
   const options: HTMLReactParserOptions = {
     replace: (domNode: DOMNode) => {
@@ -40,19 +40,25 @@ const BlogDetail = () => {
     },
   };
   return (
-    <Box className="mx-auto max-w-[800px]">
-      <div className="flex flex-row items-center txt-md-bold text-neutral-600 gap-4 self-center md:text-xl">
-        <p>Admin</p>•<p>{date}</p>
-      </div>
-      <h2 className="txt-heading-medium font-extrabold text-center my-4 md:txt-heading-xlarge md:my-8">
-        {data?.title.rendered}
-      </h2>
-      <div className="flex flex-col text-neutral-700 txt-md text-justify md:text-xl">
-        {HTMLReactParser(data?.content?.rendered || "", options)}
-      </div>
-
-      <>{data && <Writer date={date} />}</>
-    </Box>
+    <>
+      <Box className="max-w-[800px] mx-auto">
+        <div className="flex flex-row items-center txt-md-bold text-neutral-600 gap-4 self-center md:text-xl">
+          <p>{author}</p>•<p>{date}</p>
+        </div>
+        <h2 className="txt-heading-medium font-extrabold text-center my-4 md:txt-heading-xlarge md:my-8">
+          {data?.title.rendered}
+        </h2>
+        <div className="flex flex-col text-neutral-700 txt-md text-justify md:text-xl">
+          {HTMLReactParser(data?.content?.rendered || "", options)}
+        </div>
+      </Box>
+      {data && (
+        <Box className="lg:px-[120px] my-12 md:mt-20 md:mb-0 ">
+          <Writer date={date} author={author} />
+        </Box>
+      )}
+      <Subcriber />
+    </>
   );
 };
 
