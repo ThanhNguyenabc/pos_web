@@ -10,10 +10,7 @@ interface HeroSectionProps {
 
 const HeroSection = ({ className, style, children }: HeroSectionProps) => {
   return (
-    <Box
-      className={`py-14 md:py-16 lg:p-[85px] xl:p-[120px] ${className}`}
-      style={style}
-    >
+    <Box className={`py-12 md:py-14 lg:p-[120px] ${className}`} style={style}>
       {children}
     </Box>
   );

@@ -31,7 +31,7 @@ const BlogCard = ({
       >
         {urlImage && (
           <div className="flex">
-            <Image
+            <img
               src={urlImage}
               alt=""
               height={200}

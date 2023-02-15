@@ -64,7 +64,7 @@ const AboutPage = () => {
   return (
     <div className="flex flex-col">
       <HeroSection className="flex flex-col px-4 py-12 md:px-8 md:py-14 lg:bg-neutral-100">
-        <p className="txt-heading-medium text-center md:font-extrabold md:text-6xl md:leading-[68px]">
+        <p className="txt-heading-medium text-center md:text-start md:font-extrabold md:text-6xl md:leading-[68px]">
           About Us
         </p>
         <p className="txt-md text-neutral-700 mt-4 mb-10 md:mt-6 md:mb-12 md:text-xl lg:max-w-[800px]">

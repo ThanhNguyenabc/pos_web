@@ -33,7 +33,7 @@ const BreadmeFeatureSection = () => {
         without any fees.
       </p>
 
-      <div className="grid grid-cols-1  gap-y-6 md:grid-cols-2 md:gap-y-12 md:gap-x-8">
+      <div className="grid grid-cols-1  gap-y-6 md:grid-cols-2 md:gap-y-12 md:gap-x-8 lg:grid-cols-4">
         {FeatureForBreadmeData.map((item, index) => {
           const Icon = item.ic;
           return (

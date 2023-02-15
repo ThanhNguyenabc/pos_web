@@ -35,8 +35,8 @@ const Home = () => {
   return (
     <>
       <div className="flex flex-col bg-gradient-to-b from-[#FF5A22] to-[#FFA722] lg:flex-row lg:h-[640px]">
-        <HeroSection className="flex-1">
-          <div className="flex flex-col gap-4 text-center md:gap-6 lg:text-left lg:max-w-[480px]">
+        <HeroSection>
+          <div className="flex flex-col flex-1 gap-4 text-center md:gap-6 lg:text-left lg:max-w-[480px]">
             <p
               className={`txt-heading-large md:text-6xl md:leading-[68px] text-white`}
             >
@@ -66,7 +66,7 @@ const Home = () => {
             </div>
           </div>
         </HeroSection>
-        <div className=" flex flex-1 pt-4">
+        <div className="flex lg:w-[55%] pt-4">
           <Image src={BannerImage} alt="" className="aspect-[4/3]" />
         </div>
       </div>

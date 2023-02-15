@@ -60,15 +60,15 @@
   }
   
   .txt-heading-medium {
-    @apply text-4xl font-bold text-neutral-900 leading-[44px];
+    @apply text-4xl font-bold leading-[44px];
   }
   
   .txt-heading-large {
-    @apply text-5xl font-extrabold  text-neutral-900 leading-[56px];
+    @apply text-5xl font-extrabold leading-[56px];
   }
   
   .txt-heading-xlarge {
-    @apply text-6xl font-extrabold  text-neutral-900 leading-[68px];
+    @apply text-6xl font-extrabold leading-[68px];
   }
   
 }

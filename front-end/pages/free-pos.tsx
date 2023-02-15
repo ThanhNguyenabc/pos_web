@@ -57,9 +57,9 @@ const openFindPOSModal = () => {
 
 const FreePOS = () => (
   <div className="flex-column">
-    <div className="flex flex-col flex-1  bg-secondary  lg:flex-row">
-      <HeroSection className=" flex-1 lg:w-[55vw] gap-10 text-white text-center md:gap-12 lg:text-left lg:p-0">
-        <div className="flex flex-col gap-4 md:gap-6">
+    <div className="flex flex-col bg-secondary lg:flex-row">
+      <HeroSection className="gap-10 text-white text-center md:gap-12 lg:text-left">
+        <div className="flex flex-col gap-4 md:gap-6 lg:w-[480px]">
           <p
             className={`txt-heading-medium text-white max-w-3xl md:font-extrabold md:text-6xl md:leading-[68px]`}
           >
@@ -71,7 +71,7 @@ const FreePOS = () => (
             to help you find the perfect match!
           </p>
         </div>
-        <div className="flex flex-col self-center gap-4 md:gap-6 w-full md:w-fit md:flex-row lg:self-start">
+        <div className="flex flex-col self-center gap-4 md:gap-6 w-full md:w-fit md:flex-row lg:max-w-[480px] lg:self-start">
           <Button
             classname="lg:h-16 lg:w-[200px]"
             title="Get started"
@@ -86,7 +86,7 @@ const FreePOS = () => (
           />
         </div>
       </HeroSection>
-      <div className="flex flex-1 pt-[50px] ">
+      <div className="flex lg:pt-[50px] ">
         <Image src={POS2Img} alt="" className="aspect-[4/3]" />
       </div>
     </div>
@@ -117,7 +117,7 @@ const FreePOS = () => (
         title={
           <>
             With these three easy steps your business may be qualified for a
-            <span className=" text-secondary">FREE POS system.</span>
+            <span className=" text-secondary"> FREE POS system.</span>
           </>
         }
         subCmp={
@@ -131,18 +131,15 @@ const FreePOS = () => (
       >
         <div className=" flex flex-col gap-4 md:gap-6">
           {ThreeStep.map((item, index) => (
-            <div
-              key={`step-${index}`}
-              className="card bg-base-100 drop-shadow-lg"
-            >
-              <div className="card-body p-4 flex-row txt-sm md:text-xl gap-6">
-                <div
-                  className={`[box-shadow:0px_0px_0px_1px_rgba(208,_213,_221,_1)_inset] [box-shadow-width:1px] 
-              px-4 py-2.5 w-10 h-10 mt-1 rounded-lg font-semibold  text-neutral-900`}
-                >
-                  <p className="flex-1 leading-5">{item.step}</p>
-                </div>
-                <p className="text-left">{item.desc}</p>
+            <div key={`step-${index}`} className="card bg-base-100">
+              <div className="card-body px-4 py-3 md:p-6 flex-row gap-6">
+                <p className="txt-heading-small text-neutral-400 md:txt-heading-large">
+                  {item.step}
+                </p>
+
+                <p className="text-left text-neutral-700 md:txt-large-bold">
+                  {item.desc}
+                </p>
               </div>
             </div>
           ))}

@@ -37,8 +37,8 @@ const data = [
 ];
 const FeatureSection = () => {
   return (
-    <HeroSection className="gap-10 lg:flex-row lg:gap-12">
-      <div className=" flex flex-col gap-6 flex-1 lg:pr-[100px]">
+    <HeroSection className="gap-10 lg:flex-row lg:gap-[100px]">
+      <div className=" flex flex-col gap-6 flex-1">
         <h2 className="txt-heading-medium md:text-5xl md:font-extrabold md:leading-[56px] ">
           Helping you <span className="text-secondary">compare & find</span> the
           best POS system

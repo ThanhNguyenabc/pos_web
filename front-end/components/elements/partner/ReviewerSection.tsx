@@ -22,8 +22,11 @@ const ReviewerSection = ({ reviews }: ReviewerSectionProps) => {
       <Box className="flex gap-4 py-6 lg:p-16 lg:w-[50%]">
         {data.rating && (
           <div className="flex flex-row gap-2">
-            {[1, 2, 3, 4, 5].map((item) => (
-              <IcRating className="text-primary text-2xl" />
+            {[1, 2, 3, 4, 5].map((item, index) => (
+              <IcRating
+                key={`item-rating${index}`}
+                className="text-primary text-2xl"
+              />
             ))}
           </div>
         )}
