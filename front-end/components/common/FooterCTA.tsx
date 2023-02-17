@@ -6,24 +6,18 @@ import HeroSection from "./HeroSection";
 interface FooterCTAProps {
   title?: ReactElement;
   des?: string;
-  className?: string;
+  bgColor?: string;
   actions?: ReactElement;
+  className?: string;
 }
-export const FooterCTA = ({
-  title,
-  actions,
-  des,
-  className,
-}: FooterCTAProps) => {
+export const FooterCTA = ({ title, actions, des, bgColor,className }: FooterCTAProps) => {
   return (
-    <HeroSection className="w-full px-0 lg:py-20">
+    <HeroSection className={`w-full px-0 lg:py-20 ${className}`}>
       <Box
-        className={`py-14 md:py-16 lg:py-20 items-center gap-6 md:rounded-2xl md:gap-8  lg:gap-10 first-letter: ${className}`}
+        className={`py-14 md:py-16 lg:py-20 items-center gap-6 md:rounded-2xl md:gap-8  lg:gap-10 first-letter: ${bgColor}`}
       >
         <div className="flex flex-col gap-4 items-center text-center">
-          <div className="txt-heading-medium md:txt-heading-large">
-            {title}
-          </div>
+          <div className="txt-heading-medium md:txt-heading-large">{title}</div>
           {des && (
             <p className="txt-md-bold md:text-xl text-neutral-700">{des}</p>
           )}

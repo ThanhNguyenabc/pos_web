@@ -42,7 +42,7 @@ const ClientSection = ({ body }: ClientSectionProps) => {
         </p>
         {body}
       </div>
-      <div className="flex gap-12 md:gap-16 overflow-auto px-4 mx-auto">
+      <div className="flex gap-12 md:gap-16 overflow-auto mx-auto">
         {ClientList.map((item, index) => (
           <Image
             src={item}
