@@ -1,5 +1,6 @@
 import { chdir } from "process";
 import React, { ReactNode } from "react";
+import { twMerge } from "tailwind-merge";
 import Box from "./Box";
 
 interface HeroSectionProps {
@@ -8,9 +9,14 @@ interface HeroSectionProps {
   children: ReactNode;
 }
 
-const HeroSection = ({ className, style, children }: HeroSectionProps) => {
+const HeroSection = ({ className, children }: HeroSectionProps) => {
   return (
-    <Box className={`py-12 md:py-14 lg:p-[120px] ${className}`} style={style}>
+    <Box
+      className={twMerge(
+        "max-w-[1200px] mx-auto self-center py-12 md:py-14 xl:px-0 lg:py-[120px] ",
+        className
+      )}
+    >
       {children}
     </Box>
   );
