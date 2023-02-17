@@ -3,33 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import AppRoutes from "utils/routes";
+import { MainMenu } from "utils/StringUtil";
 
-export const Menu = {
-  home: {
-    route: AppRoutes.HomePage,
-    title: "Home",
-  },
-  freepos: {
-    route: AppRoutes.FreePOSPage,
-    title: "Free POS",
-  },
-  posreview: {
-    route: AppRoutes.CategoryPage,
-    title: "POS Reviews",
-  },
-  contact: {
-    route: AppRoutes.ContactPage,
-    title: "Contact",
-  },
-  about: {
-    route: AppRoutes.AboutPage,
-    title: "About",
-  },
-  blog: {
-    route: AppRoutes.BlogPage,
-    title: "Blog",
-  },
-};
+
 
 const MainMenuItem = ({
   route,
@@ -90,14 +66,14 @@ const MenuDrawer = ({ onClose }: MenuDrawerProps) => {
         </button>
       </div>
       <ul className="menu w-full border-y-2 border-neutral-200 py-9 ">
-        <MainMenuItem {...Menu["home"]} onClickItem={onClose} />
-        <MainMenuItem {...Menu["freepos"]} onClickItem={onClose} />
-        <MainMenuItem {...Menu["posreview"]} onClickItem={onClose} />
+        <MainMenuItem {...MainMenu["home"]} onClickItem={onClose} />
+        <MainMenuItem {...MainMenu["freepos"]} onClickItem={onClose} />
+        <MainMenuItem {...MainMenu["posreview"]} onClickItem={onClose} />
       </ul>
       <ul className="menu w-full py-6">
-        <SubMenuItem {...Menu["about"]} onClickItem={onClose} />
-        <SubMenuItem {...Menu["contact"]} onClickItem={onClose} />
-        <SubMenuItem {...Menu["blog"]} />
+        <SubMenuItem {...MainMenu["about"]} onClickItem={onClose} />
+        <SubMenuItem {...MainMenu["contact"]} onClickItem={onClose} />
+        <SubMenuItem {...MainMenu["blog"]} />
       </ul>
     </div>
   );

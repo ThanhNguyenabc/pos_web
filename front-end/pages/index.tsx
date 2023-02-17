@@ -34,41 +34,44 @@ const Home = () => {
 
   return (
     <>
-      <div className="flex flex-col bg-gradient-to-b from-[#FF5A22] to-[#FFA722] lg:flex-row lg:h-[640px]">
-        <HeroSection>
-          <div className="flex flex-col flex-1 gap-4 text-center md:gap-6 lg:text-left lg:max-w-[480px]">
-            <p
-              className={`txt-heading-large md:text-6xl md:leading-[68px] text-white`}
-            >
-              Real advice from
-              <span className="text-secondary"> real people</span>
-            </p>
-            <p className="txt-md-bold text-white lg:text-start md:text-xl">
-              Speak with a consultant today to find the best POS for your
-              business
-            </p>
-            <div className="flex flex-col self-center gap-4 md:gap-6 w-full md:w-fit md:flex-row lg:self-start">
-              <Button
-                classname="md:h-16"
-                title="Find your POS"
-                style={{
-                  background: ColorUtils["neutral-900"],
-                }}
-                onClick={findPOS}
-              />
-              <Button
-                classname="md:h-16"
-                title="Get POS for free"
-                style={{ background: "white", color: "black" }}
-                onClick={getPOSFree}
-                rightIcon={<IcRightArrow className=" text-lg " />}
-              />
+      <div className=" bg-gradient-to-b from-[#FF5A22] to-[#FFA722]">
+        <HeroSection className=" lg:max-w-[1440px] p-0 md:p-0 lg:p-0 lg:h-[640px] lg:flex-row">
+          <HeroSection className="flex-1">
+            <div className="flex flex-col gap-4 text-center md:gap-6 lg:text-left lg:max-w-[460px] m-auto">
+              <p
+                className={`txt-heading-large md:text-6xl md:leading-[68px] text-white`}
+              >
+                Real advice from
+                <span className="text-secondary"> real people</span>
+              </p>
+              <p className="txt-md-bold text-white lg:text-start md:text-xl">
+                Speak with a consultant today to find the best POS for your
+                business
+              </p>
+              <div className="flex flex-col self-center gap-4 md:gap-6 w-full md:w-fit md:flex-row lg:self-start">
+                <Button
+                  classname="md:h-16"
+                  title="Find your POS"
+                  style={{
+                    background: ColorUtils["neutral-900"],
+                  }}
+                  onClick={findPOS}
+                />
+                <Button
+                  classname="md:h-16"
+                  title="Get POS for free"
+                  style={{ background: "white", color: "black" }}
+                  onClick={getPOSFree}
+                  rightIcon={<IcRightArrow className=" text-lg " />}
+                />
+              </div>
             </div>
+          </HeroSection>
+
+          <div className="flex flex-1 lg:mt-10">
+            <Image src={BannerImage} alt="" className="aspect-[4/3]" />
           </div>
         </HeroSection>
-        <div className="flex lg:w-[55%] pt-4">
-          <Image src={BannerImage} alt="" className="aspect-[4/3]" />
-        </div>
       </div>
 
       <div className="grid grid-cols-3 px-4 py-3 md:py-6 md:px-8 mx-auto gap-6 md:gap-[58px] lg:gap-[82px]">
@@ -91,7 +94,7 @@ const Home = () => {
       <FeatureSection />
       <MetricSection titleColor="text-secondary" />
 
-      <HeroSection className="mx-auto lg:px-[100px]">
+      <HeroSection>
         <ReviewerSection
           reviews={[
             {

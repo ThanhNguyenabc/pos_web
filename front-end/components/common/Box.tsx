@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import { twMerge } from "tailwind-merge";
 
 interface BoxProps {
   className?: string;
@@ -8,7 +9,10 @@ interface BoxProps {
 
 const Box = ({ className = "", style = {}, children }: BoxProps) => {
   return (
-    <div className={`flex flex-col px-4 md:px-8 ${className}`} style={style}>
+    <div
+      className={twMerge(`flex flex-col px-4 md:px-8 `, className)}
+      style={style}
+    >
       {children}
     </div>
   );

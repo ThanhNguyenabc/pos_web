@@ -1,4 +1,6 @@
 import React, { ReactElement, ReactNode } from "react";
+import { twMerge } from "tailwind-merge";
+import Box from "./Box";
 import HeroSection from "./HeroSection";
 
 interface FooterCTAProps {
@@ -14,26 +16,22 @@ export const FooterCTA = ({
   className,
 }: FooterCTAProps) => {
   return (
-    <div
-      className={`flex flex-col justify-center items-center px-4 py-14 gap-6 md:rounded-2xl 
-       text-center
-      md:gap-8 md:mb-20 md:mx-8
-      lg:gap-10 
-      lg:mx-[100px] 
-      xl:mx-[120px] 
-      ${className}`}
-    >
-      <div className="w-full flex flex-col gap-4 items-center">
-        <div className="txt-heading-medium md:text-5xl md:font-extrabold md:leading-[56px] max-w-[860px]">
-          {title}
+    <HeroSection className="w-full px-0 lg:py-20">
+      <Box
+        className={`py-14 md:py-16 lg:py-20 items-center gap-6 md:rounded-2xl md:gap-8  lg:gap-10 first-letter: ${className}`}
+      >
+        <div className="flex flex-col gap-4 items-center text-center">
+          <div className="txt-heading-medium md:txt-heading-large">
+            {title}
+          </div>
+          {des && (
+            <p className="txt-md-bold md:text-xl text-neutral-700">{des}</p>
+          )}
         </div>
-        {des && (
-          <p className="txt-md-bold md:text-xl text-neutral-700">{des}</p>
-        )}
-      </div>
-      <div className="w-full flex flex-col md:flex-row gap-4 justify-center">
-        {actions}
-      </div>
-    </div>
+        <div className="w-full flex flex-col md:flex-row gap-4 justify-center">
+          {actions}
+        </div>
+      </Box>
+    </HeroSection>
   );
 };

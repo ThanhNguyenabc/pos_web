@@ -3,11 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Button } from "./Button";
-import MenuDrawer, { Menu } from "./MenuDrawer";
+import MenuDrawer from "./MenuDrawer";
 import "react-modern-drawer/dist/index.css";
 import Drawer from "react-modern-drawer";
 import { useRouter } from "next/router";
 import AppRoutes from "utils/routes";
+import { MainMenu } from "utils/StringUtil";
 
 const Header = () => {
   const router = useRouter();
@@ -18,7 +19,7 @@ const Header = () => {
   };
 
   return (
-    <div className="container-screen flex flex-row w-full justify-between items-center px-4 py-[14px] md:p-6">
+    <div className=" flex flex-row w-full justify-between items-center px-4 py-[14px] md:p-6">
       <div className="flex justify-center items-center">
         <Drawer
           open={isOpen}
@@ -31,37 +32,43 @@ const Header = () => {
         <button className="py-2 mr-5 lg:hidden" onClick={toggleDrawer}>
           <IcMenu className="text-2xl" />
         </button>
-        <Link href={Menu["home"].route}>
+        <Link href={MainMenu["home"].route}>
           <Image
             src={MobileLogoImg}
             alt="mobile-logo"
-            className="w-8 h-8 md:hidden"
+            className="w-8 h-8 xl:hidden"
           />
           <Image
             src={Logo}
             width={150}
             height={32}
             alt="logo"
-            className="hidden md:block"
+            className="hidden xl:block"
           />
         </Link>
       </div>
 
       <ul className="menu menu-horizontal hidden lg:flex flex-1 text-neutral-900 ">
         <li className="ml-3 txt-md-bold">
-          <Link href={Menu["freepos"].route}>{Menu["freepos"].title}</Link>
+          <Link href={MainMenu["freepos"].route}>
+            {MainMenu["freepos"].title}
+          </Link>
         </li>
         <li className="ml-3 txt-md-bold">
-          <Link href={Menu["posreview"].route}>{Menu["posreview"].title}</Link>
+          <Link href={MainMenu["posreview"].route}>
+            {MainMenu["posreview"].title}
+          </Link>
         </li>
         <li className="ml-3 txt-md-bold">
-          <Link href={Menu["about"].route}>{Menu["about"].title}</Link>
+          <Link href={MainMenu["about"].route}>{MainMenu["about"].title}</Link>
         </li>
         <li className="ml-3 txt-md-bold">
-          <Link href={Menu["blog"].route}>{Menu["blog"].title}</Link>
+          <Link href={MainMenu["blog"].route}>{MainMenu["blog"].title}</Link>
         </li>
         <li className="ml-3 txt-md-bold">
-          <Link href={Menu["contact"].route}>{Menu["contact"].title}</Link>
+          <Link href={MainMenu["contact"].route}>
+            {MainMenu["contact"].title}
+          </Link>
         </li>
       </ul>
       <div className="flex flex-row justify-center items-center">

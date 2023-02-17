@@ -82,6 +82,38 @@ export const MetrictData = {
     { title: "1000+", content: "Over 1000 Clients" },
   ],
 };
+
+export const MainMenu = {
+  home: {
+    route: AppRoutes.HomePage,
+    title: "Home",
+  },
+  freepos: {
+    route: AppRoutes.FreePOSPage,
+    title: "Free POS",
+  },
+  posreview: {
+    route: AppRoutes.CategoryPage,
+    title: "POS Reviews",
+  },
+  contact: {
+    route: AppRoutes.ContactPage,
+    title: "Contact",
+  },
+  about: {
+    route: AppRoutes.AboutPage,
+    title: "About",
+  },
+  blog: {
+    route: AppRoutes.BlogPage,
+    title: "Blog",
+  },
+  breadme: {
+    route: AppRoutes.BreadmePage,
+    title: "0% Processing Fee",
+  },
+};
+
 export const CategoryList = [
   {
     title: "Pizza",
