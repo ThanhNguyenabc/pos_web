@@ -9,7 +9,6 @@ import HandHeldQuestion from "components/elements/questionnaire/HandheldQuestion
 import CashDiscountQuestion from "components/elements/questionnaire/CashDiscountQuestion";
 import QuestionnaireContact from "components/elements/questionnaire/QuestionnaireContact";
 import useQuestionnaireStore from "stores/questionnaire_store";
-import ColorUtils from "utils/ColorUtils";
 import Progress from "components/common/progress";
 
 const Questions = [
