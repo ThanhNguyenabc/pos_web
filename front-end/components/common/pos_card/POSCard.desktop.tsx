@@ -10,6 +10,7 @@ import { twMerge } from "tailwind-merge";
 import { POSCardProps } from "./POSCard";
 import PricingBtn from "../PricingBtn";
 import { getSystemIcon, ProductIcons } from "utils/StringUtil";
+import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 
 const POSCardDesktop = ({
   overallRating,
@@ -17,15 +18,6 @@ const POSCardDesktop = ({
   classname = "",
   onCardClick,
 }: POSCardProps) => {
-  const valueProgress = overallRating * 10;
-
-  console.log("s");
-  console.log(valueProgress);
-  const radialStyle = {
-    "--value": valueProgress,
-    "--size": "3.75rem",
-  } as React.CSSProperties;
-
   return (
     <div
       onClick={onCardClick}
@@ -33,13 +25,30 @@ const POSCardDesktop = ({
         `hidden max-w-[1200px] h-[244px]  bg-white cursor-pointer card gap-6 flex-row rounded-2xl p-6 drop-shadow-lg w-full overflow-hidden lg:flex ${classname}`
       )}
     >
-      <div
-        className="radial-progress text-primary border-neutral-200 "
-        style={radialStyle}
-      >
-        <p className="txt-large-bold text-neutral-900">{overallRating}</p>
-      </div>
+      <div className=" h-[60px] w-[60px]">
+        <CircularProgressbarWithChildren
+          strokeWidth={10}
+          maxValue={10}
+          value={overallRating}
+          styles={{
+            path: {
+              stroke: ColorUtils.primary,
+              transition: "stroke-dashoffset 0.5s ease 0s",
 
+              transform: "rotate(1turn)",
+              transformOrigin: "center center",
+            },
+            trail: {
+              stroke: ColorUtils["neutral-100"],
+              strokeLinecap: "butt",
+              transform: "rotate(1turn)",
+              transformOrigin: "center center",
+            },
+          }}
+        >
+          <p className="txt-large-bold">{overallRating}</p>
+        </CircularProgressbarWithChildren>
+      </div>
       <div className="flex flex-col items-start gap-2 flex-1">
         <Image
           src={ProductIcons[data.name]}

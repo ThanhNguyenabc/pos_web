@@ -6,6 +6,7 @@ import PricingBtn from "../PricingBtn";
 import ColorUtils from "utils/ColorUtils";
 import { POSCardProps } from "./POSCard";
 import { getSystemIcon, ProductIcons } from "utils/StringUtil";
+import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 
 const POSCardTablet = ({
   overallRating,
@@ -13,12 +14,6 @@ const POSCardTablet = ({
   classname,
   onCardClick,
 }: POSCardProps) => {
-  const valueProgress = overallRating * 10;
-  const radialStyle = {
-    "--value": valueProgress,
-    "--size": "3.75rem",
-  } as React.CSSProperties;
-
   return (
     <div
       onClick={onCardClick}
@@ -26,14 +21,37 @@ const POSCardTablet = ({
         `hidden w-full h-[244px] bg-white card gap-6 flex-row rounded-2xl p-6 drop-shadow-lg cursor-pointer md:flex lg:hidden ${classname}`
       )}
     >
-      <div
-        className="radial-progress text-primary border-neutral-200 "
-        style={radialStyle}
-      >
-        <p className="txt-large-bold text-neutral-900">{overallRating}</p>
+      <div className=" h-[60px] w-[60px]">
+        <CircularProgressbarWithChildren
+          strokeWidth={10}
+          maxValue={10}
+          value={overallRating}
+          styles={{
+            path: {
+              stroke: ColorUtils.primary,
+              transition: "stroke-dashoffset 0.5s ease 0s",
+
+              transform: "rotate(1turn)",
+              transformOrigin: "center center",
+            },
+            trail: {
+              stroke: ColorUtils["neutral-100"],
+              strokeLinecap: "butt",
+              transform: "rotate(1turn)",
+              transformOrigin: "center center",
+            },
+          }}
+        >
+          <p className="txt-large-bold">{overallRating}</p>
+        </CircularProgressbarWithChildren>
       </div>
+
       <div className="flex flex-col flex-1 items-start gap-2">
-        <Image src={ProductIcons[data.name]} alt="logo-pos" className="w-[120px] h-[60px]" />
+        <Image
+          src={ProductIcons[data.name]}
+          alt="logo-pos"
+          className="w-[120px] h-[60px]"
+        />
         <p className="text-sm text-left text-neutral-900">{data.overview}</p>
         <div className="flex items-center gap-4">
           {data.os_system?.map((item, index) => {
@@ -42,7 +60,7 @@ const POSCardTablet = ({
           })}
         </div>
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-2 md:gap-4">
         <BreadMeBtn />
         <PricingBtn
           logo={ProductIcons[data.name]}

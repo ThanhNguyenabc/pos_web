@@ -1,20 +1,17 @@
 import React from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { IcChervonRight, IcFreePOS } from "assets/AssetUtil";
 import { POSCardProps } from "./POSCard";
 import { getSystemIcon, ProductIcons } from "utils/StringUtil";
+import ColorUtils from "utils/ColorUtils";
+import { CircularProgressbarWithChildren } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
 export const POSCardMobile = ({
   overallRating,
   data,
   onCardClick,
 }: POSCardProps) => {
-  const valueProgress = overallRating * 10;
-  const radialStyle = {
-    "--value": valueProgress,
-    "--size": "2.5rem",
-  } as React.CSSProperties;
-
   return (
     <div
       onClick={onCardClick}
@@ -32,11 +29,30 @@ export const POSCardMobile = ({
               const Icon = getSystemIcon(item);
               return <Icon key={`item-os-${index}`} className="w-6 h-6" />;
             })}
-            <div
-              className="radial-progress text-primary border-neutral-200 "
-              style={radialStyle}
-            >
-              <p className=" text-neutral-900">{overallRating}</p>
+
+            <div className=" h-10 w-10">
+              <CircularProgressbarWithChildren
+                strokeWidth={10}
+                maxValue={10}
+                value={overallRating}
+                styles={{
+                  path: {
+                    stroke: ColorUtils.primary,
+                    transition: "stroke-dashoffset 0.5s ease 0s",
+
+                    transform: "rotate(1turn)",
+                    transformOrigin: "center center",
+                  },
+                  trail: {
+                    stroke: ColorUtils["neutral-100"],
+                    strokeLinecap: "butt",
+                    transform: "rotate(1turn)",
+                    transformOrigin: "center center",
+                  },
+                }}
+              >
+                <p className="txt-sm-bold">{overallRating}</p>
+              </CircularProgressbarWithChildren>
             </div>
           </div>
         </div>
@@ -49,8 +65,8 @@ export const POSCardMobile = ({
           <div className="flex bg-secondary flex-1 items-center justify-center text-white rounded-tr-2xl">
             <p className=" text-xs font-semibold ">$75 Monthly</p>
           </div>
-          <div className="flex w-12 justify-end pr-3 ">
-            <IcChervonRight className="text-2xl" />
+          <div className="flex w-12 justify-end items-center pr-3 ">
+            <IcChervonRight className="text-xs text-neutral-600 " />
           </div>
         </div>
       </div>
