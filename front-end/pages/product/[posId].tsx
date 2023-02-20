@@ -16,7 +16,6 @@ const POSDetailPage = () => {
     getSpecification(posId as string)
   );
 
-
   if (productData?.data && specificationData?.data)
     return (
       <POSDetail

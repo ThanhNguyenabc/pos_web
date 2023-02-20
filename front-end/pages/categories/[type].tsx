@@ -1,4 +1,4 @@
 import React from "react";
-import Category from "components/elements/Categories";
+import Products from "components/elements/Products";
 
-export default Category;
+export default Products;

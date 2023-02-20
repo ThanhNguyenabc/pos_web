@@ -20,7 +20,7 @@ const ALLTABS = [
   ...CategoryList,
 ];
 
-const Category = (props: AppProps) => {
+const Products = (props: AppProps) => {
   const router = useRouter();
   const { type } = router.query;
 
@@ -44,13 +44,13 @@ const Category = (props: AppProps) => {
           }}
         />
         <p
-          className="txt-heading-medium mt-10 md:mt-0 md:text-5xl md:font-extrabold m-0 p-0
+          className="txt-heading-medium mt-10 md:mt-0 md:txt-heading-large m-0 p-0
           "
         >
           <span className="text-secondary"> Best POS Systems</span> for Your
           Business
         </p>
-        <p className="txt-md md:text-xl text-neutral-700 mt-4 md:mt-0">
+        <p className="txt-md-bold md:text-xl text-neutral-700 mt-4 md:mt-0">
           We’ve put together a list of the best POS systems for Pizzeria &
           Restaurants to help your business. Let us help you find the right fit.
         </p>
@@ -76,4 +76,4 @@ const Category = (props: AppProps) => {
   );
 };
 
-export default Category;
+export default Products;
