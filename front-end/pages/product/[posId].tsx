@@ -2,13 +2,13 @@ import AxiosInstance, {
   getPOSDetail,
   getSpecification,
 } from "api_client/axios_client";
-import { POSDetail } from "components/elements/pos_detail/PosDetail";
+import { ProductDetail } from "components/elements/pos_detail/ProductDetail";
 import React from "react";
 import useSWR from "swr";
 import { useRouter } from "next/router";
 import Loading from "components/common/loading/Loading";
 
-const POSDetailPage = () => {
+const DetailPage = () => {
   const router = useRouter();
   const { posId = "" } = router.query;
   const { data: productData } = useSWR(`${posId}`, getPOSDetail);
@@ -18,7 +18,7 @@ const POSDetailPage = () => {
 
   if (productData?.data && specificationData?.data)
     return (
-      <POSDetail
+      <ProductDetail
         product={productData.data}
         specification={specificationData.data}
       />
@@ -30,4 +30,4 @@ const POSDetailPage = () => {
   );
 };
 
-export default POSDetailPage;
+export default DetailPage;

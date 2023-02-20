@@ -58,8 +58,7 @@ const POSCardDesktop = ({
         <p className="text-sm text-left text-neutral-900">{data.overview}</p>
         <div className="flex items-center gap-4">
           {data.os_system?.map((item, index) => {
-            console.log("icon");
-            console.log(item);
+          
             const Icon = getSystemIcon(item);
             return <Icon key={`item-os-${index}`} className="w-6 h-6" />;
           })}

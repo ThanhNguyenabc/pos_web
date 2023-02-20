@@ -1,53 +1,65 @@
-import React, { useEffect, useState } from "react";
-import ColorUtils from "utils/ColorUtils";
+import React, { useEffect, useRef, useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 const TabItem = ({
   name,
-  isSelected,
   onClick,
+  className,
 }: {
   name: string;
-  isSelected: boolean;
+  className?: string;
   onClick?: () => void;
-}) => (
-  <button
-    className={`tab min-w-max  max-w-5xl txt-md-bold h-12 rounded-lg  border-2 border-neutral-300   ${
-      isSelected
-        ? " bg-secondary text-white border-secondary"
-        : "text-neutral-900 bg-white"
-    } `}
-    onClick={onClick}
-  >
-    {name}
-  </button>
-);
+}) => {
+  return (
+    <button
+      id={`tab-${name.toLowerCase()}`}
+      className={`tab min-w-max max-w-5xl txt-md-bold h-12  ${className}`}
+      onClick={onClick}
+    >
+      {name}
+    </button>
+  );
+};
 
 interface TabListProps {
   tabList: Array<{ title: string } & object>;
-  selectIndex?: number;
+  initSelectIndex?: number;
+  selectClassName?: string;
+  className?: string;
+  unSelectClassName?: string;
+  tabItemStyle?: (isSelect: boolean) => string;
   onSelectedIndex?: (index: number) => void;
 }
 
-const TabList = ({ tabList, onSelectedIndex, selectIndex }: TabListProps) => {
-  const [currentIndex, setSelectIndex] = useState(0);
-
-  useEffect(() => {
-    setSelectIndex(selectIndex || 0);
-  }, [selectIndex]);
+const TabList = ({
+  tabList,
+  className,
+  onSelectedIndex,
+  initSelectIndex,
+  tabItemStyle,
+}: TabListProps) => {
+  const [currentIndex, setSelectIndex] = useState(initSelectIndex ?? 0);
 
   return (
-    <div className="flex flex-row gap-4 overflow-auto	">
-      {tabList.map((item, index) => (
-        <TabItem
-          key={`tab-${index}`}
-          name={item.title}
-          isSelected={index == currentIndex}
-          onClick={() => {
-            setSelectIndex(index);
-            onSelectedIndex && onSelectedIndex(index);
-          }}
-        />
-      ))}
+    <div
+      className={twMerge(
+        "flex flex-row gap-4 overflow-x-auto items-center",
+        className
+      )}
+    >
+      {tabList.map((item, index) => {
+        return (
+          <TabItem
+            key={`tab-${index}-${item}`}
+            name={item.title}
+            className={tabItemStyle && tabItemStyle(currentIndex == index)}
+            onClick={() => {
+              setSelectIndex(index);
+              onSelectedIndex && onSelectedIndex(index);
+            }}
+          />
+        );
+      })}
     </div>
   );
 };

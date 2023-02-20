@@ -22,8 +22,6 @@ const BreadmeSaleSystem = () => {
     });
   };
 
-  console.log("cIndexxx");
-  console.log(cIndex);
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
     setOtherSystem(newValue);

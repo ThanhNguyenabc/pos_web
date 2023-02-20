@@ -3,6 +3,7 @@ import List from "components/common/List";
 import React from "react";
 import IcMinus from "assets/icons/ic_minus.svg";
 import IcPLus from "assets/icons/ic_plus.svg";
+import HeroSection from "components/common/HeroSection";
 
 const CommonQuestionData = [
   {
@@ -29,38 +30,43 @@ const CommonQuestionData = [
 
 const CommonQuestion = () => {
   return (
-    <div className="flex flex-col px-4 py-12 gap-10 md:px-8 mx-auto max-w-[768px] lg:py-[100px] xl:py-[120px]">
-      <p className="txt-heading-small md:text-5xl md:font-extrabold md:leading-[56px]">
-        Common Questions About the Cash Discount Program
-      </p>
-      <p className="txt-md text-neutral-700 md:text-xl">
-        Check out Frequently Asked Questions from other merchants just like you.
-      </p>
+    <HeroSection className="gap-10 lg:pb-0">
+      <div className=" flex flex-col gap-10 md:gap-12 lg:gap-16 lg:max-w-[786px]">
+        <div className="flex flex-col gap-10 md:gap-6 text-center">
+          <p className="txt-heading-small md:txt-heading-large">
+            Common Questions About the Cash Discount Program
+          </p>
+          <p className="txt-md text-neutral-700 md:text-xl">
+            Check out Frequently Asked Questions from other merchants just like
+            you.
+          </p>
+        </div>
 
-      <List
-        showDivider
-        data={CommonQuestionData}
-        itemBuilder={(item, index, isSelect) => {
-          return (
-            <>
-              <div className=" flex py-6 flex-row w-full items-start">
-                <div className="flex flex-1 flex-col gap-4">
-                  <p className="txt-md-bold md:text-xl">{item.title}</p>
-                  <p className={`${isSelect ? "flex" : "hidden"} md:text-xl`}>
-                    {item.answer}
-                  </p>
+        <List
+          showDivider
+          data={CommonQuestionData}
+          itemBuilder={(item, index, isSelect) => {
+            return (
+              <>
+                <div className=" flex py-6 flex-row w-full items-start">
+                  <div className="flex flex-1 flex-col gap-4">
+                    <p className="txt-md-bold md:text-xl">{item.title}</p>
+                    <p className={`txt-sm ${isSelect ? "flex" : "hidden"} md:text-xl text-neutral-700`}>
+                      {item.answer}
+                    </p>
+                  </div>
+                  {isSelect ? (
+                    <IcMinus className="w-6 h-6 text-success" />
+                  ) : (
+                    <IcPLus className="w-6 h-6 text-neutral-dark" />
+                  )}
                 </div>
-                {isSelect ? (
-                  <IcMinus className="w-6 h-6 text-success" />
-                ) : (
-                  <IcPLus className="w-6 h-6 text-neutral-dark" />
-                )}
-              </div>
-            </>
-          );
-        }}
-      />
-    </div>
+              </>
+            );
+          }}
+        />
+      </div>
+    </HeroSection>
   );
 };
 

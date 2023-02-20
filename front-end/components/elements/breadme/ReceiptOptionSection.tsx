@@ -1,5 +1,6 @@
 import { POS2Img } from "assets/AssetUtil";
 import { Button } from "components/common/Button";
+import HeroSection from "components/common/HeroSection";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
@@ -9,9 +10,9 @@ import AppRoutes from "utils/routes";
 const ReceiptOptionSection = () => {
   const router = useRouter();
   return (
-    <div className="flex flex-col lg:flex-row-reverse">
-      <div className="flex flex-1 flex-col px-4 py-12 gap-8 md:px-8 md:py-14 lg:p-[100px] xl:p-[120px]">
-        <p className="txt-heading-small md:text-5xl md:font-extrabold md:leading-[56px]">
+    <div className="flex flex-col mx-auto max-w-[1200px] lg:flex-row-reverse lg:gap-[120px]">
+      <HeroSection className="flex-1 gap-8 ">
+        <p className="txt-heading-small md:txt-heading-large">
           <span className=" text-success">Various</span> Cash Discount Receipt
           Options
         </p>
@@ -26,7 +27,7 @@ const ReceiptOptionSection = () => {
           style={{ background: ColorUtils.success }}
           onClick={() => router.push(AppRoutes.BreadmeQuestionPage)}
         />
-      </div>
+      </HeroSection>
       <div className="flex flex-1">
         <Image src={POS2Img} alt="" className="w-full h-hull" />
       </div>

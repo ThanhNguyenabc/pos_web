@@ -2,8 +2,7 @@ import POSCard from "components/common/pos_card/POSCard";
 import TabList from "components/common/TabList";
 import { useRouter } from "next/router";
 import { CategoryList } from "utils/StringUtil";
-import React from "react";
-import { AppProps } from "next/app";
+import React, { useCallback } from "react";
 import Loading from "components/common/loading/Loading";
 import useSWR from "swr";
 import { getPOSByCategory } from "api_client/axios_client";
@@ -20,28 +19,35 @@ const ALLTABS = [
   ...CategoryList,
 ];
 
-const Products = (props: AppProps) => {
+const Products = ({ type }: { type?: string }) => {
   const router = useRouter();
-  const { type } = router.query;
-
-  const { data, error, isLoading } = useSWR(
+  const { data, isLoading } = useSWR(
     type || CategoryType.popular,
     getPOSByCategory
   );
 
-  const selectedTabIndex = ALLTABS.findIndex(
-    (item) => item.link == router.asPath
-  );
+  const selectedTabIndex = ALLTABS.findIndex((item) => item.type == type);
+
+  const onSelectTab = useCallback((index: number) => {
+    router.push(ALLTABS[index].link);
+  }, []);
+
+  const selectStyle = useCallback((isSelect: boolean) => {
+    return `border-2 rounded-lg  ${
+      isSelect
+        ? "bg-secondary text-white border-secondary"
+        : "text-neutral-900 bg-white"
+    }`;
+  }, []);
 
   return (
     <div className="flex flex-col pb-12 bg-neutral-100 flex-1">
       <div className=" flex flex-col py-12 bg-white mb-6 px-4 lg:items-center text-center md:py-14 md:px-8 md:gap-6">
         <TabList
           tabList={ALLTABS}
-          selectIndex={selectedTabIndex < 0 ? 0 : selectedTabIndex}
-          onSelectedIndex={(index) => {
-            router.push(ALLTABS[index].link);
-          }}
+          initSelectIndex={selectedTabIndex >= 0 ? selectedTabIndex : 0}
+          tabItemStyle={selectStyle}
+          onSelectedIndex={onSelectTab}
         />
         <p
           className="txt-heading-medium mt-10 md:mt-0 md:txt-heading-large m-0 p-0

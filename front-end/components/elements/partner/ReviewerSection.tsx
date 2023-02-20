@@ -1,5 +1,6 @@
 import { IcBack, IcRating, IcRightArrow } from "assets/AssetUtil";
 import Box from "components/common/Box";
+import HeroSection from "components/common/HeroSection";
 import IconButton from "components/common/IconButton";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
@@ -18,7 +19,7 @@ interface ReviewerSectionProps {
 const ReviewerSection = ({ reviews }: ReviewerSectionProps) => {
   const data = reviews[0];
   return (
-    <div className="flex flex-col w-full max-w-[1216px] mx-auto rounded-3xl bg-neutral-100 lg:h-[560px] lg:flex-row">
+    <div className="flex flex-col w-full mx-auto rounded-3xl bg-neutral-100 lg:flex-row">
       <Box className="flex gap-4 py-6 lg:p-16 lg:w-[50%]">
         {data.rating && (
           <div className="flex flex-row gap-2">

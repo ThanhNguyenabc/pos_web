@@ -1,23 +1,25 @@
 import React from "react";
 import ColorUtils from "utils/ColorUtils";
+
 interface POSIntroductionProps {
   pros: Array<string>;
   cons: Array<string>;
   desc?: string;
+  id: string;
 }
-const POSIntroduction = ({ pros, cons, desc }: POSIntroductionProps) => {
+const POSIntroduction = ({ pros, cons, desc, id }: POSIntroductionProps) => {
   return (
-    <div className="flex flex-col gap-10 md:gap-16">
+    <div id={id} className="flex flex-col gap-10 md:gap-16">
       <div className="flex flex-col gap-4 md:gap-6">
-        <p className="txt-heading-xsmal">Introduction</p>
+        <p className="txt-heading-xsmal  md:txt-heading-small">Introduction</p>
         <p className="txt-md text-neutral-700 md:text-xl">{desc}</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
         <div className="flex flex-col text-left txt-md md:text-xl">
           <p className=" font-semibold text-success ">PROS</p>
           {pros?.map((item, index) => (
             <div
-              className="flex flex-row items-center gap-2 mt-2 md:mt-4"
+              className="flex flex-row items-center gap-2 mt-2 md:mt-4 md:gap-4"
               key={`${index}-item-pros`}
             >
               <svg
@@ -41,7 +43,7 @@ const POSIntroduction = ({ pros, cons, desc }: POSIntroductionProps) => {
           <p className="font-semibold text-error md:text-xl">CONS</p>
           {cons?.map((item, index) => (
             <div
-              className="flex flex-row items-center gap-2 mt-2 md:mt-4"
+              className="flex flex-row items-center gap-2 mt-2 md:mt-4 md:gap-4"
               key={`${index}-item-cons`}
             >
               <svg
