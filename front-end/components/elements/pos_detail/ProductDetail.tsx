@@ -158,7 +158,7 @@ export const ProductDetail = ({
           />
         </div>
 
-        <Box className="px-0  gap-12 md:gap-16  max-w-[1000px] mx-auto">
+        <Box className="px-0 pb-14 gap-12 md:gap-16  max-w-[1000px] mx-auto">
           <POSIntroduction
             id={DetailTabs[0].id}
             pros={product.pros}

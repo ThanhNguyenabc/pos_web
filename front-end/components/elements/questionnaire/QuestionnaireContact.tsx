@@ -86,13 +86,6 @@ const QuestionnaireContact = () => {
           : "_",
     };
 
-    console.log("data -------------");
-
-    console.log("request data = ", data);
-    console.log(
-      HandHeldData[questionnaireStore.data.handHeldIndex || 0].content
-    );
-
     let suggestProduct = await submitQuestionnaireContact(data);
     productStore.setSuggestPOSList(suggestProduct);
     router.push(AppRoutes.SuggestPOSPage);

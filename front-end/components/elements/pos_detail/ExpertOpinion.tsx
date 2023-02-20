@@ -44,7 +44,7 @@ const ExpertOpinion = ({
       <p className="txt-heading-xsmal md:txt-heading-small">Expert Opinions</p>
       <div className="flex flex-col gap-6 md:gap-8 xl:flex-row xl:gap-16">
         <div className="flex w-full flex-row gap-8 md:gap-12">
-          <div className="h-[170px] w-[170px] md:w-[200px]">
+          <div className="h-[170px] w-[170px] md:w-[240px]">
             <CircularProgressbarWithChildren
               strokeWidth={5}
               maxValue={10}
