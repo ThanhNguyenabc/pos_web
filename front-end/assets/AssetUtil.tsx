@@ -50,6 +50,7 @@ export { default as PartnerImg } from "./images/partner.jpg";
 export { default as ReviewerImg } from "./images/reviewer.png";
 export { default as MobileLogoImg } from "./images/mobile_logo.png";
 export { default as HomePageReviewImg } from "./images/homepage_review_img.png";
+export { default as BreadMe2Img } from "./images/breadme_2.png";
 
 // export icons
 export { default as IcRating } from "./icons/ic_rating.svg";
