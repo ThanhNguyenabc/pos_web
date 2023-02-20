@@ -65,7 +65,7 @@ const POSCardTablet = ({
         <PricingBtn
           logo={ProductIcons[data.name]}
           title="Monthly"
-          desc={"$75/mo"}
+          desc={`$${data.monthly_price}/mo`}
           color={ColorUtils.secondary}
         />
       </div>

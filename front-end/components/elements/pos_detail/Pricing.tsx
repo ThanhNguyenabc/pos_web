@@ -11,7 +11,7 @@ const PricingPerType = ({
   desc: string;
 }) => {
   return (
-    <div className="flex flex-1 flex-col p-4 gap-2 border-2 border-neutral-100  rounded-2xl items-center justify-center text-center">
+    <div className="flex flex-1 flex-col p-4 gap-2 border-2 border-neutral-300  rounded-2xl items-center justify-center text-center">
       <p className=" text-secondary txt-sm-bold md:text-xl">{plan}</p>
       <p className="txt-heading-small md:txt-heading-large">${money}</p>
       <p className="txt-sm text-neutral-700 md:text-xl">{desc}</p>

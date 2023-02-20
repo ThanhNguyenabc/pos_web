@@ -58,7 +58,6 @@ const POSCardDesktop = ({
         <p className="text-sm text-left text-neutral-900">{data.overview}</p>
         <div className="flex items-center gap-4">
           {data.os_system?.map((item, index) => {
-          
             const Icon = getSystemIcon(item);
             return <Icon key={`item-os-${index}`} className="w-6 h-6" />;
           })}
@@ -121,7 +120,7 @@ const POSCardDesktop = ({
         <PricingBtn
           logo={ProductIcons[data.name]}
           title="Monthly"
-          desc={"$75/mo"}
+          desc={`$${data.monthly_price}/mo`}
           color={ColorUtils.secondary}
         />
       </div>
