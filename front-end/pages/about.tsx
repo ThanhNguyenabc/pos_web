@@ -62,57 +62,71 @@ const AboutPage = () => {
   };
 
   return (
-    <div className="flex flex-col">
-      <HeroSection className="flex flex-col px-4 py-12 md:px-8 md:py-14 lg:bg-neutral-100">
-        <p className="txt-heading-medium text-center md:text-start md:font-extrabold md:text-6xl md:leading-[68px]">
-          About Us
-        </p>
-        <p className="txt-md text-neutral-700 mt-4 mb-10 md:mt-6 md:mb-12 md:text-xl lg:max-w-[800px]">
-          Best POS offers a wide variety of products and services to assist our
-          merchants, as well as industry-tailored options that few competitors
-          can (or will) match. <br /> <br /> To complement our services, and to
-          make processing easier and affordable for our customers, we provide
-          cutting-edge credit card processing equipment, terminals, POS systems
-          and software – free of charge.
-        </p>
-        <div className="flex flex-col gap-4 md:flex-row">
-          <Button title="Find your POS" onClick={findPOS} classname="md:h-16" />
+    <>
+      <div className=" bg-neutral-100">
+        <HeroSection className="flex flex-col px-4 py-12 md:px-8 md:py-14">
+          <p className="txt-heading-medium text-center md:text-start md:font-extrabold md:text-6xl md:leading-[68px]">
+            About Us
+          </p>
+          <p className="txt-md text-neutral-700 mt-4 mb-10 md:mt-6 md:mb-12 md:text-xl lg:max-w-[800px]">
+            Best POS offers a wide variety of products and services to assist
+            our merchants, as well as industry-tailored options that few
+            competitors can (or will) match. <br /> <br /> To complement our
+            services, and to make processing easier and affordable for our
+            customers, we provide cutting-edge credit card processing equipment,
+            terminals, POS systems and software – free of charge.
+          </p>
+          <div className="flex flex-col gap-4 md:flex-row">
+            <Button
+              title="Find your POS"
+              onClick={findPOS}
+              classname="md:h-16"
+            />
+            <Button
+              title="Request A Demo"
+              classname="md:h-16"
+              isOutLine
+              rightIcon={<IcRightArrow className="text-xl" />}
+              onClick={getPOSFree}
+            />
+            <Button
+              title="Contact Us"
+              classname="md:h-16"
+              isOutLine
+              rightIcon={<IcRightArrow className=" text-xl" />}
+              onClick={goToContactPage}
+            />
+          </div>
+        </HeroSection>
+
+        <Image
+          src={AboutCoverImg}
+          alt="about-cover-image"
+          className="lg:bg-neutral-100  object-cover"
+        />
+      </div>
+
+      <HeroSection className=" text-center items-center gap-10 md:gap-12 lg:gap-20">
+        <div className="flex flex-col text-center w-full items-center">
+          <p className="txt-md-bold text-primary">Our Services</p>
+          <p className="txt-heading-small max-w-xl md:txt-heading-large mt-2">
+            <span className=" text-secondary">Unparalleled Service</span> via
+            E-mail & Phone.
+          </p>
+          <p className="txt-md max-w-3xl md:text-xl text-neutral-700 my-6 md:mt-8 md:mb-0">
+            Our team is dedicated in helping with the initial point-of-sale set
+            up as well as being your reoccurringtech support liaison with your
+            new point-of-sale system.
+          </p>
           <Button
-            title="Request A Demo"
-            classname="md:h-16"
-            isOutLine
-            rightIcon={<IcRightArrow className="text-xl" />}
-            onClick={getPOSFree}
-          />
-          <Button
-            title="Contact Us"
-            classname="md:h-16"
-            isOutLine
-            rightIcon={<IcRightArrow className=" text-xl" />}
-            onClick={goToContactPage}
+            classname="w-fit md:hidden"
+            title="Find your POS"
+            onClick={findPOS}
           />
         </div>
-      </HeroSection>
-
-      <Image
-        src={AboutCoverImg}
-        alt="about-cover-image"
-        className="lg:bg-neutral-100"
-      />
-      <div className="flex flex-col px-4 py-12 items-center text-center md:px-8 md:py-14 lg:p-[100px] xl:p-[120px]">
-        <p className="txt-md-bold text-primary">Our Services</p>
-        <p className="txt-heading-small mt-4 mb-6  max-w-xl md:mb-8 md:text-5xl md:font-extrabold md:leading-[56px]">
-          <span className=" text-secondary">Unparalleled Service</span> via
-          E-mail & Phone.
-        </p>
-        <p className="txt-md mb-6 max-w-3xl md:text-xl text-neutral-700">
-          Our team is dedicated in helping with the initial point-of-sale set up
-          as well as being your reoccurringtech support liaison with your new
-          point-of-sale system.
-        </p>
         <List
           data={ServiceData}
-          classname={"grid-cols-2 my-12 md:grid-cols-3 xl:my-20"}
+          classname={"grid-cols-2 md:grid-cols-3 gap-10 md:gap-12 lg:gap-20"}
           itemBuilder={(item, index, selectIndex) => {
             return (
               <div className="flex flex-col gap-4 items-center">
@@ -121,17 +135,17 @@ const AboutPage = () => {
                   alt="service-image"
                   className="w-20 h-20"
                 />
-                <p className="txt-md-bold">{item.title}</p>
+                <p className="txt-md-bold md:text-xl">{item.title}</p>
               </div>
             );
           }}
         />
         <Button
-          classname="w-fit md:h-16"
+          classname="hidden md:flex w-fit md:h-16"
           title="Find your POS"
           onClick={findPOS}
         />
-      </div>
+      </HeroSection>
       <MetricSection />
       <FooterCTA
         bgColor="bg-accent md:my-20"
@@ -160,7 +174,7 @@ const AboutPage = () => {
           "Speak with a consultant today to find he best POS for your business"
         }
       />
-    </div>
+    </>
   );
 };
 

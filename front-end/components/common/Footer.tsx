@@ -71,8 +71,8 @@ const Footer = () => {
   return (
     <div className="flex relative bg-neutral-900  text-neutral-400">
       <HeroSection className="py-12 gap-10 md:gap-16 md:py-14 lg:py-16 w-full ">
-        <footer className="w-full grid grid-cols-2 gap-8 md:grid-cols-4">
-          <div className="col-span-2 md:col-span-4 lg:col-span-1">
+        <footer className="w-full grid grid-cols-2 gap-8 gap-x-12 lg:gap-16 lg:grid-cols-4">
+          <div className="col-span-2 md:col-span-3 lg:col-span-1">
             <Image
               src={FooterLogo}
               alt="footer logo"
