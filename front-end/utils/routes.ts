@@ -9,7 +9,7 @@ class AppRoutes {
   static QuestionnairePage = "/questionnaire";
   static BreadmePage = "/bread-me";
   static BreadmeQuestionPage = "/bread-me-questions";
-  static POSDetailPage = "/pos-detail";
+  static POSDetailPage = "/product";
   static PartnerPage = "/partner";
   static SuggestPOSPage = "/suggest-pos";
 

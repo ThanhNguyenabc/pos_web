@@ -134,7 +134,7 @@ const AboutPage = () => {
       </div>
       <MetricSection />
       <FooterCTA
-        className="bg-accent md:my-20"
+        bgColor="bg-accent md:my-20"
         actions={
           <>
             <Button
