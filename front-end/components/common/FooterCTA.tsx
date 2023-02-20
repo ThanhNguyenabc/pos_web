@@ -1,5 +1,4 @@
 import React, { ReactElement, ReactNode } from "react";
-import { twMerge } from "tailwind-merge";
 import Box from "./Box";
 import HeroSection from "./HeroSection";
 
@@ -10,9 +9,15 @@ interface FooterCTAProps {
   actions?: ReactElement;
   className?: string;
 }
-export const FooterCTA = ({ title, actions, des, bgColor,className }: FooterCTAProps) => {
+export const FooterCTA = ({
+  title,
+  actions,
+  des,
+  bgColor,
+  className,
+}: FooterCTAProps) => {
   return (
-    <HeroSection className={`w-full px-0 lg:py-20 ${className}`}>
+    <HeroSection className={`w-full px-0 py-0 lg:py-20 ${className}`}>
       <Box
         className={`py-14 md:py-16 lg:py-20 items-center gap-6 md:rounded-2xl md:gap-8  lg:gap-10 first-letter: ${bgColor}`}
       >

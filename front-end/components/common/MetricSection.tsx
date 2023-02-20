@@ -12,9 +12,7 @@ const MetricSection = ({
 }: MetricSectionProps) => {
   return (
     <div className="bg-neutral-100 ">
-      <HeroSection
-        className={`gap-12 text-center items-center lg:gap-20`}
-      >
+      <HeroSection className={`gap-12 text-center items-center lg:gap-20`}>
         <p className="text-4xl max-w-3xl font-bold md:text-5xl md:font-extrabold md:leading-[56px]">
           {MetrictData.heading}
         </p>
@@ -31,9 +29,7 @@ const MetricSection = ({
                 >
                   {item.title}
                 </p>
-                <p className=" text-base leading-6 md:text-lg">
-                  {item.content}
-                </p>
+                <p className="txt-md-bold  md:text-lg">{item.content}</p>
               </>
             );
           }}

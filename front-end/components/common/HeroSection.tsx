@@ -13,7 +13,7 @@ const HeroSection = ({ className, children }: HeroSectionProps) => {
   return (
     <Box
       className={twMerge(
-        "max-w-[1200px] mx-auto self-center py-12 md:py-14 xl:px-0 lg:py-[120px] ",
+        " max-w-[1200px] mx-auto py-12 md:py-14 xl:px-0 lg:py-[120px]",
         className
       )}
     >

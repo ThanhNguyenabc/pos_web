@@ -35,24 +35,26 @@ interface ClientSectionProps {
 }
 const ClientSection = ({ body }: ClientSectionProps) => {
   return (
-    <HeroSection className="px-0 md:px-0 lg:px-0 gap-12 md:py-14 md:gap-12 lg:gap-16">
-      <div className=" gap-6 flex flex-col items-center text-center px-4 md:px-8 lg:w-[768px] mx-auto">
-        <p className="txt-heading-medium md:text-5xl md:font-extrabold ">
-          Our Top POS Systems
-        </p>
-        {body}
-      </div>
-      <div className="flex gap-12 md:gap-16 overflow-auto mx-auto">
+    <div className="flex flex-col gap-12 py-12 md:py-14 md:gap-12 lg:gap-16">
+      <HeroSection className="pb-0 md:pb-0 lg:pb-0">
+        <div className="flex flex-col gap-6 items-center text-center lg:w-[768px]">
+          <p className="txt-heading-medium md:text-5xl md:font-extrabold ">
+            Our Top POS Systems
+          </p>
+          {body}
+        </div>
+      </HeroSection>
+      <div className="flex flex-row  gap-10 md:gap-16 overflow-auto">
         {ClientList.map((item, index) => (
           <Image
             src={item}
             alt={`client-${index}`}
             key={`client-${index}`}
-            className="w-[180px] h-[90px]"
+            className="w-[120px] h-[60px] md:w-[180px] md:h-[90px]"
           />
         ))}
       </div>
-    </HeroSection>
+    </div>
   );
 };
 
