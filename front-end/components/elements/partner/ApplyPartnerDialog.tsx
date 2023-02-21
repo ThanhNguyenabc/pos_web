@@ -1,47 +1,22 @@
 import { applyPartner } from "api_client/axios_client";
-import { IcAmericanFlag } from "assets/AssetUtil";
 import { Button } from "components/common/Button";
+import ContactForm from "components/common/ContactForm";
 import HeaderWithBack from "components/common/HeaderWithBack";
-import Input from "components/common/Input";
 import Modal from "components/common/Modal";
-import PhoneNumberInput from "components/common/PhoneNumberInput";
 import ThanksYouForm from "components/common/thanksform";
 import { ContactInfo } from "models/contact_info";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import AppRoutes from "utils/routes";
-import { isValidEmail, isValidPhoneNumber } from "utils/StringUtil";
 
 export const ApplyPartnerDialogId = "apply-partner-dialog";
-
-const initialState: ContactInfo & {
-  nameError: string;
-  emailError: string;
-  phoneError: string;
-} = {
-  name: "",
-  phone: "",
-  email: "",
-  nameError: "",
-  emailError: "",
-  phoneError: "",
-};
 
 const ApplyPartnerDialog = () => {
   const [isSubmit, setSubmit] = useState(false);
   const router = useRouter();
 
-  const [contactInfo, setContactInfo] = useState<
-    ContactInfo & {
-      nameError: string;
-      emailError: string;
-      phoneError: string;
-    }
-  >(initialState);
-
   const onCloseForm = () => {
     setSubmit(false);
-    setContactInfo(initialState);
     document.getElementById(ApplyPartnerDialogId)?.click();
   };
 
@@ -50,45 +25,8 @@ const ApplyPartnerDialog = () => {
     router.push(AppRoutes.BreadmePage);
   };
 
-  const submitForm = async () => {
-    const { name = "", email = "", phone = "" } = contactInfo;
-
-    if (name.length <= 0) {
-      setContactInfo((prev) => ({
-        ...prev,
-        nameError: "Your name is not empty",
-      }));
-      return;
-    }
-    if (!isValidEmail(email)) {
-      setContactInfo((prev) => ({
-        ...prev,
-        emailError: "Your email is not correct",
-      }));
-      return;
-    }
-
-    if (!isValidPhoneNumber(phone)) {
-      setContactInfo((prev) => ({
-        ...prev,
-        phoneError: "Your phone number must be at least 10 numbers",
-      }));
-      return;
-    }
-
-    setContactInfo((prev) => ({
-      ...prev,
-      phoneError: "",
-      emailError: "",
-      nameError: "",
-    }));
-
-    await applyPartner({
-      name: name,
-      phone: phone,
-      email: email,
-    });
-
+  const submitForm = async (contact: ContactInfo) => {
+    await applyPartner(contact);
     setSubmit(true);
   };
 
@@ -104,50 +42,10 @@ const ApplyPartnerDialog = () => {
             <p className="text-center">
               Please provide your name and contact information.
             </p>
-            <div className="flex flex-col flex-1 mt-6 gap-6 mb-8">
-              <Input
-                label={"Your name"}
-                inputProps={{
-                  onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
-                    setContactInfo((prev) => ({
-                      ...prev,
-                      name: e.target.value,
-                    }));
-                  },
-                }}
-                errorMessage={
-                  contactInfo.nameError ? contactInfo.nameError : undefined
-                }
-              />
-              <Input
-                label="Email"
-                inputProps={{
-                  type: "email",
-                  onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
-                    setContactInfo((prev) => ({
-                      ...prev,
-                      email: e.target.value,
-                    }));
-                  },
-                }}
-                errorMessage={
-                  contactInfo.emailError ? contactInfo.emailError : undefined
-                }
-              />
-              <PhoneNumberInput
-                title={"Your Phone number"}
-                onChangeValue={(value) => {
-                  setContactInfo((prev) => ({
-                    ...prev,
-                    phone: value,
-                  }));
-                }}
-                errorMessage={
-                  contactInfo.phoneError ? contactInfo.phoneError : undefined
-                }
-              />
-            </div>
-            <Button title="Get started" onClick={submitForm} />
+            <ContactForm
+              onSubmitForm={submitForm}
+              submitBtnTitle="Get Started"
+            />
           </div>
         )}
         {isSubmit && (
