@@ -1,9 +1,6 @@
 import { submitQuestionnaireContact } from "api_client/axios_client";
-import { IcAmericanFlag } from "assets/AssetUtil";
-import { Button } from "components/common/Button";
-import ContactForm, { ContactInfo } from "components/common/ContactForm";
-import Input from "components/common/Input";
-import PhoneNumberInput from "components/common/PhoneNumberInput";
+import ContactForm from "components/common/ContactForm";
+import { ContactInfo } from "models/contact_info";
 import { QuestionnaireContact } from "models/questionnaire_contact";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
@@ -13,8 +10,6 @@ import AppRoutes from "utils/routes";
 import {
   BusinessTypes,
   HandHeldData,
-  isValidEmail,
-  isValidPhoneNumber,
   StationData,
   YesNoQuestion,
 } from "utils/StringUtil";
@@ -24,54 +19,9 @@ const QuestionnaireContact = () => {
   const productStore = useProductStore();
   const router = useRouter();
 
-  const [contactInfo, setContactInfo] = useState<
-    ContactInfo & {
-      nameError: string;
-      emailError: string;
-      phoneError: string;
-    }
-  >({
-    nameError: "",
-    emailError: "",
-    phoneError: "",
-  });
-
-  const submit = async () => {
-    const { name = "", email = "", phoneNumber = "" } = contactInfo;
-
-    if (name.length <= 0) {
-      setContactInfo((prev) => ({
-        ...prev,
-        nameError: "Contact name is not empty",
-      }));
-      return;
-    }
-    if (!isValidEmail(email)) {
-      setContactInfo((prev) => ({
-        ...prev,
-        emailError: "Your email is not correct",
-      }));
-      return;
-    }
-    if (!isValidPhoneNumber(phoneNumber)) {
-      setContactInfo((prev) => ({
-        ...prev,
-        phoneError: "Your phone number must be at least 10 numbers",
-      }));
-      return;
-    }
-
-    setContactInfo((prev) => ({
-      ...prev,
-      phoneError: "",
-      emailError: "",
-      nameError: "",
-    }));
-
+  const submit = async (contact: ContactInfo) => {
     const data: QuestionnaireContact = {
-      name: contactInfo.name || "",
-      email: contactInfo.email || "",
-      phoneNumber: contactInfo.phoneNumber || "",
+      contact: contact,
       business: BusinessTypes[questionnaireStore.data.businessId].title,
       haveSaleSystem: YesNoQuestion[questionnaireStore.data.saleSystemIndex],
       numberOfStations:
@@ -92,53 +42,7 @@ const QuestionnaireContact = () => {
   };
 
   return (
-    <div className={`flex flex-col gap-6`}>
-      <Input
-        label={"Contact name"}
-        inputProps={{
-          onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
-            setContactInfo((prev) => ({
-              ...prev,
-              name: e.target.value,
-            }));
-          },
-        }}
-        errorMessage={
-          contactInfo.nameError.length > 0 ? contactInfo.nameError : undefined
-        }
-      />
-
-      <Input
-        label="Email"
-        inputProps={{
-          type: "email",
-          onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
-            setContactInfo((prev) => ({
-              ...prev,
-              email: e.target.value,
-            }));
-          },
-        }}
-        errorMessage={
-          contactInfo.emailError.length > 0 ? contactInfo.emailError : undefined
-        }
-      />
-
-      <PhoneNumberInput
-        title={"Your Phone number"}
-        onChangeValue={(value) => {
-          setContactInfo((prev) => ({
-            ...prev,
-            phoneNumber: value,
-          }));
-        }}
-        errorMessage={
-          contactInfo.phoneError.length > 0 ? contactInfo.phoneError : undefined
-        }
-      />
-
-      <Button title="Submit" classname={` mt-4`} onClick={submit} />
-    </div>
+    <ContactForm onSubmitForm={submit} submitBtnClassName=" md:h-16 md:mt-10" />
   );
 };
 

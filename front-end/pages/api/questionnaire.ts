@@ -17,9 +17,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log("request");
-  console.log(req.method);
-
   switch (req.method) {
     case "POST":
       const {
@@ -28,13 +25,12 @@ export default async function handler(
         numberOfStations,
         numberOfHandheld,
         onDiscountProgram,
-        name,
-        email,
-        phoneNumber,
+        contact,
       } = req.body as QuestionnaireContact;
+      const { name, phone, email } = contact;
 
       await createFolder(questionnairePath).then((path) => {
-        const fileName = `${path}/${name.toLowerCase()}-${phoneNumber}.txt`;
+        const fileName = `${path}/${name?.toLowerCase()}-${phone}.txt`;
         let content = [
           `Business: ${business}`,
           `Own a point sale system: ${haveSaleSystem}`,
@@ -44,7 +40,7 @@ export default async function handler(
           `Customer information`,
           `Customer name: ${name}`,
           `Customer email: ${email}`,
-          `Customer phone number: ${phoneNumber}`,
+          `Customer phone number: ${phone}`,
         ];
         fs.writeFile(fileName, content.join("\n"), (err) => {});
       });
@@ -53,10 +49,8 @@ export default async function handler(
         businessTypeMapper[business as keyof typeof businessTypeMapper]
       },${haveSaleSystem.toLowerCase()},${numberOfStations},${numberOfHandheld},${onDiscountProgram.toLowerCase()}`;
 
-      console.log("suggest key ==== ", suggestKey);
       const suggestedProduct =
         POSSuggestion[suggestKey as keyof typeof POSSuggestion].products || [];
-      console.log("all product keys = ", suggestedProduct);
 
       let result: Array<object> = [];
 
