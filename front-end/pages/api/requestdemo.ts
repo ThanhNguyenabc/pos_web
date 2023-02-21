@@ -12,22 +12,16 @@ export default async function handler(
 
   switch (req.method) {
     case "POST":
-      const {
-    
-        email,
-        name,
-        personalPhone,
-        typeBusiness,
-      } = req.body as RequestDemoContact;
-
+      const { contact, typeBusiness } = req.body as RequestDemoContact;
+      const { name, phone, email } = contact;
       await createFolder(requestDemoPath).then((path) => {
-        const fileName = `${path}/${name.toLowerCase()}-${personalPhone}.txt`;
+        const fileName = `${path}/${name?.toLowerCase()}-${phone}.txt`;
         let content = [
           `Business type: ${typeBusiness}`,
           `Personal information`,
           `Customer name: ${name}`,
           `Customer email: ${email}`,
-          `Customer phone number: ${personalPhone}`,
+          `Customer phone number: ${phone}`,
         ];
         fs.writeFile(fileName, content.join("\n"), (err) => {});
       });

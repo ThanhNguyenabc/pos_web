@@ -24,6 +24,7 @@ const PhoneNumberInput = ({
       inputProps={{
         type: "tel",
         placeholder: "(555) 000-0000",
+        required : true,
         value: value,
         onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
           setPhoneNumber(formatUSAPhoneNumber(e.target.value));

@@ -33,6 +33,8 @@ import { StaticImageData } from "next/image";
 import { ReactComponentElement, ReactElement } from "react";
 import AppRoutes from "./routes";
 
+export const SuccessMessage = "Thank you for filling out the form";
+
 export const getSystemIcon = (os: SystemOs): React.ElementType => {
   switch (os) {
     case SystemOs.iOS:

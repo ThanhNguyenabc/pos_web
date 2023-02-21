@@ -1,6 +1,6 @@
+import { ContactInfo } from "./contact_info";
+
 export interface RequestDemoContact {
   typeBusiness: string;
-  email: string;
-  name: string;
-  personalPhone: string;
+  contact: ContactInfo;
 }
