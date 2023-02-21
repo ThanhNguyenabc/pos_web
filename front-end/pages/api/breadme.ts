@@ -13,17 +13,17 @@ export default async function handler(
   switch (req.method) {
     case "POST":
       const {
-        phone,
-        email,
-        name,
+        contact,
         creditVolume,
         discountProgram,
         numberOfStations,
         currentUseSaleSystem,
       } = req.body as BreadMeContact;
 
+      const { name, phone, email } = contact || {};
+
       await createFolder(breadMePath).then((path) => {
-        const fileName = `${path}/${name.toLowerCase()}-${phone}.txt`;
+        const fileName = `${path}/${name?.toLowerCase()}-${phone}.txt`;
         let content = [
           `Credit volume: ${creditVolume}`,
           `On discount program: ${discountProgram}`,
