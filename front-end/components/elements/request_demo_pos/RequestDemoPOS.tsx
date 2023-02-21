@@ -3,24 +3,25 @@ import SelectedList from "components/common/SelectedList";
 import React, { useState } from "react";
 import Image from "next/image";
 import ThanksYouForm from "components/common/thanksform";
-import Modal from "components/common/Modal";
-import Input from "components/common/Input";
 import { BusinessTypes } from "utils/StringUtil";
 import { submitForDemoPOS } from "api_client/axios_client";
 import { ContactInfo } from "models/contact_info";
 import ContactForm from "components/common/ContactForm";
+import "animate.css";
+import Drawer from "react-modern-drawer";
+import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
 
 export const RequestDemoModalId = "requestDemoModal";
 
 const RequestDemoPOS = () => {
+  const { isOpen, toogleDialog } = useOpenDemoPOSDialog();
   const [isSubmit, setSubmit] = useState(false);
-
   const [businessType, setBusinessType] = useState("");
 
   const onClose = () => {
     setSubmit(false);
     setBusinessType("");
-    document.getElementById(RequestDemoModalId)?.click();
+    toogleDialog();
   };
 
   const submitForm = async (data: ContactInfo) => {
@@ -34,12 +35,12 @@ const RequestDemoPOS = () => {
   const PAGE = isSubmit ? (
     <ThanksYouForm />
   ) : (
-    <div className="flex flex-col px-4 py-5">
+    <div className="flex w-full flex-col px-4 py-5 md:px-10">
       <p className="txt-md-bold mb-4 md:mb-6">Type of business</p>
       <SelectedList
         data={BusinessTypes}
         selectIndex={0}
-        classname={" p-0 md:grid-cols-2"}
+        classname={" p-0 md:grid-cols-2 lg:grid-cols-4"}
         itemBuilder={(item, index: number) => {
           return (
             <div className="flex w-full md:h-[152px] flex-row items-center p-3 gap-4 md:flex-col md:justify-center">
@@ -63,12 +64,18 @@ const RequestDemoPOS = () => {
 
   return (
     <>
-      <Modal modalId={RequestDemoModalId}>
-        <div className="flex flex-col w-full">
-          <HeaderWithBack title="Request a Demo" onClose={onClose} />
-          {PAGE}
-        </div>
-      </Modal>
+      <Drawer
+        open={isOpen}
+        direction="right"
+        onClose={toogleDialog}
+        style={{
+          width: "w-full",
+        }}
+        className="w-full md:w-[60%] max-w-[720px] overflow-auto"
+      >
+        <HeaderWithBack title="Request a Demo" onClose={onClose} />
+        {PAGE}
+      </Drawer>
     </>
   );
 };

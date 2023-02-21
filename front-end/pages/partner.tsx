@@ -1,9 +1,4 @@
-import {
-  IcRightArrow,
-  PartnerImg,
-  POS2Img,
-  ReviewerImg,
-} from "assets/AssetUtil";
+import { PartnerImg, ReviewerImg } from "assets/AssetUtil";
 import Box from "components/common/Box";
 import { Button } from "components/common/Button";
 import ClientSection from "components/common/ClientSection";
@@ -11,12 +6,11 @@ import { FooterCTA } from "components/common/FooterCTA";
 import HeroSection from "components/common/HeroSection";
 import List from "components/common/List";
 import MetricSection from "components/common/MetricSection";
-import ApplyPartnerDialog, {
-  ApplyPartnerDialogId,
-} from "components/elements/partner/ApplyPartnerDialog";
+import ApplyPartnerDialog from "components/elements/partner/ApplyPartnerDialog";
 import ReviewerSection from "components/elements/partner/ReviewerSection";
 import Image from "next/image";
 import React from "react";
+import Drawer from "react-modern-drawer";
 
 const PartnerProgram = [
   {
@@ -41,38 +35,52 @@ const PartnerProgram = [
   },
 ];
 
-const openApplyForm = () => {
-  document.getElementById(ApplyPartnerDialogId)?.click();
-};
-
 const PartnerPage = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const toggleDrawer = () => {
+    setIsOpen((prevState) => !prevState);
+  };
   return (
     <>
-      <ApplyPartnerDialog />
-      <HeroSection className=" lg:max-w-[1440px] p-0 md:p-0 lg:p-0 lg:h-[640px] lg:flex-row ">
-        <HeroSection className="flex-1">
-          <div className="flex flex-col gap-4 text-center md:gap-6 md:text-start lg:max-w-[600px] m-auto bg-gren">
-            <p className={`txt-heading-large md:text-6xl md:leading-[68px]`}>
-              Partner with BestPOS
-            </p>
-            <p className="txt-md-bold  lg:text-start md:text-xl">
-              The Program is designed specifically for agents, offering you
-              unparalleled flexibility and in-depth resources that can’t be
-              matched by anyone in the industry.
-            </p>
-            <Button
-              classname="md:h-16 md:w-fit mt-6"
-              title="Become a Partner"
-              onClick={openApplyForm}
-            />
+      <Drawer
+        open={isOpen}
+        direction="right"
+        onClose={toggleDrawer}
+        style={{
+          width: "w-full",
+        }}
+        className="mt-20 md:mt-0"
+      >
+        <ApplyPartnerDialog onClose={toggleDrawer} />
+      </Drawer>
+      <div>
+        <HeroSection className=" lg:max-w-[1440px] p-0 md:p-0 lg:p-0 lg:h-[640px] lg:flex-row">
+          <HeroSection className="flex-1">
+            <div className="flex flex-col gap-4 text-center md:gap-6 lg:text-left lg:max-w-[460px] m-auto">
+              <p className={`txt-heading-large md:text-6xl md:leading-[68px]`}>
+                Partner with BestPOS
+              </p>
+              <p className="txt-md-bold lg:text-start md:text-xl">
+                The Program is designed specifically for agents, offering you
+                unparalleled flexibility and in-depth resources that can’t be
+                matched by anyone in the industry.
+              </p>
+              <div className="flex flex-col self-center gap-4 md:gap-6 w-full md:w-fit md:flex-row lg:self-start">
+                <Button
+                  classname="md:h-16"
+                  title="Become a Partner"
+                  onClick={toggleDrawer}
+                />
+              </div>
+            </div>
+          </HeroSection>
+
+          <div className="flex flex-1 lg:mt-10">
+            <Image src={PartnerImg} alt="" className="aspect-[4/3]" />
           </div>
         </HeroSection>
-
-        <div className="flex flex-1 lg:mt-10">
-          <Image src={PartnerImg} alt="" className="aspect-[4/3] w-full" />
-        </div>
-      </HeroSection>
-
+      </div>
       <HeroSection className="gap-12">
         <h3 className="text-center txt-heading-medium md:txt-heading-large">
           Agent Program
@@ -111,7 +119,6 @@ const PartnerPage = () => {
           ]}
         />
       </HeroSection>
-
       <ClientSection />
       <FooterCTA
         bgColor="bg-neutral-100"
@@ -119,7 +126,7 @@ const PartnerPage = () => {
           <Button
             classname="w-full md:w-fit md:h-16"
             title="Become a Partner"
-            onClick={openApplyForm}
+            onClick={toggleDrawer}
           />
         }
         title={<h3>Ready to join our partner program?</h3>}

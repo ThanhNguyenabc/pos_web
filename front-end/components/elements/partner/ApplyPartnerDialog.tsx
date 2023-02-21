@@ -2,22 +2,19 @@ import { applyPartner } from "api_client/axios_client";
 import { Button } from "components/common/Button";
 import ContactForm from "components/common/ContactForm";
 import HeaderWithBack from "components/common/HeaderWithBack";
-import Modal from "components/common/Modal";
 import ThanksYouForm from "components/common/thanksform";
 import { ContactInfo } from "models/contact_info";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import AppRoutes from "utils/routes";
 
-export const ApplyPartnerDialogId = "apply-partner-dialog";
-
-const ApplyPartnerDialog = () => {
+const ApplyPartnerDialog = ({ onClose }: { onClose: () => void }) => {
   const [isSubmit, setSubmit] = useState(false);
   const router = useRouter();
 
   const onCloseForm = () => {
     setSubmit(false);
-    document.getElementById(ApplyPartnerDialogId)?.click();
+    onClose?.();
   };
 
   const navigateToBreadme = () => {
@@ -31,9 +28,9 @@ const ApplyPartnerDialog = () => {
   };
 
   return (
-    <Modal modalId={ApplyPartnerDialogId}>
-      <div className="flex flex-col h-full">
-        <HeaderWithBack title="" onClose={onCloseForm} />
+    <>
+      <HeaderWithBack title="" onClose={onCloseForm} />
+      <div className=" flex flex-col  w-full lg:w-[500px] mx-auto px-4 md:px-8 lg:px-12">
         {!isSubmit && (
           <div className=" flex flex-col p-4 h-full">
             <p className="txt-heading-small mb-4 text-center">
@@ -60,7 +57,7 @@ const ApplyPartnerDialog = () => {
           </div>
         )}
       </div>
-    </Modal>
+    </>
   );
 };
 
