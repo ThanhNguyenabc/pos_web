@@ -42,11 +42,11 @@ const Home = () => {
                 className={`txt-heading-large md:text-6xl md:leading-[68px] text-white`}
               >
                 Real advice from
-                <span className="text-secondary"> real people</span>
+                <span className="text-secondary"> real consultants</span>
               </p>
               <p className="txt-md-bold text-white lg:text-start md:text-xl">
-                Speak with a consultant today to find the best POS for your
-                business
+                Speak with a consultant today to find the best point-of-sale
+                for your business
               </p>
               <div className="flex flex-col self-center gap-4 md:gap-6 w-full md:w-fit md:flex-row lg:self-start">
                 <Button
@@ -148,11 +148,11 @@ const Home = () => {
         title={
           <h3>
             Real advice
-            <span className="text-secondary "> from real people</span>
+            <span className="text-secondary "> from real consultants</span>
           </h3>
         }
         des={
-          "Speak with a consultant today to find he best POS for your business"
+          "Speak with a consultant today to find the best point-of-sale for your business"
         }
       />
     </>

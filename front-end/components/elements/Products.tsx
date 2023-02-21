@@ -57,8 +57,8 @@ const Products = ({ type }: { type?: string }) => {
           Business
         </p>
         <p className="txt-md-bold md:text-xl text-neutral-700 mt-4 md:mt-0">
-          We’ve put together a list of the best POS systems for Pizzeria &
-          Restaurants to help your business. Let us help you find the right fit.
+          We've put together a list of the best point-of-sale systems for your
+          business. Let us help you pick the right one!
         </p>
       </div>
 

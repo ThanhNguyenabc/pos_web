@@ -76,6 +76,16 @@ const AboutPage = () => {
             services, and to make processing easier and affordable for our
             customers, we provide cutting-edge credit card processing equipment,
             terminals, POS systems and software – free of charge.
+            <br /> <br />
+            If you're not well-versed in technology, dealing with software,
+            hardware, and networks can be quite challenging. It's best to work
+            with a POS specialist and that's what BestPOS is here for. The
+            variety of products available on the market can be overwhelming,
+            making research very confusing. The POS industry is highly
+            competitive, with hundreds of products available, making it
+            challenging to navigate. With our expertise and consulting, we will
+            find you the point-of-sale system best suited for you and your
+            business.
           </p>
           <div className="flex flex-col gap-4 md:flex-row">
             <Button
@@ -168,11 +178,11 @@ const AboutPage = () => {
         title={
           <h3>
             Real advice
-            <span className="text-secondary "> from real people</span>
+            <span className="text-secondary "> from real consultants</span>
           </h3>
         }
         des={
-          "Speak with a consultant today to find he best POS for your business"
+          "Speak with a consultant today to find the best point-of-sale for your business"
         }
       />
     </>

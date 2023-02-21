@@ -24,7 +24,7 @@ const FeatureData = [
   },
   {
     image: SupportImg,
-    title: "Hardware integrity",
+    title: "POS Support",
   },
   {
     image: DashboardImg,

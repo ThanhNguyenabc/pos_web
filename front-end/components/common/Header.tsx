@@ -74,7 +74,7 @@ const Header = () => {
       <div className="flex flex-row justify-center items-center">
         <IcPhone className="text-lg" />
         <div className="ml-4">
-          <p className="txt-sm text-neutral-600">Support 24/7</p>
+          <p className="txt-sm text-neutral-600">Support</p>
           <p className="txt-md-bold lg:text-xl">1-888-410-2188</p>
         </div>
         <Button
