@@ -1,17 +1,8 @@
-import { IcAmericanFlag } from "assets/AssetUtil";
-import Image from "next/image";
-import { type } from "os";
-import React from "react";
+import { ContactInfo } from "models/contact_info";
+import React, { FormEvent, useState } from "react";
 import { Button } from "./Button";
 import Input from "./Input";
-
-export interface ContactInfo {
-  name?: string;
-  email?: string;
-  phoneNumber?: string;
-  zipCode?: string;
-  message?: string;
-}
+import PhoneNumberInput from "./PhoneNumberInput";
 
 interface ContactFormProps {
   nameTitle?: string;
@@ -19,28 +10,58 @@ interface ContactFormProps {
   showEmail?: boolean;
   showZipCode?: boolean;
   showMessage?: boolean;
-  onDataChanged?: (info: ContactInfo) => {};
   classname?: string;
   focusColor?: string;
+  onSubmitForm: (data: ContactInfo) => void;
+  submitBtnClassName?: string;
+  submitBtnTitle?: string;
+  submitBackground?: string;
 }
 
 const ContactForm = ({
   showMessage = false,
   showZipCode = false,
   showEmail = true,
+  onSubmitForm,
   nameTitle,
   phoneTitle,
   classname,
-  onDataChanged,
+  submitBtnClassName,
+  submitBtnTitle,
+  submitBackground,
   focusColor,
 }: ContactFormProps) => {
+  const [contactInfo, setContactInfo] = useState<ContactInfo>({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+    zipcode: "",
+  });
+
+  const submitFormEvent = (e: FormEvent<HTMLFormElement>) => {
+    console.log("event ");
+    e.preventDefault();
+    onSubmitForm && onSubmitForm(contactInfo);
+  };
+
   return (
-    <div className={`flex flex-col gap-6 ${classname}`}>
+    <form
+      className={`flex flex-col gap-6 ${classname}`}
+      onSubmit={submitFormEvent}
+    >
       <Input
         focusColor={focusColor}
         label={nameTitle || "Your name"}
         inputProps={{
-          onChange: (data) => {},
+          required: true,
+          value: contactInfo?.name,
+          onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
+            setContactInfo((prev) => ({
+              ...prev,
+              name: e.target.value,
+            }));
+          },
         }}
       />
       {showEmail && (
@@ -48,19 +69,26 @@ const ContactForm = ({
           focusColor={focusColor}
           label="Email"
           inputProps={{
+            required: true,
             type: "email",
-            onChange: (data) => {},
+            value: contactInfo?.email,
+            onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
+              setContactInfo((prev) => ({
+                ...prev,
+                email: e.target.value,
+              }));
+            },
           }}
         />
       )}
       <div className="flex flex-row gap-6">
-        <Input
-          focusColor={focusColor}
-          label={phoneTitle || "Your Phone number"}
-          leftIcon={<IcAmericanFlag className="text-2xl" />}
-          inputProps={{
-            type: "tel",
-            onChange: (data) => {},
+        <PhoneNumberInput
+          title={phoneTitle || "Your Phone number"}
+          onChangeValue={(value) => {
+            setContactInfo((prev) => ({
+              ...prev,
+              phone: value,
+            }));
           }}
         />
         {showZipCode && (
@@ -68,8 +96,14 @@ const ContactForm = ({
             focusColor={focusColor}
             label="Zip Code"
             inputProps={{
+              value: contactInfo?.zipcode,
               maxLength: 5,
-              onChange: (data) => {},
+              onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
+                setContactInfo((prev) => ({
+                  ...prev,
+                  zipcode: e.target.value,
+                }));
+              },
             }}
           />
         )}
@@ -77,16 +111,30 @@ const ContactForm = ({
       {showMessage && (
         <div className="flex flex-col gap-2">
           <label className="txt-sm-bold">
-            <span className="label-text">{"Message"}</span>
+            <span className="label-text">Message</span>
           </label>
           <textarea
-            className="textarea textarea-secondary text-base p-3"
+            value={contactInfo?.message}
+            className="textarea textarea-secondary border-neutral-300 focus:outline-none focus:shadow-lg focus:border-secondary border-2 text-base p-3 h-[134px]"
             placeholder="Leave us a message"
+            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
+              setContactInfo((prev) => ({
+                ...prev,
+                message: e.target.value,
+              }));
+            }}
           ></textarea>
         </div>
       )}
-
-    </div>
+      <Button
+        title={submitBtnTitle || "Submit"}
+        classname={`mt-4 ${submitBtnClassName}`}
+        style={{
+          background: submitBackground,
+        }}
+        type="submit"
+      />
+    </form>
   );
 };
 

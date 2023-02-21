@@ -1,7 +1,7 @@
 import React, { HtmlHTMLAttributes, ReactElement } from "react";
 import { twMerge } from "tailwind-merge";
-import ColorUtils from "utils/ColorUtils";
-interface ButtonProps {
+
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isOutLine?: boolean;
   leftIcon?: ReactElement;
   rightIcon?: ReactElement;
@@ -19,6 +19,7 @@ export const Button = ({
   title,
   classname = "",
   style,
+  ...any
 }: ButtonProps) => {
   return (
     <button
@@ -31,6 +32,7 @@ export const Button = ({
             : "btn-primary border-none"
         }  ${classname} `
       )}
+      {...any}
     >
       <div className="flex flex-row w-full h-auto items-center justify-center">
         {leftIcon && <div className="mr-2">{leftIcon}</div>}
