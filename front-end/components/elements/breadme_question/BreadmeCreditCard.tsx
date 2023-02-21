@@ -13,7 +13,7 @@ const BreadmeCreditCard = () => {
       itemListClassName="hover:border-success"
       itemBuilder={(item, index) => (
         <p className="text-center txt-md-bold md:text-xl p-4">
-          {item} USD per month
+          {item} per month
         </p>
       )}
       onItemSelected={(selectIndex) => {

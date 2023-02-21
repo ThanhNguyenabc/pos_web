@@ -13,9 +13,11 @@ import CommonQuestion from "components/elements/breadme/CommonQuestion";
 import { useRouter } from "next/router";
 import AppRoutes from "utils/routes";
 import HeroSection from "components/common/HeroSection";
+import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
 
 const BreadmePage = () => {
   const router = useRouter();
+  const { toogleDialog } = useOpenDemoPOSDialog();
 
   const navigateToBreadmeQuestion = () => {
     router.push(AppRoutes.BreadmeQuestionPage);
@@ -54,9 +56,7 @@ const BreadmePage = () => {
                     color: "inherit",
                   }}
                   title="Request a Demo"
-                  onClick={() =>
-                    document.getElementById(RequestDemoModalId)?.click()
-                  }
+                  onClick={toogleDialog}
                 />
               </div>
             </div>

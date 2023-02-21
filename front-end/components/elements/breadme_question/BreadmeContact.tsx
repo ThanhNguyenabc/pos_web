@@ -1,9 +1,5 @@
 import { submitBreadme } from "api_client/axios_client";
-import { IcAmericanFlag } from "assets/AssetUtil";
-import { Button } from "components/common/Button";
 import ContactForm from "components/common/ContactForm";
-import Input from "components/common/Input";
-import PhoneNumberInput from "components/common/PhoneNumberInput";
 import { ContactInfo } from "models/contact_info";
 import { BreadmeContext } from "pages/bread-me-questions";
 import React, { useContext, useState } from "react";

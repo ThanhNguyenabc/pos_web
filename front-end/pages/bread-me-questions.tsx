@@ -2,7 +2,6 @@ import { BreadMeImg, IcBack } from "assets/AssetUtil";
 import IconButton from "components/common/IconButton";
 import Image from "next/image";
 import React, { useState } from "react";
-import { ContactInfo } from "components/common/ContactForm";
 import BreadmeIntroduction from "components/elements/breadme_question/BreadmeIntroduction";
 import BreadmeCreditCard from "components/elements/breadme_question/BreadmeCreditCard";
 import BreadmeDiscountQuestion from "components/elements/breadme_question/BreadmeDiscount";
@@ -11,6 +10,7 @@ import BreadmeSaleSystem from "components/elements/breadme_question/BreadmeSaleS
 import BreadmeContact from "components/elements/breadme_question/BreadmeContact";
 import ThanksYouForm from "components/common/thanksform";
 import Progress from "components/common/progress";
+import { ContactInfo } from "models/contact_info";
 
 type BreadmeState = {
   showQuestions: boolean;
