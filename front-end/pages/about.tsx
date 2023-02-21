@@ -16,6 +16,7 @@ import MetricSection from "components/common/MetricSection";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
+import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
 import AppRoutes from "utils/routes";
 
 const ServiceData = [
@@ -46,6 +47,7 @@ const ServiceData = [
 ];
 const AboutPage = () => {
   const router = useRouter();
+  const { toogleDialog } = useOpenDemoPOSDialog();
 
   const findPOS = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -53,8 +55,7 @@ const AboutPage = () => {
   };
 
   const getPOSFree = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    router.push(AppRoutes.FreePOSPage);
+    toogleDialog();
   };
 
   const goToContactPage = () => {
