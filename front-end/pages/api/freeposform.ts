@@ -12,25 +12,21 @@ export default async function handler(
 
   switch (req.method) {
     case "POST":
-      const {
-        businessphone,
-        businessname,
-        email,
-        name,
-        personalPhone,
-        creditCardVolume,
-      } = req.body as FreePOSContact;
+      const { businessContact, personalContact, creditCardVolume } =
+        req.body as FreePOSContact;
 
       await createFolder(freePOSPath).then((path) => {
-        const fileName = `${path}/${name.toLowerCase()}-${personalPhone}.txt`;
+        const fileName = `${path}/${personalContact.name?.toLowerCase()}-${
+          personalContact.phone
+        }.txt`;
         let content = [
           `Credit card volume: ${creditCardVolume}`,
-          `Business name: ${businessname}`,
-          `Business phone: ${businessphone}`,
+          `Business name: ${businessContact.name}`,
+          `Business phone: ${businessContact.phone}`,
           `Personal information`,
-          `Customer name: ${name}`,
-          `Customer email: ${email}`,
-          `Customer phone number: ${personalPhone}`,
+          `Customer name: ${personalContact.name}`,
+          `Customer email: ${personalContact.email}`,
+          `Customer phone number: ${personalContact.phone}`,
         ];
         fs.writeFile(fileName, content.join("\n"), (err) => {});
       });

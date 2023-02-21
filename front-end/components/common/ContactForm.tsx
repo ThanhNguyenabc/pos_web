@@ -1,5 +1,5 @@
 import { ContactInfo } from "models/contact_info";
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, ReactNode, useState } from "react";
 import { Button } from "./Button";
 import Input from "./Input";
 import PhoneNumberInput from "./PhoneNumberInput";
@@ -16,6 +16,8 @@ interface ContactFormProps {
   submitBtnClassName?: string;
   submitBtnTitle?: string;
   submitBackground?: string;
+  showSubmitButton?: boolean;
+  children?: ReactNode;
 }
 
 const ContactForm = ({
@@ -30,6 +32,8 @@ const ContactForm = ({
   submitBtnTitle,
   submitBackground,
   focusColor,
+  showSubmitButton = true,
+  children,
 }: ContactFormProps) => {
   const [contactInfo, setContactInfo] = useState<ContactInfo>({
     name: "",
@@ -69,7 +73,7 @@ const ContactForm = ({
           focusColor={focusColor}
           label="Email"
           inputProps={{
-            required: true,
+            required: showEmail,
             type: "email",
             value: contactInfo?.email,
             onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -126,14 +130,17 @@ const ContactForm = ({
           ></textarea>
         </div>
       )}
-      <Button
-        title={submitBtnTitle || "Submit"}
-        classname={`mt-4 ${submitBtnClassName}`}
-        style={{
-          background: submitBackground,
-        }}
-        type="submit"
-      />
+      {showSubmitButton && (
+        <Button
+          title={submitBtnTitle || "Submit"}
+          classname={`mt-4 ${submitBtnClassName}`}
+          style={{
+            background: submitBackground,
+          }}
+          type="submit"
+        />
+      )}
+      {children}
     </form>
   );
 };

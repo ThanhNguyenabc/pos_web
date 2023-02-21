@@ -1,6 +1,6 @@
 import fs from "fs";
 export const questionnairePath = "form_data/questionnaire";
-export const freePOSPath = "form_data/freepos";
+export const freePOSPath = "form_data/get_freepos";
 export const contactPath = "form_data/contact";
 export const requestDemoPath = "form_data/request_demo";
 export const breadMePath = "form_data/breadme";

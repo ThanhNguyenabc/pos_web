@@ -1,4 +1,3 @@
-import { ContactInfo } from "components/common/ContactForm";
 import ThanksYouForm from "components/common/thanksform";
 import React, { useState } from "react";
 import BusinessInfo from "./BusinessInfo";
@@ -7,6 +6,7 @@ import PersonalInfo from "./PersonalInfo";
 import HeaderWithBack from "components/common/HeaderWithBack";
 import Modal from "components/common/Modal";
 import Progress from "components/common/progress";
+import { ContactInfo } from "models/contact_info";
 
 interface FindPOSData {
   creditVolumeId?: number;

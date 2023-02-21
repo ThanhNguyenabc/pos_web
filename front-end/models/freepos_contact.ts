@@ -1,8 +1,7 @@
+import { ContactInfo } from "./contact_info";
+
 export interface FreePOSContact {
   creditCardVolume: string;
-  businessname: string;
-  businessphone: string;
-  email: string;
-  name: string;
-  personalPhone: string;
+  businessContact: ContactInfo;
+  personalContact: ContactInfo;
 }

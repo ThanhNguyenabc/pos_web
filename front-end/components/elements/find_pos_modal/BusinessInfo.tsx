@@ -1,102 +1,48 @@
-import { IcAmericanFlag, IcBack, IcRightArrow } from "assets/AssetUtil";
+import { IcBack, IcRightArrow } from "assets/AssetUtil";
 import { Button } from "components/common/Button";
-import Input from "components/common/Input";
-import PhoneNumberInput from "components/common/PhoneNumberInput";
+import ContactForm from "components/common/ContactForm";
+import { ContactInfo } from "models/contact_info";
 import React, { useState } from "react";
-import { isValidPhoneNumber } from "utils/StringUtil";
 import { FindPOSModalContext } from "./FindPOSModal";
 
 const BusinessInfo = () => {
   const value = React.useContext(FindPOSModalContext);
 
-  const [businessContact, setBusinessContact] = useState<{
-    businessName: string;
-    businessPhone: string;
-    nameError: string;
-    phoneError: string;
-  }>({
-    businessName: value.data?.businessName || "",
-    businessPhone: value.data?.businessPhone || "",
-    nameError: "",
-    phoneError: "",
-  });
-
-  const nextClick = () => {
-    const { businessName, businessPhone } = businessContact;
-
-    if (businessName.length <= 0) {
-      setBusinessContact((preData) => ({
-        ...preData,
-        nameError: "Your business name is not empty",
-      }));
-      return;
-    }
-
-    if (!isValidPhoneNumber(businessPhone)) {
-      setBusinessContact((preData) => ({
-        ...preData,
-        phoneError: "Your phone number must be at least 10 numbers",
-      }));
-      return;
-    }
-    setBusinessContact((preData) => ({
-      ...preData,
-      nameError: "",
-      phoneError: "",
-    }));
+  const nextClick = (data: ContactInfo) => {
+    const { name, phone } = data;
     value.setData({
       ...value.data,
-      businessPhone: businessPhone,
-      businessName: businessName,
+      businessPhone: phone,
+      businessName: name,
     });
     value.nextPage();
   };
+
   return (
     <div className="flex flex-col gap-6">
-      <Input
-        label={"Company name"}
-        inputProps={{
-          value: businessContact.businessName,
-          onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
-            setBusinessContact((preData) => ({
-              ...preData,
-              businessName: e.target.value,
-            }));
-          },
-        }}
-        errorMessage={
-          businessContact.nameError ? businessContact.nameError : undefined
-        }
-      />
-
-      <PhoneNumberInput
-        title={"Business Phone number"}
-        onChangeValue={(value) => {
-          setBusinessContact((preData) => ({
-            ...preData,
-            businessPhone: value,
-          }));
-        }}
-        errorMessage={
-          businessContact.phoneError ? businessContact.phoneError : undefined
-        }
-      />
-
-      <div className={`flex flex-row gap-4 `}>
-        <Button
-          title="Back"
-          isOutLine={true}
-          classname={`mt-16 md:text-xl`}
-          leftIcon={<IcBack />}
-          onClick={() => value.onBack()}
-        />
-        <Button
-          title={"Next"}
-          rightIcon={<IcRightArrow />}
-          classname={`flex-1 mt-16 md:text-xl`}
-          onClick={nextClick}
-        />
-      </div>
+      <ContactForm
+        showSubmitButton={false}
+        onSubmitForm={nextClick}
+        showEmail={false}
+        nameTitle="Company name"
+        phoneTitle="Business Phone number"
+      >
+        <div className={`flex flex-row gap-4 `}>
+          <Button
+            title="Back"
+            isOutLine={true}
+            classname={`mt-16 md:text-xl`}
+            leftIcon={<IcBack />}
+            onClick={() => value.onBack()}
+          />
+          <Button
+            title={"Next"}
+            type="submit"
+            rightIcon={<IcRightArrow />}
+            classname={`flex-1 mt-16 md:text-xl`}
+          />
+        </div>
+      </ContactForm>
     </div>
   );
 };
