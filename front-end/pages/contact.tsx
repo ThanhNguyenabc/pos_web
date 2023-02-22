@@ -1,10 +1,8 @@
 import { IcLocation, IcMail, IcPhone } from "assets/AssetUtil";
 import React, { ReactElement } from "react";
-import { SuccessMessage } from "utils/StringUtil";
 import { submitContact } from "api_client/axios_client";
 import { ContactInfo } from "models/contact_info";
 import ContactForm from "components/common/ContactForm";
-import { useAlert } from "react-alert";
 
 const ContactItem = ({
   icon,
@@ -30,11 +28,8 @@ const ContactItem = ({
 };
 
 const ContactPage = () => {
-  const alert = useAlert();
-
   const sendContactInfo = async (data: ContactInfo) => {
     await submitContact(data);
-    alert.success(SuccessMessage);
   };
 
   return (
