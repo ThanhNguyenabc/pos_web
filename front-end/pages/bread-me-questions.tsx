@@ -10,7 +10,7 @@ import BreadmeSaleSystem from "components/elements/breadme_question/BreadmeSaleS
 import BreadmeContact from "components/elements/breadme_question/BreadmeContact";
 import Progress from "components/common/progress";
 import { ContactInfo } from "models/contact_info";
-import ThanksYouForm from "components/common/thanksform";
+import ThanksYouForm from "components/common/ThanksForm";
 
 type BreadmeState = {
   showQuestions: boolean;

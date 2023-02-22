@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "./Button";
 import Modal from "./Modal";
-import ThanksYouForm from "./thanksform";
+import ThanksYouForm from "./ThanksForm";
 export const ThankyouModalId = "thankyouModal";
 
 const ThankYouDialog = () => {

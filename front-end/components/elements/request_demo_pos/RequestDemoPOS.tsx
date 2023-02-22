@@ -9,7 +9,7 @@ import ContactForm from "components/common/ContactForm";
 import "animate.css";
 import Drawer from "react-modern-drawer";
 import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
-import ThanksYouForm from "components/common/thanksform";
+import ThanksYouForm from "components/common/ThanksForm";
 
 export const RequestDemoModalId = "requestDemoModal";
 

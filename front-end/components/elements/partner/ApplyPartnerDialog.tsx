@@ -2,7 +2,7 @@ import { applyPartner } from "api_client/axios_client";
 import { Button } from "components/common/Button";
 import ContactForm from "components/common/ContactForm";
 import HeaderWithBack from "components/common/HeaderWithBack";
-import ThanksYouForm from "components/common/thanksform";
+import ThanksYouForm from "components/common/ThanksForm";
 import { ContactInfo } from "models/contact_info";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
