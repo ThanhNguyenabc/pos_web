@@ -67,8 +67,8 @@ const ContactPage = () => {
             <ContactItem
               icon={<IcPhone className="w-5 h-5" />}
               title="Phone"
-              desc="Mon-Fri from 8am to 5pm."
-              subDesc="+1 888-410-2188"
+              desc="Mon-Fri from 9:30AM - 4:30PM"
+              subDesc="888-410-2188"
             />
           </div>
         </div>
