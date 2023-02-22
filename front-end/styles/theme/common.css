@@ -6,7 +6,7 @@
   @apply flex flex-row  justify-items-center;
 }
 
-.container-screen {
+.container-content {
   @apply container mx-auto;
 }
 
