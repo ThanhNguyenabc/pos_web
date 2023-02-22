@@ -40,25 +40,27 @@ const BlogDetail = () => {
     },
   };
   return (
-    <>
-      <Box className="max-w-[800px] mx-auto">
+    <div className="flex flex-col container-content">
+      <Box className="max-w-[768px] mx-auto">
         <div className="flex flex-row items-center txt-md-bold text-neutral-600 gap-4 self-center md:text-xl">
           <p>{author}</p>•<p>{date}</p>
         </div>
-        <h2 className="txt-heading-medium font-extrabold text-center my-4 md:txt-heading-xlarge md:my-8">
+        <h2 className="txt-heading-medium font-extrabold text-center my-4 md:txt-heading-xlarge md:my-6">
           {data?.title.rendered}
         </h2>
         <div className="flex flex-col text-neutral-700 txt-md text-justify md:text-xl">
           {HTMLReactParser(data?.content?.rendered || "", options)}
         </div>
       </Box>
-      {data && (
-        <Box className="lg:px-[120px] my-12 md:mt-20 md:mb-0 ">
-          <Writer date={date} author={author} />
-        </Box>
-      )}
+      <>
+        {data && (
+          <Box className="lg:px-[120px] my-12 md:mt-20 md:mb-0 ">
+            <Writer date={date} author={author} />
+          </Box>
+        )}
+      </>
       <Subcriber />
-    </>
+    </div>
   );
 };
 
