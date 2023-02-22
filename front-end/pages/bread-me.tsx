@@ -17,7 +17,7 @@ import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
 
 const BreadmePage = () => {
   const router = useRouter();
-  const { toogleDialog } = useOpenDemoPOSDialog();
+  const { toogleOpen: toogleDialog } = useOpenDemoPOSDialog();
 
   const navigateToBreadmeQuestion = () => {
     router.push(AppRoutes.BreadmeQuestionPage);
@@ -26,9 +26,9 @@ const BreadmePage = () => {
   return (
     <>
       <div className="flex flex-col bg-green-100 lg:flex-row">
-        <HeroSection className=" lg:max-w-[1440px] p-0 md:p-0 lg:p-0 lg:h-[640px] lg:flex-row">
+        <div className="flex flex-col max-w-[1320px] lg:h-[640px] lg:flex-row xl:ml-[calc((100%-1200px)/2)]">
           <HeroSection className="flex-1">
-            <div className="flex flex-col gap-6 text-center lg:text-left lg:max-w-[500px] m-auto">
+            <div className="flex flex-col gap-6 text-center lg:text-left lg:max-w-[500px]">
               <div className="flex flex-col gap-2 items-center lg:items-start">
                 <Badge>Breadme partnership</Badge>
                 <p
@@ -64,7 +64,7 @@ const BreadmePage = () => {
           <div className="flex flex-1">
             <Image src={BillingImg} alt="" className="aspect-[4/3]" />
           </div>
-        </HeroSection>
+        </div>
       </div>
 
       <div className="bg-neutral-100">

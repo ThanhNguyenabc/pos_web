@@ -47,7 +47,7 @@ const ServiceData = [
 ];
 const AboutPage = () => {
   const router = useRouter();
-  const { toogleDialog } = useOpenDemoPOSDialog();
+  const { toogleOpen: toogleDialog } = useOpenDemoPOSDialog();
 
   const findPOS = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });

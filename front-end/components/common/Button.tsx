@@ -24,13 +24,18 @@ export const Button = ({
   return (
     <button
       style={style}
-      onClick={onClick}
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        onClick && onClick();
+      }}
       className={twMerge(
         `btn text-base normal-case md:h-14 md:text-lg md:px-5 lg:text-xl  ${
           isOutLine
             ? "btn-outline hover:bg-white hover:text-black bg-white border-neutral-300 border-2"
             : "btn-primary border-none"
-        }  ${classname} `
+        }`,
+        classname
       )}
       {...any}
     >

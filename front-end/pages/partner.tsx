@@ -55,9 +55,9 @@ const PartnerPage = () => {
         <ApplyPartnerDialog onClose={toggleDrawer} />
       </Drawer>
       <div>
-        <HeroSection className=" lg:max-w-[1440px] p-0 md:p-0 lg:p-0 lg:h-[640px] lg:flex-row">
+        <div className="flex flex-col max-w-[1320px] lg:h-[640px] lg:flex-row xl:ml-[calc((100%-1200px)/2)]">
           <HeroSection className="flex-1">
-            <div className="flex flex-col gap-4 text-center md:gap-6 lg:text-left lg:max-w-[460px] m-auto">
+            <div className="flex flex-col gap-4 text-center md:gap-6 lg:text-left lg:max-w-[460px]">
               <p className={`txt-heading-large md:text-6xl md:leading-[68px]`}>
                 Partner with BestPOS
               </p>
@@ -77,9 +77,9 @@ const PartnerPage = () => {
           </HeroSection>
 
           <div className="flex flex-1 lg:mt-10">
-            <Image src={PartnerImg} alt="" className="aspect-[4/3]" />
+            <Image src={PartnerImg} alt="" className="aspect-[4/3] w-full" />
           </div>
-        </HeroSection>
+        </div>
       </div>
       <HeroSection className="gap-12">
         <h3 className="text-center txt-heading-medium md:txt-heading-large">

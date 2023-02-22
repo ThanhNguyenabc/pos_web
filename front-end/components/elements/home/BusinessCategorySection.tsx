@@ -14,7 +14,7 @@ const BusinessCategorySection = () => {
   return (
     <HeroSection className="gap-10 md:gap-8 lg:gap-16">
       <div className="flex justify-between">
-        <p className="txt-heading-medium max-w-2xl flex-1 text-center md:txt-heading-large">
+        <p className="txt-heading-medium max-w-2xl flex-1 text-center md:txt-heading-large lg:text-start">
           <span className="text-secondary">Point-of-sale</span> for all business
           categories
         </p>
@@ -37,9 +37,7 @@ const BusinessCategorySection = () => {
               key={`category-${index}`}
             >
               <Image src={item.img} alt="pizza" width={120} height={120} />
-              <h2 className="txt-md-bold text-center">
-                {item.title}
-              </h2>
+              <h2 className="txt-md-bold text-center">{item.title}</h2>
             </div>
           );
         }}

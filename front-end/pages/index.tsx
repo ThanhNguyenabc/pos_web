@@ -35,9 +35,9 @@ const Home = () => {
   return (
     <>
       <div className=" bg-gradient-to-b from-[#FF5A22] to-[#FFA722]">
-        <HeroSection className=" lg:max-w-[1440px] p-0 md:p-0 lg:p-0 lg:h-[640px] lg:flex-row">
+        <div className="flex flex-col max-w-[1320px] lg:h-[640px] lg:flex-row xl:ml-[calc((100%-1200px)/2)]">
           <HeroSection className="flex-1">
-            <div className="flex flex-col gap-4 text-center md:gap-6 lg:text-left lg:max-w-[460px] m-auto">
+            <div className="flex flex-col gap-4 text-center md:gap-6 lg:text-left lg:max-w-[460px]">
               <p
                 className={`txt-heading-large md:text-6xl md:leading-[68px] text-white`}
               >
@@ -45,8 +45,8 @@ const Home = () => {
                 <span className="text-secondary"> real consultants</span>
               </p>
               <p className="txt-md-bold text-white lg:text-start md:text-xl">
-                Speak with a consultant today to find the best point-of-sale
-                for your business
+                Speak with a consultant today to find the best point-of-sale for
+                your business
               </p>
               <div className="flex flex-col self-center gap-4 md:gap-6 w-full md:w-fit md:flex-row lg:self-start">
                 <Button
@@ -71,7 +71,7 @@ const Home = () => {
           <div className="flex flex-1 lg:mt-10">
             <Image src={BannerImage} alt="" className="aspect-[4/3]" />
           </div>
-        </HeroSection>
+        </div>
       </div>
 
       <div className="grid grid-cols-3 px-4 py-3 md:py-6 md:px-8 mx-auto gap-6 md:gap-[58px] lg:gap-[82px]">

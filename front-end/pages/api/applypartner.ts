@@ -15,7 +15,7 @@ export default async function handler(
       const { email, name, phone } = req.body as ContactInfo;
 
       await createFolder(agentPath).then((path) => {
-        const fileName = `${path}/${name.toLowerCase()}-${phone}.txt`;
+        const fileName = `${path}/${name?.toLowerCase()}-${phone}.txt`;
         let content = [
           `Agent information`,
           `Agent name: ${name}`,

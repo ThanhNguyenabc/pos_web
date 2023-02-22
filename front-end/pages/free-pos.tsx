@@ -56,15 +56,15 @@ const openFindPOSModal = () => {
 };
 
 const FreePOS = () => {
-  const { toogleDialog } = useOpenDemoPOSDialog();
+  const { toogleOpen: toogleDialog } = useOpenDemoPOSDialog();
 
   console.log("renderrrr");
   return (
     <>
       <div className="bg-secondary">
-        <HeroSection className=" lg:max-w-[1440px] p-0 md:p-0 lg:p-0  lg:flex-row">
+        <div className="flex flex-col max-w-[1320px]  lg:flex-row xl:ml-[calc((100%-1200px)/2)]">
           <HeroSection className="flex-1">
-            <div className="flex flex-col gap-4 text-center md:gap-6 lg:text-left lg:max-w-[460px] m-auto">
+            <div className="flex flex-col gap-4 text-center md:gap-6 lg:text-left lg:max-w-[460px]">
               <p
                 className={`txt-heading-medium text-white md:font-extrabold md:text-6xl md:leading-[68px]`}
               >
@@ -94,7 +94,7 @@ const FreePOS = () => {
           <div className="flex flex-1 lg:mt-10">
             <Image src={POS2Img} alt="" className="aspect-[4/3]" />
           </div>
-        </HeroSection>
+        </div>
       </div>
 
       <HeroSection className="gap-10 md:gap-16">

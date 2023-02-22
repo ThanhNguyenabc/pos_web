@@ -14,7 +14,7 @@ import ThanksYouForm from "components/common/thanksform";
 export const RequestDemoModalId = "requestDemoModal";
 
 const RequestDemoPOS = () => {
-  const { isOpen, toogleDialog } = useOpenDemoPOSDialog();
+  const { isOpen, toogleOpen: toogleDialog } = useOpenDemoPOSDialog();
   const [isSubmit, setSubmit] = useState(false);
   const [businessType, setBusinessType] = useState("");
 
@@ -43,10 +43,10 @@ const RequestDemoPOS = () => {
         classname={" p-0 md:grid-cols-2 lg:grid-cols-4"}
         itemBuilder={(item, index: number) => {
           return (
-            <div className="flex w-full md:h-[152px] flex-row items-center p-3 gap-4 md:flex-col md:justify-center">
+            <div className="flex w-full h-full flex-row items-center p-3 gap-4 md:flex-col md:justify-center">
               <Image
                 src={item.img}
-                className="w-[84px] h-[56px] md:w-[120px] md:h-20"
+                className="w-[84px]  md:w-[120px]"
                 alt="image"
               />
               <p className="txt-md-bold md:text-center ">{item.title}</p>

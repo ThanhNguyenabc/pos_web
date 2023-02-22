@@ -40,7 +40,7 @@ const ContactPage = () => {
   return (
     <>
       <div className="flex  flex-col py-12 items-center gap-12 md:gap-14 lg:gap-20 md:py-14">
-        <div className="flex flex-col w-full px-4 md:px-8 gap-10">
+        <div className="flex flex-col container-content w-full px-4 md:px-8 gap-10">
           <div className="flex flex-col gap-4 items-center text-center">
             <p className="txt-md-bold text-primary">Contact us</p>
             <p className="txt-heading-medium md:font-extrabold md:text-6xl">
