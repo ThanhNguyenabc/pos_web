@@ -8,9 +8,9 @@ import BreadmeDiscountQuestion from "components/elements/breadme_question/Breadm
 import BreadmeStation from "components/elements/breadme_question/BreadmeStation";
 import BreadmeSaleSystem from "components/elements/breadme_question/BreadmeSaleSystem";
 import BreadmeContact from "components/elements/breadme_question/BreadmeContact";
-import ThanksYouForm from "components/common/thanksform";
 import Progress from "components/common/progress";
 import { ContactInfo } from "models/contact_info";
+import ThanksYouForm from "components/common/thanksform";
 
 type BreadmeState = {
   showQuestions: boolean;

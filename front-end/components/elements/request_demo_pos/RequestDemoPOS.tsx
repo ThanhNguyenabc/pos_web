@@ -2,7 +2,6 @@ import HeaderWithBack from "components/common/HeaderWithBack";
 import SelectedList from "components/common/SelectedList";
 import React, { useState } from "react";
 import Image from "next/image";
-import ThanksYouForm from "components/common/thanksform";
 import { BusinessTypes } from "utils/StringUtil";
 import { submitForDemoPOS } from "api_client/axios_client";
 import { ContactInfo } from "models/contact_info";
@@ -10,6 +9,7 @@ import ContactForm from "components/common/ContactForm";
 import "animate.css";
 import Drawer from "react-modern-drawer";
 import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
+import ThanksYouForm from "components/common/thanksform";
 
 export const RequestDemoModalId = "requestDemoModal";
 

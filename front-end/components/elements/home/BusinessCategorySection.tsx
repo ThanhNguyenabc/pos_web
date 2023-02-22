@@ -14,7 +14,7 @@ const BusinessCategorySection = () => {
   return (
     <HeroSection className="gap-10 md:gap-8 lg:gap-16">
       <div className="flex justify-between">
-        <p className="txt-heading-medium max-w-2xl flex-1 text-center md:text-left md:text-5xl md:font-extrabold md:leading-[56px]">
+        <p className="txt-heading-medium max-w-2xl flex-1 text-center md:txt-heading-large">
           <span className="text-secondary">Point-of-sale</span> for all business
           categories
         </p>
@@ -33,13 +33,13 @@ const BusinessCategorySection = () => {
         itemBuilder={(item, index) => {
           return (
             <div
-              className="card items-center p-4 bg-neutral-100 h-[168px] md:h-[200px] md:p-6"
+              className="flex flex-col rounded-2xl items-center justify-center p-4 border-2 h-full border-neutral-100"
               key={`category-${index}`}
             >
-              <Image src={item.img} alt="pizza" width={120} />
-              <div className="flex justify-items-center items-center h-full mt-2">
-                <h2 className="txt-md-bold text-center ">{item.title}</h2>
-              </div>
+              <Image src={item.img} alt="pizza" width={120} height={120} />
+              <h2 className="txt-md-bold text-center">
+                {item.title}
+              </h2>
             </div>
           );
         }}

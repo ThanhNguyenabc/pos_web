@@ -127,7 +127,6 @@ const Home = () => {
         }
       />
       <FooterCTA
-        className=" pt-0 md:pt-0 lg:pt-0"
         bgColor="bg-accent"
         actions={
           <>
