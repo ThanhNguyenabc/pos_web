@@ -7,6 +7,7 @@ import { getSystemIcon, ProductIcons } from "utils/StringUtil";
 import PricingBtn from "../PricingBtn";
 import ColorUtils from "utils/ColorUtils";
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
+import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
 
 const RecommendPOSCardMobile = ({
   data,
@@ -14,6 +15,8 @@ const RecommendPOSCardMobile = ({
   classname = "",
   onCardClick,
 }: POSCardProps) => {
+  const { toogleOpen } = useOpenDemoPOSDialog();
+
   return (
     <div
       onClick={onCardClick}
@@ -71,6 +74,7 @@ const RecommendPOSCardMobile = ({
           title="Monthly"
           color={ColorUtils.secondary}
           desc={`$${data.monthly_price}/month`}
+          onClick={toogleOpen}
         />
       </div>
     </div>

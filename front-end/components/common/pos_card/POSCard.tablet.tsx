@@ -7,6 +7,7 @@ import ColorUtils from "utils/ColorUtils";
 import { POSCardProps } from "./POSCard";
 import { getSystemIcon, ProductIcons } from "utils/StringUtil";
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
+import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
 
 const POSCardTablet = ({
   overallRating,
@@ -14,11 +15,13 @@ const POSCardTablet = ({
   classname,
   onCardClick,
 }: POSCardProps) => {
+  const { toogleOpen } = useOpenDemoPOSDialog();
+
   return (
     <div
       onClick={onCardClick}
       className={twMerge(
-        `hidden w-full h-[244px] bg-white card gap-6 flex-row rounded-2xl p-6 drop-shadow-lg cursor-pointer md:flex lg:hidden ${classname}`
+        `hidden w-full h-[244px] border-2 border-b-neutral-300 hover:border-secondary bg-white card gap-6 flex-row rounded-2xl p-6 drop-shadow-lg cursor-pointer md:flex lg:hidden ${classname}`
       )}
     >
       <div className=" h-[60px] w-[60px]">
@@ -60,13 +63,14 @@ const POSCardTablet = ({
           })}
         </div>
       </div>
-      <div className="flex gap-2 md:gap-4">
+      <div className="flex gap-2 md:gap-4 h-full">
         <BreadMeBtn />
         <PricingBtn
           logo={ProductIcons[data.name]}
           title="Monthly"
           desc={`$${data.monthly_price}/mo`}
           color={ColorUtils.secondary}
+          onClick={toogleOpen}
         />
       </div>
     </div>

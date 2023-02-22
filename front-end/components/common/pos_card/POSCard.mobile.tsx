@@ -6,6 +6,7 @@ import { getSystemIcon, ProductIcons } from "utils/StringUtil";
 import ColorUtils from "utils/ColorUtils";
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
 
 export const POSCardMobile = ({
   overallRating,
@@ -15,10 +16,10 @@ export const POSCardMobile = ({
   return (
     <div
       onClick={onCardClick}
-      className={`card w-full bg-white pr-3 pt-3 inline-flex flex-col rounded-2xl drop-shadow-lg cursor-pointer md:hidden`}
+      className={`flex flex-col w-full bg-white border-2 border-b-neutral-300 hover:border-secondary rounded-2xl drop-shadow-lg cursor-pointer md:hidden`}
     >
-      <div className="gap-3 flex flex-col items-start">
-        <div className="w-full pl-3 flex flex-row h-10 items-center justify-between ">
+      <div className="flex flex-col p-4">
+        <div className="w-full  flex flex-row h-10 items-center justify-between ">
           <Image
             src={ProductIcons[data.name]}
             alt="logo-pos"
@@ -56,18 +57,17 @@ export const POSCardMobile = ({
             </div>
           </div>
         </div>
-        <p className="w-full pl-3 text-sm text-neutral-700 ">{data.overview}</p>
-        <div className="flex w-full flex-row h-8 justify-between ">
-          <div className="flex flex-row bg-success flex-1 items-center justify-center gap-1 text-white rounded-bl-2xl">
-            <IcFreePOS className="text-2xl" />
-            <p className=" text-xs font-semibold ">Get a POS FREE</p>
-          </div>
-          <div className="flex bg-secondary flex-1 items-center justify-center text-white rounded-tr-2xl">
-            <p className=" text-xs font-semibold ">${data.monthly_price} Monthly</p>
-          </div>
-          <div className="flex w-12 justify-end items-center pr-3 ">
-            <IcChervonRight className="text-xs text-neutral-600 " />
-          </div>
+        <p className="w-full  text-sm text-neutral-700 ">{data.overview}</p>
+      </div>
+      <div className="flex w-full flex-row h-[40px] justify-between rounded-bl-2xl rounded-br-2xl">
+        <div className="flex flex-row bg-success flex-1 items-center justify-center gap-1 text-white rounded-bl-2xl">
+          <IcFreePOS className="text-2xl" />
+          <p className=" text-xs font-semibold ">Get a POS FREE</p>
+        </div>
+        <div className="flex bg-secondary flex-1 items-center justify-center text-white  rounded-br-2xl">
+          <p className=" text-xs font-semibold ">
+            ${data.monthly_price} Monthly
+          </p>
         </div>
       </div>
     </div>

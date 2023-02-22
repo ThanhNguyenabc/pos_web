@@ -9,6 +9,7 @@ import { getPOSByCategory } from "api_client/axios_client";
 import { CategoryType } from "models/category_type";
 import AppRoutes from "utils/routes";
 import { getOverallRating } from "models/product.model";
+import Box from "components/common/Box";
 
 const ALLTABS = [
   {
@@ -42,17 +43,14 @@ const Products = ({ type }: { type?: string }) => {
 
   return (
     <div className="flex flex-col pb-12 bg-neutral-100 flex-1">
-      <div className=" flex flex-col py-12 bg-white mb-6 px-4 lg:items-center text-center md:py-14 md:px-8 md:gap-6">
+      <div className=" flex flex-col py-6 bg-white mb-6 px-4 lg:items-center text-center md:py-14 md:px-8 md:gap-6">
         <TabList
           tabList={ALLTABS}
           initSelectIndex={selectedTabIndex >= 0 ? selectedTabIndex : 0}
           tabItemStyle={selectStyle}
           onSelectedIndex={onSelectTab}
         />
-        <p
-          className="txt-heading-medium mt-10 md:mt-0 md:txt-heading-large m-0 p-0
-          "
-        >
+        <p className="txt-heading-medium mt-10 md:mt-0 md:txt-heading-large">
           <span className="text-secondary"> Best POS Systems</span> for Your
           Business
         </p>
@@ -62,7 +60,7 @@ const Products = ({ type }: { type?: string }) => {
         </p>
       </div>
 
-      <div className="flex flex-1 flex-col px-4 gap-4 md:px-8 md:gap-6 items-center">
+      <div className="flex flex-1 container-content flex-col px-4 gap-4 md:px-8 md:gap-6 items-center">
         {isLoading ? <Loading /> : <div></div>}
 
         {data?.map((item, index) => {

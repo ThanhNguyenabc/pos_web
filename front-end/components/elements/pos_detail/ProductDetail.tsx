@@ -10,6 +10,7 @@ import { Specification } from "models/specification";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
+import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
 import ColorUtils from "utils/ColorUtils";
 import AppRoutes from "utils/routes";
 import { getSystemIcon, ProductIcons } from "utils/StringUtil";
@@ -63,6 +64,7 @@ export const ProductDetail = ({
   product,
   specification,
 }: ProductDetailProps) => {
+  const { toogleOpen: toogleDialog } = useOpenDemoPOSDialog();
   const overallRate = getOverallRating(product.expert_opinion);
   const router = useRouter();
   const rateItems = [
@@ -91,13 +93,15 @@ export const ProductDetail = ({
   return (
     <Box className=" flex flex-col  lg:flex-row lg:gap-10 ">
       <div className="flex flex-col py-6 h-fit gap-6  text-center md:gap-8 md:flex-row lg:flex-col lg:py-0">
-        <div className="flex flex-col flex-1 gap-2 items-center md:items-start md:text-left">
+        <div className="flex flex-col flex-1 gap-2 items-center md:items-start md:text-left lg:items-center lg:max-w-[400px]">
           <Image
             src={ProductIcons[product.name]}
             alt=""
             className="w-[160px] h-[80px]"
           />
-          <p className="txt-md text-neutral-700">{product.overview}</p>
+          <p className="txt-md text-neutral-700 lg:text-center">
+            {product.overview}
+          </p>
           <div className="flex items-center gap-3">
             {product.os_system?.map((item, index) => {
               const Icon = getSystemIcon(item);
@@ -114,9 +118,7 @@ export const ProductDetail = ({
               title="Monthly"
               desc={`$${product.monthly_price}/month`}
               color={ColorUtils.secondary}
-              onClick={() =>
-                document.getElementById(RequestDemoModalId)?.click()
-              }
+              onClick={toogleDialog}
             />
           </div>
           <div className="flex flex-row gap-3 items-center">
