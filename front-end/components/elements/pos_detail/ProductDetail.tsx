@@ -2,7 +2,6 @@ import { BreadMe2Img, IcRightArrow } from "assets/AssetUtil";
 import Box from "components/common/Box";
 import { BreadMeBtn } from "components/common/BreadmeBtn";
 import { Button } from "components/common/Button";
-import HeroSection from "components/common/HeroSection";
 import PricingBtn from "components/common/PricingBtn";
 import TabList from "components/common/TabList";
 import { getOverallRating, Product } from "models/product.model";

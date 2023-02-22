@@ -6,7 +6,6 @@ import { getSystemIcon, ProductIcons } from "utils/StringUtil";
 import ColorUtils from "utils/ColorUtils";
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
 
 export const POSCardMobile = ({
   overallRating,
