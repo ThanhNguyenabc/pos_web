@@ -6,10 +6,14 @@ import ThankYouDialog from "components/common/ThankYouDialog";
 import RequestDemoPOS from "components/elements/request_demo_pos/RequestDemoPOS";
 import FindPOSModal from "components/elements/find_pos_modal/FindPOSModal";
 import Head from "next/head";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
+      <ToastContainer hideProgressBar />
+
       <Head>
         <title>Best pos</title>
         <meta name="best pos" />

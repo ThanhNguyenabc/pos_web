@@ -1,15 +1,5 @@
-.flex-column {
-  @apply flex flex-col justify-items-center;
-}
-
-.flex-rows {
-  @apply flex flex-row  justify-items-center;
-}
 
 .container-content {
   @apply container mx-auto;
 }
 
-.tab-active {
-  @apply bg-black;
-}

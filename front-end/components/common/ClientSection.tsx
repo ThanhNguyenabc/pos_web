@@ -35,7 +35,7 @@ interface ClientSectionProps {
 }
 const ClientSection = ({ body }: ClientSectionProps) => {
   return (
-    <div className="flex flex-col gap-12 py-12 md:py-14 md:gap-12 lg:gap-16">
+    <div className="flex flex-col gap-12 py-12 md:py-14 md:gap-12 lg:gap-16 overflow-hidden">
       <HeroSection className="pb-0 md:pb-0 lg:pb-0">
         <div className="flex flex-col gap-6 items-center text-center lg:w-[768px] m-auto">
           <p className="txt-heading-medium md:text-5xl md:font-extrabold ">
@@ -44,7 +44,7 @@ const ClientSection = ({ body }: ClientSectionProps) => {
           {body}
         </div>
       </HeroSection>
-      <div className="flex flex-row  gap-10 md:gap-16 overflow-auto">
+      <div className="flex  flex-row  gap-10 md:gap-16 animate-marquee-infinite">
         {ClientList.map((item, index) => (
           <Image
             src={item}

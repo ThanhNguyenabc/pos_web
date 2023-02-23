@@ -3,6 +3,8 @@ import React, { ReactElement } from "react";
 import { submitContact } from "api_client/axios_client";
 import { ContactInfo } from "models/contact_info";
 import ContactForm from "components/common/ContactForm";
+import { toast } from "react-toastify";
+import { SuccessMessage } from "utils/StringUtil";
 
 const ContactItem = ({
   icon,
@@ -30,6 +32,7 @@ const ContactItem = ({
 const ContactPage = () => {
   const sendContactInfo = async (data: ContactInfo) => {
     await submitContact(data);
+    toast.success(SuccessMessage);
   };
 
   return (
