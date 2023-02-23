@@ -128,6 +128,16 @@ export const applyPartner = async (data: ContactInfo) => {
     });
 };
 
+export const subscribeBlog = async (data: ContactInfo) => {
+  return await AxiosInstance.post<ApiResponse<boolean>>("/subscribe_mail", data)
+    .then((res) => {
+      return res.data.data;
+    })
+    .catch((error) => {
+      console.log("error = ", error);
+    });
+};
+
 export const getBlogPosts = async () => {
   return await AxiosInstance.get<Array<Blog>>("/posts", {
     baseURL: process.env.NEXT_PUBLIC_WORDPRESS_HOST,

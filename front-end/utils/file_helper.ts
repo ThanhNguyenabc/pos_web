@@ -3,6 +3,7 @@ export const questionnairePath = "form_data/questionnaire";
 export const freePOSPath = "form_data/get_freepos";
 export const contactPath = "form_data/contact";
 export const requestDemoPath = "form_data/request_demo";
+export const subscribePath = "form_data/subscribe blog";
 export const breadMePath = "form_data/breadme";
 export const agentPath = "form_data/agent";
 
