@@ -90,9 +90,9 @@ export const ProductDetail = ({
   ];
 
   return (
-    <Box className=" flex flex-col  lg:flex-row lg:gap-10 ">
-      <div className="flex flex-col py-6 h-fit gap-6  text-center md:gap-8 md:flex-row lg:flex-col lg:py-0">
-        <div className="flex flex-col flex-1 gap-2 items-center md:items-start md:text-left lg:items-center lg:max-w-[400px]">
+    <Box className=" flex flex-col  lg:flex-row lg:gap-10">
+      <div className="flex flex-col py-6 h-fit gap-6  text-center md:gap-8 md:flex-row lg:flex-col lg:py-0 lg:w-[400px]">
+        <div className="flex flex-col flex-1 gap-2 items-center md:items-start md:text-left lg:items-center ">
           <Image
             src={ProductIcons[product.name]}
             alt=""
@@ -109,8 +109,8 @@ export const ProductDetail = ({
           </div>
         </div>
 
-        <div className="flex  flex-col gap-4 md:gap-6">
-          <div className="flex flex-row gap-2 md:gap-4  lg:w-[400px]">
+        <div className="flex  flex-1 flex-col gap-4 md:gap-6">
+          <div className="flex flex-row gap-2 md:gap-4 lg:w-[400px]">
             <BreadMeBtn />
             <PricingBtn
               logo={ProductIcons[product.name]}
@@ -159,7 +159,7 @@ export const ProductDetail = ({
           />
         </div>
 
-        <Box className="px-0 pb-14 gap-12 md:gap-16  max-w-[1000px] mx-auto">
+        <Box className="px-0 pb-14 gap-12 md:gap-16 container-content overflow-x-hidden">
           <POSIntroduction
             id={DetailTabs[0].id}
             pros={product.pros}
