@@ -40,6 +40,10 @@ const TabList = ({
 }: TabListProps) => {
   const [currentIndex, setSelectIndex] = useState(initSelectIndex ?? 0);
 
+  useEffect(() => {
+    setSelectIndex(initSelectIndex ?? 0);
+  }, [initSelectIndex]);
+
   return (
     <div
       className={twMerge(
