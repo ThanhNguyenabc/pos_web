@@ -84,7 +84,7 @@ const Footer = () => {
           <FooterItems title="Company" items={OtherItems} />
         </footer>
         <div className="divider bg-neutral-700 h-px"></div>
-        <div className="flex-rows text-neutral-600 ">
+        <div className="flex flex-row text-neutral-600 ">
           <p className="flex-1">© 2022 BestPOS. All rights reserved.</p>
           <div className="flex ml-5 gap-6">
             <button>

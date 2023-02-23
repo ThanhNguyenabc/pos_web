@@ -18,7 +18,7 @@ const BreadmeSaleSystem = () => {
     context.setQuestionData({
       ...context.questionData,
       saleSystemIndex: cIndex,
-      otherSaleSystem: otherSystem,
+      otherSaleSystem: otherSystem || "Other",
     });
   };
 
