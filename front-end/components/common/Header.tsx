@@ -9,6 +9,7 @@ import Drawer from "react-modern-drawer";
 import { useRouter } from "next/router";
 import AppRoutes from "utils/routes";
 import { MainMenu } from "utils/StringUtil";
+const phoneNumber = "1-888-410-2188";
 
 const Header = () => {
   const router = useRouter();
@@ -72,10 +73,12 @@ const Header = () => {
         </li>
       </ul>
       <div className="flex flex-row justify-center items-center">
-        <IcPhone className="text-lg" />
+        <Link href={`tel:${phoneNumber}`}>
+          <IcPhone className="text-lg" />
+        </Link>
         <div className="ml-4">
           <p className="txt-sm text-neutral-600">Support</p>
-          <p className="txt-md-bold lg:text-xl">1-888-410-2188</p>
+          <p className="txt-md-bold lg:text-xl">{phoneNumber}</p>
         </div>
         <Button
           title="Find your POS"
