@@ -81,7 +81,7 @@ export const MetrictData = {
   sections: [
     { title: "30+", content: "Over 30 years experience" },
     { title: "50", content: "Available in all 50 states" },
-    { title: "1000+", content: "Over 1000 Clients" },
+    { title: "1,000", content: "Over 1000 Clients" },
   ],
 };
 
