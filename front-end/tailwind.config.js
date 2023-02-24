@@ -49,6 +49,9 @@ module.exports = {
       'spin-slow-10': 'spin 10s linear infinite',
       'marquee-infinite' : 'marquee 30s linear infinite',
     },
+    boxShadow : {
+      "viewmore" : "0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06)"
+    }
   },
   
   plugins: [require("daisyui"), require('@tailwindcss/typography'),],
