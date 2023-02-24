@@ -1,7 +1,5 @@
 import Image, { StaticImageData } from "next/image";
 import React, { ReactElement } from "react";
-import { twMerge } from "tailwind-merge";
-import { Button } from "./Button";
 
 interface PricingBtnProps {
   color?: string;

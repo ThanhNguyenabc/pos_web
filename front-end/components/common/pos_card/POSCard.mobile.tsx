@@ -6,12 +6,18 @@ import { getSystemIcon, ProductIcons } from "utils/StringUtil";
 import ColorUtils from "utils/ColorUtils";
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
+import { useRouter } from "next/router";
+import AppRoutes from "utils/routes";
 
 export const POSCardMobile = ({
   overallRating,
   data,
   onCardClick,
 }: POSCardProps) => {
+  const { toogleOpen } = useOpenDemoPOSDialog();
+  const router = useRouter();
+
   return (
     <div
       onClick={onCardClick}
@@ -59,15 +65,29 @@ export const POSCardMobile = ({
         <p className="w-full  text-sm text-neutral-700 ">{data.overview}</p>
       </div>
       <div className="flex w-full flex-row h-[40px] justify-between rounded-bl-2xl rounded-br-2xl">
-        <div className="flex flex-row bg-success flex-1 items-center justify-center gap-1 text-white rounded-bl-2xl">
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            router.push(AppRoutes.BreadmeQuestionPage);
+          }}
+          className="flex flex-row bg-success flex-1 items-center justify-center gap-1 text-white rounded-bl-2xl"
+        >
           <IcFreePOS className="text-2xl" />
           <p className=" text-xs font-semibold ">Get a POS FREE</p>
-        </div>
-        <div className="flex bg-secondary flex-1 items-center justify-center text-white  rounded-br-2xl">
+        </button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            toogleOpen();
+          }}
+          className="flex bg-secondary flex-1 items-center justify-center text-white  rounded-br-2xl"
+        >
           <p className=" text-xs font-semibold ">
             ${data.monthly_price} Monthly
           </p>
-        </div>
+        </button>
       </div>
     </div>
   );
