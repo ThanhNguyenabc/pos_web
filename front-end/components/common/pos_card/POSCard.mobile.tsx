@@ -23,7 +23,7 @@ export const POSCardMobile = ({
       onClick={onCardClick}
       className={`flex flex-col w-full bg-white border-2 border-b-neutral-300 hover:border-secondary rounded-2xl drop-shadow-lg cursor-pointer md:hidden`}
     >
-      <div className="flex flex-col p-4">
+      <div className="flex flex-col p-4 gap-2">
         <div className="w-full  flex flex-row h-10 items-center justify-between ">
           <Image
             src={ProductIcons[data.name]}

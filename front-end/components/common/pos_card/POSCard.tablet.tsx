@@ -21,7 +21,8 @@ const POSCardTablet = ({
     <div
       onClick={onCardClick}
       className={twMerge(
-        `hidden w-full h-[244px] border-2 border-b-neutral-300 hover:border-secondary bg-white card gap-6 flex-row rounded-2xl p-6 drop-shadow-lg cursor-pointer md:flex lg:hidden ${classname}`
+        `hidden w-full h-[244px] border-2 border-b-neutral-300 hover:border-secondary bg-white card gap-6 
+        flex-row rounded-2xl p-6 drop-shadow-lg cursor-pointer md:flex lg:hidden ${classname}`
       )}
     >
       <div className=" h-[60px] w-[60px]">
