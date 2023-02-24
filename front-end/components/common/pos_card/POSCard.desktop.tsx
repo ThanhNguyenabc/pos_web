@@ -29,20 +29,6 @@ const POSCardDesktop = ({
 }: POSCardProps) => {
   const { toogleOpen } = useOpenDemoPOSDialog();
 
-  const [isShowMore, setShowMore] = useState<boolean>();
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useLayoutEffect(() => {
-    console.log(containerRef.current?.scrollHeight);
-    if (
-      containerRef.current &&
-      containerRef.current.clientHeight < containerRef.current.scrollHeight
-    ) {
-      setShowMore(true);
-      return;
-    }
-  }, [containerRef]);
-
   return (
     <div
       onClick={onCardClick}
@@ -93,7 +79,7 @@ const POSCardDesktop = ({
         </div>
       </div>
 
-      <div className="flex-1 relative overflow-y-hidden" ref={containerRef}>
+      <div className="flex-1 relative overflow-y-hidden">
         <div className="flex gap-7">
           <div className="flex flex-col flex-1 text-left overflow-hidden">
             <p className="txt-sm-bold text-success">PROS</p>
@@ -122,7 +108,7 @@ const POSCardDesktop = ({
             ))}
           </div>
         </div>
-        {isShowMore && <ViewMore className=" absolute bottom-0" />}
+        <ViewMore className=" absolute bottom-0" />
       </div>
 
       <div className="flex gap-4 w-[300px]">
