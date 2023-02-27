@@ -14,10 +14,12 @@ import { twMerge } from "tailwind-merge";
 import { POSCardProps } from "./POSCard";
 import PricingBtn from "../PricingBtn";
 import { getSystemIcon, ProductIcons } from "utils/StringUtil";
-import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
 import ViewMore from "../ViewMore";
 import { IcCheckbox, IcClose } from "assets/AssetUtil";
+import CustomCircularProgress from "../CustomCircularProgress";
+import GradientSVG from "../GradientSVG";
+import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 
 const ItemHeight = 244;
 
@@ -38,30 +40,14 @@ const POSCardDesktop = ({
         drop-shadow-lg w-full overflow-hidden lg:flex ${classname}`
       )}
     >
-      <div className=" h-[60px] w-[60px]">
-        <CircularProgressbarWithChildren
-          strokeWidth={10}
-          maxValue={10}
-          value={overallRating}
-          styles={{
-            path: {
-              stroke: ColorUtils.primary,
-              transition: "stroke-dashoffset 0.5s ease 0s",
+      <CustomCircularProgress
+        id="card-desktop-progress"
+        className="w-[60px] h-fit"
+        value={overallRating}
+      >
+        <p className="txt-large-bold">{overallRating}</p>
+      </CustomCircularProgress>
 
-              transform: "rotate(1turn)",
-              transformOrigin: "center center",
-            },
-            trail: {
-              stroke: ColorUtils["neutral-100"],
-              strokeLinecap: "butt",
-              transform: "rotate(1turn)",
-              transformOrigin: "center center",
-            },
-          }}
-        >
-          <p className="txt-large-bold">{overallRating}</p>
-        </CircularProgressbarWithChildren>
-      </div>
       <div className="flex flex-col items-start gap-2">
         <Image
           src={ProductIcons[data.name]}

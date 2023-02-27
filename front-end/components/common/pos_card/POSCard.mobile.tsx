@@ -9,6 +9,7 @@ import "react-circular-progressbar/dist/styles.css";
 import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
 import { useRouter } from "next/router";
 import AppRoutes from "utils/routes";
+import CustomCircularProgress from "../CustomCircularProgress";
 
 export const POSCardMobile = ({
   overallRating,
@@ -36,30 +37,13 @@ export const POSCardMobile = ({
               return <Icon key={`item-os-${index}`} className="w-6 h-6" />;
             })}
 
-            <div className=" h-10 w-10">
-              <CircularProgressbarWithChildren
-                strokeWidth={10}
-                maxValue={10}
-                value={overallRating}
-                styles={{
-                  path: {
-                    stroke: ColorUtils.primary,
-                    transition: "stroke-dashoffset 0.5s ease 0s",
-
-                    transform: "rotate(1turn)",
-                    transformOrigin: "center center",
-                  },
-                  trail: {
-                    stroke: ColorUtils["neutral-100"],
-                    strokeLinecap: "butt",
-                    transform: "rotate(1turn)",
-                    transformOrigin: "center center",
-                  },
-                }}
-              >
-                <p className="txt-sm-bold">{overallRating}</p>
-              </CircularProgressbarWithChildren>
-            </div>
+            <CustomCircularProgress
+              id="card-mobile-progress"
+              className=" h-10 w-10"
+              value={overallRating}
+            >
+              <p className="txt-sm-bold">{overallRating}</p>
+            </CustomCircularProgress>
           </div>
         </div>
         <p className="w-full  text-sm text-neutral-700 ">{data.overview}</p>

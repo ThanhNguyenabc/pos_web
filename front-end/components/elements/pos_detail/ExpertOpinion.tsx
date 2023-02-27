@@ -1,7 +1,6 @@
+import CustomCircularProgress from "components/common/CustomCircularProgress";
 import Progress from "components/common/progress";
 import React from "react";
-import { CircularProgressbarWithChildren } from "react-circular-progressbar";
-import ColorUtils from "utils/ColorUtils";
 
 interface ExpertOpinionProps {
   id: string;
@@ -44,33 +43,19 @@ const ExpertOpinion = ({
       <p className="txt-heading-xsmal md:txt-heading-small">Expert Opinions</p>
       <div className="flex flex-col gap-6 md:gap-8 lg:flex-row lg:gap-16">
         <div className="flex w-full flex-row gap-8 md:gap-12">
-          <div className="h-[170px] w-[170px] md:w-[240px]">
-            <CircularProgressbarWithChildren
-              strokeWidth={5}
-              maxValue={10}
-              value={overal}
-              styles={{
-                path: {
-                  stroke: ColorUtils.primary,
-                  transition: "stroke-dashoffset 0.5s ease 0s",
+          <CustomCircularProgress
+            id="expert-progress"
+            className="w-[170px] md:w-[170px] h-fit"
+            strokeWidth={8}
+            value={overal}
+            maxValue={10}
+          >
+            <p className="txt-md-bold md:text-xl text-primary mt-2">Average</p>
+            <p className="text-4xl font-extrabold md:text-6xl mx-2.5 ">
+              {overal}
+            </p>
+          </CustomCircularProgress>
 
-                  transform: "rotate(1turn)",
-                  transformOrigin: "center center",
-                },
-                trail: {
-                  stroke: ColorUtils["neutral-100"],
-                  strokeLinecap: "butt",
-                  transform: "rotate(1turn)",
-                  transformOrigin: "center center",
-                },
-              }}
-            >
-              <p className="txt-md-bold md:text-xl text-primary mt-2">
-                Average
-              </p>
-              <p className=" text-4xl font-extrabold md:text-6xl">{overal}</p>
-            </CircularProgressbarWithChildren>
-          </div>
           <div className="flex flex-col gap-4 md:gap-6 w-full">
             {rateItems.map((item, index) => (
               <RatingItem key={`key-${index}`} {...item} />

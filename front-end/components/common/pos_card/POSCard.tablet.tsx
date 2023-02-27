@@ -8,6 +8,7 @@ import { POSCardProps } from "./POSCard";
 import { getSystemIcon, ProductIcons } from "utils/StringUtil";
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
+import CustomCircularProgress from "../CustomCircularProgress";
 
 const POSCardTablet = ({
   overallRating,
@@ -25,30 +26,13 @@ const POSCardTablet = ({
         flex-row rounded-2xl p-6 drop-shadow-lg cursor-pointer md:flex lg:hidden ${classname}`
       )}
     >
-      <div className=" h-[60px] w-[60px]">
-        <CircularProgressbarWithChildren
-          strokeWidth={10}
-          maxValue={10}
-          value={overallRating}
-          styles={{
-            path: {
-              stroke: ColorUtils.primary,
-              transition: "stroke-dashoffset 0.5s ease 0s",
-
-              transform: "rotate(1turn)",
-              transformOrigin: "center center",
-            },
-            trail: {
-              stroke: ColorUtils["neutral-100"],
-              strokeLinecap: "butt",
-              transform: "rotate(1turn)",
-              transformOrigin: "center center",
-            },
-          }}
-        >
-          <p className="txt-large-bold">{overallRating}</p>
-        </CircularProgressbarWithChildren>
-      </div>
+      <CustomCircularProgress
+        id="card-tablet-progress"
+        className="w-[60px]"
+        value={overallRating}
+      >
+        <p className="txt-large-bold">{overallRating}</p>
+      </CustomCircularProgress>
 
       <div className="flex flex-col flex-1 items-start gap-2">
         <Image
