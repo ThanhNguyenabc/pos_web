@@ -90,15 +90,24 @@ const Footer = () => {
         <div className="flex flex-row text-neutral-600 ">
           <p className="flex-1">© 2022 BestPOS. All rights reserved.</p>
           <div className="flex ml-5 gap-6">
-            <button>
+            <Link
+              href={"https://www.facebook.com/officialextrabread"}
+              target="_blank"
+            >
               <IcFb className="text-2xl" />
-            </button>
-            <button>
+            </Link>
+            <Link
+              href={"https://www.instagram.com/official_extrabread/"}
+              target="_blank"
+            >
               <IcInsta className="text-2xl" />
-            </button>
-            <button>
+            </Link>
+            <Link
+              href={"https://www.linkedin.com/company/extrabread/"}
+              target="_blank"
+            >
               <IcLinkedLn className="text-2xl" />
-            </button>
+            </Link>
           </div>
         </div>
       </HeroSection>

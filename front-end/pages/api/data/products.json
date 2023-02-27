@@ -1,506 +1,506 @@
 [
-    {
-        "id": "3503cf9d",
-        "name": "Revel",
-        "monthly_price": 75,
-        "one_time_purchase": 1500,
-        "os_system": [
-            "iOS"
-        ],
-        "overview": "Customizable POS system for retail, full & quick-service restaurants",
-        "intro": "Revel Systems was one of the first iPad point-of-sale systems to use a cloud-based mobile POS platform. It paved the way for POS mobility and today powers more than over 50,000 locations with local service representatives. With the offline mode feature, Revel Systems allows you to confidently keep your business running even without internet while other cloud-based systems require a constant connection.",
-        "pros": [
-            " Customizable clouded system",
-            "Amazing local on-site support",
-            "Great back office management",
-            "Seamless offline mode",
-            "Easy to manage multi-locations",
-            "Digital ordering",
-            "CRM with remarketing features",
-            "Compliant dual-pricing receipt"
-        ],
-        "cons": [
-            "Doesn't work with Android",
-            "Potential glitches w/ weak internet",
-            "No modifiers to modifiers feature",
-            "Pricey for low-volume merchants"
-        ],
-        "expert_opinion": {
-            "comment": "Revel Systems is a feature-rich point of sale system for mid-sized to larger retail establishments and restaurants. It has highly advanced inventory and reporting that can suit most businesses along with excellent customer support",
-            "easy": 8.5,
-            "value": 9.5,
-            "support": 9,
-            "functionality": 8.5,
-            "feedback": 9
-        },
-        "logo": "revel-pos.png",
-        "pos_integrations": "With the Revel Systems point-of-sale platform, there are many additional add-ons to personalize your system. This includes additional hardware, loyalty programs, gift cards, online ordering tools, advance delivery features, mobile equipment, employee management tools, customer display, kitchen display system and accounting software.All these integrations can help elevate and enhance your Revel point-of-sale.",
-        "software": "Revel Systems was one of the first iPad point-of-sale systems to use a cloud-based mobile POS platform. It paved the way for POS mobility and today powers more than over 50,000 locations with local service representatives. With the offline mode feature, Revel Systems allows you to confidently keep your business running even without internet while other cloud-based systems require a constant connection.",
-        "payment_processing": "Revel Systems allows merchants to use a wide range of card processors while some point-of-sale systems do not. This gives the merchant control of their processing fees and added features. Many card payment companies now have enhanced user interface, streamlined payment portal experience. You would also have access to self-service tools to manage payment transactions like disputing chargebacks and other resources such as data and analytics through reports that include information around your statements, rates, adjusted payments and much more.",
-        "pricing_desc": [
-            "$75 Monthly Software and Support Fee per station",
-            "Professional Installation - $500 or Free (depending on deal made with processor)",
-            "Contracts depends on deal made with processing company"
-        ]
+  {
+    "id": "3503cf9d",
+    "name": "Revel",
+    "monthly_price": 75,
+    "one_time_purchase": 1500,
+    "os_system": [
+      "iOS"
+    ],
+    "overview": "Customizable POS system for retail, full & quick-service restaurants",
+    "intro": "Revel Systems offers a variety of features including gift cards, loyalty programs, bill splitting, accessible menu creation, discounts, and many other perks. You can also easily view and manage reports and inventory data from external locations. If you manage multiple locations, Revel Systems makes management much easier. Their software app runs exclusively on iPads, giving you the freedom to take your touchscreen POS with you on the go!",
+    "pros": [
+      " Customizable clouded system",
+      "Amazing local on-site support",
+      "Great back office management",
+      "Seamless offline mode",
+      "Easy to manage multi-locations",
+      "Digital ordering",
+      "CRM with remarketing features",
+      "Compliant dual-pricing receipt"
+    ],
+    "cons": [
+      "Doesn't work with Android",
+      "Potential glitches w/ weak internet",
+      "No modifiers to modifiers feature",
+      "Pricey for low-volume merchants"
+    ],
+    "expert_opinion": {
+      "comment": "Revel Systems is a feature-rich point of sale system for mid-sized to larger retail establishments and restaurants. It has highly advanced inventory and reporting that can suit most businesses along with excellent customer support",
+      "easy": 8.5,
+      "value": 9.5,
+      "support": 9,
+      "functionality": 8.5,
+      "feedback": 9
     },
-    {
-        "id": "c4304593",
-        "name": "Clover Flex",
-        "monthly_price": 10,
-        "one_time_purchase": 250,
-        "os_system": [
-            "Android"
-        ],
-        "overview": "Versatile, all-in-one terminal for retail & quick service stores",
-        "intro": "Clover is a Android cloud-based system that is wireless. Installation is user friendly; connect to your wifi and start processing payments right away.",
-        "pros": [
-            "Easy-to-use backoffice",
-            "Multiple apps & add-ons",
-            "Sleek hardware",
-            "Affordable monthly prices"
-        ],
-        "cons": [
-            "Customer support complaints",
-            "Proprietary Software",
-            "Added features increases price"
-        ],
-        "expert_opinion": {
-            "comment": "Clover is an easy-to-use point of sale system geared toward retail shops, restaurants & quick service with versatile hardware offering. They have an extensive app market to enhance and customize your point of sale system setup.",
-            "easy": 9.5,
-            "value": 9.5,
-            "support": 8,
-            "functionality": 9,
-            "feedback": 8.5
-        },
-        "logo": "clover-pos.png",
-        "pos_integrations": "As well as being used as a mini point-of-sale system, The Clover Flex can be used as a stand alone terminal for your business. Apps and add-ons are available to enhance your business. ",
-        "software": "Clover is a Android cloud-based system that is wireless. Installation is user friendly; connect to your wifi and start processing payments right away.",
-        "payment_processing": "Clover Flex can be integrated with a wide range of credit card processing companies. Depending on the structure made with the processing company, terminal can be given for free.",
-        "pricing_desc": [
-            "Terminal use only is a $10 per month cost",
-            "Professional Installation - $0",
-            "No Contract"
-        ]
+    "logo": "revel-pos.png",
+    "pos_integrations": "With the Revel Systems point-of-sale platform, there are many additional add-ons to personalize your system. This includes additional hardware, loyalty programs, gift cards, online ordering tools, advance delivery features, mobile equipment, employee management tools, customer display, kitchen display system and accounting software.All these integrations can help elevate and enhance your Revel point-of-sale.",
+    "software": "Revel Systems was one of the first iPad point-of-sale systems to use a cloud-based mobile POS platform. It paved the way for POS mobility and today powers more than over 50,000 locations with local service representatives. With the offline mode feature, Revel Systems allows you to confidently keep your business running even without internet while other cloud-based systems require a constant connection.",
+    "payment_processing": "Revel Systems allows merchants to use a wide range of card processors while some point-of-sale systems do not. This gives the merchant control of their processing fees and added features. Many card payment companies now have enhanced user interface, streamlined payment portal experience. You would also have access to self-service tools to manage payment transactions like disputing chargebacks and other resources such as data and analytics through reports that include information around your statements, rates, adjusted payments and much more.",
+    "pricing_desc": [
+      "$75 Monthly Software and Support Fee per station",
+      "Professional Installation - $500 or Free (depending on deal made with processor)",
+      "Contracts depends on deal made with processing company"
+    ]
+  },
+  {
+    "id": "c4304593",
+    "name": "Clover Flex",
+    "monthly_price": 10,
+    "one_time_purchase": 250,
+    "os_system": [
+      "Android"
+    ],
+    "overview": "Versatile, all-in-one terminal for retail & quick service stores",
+    "intro": "Clover Station is a popular all-in-one for many restaurants and small business owners. This POS solution comes with everything you need, including POS software, hardware, and payment processing. The company offers complete plug-and-play hardware POS 'stations' for non-techies. Its hardware platform comes with durable touch screen and offers many options depending on your type of business. Clover Station gives users the ability to add a variety of external apps. Users can quickly create menus, customize the interface, view report data, manage employees, and more.",
+    "pros": [
+      "Easy-to-use backoffice",
+      "Multiple apps & add-ons",
+      "Sleek hardware",
+      "Affordable monthly prices"
+    ],
+    "cons": [
+      "Customer support complaints",
+      "Proprietary Software",
+      "Added features increases price"
+    ],
+    "expert_opinion": {
+      "comment": "Clover is an easy-to-use point of sale system geared toward retail shops, restaurants & quick service with versatile hardware offering. They have an extensive app market to enhance and customize your point of sale system setup.",
+      "easy": 9.5,
+      "value": 9.5,
+      "support": 8,
+      "functionality": 9,
+      "feedback": 8.5
     },
-    {
-        "id": "0fadfc8f",
-        "name": "Clover Duo",
-        "monthly_price": 50,
-        "one_time_purchase": 1200,
-        "os_system": [
-            "Android"
-        ],
-        "overview": "Easy-to-use software great for retail and any type of restaurant",
-        "intro": "Clover is a Android cloud-based system that is wireless. Installation is user friendly; connect to your wifi and start processing payments right away.",
-        "pros": [
-            "Provides extensive features",
-            "Easy-to-use backoffice",
-            "Multiple apps & add-ons",
-            "Sleek hardware",
-            "Affordable monthly prices"
-        ],
-        "cons": [
-            "Not geared for full service rest & pizzerias",
-            "Reports of glitches",
-            "Proprietary Software",
-            "Added features (apps) increases monthly fees",
-            "Limited for simple menus"
-        ],
-        "expert_opinion": {
-            "comment": "Clover Flex is point-of-sale hardware that can be a countertop POS device and mobile card reader. It is compatible only with Clover POS software and other Clover hardware. With Clover Flex, you can take card and mobile wallet payments on the go, print receipts, manage inventory, and more.",
-            "easy": 9,
-            "value": 8,
-            "support": 7,
-            "functionality": 8.5,
-            "feedback": 8
-        },
-        "logo": "clover-pos.png",
-        "pos_integrations": "Clover Duo integrations and add-ons can take your restaurant’s POS platform to the next level. The system is Android-based and there are many apps and add-ons you have access to download. The list of applications they offer is one of the most extensive in the industry.",
-        "software": "Clover Duo is an Android cloud-based system that stores all reporting data and information in a cloud. This means that you can access your menus, reporting data, restaurant information, and more remotely. Offline processing is available with Clover.",
-        "payment_processing": "Even though Clover has their own internal card payments division; it's always better to strike a deal with a local reseller for better rates and hardware cost.  Plus, having the right local representative will give you on-site servicing as Clover's in-house processing will not.",
-        "pricing_desc": [
-            "Terminal use only is a $10 per month cost",
-            "Professional Installation - $0",
-            "No Contract"
-        ]
+    "logo": "clover-pos.png",
+    "pos_integrations": "As well as being used as a mini point-of-sale system, The Clover Flex can be used as a stand alone terminal for your business. Apps and add-ons are available to enhance your business. ",
+    "software": "Clover is a Android cloud-based system that is wireless. Installation is user friendly; connect to your wifi and start processing payments right away.",
+    "payment_processing": "Clover Flex can be integrated with a wide range of credit card processing companies. Depending on the structure made with the processing company, terminal can be given for free.",
+    "pricing_desc": [
+      "Terminal use only is a $10 per month cost",
+      "Professional Installation - $0",
+      "No Contract"
+    ]
+  },
+  {
+    "id": "0fadfc8f",
+    "name": "Clover Duo",
+    "monthly_price": 50,
+    "one_time_purchase": 1200,
+    "os_system": [
+      "Android"
+    ],
+    "overview": "Easy-to-use software great for retail and any type of restaurant",
+    "intro": "Clover Station is a popular all-in-one for many restaurants and small business owners. This POS solution comes with everything you need, including POS software, hardware, and payment processing. The company offers complete plug-and-play hardware POS 'stations' for non-techies. Its hardware platform comes with durable touch screen and offers many options depending on your type of business. Clover Station gives users the ability to add a variety of external apps. Users can quickly create menus, customize the interface, view report data, manage employees, and more.",
+    "pros": [
+      "Provides extensive features",
+      "Easy-to-use backoffice",
+      "Multiple apps & add-ons",
+      "Sleek hardware",
+      "Affordable monthly prices"
+    ],
+    "cons": [
+      "Not geared for full service rest & pizzerias",
+      "Reports of glitches",
+      "Proprietary Software",
+      "Added features (apps) increases monthly fees",
+      "Limited for simple menus"
+    ],
+    "expert_opinion": {
+      "comment": "Clover Flex is point-of-sale hardware that can be a countertop POS device and mobile card reader. It is compatible only with Clover POS software and other Clover hardware. With Clover Flex, you can take card and mobile wallet payments on the go, print receipts, manage inventory, and more.",
+      "easy": 9,
+      "value": 8,
+      "support": 7,
+      "functionality": 8.5,
+      "feedback": 8
     },
-    {
-        "id": "f32ba2b0",
-        "name": "Exatouch",
-        "monthly_price": 29.95,
-        "one_time_purchase": 595,
-        "os_system": [
-            "Window"
-        ],
-        "overview": "Fast, reliable, and affordable POS system for any sized business",
-        "intro": "As a cloud-based system, you are able to have real-time access to key business metrics from almost anywhere! You can view info such as total sales, profits, and vital performance analytics. “Offline Processing” mode is available. It allows merchants to continue operations during unforeseeable events such as Internet or network outages.  Exatouch runs on a windows platform",
-        "pros": [
-            "Good for retail & liquor stores",
-            "Local representative",
-            "User-friendly register",
-            "24/7 Phone Support",
-            "Compliant dual-pricing"
-        ],
-        "cons": [
-            "Has limited features for resturants & quick-servcie",
-            "Proprietary card payments",
-            "Dull looking"
-        ],
-        "expert_opinion": {
-            "comment": "Exatouch is a point-of-sale system designed with restaurants, retail, and salons in mind. Running on a SQL database, the system supports credit card processing and POS functions for businesses of any size.",
-            "easy": 8,
-            "value": 9,
-            "support": 9.5,
-            "functionality": 8,
-            "feedback": 8
-        },
-        "logo": "extouch-pos.png",
-        "pos_integrations": "Exatouch has plenty of integrations and add-ons to make your POS system the best it can be for your business.",
-        "software": "As a cloud-based system, you are able to have real-time access to key business metrics from almost anywhere! You can view info such as total sales, profits, and vital performance analytics. “Offline Processing” mode is available. It allows merchants to continue operations during unforeseeable events such as Internet or network outages.  Exatouch runs on a windows platform",
-        "payment_processing": "You would gain a local representative that will not only help you with card payments but will also represent your Exatouch point-of-sale system.",
-        "pricing_desc": [
-            "$29.95 Monthly Software and Support Fee per station",
-            "Professional Installation - $350",
-            "Contracts depend on the deals made with the processing company"
-        ]
+    "logo": "clover-pos.png",
+    "pos_integrations": "Clover Duo integrations and add-ons can take your restaurant’s POS platform to the next level. The system is Android-based and there are many apps and add-ons you have access to download. The list of applications they offer is one of the most extensive in the industry.",
+    "software": "Clover Duo is an Android cloud-based system that stores all reporting data and information in a cloud. This means that you can access your menus, reporting data, restaurant information, and more remotely. Offline processing is available with Clover.",
+    "payment_processing": "Even though Clover has their own internal card payments division; it's always better to strike a deal with a local reseller for better rates and hardware cost.  Plus, having the right local representative will give you on-site servicing as Clover's in-house processing will not.",
+    "pricing_desc": [
+      "Terminal use only is a $10 per month cost",
+      "Professional Installation - $0",
+      "No Contract"
+    ]
+  },
+  {
+    "id": "f32ba2b0",
+    "name": "Exatouch",
+    "monthly_price": 29.95,
+    "one_time_purchase": 595,
+    "os_system": [
+      "Window"
+    ],
+    "overview": "Fast, reliable, and affordable POS system for any sized business",
+    "intro": "Exatouch is made to ease your life while streamlining operations, enhancing the customer experience, and growing your earnings, whether you own a restaurant, retail store, or service business. A quick, trustworthy, and reasonably priced point-of-sale system for any size business.\nExatouch is entirely created and supported in-house, you have access to our top-tier, technical support team whenever you need them. Additionally, you may take advantage of free telephone installation, POS training, and menu and inventory building!",
+    "pros": [
+      "Good for retail & liquor stores",
+      "Local representative",
+      "User-friendly register",
+      "24/7 Phone Support",
+      "Compliant dual-pricing"
+    ],
+    "cons": [
+      "Has limited features for resturants & quick-servcie",
+      "Proprietary card payments",
+      "Dull looking"
+    ],
+    "expert_opinion": {
+      "comment": "Exatouch is a point-of-sale system designed with restaurants, retail, and salons in mind. Running on a SQL database, the system supports credit card processing and POS functions for businesses of any size.",
+      "easy": 8,
+      "value": 9,
+      "support": 9.5,
+      "functionality": 8,
+      "feedback": 8
     },
-    {
-        "id": "f9e0ef04",
-        "name": "Simphony (Oracle Micros)",
-        "monthly_price": 55,
-        "one_time_purchase": 6500,
-        "os_system": [
-            "Window"
-        ],
-        "overview": "POS system from Oracle built for restaurant & quick service management",
-        "intro": "Simphony is a cloud-based system that allows for integration and synchronization across multiple terminals. If anything were to go wrong with the hardware or even if the internet drops, all critical reporting data will be safe in the cloud. Along with this, you can even access the backend of your POS system remotely. The cloud permits you to facilitate a majority of backend activity but you will still need to install the software on a hardware device. It allows your POS to be a hybrid system and users can benefit from this as well as management and staff.",
-        "pros": [
-            "Great for full & quick-service restaurants",
-            "Very customizable",
-            "Cloud base point-of-sale",
-            "Range of in-house options",
-            "Great for large enterprises"
-        ],
-        "cons": [
-            "Expensive hardware & monthly fees",
-            "Customizable is time consuming & expensive",
-            "Software & back end design is very complex",
-            "Requires expensive updates",
-            "Lack of third party delivery integrations"
-        ],
-        "expert_opinion": {
-            "comment": "Overall the software is a decent POS software. The customization ability is a good fit for restaurants, cafes, bars, hotels, resorts, casinos manage orders, inventories, menus and more. ",
-            "easy": 8.5,
-            "value": 7,
-            "support": 7.5,
-            "functionality": 9,
-            "feedback": 8.5
-        },
-        "logo": "simphony-pos.png",
-        "pos_integrations": "Simphony has a wide range of add-ons that allows for the POS to be customizable. Simphony is built on an open and secure API and you have a choice of using either Microsoft Windows or Oracle Linux. You are also able to easily connect a 3rd party online ordering platform, delivery service, mobile payment processing, and more.",
-        "software": "Simphony is a cloud-based system that allows for integration and synchronization across multiple terminals. If anything were to go wrong with the hardware or even if the internet drops, all critical reporting data will be safe in the cloud. Along with this, you can even access the backend of your POS system remotely. The cloud permits you to facilitate a majority of backend activity but you will still need to install the software on a hardware device. It allows your POS to be a hybrid system and users can benefit from this as well as management and staff.",
-        "payment_processing": "Simphony offers payment processing but their rates are not publicly advertised. If you would like to use a different provider, you are able to do so which can be very beneficial for any business looking for help finiacing the hardware cost from Simphony.",
-        "pricing_desc": [
-            "$55 to $75 Monthly Software and Support Fee per station",
-            "Professional Installation - $2,595 ",
-            "Contracts depends on deal made with processing company"
-        ]
+    "logo": "extouch-pos.png",
+    "pos_integrations": "Exatouch has plenty of integrations and add-ons to make your POS system the best it can be for your business.",
+    "software": "As a cloud-based system, you are able to have real-time access to key business metrics from almost anywhere! You can view info such as total sales, profits, and vital performance analytics. “Offline Processing” mode is available. It allows merchants to continue operations during unforeseeable events such as Internet or network outages.  Exatouch runs on a windows platform",
+    "payment_processing": "You would gain a local representative that will not only help you with card payments but will also represent your Exatouch point-of-sale system.",
+    "pricing_desc": [
+      "$29.95 Monthly Software and Support Fee per station",
+      "Professional Installation - $350",
+      "Contracts depend on the deals made with the processing company"
+    ]
+  },
+  {
+    "id": "f9e0ef04",
+    "name": "Simphony (Oracle Micros)",
+    "monthly_price": 55,
+    "one_time_purchase": 6500,
+    "os_system": [
+      "Window"
+    ],
+    "overview": "POS system from Oracle built for restaurant & quick service management",
+    "intro": "MICROS POS is currently used in over 300,000 establishments. Their latest POS offering, Oracle MICROS Simphony, is an open API program that runs on proprietary hardware created especially for the restaurant business. The touchscreen interface with color-coded functionality will be advantageous to users.\nTo handle and process orders, staff workers have access to a variety of tools. In addition, you'll gain from loyalty programs, inventory tracking, and a number of other premium features. Users have access to reporting information and critical performance measures through the service's backend.",
+    "pros": [
+      "Great for full & quick-service restaurants",
+      "Very customizable",
+      "Cloud base point-of-sale",
+      "Range of in-house options",
+      "Great for large enterprises"
+    ],
+    "cons": [
+      "Expensive hardware & monthly fees",
+      "Customizable is time consuming & expensive",
+      "Software & back end design is very complex",
+      "Requires expensive updates",
+      "Lack of third party delivery integrations"
+    ],
+    "expert_opinion": {
+      "comment": "Overall the software is a decent POS software. The customization ability is a good fit for restaurants, cafes, bars, hotels, resorts, casinos manage orders, inventories, menus and more. ",
+      "easy": 8.5,
+      "value": 7,
+      "support": 7.5,
+      "functionality": 9,
+      "feedback": 8.5
     },
-    {
-        "id": "8a013776",
-        "name": "Brink (Par)",
-        "monthly_price": 69.95,
-        "one_time_purchase": 1295,
-        "os_system": [
-            "Window"
-        ],
-        "overview": "Customizable point-of-sale system for full & quick-service restaurants",
-        "intro": "Simphony is a cloud-based system that allows for integration and synchronization across multiple terminals. If anything were to go wrong with the hardware or even if the internet drops, all critical reporting data will be safe in the cloud. Along with this, you can even access the backend of your POS system remotely. The cloud permits you to facilitate a majority of backend activity but you will still need to install the software on a hardware device. It allows your POS to be a hybrid system and users can benefit from this as well as management and staff.",
-        "pros": [
-            "Stable hardware & software",
-            "Great on-site tech support",
-            "Customizable layout & features",
-            "Modifier to modifier features",
-            "Features Offline Mode",
-            "Compliant dual-pricing",
-            "Great for franshises"
-        ],
-        "cons": [
-            "Expensive hardware if you do not use their credit card processiing",
-            "Requires a strong internet connection",
-            "Need better integration w/ KDS"
-        ],
-        "expert_opinion": {
-            "comment": "Brink POS is an easy-to-use, customizable, cloud-based restaurant management solution specifically designed for fast casual and quick service chains. The solution delivers the key functionality required by restaurant owners, managers, kitchen and staff to track sales, enter in-store and online orders, implement customer loyalty programs and manage kitchen operations. ",
-            "easy": 9,
-            "value": 9,
-            "support": 9.5,
-            "functionality": 9.5,
-            "feedback": 9.5
-        },
-        "logo": "brink-pos.png",
-        "pos_integrations": "Simphony has a wide range of add-ons that allows for the POS to be customizable. Simphony is built on an open and secure API and you have a choice of using either Microsoft Windows or Oracle Linux. You are also able to easily connect a 3rd party online ordering platform, delivery service, mobile payment processing, and more.",
-        "software": "Simphony is a cloud-based system that allows for integration and synchronization across multiple terminals. If anything were to go wrong with the hardware or even if the internet drops, all critical reporting data will be safe in the cloud. Along with this, you can even access the backend of your POS system remotely. The cloud permits you to facilitate a majority of backend activity but you will still need to install the software on a hardware device. It allows your POS to be a hybrid system and users can benefit from this as well as management and staff.",
-        "payment_processing": "Simphony offers payment processing but their rates are not publicly advertised. If you would like to use a different provider, you are able to do so which can be very beneficial for any business looking for help finiacing the hardware cost from Simphony.",
-        "pricing_desc": [
-            "$55 to $75 Monthly Software and Support Fee per station",
-            "Professional Installation - $2,595 ",
-            "Contracts depends on deal made with processing company"
-        ]
+    "logo": "simphony-pos.png",
+    "pos_integrations": "Simphony has a wide range of add-ons that allows for the POS to be customizable. Simphony is built on an open and secure API and you have a choice of using either Microsoft Windows or Oracle Linux. You are also able to easily connect a 3rd party online ordering platform, delivery service, mobile payment processing, and more.",
+    "software": "Simphony is a cloud-based system that allows for integration and synchronization across multiple terminals. If anything were to go wrong with the hardware or even if the internet drops, all critical reporting data will be safe in the cloud. Along with this, you can even access the backend of your POS system remotely. The cloud permits you to facilitate a majority of backend activity but you will still need to install the software on a hardware device. It allows your POS to be a hybrid system and users can benefit from this as well as management and staff.",
+    "payment_processing": "Simphony offers payment processing but their rates are not publicly advertised. If you would like to use a different provider, you are able to do so which can be very beneficial for any business looking for help finiacing the hardware cost from Simphony.",
+    "pricing_desc": [
+      "$55 to $75 Monthly Software and Support Fee per station",
+      "Professional Installation - $2,595 ",
+      "Contracts depends on deal made with processing company"
+    ]
+  },
+  {
+    "id": "8a013776",
+    "name": "Brink (Par)",
+    "monthly_price": 69.95,
+    "one_time_purchase": 1295,
+    "os_system": [
+      "Window"
+    ],
+    "overview": "Customizable point-of-sale system for full & quick-service restaurants",
+    "intro": "A cost-effective, feature-rich restaurant point of sale system, the Brink POS system by PAR Technology optimizes restaurant operations. It provides comprehensive capabilities, such as support for online ordering, table reservations, and gift card management, to assist busy restaurants in operating more successfully and efficiently.\nDue to its cloud-based architecture, it is ideal for companies of all sizes, from small independent shops to massive chains. In order to assist restaurant owners in tracking sales and expenses, Brink PAR also connects with well-known accounting programs.\nPar Brink POS is an excellent option for busy restaurants trying to optimize their operations because of its affordable price and strong functionality.",
+    "pros": [
+      "Stable hardware & software",
+      "Great on-site tech support",
+      "Customizable layout & features",
+      "Modifier to modifier features",
+      "Features Offline Mode",
+      "Compliant dual-pricing",
+      "Great for franshises"
+    ],
+    "cons": [
+      "Expensive hardware if you do not use their credit card processiing",
+      "Requires a strong internet connection",
+      "Need better integration w/ KDS"
+    ],
+    "expert_opinion": {
+      "comment": "Brink POS is an easy-to-use, customizable, cloud-based restaurant management solution specifically designed for fast casual and quick service chains. The solution delivers the key functionality required by restaurant owners, managers, kitchen and staff to track sales, enter in-store and online orders, implement customer loyalty programs and manage kitchen operations. ",
+      "easy": 9,
+      "value": 9,
+      "support": 9.5,
+      "functionality": 9.5,
+      "feedback": 9.5
     },
-    {
-        "id": "3f1943c6",
-        "name": "Ovvi",
-        "monthly_price": 49.95,
-        "one_time_purchase": 1495,
-        "os_system": [
-            "Android",
-            "Window"
-        ],
-        "overview": "POS used by restaurants, grocery, convenience & liquor stores",
-        "intro": "Ovvi is a cloud-based system that lets you instantly track sales, customers, inventory and orders.  Ovvi can be ran on a windows or an Android based platform",
-        "pros": [
-            "Easy to use interface",
-            "Compatible w/ 3rd party delivery",
-            "Cloud base for back office",
-            "Good tech support, 24/7",
-            "Simple check-out process"
-        ],
-        "cons": [
-            "Messy hardware",
-            "Not seamless for restaurant business",
-            "Not compatible w/ iOS",
-            "Does not the have modifiers to modifiers feature "
-        ],
-        "expert_opinion": {
-            "comment": "Ovvi is a POS solution that can be used by restaurants, retail stores, grocery stores, non-profit organizations, convenience stores, liquor stores and more. The solution helps businesses to process order, track ingredients, manage recipes and analyze ordering trends to form marketing strategies. The solution also helps managers to conduct a daily analysis of business operations, view sales data and productivity metrics. Users can pull sales reports by hour, volume, item, account type, employee, card type and day.",
-            "easy": 8,
-            "value": 8.5,
-            "support": 8,
-            "functionality": 8.5,
-            "feedback": 8.3
-        },
-        "logo": "ovvi-pos.png",
-        "pos_integrations": "Ovvi has built extensive integration partnerships with multiple vendors to help your business thrive. Allow for a seamless integration with over 30+ accounting and payroll companies. There is also delivery app integrations - expect less errors, serve customers from diverse locations and so many other features.",
-        "software": "Ovvi is a cloud-based system that lets you instantly track sales, customers, inventory and orders.  Ovvi can be ran on a windows or an Android based platform",
-        "payment_processing": "You could gain a local card processing representative that will not only help you with hardware cost but will also ensure that your transition to the new system is seamless.",
-        "pricing_desc": [
-            "$49.95 Monthly Software and Support Fee per station",
-            "Professional Installation - $695",
-            "Contracts depends on deal made with processing company"
-        ]
+    "logo": "brink-pos.png",
+    "pos_integrations": "Simphony has a wide range of add-ons that allows for the POS to be customizable. Simphony is built on an open and secure API and you have a choice of using either Microsoft Windows or Oracle Linux. You are also able to easily connect a 3rd party online ordering platform, delivery service, mobile payment processing, and more.",
+    "software": "Simphony is a cloud-based system that allows for integration and synchronization across multiple terminals. If anything were to go wrong with the hardware or even if the internet drops, all critical reporting data will be safe in the cloud. Along with this, you can even access the backend of your POS system remotely. The cloud permits you to facilitate a majority of backend activity but you will still need to install the software on a hardware device. It allows your POS to be a hybrid system and users can benefit from this as well as management and staff.",
+    "payment_processing": "Simphony offers payment processing but their rates are not publicly advertised. If you would like to use a different provider, you are able to do so which can be very beneficial for any business looking for help finiacing the hardware cost from Simphony.",
+    "pricing_desc": [
+      "$55 to $75 Monthly Software and Support Fee per station",
+      "Professional Installation - $2,595 ",
+      "Contracts depends on deal made with processing company"
+    ]
+  },
+  {
+    "id": "3f1943c6",
+    "name": "Ovvi",
+    "monthly_price": 49.95,
+    "one_time_purchase": 1495,
+    "os_system": [
+      "Android",
+      "Window"
+    ],
+    "overview": "POS used by restaurants, grocery, convenience & liquor stores",
+    "intro": "Ovvi specializes in complete point-of-sale (POS) software and hardware systems with all-encompassing services to meet the needs of businesses, including fine dining restaurants, quick service restaurants (QSR), pizza shops, frozen yogurt, convenience stores, grocery stores, and liquor stores, to name a few.\nBusiness owners can carry out business-enhancing tasks that enable operational efficiencies, customer loyalty programs, and customizable business reporting, enabling their business to run more successfully, thanks to Ovvi's open architecture and secure proprietary Restaurant/Retail software.\nOvvi's POS systems offer a complete solution, from collecting orders to tracking inventory. The POS solution from Ovvi gives business owners the pertinent information they need to make decisions that will positively affect their bottom line.",
+    "pros": [
+      "Easy to use interface",
+      "Compatible w/ 3rd party delivery",
+      "Cloud base for back office",
+      "Good tech support, 24/7",
+      "Simple check-out process"
+    ],
+    "cons": [
+      "Messy hardware",
+      "Not seamless for restaurant business",
+      "Not compatible w/ iOS",
+      "Does not the have modifiers to modifiers feature "
+    ],
+    "expert_opinion": {
+      "comment": "Ovvi is a POS solution that can be used by restaurants, retail stores, grocery stores, non-profit organizations, convenience stores, liquor stores and more. The solution helps businesses to process order, track ingredients, manage recipes and analyze ordering trends to form marketing strategies. The solution also helps managers to conduct a daily analysis of business operations, view sales data and productivity metrics. Users can pull sales reports by hour, volume, item, account type, employee, card type and day.",
+      "easy": 8,
+      "value": 8.5,
+      "support": 8,
+      "functionality": 8.5,
+      "feedback": 8.3
     },
-    {
-        "id": "587824fd",
-        "name": "Aldelo (Professional or Express)",
-        "monthly_price": 75,
-        "one_time_purchase": 1500,
-        "os_system": [
-            "iOS",
-            "Android",
-            "Window"
-        ],
-        "overview": "Cloud-based POS system best for small businesses or restaurants",
-        "intro": "Aldelo is a hybrid cloud-based software that can be displayed on Android or iPad.  Aldelo user are able to have backend control of their point-of-sale system remotely and have your business data stored outside of the hardware system. This ensures that if anything were to happen to your system, you never have to worry about losing any important information.",
-        "pros": [
-            "User-friendly system",
-            "East-to-use delivery features",
-            "On-site support"
-        ],
-        "cons": [
-            "Poor tech support",
-            "Expensive monthly fees",
-            "Lack of updates for Windows version systems",
-            "Extra cost to online and delivery service",
-            "Poor EMV compatibility"
-        ],
-        "expert_opinion": {
-            "comment": "Aldelo Express POS is a full-featured cloud-based restaurant technology platform that simplifies and enhances everyday restaurant operations. With merchant-facing and customer-facing integrated ordering and digital payments, Aldelo Express supports in-store, remote, and hybrid restaurant services.",
-            "easy": 9,
-            "value": 8.5,
-            "support": 6,
-            "functionality": 7.5,
-            "feedback": 7.5
-        },
-        "logo": "aldelo-pos.png",
-        "pos_integrations": "Aldelo Express can offer a wide variety of add-ons and integrations to improve your point-of-sale. A lot of the integrations assist with management, online ordering, and many more remotely. ",
-        "software": "Aldelo is a hybrid cloud-based software that can be displayed on Android or iPad.  Aldelo user are able to have backend control of their point-of-sale system remotely and have your business data stored outside of the hardware system. This ensures that if anything were to happen to your system, you never have to worry about losing any important information.",
-        "payment_processing": "You are able to use a wide variety of payment processors which benefits the merchants by being able to choose a local reseller to help with remote and on-site servicing. ",
-        "pricing_desc": [
-            "$75 Monthly Software and Support Fee per station",
-            "Professional Installation - $695",
-            "Contracts depends on deal made with processing company"
-        ]
+    "logo": "ovvi-pos.png",
+    "pos_integrations": "Ovvi has built extensive integration partnerships with multiple vendors to help your business thrive. Allow for a seamless integration with over 30+ accounting and payroll companies. There is also delivery app integrations - expect less errors, serve customers from diverse locations and so many other features.",
+    "software": "Ovvi is a cloud-based system that lets you instantly track sales, customers, inventory and orders.  Ovvi can be ran on a windows or an Android based platform",
+    "payment_processing": "You could gain a local card processing representative that will not only help you with hardware cost but will also ensure that your transition to the new system is seamless.",
+    "pricing_desc": [
+      "$49.95 Monthly Software and Support Fee per station",
+      "Professional Installation - $695",
+      "Contracts depends on deal made with processing company"
+    ]
+  },
+  {
+    "id": "587824fd",
+    "name": "Aldelo (Professional or Express)",
+    "monthly_price": 75,
+    "one_time_purchase": 1500,
+    "os_system": [
+      "iOS",
+      "Android",
+      "Window"
+    ],
+    "overview": "Cloud-based POS system best for small businesses or restaurants",
+    "intro": "Aldelo offers a customizable point of sale system that is ideal for a variety of bar and restaurant venues. With its original Aldelo for Restaurants app, which has thousands of installs, Aldelo has established a solid reputation. In a competitive app market, there was a switch to a cloud-based system with the advent of Aldelo Express.\nAldelo Express POS is a touchscreen-based system that makes use of tablets and fixed kiosks, like the majority of contemporary point-of-sale platforms. You can use a Windows computer or a self-service kiosk, bring your iPad or an Android device, or all three.\nAldelo POS is easy to use, so you don't have to worry about learning complicated back-office instructions. Aldelo POS has a ton of tools that may assist you in creating personalized menus, managing your restaurant, and keeping track of your operations.",
+    "pros": [
+      "User-friendly system",
+      "East-to-use delivery features",
+      "On-site support"
+    ],
+    "cons": [
+      "Poor tech support",
+      "Expensive monthly fees",
+      "Lack of updates for Windows version systems",
+      "Extra cost to online and delivery service",
+      "Poor EMV compatibility"
+    ],
+    "expert_opinion": {
+      "comment": "Aldelo Express POS is a full-featured cloud-based restaurant technology platform that simplifies and enhances everyday restaurant operations. With merchant-facing and customer-facing integrated ordering and digital payments, Aldelo Express supports in-store, remote, and hybrid restaurant services.",
+      "easy": 9,
+      "value": 8.5,
+      "support": 6,
+      "functionality": 7.5,
+      "feedback": 7.5
     },
-    {
-        "id": "f0ef18a8",
-        "name": "Lightspeed",
-        "monthly_price": 120,
-        "one_time_purchase": 2000,
-        "os_system": [
-            "iOS",
-            "Android"
-        ],
-        "overview": "Cloud-based POS system that is great for retailers of all sizes",
-        "intro": "Lightspeed has both an Android and IOS option. It is a hybrid POS system that allows you to work even if offline and prevent data loss. If the device is disconnected from the internet, the POS will continue to operate normally and store data but it will not be able to accept credit card payments if the internet is down.",
-        "pros": [
-            "Has a 14-day free trial period",
-            "Easy-to-use platform",
-            "Custom built for restaurants",
-            "Various software series"
-        ],
-        "cons": [
-            "Very expensive software (monthly fees)",
-            "Reports of glitches",
-            "Poor customer service",
-            "No offline mode"
-        ],
-        "expert_opinion": {
-            "comment": "Lightspeed is a cloud-based POS solution designed for retail stores of all sizes. Suitable for retailers in industries such as apparel, footwear, jewelry, pet, sporting goods and home decor. ",
-            "easy": 8,
-            "value": 7.5,
-            "support": 7.5,
-            "functionality": 8,
-            "feedback": 8
-        },
-        "logo": "lightspeed-pos.png",
-        "pos_integrations": "Lightspeed has many integrations that allow you to have the best POS system for your business. You are able to sync reporting data with accounting platforms, provide a loyalty program, maintain inventory management, and so many more.",
-        "software": "Lightspeed has both an Android and IOS option. It is a hybrid POS system that allows you to work even if offline and prevent data loss. If the device is disconnected from the internet, the POS will continue to operate normally and store data but it will not be able to accept credit card payments if the internet is down.",
-        "payment_processing": "You are able to have different credit card processors - Lightspeed Payments, Vantiv triPOS, Cayan, Element Express, and Mercury Payment Services. Along with this you can also accept Apple and Android Pay. ",
-        "pricing_desc": [
-            "$120 Monthly Sotware and Support Fee per station",
-            "Professional Installation - $895",
-            "3 year contract required"
-        ]
+    "logo": "aldelo-pos.png",
+    "pos_integrations": "Aldelo Express can offer a wide variety of add-ons and integrations to improve your point-of-sale. A lot of the integrations assist with management, online ordering, and many more remotely. ",
+    "software": "Aldelo is a hybrid cloud-based software that can be displayed on Android or iPad.  Aldelo user are able to have backend control of their point-of-sale system remotely and have your business data stored outside of the hardware system. This ensures that if anything were to happen to your system, you never have to worry about losing any important information.",
+    "payment_processing": "You are able to use a wide variety of payment processors which benefits the merchants by being able to choose a local reseller to help with remote and on-site servicing. ",
+    "pricing_desc": [
+      "$75 Monthly Software and Support Fee per station",
+      "Professional Installation - $695",
+      "Contracts depends on deal made with processing company"
+    ]
+  },
+  {
+    "id": "f0ef18a8",
+    "name": "Lightspeed",
+    "monthly_price": 120,
+    "one_time_purchase": 2000,
+    "os_system": [
+      "iOS",
+      "Android"
+    ],
+    "overview": "Cloud-based POS system that is great for retailers of all sizes",
+    "intro": "A cloud-based point of sale (POS) solution called Lightspeed Retail POS is made for retailers of all sizes. It includes a wide range of services, such as customer tracking, inventory management, and sales reporting. With the help of Lightspeed Retail POS's integrated eCommerce functionality, you can easily sell both online and offline from a single platform.\nLightspeed Retail is a fantastic alternative to take into consideration if you're searching for a POS system that can expand with your company. It is simple to use and scalable, making it a fantastic option for both larger companies that require a more powerful solution and small firms that are just getting started with POS. Additionally, because it is cloud-based and accessible from anywhere, it is a good option for companies with many locations.",
+    "pros": [
+      "Has a 14-day free trial period",
+      "Easy-to-use platform",
+      "Custom built for restaurants",
+      "Various software series"
+    ],
+    "cons": [
+      "Very expensive software (monthly fees)",
+      "Reports of glitches",
+      "Poor customer service",
+      "No offline mode"
+    ],
+    "expert_opinion": {
+      "comment": "Lightspeed is a cloud-based POS solution designed for retail stores of all sizes. Suitable for retailers in industries such as apparel, footwear, jewelry, pet, sporting goods and home decor. ",
+      "easy": 8,
+      "value": 7.5,
+      "support": 7.5,
+      "functionality": 8,
+      "feedback": 8
     },
-    {
-        "id": "4a659923",
-        "name": "Aloha",
-        "monthly_price": 150,
-        "one_time_purchase": 6500,
-        "os_system": [
-            "Window"
-        ],
-        "overview": "Cloud-enabled platform great for any type of restaurants and bars",
-        "intro": "Aloha provides fixed, mobile POS stations and self-service kiosks. They are a cloud-based platform but when it comes to larger installations you may require a local onsite POS server hardware device. The POS will be able to store all information and synchronizes your data to the cloud. You will be able to access data remotely and even make customizations when not in the store.",
-        "pros": [
-            "Stable hardware & software",
-            "Great for resturants and bars",
-            "Great for large Enterpirses",
-            "Customizable menu",
-            "Compliant dual-pricing"
-        ],
-        "cons": [
-            "Very expensive hardware & monthly fees",
-            "No in-house system for online ordering servcie",
-            "Poor customer service",
-            "Customizable is time consuming & expensive "
-        ],
-        "expert_opinion": {
-            "comment": "Aloha POS is a restaurant point-of-sale system designed with larger, multi-location businesses in mind. It is a hybrid system with locally installed hardware that boasts a rich feature set including strong inventory management.",
-            "easy": 8,
-            "value": 7,
-            "support": 7,
-            "functionality": 9,
-            "feedback": 8.5
-        },
-        "logo": "aloha-pos.png",
-        "pos_integrations": "There are many integrations that can assist you with payment processing, online ordering, accounting, and so many more. With over 200 integrations, you can customize your POS to however you'd like.",
-        "software": "Aloha provides fixed, mobile POS stations and self-service kiosks. They are a cloud-based platform but when it comes to larger installations you may require a local onsite POS server hardware device. The POS will be able to store all information and synchronizes your data to the cloud. You will be able to access data remotely and even make customizations when not in the store.",
-        "payment_processing": "The Aloha POS system usually suggests for you to work with its in-house solutions but their are many benefits in working with a local card payment provider such as cheaper hardware and processing rates.  Please note that you would have to work with a provider that is compatible with Aloha's EMV gateway which is limited.",
-        "pricing_desc": [
-            "Some clients report pricing at around $150 per month, per terminal"
-        ]
+    "logo": "lightspeed-pos.png",
+    "pos_integrations": "Lightspeed has many integrations that allow you to have the best POS system for your business. You are able to sync reporting data with accounting platforms, provide a loyalty program, maintain inventory management, and so many more.",
+    "software": "Lightspeed has both an Android and IOS option. It is a hybrid POS system that allows you to work even if offline and prevent data loss. If the device is disconnected from the internet, the POS will continue to operate normally and store data but it will not be able to accept credit card payments if the internet is down.",
+    "payment_processing": "You are able to have different credit card processors - Lightspeed Payments, Vantiv triPOS, Cayan, Element Express, and Mercury Payment Services. Along with this you can also accept Apple and Android Pay. ",
+    "pricing_desc": [
+      "$120 Monthly Sotware and Support Fee per station",
+      "Professional Installation - $895",
+      "3 year contract required"
+    ]
+  },
+  {
+    "id": "4a659923",
+    "name": "Aloha",
+    "monthly_price": 150,
+    "one_time_purchase": 6500,
+    "os_system": [
+      "Window"
+    ],
+    "overview": "Cloud-enabled platform great for any type of restaurants and bars",
+    "intro": "Using the cloud-enabled technology platform NCR Aloha, restaurant owners can embrace digital transformation to manage every element of their business, increase on- and off-premise revenue, improve management, and satisfy customers. Fixed and mobile point of sale systems, contactless eating, analytics, online ordering, third-party delivery interfaces, and more are all included with an all-inclusive subscription model. More personnel are educated on Aloha than any other POS and it is used in hundreds of restaurants across the world.\nBecause the system is a hybrid cloud-based solution, you won't run the danger of losing crucial data if something bad happens to your hardware. Information crucial to reporting can be accessed off-site. Additionally, it has mobile POS capabilities, which aid servers in turning over more tables and minimizing order mistakes.\nAdditionally, Aloha POS provides internal payment processing that takes all significant payment methods. There is also EMV technology available. It's simple to create menus and provide clients with seasonal deals; you can even split tabs and tips with ease. Aloha has adapted to COVID by providing crucial tools including self-ordering kiosks, QR code payments, and internet ordering.",
+    "pros": [
+      "Stable hardware & software",
+      "Great for resturants and bars",
+      "Great for large Enterpirses",
+      "Customizable menu",
+      "Compliant dual-pricing"
+    ],
+    "cons": [
+      "Very expensive hardware & monthly fees",
+      "No in-house system for online ordering servcie",
+      "Poor customer service",
+      "Customizable is time consuming & expensive "
+    ],
+    "expert_opinion": {
+      "comment": "Aloha POS is a restaurant point-of-sale system designed with larger, multi-location businesses in mind. It is a hybrid system with locally installed hardware that boasts a rich feature set including strong inventory management.",
+      "easy": 8,
+      "value": 7,
+      "support": 7,
+      "functionality": 9,
+      "feedback": 8.5
     },
-    {
-        "id": "20621691",
-        "name": "Upserve",
-        "monthly_price": 199,
-        "one_time_purchase": 2000,
-        "os_system": [
-            "iOS",
-            "Android"
-        ],
-        "overview": "Great POS that provides you with full restaurant management platform",
-        "intro": "Upserve is a hybrid form of POS meaning that it is a cloud based system. While all reporting data and information can be stored and accessed in the cloud, the offline mode allows the software to store important data on your device in case the internet goes down. When operating in offline mode, you can swipe a card and the POS will encrypt it and will securely hold it until the internet is up and running again.",
-        "pros": [
-            "Great for small resturants",
-            "Sleek hardware",
-            "Bunch of add-ons & integrations",
-            "Interface is tailored for restaurant"
-        ],
-        "cons": [
-            "Poor for retail",
-            "Poor tech support",
-            "Expenavie Hardware",
-            "Reports of glicthes"
-        ],
-        "expert_opinion": {
-            "comment": "Upserve POS’s designers worked together to create an easy-to-use and POS system that would alleviate some of the major headaches faced by the restaurant/hospitality industry. It was created by former managers, bartenders, and servers. But with many reports of glitches and hardware issues, the system can be disruptive at times during operations.  ",
-            "easy": 8,
-            "value": 7.5,
-            "support": 7.5,
-            "functionality": 8,
-            "feedback": 8
-        },
-        "logo": "upserve-pos.png",
-        "pos_integrations": "Integrations and add-ons are a great feature of Upserve POS systems. Not only are you able to have upgrades for premium packages you have access to a giant range of integrations. Some of the integrations include in-depth analytics, managing scheduling and reservations, issue gift cards and many other features. Keep in mind that some add-ons may cost extra money but allow for you to have the best POS system suited for your business.",
-        "software": "Upserve is a hybrid form of POS meaning that it is a cloud based system. While all reporting data and information can be stored and accessed in the cloud, the offline mode allows the software to store important data on your device in case the internet goes down. When operating in offline mode, you can swipe a card and the POS will encrypt it and will securely hold it until the internet is up and running again.",
-        "payment_processing": "When using an Upserve POS, there is unfortunately not much flexibility when it comes to payment processing. You will need to use their processing platform and although it can be seen as a hassle, it has its benefits. It can be convenient having your POS and payment processing with the same company and they are even willing to price match to provide you a better rate in the beginning of your contract.",
-        "pricing_desc": [
-            "Core Monthly - $199 (Additional station $60)",
-            "Pro Monthly - $249 (Additional station $50)",
-            "Pro Plus Monthly - $399 (Additional station $40)"
-        ]
+    "logo": "aloha-pos.png",
+    "pos_integrations": "There are many integrations that can assist you with payment processing, online ordering, accounting, and so many more. With over 200 integrations, you can customize your POS to however you'd like.",
+    "software": "Aloha provides fixed, mobile POS stations and self-service kiosks. They are a cloud-based platform but when it comes to larger installations you may require a local onsite POS server hardware device. The POS will be able to store all information and synchronizes your data to the cloud. You will be able to access data remotely and even make customizations when not in the store.",
+    "payment_processing": "The Aloha POS system usually suggests for you to work with its in-house solutions but their are many benefits in working with a local card payment provider such as cheaper hardware and processing rates.  Please note that you would have to work with a provider that is compatible with Aloha's EMV gateway which is limited.",
+    "pricing_desc": [
+      "Some clients report pricing at around $150 per month, per terminal"
+    ]
+  },
+  {
+    "id": "20621691",
+    "name": "Upserve",
+    "monthly_price": 199,
+    "one_time_purchase": 2000,
+    "os_system": [
+      "iOS",
+      "Android"
+    ],
+    "overview": "Great POS that provides you with full restaurant management platform",
+    "intro": "Upserve POS has a ton of helpful options if you're searching for a system to change the way you run your restaurant. If you want a touch screen POS system, the Upserve app is a great choice because it can be used on iOS and Android smartphones. Easy menu creation, a comprehensive list of integrations, several seamless features, restaurant management tools, superb hardware options, and more are all offered by Upserve POS.",
+    "pros": [
+      "Great for small resturants",
+      "Sleek hardware",
+      "Bunch of add-ons & integrations",
+      "Interface is tailored for restaurant"
+    ],
+    "cons": [
+      "Poor for retail",
+      "Poor tech support",
+      "Expenavie Hardware",
+      "Reports of glicthes"
+    ],
+    "expert_opinion": {
+      "comment": "Upserve POS’s designers worked together to create an easy-to-use and POS system that would alleviate some of the major headaches faced by the restaurant/hospitality industry. It was created by former managers, bartenders, and servers. But with many reports of glitches and hardware issues, the system can be disruptive at times during operations.  ",
+      "easy": 8,
+      "value": 7.5,
+      "support": 7.5,
+      "functionality": 8,
+      "feedback": 8
     },
-    {
-        "id": "8fdf75eb",
-        "name": "Toast",
-        "monthly_price": 69,
-        "one_time_purchase": 700,
-        "os_system": [
-            "Android"
-        ],
-        "overview": "Toast is a easy-to-use software w/ a sleek station & handheld hardware",
-        "intro": "Upserve is a hybrid form of POS meaning that it is a cloud based system. While all reporting data and information can be stored and accessed in the cloud, the offline mode allows the software to store important data on your device in case the internet goes down. When operating in offline mode, you can swipe a card and the POS will encrypt it and will securely hold it until the internet is up and running again.",
-        "pros": [
-            "Inexpensive upfront cost to hardware",
-            "Easy to use back office",
-            "Low rates for card processing payments in the beginning",
-            "Has modifier to modifier feature.",
-            "Marketing to help repeat business",
-            "Digital ordering"
-        ],
-        "cons": [
-            "Poor tech support",
-            "No on-site support or training",
-            "Proprietary card processing which leads to high rates after a short period of time",
-            "Monthly servcie price hikes",
-            "Back office has poor multi location management features",
-            "Reports of glitches",
-            "Non-compliant dual pricing guest receipt."
-        ],
-        "expert_opinion": {
-            "comment": "Toast is an easy-to-use POS system built specifically for the restaurant industry. It has excellent feature sets, strong tableside ordering, and backoffice management. Managers tends to gravitate towards this system due to its simplicity and owners love it due to its low upfront costs. Down the line, the system can be frustrating due to its non-existing local servicing and high price hikes due to card payment processing being propriety with Toast.",
-            "easy": 9,
-            "value": 9,
-            "support": 6.5,
-            "functionality": 7.5,
-            "feedback": 8.5
-        },
-        "logo": "toast-pos.png",
-        "pos_integrations": "There is a large range of add-ons and integrations that come with Toast. It allows you to customize your POS system to your liking and best suited for your business. Add-ons such as gift card program, loyalty program, payroll and online ordering will have additional monthly charges.",
-        "software": "Toast POS is an Android cloud-based POS solution. There is a local LAN network for Toast clients and it provides a dedicated router for PCI standards compliance which ensures that all POS data is securely downloaded and stored on every connected device. Even if the internet connection may crash, all of your devices will still be able to work and you can still accept credit card payments but not gift cards.",
-        "payment_processing": "For Toast, you will need to use their in-house payment processor which can be inconvenient for businesses who already work with a company they enjoy. Toast is known for hiking their processing rates over a short time of being with them and you cannot change to another credit card processor.  But then again, having your POS and payment processor all within one company has its benefits such as user-friendly payment adjustments at pickup and deliveries.",
-        "pricing_desc": [
-            "Monthly Service charge depends on the package you choose.  Since Toast payment processing is in-house they are able to charge $0 per month for the first station but at a higher processing rate.  This is a start-up program.",
-            "$69 monthly service fee per station",
-            "$50 Gift Card Program (per month)",
-            "$25 Loyalty Program (per month)",
-            "$50 Online Ordering (per month)",
-            "$165 Online Ordering, Delivery & Takeout App (per month)",
-            "$250 Remote Installation",
-            "3 year contracts"
-        ]
-    }
+    "logo": "upserve-pos.png",
+    "pos_integrations": "Integrations and add-ons are a great feature of Upserve POS systems. Not only are you able to have upgrades for premium packages you have access to a giant range of integrations. Some of the integrations include in-depth analytics, managing scheduling and reservations, issue gift cards and many other features. Keep in mind that some add-ons may cost extra money but allow for you to have the best POS system suited for your business.",
+    "software": "Upserve is a hybrid form of POS meaning that it is a cloud based system. While all reporting data and information can be stored and accessed in the cloud, the offline mode allows the software to store important data on your device in case the internet goes down. When operating in offline mode, you can swipe a card and the POS will encrypt it and will securely hold it until the internet is up and running again.",
+    "payment_processing": "When using an Upserve POS, there is unfortunately not much flexibility when it comes to payment processing. You will need to use their processing platform and although it can be seen as a hassle, it has its benefits. It can be convenient having your POS and payment processing with the same company and they are even willing to price match to provide you a better rate in the beginning of your contract.",
+    "pricing_desc": [
+      "Core Monthly - $199 (Additional station $60)",
+      "Pro Monthly - $249 (Additional station $50)",
+      "Pro Plus Monthly - $399 (Additional station $40)"
+    ]
+  },
+  {
+    "id": "8fdf75eb",
+    "name": "Toast",
+    "monthly_price": 69,
+    "one_time_purchase": 700,
+    "os_system": [
+      "Android"
+    ],
+    "overview": "Toast is a easy-to-use software w/ a sleek station & handheld hardware",
+    "intro": "A point-of-sale system designed exclusively for the hospitality industry - Toast POS concentrates on tools that assist restaurant owners in increasing productivity and managing different aspects of their businesses. Toast POS provides a stylish, simple-to-use point-of-sale software system that pairs well with top-notch Android hardware options. Today's necessities, such as internet ordering, delivery, and takeout, are provided by the software. Users will profit from touchscreen hardware gadgets that make taking orders quick and easy. The hardware and software are made to withstand the challenges of the restaurant industry.\nIn addition to having capabilities tailored specifically for restaurants, Toast POS also offers a few distinctive specifications for niche restaurant markets. For instance, features are offered for a variety of hospitality categories, including fine dining, bakeries, pubs, and cafes. You can get solutions created to aid your particular sort of restaurant by using these distinct categories. In-house payment processing and third-party interfaces can both increase the effectiveness of your company.",
+    "pros": [
+      "Inexpensive upfront cost to hardware",
+      "Easy to use back office",
+      "Low rates for card processing payments in the beginning",
+      "Has modifier to modifier feature.",
+      "Marketing to help repeat business",
+      "Digital ordering"
+    ],
+    "cons": [
+      "Poor tech support",
+      "No on-site support or training",
+      "Proprietary card processing which leads to high rates after a short period of time",
+      "Monthly servcie price hikes",
+      "Back office has poor multi location management features",
+      "Reports of glitches",
+      "Non-compliant dual pricing guest receipt."
+    ],
+    "expert_opinion": {
+      "comment": "Toast is an easy-to-use POS system built specifically for the restaurant industry. It has excellent feature sets, strong tableside ordering, and backoffice management. Managers tends to gravitate towards this system due to its simplicity and owners love it due to its low upfront costs. Down the line, the system can be frustrating due to its non-existing local servicing and high price hikes due to card payment processing being propriety with Toast.",
+      "easy": 9,
+      "value": 9,
+      "support": 6.5,
+      "functionality": 7.5,
+      "feedback": 8.5
+    },
+    "logo": "toast-pos.png",
+    "pos_integrations": "There is a large range of add-ons and integrations that come with Toast. It allows you to customize your POS system to your liking and best suited for your business. Add-ons such as gift card program, loyalty program, payroll and online ordering will have additional monthly charges.",
+    "software": "Toast POS is an Android cloud-based POS solution. There is a local LAN network for Toast clients and it provides a dedicated router for PCI standards compliance which ensures that all POS data is securely downloaded and stored on every connected device. Even if the internet connection may crash, all of your devices will still be able to work and you can still accept credit card payments but not gift cards.",
+    "payment_processing": "For Toast, you will need to use their in-house payment processor which can be inconvenient for businesses who already work with a company they enjoy. Toast is known for hiking their processing rates over a short time of being with them and you cannot change to another credit card processor.  But then again, having your POS and payment processor all within one company has its benefits such as user-friendly payment adjustments at pickup and deliveries.",
+    "pricing_desc": [
+      "Monthly Service charge depends on the package you choose.  Since Toast payment processing is in-house they are able to charge $0 per month for the first station but at a higher processing rate.  This is a start-up program.",
+      "$69 monthly service fee per station",
+      "$50 Gift Card Program (per month)",
+      "$25 Loyalty Program (per month)",
+      "$50 Online Ordering (per month)",
+      "$165 Online Ordering, Delivery & Takeout App (per month)",
+      "$250 Remote Installation",
+      "3 year contracts"
+    ]
+  }
 ]

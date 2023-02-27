@@ -13,7 +13,7 @@ const POSIntroduction = ({ pros, cons, desc, id }: POSIntroductionProps) => {
     <div id={id} className="flex flex-col gap-10 md:gap-16">
       <div className="flex flex-col gap-4 md:gap-6">
         <p className="txt-heading-xsmal  md:txt-heading-small">Introduction</p>
-        <p className="txt-md text-neutral-700">{desc}</p>
+        <p className="txt-md text-neutral-700 whitespace-pre-line">{desc}</p>
       </div>
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
         <div className="flex flex-col text-left txt-md">
