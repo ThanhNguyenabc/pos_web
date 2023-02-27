@@ -26,11 +26,12 @@ import {
   RetailCategory,
   QuickServiceCategory,
   PizzeriaCategory,
+  IcAmericanFlag,
+  IcSpanishFlag,
 } from "assets/AssetUtil";
 import { CategoryType } from "models/category_type";
 import { SystemOs } from "models/product.model";
 import { StaticImageData } from "next/image";
-import { ReactComponentElement, ReactElement } from "react";
 import AppRoutes from "./routes";
 
 export const SuccessMessage = "Thank you for filling out the form";
@@ -92,27 +93,27 @@ export const MainMenu = {
   },
   freepos: {
     route: AppRoutes.FreePOSPage,
-    title: "Free POS",
+    title: "free_pos",
   },
   posreview: {
     route: AppRoutes.CategoryPage,
-    title: "POS Reviews",
+    title: "pos_review",
   },
   contact: {
     route: AppRoutes.ContactPage,
-    title: "Contact",
+    title: "contact",
   },
   about: {
     route: AppRoutes.AboutPage,
-    title: "About",
+    title: "about_us",
   },
   blog: {
     route: AppRoutes.BlogPage,
-    title: "Blog",
+    title: "blog",
   },
   breadme: {
     route: AppRoutes.BreadmePage,
-    title: "0% Processing Fee",
+    title: "processing_fee",
   },
 };
 
@@ -226,85 +227,14 @@ export const BreadmeStationData = [
     content: "5+ stations",
   },
 ];
-export const MockupData = [
+
+export const Languages = [
   {
-    logo: RevelImg,
-    systemos: [IcApple, IcWindow],
-    rating: 6,
-    desc: "Toast is a easy-to-use software with a sleek station & handheld hardware",
-    pros: [
-      "Customizable clouded system",
-      "Amazing local on-site support",
-      "Great back office management",
-    ],
-    cons: [
-      "Doesn't work with Android",
-      "Potential glitches with weak internet",
-      "No modifiers to modifiers feature",
-    ],
+    id: "en",
+    icon: IcAmericanFlag,
   },
   {
-    logo: ToastImg,
-    systemos: [IcApple],
-    rating: 9,
-    desc: "Toast is a easy-to-use software with a sleek station & handheld hardware",
-    pros: [
-      "Customizable clouded system",
-      "Amazing local on-site support",
-      "Great back office management",
-    ],
-    cons: [
-      "Doesn't work with Android",
-      "Potential glitches with weak internet",
-      "No modifiers to modifiers feature",
-    ],
-  },
-  {
-    logo: CloverImg,
-    systemos: [IcWindow],
-    rating: 10,
-    desc: "Toast is a easy-to-use software with a sleek station & handheld hardware",
-    pros: [
-      "Customizable clouded system",
-      "Amazing local on-site support",
-      "Great back office management",
-    ],
-    cons: [
-      "Doesn't work with Android",
-      "Potential glitches with weak internet",
-      "No modifiers to modifiers feature",
-    ],
-  },
-  {
-    logo: OvviImg,
-    systemos: [IcWindow],
-    rating: 5,
-    desc: "Toast is a easy-to-use software with a sleek station & handheld hardware",
-    pros: [
-      "Customizable clouded system",
-      "Amazing local on-site support",
-      "Great back office management",
-    ],
-    cons: [
-      "Doesn't work with Android",
-      "Potential glitches with weak internet",
-      "No modifiers to modifiers feature",
-    ],
-  },
-  {
-    logo: LightSpeedImg,
-    systemos: [IcApple],
-    rating: 8,
-    desc: "Toast is a easy-to-use software with a sleek station & handheld hardware",
-    pros: [
-      "Customizable clouded system",
-      "Amazing local on-site support",
-      "Great back office management",
-    ],
-    cons: [
-      "Doesn't work with Android",
-      "Potential glitches with weak internet",
-      "No modifiers to modifiers feature",
-    ],
+    id: "spa",
+    icon: IcSpanishFlag,
   },
 ];

@@ -80,3 +80,4 @@ export { default as IcSupport } from "./icons/ic_support.svg";
 export { default as IcPayZero } from "./icons/ic_pay_zero.svg";
 export { default as IcServiceFee } from "./icons/ic_service_fee.svg";
 export { default as IcAndroid } from "./icons/ic_android.svg";
+export { default as IcSpanishFlag } from "./icons/ic_spanish_flag.svg";

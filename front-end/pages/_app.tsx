@@ -7,6 +7,9 @@ import FindPOSModal from "components/elements/find_pos_modal/FindPOSModal";
 import Head from "next/head";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import i18n, { initI18 } from "i18";
+
+initI18();
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
