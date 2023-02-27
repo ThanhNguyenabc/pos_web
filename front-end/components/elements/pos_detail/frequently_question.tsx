@@ -29,7 +29,7 @@ const FrequentlyQuestion = ({ id }: { id: string }) => {
               className=" flex flex-col p-6 bg-neutral-100 gap-2 rounded-2xl"
             >
               <p className="txt-md-bold"> {item.question}</p>
-              <p className=" text-neutral-700 md:text-xl">{item.answer}</p>
+              <p className=" text-neutral-700">{item.answer}</p>
             </div>
           );
         })}

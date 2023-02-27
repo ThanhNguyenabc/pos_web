@@ -24,7 +24,7 @@ const PricingBtn = ({
   return (
     <div
       className={
-        "w-full bg-white flex flex-col items-center border-2 rounded-lg"
+        "w-full bg-white flex flex-col items-center border-2 rounded-lg cursor-pointer"
       }
       style={{
         borderColor: color,

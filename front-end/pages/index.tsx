@@ -16,11 +16,13 @@ import ColorUtils from "utils/ColorUtils";
 import AppRoutes from "utils/routes";
 import HeroSection from "components/common/HeroSection";
 import ReviewerSection from "components/elements/partner/ReviewerSection";
+import { useTranslation, initReactI18next } from "react-i18next";
 
 const FeatureData = ["24/7 Support", "Free training", "Seamless Installments"];
 
 const Home = () => {
   const router = useRouter();
+  const { t } = useTranslation();
 
   const findPOS = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });

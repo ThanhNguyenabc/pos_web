@@ -13,7 +13,7 @@ const TabItem = ({
   return (
     <button
       id={`tab-${name.toLowerCase()}`}
-      className={`tab min-w-max max-w-5xl txt-md-bold h-12  ${className}`}
+      className={`tab min-w-max txt-md-bold h-12  ${className}`}
       onClick={onClick}
     >
       {name}
@@ -47,7 +47,7 @@ const TabList = ({
   return (
     <div
       className={twMerge(
-        "flex flex-row gap-4 overflow-x-auto items-center",
+        "flex flex-row gap-4 overflow-x-scroll max-w-full items-center mx-auto ",
         className
       )}
     >

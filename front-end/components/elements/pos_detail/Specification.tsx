@@ -15,8 +15,8 @@ const SpecificationView = ({ items, id }: SpecificationProps) => {
         <tbody>
           {items.map((item, index) => (
             <tr key={`sp-${index}`}>
-              <th className="font-semibold px-0 md:text-xl">{item.title}</th>
-              <td className="md:text-xl whitespace-pre-wrap">{item.desc}</td>
+              <th className="font-semibold px-0">{item.title}</th>
+              <td className="whitespace-pre-wrap">{item.desc}</td>
             </tr>
           ))}
         </tbody>

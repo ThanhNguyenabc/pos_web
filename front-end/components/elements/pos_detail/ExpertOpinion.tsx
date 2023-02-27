@@ -18,8 +18,8 @@ const RatingItem = ({ name, rating }: { name: string; rating: number }) => {
       className="flex flex-col gap-2"
     >
       <div className=" flex flex-row justify-between">
-        <p className="txt-md md:text-xl"> {name}</p>
-        <p className="txt-md-bold md:text-xl"> {`${rating}`}</p>
+        <p className="txt-md"> {name}</p>
+        <p className="txt-md-bold"> {`${rating}`}</p>
       </div>
 
       <Progress
@@ -27,7 +27,7 @@ const RatingItem = ({ name, rating }: { name: string; rating: number }) => {
         value={rating}
         progressColor={"bg-primary"}
         backgroundColor={" bg-accent"}
-        className={"rounded-lg"}
+        className={"rounded-lg md:h-2"}
       />
     </div>
   );
@@ -42,7 +42,7 @@ const ExpertOpinion = ({
   return (
     <div id={id} className="flex flex-col gap-6 md:gap-8">
       <p className="txt-heading-xsmal md:txt-heading-small">Expert Opinions</p>
-      <div className="flex flex-col gap-6 md:gap-8 xl:flex-row xl:gap-16">
+      <div className="flex flex-col gap-6 md:gap-8 lg:flex-row lg:gap-16">
         <div className="flex w-full flex-row gap-8 md:gap-12">
           <div className="h-[170px] w-[170px] md:w-[240px]">
             <CircularProgressbarWithChildren
@@ -71,15 +71,13 @@ const ExpertOpinion = ({
               <p className=" text-4xl font-extrabold md:text-6xl">{overal}</p>
             </CircularProgressbarWithChildren>
           </div>
-          <div className="flex flex-col gap-4 md:gap-8 w-full">
+          <div className="flex flex-col gap-4 md:gap-6 w-full">
             {rateItems.map((item, index) => (
               <RatingItem key={`key-${index}`} {...item} />
             ))}
           </div>
         </div>
-        <p className="xl:max-w-[300px] txt-md text-neutral-700 md:text-xl">
-          {comment}
-        </p>
+        <p className="xl:max-w-[300px] txt-md text-neutral-700">{comment}</p>
       </div>
     </div>
   );

@@ -5,16 +5,23 @@ const PricingPerType = ({
   plan,
   money,
   desc,
+  className,
 }: {
   plan: string;
   money: number;
   desc: string;
+  className?: string;
 }) => {
   return (
-    <div className="flex flex-1 flex-col p-4 gap-2 border-2 border-neutral-300  rounded-2xl items-center justify-center text-center">
-      <p className=" text-secondary txt-sm-bold md:text-xl">{plan}</p>
-      <p className="txt-heading-small md:txt-heading-large">${money}</p>
-      <p className="txt-sm text-neutral-700 md:text-xl">{desc}</p>
+    <div
+      className={`flex flex-1 flex-col p-4 gap-2 border-2 border-neutral-300  
+      rounded-2xl items-center justify-center text-center ${className}`}
+    >
+      <p className="txt-sm-bold md:text-base">{plan}</p>
+      <p className="txt-heading-small md:txt-heading-large text-neutral-900">
+        ${money}
+      </p>
+      <p className="txt-sm text-neutral-700 md:text-base">{desc}</p>
     </div>
   );
 };
@@ -33,10 +40,7 @@ const Pricing = ({ desc, monthlyPrice, oneTimePurchase, id }: PricingProps) => {
         <p className="txt-heading-xsmal md:txt-heading-small">Pricing</p>
         <div className="flex flex-col">
           {desc.map((item, index) => (
-            <p
-              key={`${index}-desc`}
-              className="txt-md text-neutral-700 md:text-xl"
-            >
+            <p key={`${index}-desc`} className="txt-md text-neutral-700">
               {item}
             </p>
           ))}
@@ -44,18 +48,20 @@ const Pricing = ({ desc, monthlyPrice, oneTimePurchase, id }: PricingProps) => {
       </div>
       <div className="flex flex-row gap-4 w-full md:gap-8">
         <PricingPerType
-          plan="Basic plan"
+          plan="Service Monthly Plan"
           money={monthlyPrice}
           desc="Per Month"
+          className="text-primary"
         />
         <PricingPerType
           plan="One time purchase"
           money={oneTimePurchase}
           desc="Per Station"
+          className=" bg-purple_light border-none text-secondary"
         />
       </div>
     </div>
   );
-};
+}; 
 
 export default Pricing;

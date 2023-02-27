@@ -13,7 +13,6 @@ import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
 import ColorUtils from "utils/ColorUtils";
 import AppRoutes from "utils/routes";
 import { getSystemIcon, ProductIcons } from "utils/StringUtil";
-import { RequestDemoModalId } from "../request_demo_pos/RequestDemoPOS";
 import ExpertOpinion from "./ExpertOpinion";
 import FrequentlyQuestion from "./frequently_question";
 import POSIntroduction from "./Introduction";
@@ -90,8 +89,8 @@ export const ProductDetail = ({
   ];
 
   return (
-    <Box className=" flex flex-col  lg:flex-row lg:gap-10">
-      <div className="flex flex-col py-6 h-fit gap-6  text-center md:gap-8 md:flex-row lg:flex-col lg:py-0 lg:w-[400px]">
+    <Box className=" flex flex-col lg:pr-0 lg:flex-row lg:gap-10">
+      <div className="flex flex-col py-6 h-fit gap-6  text-center md:gap-8 md:flex-row lg:flex-col lg:w-[400px] lg:py-0 lg:sticky lg:top-0 lg:z-10">
         <div className="flex flex-col flex-1 gap-2 items-center md:items-start md:text-left lg:items-center ">
           <Image
             src={ProductIcons[product.name]}
@@ -109,8 +108,8 @@ export const ProductDetail = ({
           </div>
         </div>
 
-        <div className="flex  flex-1 flex-col gap-4 md:gap-6">
-          <div className="flex flex-row gap-2 md:gap-4 lg:w-[400px]">
+        <div className="flex  flex-1 flex-col gap-4 md:gap-6 lg:w-[400px]">
+          <div className="flex flex-row gap-2 md:gap-4 ">
             <BreadMeBtn />
             <PricingBtn
               logo={ProductIcons[product.name]}
@@ -140,11 +139,10 @@ export const ProductDetail = ({
         </div>
       </div>
 
-      <div className="flex flex-col flex-1  w-full gap-12 md:gap-8 lg:border-l-2">
-        <div className="sticky top-0 z-30 border-b-2 border-neutral-300 bg-white ">
+      <div className="flex flex-col flex-1  w-full gap-12 md:gap-8 lg:border-l-2 lg:max-w-[calc(100%-440px)]">
+        <div className="sticky top-0 z-30 border-b-2 border-neutral-300 flex bg-white">
           <TabList
             tabList={DetailTabs}
-            className="max-w-[1200px] mx-auto"
             tabItemStyle={(isSelect) =>
               isSelect
                 ? " border-b-4 border-secondary text-secondary"
@@ -159,7 +157,7 @@ export const ProductDetail = ({
           />
         </div>
 
-        <Box className="px-0 pb-14 gap-12 md:gap-16 container-content overflow-x-hidden">
+        <Box className="px-0 pb-14 gap-12 md:gap-16   lg:max-w-[1100px] mx-auto">
           <POSIntroduction
             id={DetailTabs[0].id}
             pros={product.pros}
@@ -209,13 +207,13 @@ export const ProductDetail = ({
             <p className="txt-heading-xsmal md:txt-heading-small">
               POS Integrations
             </p>
-            <p className="txt-md text-neutral-700 md:text-xl">
+            <p className="txt-md text-neutral-700">
               {product.pos_integrations}
             </p>
           </div>
           <div id={DetailTabs[4].id} className="flex flex-col gap-4 md:gap-8">
             <p className="txt-heading-xsmal md:txt-heading-small">Software</p>
-            <p className="txt-md text-neutral-700 md:text-xl">
+            <p className="txt-md text-neutral-700">
               {product.software}
             </p>
           </div>
@@ -223,7 +221,7 @@ export const ProductDetail = ({
             <p className="txt-heading-xsmal md:txt-heading-small">
               Payment Processing
             </p>
-            <p className="txt-md text-neutral-700 md:text-xl">
+            <p className="txt-md text-neutral-700">
               {product.payment_processing}
             </p>
             <div className="flex flex-row p-4 gap-4 items-center border-success border-2 rounded-xl">
