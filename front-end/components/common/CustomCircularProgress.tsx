@@ -3,7 +3,7 @@ import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 import { CircularProgressbarWrapperProps } from "react-circular-progressbar/dist/types";
 
 import ColorUtils from "utils/ColorUtils";
-import GradientSVG, { gradientID } from "./GradientSVG";
+import GradientSVG from "./GradientSVG";
 
 interface CustomCircularProgressProps extends CircularProgressbarWrapperProps {
   className?: string;
@@ -28,7 +28,7 @@ const CustomCircularProgress = ({
           path: {
             stroke: `url(#${id})`,
             transition: "stroke-dashoffset 0.5s ease 0s",
-
+            height: "100%",
             transform: "rotate(1turn)",
           },
           trail: {
@@ -40,24 +40,6 @@ const CustomCircularProgress = ({
       >
         {children}
       </CircularProgressbarWithChildren>
-      {/* <CircularProgressbarWithChildren
-        {...any}
-        styles={{
-          path: {
-            stroke: `url(#${gradientID})`,
-            height: "100%",
-            transition: "stroke-dashoffset 0.5s ease 0s",
-            transform: "rotate(1turn)",
-          },
-          trail: {
-            stroke: ColorUtils["neutral-100"],
-            strokeLinecap: "butt",
-            transform: "rotate(1turn)",
-          },
-        }}
-      >
-        {children}
-      </CircularProgressbarWithChildren> */}
     </div>
   );
 };
