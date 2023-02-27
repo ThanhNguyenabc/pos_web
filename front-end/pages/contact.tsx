@@ -72,7 +72,7 @@ const ContactPage = () => {
         </div>
         <div className="divider"></div>
         <div className="px-4 md:px-8">
-          <p className="txt-heading-small text-center md:text-5xl md:font-extrabold">
+          <p className="txt-heading-small text-center md:txt-heading-large">
             Get in touch
           </p>
           <p className="txt-md mt-4 mb-10 text-center md:mt-5 md:text-xl text-neutral-600">

@@ -58,7 +58,6 @@ const openFindPOSModal = () => {
 const FreePOS = () => {
   const { toogleOpen: toogleDialog } = useOpenDemoPOSDialog();
 
-  console.log("renderrrr");
   return (
     <>
       <div className="bg-secondary">

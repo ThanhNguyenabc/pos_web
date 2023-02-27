@@ -60,17 +60,16 @@
   }
   
   .txt-heading-medium {
-    @apply text-4xl font-bold leading-[44px];
+    @apply text-4xl font-extrabold leading-[40px] tracking-[-0.02em];
   }
   
   .txt-heading-large {
-    @apply text-5xl font-extrabold leading-[56px];
+    @apply text-5xl font-extrabold leading-[52px] tracking-[-0.02em];
   }
   
   .txt-heading-xlarge {
     @apply text-6xl font-extrabold leading-[60px] tracking-[-0.03em];
-  }
-  
+  } 
 }
 
 @import "./theme/common.css";

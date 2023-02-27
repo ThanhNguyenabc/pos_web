@@ -55,7 +55,7 @@ const BreadmeIntroduction = ({ onStart }: { onStart?: () => void }) => {
     >
       <Image src={BreadMeImg} alt="" />
       <div className="flex flex-col gap-6">
-        <h3 className="txt-heading-small md:text-5xl md:font-extrabold md:leading-[56px] ">
+        <h3 className="txt-heading-small md:txt-heading-large ">
           See if you qualify for a
           <span className="text-success"> free point-of-sale system</span>
         </h3>

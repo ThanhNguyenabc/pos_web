@@ -2,10 +2,9 @@ import { IcChervonRight, IcClose, MobileLogoImg } from "assets/AssetUtil";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import AppRoutes from "utils/routes";
 import { MainMenu } from "utils/StringUtil";
-
-
 
 const MainMenuItem = ({
   route,
@@ -16,6 +15,7 @@ const MainMenuItem = ({
   title: string;
   onClickItem?: () => void;
 }) => {
+  const { t } = useTranslation();
   return (
     <li key={`item-${title}`}>
       <Link
@@ -23,7 +23,7 @@ const MainMenuItem = ({
         onClick={onClickItem}
         className=" flex justify-between txt-large-bold"
       >
-        {title}
+        {t(title) || title}
         <IcChervonRight className="text-[12px]" />
       </Link>
     </li>

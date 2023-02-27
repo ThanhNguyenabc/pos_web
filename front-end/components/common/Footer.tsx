@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { title } from "process";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import AppRoutes from "utils/routes";
 import { CategoryList, MainMenu } from "utils/StringUtil";
 import HeroSection from "./HeroSection";
@@ -50,6 +51,8 @@ const OtherItems = [
   },
 ];
 const FooterItems = ({ title, items }: FooterItemProps) => {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col gap-4 md:gap-6">
       <p className="txt-sm-bold text-neutral-300 md:text-xl">{title}</p>
@@ -60,7 +63,7 @@ const FooterItems = ({ title, items }: FooterItemProps) => {
             href={item.link}
             className="link link-hover txt-sm md:text-base"
           >
-            {item.title}
+            {t(item.title) || title}
           </Link>
         );
       })}

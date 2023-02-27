@@ -38,7 +38,7 @@ const ClientSection = ({ body }: ClientSectionProps) => {
     <div className="flex flex-col gap-12 py-12 md:py-14 md:gap-12 lg:gap-16 overflow-hidden">
       <HeroSection className="pb-0 md:pb-0 lg:pb-0">
         <div className="flex flex-col gap-6 items-center text-center lg:w-[768px] m-auto">
-          <p className="txt-heading-medium md:text-5xl md:font-extrabold ">
+          <p className="txt-heading-medium md:txt-heading-large">
             Our Top POS Systems
           </p>
           {body}

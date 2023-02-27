@@ -13,7 +13,7 @@ const MetricSection = ({
   return (
     <div className="bg-neutral-100">
       <HeroSection className={`gap-12 text-center items-center lg:gap-20`}>
-        <p className="text-4xl max-w-3xl font-bold md:text-5xl md:font-extrabold md:leading-[56px]">
+        <p className="text-4xl max-w-3xl font-bold md:txt-heading-large">
           {MetrictData.heading}
         </p>
         <List
