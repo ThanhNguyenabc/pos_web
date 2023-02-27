@@ -32,7 +32,7 @@ const BreadmePage = () => {
               <div className="flex flex-col gap-2 items-center lg:items-start">
                 <Badge>Breadme partnership</Badge>
                 <p
-                  className={`txt-heading-medium max-w-3xl md:font-extrabold md:text-6xl`}
+                  className={`txt-heading-medium max-w-3xl md:txt-heading-xlarge`}
                 >
                   <span className=" text-success">0%</span> Processing Fees POS
                   System

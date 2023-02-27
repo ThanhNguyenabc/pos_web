@@ -41,7 +41,7 @@ const ContactPage = () => {
         <div className="flex flex-col container-content w-full px-4 md:px-8 gap-10">
           <div className="flex flex-col gap-4 items-center text-center">
             <p className="txt-md-bold text-primary">Contact us</p>
-            <p className="txt-heading-medium md:font-extrabold md:text-6xl">
+            <p className="txt-heading-medium md:md:txt-heading-xlarge">
               We’d love to hear from you
             </p>
             <p className="txt-md text-neutral-600 md:text-xl">

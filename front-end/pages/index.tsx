@@ -39,9 +39,9 @@ const Home = () => {
       <div className=" bg-gradient-to-b from-[#FF5A22] to-[#FFA722]">
         <div className="flex flex-col max-w-[1320px] lg:h-[640px] lg:flex-row xl:ml-[calc((100%-1200px)/2)]">
           <HeroSection className="flex-1">
-            <div className="flex flex-col gap-4 text-center md:gap-6 lg:text-left lg:max-w-[460px]">
+            <div className="flex flex-col gap-4 text-center md:gap-6 lg:text-left lg:max-w-[480px]">
               <p
-                className={`txt-heading-large md:text-6xl md:leading-[68px] text-white`}
+                className={`txt-heading-large md:txt-heading-xlarge text-white`}
               >
                 Real advice from
                 <span className="text-secondary"> real consultants</span>

@@ -66,7 +66,7 @@ const FreePOS = () => {
           <HeroSection className="flex-1">
             <div className="flex flex-col gap-4 text-center md:gap-6 lg:text-left lg:max-w-[460px]">
               <p
-                className={`txt-heading-medium text-white md:font-extrabold md:text-6xl md:leading-[68px]`}
+                className={`txt-heading-medium text-white md:txt-heading-xlarge`}
               >
                 <span className="text-primary">FREE</span> point-of-sale &
                 terminals of your choice available!

@@ -66,7 +66,7 @@ const AboutPage = () => {
     <>
       <div className=" bg-neutral-100">
         <HeroSection className="flex flex-col px-4 py-12 md:px-8 md:py-14">
-          <p className="txt-heading-medium text-center md:text-start md:font-extrabold md:text-6xl md:leading-[68px]">
+          <p className="txt-heading-medium text-center md:text-start md:txt-heading-xlarge">
             About Us
           </p>
           <p className="txt-md text-neutral-700 mt-4 mb-10 md:mt-6 md:mb-12 md:text-xl lg:max-w-[800px]">

@@ -68,7 +68,7 @@
   }
   
   .txt-heading-xlarge {
-    @apply text-6xl font-extrabold leading-[68px];
+    @apply text-6xl font-extrabold leading-[60px] tracking-[-0.03em];
   }
   
 }

@@ -58,7 +58,7 @@ const PartnerPage = () => {
         <div className="flex flex-col max-w-[1320px] lg:h-[640px] lg:flex-row xl:ml-[calc((100%-1200px)/2)]">
           <HeroSection className="flex-1">
             <div className="flex flex-col gap-4 text-center md:gap-6 lg:text-left lg:max-w-[460px]">
-              <p className={`txt-heading-large md:text-6xl md:leading-[68px]`}>
+              <p className={`txt-heading-large md:txt-heading-xlarge`}>
                 Partner with BestPOS
               </p>
               <p className="txt-md-bold lg:text-start md:text-xl">
