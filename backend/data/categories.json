@@ -1,0 +1,102 @@
+[
+    {
+        "id": "1e651739",
+        "title": "Pizzeria",
+        "image": "pizzeria_img.png",
+        "type": "pizza",
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "587824fd",
+            "3f1943c6",
+            "f9e0ef04",
+            "8fdf75eb",
+            "20621691",
+            "4a659923",
+            "0fadfc8f",
+            "f32ba2b0",
+            "f0ef18a8"
+        ]
+    },
+    {
+        "id": "e9a81b23",
+        "title": "Quick Service Restaurants",
+        "image": "quickservice_img.png",
+        "type": "quick-service-restaurants",
+        "products": [
+            "8a013776",
+            "3503cf9d",
+            "587824fd",
+            "0fadfc8f",
+            "3f1943c6",
+            "20621691",
+            "f9e0ef04",
+            "8fdf75eb",
+            "4a659923",
+            "f32ba2b0",
+            "f0ef18a8"
+        ]
+    },
+    {
+        "id": "01552be6",
+        "title": "Retail Stores",
+        "type": "retail-store",
+        "image": "retail_img.png",
+        "products": [
+            "3503cf9d",
+            "0fadfc8f",
+            "f0ef18a8",
+            "3f1943c6",
+            "f32ba2b0"
+        ]
+    },
+    {
+        "id": "671507f9",
+        "title": "Full Service Restaurants",
+        "type": "full-service-restaurants",
+        "image": "restaurant_img.png",
+        "products": [
+            "3503cf9d",
+            "8a013776",
+            "587824fd",
+            "3f1943c6",
+            "f9e0ef04",
+            "8fdf75eb",
+            "4a659923",
+            "f0ef18a8",
+            "0fadfc8f",
+            "f32ba2b0"
+        ]
+    },
+    {
+        "id": "634a784d",
+        "title": "Bar & Night Clubs",
+        "type": "clubs",
+        "image": "bar_img.png",
+        "products": [
+            "f9e0ef04",
+            "8a013776",
+            "4a659923",
+            "3503cf9d",
+            "8fdf75eb",
+            "20621691"
+        ]
+    },
+    {
+        "id": "256251e4",
+        "title": "Small Businesses",
+        "type": "small-business",
+        "image": "business_img.png",
+        "products": [
+            "8fdf75eb",
+            "8a013776",
+            "0fadfc8f",
+            "3503cf9d",
+            "c4304593",
+            "587824fd",
+            "3f1943c6",
+            "f0ef18a8",
+            "20621691"
+        ]
+    }
+]
