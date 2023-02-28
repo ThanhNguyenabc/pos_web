@@ -1,11 +1,9 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { NextRequest } from "next/server";
 import ProductData from "./data/products.json";
 import Categories from "./data/categories.json";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  console.log("request");
-  console.log(req.method);
+  
   switch (req.method) {
     case "GET":
       res.status(200).json(ProductData);
