@@ -1,4 +1,4 @@
-import { model, models, Schema } from "mongoose";
+import { Model, model, models, Schema } from "mongoose";
 
 export interface SuggestionPOS {
   answer: string;
@@ -10,6 +10,6 @@ const SuggestionSchema = new Schema<SuggestionPOS>({
   results: [String],
 });
 
-export const SuggestionPOSModel =
+export const SuggestionPOSModel: Model<SuggestionPOS> =
   models?.Suggestion ||
   model<SuggestionPOS>("Suggestion", SuggestionSchema, "pos-suggestion");

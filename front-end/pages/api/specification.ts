@@ -1,7 +1,6 @@
 import { connectMongo } from "lib/mongodb";
 import { SpecificationModel } from "models/specification";
 import { NextApiRequest, NextApiResponse } from "next";
-import SpecificationData from "./data/specifications.json";
 
 export default async function handler(
   req: NextApiRequest,

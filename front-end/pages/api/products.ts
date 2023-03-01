@@ -20,7 +20,6 @@ export default async function handler(
             .exec();
           return res.status(200).json({ data: products });
         } else {
-          console.log("typpe =", type);
           let result: Array<Product> = [];
           const category = await CategoryModel.findOne({ type: type });
           if (category) {
@@ -31,9 +30,6 @@ export default async function handler(
             })
               .sort({ "expert_opinion.overall": -1 })
               .exec();
-
-            console.log("length");
-            console.log(result.length);
           }
 
           return res.status(200).json({ data: result });
