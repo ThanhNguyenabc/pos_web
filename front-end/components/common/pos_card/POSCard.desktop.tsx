@@ -1,25 +1,16 @@
-import React, {
-  ReactComponentElement,
-  ReactElement,
-  ReactSVGElement,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
+import React from "react";
 import Image from "next/image";
 import { BreadMeBtn } from "../BreadmeBtn";
 import ColorUtils from "utils/ColorUtils";
 import { twMerge } from "tailwind-merge";
-import { POSCardProps } from "./POSCard";
+import { POSCardProps, RecommendColor } from "./POSCard";
 import PricingBtn from "../PricingBtn";
 import { getSystemIcon, ProductIcons } from "utils/StringUtil";
 import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
 import ViewMore from "../ViewMore";
 import { IcCheckbox, IcClose } from "assets/AssetUtil";
 import CustomCircularProgress from "../CustomCircularProgress";
-import GradientSVG from "../GradientSVG";
-import { CircularProgressbarWithChildren } from "react-circular-progressbar";
+import RecommendTag from "../RecommendTag";
 
 const ItemHeight = 244;
 
@@ -27,6 +18,7 @@ const POSCardDesktop = ({
   overallRating,
   data,
   classname = "",
+  priority,
   onCardClick,
 }: POSCardProps) => {
   const { toogleOpen } = useOpenDemoPOSDialog();
@@ -35,11 +27,18 @@ const POSCardDesktop = ({
     <div
       onClick={onCardClick}
       className={twMerge(
-        `hidden max-w-[1200px] h-[${ItemHeight}px] bg-white border-2 border-b-neutral-300 
-        hover:border-secondary cursor-pointer card gap-6 flex-row rounded-2xl p-6 
-        drop-shadow-lg w-full overflow-hidden lg:flex ${classname}`
+        `relative hidden max-w-[1200px] h-[${ItemHeight}px] bg-white border-2 border-b-neutral-300 
+        hover:border-secondary cursor-pointer gap-6 flex-row rounded-2xl p-6 
+        drop-shadow-lg w-full lg:flex ${classname}`
       )}
     >
+      {priority && (
+        <div className="absolute left-3 top-[-12px]">
+          <RecommendTag
+            {...RecommendColor[priority as keyof typeof RecommendColor]}
+          />
+        </div>
+      )}
       <CustomCircularProgress
         id="card-desktop-progress"
         className="w-[60px] h-fit"
@@ -52,7 +51,7 @@ const POSCardDesktop = ({
         <Image
           src={ProductIcons[data.name]}
           alt="logo-pos"
-          className="w-[120px] h-[60px]"
+          className="w-[120px] h-[60px] object-contain"
         />
         <p className="text-sm text-left text-neutral-900 max-w-[214px]">
           {data.overview}

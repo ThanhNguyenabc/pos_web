@@ -1,4 +1,4 @@
-import mongoose, { model, models } from "mongoose";
+import mongoose, { Model, model, models } from "mongoose";
 
 export enum SystemOs {
   "iOS" = "iOS",
@@ -13,6 +13,7 @@ export interface ExpertOpinion {
   support: number;
   functionality: number;
   feedback: number;
+  overall?: number;
 }
 
 export interface Product {
@@ -61,6 +62,7 @@ const ProductSchema = new mongoose.Schema<Product>({
     support: Number,
     functionality: Number,
     feedback: Number,
+    overall: Number,
   },
   pos_integrations: String,
   software: String,
@@ -68,8 +70,6 @@ const ProductSchema = new mongoose.Schema<Product>({
   pricing_desc: [String],
 });
 
-export const ProductModel =
+export const ProductModel: Model<Product> =
   models?.ProductModel ||
   model<Product>("ProductModel", ProductSchema, "product");
-// mongoose?.models?.["ProductModel"] ||
-// mongoose.model<Product>("ProductModel", ProductSchema, "product");

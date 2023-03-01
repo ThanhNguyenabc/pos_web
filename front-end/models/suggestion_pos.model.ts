@@ -1,13 +1,13 @@
 import { model, models, Schema } from "mongoose";
 
 export interface SuggestionPOS {
-  [key: string]: {
-    products: Array<string>;
-  };
+  answer: string;
+  results: Array<string>;
 }
 
 const SuggestionSchema = new Schema<SuggestionPOS>({
-  type: Schema.Types.Mixed,
+  answer: String,
+  results: [String],
 });
 
 export const SuggestionPOSModel =

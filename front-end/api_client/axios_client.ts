@@ -12,6 +12,7 @@ import { Specification } from "models/specification";
 
 const AxiosInstance = axios.create({
   baseURL: `${process.env.NEXT_PUBLIC_API_HOST}/api`,
+  timeout: 5000,
 });
 
 export default AxiosInstance;
@@ -20,8 +21,10 @@ export const getListCategory = async () =>
   await AxiosInstance.get<ApiResponse<Array<Category>>>("/category");
 
 export const getPOSByCategory = async (type: string) => {
-  return await AxiosInstance.post<ApiResponse<Array<Product>>>("/products", {
-    type,
+  return await AxiosInstance.get<ApiResponse<Array<Product>>>("/products", {
+    params: {
+      type,
+    },
   })
     .then((res) => {
       return res.data.data;

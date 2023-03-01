@@ -1,7 +1,7 @@
 import {
   RevelImg,
   IcApple,
-  CloverImg,
+  CloverDuoImg,
   IcWindow,
   OvviImg,
   LightSpeedImg,
@@ -28,6 +28,7 @@ import {
   PizzeriaCategory,
   IcAmericanFlag,
   IcSpanishFlag,
+  CloverFlexImg,
 } from "assets/AssetUtil";
 import { CategoryType } from "models/category_type";
 import { SystemOs } from "models/product.model";
@@ -49,8 +50,8 @@ export const getSystemIcon = (os: SystemOs): React.ElementType => {
 
 export const ProductIcons: { [key: string]: StaticImageData } = {
   Revel: RevelImg,
-  "Clover Flex": CloverImg,
-  "Clover Duo": CloverImg,
+  "Clover Flex": CloverFlexImg,
+  "Clover Duo": CloverDuoImg,
   Exatouch: ExtouchImg,
   "Simphony (Oracle Micros)": SimphonyImg,
   "Brink (Par)": BrinkImg,

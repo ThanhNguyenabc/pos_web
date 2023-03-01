@@ -1,20 +1,21 @@
 import React from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { BreadMeBtn } from "../BreadmeBtn";
 import { twMerge } from "tailwind-merge";
 import PricingBtn from "../PricingBtn";
 import ColorUtils from "utils/ColorUtils";
-import { POSCardProps } from "./POSCard";
+import { POSCardProps, RecommendColor } from "./POSCard";
 import { getSystemIcon, ProductIcons } from "utils/StringUtil";
-import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
 import CustomCircularProgress from "../CustomCircularProgress";
+import RecommendTag from "../RecommendTag";
 
 const POSCardTablet = ({
   overallRating,
   data,
   classname,
   onCardClick,
+  priority,
 }: POSCardProps) => {
   const { toogleOpen } = useOpenDemoPOSDialog();
 
@@ -26,6 +27,13 @@ const POSCardTablet = ({
         flex-row rounded-2xl p-6 drop-shadow-lg cursor-pointer md:flex lg:hidden ${classname}`
       )}
     >
+      {priority && (
+        <div className="absolute left-3 top-[-12px]">
+          <RecommendTag
+            {...RecommendColor[priority as keyof typeof RecommendColor]}
+          />
+        </div>
+      )}
       <CustomCircularProgress
         id="card-tablet-progress"
         className="w-[60px]"
@@ -38,7 +46,7 @@ const POSCardTablet = ({
         <Image
           src={ProductIcons[data.name]}
           alt="logo-pos"
-          className="w-[120px] h-[60px]"
+          className="w-[120px] h-[60px]  object-contain"
         />
         <p className="text-sm text-left text-neutral-900">{data.overview}</p>
         <div className="flex items-center gap-4">
