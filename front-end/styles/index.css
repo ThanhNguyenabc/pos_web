@@ -52,7 +52,7 @@
   }
   
   .txt-heading-xsmal {
-    @apply text-2xl font-bold;
+    @apply text-2xl font-bold leading-[32px];
   }
   
   .txt-heading-small {
@@ -115,7 +115,7 @@
 }
 
 ::-webkit-scrollbar {
- height: 10px;
+ height: 8px;
 }
 
 ::-webkit-scrollbar-thumb {

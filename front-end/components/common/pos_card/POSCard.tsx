@@ -1,5 +1,4 @@
 import { Product } from "models/product.model";
-import { StaticImageData } from "next/image";
 import React from "react";
 import POSCardDesktop from "./POSCard.desktop";
 import { POSCardMobile } from "./POSCard.mobile";
@@ -8,7 +7,7 @@ import POSCardTablet from "./POSCard.tablet";
 export const RecommendColor = {
   first: {
     tagColor: "bg-[#EAAA08]",
-    border: "border-[#EAAA08]",
+    border: "border-neutral-400",
   },
   second: {
     tagColor: "bg-neutral-400",

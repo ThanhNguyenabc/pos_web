@@ -2,7 +2,7 @@ import {
   AldeloImg,
   AlohaImg,
   BrinkImg,
-  CloverImg,
+  CloverDuoImg,
   ExtouchImg,
   IcRightArrow,
   LightSpeedImg,
@@ -19,7 +19,7 @@ import HeroSection from "./HeroSection";
 const ClientList = [
   RevelImg,
   AldeloImg,
-  CloverImg,
+  CloverDuoImg,
   OvviImg,
   ExtouchImg,
   LightSpeedImg,

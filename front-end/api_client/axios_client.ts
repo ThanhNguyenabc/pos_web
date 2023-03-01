@@ -36,12 +36,9 @@ export const getPOSByCategory = async (type: string) => {
 
 export const getPOSDetail = async (id: string) => {
   try {
-    let data = await AxiosInstance.post<ApiResponse<Product>>(
-      "/productDetail",
-      {
-        posId: id,
-      }
-    );
+    let data = await AxiosInstance.post<ApiResponse<Product>>("/products", {
+      posId: id,
+    });
 
     return data.data;
   } catch (error) {
