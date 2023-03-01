@@ -1,30 +1,51 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import ProductData from "./data/products.json";
-import Categories from "./data/categories.json";
+import { CategoryModel } from "models/category";
+import { Product, ProductModel } from "models/product.model";
+import { connectMongo } from "lib/mongodb";
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  
-  switch (req.method) {
-    case "GET":
-      res.status(200).json(ProductData);
-      return;
-    case "POST":
-      const { type } = req.body;
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  await connectMongo();
+  try {
+    switch (req.method) {
+      case "GET":
+        const { type } = req.query;
+        if (type == "all") {
+          const products = await ProductModel.find()
+            .sort({
+              "expert_opinion.overall": -1,
+            })
+            .exec();
+          return res.status(200).json({ data: products });
+        } else {
+          console.log("typpe =", type);
+          let result: Array<Product> = [];
+          const category = await CategoryModel.findOne({ type: type });
+          if (category) {
+            console.log(category.products);
 
-      if (type == "all") {
-        res.status(200).json({ data: ProductData });
-        return;
-      } else {
-        const products =
-          Categories.find((item) => item.type == type)?.products.map(
-            (productId) =>
-              ProductData.find((product) => product.id == productId)
-          ) || [];
-        res.status(200).json({ data: products });
+            result = await ProductModel.find({
+              id: { $in: category.products },
+            })
+              .sort({ "expert_opinion.overall": -1 })
+              .exec();
+
+            console.log("length");
+            console.log(result.length);
+          }
+
+          return res.status(200).json({ data: result });
+        }
+
+      case "POST": {
+        const { posId } = req.body;
+        const product = await ProductModel.findOne({ id: posId });
+        return res.status(200).json({ data: product });
       }
-
-      return;
-    default:
-      break;
+    }
+  } catch (error) {
+    console.log(error);
   }
 }

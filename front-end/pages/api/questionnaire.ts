@@ -4,7 +4,6 @@ import { createFolder, questionnairePath } from "utils/file_helper";
 import { QuestionnaireContact } from "models/questionnaire_contact";
 import POSSuggestion from "./data/pos_suggestion.json";
 import ProductData from "./data/products.json";
-import { Product } from "models/product.model";
 
 const businessTypeMapper = {
   Restaurant: "restaurant",

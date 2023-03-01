@@ -8,9 +8,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log("request");
-  console.log(req.method);
-
   switch (req.method) {
     case "POST":
       const { phone, email, name, zipcode, message } = req.body as ContactInfo;
@@ -27,8 +24,6 @@ export default async function handler(
         fs.writeFile(fileName, content.join("\n"), (err) => {});
       });
 
-      res.status(200).json({ data: true });
-    default:
-      break;
+      return res.status(200).json({ data: true });
   }
 }

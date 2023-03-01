@@ -4,9 +4,6 @@ import Categories from "./data/categories.json";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   switch (req.method) {
-    case "GET":
-      res.status(200).json({ data: Categories });
-      return;
     case "POST":
       const { type } = req.body;
       const category = Categories.find((item) => item.type == type);
