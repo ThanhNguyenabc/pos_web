@@ -17,7 +17,7 @@ const POSIntroduction = ({ pros, cons, desc, id }: POSIntroductionProps) => {
       </div>
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
         <div className="flex flex-col text-left txt-md">
-          <p className=" font-semibold text-success ">PROS</p>
+          <p className=" font-semibold text-success md:text-xl">PROS</p>
           {pros?.map((item, index) => (
             <div
               className="flex flex-row items-center gap-2 mt-2 md:mt-4 md:gap-4"
