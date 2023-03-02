@@ -12,7 +12,7 @@ import { Specification } from "models/specification";
 
 const AxiosInstance = axios.create({
   baseURL: `${process.env.NEXT_PUBLIC_API_HOST}/api`,
-  timeout: 5000,
+  timeout: 10000,
 });
 
 export default AxiosInstance;

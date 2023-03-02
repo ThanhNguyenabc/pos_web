@@ -6,7 +6,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log("request ==");
   try {
     await connectMongo();
     switch (req.method) {
@@ -15,5 +14,7 @@ export default async function handler(
         const item = await SpecificationModel.findOne({ productId: posId });
         return res.status(200).json({ data: item });
     }
-  } catch (error) {}
+  } catch (error) {
+    return res.status(500).json({ error: error });
+  }
 }

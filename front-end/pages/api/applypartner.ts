@@ -7,9 +7,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log("request");
-  console.log(req.method);
-
   switch (req.method) {
     case "POST":
       const { email, name, phone } = req.body as ContactInfo;

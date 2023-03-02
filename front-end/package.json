@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "copy .env.development .env.local && next dev",
     "build:pro": "copy .env.production .env.local && next build",
-    "build:stg": "copy .env.staging .env.local && next build",
-    "start": "cross-env NODE_ENV=production node server.js",
+    "build:staging": "copy .env.staging .env.local && next build",
+    "start": "cross-env NODE_EVN=production node server.js",
     "lint": "next lint"
   },
   "dependencies": {
