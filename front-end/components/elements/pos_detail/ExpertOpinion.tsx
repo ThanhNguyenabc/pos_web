@@ -39,10 +39,10 @@ const ExpertOpinion = ({
   id,
 }: ExpertOpinionProps) => {
   return (
-    <div id={id} className="flex flex-col gap-6 md:gap-8">
+    <div id={id} className="flex w-full flex-col gap-6 md:gap-8">
       <p className="txt-heading-xsmal md:txt-heading-small">Expert Opinions</p>
-      <div className="flex flex-col gap-6 md:gap-8 lg:flex-row lg:gap-16">
-        <div className="flex w-full flex-row gap-8 md:gap-12">
+      <div className="flex flex-col gap-6 md:gap-8 lg:flex-row lg:gap-16 w-full">
+        <div className="flex flex-1 flex-row gap-8 md:gap-12">
           <CustomCircularProgress
             id="expert-progress"
             className="w-[170px] md:w-[170px] h-fit"
@@ -62,7 +62,7 @@ const ExpertOpinion = ({
             ))}
           </div>
         </div>
-        <p className="xl:max-w-[300px] txt-md text-neutral-700">{comment}</p>
+        <p className="lg:max-w-[500px] txt-md text-neutral-700">{comment}</p>
       </div>
     </div>
   );

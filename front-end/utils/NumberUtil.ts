@@ -25,3 +25,11 @@ export const formatUSAPhoneNumber = (value: string) => {
     6
   )}-${phoneNumber.slice(6, 10)}`;
 };
+
+export const moneyFormatter = (money: number) => {
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
+  return formatter.format(money).replace(".00", "");
+};

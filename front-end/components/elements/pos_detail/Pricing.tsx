@@ -1,5 +1,5 @@
-import { useRouter } from "next/router";
 import React from "react";
+import { moneyFormatter } from "utils/NumberUtil";
 
 const PricingPerType = ({
   plan,
@@ -19,7 +19,7 @@ const PricingPerType = ({
     >
       <p className="txt-sm-bold md:text-base">{plan}</p>
       <p className="txt-heading-small md:txt-heading-large text-neutral-900">
-        ${money}
+        {moneyFormatter(money)}
       </p>
       <p className="txt-sm text-neutral-700 md:text-base">{desc}</p>
     </div>
@@ -62,6 +62,6 @@ const Pricing = ({ desc, monthlyPrice, oneTimePurchase, id }: PricingProps) => {
       </div>
     </div>
   );
-}; 
+};
 
 export default Pricing;
