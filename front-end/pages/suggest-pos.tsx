@@ -1,3 +1,4 @@
+import Box from "components/common/Box";
 import POSCard from "components/common/pos_card/POSCard";
 import RecommendPOSCard from "components/common/recommend_card/RecommendPOSCard";
 import { getOverallRating, Product } from "models/product.model";
@@ -19,9 +20,9 @@ const SuggestPOSPage = () => {
     return (
       <div className={`flex flex-col bg-neutral-100`}>
         <div className=" block bg-[#D1FADF] h-[240px] md:h-[360px]" />
-        <div
-          className=" absolute left-0 right-0 container-content flex-col  gap-2 p-4 pt-6 items-center
-         text-center md:p-8 md:pt-14 xl:px-[120px]"
+        <Box
+          className="absolute left-0 right-0 container-content gap-2 pt-6 items-center
+         text-center md:pt-14"
         >
           <p className="txt-heading-medium text-success md:txt-heading-large lg:txt-heading-xlarge">
             Woohoo! You did it!
@@ -38,9 +39,9 @@ const SuggestPOSPage = () => {
               router.push(`${AppRoutes.POSDetailPage}/${firstProductItem.id}`);
             }}
           />
-        </div>
+        </Box>
 
-        <div className="flex flex-col container-content px-4 pb-10 pt-[270px] gap-4 md:pt-[160px] md:px-8 md:gap-6 xl:px-[120px]">
+        <Box className="container-content pb-10 pt-[270px] gap-4 md:pt-[160px] md:gap-6">
           <p className="txt-large-bold">
             Other POS systems you can use based on your answers
           </p>
@@ -58,7 +59,7 @@ const SuggestPOSPage = () => {
                 />
               );
           })}
-        </div>
+        </Box>
       </div>
     );
 
