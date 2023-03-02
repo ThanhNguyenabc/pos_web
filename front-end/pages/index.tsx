@@ -16,7 +16,7 @@ import ColorUtils from "utils/ColorUtils";
 import AppRoutes from "utils/routes";
 import HeroSection from "components/common/HeroSection";
 import ReviewerSection from "components/elements/partner/ReviewerSection";
-import { useTranslation, initReactI18next } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 const FeatureData = ["24/7 Support", "Free training", "Seamless Installments"];
 

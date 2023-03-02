@@ -95,7 +95,7 @@ export const ProductDetail = ({
           <Image
             src={ProductIcons[product.name]}
             alt=""
-            className="w-[160px] h-[80px]"
+            className="w-[160px] h-[80px] object-contain"
           />
           <p className="txt-md text-neutral-700 lg:text-center">
             {product.overview}
@@ -139,8 +139,8 @@ export const ProductDetail = ({
         </div>
       </div>
 
-      <div className="flex flex-col flex-1  w-full gap-12 md:gap-8 lg:border-l-2 lg:max-w-[calc(100%-440px)]">
-        <div className="sticky top-0 z-30 border-b-2 border-neutral-300 flex bg-white">
+      <div className="flex flex-col flex-1  w-full gap-12 md:gap-8 lg:border-l lg:max-w-[calc(100%-440px)]">
+        <div className="sticky top-0 z-30 border-b border-neutral-300 flex bg-white">
           <TabList
             tabList={DetailTabs}
             tabItemStyle={(isSelect) =>
@@ -213,9 +213,7 @@ export const ProductDetail = ({
           </div>
           <div id={DetailTabs[4].id} className="flex flex-col gap-4 md:gap-8">
             <p className="txt-heading-xsmal md:txt-heading-small">Software</p>
-            <p className="txt-md text-neutral-700">
-              {product.software}
-            </p>
+            <p className="txt-md text-neutral-700">{product.software}</p>
           </div>
           <div id={DetailTabs[5].id} className="flex flex-col gap-4 md:gap-8">
             <p className="txt-heading-xsmal md:txt-heading-small">

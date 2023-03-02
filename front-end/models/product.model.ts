@@ -13,7 +13,7 @@ export interface ExpertOpinion {
   support: number;
   functionality: number;
   feedback: number;
-  overall?: number;
+  overall: number;
 }
 
 export interface Product {

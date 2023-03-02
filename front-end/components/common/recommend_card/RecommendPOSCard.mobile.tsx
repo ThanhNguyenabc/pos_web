@@ -21,7 +21,7 @@ const RecommendPOSCardMobile = ({
     <div
       onClick={onCardClick}
       className={twMerge(
-        `bg-white card gap-4 inline-flex flex-col rounded-2xl p-4 drop-shadow-lg cursor-pointer md:hidden lg:hidden ${classname}`
+        `bg-white card gap-4 inline-flex flex-col rounded-2xl p-4 shadow-poscard cursor-pointer md:hidden lg:hidden ${classname}`
       )}
     >
       <div className="gap-2 flex flex-col items-start">

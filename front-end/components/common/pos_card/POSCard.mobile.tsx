@@ -9,6 +9,7 @@ import AppRoutes from "utils/routes";
 import CustomCircularProgress from "../CustomCircularProgress";
 import RecommendTag from "../RecommendTag";
 import { twMerge } from "tailwind-merge";
+import { Button } from "../Button";
 
 export const POSCardMobile = ({
   overallRating,
@@ -16,6 +17,7 @@ export const POSCardMobile = ({
   onCardClick,
   priority,
   classname,
+  recommendTagProps,
 }: POSCardProps) => {
   const { toogleOpen } = useOpenDemoPOSDialog();
   const router = useRouter();
@@ -24,7 +26,7 @@ export const POSCardMobile = ({
     <div
       onClick={onCardClick}
       className={twMerge(
-        "relative flex flex-col w-full bg-white rounded-2xl drop-shadow-lg cursor-pointer md:hidden",
+        "relative flex flex-col p-3 gap-4 w-full bg-white rounded-2xl shadow-poscard cursor-pointer md:hidden",
         classname
       )}
     >
@@ -32,10 +34,11 @@ export const POSCardMobile = ({
         <div className="absolute left-3 top-[-12px]">
           <RecommendTag
             {...RecommendColor[priority as keyof typeof RecommendColor]}
+            {...recommendTagProps}
           />
         </div>
       )}
-      <div className="flex flex-col p-4 gap-2">
+      <div className="flex flex-col gap-2">
         <div className="w-full  flex flex-row h-10 items-center justify-between ">
           <Image
             src={ProductIcons[data.name]}
@@ -59,14 +62,14 @@ export const POSCardMobile = ({
         </div>
         <p className="w-full text-sm text-neutral-700 ">{data.overview}</p>
       </div>
-      <div className="flex w-full flex-row h-[40px] justify-between">
+      <div className="flex w-full flex-row h-[48px] gap-2 justify-between">
         <button
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
             router.push(AppRoutes.BreadmeQuestionPage);
           }}
-          className="flex flex-row bg-success flex-1 items-center justify-center gap-1 text-white rounded-bl-[14px]"
+          className="flex flex-row bg-success flex-1 items-center justify-center gap-1 text-white rounded-lg"
         >
           <IcFreePOS className="text-lg" />
           <p className="text-xs font-semibold ">Get a POS FREE</p>
@@ -77,7 +80,7 @@ export const POSCardMobile = ({
             e.stopPropagation();
             toogleOpen();
           }}
-          className="flex bg-secondary flex-1 items-center justify-center text-white rounded-br-[14px]"
+          className="flex bg-secondary flex-1 items-center justify-center text-white rounded-lg"
         >
           <p className=" text-xs font-semibold ">
             ${data.monthly_price} Monthly

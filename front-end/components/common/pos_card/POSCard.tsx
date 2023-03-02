@@ -1,5 +1,6 @@
 import { Product } from "models/product.model";
 import React from "react";
+import { RecommendTagProps } from "../RecommendTag";
 import POSCardDesktop from "./POSCard.desktop";
 import { POSCardMobile } from "./POSCard.mobile";
 import POSCardTablet from "./POSCard.tablet";
@@ -32,6 +33,7 @@ export interface POSCardProps {
   classname?: string;
   priority?: Priority;
   onCardClick?: () => void;
+  recommendTagProps?: RecommendTagProps;
 }
 
 const POSCard = (props: POSCardProps) => {

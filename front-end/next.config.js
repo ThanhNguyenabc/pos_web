@@ -11,6 +11,9 @@ const nextConfig = {
   },
   images: {
     domains: ['blog.bestpos.com']
+  },
+  experimental: {
+    scrollRestoration: true
   }
 };
 

@@ -20,10 +20,17 @@ export default AxiosInstance;
 export const getListCategory = async () =>
   await AxiosInstance.get<ApiResponse<Array<Category>>>("/category");
 
-export const getPOSByCategory = async (type: string) => {
+export const getPOSByCategory = async ({
+  type,
+  limit,
+}: {
+  type: string;
+  limit?: number;
+}) => {
   return await AxiosInstance.get<ApiResponse<Array<Product>>>("/products", {
     params: {
       type,
+      limit,
     },
   })
     .then((res) => {

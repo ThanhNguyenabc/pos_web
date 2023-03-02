@@ -16,6 +16,7 @@ const POSCardTablet = ({
   classname,
   onCardClick,
   priority,
+  recommendTagProps,
 }: POSCardProps) => {
   const { toogleOpen } = useOpenDemoPOSDialog();
 
@@ -24,13 +25,14 @@ const POSCardTablet = ({
       onClick={onCardClick}
       className={twMerge(
         `hidden w-full h-[244px] border-2 border-b-neutral-300 hover:border-secondary bg-white card gap-6 
-        flex-row rounded-2xl p-6 drop-shadow-lg cursor-pointer md:flex lg:hidden ${classname}`
+        flex-row rounded-2xl p-6 shadow-poscard cursor-pointer md:flex lg:hidden ${classname}`
       )}
     >
       {priority && (
         <div className="absolute left-3 top-[-12px]">
           <RecommendTag
             {...RecommendColor[priority as keyof typeof RecommendColor]}
+            {...recommendTagProps}
           />
         </div>
       )}

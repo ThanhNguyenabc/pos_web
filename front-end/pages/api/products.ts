@@ -11,12 +11,13 @@ export default async function handler(
   try {
     switch (req.method) {
       case "GET":
-        const { type } = req.query;
+        const { type, limit } = req.query;
         if (type == "all") {
           const products = await ProductModel.find()
             .sort({
               "expert_opinion.overall": -1,
             })
+            .limit(Number(limit))
             .exec();
           return res.status(200).json({ data: products });
         } else {
@@ -29,6 +30,7 @@ export default async function handler(
               id: { $in: category.products },
             })
               .sort({ "expert_opinion.overall": -1 })
+              .limit(Number(limit))
               .exec();
           }
 

@@ -12,7 +12,6 @@ import { getPOSByCategory } from "api_client/axios_client";
 import { CategoryType } from "models/category_type";
 import AppRoutes from "utils/routes";
 import { getOverallRating } from "models/product.model";
-import Box from "components/common/Box";
 
 const ALLTABS = [
   {
@@ -26,7 +25,7 @@ const ALLTABS = [
 const Products = ({ type = CategoryType.popular }: { type?: string }) => {
   const router = useRouter();
 
-  const { data, isLoading } = useSWR(type, getPOSByCategory);
+  const { data, isLoading } = useSWR({ type }, getPOSByCategory);
 
   const selectedTabIndex = ALLTABS.findIndex((item) => item.type == type);
 

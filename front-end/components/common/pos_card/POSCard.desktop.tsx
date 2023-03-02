@@ -19,6 +19,7 @@ const POSCardDesktop = ({
   data,
   classname = "",
   priority,
+  recommendTagProps,
   onCardClick,
 }: POSCardProps) => {
   const { toogleOpen } = useOpenDemoPOSDialog();
@@ -29,13 +30,14 @@ const POSCardDesktop = ({
       className={twMerge(
         `relative hidden max-w-[1200px] h-[${ItemHeight}px] bg-white border-2 border-b-neutral-300 
         hover:border-secondary cursor-pointer gap-6 flex-row rounded-2xl p-6 
-        drop-shadow-lg w-full lg:flex ${classname}`
+        shadow-poscard w-full lg:flex ${classname}`
       )}
     >
       {priority && (
         <div className="absolute left-3 top-[-12px]">
           <RecommendTag
             {...RecommendColor[priority as keyof typeof RecommendColor]}
+            {...recommendTagProps}
           />
         </div>
       )}
