@@ -23,7 +23,7 @@ jobs:
         run: |
           rm -rf build  
           mkdir build
-          cp .next package.json server.js .env.local ./build/
+          cp -r .next package.json server.js .env.local ./build/
 
       - name: Uploading to Cpanel
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
