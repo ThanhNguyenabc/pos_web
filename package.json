@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "copy .env.development .env.local && next dev",
-    "build:pro": "copy .env.production .env.local && next build",
-    "build:staging": "copy .env.staging .env.local && next build",
+    "build": "next build",
+    "build:pro": "copy .env.production .env.local && yarn build",
+    "build:staging": "copy .env.staging .env.local && yarn build",
     "start": "cross-env NODE_EVN=production node server.js",
     "lint": "next lint"
   },
