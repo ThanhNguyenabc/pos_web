@@ -1,18 +1,38 @@
-name: "Deploy website to staging"
+name: "🚀 Deploy website to staging"
 on:
   push:
     branches: staging
 jobs:
-  FTP-Deploy-Action:
+  deploy:
     name: Deploy to Cpanel
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
-      - name: Upload to Cpanel
+
+     - name: Install Nodejs
+        uses: actions/setup-node@v3
+      
+      - name: 🔨 Build Project
+        run: |
+          npm install
+          cp .env.staging .env.local 
+          next build
+
+      - name: 🔨 Generate build folder
+        run: |
+          rm -rf build && mkdir build
+          cp .next package.json server.js .env.local ./build/
+
+      - name: Uploading to Cpanel
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./build/
           server-dir: bestpos.breadme.co/
+          exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
