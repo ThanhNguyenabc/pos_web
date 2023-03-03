@@ -33,6 +33,6 @@ jobs:
           local-dir: ./build/
           server-dir: bestpos.breadme.co/
           exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
