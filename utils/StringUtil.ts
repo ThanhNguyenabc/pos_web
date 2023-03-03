@@ -29,6 +29,11 @@ import {
   IcAmericanFlag,
   IcSpanishFlag,
   CloverFlexImg,
+  HomePageReviewImg,
+  TestimonialVillage,
+  Testimonial195,
+  TestimonialIrishPoet,
+  TestimonialKasey,
 } from "assets/AssetUtil";
 import { CategoryType } from "models/category_type";
 import { SystemOs } from "models/product.model";
@@ -237,5 +242,53 @@ export const Languages = [
   {
     id: "spa",
     icon: IcSpanishFlag,
+  },
+];
+
+export const Testimonials = [
+  {
+    title: "Switched from Micros to Revel Systems",
+    jobTitle: "Owner of Beginnings",
+    name: "Ben",
+    rating: 5,
+    avatar: HomePageReviewImg,
+    comment:
+      "I was reluctant to switch from Micros to Revel but it was the best move I’ve made in the 20 years of business. I even qualified for free monthly service fees.",
+  },
+  {
+    title: "Upgraded to a new Micros",
+    jobTitle: "Owner of Kaseys",
+    name: "Anthony",
+    rating: 5,
+    avatar: TestimonialKasey,
+    comment:
+      "The local rep is awesome. He purchased 9 stations for us at no cost and was able to help with minor onsite tech work during busy hours months after install. Nobody is providing this type of deal.",
+  },
+  {
+    title: "Started new",
+    jobTitle: "Owner of  Irish Poet",
+    name: "Mike",
+    rating: 5,
+    avatar: TestimonialIrishPoet,
+    comment:
+      "We were a start-up restaurant under construction that was spending a lot of money before opening.  Great timing that Tom stopped by and provided us information on a number of different point-of-sale systems that we could use with a legally zero out processing.  Saved us a lot of money upfront and monthly.",
+  },
+  {
+    title: "Switched from Toast to Revel Systems",
+    jobTitle: "Owner of Press 195",
+    name: "John",
+    rating: 5,
+    avatar: Testimonial195,
+    comment:
+      "If it wasn't for the local rep giving us on-site service we wouldn't have survived the transition from Toast to Revel. The new system works great with our large demand for online ordering and third party delivery companies.",
+  },
+  {
+    title: "Switched from Toast to Revel Systems",
+    jobTitle: "Owner of Village Saloon",
+    name: "James",
+    rating: 5,
+    avatar: TestimonialVillage,
+    comment:
+      "I didn't pay a penny for the hardware, installation and training. I was passing the processing fees with Toast but with Revel I am now showing the two cash and credit prices on my check out receipt.",
   },
 ];

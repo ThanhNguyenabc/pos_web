@@ -114,10 +114,14 @@
     100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
 }
 
-::-webkit-scrollbar {
- height: 8px;
-}
+.customScrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+ }
 
+ ::-webkit-scrollbar {  
+  height: 8px;
+ }
 ::-webkit-scrollbar-thumb {
   @apply  rounded-md bg-neutral-200
 }

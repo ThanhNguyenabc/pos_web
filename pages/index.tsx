@@ -17,6 +17,7 @@ import AppRoutes from "utils/routes";
 import HeroSection from "components/common/HeroSection";
 import ReviewerSection from "components/elements/partner/ReviewerSection";
 import { useTranslation } from "react-i18next";
+import { Testimonials } from "utils/StringUtil";
 
 const FeatureData = ["24/7 Support", "Free training", "Seamless Installments"];
 
@@ -97,19 +98,7 @@ const Home = () => {
       <MetricSection titleColor="text-secondary" />
 
       <HeroSection>
-        <ReviewerSection
-          reviews={[
-            {
-              title: "Switched from Micros to Revel Systems",
-              jobTitle: "Owner of Beginnings",
-              name: "Ben",
-              rating: 5,
-              avatar: HomePageReviewImg,
-              comment:
-                "I was reluctant to switch from Micros to Revel but it was the best move I’ve made in the 20 years of business. I even qualified for free monthly service fees.",
-            },
-          ]}
-        />
+        <ReviewerSection reviews={Testimonials} />
       </HeroSection>
 
       <ClientSection

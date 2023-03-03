@@ -52,6 +52,10 @@ export { default as ReviewerImg } from "./images/reviewer.png";
 export { default as MobileLogoImg } from "./images/mobile_logo.png";
 export { default as HomePageReviewImg } from "./images/homepage_review_img.png";
 export { default as BreadMe2Img } from "./images/breadme_2.png";
+export { default as Testimonial195 } from "./images/testimonial-195.jpeg";
+export { default as TestimonialIrishPoet } from "./images/testimonial-irishpoet.jpeg";
+export { default as TestimonialKasey } from "./images/testimonial-kaseys.jpeg";
+export { default as TestimonialVillage } from "./images/testimonial-villagesaloon.jpeg";
 
 // export icons
 export { default as IcRating } from "./icons/ic_rating.svg";

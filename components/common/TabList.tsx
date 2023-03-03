@@ -47,7 +47,7 @@ const TabList = ({
   return (
     <div
       className={twMerge(
-        "flex flex-row gap-4 overflow-x-scroll max-w-full items-center mx-auto ",
+        "flex flex-row gap-4 overflow-x-scroll customScrollbar max-w-full items-center mx-auto ",
         className
       )}
     >
