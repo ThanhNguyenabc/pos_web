@@ -15,7 +15,6 @@ import RecommendTag from "../RecommendTag";
 const ItemHeight = 244;
 
 const POSCardDesktop = ({
-  overallRating,
   data,
   classname = "",
   priority,
@@ -23,6 +22,7 @@ const POSCardDesktop = ({
   onCardClick,
 }: POSCardProps) => {
   const { toogleOpen } = useOpenDemoPOSDialog();
+  const overallRating = data.expert_opinion.overall;
 
   return (
     <div

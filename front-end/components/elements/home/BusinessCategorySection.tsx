@@ -74,7 +74,6 @@ const BusinessCategorySection = () => {
                 data={item}
                 classname={`${priorityBorder}`}
                 priority={priority}
-                overallRating={item.expert_opinion.overall}
                 onCardClick={() => {
                   router.push(`${AppRoutes.POSDetailPage}/${item.id}`);
                 }}

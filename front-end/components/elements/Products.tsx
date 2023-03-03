@@ -11,7 +11,6 @@ import useSWR from "swr";
 import { getPOSByCategory } from "api_client/axios_client";
 import { CategoryType } from "models/category_type";
 import AppRoutes from "utils/routes";
-import { getOverallRating } from "models/product.model";
 
 const ALLTABS = [
   {
@@ -64,7 +63,6 @@ const Products = ({ type = CategoryType.popular }: { type?: string }) => {
               data={item}
               classname={`${priorityBorder}`}
               priority={priority}
-              overallRating={getOverallRating(item.expert_opinion)}
               onCardClick={() => {
                 router.push(`${AppRoutes.POSDetailPage}/${item.id}`);
               }}
@@ -90,7 +88,6 @@ const Products = ({ type = CategoryType.popular }: { type?: string }) => {
             <POSCard
               key={`card-item-${index}`}
               data={item}
-              overallRating={getOverallRating(item.expert_opinion)}
               onCardClick={() => {
                 router.push(`${AppRoutes.POSDetailPage}/${item.id}`);
               }}

@@ -12,7 +12,6 @@ import { twMerge } from "tailwind-merge";
 import { Button } from "../Button";
 
 export const POSCardMobile = ({
-  overallRating,
   data,
   onCardClick,
   priority,
@@ -21,7 +20,8 @@ export const POSCardMobile = ({
 }: POSCardProps) => {
   const { toogleOpen } = useOpenDemoPOSDialog();
   const router = useRouter();
-
+  const overallRating = data.expert_opinion.overall;
+  
   return (
     <div
       onClick={onCardClick}

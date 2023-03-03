@@ -8,9 +8,10 @@ import Head from "next/head";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import i18n, { initI18 } from "i18";
+import { connectMongo } from "lib/mongodb";
 
 initI18();
-
+connectMongo()
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>

@@ -11,11 +11,11 @@ import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
 
 const RecommendPOSCardMobile = ({
   data,
-  overallRating,
   classname = "",
   onCardClick,
 }: POSCardProps) => {
   const { toogleOpen } = useOpenDemoPOSDialog();
+  const overallRating = data.expert_opinion.overall;
 
   return (
     <div

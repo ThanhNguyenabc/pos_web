@@ -1,12 +1,11 @@
 import CustomCircularProgress from "components/common/CustomCircularProgress";
 import Progress from "components/common/progress";
+import { ExpertOpinion } from "models/product.model";
 import React from "react";
 
 interface ExpertOpinionProps {
   id: string;
-  overal: number;
-  rateItems: Array<{ name: string; rating: number }>;
-  comment?: string;
+  data: ExpertOpinion;
 }
 
 const RatingItem = ({ name, rating }: { name: string; rating: number }) => {
@@ -32,12 +31,30 @@ const RatingItem = ({ name, rating }: { name: string; rating: number }) => {
   );
 };
 
-const ExpertOpinion = ({
-  overal,
-  rateItems,
-  comment,
-  id,
-}: ExpertOpinionProps) => {
+const ExpertOpinion = ({ data, id }: ExpertOpinionProps) => {
+  const rateItems = [
+    {
+      name: "Easy to use",
+      rating: data.easy,
+    },
+    {
+      name: "Value",
+      rating: data.value,
+    },
+    {
+      name: "Support",
+      rating: data.support,
+    },
+    {
+      name: "Functionality",
+      rating: data.functionality,
+    },
+    {
+      name: "Feedback",
+      rating: data.feedback,
+    },
+  ];
+
   return (
     <div id={id} className="flex flex-col gap-6 md:gap-8">
       <p className="txt-heading-xsmal md:txt-heading-small">Expert Opinions</p>
@@ -47,12 +64,12 @@ const ExpertOpinion = ({
             id="expert-progress"
             className="w-[120px] md:w-[160px] h-fit"
             strokeWidth={8}
-            value={overal}
+            value={data.overall}
             maxValue={10}
           >
             <p className="txt-md-bold md:text-xl text-primary mt-2">Average</p>
             <p className="text-4xl font-extrabold md:text-6xl mx-2.5 ">
-              {overal}
+              {data.overall}
             </p>
           </CustomCircularProgress>
 
@@ -63,7 +80,7 @@ const ExpertOpinion = ({
           </div>
         </div>
         <div className="flex flex-1">
-          <p className=" txt-md text-neutral-700">{comment}</p>
+          <p className=" txt-md text-neutral-700">{data.comment}</p>
         </div>
       </div>
     </div>

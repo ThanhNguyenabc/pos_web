@@ -1,7 +1,6 @@
 import Box from "components/common/Box";
 import POSCard from "components/common/pos_card/POSCard";
 import RecommendPOSCard from "components/common/recommend_card/RecommendPOSCard";
-import { getOverallRating, Product } from "models/product.model";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import useProductStore from "stores/product_store";
@@ -34,7 +33,6 @@ const SuggestPOSPage = () => {
           <RecommendPOSCard
             classname="z-1 top-7 md:top-[40px] w-full"
             data={firstProductItem}
-            overallRating={getOverallRating(firstProductItem.expert_opinion)}
             onCardClick={() => {
               router.push(`${AppRoutes.POSDetailPage}/${firstProductItem.id}`);
             }}
@@ -52,7 +50,6 @@ const SuggestPOSPage = () => {
                 <POSCard
                   key={`item-pos-${index}-${item.id}`}
                   data={item}
-                  overallRating={getOverallRating(item.expert_opinion)}
                   onCardClick={() => {
                     router.push(`${AppRoutes.POSDetailPage}/${item.id}`);
                   }}

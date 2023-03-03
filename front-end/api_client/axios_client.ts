@@ -43,11 +43,11 @@ export const getPOSByCategory = async ({
 
 export const getPOSDetail = async (id: string) => {
   try {
-    let data = await AxiosInstance.post<ApiResponse<Product>>("/products", {
+    let response = await AxiosInstance.post<ApiResponse<Product>>("/products", {
       posId: id,
     });
 
-    return data.data;
+    return response.data.data;
   } catch (error) {
     console.log("error = ", error);
   }
@@ -56,14 +56,14 @@ export const getPOSDetail = async (id: string) => {
 
 export const getSpecification = async (productId: string) => {
   try {
-    let data = await AxiosInstance.post<ApiResponse<Specification>>(
+    let response = await AxiosInstance.post<ApiResponse<Specification>>(
       "/specification",
       {
         posId: productId,
       }
     );
 
-    return data.data;
+    return response.data.data;
   } catch (error) {
     console.log("error =", error);
   }

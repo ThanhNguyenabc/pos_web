@@ -11,7 +11,6 @@ import CustomCircularProgress from "../CustomCircularProgress";
 import RecommendTag from "../RecommendTag";
 
 const POSCardTablet = ({
-  overallRating,
   data,
   classname,
   onCardClick,
@@ -19,6 +18,7 @@ const POSCardTablet = ({
   recommendTagProps,
 }: POSCardProps) => {
   const { toogleOpen } = useOpenDemoPOSDialog();
+  const overallRating = data.expert_opinion.overall;
 
   return (
     <div

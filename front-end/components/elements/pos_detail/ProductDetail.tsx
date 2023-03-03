@@ -4,8 +4,6 @@ import { BreadMeBtn } from "components/common/BreadmeBtn";
 import { Button } from "components/common/Button";
 import PricingBtn from "components/common/PricingBtn";
 import TabList from "components/common/TabList";
-import { getOverallRating, Product } from "models/product.model";
-import { Specification } from "models/specification";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
@@ -18,11 +16,9 @@ import FrequentlyQuestion from "./frequently_question";
 import POSIntroduction from "./Introduction";
 import Pricing from "./Pricing";
 import SpecificationView from "./Specification";
-
-interface ProductDetailProps {
-  product: Product;
-  specification: Specification;
-}
+import useSWR from "swr";
+import { getPOSDetail } from "api_client/axios_client";
+import Loading from "components/common/loading/Loading";
 
 const DetailTabs = [
   {
@@ -58,50 +54,34 @@ const DetailTabs = [
     id: "faq",
   },
 ];
-export const ProductDetail = ({
-  product,
-  specification,
-}: ProductDetailProps) => {
-  const { toogleOpen: toogleDialog } = useOpenDemoPOSDialog();
-  const overallRate = getOverallRating(product.expert_opinion);
-  const router = useRouter();
-  const rateItems = [
-    {
-      name: "Easy to use",
-      rating: product.expert_opinion.easy,
-    },
-    {
-      name: "Value",
-      rating: product.expert_opinion.value,
-    },
-    {
-      name: "Support",
-      rating: product.expert_opinion.support,
-    },
-    {
-      name: "Functionality",
-      rating: product.expert_opinion.functionality,
-    },
-    {
-      name: "Feedback",
-      rating: product.expert_opinion.feedback,
-    },
-  ];
 
+export const ProductDetail = () => {
+  const { toogleOpen: toogleDialog } = useOpenDemoPOSDialog();
+  const router = useRouter();
+  const { posId = "" } = router.query;
+  const { data: productData } = useSWR(`${posId}`, getPOSDetail);
+
+  if (!productData) {
+    return (
+      <div className="flex justify-center mt-8">
+        <Loading />
+      </div>
+    );
+  }
   return (
     <Box className=" flex flex-col lg:pr-0 lg:flex-row lg:gap-10">
       <div className="flex flex-col py-6 h-fit gap-6  text-center md:gap-8 md:flex-row lg:flex-col lg:w-[400px] lg:py-0 lg:sticky lg:top-0 lg:z-10">
         <div className="flex flex-col flex-1 gap-2 items-center md:items-start md:text-left lg:items-center ">
           <Image
-            src={ProductIcons[product.name]}
+            src={ProductIcons[productData.name]}
             alt=""
             className="w-[160px] h-[80px] object-contain"
           />
           <p className="txt-md text-neutral-700 lg:text-center">
-            {product.overview}
+            {productData.overview}
           </p>
           <div className="flex items-center gap-3">
-            {product.os_system?.map((item, index) => {
+            {productData.os_system?.map((item, index) => {
               const Icon = getSystemIcon(item);
               return <Icon key={`item-os-${index}`} className="w-6 h-6" />;
             })}
@@ -112,9 +92,9 @@ export const ProductDetail = ({
           <div className="flex flex-row gap-2 md:gap-4 ">
             <BreadMeBtn />
             <PricingBtn
-              logo={ProductIcons[product.name]}
+              logo={ProductIcons[productData.name]}
               title="Monthly"
-              desc={`$${product.monthly_price}/month`}
+              desc={`$${productData.monthly_price}/month`}
               color={ColorUtils.secondary}
               onClick={toogleDialog}
             />
@@ -134,7 +114,9 @@ export const ProductDetail = ({
                 />
               </svg>
             </div>
-            <p className="text-left txt-sm-bold">{product.pricing_desc?.[0]}</p>
+            <p className="text-left txt-sm-bold">
+              {productData.pricing_desc?.[0]}
+            </p>
           </div>
         </div>
       </div>
@@ -160,67 +142,33 @@ export const ProductDetail = ({
         <Box className="w-full px-0 pb-14 gap-12 md:gap-16  lg:max-w-[1100px] mx-auto">
           <POSIntroduction
             id={DetailTabs[0].id}
-            pros={product.pros}
-            cons={product.cons}
-            desc={product.intro}
+            pros={productData.pros}
+            cons={productData.cons}
+            desc={productData.intro}
           />
           <ExpertOpinion
             id={DetailTabs[1].id}
-            overal={overallRate}
-            comment={product.expert_opinion.comment}
-            rateItems={rateItems}
+            data={productData.expert_opinion}
           />
-          <SpecificationView
-            id={DetailTabs[2].id}
-            items={[
-              {
-                title: "Business Size",
-                desc: specification.businessSize,
-              },
-              {
-                title: "POS Type",
-                desc: specification.posType,
-              },
-              {
-                title: "Software type",
-                desc: specification.softwareType,
-              },
-              {
-                title: "Free Trial",
-                desc: specification.freeTrial,
-              },
-              {
-                title: "Merchant Services",
-                desc: specification.merchantService,
-              },
-              {
-                title: "Pricing Model",
-                desc: specification.pricingModel,
-              },
-              {
-                title: "Price Range",
-                desc: "$$-$$$$",
-              },
-            ]}
-          />
+          <SpecificationView id={DetailTabs[2].id} posId={`${posId}`} />
           <div id={DetailTabs[3].id} className="flex flex-col gap-4 md:gap-8">
             <p className="txt-heading-xsmal md:txt-heading-small">
               POS Integrations
             </p>
             <p className="txt-md text-neutral-700">
-              {product.pos_integrations}
+              {productData.pos_integrations}
             </p>
           </div>
           <div id={DetailTabs[4].id} className="flex flex-col gap-4 md:gap-8">
             <p className="txt-heading-xsmal md:txt-heading-small">Software</p>
-            <p className="txt-md text-neutral-700">{product.software}</p>
+            <p className="txt-md text-neutral-700">{productData.software}</p>
           </div>
           <div id={DetailTabs[5].id} className="flex flex-col gap-4 md:gap-8">
             <p className="txt-heading-xsmal md:txt-heading-small">
               Payment Processing
             </p>
             <p className="txt-md text-neutral-700">
-              {product.payment_processing}
+              {productData.payment_processing}
             </p>
             <div className="flex flex-row p-4 gap-4 items-center border-success border-2 rounded-xl">
               <Image src={BreadMe2Img} alt="" className="w-[36px] h-[36px]" />
@@ -237,9 +185,9 @@ export const ProductDetail = ({
           </div>
           <Pricing
             id={DetailTabs[6].id}
-            monthlyPrice={product.monthly_price}
-            desc={product.pricing_desc || []}
-            oneTimePurchase={product.one_time_purchase}
+            monthlyPrice={productData.monthly_price}
+            desc={productData.pricing_desc || []}
+            oneTimePurchase={productData.one_time_purchase}
           />
           <FrequentlyQuestion id={DetailTabs[7].id} />
         </Box>

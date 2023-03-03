@@ -29,7 +29,6 @@ export enum Priority {
 
 export interface POSCardProps {
   data: Product;
-  overallRating: number;
   classname?: string;
   priority?: Priority;
   onCardClick?: () => void;
