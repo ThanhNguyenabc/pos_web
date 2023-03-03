@@ -7,11 +7,13 @@ jobs:
     name: Deploy to Cpanel
     runs-on: ubuntu-latest
     steps:
-    - name: FTP Deploy
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+    - name: Upload to Cpanel
       uses: SamKirkland/FTP-Deploy-Action@3.1.2
       with:
         ftp-server: ${{ secrets.FTP_SERVER }}
         ftp-username:  ${{ secrets.FTP_USER }}   
         ftp-password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: 	/home/e821015/bestpos.breadme.co
+        local-dir: 	/home/${{ secrets.FTP_USER }}/bestpos.breadme.co/
   
