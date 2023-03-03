@@ -21,7 +21,8 @@ jobs:
 
       - name: 🔨 Generate build folder
         run: |
-          rm -rf build && mkdir build
+          rm -rf build  
+          mkdir build
           cp .next package.json server.js .env.local ./build/
 
       - name: Uploading to Cpanel
