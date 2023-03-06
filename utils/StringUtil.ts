@@ -29,11 +29,11 @@ import {
   IcAmericanFlag,
   IcSpanishFlag,
   CloverFlexImg,
-  HomePageReviewImg,
   TestimonialVillage,
   Testimonial195,
   TestimonialIrishPoet,
   TestimonialKasey,
+  TestimonialBegin,
 } from "assets/AssetUtil";
 import { CategoryType } from "models/category_type";
 import { SystemOs } from "models/product.model";
@@ -251,7 +251,7 @@ export const Testimonials = [
     jobTitle: "Owner of Beginnings",
     name: "Ben",
     rating: 5,
-    avatar: HomePageReviewImg,
+    avatar: TestimonialBegin,
     comment:
       "I was reluctant to switch from Micros to Revel but it was the best move I’ve made in the 20 years of business. I even qualified for free monthly service fees.",
   },

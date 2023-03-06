@@ -28,6 +28,7 @@ const ClientList = [
   BrinkImg,
   AlohaImg,
   UpserveImg,
+  CloverDuoImg,
 ];
 
 interface ClientSectionProps {

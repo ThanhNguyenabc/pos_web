@@ -68,7 +68,7 @@ const ReviewerSection = ({ reviews }: ReviewerSectionProps) => {
         <Image
           src={data.avatar}
           alt="avatar"
-          className=" w-full aspect-[4/3] object-cover rounded-b-3xl lg:rounded-r-3xl lg:rounded-bl-none"
+          className=" w-full  object-cover rounded-b-3xl lg:rounded-r-3xl lg:rounded-bl-none"
         />
       </div>
     </div>
