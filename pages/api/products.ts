@@ -24,13 +24,17 @@ export default async function handler(
           let result: Array<Product> = [];
           const category = await CategoryModel.findOne({ type: type });
           if (category) {
-            console.log(category.products);
-
-            result = await ProductModel.find({
-              id: { $in: category.products },
+            const productIds = category.products;
+            const productMap: { [item: string]: Product } = {};
+            const products = await ProductModel.find({
+              id: { $in: productIds },
             })
               .limit(Number(limit))
               .exec();
+            products.forEach((item) => {
+              productMap[item.id] = item;
+            });
+            result = productIds.map((id) => productMap[id]);
           }
 
           return res.status(200).json({ data: result });
@@ -45,4 +49,18 @@ export default async function handler(
   } catch (error) {
     return res.status(500).json({ error: error });
   }
+}
+
+function naturalOrderResults(
+  resultsFromMongoDB: Array<any>,
+  queryIds: Array<any>
+) {
+  var hashOfResults = resultsFromMongoDB.reduce(function (prev, curr) {
+    prev[curr._id] = curr;
+    return prev;
+  }, {});
+
+  return queryIds.map(function (id) {
+    return hashOfResults[id];
+  });
 }

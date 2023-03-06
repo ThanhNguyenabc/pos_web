@@ -15,6 +15,9 @@ import POSCard, {
   RecommendColor,
 } from "components/common/pos_card/POSCard";
 
+const wCategoryItem = 115;
+const wCategoryItemLarge = 186;
+
 const BusinessCategorySection = () => {
   const router = useRouter();
 
@@ -30,17 +33,18 @@ const BusinessCategorySection = () => {
           Find the right point-of-sale for your business
         </p>
 
-        <div className=" overflow-x-scroll gap-2 pb-1 whitespace-nowrap ">
+        <div className=" overflow-x-scroll gap-2 pb-1 whitespace-nowrap">
           {CategoryList.map((item, index) => {
-            const ml = index == 0 ? "" : "ml-2 md:ml-4";
+            const mr =
+              index < CategoryList.length - 1 ? "mr-2 md:mr-4" : "xl:mr-0";
             return (
               <div
-                className={`w-[110px] ${ml} h-[124px] md:h-[180px] md:w-[186px] inline-flex flex-col rounded-lg  
-                p-3 border bg-white  border-neutral-300 cursor-pointer`}
+                className={`w-[115px] ${mr} h-[124px] md:h-[160px] md:w-[186px] mr-2 md:mr-4 inline-flex flex-col rounded-2xl  
+                p-4 border bg-white  border-neutral-300 cursor-pointer`}
                 key={`category-${index}`}
                 onClick={() => router.push(CategoryList[index].link)}
               >
-                <div className=" w-[64px] h-[64px] mx-auto md:w-[100px] md:h-[100px]">
+                <div className=" w-[80px] h-[80px] mx-auto md:w-[120px] md:h-[80px] object-contain">
                   <Image src={item.img} alt="pizza" />
                 </div>
                 <div className="flex h-full items-center justify-center ">
