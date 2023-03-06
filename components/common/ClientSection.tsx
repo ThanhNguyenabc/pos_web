@@ -3,6 +3,7 @@ import {
   AlohaImg,
   BrinkImg,
   CloverDuoImg,
+  CloverFlexImg,
   ExtouchImg,
   IcRightArrow,
   LightSpeedImg,
@@ -22,13 +23,13 @@ const ClientList = [
   CloverDuoImg,
   OvviImg,
   ExtouchImg,
+  CloverFlexImg,
   LightSpeedImg,
   ToastImg,
   SimphonyImg,
   BrinkImg,
   AlohaImg,
   UpserveImg,
-  CloverDuoImg,
 ];
 
 interface ClientSectionProps {
@@ -51,7 +52,7 @@ const ClientSection = ({ body }: ClientSectionProps) => {
             src={item}
             alt={`client-${index}`}
             key={`client-${index}`}
-            className="w-[120px] h-[60px] md:w-[180px] md:h-[90px]"
+            className="w-[120px] h-[60px] md:w-[180px] md:h-[90px] object-contain"
           />
         ))}
       </div>
