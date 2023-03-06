@@ -1,9 +1,4 @@
-import {
-  BannerImage,
-  HomePageReviewImg,
-  IcCheck,
-  IcRightArrow,
-} from "assets/AssetUtil";
+import { BannerImage, IcCheck, IcRightArrow } from "assets/AssetUtil";
 import FeatureSection from "components/elements/home/FeatureSection";
 import ClientSection from "components/common/ClientSection";
 import Image from "next/image";

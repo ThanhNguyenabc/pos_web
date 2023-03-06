@@ -57,9 +57,7 @@ const FeatureSection = () => {
               <div className="hero-content flex-row p-0 gap-6 items-start ">
                 <Image
                   src={item.image}
-                  className="w-16 h-16 md:w-20 md:h-20"
-                  width={64}
-                  height={64}
+                  className="w-16 h-16 md:w-20 md:h-20 object-contain"
                   alt={`${item.title}`}
                 />
                 <div className="flex flex-col max-w-md gap-2 md:gap-4">

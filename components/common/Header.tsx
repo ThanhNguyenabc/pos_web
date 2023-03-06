@@ -1,10 +1,4 @@
-import {
-  IcMenu,
-  Logo,
-  IcPhone,
-  MobileLogoImg,
-  IcAmericanFlag,
-} from "assets/AssetUtil";
+import { IcMenu, Logo, IcPhone, MobileLogoImg } from "assets/AssetUtil";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -67,9 +61,8 @@ const Header = () => {
           <Image
             src={Logo}
             width={150}
-            height={32}
             alt="logo"
-            className="hidden xl:block"
+            className="hidden xl:block object-contain"
           />
         </Link>
       </div>

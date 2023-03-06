@@ -1,5 +1,4 @@
 // export images
-import React from "react";
 
 export { default as Logo } from "./images/logo.jpg";
 export { default as FooterLogo } from "./images/bestpos.png";
