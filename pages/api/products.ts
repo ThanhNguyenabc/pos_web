@@ -29,7 +29,6 @@ export default async function handler(
             result = await ProductModel.find({
               id: { $in: category.products },
             })
-              .sort({ "expert_opinion.overall": -1 })
               .limit(Number(limit))
               .exec();
           }
