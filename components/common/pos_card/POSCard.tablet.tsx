@@ -5,7 +5,7 @@ import { twMerge } from "tailwind-merge";
 import PricingBtn from "../PricingBtn";
 import ColorUtils from "utils/ColorUtils";
 import { POSCardProps, RecommendColor } from "./POSCard";
-import { getSystemIcon, ProductIcons } from "utils/StringUtil";
+import { getProductIcon, getSystemIcon } from "utils/StringUtil";
 import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
 import CustomCircularProgress from "../CustomCircularProgress";
 import RecommendTag from "../RecommendTag";
@@ -46,8 +46,10 @@ const POSCardTablet = ({
 
       <div className="flex flex-col flex-1 items-start gap-2">
         <Image
-          src={ProductIcons[data.name]}
+          src={getProductIcon(data.logo)}
           alt="logo-pos"
+          width={120}
+          height={60}
           className="w-[120px] h-[60px]  object-contain"
         />
         <p className="text-sm text-left text-neutral-900">{data.overview}</p>
@@ -61,7 +63,7 @@ const POSCardTablet = ({
       <div className="flex gap-2 md:gap-4 h-full">
         <BreadMeBtn />
         <PricingBtn
-          logo={ProductIcons[data.name]}
+          logo={getProductIcon(data.logo)}
           title="Monthly"
           desc={`$${data.monthly_price}/mo`}
           color={ColorUtils.secondary}

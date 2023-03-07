@@ -10,7 +10,7 @@ import React from "react";
 import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
 import ColorUtils from "utils/ColorUtils";
 import AppRoutes from "utils/routes";
-import { getSystemIcon, ProductIcons } from "utils/StringUtil";
+import { getProductIcon, getSystemIcon } from "utils/StringUtil";
 import ExpertOpinion from "./ExpertOpinion";
 import FrequentlyQuestion from "./frequently_question";
 import POSIntroduction from "./Introduction";
@@ -73,9 +73,11 @@ export const ProductDetail = () => {
       <div className="flex flex-col py-6 h-fit gap-6  text-center md:gap-8 md:flex-row lg:flex-col lg:w-[400px] lg:py-0 lg:sticky lg:top-0 lg:z-10">
         <div className="flex flex-col flex-1 gap-2 items-center md:items-start md:text-left lg:items-center ">
           <Image
-            src={ProductIcons[productData.name]}
+            src={getProductIcon(productData.logo)}
             alt=""
-            className="w-[160px] h-[80px] object-contain"
+            width={160}
+            height={80}
+            className="object-contain"
           />
           <p className="txt-md text-neutral-700 lg:text-center">
             {productData.overview}
@@ -92,7 +94,7 @@ export const ProductDetail = () => {
           <div className="flex flex-row gap-2 md:gap-4 ">
             <BreadMeBtn />
             <PricingBtn
-              logo={ProductIcons[productData.name]}
+              logo={getProductIcon(productData.logo)}
               title="Monthly"
               desc={`$${productData.monthly_price}/month`}
               color={ColorUtils.secondary}

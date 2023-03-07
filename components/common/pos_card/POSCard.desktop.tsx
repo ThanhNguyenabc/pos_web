@@ -5,7 +5,7 @@ import ColorUtils from "utils/ColorUtils";
 import { twMerge } from "tailwind-merge";
 import { POSCardProps, RecommendColor } from "./POSCard";
 import PricingBtn from "../PricingBtn";
-import { getSystemIcon, ProductIcons } from "utils/StringUtil";
+import { getProductIcon, getSystemIcon } from "utils/StringUtil";
 import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
 import ViewMore from "../ViewMore";
 import { IcCheckbox, IcClose } from "assets/AssetUtil";
@@ -50,11 +50,15 @@ const POSCardDesktop = ({
       </CustomCircularProgress>
 
       <div className="flex flex-col items-start gap-2">
-        <Image
-          src={ProductIcons[data.name]}
-          alt="logo-pos"
-          className="w-[120px] h-[60px] object-contain"
-        />
+        <div className="relative w-[120px] h-[60px]">
+          <Image
+            src={getProductIcon(data.logo)}
+            alt="logo-pos"
+            className=" object-contain"
+            fill
+          />
+        </div>
+
         <p className="text-sm text-left text-neutral-900 max-w-[214px]">
           {data.overview}
         </p>
@@ -101,7 +105,7 @@ const POSCardDesktop = ({
       <div className="flex gap-4 w-[300px]">
         <BreadMeBtn />
         <PricingBtn
-          logo={ProductIcons[data.name]}
+          logo={getProductIcon(data.logo)}
           title="Monthly"
           desc={`$${data.monthly_price}/mo`}
           color={ColorUtils.secondary}

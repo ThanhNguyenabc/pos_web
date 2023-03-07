@@ -1,9 +1,9 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import React from "react";
 import { BreadMeBtn } from "../BreadmeBtn";
 import { twMerge } from "tailwind-merge";
 import { POSCardProps } from "../pos_card/POSCard";
-import { getSystemIcon, ProductIcons } from "utils/StringUtil";
+import { getProductIcon, getSystemIcon } from "utils/StringUtil";
 import PricingBtn from "../PricingBtn";
 import ColorUtils from "utils/ColorUtils";
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
@@ -27,9 +27,11 @@ const RecommendPOSCardMobile = ({
       <div className="gap-2 flex flex-col items-start">
         <div className=" w-full flex flex-row h-10 items-center justify-between ">
           <Image
-            src={ProductIcons[data.name]}
+            src={getProductIcon(data.logo)}
             alt="logo-pos"
-            className="h-10 w-20"
+            width={80}
+            height = {40}
+            className="object-contain"
           />
           <div className="flex items-center gap-4">
             {data.os_system?.map((item, index) => {
@@ -70,7 +72,7 @@ const RecommendPOSCardMobile = ({
       <div className="flex gap-2 w-full">
         <BreadMeBtn />
         <PricingBtn
-          logo={ProductIcons[data.name]}
+          logo={getProductIcon(data.logo)}
           title="Monthly"
           color={ColorUtils.secondary}
           desc={`$${data.monthly_price}/month`}

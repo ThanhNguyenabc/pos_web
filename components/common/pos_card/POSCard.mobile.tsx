@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { IcFreePOS } from "assets/AssetUtil";
 import { POSCardProps, RecommendColor } from "./POSCard";
-import { getSystemIcon, ProductIcons } from "utils/StringUtil";
+import { getProductIcon, getSystemIcon } from "utils/StringUtil";
 import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
 import { useRouter } from "next/router";
 import AppRoutes from "utils/routes";
@@ -21,7 +21,7 @@ export const POSCardMobile = ({
   const { toogleOpen } = useOpenDemoPOSDialog();
   const router = useRouter();
   const overallRating = data.expert_opinion.overall;
-  
+
   return (
     <div
       onClick={onCardClick}
@@ -39,12 +39,16 @@ export const POSCardMobile = ({
         </div>
       )}
       <div className="flex flex-col gap-2">
-        <div className="w-full  flex flex-row h-10 items-center justify-between ">
-          <Image
-            src={ProductIcons[data.name]}
-            alt="logo-pos"
-            className="w-[80px]  object-contain"
-          />
+        <div className="w-full flex flex-row h-10 items-center justify-between ">
+          <div className=" relative w-20 h-20">
+            <Image
+              src={getProductIcon(data.logo)}
+              alt="logo-pos"
+              className="object-contain"
+              fill
+            />
+          </div>
+
           <div className="flex items-center gap-4">
             {data.os_system?.map((item, index) => {
               const Icon = getSystemIcon(item);

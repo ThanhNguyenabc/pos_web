@@ -5,18 +5,13 @@ import { Button } from "components/common/Button";
 import { useRouter } from "next/router";
 import AppRoutes from "utils/routes";
 import { CategoryList } from "utils/StringUtil";
-import List from "components/common/List";
 import HeroSection from "components/common/HeroSection";
-import Box from "components/common/Box";
 import { getPOSByCategory } from "api_client/axios_client";
 import useSWR from "swr";
 import POSCard, {
   Priority,
   RecommendColor,
 } from "components/common/pos_card/POSCard";
-
-const wCategoryItem = 115;
-const wCategoryItemLarge = 186;
 
 const BusinessCategorySection = () => {
   const router = useRouter();

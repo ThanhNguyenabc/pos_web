@@ -4,7 +4,7 @@ import POSCard, {
 } from "components/common/pos_card/POSCard";
 import TabList from "components/common/TabList";
 import { useRouter } from "next/router";
-import { CategoryList } from "utils/StringUtil";
+import { CategoryItems, CategoryList } from "utils/StringUtil";
 import React, { useCallback } from "react";
 import Loading from "components/common/loading/Loading";
 import useSWR from "swr";
@@ -24,11 +24,12 @@ const ALLTABS = [
 const Products = ({ type = CategoryType.popular }: { type?: string }) => {
   const router = useRouter();
 
-  const { data, isLoading } = useSWR({ type }, getPOSByCategory);
+  const { data, isLoading } = useSWR(type, () => getPOSByCategory({ type }));
 
   const selectedTabIndex = ALLTABS.findIndex((item) => item.type == type);
 
   const onSelectTab = useCallback((index: number) => {
+    console.log("call ==", ALLTABS[index].link);
     router.push(ALLTABS[index].link);
   }, []);
 
