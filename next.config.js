@@ -10,7 +10,7 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ['blog.bestpos.com']
+    domains: ['blog.bestpos.com', "localhost" , "www.bestpos.com" , "www.bestpos.breadme.co"]
   },
   experimental: {
     scrollRestoration: true
