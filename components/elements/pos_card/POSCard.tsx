@@ -8,7 +8,7 @@ import POSCardTablet from "./POSCard.tablet";
 export const RecommendColor = {
   first: {
     tagColor: "bg-[#EAAA08]",
-    border: "border-neutral-400",
+    border: "border-[#EAAA08]",
   },
   second: {
     tagColor: "bg-neutral-400",
