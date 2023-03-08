@@ -19,7 +19,7 @@ export interface ExpertOpinion {
 export interface Product {
   id: string;
   name: string;
-  logo: string;
+  slug: string;
   monthly_price: number;
   one_time_purchase: number;
   os_system?: Array<SystemOs>;
@@ -47,7 +47,7 @@ export const getOverallRating = ({
 const ProductSchema = new mongoose.Schema<Product>({
   id: String,
   name: String,
-  logo: String,
+  slug: String,
   monthly_price: Number,
   one_time_purchase: Number,
   os_system: [String],
