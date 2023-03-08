@@ -29,8 +29,11 @@ import AppRoutes from "./routes";
 
 export const SuccessMessage = "Thank you for filling out the form";
 
-export const getProductIcon = (name: string) =>
-  `${process.env.NEXT_PUBLIC_API_HOST}/public/product_images/${name}`;
+export const getProductIcon = (slug: string) =>
+  `${process.env.NEXT_PUBLIC_API_HOST}/public/products/${slug}/icon.png`;
+
+export const getProductImage = (slug: string) =>
+  `${process.env.NEXT_PUBLIC_API_HOST}/public/products/${slug}/pic.png`;
 
 export const getSystemIcon = (os: SystemOs): React.ElementType => {
   switch (os) {

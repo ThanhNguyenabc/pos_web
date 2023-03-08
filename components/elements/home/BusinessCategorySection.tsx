@@ -1,5 +1,5 @@
 import { IcRightArrow } from "assets/AssetUtil";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "components/common/Button";
 import { useRouter } from "next/router";
@@ -12,15 +12,23 @@ import POSCard, {
   Priority,
   RecommendColor,
 } from "components/elements/pos_card/POSCard";
+import useProductStore from "stores/product_store";
 
 const BusinessCategorySection = () => {
   const router = useRouter();
 
-  const { data, isLoading } = useSWR(
-    { type: "all", limit: 4 },
-    getPOSByCategory
-  );
+  const { products, setProductList } = useProductStore();
 
+  console.log(products);
+
+  useEffect(() => {
+    if (products.length <= 0) fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const res = await getPOSByCategory({ type: "all" });
+    setProductList(res);
+  };
   return (
     <div className="bg-neutral-100">
       <HeroSection className="pr-0 md:pr-0 gap-4 md:gap-6 md:py-12 lg:py-12">
@@ -53,7 +61,7 @@ const BusinessCategorySection = () => {
         </div>
 
         <div className="grid mt-6 gap-6 pr-4 md:pr-8 xl:px-0">
-          {data?.map((item, index) => {
+          {products.slice(0, 4)?.map((item, index) => {
             const priority =
               index == 0
                 ? Priority.first

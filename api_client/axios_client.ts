@@ -38,6 +38,7 @@ export const getPOSByCategory = async ({
     })
     .catch((error) => {
       console.log("error = ", error);
+      return [];
     });
 };
 

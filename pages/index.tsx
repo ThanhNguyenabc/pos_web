@@ -16,7 +16,7 @@ import { Testimonials } from "utils/StringUtil";
 
 const FeatureData = ["24/7 Support", "Free training", "Seamless Installments"];
 
-const Home = () => {
+const HomePage = () => {
   const router = useRouter();
   const { t } = useTranslation();
 
@@ -138,4 +138,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
