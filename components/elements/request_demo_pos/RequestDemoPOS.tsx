@@ -6,22 +6,18 @@ import { BusinessTypes } from "utils/StringUtil";
 import { submitForDemoPOS } from "api_client/axios_client";
 import { ContactInfo } from "models/contact_info";
 import ContactForm from "components/common/ContactForm";
-import "animate.css";
-import Drawer from "react-modern-drawer";
-import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
 import ThanksYouForm from "components/common/ThanksForm";
-
-export const RequestDemoModalId = "requestDemoModal";
+import useSideBar from "stores/useSideBar";
 
 const RequestDemoPOS = () => {
-  const { isOpen, toogleOpen: toogleDialog } = useOpenDemoPOSDialog();
   const [isSubmit, setSubmit] = useState(false);
   const [businessType, setBusinessType] = useState("");
+  const closeSidebar = useSideBar((state) => state.closeSideBar);
 
   const onClose = () => {
     setSubmit(false);
     setBusinessType("");
-    toogleDialog();
+    closeSidebar();
   };
 
   const submitForm = async (data: ContactInfo) => {
@@ -33,7 +29,7 @@ const RequestDemoPOS = () => {
   };
 
   const PAGE = isSubmit ? (
-    <ThanksYouForm />
+    <ThanksYouForm className="mt-16 lg:mt-[100px]" />
   ) : (
     <div className="flex w-full flex-col px-4 py-5 md:px-10">
       <p className="txt-md-bold mb-4 md:mb-6">Type of business</p>
@@ -46,7 +42,7 @@ const RequestDemoPOS = () => {
             <div className="flex w-full h-full flex-row items-center p-3 gap-4 md:flex-col md:justify-center">
               <Image
                 src={item.img}
-                className="w-[84px]  md:w-[120px]"
+                className="w-[80px] h-[80px] md:w-[120px]  object-contain"
                 alt="image"
               />
               <p className="txt-md-bold md:text-center ">{item.title}</p>
@@ -58,24 +54,18 @@ const RequestDemoPOS = () => {
         }}
       />
       <p className="txt-md-bold mt-10 mb-4">Contact informations</p>
-      <ContactForm onSubmitForm={submitForm} />
+      <ContactForm
+        onSubmitForm={submitForm}
+        submitBtnClassName="md:w-fit"
+        submitBtnTitle="Send Request"
+      />
     </div>
   );
 
   return (
     <>
-      <Drawer
-        open={isOpen}
-        direction="right"
-        onClose={toogleDialog}
-        style={{
-          width: "w-full",
-        }}
-        className="w-full md:w-[60%] max-w-[720px] overflow-auto"
-      >
-        <HeaderWithBack title="Request a Demo" onClose={onClose} />
-        {PAGE}
-      </Drawer>
+      <HeaderWithBack title="Request a Demo" onClose={onClose} />
+      {PAGE}
     </>
   );
 };

@@ -51,7 +51,7 @@ const ContactForm = ({
 
   return (
     <form
-      className={`flex flex-col gap-6 ${classname}`}
+      className={`flex w-full flex-col gap-6 ${classname}`}
       onSubmit={submitFormEvent}
     >
       <Input

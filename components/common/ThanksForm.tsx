@@ -1,9 +1,19 @@
 import { IcCheck, IcMail, IcPhone } from "assets/AssetUtil";
 import React from "react";
+import { twMerge } from "tailwind-merge";
 
-const ThanksYouForm = () => {
+interface ThanksYouFormProps {
+  title?: string;
+  className?: string;
+}
+const ThanksYouForm = ({ title, className }: ThanksYouFormProps) => {
   return (
-    <div className="flex flex-col items-center justify-center pt-12 px-4 gap-4 text-center">
+    <div
+      className={twMerge(
+        "flex flex-col max-w-[500px] mx-auto  items-center justify-center gap-4 text-center",
+        className
+      )}
+    >
       <div className="w-10 h-10 flex bg-success btn-circle justify-center items-center ">
         <svg
           width="16"
@@ -18,7 +28,9 @@ const ThanksYouForm = () => {
           />
         </svg>
       </div>
-      <p className="txt-heading-xsmal">Thanks for filling out the form!</p>
+      <p className="txt-heading-xsmal">
+        {title || "Thanks for filling out the form!"}
+      </p>
       <p className="txt-md  text-neutral-700 md:text-xl">
         We will review your information and get back to you in 1-2 business
         days.
@@ -26,17 +38,16 @@ const ThanksYouForm = () => {
       <p className="txt-md  text-neutral-700 mt-7">
         If you would like to learn more, feel free to contact us at
       </p>
-      <div className="flex flex-row txt-sm font-medium  gap-4">
+      <div className="flex flex-row txt-sm font-medium gap-4">
         <div className="flex flex-row items-center gap-3">
           <IcPhone className=" text-[20px] " />
           <p className="txt-sm-link font-medium">(888) 410-2188</p>
         </div>
-        <p className="txt-sm font-medium">or</p>
+        <p className="tx-md text-neutral-700">or</p>
         <div className="flex flex-row items-center gap-3">
           <IcMail className=" text-[20px] " />
           <p className="txt-sm-link font-medium">info@bestpos.com</p>
         </div>
-        <div></div>
       </div>
     </div>
   );

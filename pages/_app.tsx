@@ -9,9 +9,11 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import i18n, { initI18 } from "i18";
 import { connectMongo } from "lib/mongodb";
+import SideBar from "components/SideBar";
 
 initI18();
-connectMongo()
+connectMongo();
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -21,11 +23,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>Best pos</title>
         <meta name="best pos" />
       </Head>
-      <RequestDemoPOS />
-      <FindPOSModal />
+
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <SideBar />
     </>
   );
 }

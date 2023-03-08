@@ -3,34 +3,10 @@ import BusinessInfo from "./BusinessInfo";
 import { CreditCardVolume } from "./CreditCardVolume";
 import PersonalInfo from "./PersonalInfo";
 import HeaderWithBack from "components/common/HeaderWithBack";
-import Modal from "components/common/Modal";
 import Progress from "components/common/progress";
-import { ContactInfo } from "models/contact_info";
 import ThanksYouForm from "components/common/ThanksForm";
-
-interface FindPOSData {
-  creditVolumeId?: number;
-  businessName?: string;
-  businessPhone?: string;
-  contact?: ContactInfo;
-}
-
-type FindPOSState = {
-  cQuestionIndex: number;
-  data?: FindPOSData;
-  setData: (data: FindPOSData) => void;
-  nextPage: () => void;
-  onBack: () => void;
-};
-
-export const FindPOSModalId = "FindPOSModalId";
-
-export const FindPOSModalContext = React.createContext<FindPOSState>({
-  cQuestionIndex: 0,
-  setData: () => {},
-  nextPage: () => {},
-  onBack: () => {},
-});
+import useFindPOSStore from "stores/findpos_store";
+import useSideBar from "stores/useSideBar";
 
 const PAGE_TITLE = [
   "What’s your yearly credit card volume?",
@@ -42,67 +18,37 @@ const PAGES = [
   <CreditCardVolume key={`credit-key`} />,
   <BusinessInfo key={`business-key`} />,
   <PersonalInfo key={`personal-key`} />,
-  <ThanksYouForm key={`thanks-form`} />,
+  <ThanksYouForm key={`thanks-form`} title="Thanks for your time!" />,
 ];
 
 const FindPOSModal = () => {
-  const setData = (v: FindPOSData) => {
-    setFormData((preState) => ({
-      ...preState,
-      data: v,
-    }));
-  };
-
-  const nextButton = () => {
-    setFormData((preState) => ({
-      ...preState,
-      cQuestionIndex: preState.cQuestionIndex + 1,
-    }));
-  };
-
-  const onBackBtn = () => {
-    setFormData((preState) => ({
-      ...preState,
-      cQuestionIndex: preState.cQuestionIndex - 1,
-    }));
-  };
-
-  const [formState, setFormData] = useState<FindPOSState>({
-    cQuestionIndex: 0,
-    setData,
-    nextPage: nextButton,
-    onBack: onBackBtn,
-  });
+  const { cQuestionIndex, clearStoreData } = useFindPOSStore();
+  const { closeSideBar } = useSideBar();
 
   const onClose = () => {
-    setFormData({ ...formState, cQuestionIndex: 0, data: undefined });
-    document.getElementById(FindPOSModalId)?.click();
+    closeSideBar();
+    clearStoreData();
   };
-
   return (
-    <FindPOSModalContext.Provider value={formState}>
-      <Modal modalId={FindPOSModalId}>
-        <div className="flex flex-col w-full h-full ">
-          <HeaderWithBack title="Get Free POS" onClose={onClose} />
+    <div className="flex flex-col">
+      <HeaderWithBack title="Get Free POS" onClose={onClose} />
 
-          <div className="flex flex-col gap-6 h-full">
-            <Progress
-              value={formState.cQuestionIndex + 1}
-              max={PAGES.length}
-              className={`${
-                formState.cQuestionIndex == PAGES.length - 1 ? "hidden" : "flex"
-              }`}
-            />
-            <p className="txt-heading-xsmal text-center px-4 mt-6 md:mt-10 md:text-3xl">
-              {PAGE_TITLE[formState.cQuestionIndex]}
-            </p>
-            <div className="flex-1 p-4 md:p-8">
-              {PAGES[formState.cQuestionIndex]}
-            </div>
-          </div>
+      <div className="flex flex-col gap-6 md:gap-10">
+        <Progress
+          value={cQuestionIndex + 1}
+          max={PAGES.length}
+          className={`${
+            cQuestionIndex == PAGES.length - 1 ? "hidden" : "flex"
+          }`}
+        />
+        <div className=" flex flex-col w-full max-w-[500px] px-4 md:px-8 mx-auto">
+          <p className="txt-heading-xsmal text-center md:text-3xl">
+            {PAGE_TITLE[cQuestionIndex]}
+          </p>
+          <div className="mt-6 md:mt-12">{PAGES[cQuestionIndex]}</div>
         </div>
-      </Modal>
-    </FindPOSModalContext.Provider>
+      </div>
+    </div>
   );
 };
 
