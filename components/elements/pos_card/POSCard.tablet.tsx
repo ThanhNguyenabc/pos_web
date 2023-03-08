@@ -47,7 +47,7 @@ const POSCardTablet = ({
 
       <div className="flex flex-col flex-1 items-start gap-2">
         <Image
-          src={getProductIcon(data.logo)}
+          src={getProductIcon(data.slug)}
           alt="logo-pos"
           width={120}
           height={60}
@@ -64,7 +64,7 @@ const POSCardTablet = ({
       <div className="flex gap-2 md:gap-4 h-full">
         <BreadMeBtn />
         <PricingBtn
-          logo={getProductIcon(data.logo)}
+          logo={getProductIcon(data.slug)}
           title="Monthly"
           desc={`$${data.monthly_price}/mo`}
           color={ColorUtils.secondary}

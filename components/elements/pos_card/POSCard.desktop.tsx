@@ -53,7 +53,7 @@ const POSCardDesktop = ({
       <div className="flex flex-col items-start gap-2">
         <div className="relative w-[120px] h-[60px]">
           <Image
-            src={getProductIcon(data.logo)}
+            src={getProductIcon(data.slug)}
             alt="logo-pos"
             className=" object-contain"
             fill
@@ -106,7 +106,7 @@ const POSCardDesktop = ({
       <div className="flex gap-4 w-[300px]">
         <BreadMeBtn />
         <PricingBtn
-          logo={getProductIcon(data.logo)}
+          logo={getProductIcon(data.slug)}
           title="Monthly"
           desc={`$${data.monthly_price}/mo`}
           color={ColorUtils.secondary}

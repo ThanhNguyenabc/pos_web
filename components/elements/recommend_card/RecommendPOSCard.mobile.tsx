@@ -28,7 +28,7 @@ const RecommendPOSCardMobile = ({
       <div className="gap-2 flex flex-col items-start">
         <div className=" w-full flex flex-row h-10 items-center justify-between ">
           <Image
-            src={getProductIcon(data.logo)}
+            src={getProductIcon(data.slug)}
             alt="logo-pos"
             width={80}
             height={40}
@@ -73,7 +73,7 @@ const RecommendPOSCardMobile = ({
       <div className="flex gap-2 w-full">
         <BreadMeBtn />
         <PricingBtn
-          logo={getProductIcon(data.logo)}
+          logo={getProductIcon(data.slug)}
           title="Monthly"
           color={ColorUtils.secondary}
           desc={`$${data.monthly_price}/month`}

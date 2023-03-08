@@ -43,7 +43,7 @@ export const POSCardMobile = ({
         <div className="w-full flex flex-row h-10 items-center justify-between ">
           <div className=" relative w-20 h-20">
             <Image
-              src={getProductIcon(data.logo)}
+              src={getProductIcon(data.slug)}
               alt="logo-pos"
               className="object-contain"
               fill

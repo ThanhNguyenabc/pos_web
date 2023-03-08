@@ -10,7 +10,11 @@ import React from "react";
 import useSideBar from "stores/useSideBar";
 import ColorUtils from "utils/ColorUtils";
 import AppRoutes from "utils/routes";
-import { getProductIcon, getSystemIcon } from "utils/StringUtil";
+import {
+  getProductIcon,
+  getProductImage,
+  getSystemIcon,
+} from "utils/StringUtil";
 import ExpertOpinion from "./ExpertOpinion";
 import FrequentlyQuestion from "./frequently_question";
 import POSIntroduction from "./Introduction";
@@ -81,7 +85,7 @@ export const ProductDetail = () => {
       >
         <div className="flex flex-col flex-1 gap-2 items-center md:items-start md:text-left lg:items-center ">
           <Image
-            src={getProductIcon(productData.logo)}
+            src={getProductIcon(productData.slug)}
             alt=""
             width={160}
             height={80}
@@ -102,7 +106,7 @@ export const ProductDetail = () => {
           <div className="flex flex-row gap-2 md:gap-4 ">
             <BreadMeBtn />
             <PricingBtn
-              logo={getProductIcon(productData.logo)}
+              logo={getProductIcon(productData.slug)}
               title="Monthly"
               desc={`$${productData.monthly_price}/mo`}
               color={ColorUtils.secondary}
@@ -161,6 +165,14 @@ export const ProductDetail = () => {
             data={productData.expert_opinion}
           />
           <SpecificationView id={DetailTabs[2].id} posId={`${posId}`} />
+          <div className="relative w-full h-[250px]">
+            <Image
+              src={getProductImage(productData.slug)}
+              alt="pos-pic"
+              className="object-contain"
+              fill
+            />
+          </div>
           <div id={DetailTabs[3].id} className="flex flex-col gap-4 md:gap-8">
             <p className="txt-heading-xsmal md:txt-heading-small">
               POS Integrations
