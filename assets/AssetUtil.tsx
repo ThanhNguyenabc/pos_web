@@ -34,18 +34,7 @@ export { default as ExtraServiceImg } from "./images/extra_service.png";
 export { default as ITSolutionImg } from "./images/solutions.png";
 export { default as POSAboutImg } from "./images/pos_about.png";
 export { default as CreditCardImg } from "./images/credit_card.png";
-export { default as RevelImg } from "./images/revel-pos.png";
-export { default as BrinkImg } from "./images/brink-pos.png";
-export { default as CloverDuoImg } from "./images/clover-pos.png";
-export { default as CloverFlexImg } from "./images/cloverflex-pos.png";
-export { default as ExtouchImg } from "./images/extouch-pos.png";
-export { default as LightSpeedImg } from "./images/lightspeed-pos.png";
-export { default as OvviImg } from "./images/ovvi-pos.png";
-export { default as SimphonyImg } from "./images/simphony-pos.png";
-export { default as AldeloImg } from "./images/aldelo-pos.png";
-export { default as AlohaImg } from "./images/aloha-pos.png";
-export { default as ToastImg } from "./images/toast-pos.png";
-export { default as UpserveImg } from "./images/upserve-pos.png";
+
 export { default as PartnerImg } from "./images/partner.jpg";
 export { default as ReviewerImg } from "./images/reviewer.png";
 export { default as MobileLogoImg } from "./images/mobile_logo.png";
@@ -59,7 +48,6 @@ export { default as TestimonialVillage } from "./images/testimonial-villagesaloo
 
 // export icons
 export { default as IcRating } from "./icons/ic_rating.svg";
-
 export { default as IcMenu } from "./icons/ic_menu.svg";
 export { default as IcPhone } from "./icons/ic_phone.svg";
 export { default as IcFb } from "./icons/ic_fb.svg";

@@ -32,7 +32,10 @@ const PricingBtn = ({
       onClick={onClickItem}
     >
       <div className="flex flex-col p-2 gap-1 items-center md:py-4">
-        <Image src={logo} className="w-[100px] h-10 object-contain " alt="" />
+        <div className="relative w-[100px] h-10">
+          <Image src={logo} className="object-contain" alt="" fill />
+        </div>
+
         <p className="text-sm text-neutral-700 md:text-base ">{title}</p>
         <p className="txt-md-bold md:text-xl">{desc}</p>
       </div>

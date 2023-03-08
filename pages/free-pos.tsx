@@ -12,7 +12,6 @@ import ClientSection from "components/common/ClientSection";
 import { FooterCTA } from "components/common/FooterCTA";
 import HeroSection from "components/common/HeroSection";
 import { FindPOSModalId } from "components/elements/find_pos_modal/FindPOSModal";
-import { RequestDemoModalId } from "components/elements/request_demo_pos/RequestDemoPOS";
 import Image from "next/image";
 import React from "react";
 import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
@@ -67,8 +66,7 @@ const FreePOS = () => {
               <p
                 className={`txt-heading-medium text-white md:txt-heading-xlarge`}
               >
-                <span className="text-primary">FREE</span> point-of-sale &
-                terminals of your choice available!
+                FREE point-of-sale & terminals of your choice available!
               </p>
               <p className="txt-md-bold text-white md:text-xl">
                 There are many qualified POS systems out there and BestPOS is
@@ -158,7 +156,7 @@ const FreePOS = () => {
       </div>
       <ClientSection />
       <FooterCTA
-        bgColor="bg-accent"
+        bgColor="bg-secondary"
         actions={
           <Button
             classname="w-full md:w-[200px] md:h-16"
@@ -167,10 +165,7 @@ const FreePOS = () => {
           />
         }
         title={
-          <h3>
-            <span className="text-secondary "> FREE</span> point-of-sale &
-            terminals of your choice available!
-          </h3>
+          <h3 className=" text-white">FREE point-of-sale & terminals of your choice available!</h3>
         }
       />
     </>

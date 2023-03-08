@@ -57,7 +57,7 @@ const Pricing = ({ desc, monthlyPrice, oneTimePurchase, id }: PricingProps) => {
           plan="One time purchase"
           money={oneTimePurchase}
           desc="Per Station"
-          className=" bg-purple_light border-none text-secondary"
+          className=" bg-blue-light border-none text-secondary"
         />
       </div>
     </div>

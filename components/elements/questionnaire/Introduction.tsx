@@ -33,12 +33,11 @@ const Introduction = ({ className, onStart }: IntroductionPorps) => {
       )}
     >
       <Box className="flex py-12 flex-col gap-6 md:py-14 md:max-w-[480px] mx-auto lg:p-0">
-        <p className="txt-heading-small md:text-4xl lg:text-white">
-          Fill out <span className="text-secondary">the questionnaire</span> and
-          <span className="text-secondary"> see what POS works</span> best for
-          your business!
+        <p className="txt-heading-small md:text-4xl ">
+          Fill out the questionnaire and see what POS works best for your
+          business!
         </p>
-        <p className="txt-large-bold lg:text-white">
+        <p className="txt-large-bold text-neutral-700">
           You may qualify for a Free POS if:
         </p>
         <div className="flex flex-col gap-4 p-4 bg-white rounded-2xl">
@@ -53,7 +52,7 @@ const Introduction = ({ className, onStart }: IntroductionPorps) => {
                 key={`reason-${index}`}
                 className={`flex flex-row gap-4 ${divider}`}
               >
-                <Icon className="w-6 h-6" />
+                <Icon className="w-6 h-6 text-secondary" />
                 <p className="text-left">{item.desc}</p>
               </div>
             );

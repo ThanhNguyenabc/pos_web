@@ -1,11 +1,6 @@
 import {
-  RevelImg,
   IcApple,
-  CloverDuoImg,
   IcWindow,
-  OvviImg,
-  LightSpeedImg,
-  ToastImg,
   HandHeld1Img,
   HandHeld2Img,
   HandHeld3Img,
@@ -13,12 +8,6 @@ import {
   Station2Img,
   Station4Img,
   Station5Img,
-  ExtouchImg,
-  SimphonyImg,
-  BrinkImg,
-  AldeloImg,
-  AlohaImg,
-  UpserveImg,
   IcAndroid,
   BusinessCategory,
   BarCategory,
@@ -28,7 +17,6 @@ import {
   PizzeriaCategory,
   IcAmericanFlag,
   IcSpanishFlag,
-  CloverFlexImg,
   TestimonialVillage,
   Testimonial195,
   TestimonialIrishPoet,
@@ -37,10 +25,12 @@ import {
 } from "assets/AssetUtil";
 import { CategoryType } from "models/category_type";
 import { SystemOs } from "models/product.model";
-import { StaticImageData } from "next/image";
 import AppRoutes from "./routes";
 
 export const SuccessMessage = "Thank you for filling out the form";
+
+export const getProductIcon = (name: string) =>
+  `${process.env.NEXT_PUBLIC_API_HOST}/public/product_images/${name}`;
 
 export const getSystemIcon = (os: SystemOs): React.ElementType => {
   switch (os) {
@@ -51,21 +41,6 @@ export const getSystemIcon = (os: SystemOs): React.ElementType => {
     case SystemOs.Window:
       return IcWindow;
   }
-};
-
-export const ProductIcons: { [key: string]: StaticImageData } = {
-  Revel: RevelImg,
-  "Clover Flex": CloverFlexImg,
-  "Clover Duo": CloverDuoImg,
-  Exatouch: ExtouchImg,
-  "Simphony (Oracle Micros)": SimphonyImg,
-  "Brink (Par)": BrinkImg,
-  Ovvi: OvviImg,
-  "Aldelo (Professional or Express)": AldeloImg,
-  Lightspeed: LightSpeedImg,
-  Aloha: AlohaImg,
-  Upserve: UpserveImg,
-  Toast: ToastImg,
 };
 
 export const ExpertReviewTitle: { [key: string]: string } = {
@@ -123,6 +98,44 @@ export const MainMenu = {
   },
 };
 
+export const CategoryItems = {
+  [CategoryType.pizza]: {
+    title: "Pizza",
+    type: CategoryType.pizza,
+    link: AppRoutes.PizzeriaPOS,
+    img: PizzeriaCategory,
+  },
+  [CategoryType.quick_service]: {
+    title: "Quick Service Restaurants",
+    type: CategoryType.quick_service,
+    link: AppRoutes.QuickServicePOS,
+    img: QuickServiceCategory,
+  },
+  [CategoryType.retail]: {
+    title: "Retail Stores",
+    type: CategoryType.retail,
+    link: AppRoutes.RetailPOS,
+    img: RetailCategory,
+  },
+  [CategoryType.full_service]: {
+    title: "Full Service Restaurants",
+    type: CategoryType.full_service,
+    link: AppRoutes.FullServicePOS,
+    img: RestaurantCategory,
+  },
+  [CategoryType.club]: {
+    title: "Bar & Night Clubs",
+    type: CategoryType.club,
+    link: AppRoutes.ClubPOS,
+    img: BarCategory,
+  },
+  [CategoryType.small_business]: {
+    title: "Small Business",
+    type: CategoryType.small_business,
+    link: AppRoutes.SmallBusinessPOS,
+    img: BusinessCategory,
+  },
+};
 export const CategoryList = [
   {
     title: "Pizza",

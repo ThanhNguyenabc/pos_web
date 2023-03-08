@@ -1,9 +1,8 @@
 module.exports = {
   primary: "#FF5A22",
-  secondary: "#540375",
+  secondary: "#0B70FE",
   accent: "#FFD8C6",
-  "blue-light": "#D7D9FF",
-  purple_light: "#E7DBEB",
+  "blue-light": "#CEE2FF",
   info: "#0B70FE",
   warning: "#F79009",
   success: "#039855",

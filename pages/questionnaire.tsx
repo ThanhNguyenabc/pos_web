@@ -10,6 +10,7 @@ import CashDiscountQuestion from "components/elements/questionnaire/CashDiscount
 import QuestionnaireContact from "components/elements/questionnaire/QuestionnaireContact";
 import useQuestionnaireStore from "stores/questionnaire_store";
 import Progress from "components/common/progress";
+import ColorUtils from "utils/ColorUtils";
 
 const Questions = [
   "What best describes your business?",
@@ -53,7 +54,7 @@ const Questionnaire = () => {
   };
 
   return (
-    <div className="flex min-h-screen lg:bg-gradient-to-b lg:from-[#FF5A22] lg:to-[#FFA722]">
+    <div className="flex min-h-screen lg:bg-blue-light">
       <div className="flex container-content w-full lg:pt-6 mx-auto lg:flex-row">
         <Introduction
           className={`${isShowQuestion ? "hidden" : "flex"}`}
@@ -65,7 +66,11 @@ const Questionnaire = () => {
             isShowQuestion ? "flex" : "hidden"
           } flex-col flex-1 lg:flex bg-white`}
         >
-          <Progress value={currentQuestionIndex + 1} max={PAGES.length} />
+          <Progress
+            value={currentQuestionIndex + 1}
+            max={PAGES.length}
+            progressColor={"bg-primary"}
+          />
           <div className="flex flex-col mb-6 p-4 gap-4 justify-center md:py-6 md:flex-row md:items-center md:gap-3">
             <IconButton
               onClick={backButton}

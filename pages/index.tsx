@@ -39,8 +39,7 @@ const Home = () => {
               <p
                 className={`txt-heading-medium md:txt-heading-xlarge text-white`}
               >
-                Real advice from
-                <span className="text-secondary"> real consultants</span>
+                Real advice from real consultants
               </p>
               <p className="txt-md-bold text-white lg:text-start md:text-xl">
                 Speak with a consultant today to find the best point-of-sale for
@@ -130,12 +129,7 @@ const Home = () => {
             />
           </>
         }
-        title={
-          <h3>
-            Real advice
-            <span className="text-secondary "> from real consultants</span>
-          </h3>
-        }
+        title={<h3>Real advice from real consultants</h3>}
         des={
           "Speak with a consultant today to find the best point-of-sale for your business"
         }
