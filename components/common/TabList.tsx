@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 const TabItem = ({
@@ -47,7 +47,7 @@ const TabList = ({
   return (
     <div
       className={twMerge(
-        "flex flex-row gap-4 overflow-x-scroll customScrollbar max-w-full items-center mx-auto ",
+        "flex flex-row gap-4 overflow-x-scroll scroll scrollbar-hide max-w-full items-center mx-auto ",
         className
       )}
     >
@@ -60,6 +60,9 @@ const TabList = ({
             onClick={() => {
               setSelectIndex(index);
               onSelectedIndex && onSelectedIndex(index);
+              let element = document.getElementById(
+                `tab-${item.title.toLowerCase()}`
+              );
             }}
           />
         );

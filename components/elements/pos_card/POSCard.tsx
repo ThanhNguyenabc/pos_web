@@ -1,6 +1,6 @@
 import { Product } from "models/product.model";
 import React from "react";
-import { RecommendTagProps } from "../RecommendTag";
+import { RecommendTagProps } from "../../common/RecommendTag";
 import POSCardDesktop from "./POSCard.desktop";
 import { POSCardMobile } from "./POSCard.mobile";
 import POSCardTablet from "./POSCard.tablet";

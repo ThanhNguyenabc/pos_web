@@ -3,10 +3,12 @@ import useSideBar from "stores/useSideBar";
 import Drawer from "react-modern-drawer";
 import RequestDemoPOS from "./elements/request_demo_pos/RequestDemoPOS";
 import FindPOSModal from "./elements/find_pos_modal/FindPOSModal";
+import ApplyPartner from "./elements/partner/ApplyPartner";
 
 export enum SideBarType {
   "RequestDemo" = "RequestDemo",
   "FindPOS" = "FindPOS",
+  "ApplyPartner" = "ApplyPartner",
 }
 
 const SideBar = () => {
@@ -24,6 +26,7 @@ const SideBar = () => {
     >
       {type == SideBarType.RequestDemo && <RequestDemoPOS />}
       {type == SideBarType.FindPOS && <FindPOSModal />}
+      {type == SideBarType.ApplyPartner && <ApplyPartner />}
     </Drawer>
   );
 };

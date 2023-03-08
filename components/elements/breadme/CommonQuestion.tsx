@@ -31,7 +31,7 @@ const CommonQuestionData = [
 const CommonQuestion = () => {
   return (
     <HeroSection className="gap-10 lg:pb-0">
-      <div className=" flex flex-col gap-10 md:gap-12 lg:gap-16 lg:max-w-[786px]">
+      <div className=" flex flex-col gap-10 md:gap-12 lg:gap-16 lg:max-w-[786px] mx-auto">
         <div className="flex flex-col gap-10 md:gap-6 text-center">
           <p className="txt-heading-small md:txt-heading-large">
             Common Questions About the Cash Discount Program
@@ -51,7 +51,11 @@ const CommonQuestion = () => {
                 <div className=" flex py-6 flex-row w-full items-start">
                   <div className="flex flex-1 flex-col gap-4">
                     <p className="txt-md-bold md:text-xl">{item.title}</p>
-                    <p className={`txt-sm ${isSelect ? "flex" : "hidden"} md:text-xl text-neutral-700`}>
+                    <p
+                      className={`txt-sm ${
+                        isSelect ? "flex" : "hidden"
+                      } md:text-xl text-neutral-700`}
+                    >
                       {item.answer}
                     </p>
                   </div>

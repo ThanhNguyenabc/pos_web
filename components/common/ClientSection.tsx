@@ -1,40 +1,28 @@
-import {
-  AldeloImg,
-  AlohaImg,
-  BrinkImg,
-  CloverDuoImg,
-  CloverFlexImg,
-  ExtouchImg,
-  IcRightArrow,
-  LightSpeedImg,
-  OvviImg,
-  RevelImg,
-  SimphonyImg,
-  ToastImg,
-  UpserveImg,
-} from "assets/AssetUtil";
 import Image from "next/image";
 import React, { ReactElement } from "react";
 import HeroSection from "./HeroSection";
+import Marquee from "react-fast-marquee";
+import { getProductIcon } from "utils/StringUtil";
 
 const ClientList = [
-  RevelImg,
-  AldeloImg,
-  CloverDuoImg,
-  OvviImg,
-  ExtouchImg,
-  CloverFlexImg,
-  LightSpeedImg,
-  ToastImg,
-  SimphonyImg,
-  BrinkImg,
-  AlohaImg,
-  UpserveImg,
+  getProductIcon("revel-pos.png"),
+  getProductIcon("aldelo-pos.png"),
+  getProductIcon("aloha-pos.png"),
+  getProductIcon("clover-pos.png"),
+  getProductIcon("brink-pos.png"),
+  getProductIcon("cloverflex-pos.png"),
+  getProductIcon("extouch-pos.png"),
+  getProductIcon("lightspeed-pos.png"),
+  getProductIcon("ovvi-pos.png"),
+  getProductIcon("toast-pos.png"),
+  getProductIcon("upserve-pos.png"),
+  getProductIcon("simphony-pos.png"),
 ];
 
 interface ClientSectionProps {
   body?: ReactElement;
 }
+
 const ClientSection = ({ body }: ClientSectionProps) => {
   return (
     <div className="flex flex-col gap-12 py-12 md:py-14 md:gap-12 lg:gap-16 overflow-hidden">
@@ -46,16 +34,20 @@ const ClientSection = ({ body }: ClientSectionProps) => {
           {body}
         </div>
       </HeroSection>
-      <div className="flex  flex-row  gap-10 md:gap-16 animate-marquee-infinite">
+
+      <Marquee>
         {ClientList.map((item, index) => (
-          <Image
-            src={item}
-            alt={`client-${index}`}
-            key={`client-${index}`}
-            className="w-[120px] h-[60px] md:w-[180px] md:h-[90px] object-contain"
-          />
+          <div className=" relative w-[120px]  h-[60px] md:h-[90px] md:w-[180px]  mr-10 md:mr-16">
+            <Image
+              src={item}
+              alt={`client-${index}`}
+              key={`client-${index}`}
+              className="object-contain"
+              fill
+            />
+          </div>
         ))}
-      </div>
+      </Marquee>
     </div>
   );
 };

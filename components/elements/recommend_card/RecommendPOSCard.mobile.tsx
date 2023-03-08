@@ -1,20 +1,21 @@
 import Image from "next/image";
 import React from "react";
-import { BreadMeBtn } from "../BreadmeBtn";
+import { BreadMeBtn } from "../../common/BreadmeBtn";
 import { twMerge } from "tailwind-merge";
 import { POSCardProps } from "../pos_card/POSCard";
 import { getProductIcon, getSystemIcon } from "utils/StringUtil";
-import PricingBtn from "../PricingBtn";
+import PricingBtn from "../../common/PricingBtn";
 import ColorUtils from "utils/ColorUtils";
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
-import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
+import useSideBar from "stores/useSideBar";
+import { SideBarType } from "components/SideBar";
 
 const RecommendPOSCardMobile = ({
   data,
   classname = "",
   onCardClick,
 }: POSCardProps) => {
-  const { toogleOpen } = useOpenDemoPOSDialog();
+  const { openSideBar } = useSideBar();
   const overallRating = data.expert_opinion.overall;
 
   return (
@@ -30,7 +31,7 @@ const RecommendPOSCardMobile = ({
             src={getProductIcon(data.logo)}
             alt="logo-pos"
             width={80}
-            height = {40}
+            height={40}
             className="object-contain"
           />
           <div className="flex items-center gap-4">
@@ -76,7 +77,7 @@ const RecommendPOSCardMobile = ({
           title="Monthly"
           color={ColorUtils.secondary}
           desc={`$${data.monthly_price}/month`}
-          onClick={toogleOpen}
+          onClick={() => openSideBar(SideBarType.RequestDemo)}
         />
       </div>
     </div>

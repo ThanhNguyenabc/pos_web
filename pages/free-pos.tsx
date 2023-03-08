@@ -11,10 +11,10 @@ import { Button } from "components/common/Button";
 import ClientSection from "components/common/ClientSection";
 import { FooterCTA } from "components/common/FooterCTA";
 import HeroSection from "components/common/HeroSection";
-import { FindPOSModalId } from "components/elements/find_pos_modal/FindPOSModal";
+import { SideBarType } from "components/SideBar";
 import Image from "next/image";
 import React from "react";
-import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
+import useSideBar from "stores/useSideBar";
 
 const FeatureData = [
   {
@@ -50,12 +50,12 @@ const ThreeStep = [
   },
 ];
 
-const openFindPOSModal = () => {
-  document.getElementById(FindPOSModalId)?.click();
-};
-
 const FreePOS = () => {
-  const { toogleOpen: toogleDialog } = useOpenDemoPOSDialog();
+  const { openSideBar } = useSideBar();
+
+  const openRequestPOS = () => openSideBar(SideBarType.RequestDemo);
+
+  const openFindPOSView = () => openSideBar(SideBarType.FindPOS);
 
   return (
     <>
@@ -76,14 +76,14 @@ const FreePOS = () => {
                 <Button
                   classname="lg:h-16 md:w-[200px]"
                   title="Get started"
-                  onClick={openFindPOSModal}
+                  onClick={openFindPOSView}
                 />
                 <Button
                   title="Request a Demo"
                   classname="lg:h-16"
                   style={{ background: "white", color: "black" }}
                   rightIcon={<IcRightArrow className="text-xl" />}
-                  onClick={toogleDialog}
+                  onClick={openRequestPOS}
                 />
               </div>
             </div>
@@ -131,7 +131,7 @@ const FreePOS = () => {
             <Button
               classname="lg:h-16 md:w-[200px]"
               title="Get started"
-              onClick={openFindPOSModal}
+              onClick={openFindPOSView}
             />
           </div>
           <div className=" flex flex-col gap-4 md:gap-6">
@@ -161,11 +161,13 @@ const FreePOS = () => {
           <Button
             classname="w-full md:w-[200px] md:h-16"
             title="Get Started now"
-            onClick={openFindPOSModal}
+            onClick={openFindPOSView}
           />
         }
         title={
-          <h3 className=" text-white">FREE point-of-sale & terminals of your choice available!</h3>
+          <h3 className=" text-white">
+            FREE point-of-sale & terminals of your choice available!
+          </h3>
         }
       />
     </>

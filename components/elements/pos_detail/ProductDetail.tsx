@@ -7,7 +7,7 @@ import TabList from "components/common/TabList";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
-import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
+import useSideBar from "stores/useSideBar";
 import ColorUtils from "utils/ColorUtils";
 import AppRoutes from "utils/routes";
 import { getProductIcon, getSystemIcon } from "utils/StringUtil";
@@ -19,6 +19,7 @@ import SpecificationView from "./Specification";
 import useSWR from "swr";
 import { getPOSDetail } from "api_client/axios_client";
 import Loading from "components/common/loading/Loading";
+import { SideBarType } from "components/SideBar";
 
 const DetailTabs = [
   {
@@ -55,8 +56,11 @@ const DetailTabs = [
   },
 ];
 
+const boxWidthInLg = 300;
+const boxWidthInXL = 400;
+
 export const ProductDetail = () => {
-  const { toogleOpen: toogleDialog } = useOpenDemoPOSDialog();
+  const { openSideBar } = useSideBar();
   const router = useRouter();
   const { posId = "" } = router.query;
   const { data: productData } = useSWR(`${posId}`, getPOSDetail);
@@ -70,7 +74,11 @@ export const ProductDetail = () => {
   }
   return (
     <Box className=" flex flex-col lg:pr-0 lg:flex-row lg:gap-10">
-      <div className="flex flex-col py-6 h-fit gap-6  text-center md:gap-8 md:flex-row lg:flex-col lg:w-[400px] lg:py-0 lg:sticky lg:top-0 lg:z-10">
+      <div
+        className={`flex flex-col py-6 h-fit gap-6  
+        text-center md:gap-8 md:flex-row lg:w-[${boxWidthInLg}px] xl:w-[${boxWidthInXL}px]
+        lg:flex-col lg:py-0 lg:sticky lg:top-0 lg:z-10`}
+      >
         <div className="flex flex-col flex-1 gap-2 items-center md:items-start md:text-left lg:items-center ">
           <Image
             src={getProductIcon(productData.logo)}
@@ -90,15 +98,15 @@ export const ProductDetail = () => {
           </div>
         </div>
 
-        <div className="flex  flex-1 flex-col gap-4 md:gap-6 lg:w-[400px]">
+        <div className="flex  flex-1 flex-col gap-4 md:gap-6 ">
           <div className="flex flex-row gap-2 md:gap-4 ">
             <BreadMeBtn />
             <PricingBtn
               logo={getProductIcon(productData.logo)}
               title="Monthly"
-              desc={`$${productData.monthly_price}/month`}
+              desc={`$${productData.monthly_price}/mo`}
               color={ColorUtils.secondary}
-              onClick={toogleDialog}
+              onClick={() => openSideBar(SideBarType.RequestDemo)}
             />
           </div>
           <div className="flex flex-row gap-3 items-center">
@@ -123,7 +131,7 @@ export const ProductDetail = () => {
         </div>
       </div>
 
-      <div className="flex flex-col flex-1  w-full gap-12 md:gap-8 lg:border-l lg:max-w-[calc(100%-440px)]">
+      <div className="flex flex-col flex-1  w-full gap-12 md:gap-8 lg:border-l lg:w-[calc(100%-340px)] xl:w-[calc(100%-440px)]">
         <div className="sticky top-0 z-30 border-b border-neutral-300 flex bg-white">
           <TabList
             tabList={DetailTabs}

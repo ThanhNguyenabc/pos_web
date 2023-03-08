@@ -1,6 +1,6 @@
 import Box from "components/common/Box";
-import POSCard from "components/common/pos_card/POSCard";
-import RecommendPOSCard from "components/common/recommend_card/RecommendPOSCard";
+import POSCard from "components/elements/pos_card/POSCard";
+import RecommendPOSCard from "components/elements/recommend_card/RecommendPOSCard";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import useProductStore from "stores/product_store";

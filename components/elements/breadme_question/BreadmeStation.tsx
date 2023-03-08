@@ -13,7 +13,6 @@ const BreadmeStation = () => {
       data={BreadmeStationData}
       classname="md:grid-cols-3 md:gap-8"
       selectBorderColor="border-success"
-      itemListClassName="hover:border-success"
       itemBuilder={(item, index: number) => {
         return (
           <div className="card-body flex flex-row items-center p-4 gap-4 md:flex-col">

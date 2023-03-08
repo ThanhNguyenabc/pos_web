@@ -11,7 +11,7 @@ interface ProgressProps {
 const Progress = ({
   max,
   value,
-  progressColor = "bg-secondary",
+  progressColor = "bg-primary",
   backgroundColor = "bg-neutral-100",
   className = "",
 }: ProgressProps) => {

@@ -1,16 +1,15 @@
 import { PartnerImg, ReviewerImg } from "assets/AssetUtil";
-import Box from "components/common/Box";
 import { Button } from "components/common/Button";
 import ClientSection from "components/common/ClientSection";
 import { FooterCTA } from "components/common/FooterCTA";
 import HeroSection from "components/common/HeroSection";
 import List from "components/common/List";
 import MetricSection from "components/common/MetricSection";
-import ApplyPartnerDialog from "components/elements/partner/ApplyPartnerDialog";
 import ReviewerSection from "components/elements/partner/ReviewerSection";
+import { SideBarType } from "components/SideBar";
 import Image from "next/image";
 import React from "react";
-import Drawer from "react-modern-drawer";
+import useSideBar from "stores/useSideBar";
 
 const PartnerProgram = [
   {
@@ -36,24 +35,10 @@ const PartnerProgram = [
 ];
 
 const PartnerPage = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-
-  const toggleDrawer = () => {
-    setIsOpen((prevState) => !prevState);
-  };
+  const { openSideBar } = useSideBar();
+  const openPartnerForm = () => openSideBar(SideBarType.ApplyPartner);
   return (
     <>
-      <Drawer
-        open={isOpen}
-        direction="right"
-        onClose={toggleDrawer}
-        style={{
-          width: "w-full",
-        }}
-        className="mt-20 md:mt-0"
-      >
-        <ApplyPartnerDialog onClose={toggleDrawer} />
-      </Drawer>
       <div>
         <div className="flex flex-col max-w-[1320px] lg:h-[640px] lg:flex-row xl:ml-[calc((100%-1200px)/2)]">
           <HeroSection className="flex-1">
@@ -70,7 +55,7 @@ const PartnerPage = () => {
                 <Button
                   classname="md:h-16"
                   title="Become a Partner"
-                  onClick={toggleDrawer}
+                  onClick={openPartnerForm}
                 />
               </div>
             </div>
@@ -126,7 +111,7 @@ const PartnerPage = () => {
           <Button
             classname="w-full md:w-fit md:h-16"
             title="Become a Partner"
-            onClick={toggleDrawer}
+            onClick={openPartnerForm}
           />
         }
         title={<h3>Ready to join our partner program?</h3>}

@@ -6,15 +6,17 @@ import ThanksYouForm from "components/common/ThanksForm";
 import { ContactInfo } from "models/contact_info";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+import useSideBar from "stores/useSideBar";
 import AppRoutes from "utils/routes";
 
-const ApplyPartnerDialog = ({ onClose }: { onClose: () => void }) => {
+const ApplyPartner = () => {
   const [isSubmit, setSubmit] = useState(false);
+  const { closeSideBar } = useSideBar();
   const router = useRouter();
 
   const onCloseForm = () => {
     setSubmit(false);
-    onClose?.();
+    closeSideBar();
   };
 
   const navigateToBreadme = () => {
@@ -30,7 +32,7 @@ const ApplyPartnerDialog = ({ onClose }: { onClose: () => void }) => {
   return (
     <>
       <HeaderWithBack title="" onClose={onCloseForm} />
-      <div className=" flex flex-col  w-full lg:w-[500px] mx-auto px-4 md:px-8 lg:px-12">
+      <div className=" flex flex-col w-full lg:w-[500px] mx-auto px-4 md:px-8 lg:px-12">
         {!isSubmit && (
           <div className=" flex flex-col p-4 h-full">
             <p className="txt-heading-small mb-4 text-center">
@@ -46,8 +48,8 @@ const ApplyPartnerDialog = ({ onClose }: { onClose: () => void }) => {
           </div>
         )}
         {isSubmit && (
-          <div className="flex flex-col gap-6">
-            <ThanksYouForm />
+          <div className="flex flex-col gap-6 md:gap-12">
+            <ThanksYouForm title="Thanks for your time!" />
             <Button
               title="Explore Breadme"
               isOutLine
@@ -61,4 +63,4 @@ const ApplyPartnerDialog = ({ onClose }: { onClose: () => void }) => {
   );
 };
 
-export default ApplyPartnerDialog;
+export default ApplyPartner;

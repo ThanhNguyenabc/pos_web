@@ -1,7 +1,7 @@
 import POSCard, {
   Priority,
   RecommendColor,
-} from "components/common/pos_card/POSCard";
+} from "components/elements/pos_card/POSCard";
 import TabList from "components/common/TabList";
 import { useRouter } from "next/router";
 import { CategoryItems, CategoryList } from "utils/StringUtil";
@@ -108,11 +108,11 @@ const Products = ({ type = CategoryType.popular }: { type?: string }) => {
           tabItemStyle={selectStyle}
           onSelectedIndex={onSelectTab}
         />
-        <p className="txt-heading-medium mt-10 md:mt-0 md:txt-heading-large">
-          <span className="text-secondary"> Best POS Systems</span> for Your
+        <p className="txt-heading-medium mt-10 md:mt-0 md:txt-heading-large max-w-[680px]">
+          <span className="text-primary"> Best POS Systems</span> for Your
           Business
         </p>
-        <p className="txt-md-bold md:text-xl text-neutral-700 mt-4 md:mt-0">
+        <p className="txt-md-bold md:text-xl text-neutral-700 mt-4 md:mt-0 max-w-[680px]">
           We&#39;ve put together a list of the best point-of-sale systems for
           your business. Let us help you pick the right one!
         </p>

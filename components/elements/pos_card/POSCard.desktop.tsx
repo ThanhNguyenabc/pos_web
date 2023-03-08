@@ -1,16 +1,17 @@
 import React from "react";
 import Image from "next/image";
-import { BreadMeBtn } from "../BreadmeBtn";
+import { BreadMeBtn } from "../../common/BreadmeBtn";
 import ColorUtils from "utils/ColorUtils";
 import { twMerge } from "tailwind-merge";
 import { POSCardProps, RecommendColor } from "./POSCard";
-import PricingBtn from "../PricingBtn";
+import PricingBtn from "../../common/PricingBtn";
 import { getProductIcon, getSystemIcon } from "utils/StringUtil";
-import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
-import ViewMore from "../ViewMore";
+import useSideBar from "stores/useSideBar";
+import ViewMore from "../../common/ViewMore";
 import { IcCheckbox, IcClose } from "assets/AssetUtil";
-import CustomCircularProgress from "../CustomCircularProgress";
-import RecommendTag from "../RecommendTag";
+import CustomCircularProgress from "../../common/CustomCircularProgress";
+import RecommendTag from "../../common/RecommendTag";
+import { SideBarType } from "components/SideBar";
 
 const ItemHeight = 244;
 
@@ -21,7 +22,7 @@ const POSCardDesktop = ({
   recommendTagProps,
   onCardClick,
 }: POSCardProps) => {
-  const { toogleOpen } = useOpenDemoPOSDialog();
+  const { openSideBar } = useSideBar();
   const overallRating = data.expert_opinion.overall;
 
   return (
@@ -109,7 +110,7 @@ const POSCardDesktop = ({
           title="Monthly"
           desc={`$${data.monthly_price}/mo`}
           color={ColorUtils.secondary}
-          onClick={toogleOpen}
+          onClick={() => openSideBar(SideBarType.RequestDemo)}
         />
       </div>
     </div>

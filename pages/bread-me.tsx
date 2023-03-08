@@ -1,6 +1,5 @@
 import { IcRightArrow, BillingImg } from "assets/AssetUtil";
 import { Button } from "components/common/Button";
-import { RequestDemoModalId } from "components/elements/request_demo_pos/RequestDemoPOS";
 import React from "react";
 import Image from "next/image";
 import ColorUtils from "utils/ColorUtils";
@@ -13,11 +12,12 @@ import CommonQuestion from "components/elements/breadme/CommonQuestion";
 import { useRouter } from "next/router";
 import AppRoutes from "utils/routes";
 import HeroSection from "components/common/HeroSection";
-import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
+import useSideBar from "stores/useSideBar";
+import { SideBarType } from "components/SideBar";
 
 const BreadmePage = () => {
   const router = useRouter();
-  const { toogleOpen: toogleDialog } = useOpenDemoPOSDialog();
+  const { openSideBar } = useSideBar();
 
   const navigateToBreadmeQuestion = () => {
     router.push(AppRoutes.BreadmeQuestionPage);
@@ -56,7 +56,7 @@ const BreadmePage = () => {
                     color: "inherit",
                   }}
                   title="Request a Demo"
-                  onClick={toogleDialog}
+                  onClick={() => openSideBar(SideBarType.RequestDemo)}
                 />
               </div>
             </div>

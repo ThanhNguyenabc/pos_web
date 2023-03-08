@@ -27,7 +27,7 @@ const RecommendTag = ({
         </div>
       )}
 
-      <p className="flex-1 text-xs font-semibold  bg-secondary px-3 rounded-r-2xl text-white py-1">
+      <p className="flex-1 text-xs font-semibold  bg-[#095ACB] px-3 rounded-r-2xl text-white py-1">
         MOST RECOMMENDED
       </p>
     </div>

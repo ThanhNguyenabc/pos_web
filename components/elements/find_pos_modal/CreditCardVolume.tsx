@@ -1,13 +1,13 @@
 import SelectedList from "components/common/SelectedList";
 import React from "react";
+import useFindPOSStore from "stores/findpos_store";
 import { CreditCardVolumeData } from "utils/StringUtil";
-import { FindPOSModalContext } from "./FindPOSModal";
 
 export const CreditCardVolume = () => {
-  const value = React.useContext(FindPOSModalContext);
+  const { data, setData, onNext } = useFindPOSStore();
   return (
     <SelectedList
-      selectIndex={value.data?.creditVolumeId}
+      selectIndex={data?.creditVolumeId}
       data={CreditCardVolumeData}
       itemBuilder={(item, index) => (
         <div className="p-4 border-neutral-300 ">
@@ -15,11 +15,11 @@ export const CreditCardVolume = () => {
         </div>
       )}
       onItemSelected={(selectIndex) => {
-        value.setData({
-          ...value.data,
+        setData({
+          ...data,
           creditVolumeId: selectIndex,
         });
-        value.nextPage();
+        onNext();
       }}
     />
   );

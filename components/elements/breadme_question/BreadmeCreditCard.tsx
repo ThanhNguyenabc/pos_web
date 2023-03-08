@@ -10,7 +10,6 @@ const BreadmeCreditCard = () => {
       selectIndex={value.questionData?.creditCardVolumnId}
       data={BreadmeCreditCardVolumeData}
       selectBorderColor="border-success"
-      itemListClassName="hover:border-success"
       itemBuilder={(item, index) => (
         <p className="text-center txt-md-bold md:text-xl p-4">
           {item} per month

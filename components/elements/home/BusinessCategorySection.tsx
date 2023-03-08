@@ -11,7 +11,7 @@ import useSWR from "swr";
 import POSCard, {
   Priority,
   RecommendColor,
-} from "components/common/pos_card/POSCard";
+} from "components/elements/pos_card/POSCard";
 
 const BusinessCategorySection = () => {
   const router = useRouter();

@@ -111,7 +111,6 @@ const Questionnaire = () => {
           <Progress
             value={questionSate.cQuestionIndex + 1}
             max={PAGES.length}
-            progressColor="bg-success"
           />
           <div className="w-full flex flex-row items-center justify-center p-4">
             <div

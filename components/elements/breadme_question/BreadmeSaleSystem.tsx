@@ -32,8 +32,7 @@ const BreadmeSaleSystem = () => {
       <SelectedList
         selectIndex={context.questionData?.saleSystemIndex}
         data={SaleSystem}
-        selectBorderColor="border-success"
-        itemListClassName="h-16 hover:border-success"
+        itemListClassName="h-16"
         itemBuilder={(item, index) => {
           if (index == SaleSystem.length - 1) {
             return (

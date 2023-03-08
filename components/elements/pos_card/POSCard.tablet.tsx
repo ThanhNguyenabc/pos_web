@@ -1,14 +1,15 @@
 import React from "react";
 import Image from "next/image";
-import { BreadMeBtn } from "../BreadmeBtn";
+import { BreadMeBtn } from "../../common/BreadmeBtn";
 import { twMerge } from "tailwind-merge";
-import PricingBtn from "../PricingBtn";
+import PricingBtn from "../../common/PricingBtn";
 import ColorUtils from "utils/ColorUtils";
 import { POSCardProps, RecommendColor } from "./POSCard";
 import { getProductIcon, getSystemIcon } from "utils/StringUtil";
-import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
-import CustomCircularProgress from "../CustomCircularProgress";
-import RecommendTag from "../RecommendTag";
+import useSideBar from "stores/useSideBar";
+import CustomCircularProgress from "../../common/CustomCircularProgress";
+import RecommendTag from "../../common/RecommendTag";
+import { SideBarType } from "components/SideBar";
 
 const POSCardTablet = ({
   data,
@@ -17,7 +18,7 @@ const POSCardTablet = ({
   priority,
   recommendTagProps,
 }: POSCardProps) => {
-  const { toogleOpen } = useOpenDemoPOSDialog();
+  const { openSideBar } = useSideBar();
   const overallRating = data.expert_opinion.overall;
 
   return (
@@ -67,7 +68,7 @@ const POSCardTablet = ({
           title="Monthly"
           desc={`$${data.monthly_price}/mo`}
           color={ColorUtils.secondary}
-          onClick={toogleOpen}
+          onClick={() => openSideBar(SideBarType.RequestDemo)}
         />
       </div>
     </div>

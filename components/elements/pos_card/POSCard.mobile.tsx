@@ -3,13 +3,14 @@ import Image from "next/image";
 import { IcFreePOS } from "assets/AssetUtil";
 import { POSCardProps, RecommendColor } from "./POSCard";
 import { getProductIcon, getSystemIcon } from "utils/StringUtil";
-import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
+import useSideBar from "stores/useSideBar";
 import { useRouter } from "next/router";
 import AppRoutes from "utils/routes";
-import CustomCircularProgress from "../CustomCircularProgress";
-import RecommendTag from "../RecommendTag";
+import CustomCircularProgress from "../../common/CustomCircularProgress";
+import RecommendTag from "../../common/RecommendTag";
 import { twMerge } from "tailwind-merge";
-import { Button } from "../Button";
+import { Button } from "../../common/Button";
+import { SideBarType } from "components/SideBar";
 
 export const POSCardMobile = ({
   data,
@@ -18,7 +19,7 @@ export const POSCardMobile = ({
   classname,
   recommendTagProps,
 }: POSCardProps) => {
-  const { toogleOpen } = useOpenDemoPOSDialog();
+  const { openSideBar } = useSideBar();
   const router = useRouter();
   const overallRating = data.expert_opinion.overall;
 
@@ -82,7 +83,7 @@ export const POSCardMobile = ({
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
-            toogleOpen();
+            openSideBar(SideBarType.RequestDemo);
           }}
           className="flex bg-secondary flex-1 items-center justify-center text-white rounded-lg"
         >

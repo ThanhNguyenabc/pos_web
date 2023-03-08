@@ -13,10 +13,11 @@ import { FooterCTA } from "components/common/FooterCTA";
 import HeroSection from "components/common/HeroSection";
 import List from "components/common/List";
 import MetricSection from "components/common/MetricSection";
+import { SideBarType } from "components/SideBar";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
-import useOpenDemoPOSDialog from "stores/useOpenDemoPOSDialog";
+import useSideBar from "stores/useSideBar";
 import AppRoutes from "utils/routes";
 
 const ServiceData = [
@@ -47,7 +48,7 @@ const ServiceData = [
 ];
 const AboutPage = () => {
   const router = useRouter();
-  const { toogleOpen } = useOpenDemoPOSDialog();
+  const { openSideBar } = useSideBar();
 
   const findPOS = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -55,7 +56,7 @@ const AboutPage = () => {
   };
 
   const getPOSFree = () => {
-    toogleOpen();
+    openSideBar(SideBarType.RequestDemo);
   };
 
   const goToContactPage = () => {
@@ -78,9 +79,9 @@ const AboutPage = () => {
             terminals, POS systems and software &#45; free of charge.
             <br /> <br />
             If you&#39;re not well-versed in technology, dealing with software,
-            hardware, and networks can be quite challenging. It&#39;s best to work
-            with a POS specialist and that&#39;s what BestPOS is here for. The
-            variety of products available on the market can be overwhelming,
+            hardware, and networks can be quite challenging. It&#39;s best to
+            work with a POS specialist and that&#39;s what BestPOS is here for.
+            The variety of products available on the market can be overwhelming,
             making research very confusing. The POS industry is highly
             competitive, with hundreds of products available, making it
             challenging to navigate. With our expertise and consulting, we will
@@ -175,12 +176,7 @@ const AboutPage = () => {
             />
           </>
         }
-        title={
-          <h3>
-            Real advice
-            <span className="text-secondary "> from real consultants</span>
-          </h3>
-        }
+        title={<h3>Real advice from real consultants</h3>}
         des={
           "Speak with a consultant today to find the best point-of-sale for your business"
         }
