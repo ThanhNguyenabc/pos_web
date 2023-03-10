@@ -66,16 +66,20 @@ const PartnerPage = () => {
           </div>
         </div>
       </div>
-      <HeroSection className="gap-12">
+      <HeroSection className="gap-12 lg:gap-20">
         <h3 className="text-center txt-heading-medium md:txt-heading-large">
           Agent Program
         </h3>
-        <List
-          classname="gap-12 md:grid-cols-2 lg:gap-y-20 lg:gap-x-16"
-          data={PartnerProgram}
-          itemBuilder={(item, index, isSelectItem) => {
+        <div className="grid gap-12 grid-cols-1 md:grid-cols-2 md:gap-16 md:gap-y-12 lg:gap-y-20">
+          {PartnerProgram.map((item, index) => {
             return (
-              <div className={` flex flex-col`}>
+              <div
+                className={` flex flex-col ${
+                  index == PartnerProgram.length - 1
+                    ? " md:col-span-2 mx-auto md:max-w-md"
+                    : ""
+                }`}
+              >
                 <p className="mb-4 txt-heading-xsmal md:txt-heading-small">
                   {item.title}
                 </p>
@@ -84,8 +88,8 @@ const PartnerPage = () => {
                 </p>
               </div>
             );
-          }}
-        ></List>
+          })}
+        </div>
       </HeroSection>
       <MetricSection titleColor="text-secondary" />
       <HeroSection className="pb-0 md:pb-0 lg:pb-0">
