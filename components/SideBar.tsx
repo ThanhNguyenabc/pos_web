@@ -20,7 +20,8 @@ const SideBar = () => {
       direction="right"
       onClose={closeSideBar}
       style={{
-        width: "w-full",
+        width: "100%",
+        height: "100%",
       }}
       className="w-full md:w-[80%] max-w-[750px] overflow-auto"
     >

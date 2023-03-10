@@ -45,7 +45,8 @@ const Header = () => {
           open={isOpen}
           direction="left"
           onClose={toggleDrawer}
-          style={{ width: "300px" }}
+          className=" overflow-auto"
+          style={{ width: "300px", height: "100%" }}
         >
           <MenuDrawer onClose={toggleDrawer} />
         </Drawer>

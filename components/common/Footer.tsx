@@ -4,52 +4,14 @@ import Link from "next/link";
 import { title } from "process";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import AppRoutes from "utils/routes";
-import { CategoryList, MainMenu } from "utils/StringUtil";
+import { CategoryList, OtherItems, ResourceItems } from "utils/StringUtil";
 import HeroSection from "./HeroSection";
-
-const styles = {
-  "footer-title": "font-semibold md:txt-lg-bold text-neutral-300",
-  "footer-section": "md:text-base gap-4 md:gap-6",
-};
 
 interface FooterItemProps {
   title: string;
   items: Array<{ title: string; link: string }>;
 }
-const ResourceItems = [
-  {
-    title: MainMenu["freepos"].title,
-    link: MainMenu["freepos"].route,
-  },
-  {
-    title: MainMenu["breadme"].title,
-    link: MainMenu["breadme"].route,
-  },
-  {
-    title: "Questionnaire",
-    link: AppRoutes.QuestionnairePage,
-  },
-  {
-    title: "Partner",
-    link: AppRoutes.PartnerPage,
-  },
-];
 
-const OtherItems = [
-  {
-    title: MainMenu["about"].title,
-    link: MainMenu["about"].route,
-  },
-  {
-    title: MainMenu["contact"].title,
-    link: MainMenu["contact"].route,
-  },
-  {
-    title: MainMenu["blog"].title,
-    link: MainMenu["blog"].route,
-  },
-];
 const FooterItems = ({ title, items }: FooterItemProps) => {
   const { t } = useTranslation();
 

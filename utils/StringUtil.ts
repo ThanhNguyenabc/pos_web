@@ -101,6 +101,39 @@ export const MainMenu = {
   },
 };
 
+export const ResourceItems = [
+  {
+    title: MainMenu["freepos"].title,
+    link: MainMenu["freepos"].route,
+  },
+  {
+    title: MainMenu["breadme"].title,
+    link: MainMenu["breadme"].route,
+  },
+  {
+    title: "Questionnaire",
+    link: AppRoutes.QuestionnairePage,
+  },
+  {
+    title: "Partner",
+    link: AppRoutes.PartnerPage,
+  },
+];
+
+export const OtherItems = [
+  {
+    title: MainMenu["about"].title,
+    link: MainMenu["about"].route,
+  },
+  {
+    title: MainMenu["contact"].title,
+    link: MainMenu["contact"].route,
+  },
+  {
+    title: MainMenu["blog"].title,
+    link: MainMenu["blog"].route,
+  },
+];
 export const CategoryItems = {
   [CategoryType.pizza]: {
     title: "Pizza",

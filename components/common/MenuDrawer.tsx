@@ -3,78 +3,77 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import AppRoutes from "utils/routes";
-import { MainMenu } from "utils/StringUtil";
-
-const MainMenuItem = ({
-  route,
-  title,
-  onClickItem,
-}: {
-  route: string;
-  title: string;
-  onClickItem?: () => void;
-}) => {
-  const { t } = useTranslation();
-  return (
-    <li key={`item-${title}`}>
-      <Link
-        href={route}
-        onClick={onClickItem}
-        className=" flex justify-between txt-large-bold"
-      >
-        {t(title) || title}
-        <IcChervonRight className="text-[12px]" />
-      </Link>
-    </li>
-  );
-};
-
-const SubMenuItem = ({
-  route,
-  title,
-  onClickItem,
-}: {
-  route: string;
-  title: string;
-  onClickItem?: () => void;
-}) => {
-  return (
-    <li key={`sub-item-${title}`}>
-      <Link
-        href={route}
-        onClick={onClickItem}
-        className="txt-md text-neutral-700"
-      >
-        {title}
-      </Link>
-    </li>
-  );
-};
+import { MainMenu, OtherItems, ResourceItems } from "utils/StringUtil";
 
 interface MenuDrawerProps {
   onClose?: () => void;
 }
 
-const MenuDrawer = ({ onClose }: MenuDrawerProps) => {
+const MenuBlock = ({
+  title,
+  items,
+  closeModal,
+}: {
+  title: string;
+  closeModal?: () => void;
+  items: Array<{ title: string; link: string }>;
+}) => {
+  const { t } = useTranslation();
   return (
-    <div className="flex-column bg-base-100 ">
-      <div className="flex justify-between py-5 px-4">
+    <div className="flex flex-col gap-4 md:gap-6">
+      <p className="txt-md-bold md:text-xl">{title}</p>
+      {items.map((item, index) => {
+        return (
+          <Link
+            key={`${item.link}-${index}`}
+            href={item.link}
+            onClick={closeModal}
+            className="link link-hover txt-md text-neutral-700 md:text-base"
+          >
+            {t(item.title) || title}
+          </Link>
+        );
+      })}
+    </div>
+  );
+};
+
+const MenuDrawer = ({ onClose }: MenuDrawerProps) => {
+  const { t } = useTranslation();
+  return (
+    <div className="flex-column bg-base-100 px-4">
+      <div className="flex justify-between py-5">
         <Image src={MobileLogoImg} alt="mobile-logo" className="w-6 h-6" />
         <button onClick={onClose}>
           <IcClose />
         </button>
       </div>
-      <ul className="menu w-full border-y-2 border-neutral-200 py-9 ">
-        <MainMenuItem {...MainMenu["home"]} onClickItem={onClose} />
-        <MainMenuItem {...MainMenu["freepos"]} onClickItem={onClose} />
-        <MainMenuItem {...MainMenu["posreview"]} onClickItem={onClose} />
-      </ul>
-      <ul className="menu w-full py-6">
-        <SubMenuItem {...MainMenu["about"]} onClickItem={onClose} />
-        <SubMenuItem {...MainMenu["contact"]} onClickItem={onClose} />
-        <SubMenuItem {...MainMenu["blog"]} />
-      </ul>
+      <div className="flex flex-col gap-8 my-11">
+        <Link
+          href={MainMenu["home"].route}
+          onClick={onClose}
+          className=" flex justify-between txt-md-bold"
+        >
+          {t(MainMenu["home"].title) || MainMenu["home"].title}
+          <IcChervonRight className="text-[12px]" />
+        </Link>
+        <Link
+          href={MainMenu["posreview"].route}
+          onClick={onClose}
+          className=" flex justify-between txt-md-bold"
+        >
+          {t(MainMenu["posreview"].title) || MainMenu["posreview"].title}
+          <IcChervonRight className="text-[12px]" />
+        </Link>
+      </div>
+      <div className="grid grid-cols-1 gap-10 ">
+        <MenuBlock
+          title="Resources"
+          items={ResourceItems}
+          closeModal={onClose}
+        />
+        <MenuBlock title="Company" items={OtherItems} closeModal={onClose} />
+      </div>
     </div>
   );
 };

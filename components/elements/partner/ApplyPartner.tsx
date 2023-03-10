@@ -34,20 +34,21 @@ const ApplyPartner = () => {
       <HeaderWithBack title="" onClose={onCloseForm} />
       <div className=" flex flex-col w-full lg:w-[500px] mx-auto px-4 md:px-8 lg:px-12">
         {!isSubmit && (
-          <div className=" flex flex-col p-4 h-full">
-            <p className="txt-heading-small mb-4 text-center">
+          <div className=" flex flex-col p-4 gap-4 h-full">
+            <p className="txt-heading-small  text-center">
               Apply to be an Agent
             </p>
-            <p className="text-center">
+            <p className="text-center text-neutral-700">
               Please provide your name and contact information.
             </p>
             <ContactForm
+            classname="mt-2 md:mt-8"
               onSubmitForm={submitForm}
               submitBtnTitle="Get Started"
             />
           </div>
         )}
-        {isSubmit && (
+        {isSubmit && ( 
           <div className="flex flex-col gap-6 md:gap-12">
             <ThanksYouForm title="Thanks for your time!" />
             <Button
