@@ -74,6 +74,7 @@ const PartnerPage = () => {
           {PartnerProgram.map((item, index) => {
             return (
               <div
+                key={`${item.desc}-${index}`}
                 className={` flex flex-col ${
                   index == PartnerProgram.length - 1
                     ? " md:col-span-2 mx-auto md:max-w-md"
