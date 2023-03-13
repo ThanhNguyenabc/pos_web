@@ -1,4 +1,4 @@
-import { IcChervonRight, IcClose, MobileLogoImg } from "assets/AssetUtil";
+import { IcChervonRight, IcClose, IcMobileLogo } from "assets/AssetUtil";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -43,7 +43,7 @@ const MenuDrawer = ({ onClose }: MenuDrawerProps) => {
   return (
     <div className="flex-column bg-base-100 px-4">
       <div className="flex justify-between py-5">
-        <Image src={MobileLogoImg} alt="mobile-logo" className="w-6 h-6" />
+        <IcMobileLogo className="text-[32px]" />
         <button onClick={onClose}>
           <IcClose />
         </button>

@@ -22,7 +22,7 @@
     "**/*.ts",
     "**/*.tsx",
     "tailwind.config.js",
-    "custom.d.ts",    
+    "global.d.ts",    
     "utils/ColorUtils.js"
 , "server.js"  ],
   "exclude": ["node_modules"]

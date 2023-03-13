@@ -1,5 +1,4 @@
-import { IcMenu, Logo, IcPhone, MobileLogoImg } from "assets/AssetUtil";
-import Image from "next/image";
+import { IcMenu, IcPhone, IcMobileLogo, IcLogo } from "assets/AssetUtil";
 import Link from "next/link";
 import React, { useState } from "react";
 import { Button } from "./Button";
@@ -11,7 +10,6 @@ import AppRoutes from "utils/routes";
 import { Languages, MainMenu } from "utils/StringUtil";
 import { useTranslation } from "react-i18next";
 import i18n from "i18";
-
 const phoneNumber = "1-888-410-2188";
 
 const NavItems = [
@@ -39,7 +37,7 @@ const Header = () => {
   };
 
   return (
-    <div className=" flex flex-row w-full justify-between items-center px-4 py-[14px] md:p-6">
+    <div className="flex flex-row w-full justify-between items-center px-4 py-[14px] md:px-6">
       <div className="flex justify-center items-center">
         <Drawer
           open={isOpen}
@@ -54,21 +52,12 @@ const Header = () => {
           <IcMenu className="text-2xl" />
         </button>
         <Link href={MainMenu["home"].route}>
-          <Image
-            src={MobileLogoImg}
-            alt="mobile-logo"
-            className="w-8 h-8 xl:hidden"
-          />
-          <Image
-            src={Logo}
-            width={150}
-            alt="logo"
-            className="hidden xl:block object-contain"
-          />
+          <IcMobileLogo className="text-[40px] xl:hidden" />
+          <IcLogo className=" w-[180px] h-10 leading-[0px] hidden xl:block" />
         </Link>
       </div>
 
-      <ul className="menu menu-horizontal hidden lg:flex flex-1 text-neutral-900  ">
+      <ul className="menu menu-horizontal hidden lg:flex flex-1">
         {NavItems.map((item, index) => {
           return (
             <li className="ml-3 txt-md-bold" key={`${index}-navbar-item`}>

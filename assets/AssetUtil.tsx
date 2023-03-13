@@ -1,6 +1,5 @@
 // export images
 
-export { default as Logo } from "./images/logo.jpg";
 export { default as FooterLogo } from "./images/bestpos.png";
 export { default as BannerImage } from "./images/pos.png";
 export { default as BusinessCategory } from "./images/business_img.png";
@@ -37,7 +36,6 @@ export { default as CreditCardImg } from "./images/credit_card.png";
 
 export { default as PartnerImg } from "./images/partner.jpg";
 export { default as ReviewerImg } from "./images/reviewer.png";
-export { default as MobileLogoImg } from "./images/mobile_logo.png";
 export { default as BreadMe2Img } from "./images/breadme_2.png";
 
 export { default as Testimonial195 } from "./images/testimonial-195.jpeg";
@@ -47,6 +45,8 @@ export { default as TestimonialKasey } from "./images/testimonial-kaseys.jpg";
 export { default as TestimonialVillage } from "./images/testimonial-villagesaloon.jpg";
 
 // export icons
+export { default as IcMobileLogo } from "./icons/ic_mobile_logo.svg";
+export { default as IcLogo } from "./icons/ic_logo.svg";
 export { default as IcRating } from "./icons/ic_rating.svg";
 export { default as IcMenu } from "./icons/ic_menu.svg";
 export { default as IcPhone } from "./icons/ic_phone.svg";
