@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    color: #101828;
+    font-family: "Inter", sans-serif;
+  }
+  section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
+  }
+}
+
+@layer components {
+  .txt-sm {
+    @apply text-sm font-normal;
+  }
+  
+  .txt-sm-bold {
+    @apply text-sm font-semibold;
+  }
+  
+  .txt-sm-link {
+    @apply text-sm font-medium underline;
+  }
+  
+  .txt-md {
+    @apply text-base font-normal;
+  }
+  
+  .txt-md-bold {
+    @apply text-base font-semibold;
+  }
+  
+  .txt-md-link {
+    @apply text-base font-medium underline;
+  }
+  
+  .txt-large {
+    @apply text-xl font-normal;
+  }
+  
+  .txt-large-bold {
+    @apply text-xl font-semibold;
+  }
+  
+  .txt-large-link {
+    @apply text-xl font-medium underline;
+  }
+  
+  .txt-heading-xsmal {
+    @apply text-2xl font-bold leading-[32px];
+  }
+  
+  .txt-heading-small {
+    @apply text-3xl font-bold leading-[36px];
+  }
+  
+  .txt-heading-medium {
+    @apply text-4xl font-extrabold leading-[40px] tracking-[-0.02em];
+  }
+  
+  .txt-heading-large {
+    @apply text-5xl font-extrabold leading-[52px] tracking-[-0.02em];
+  }
+  
+  .txt-heading-xlarge {
+    @apply text-6xl font-extrabold leading-[60px] tracking-[-0.03em];
+  } 
+}
+
+.btn {
+  @apply min-h-min normal-case;
+}
+
+.btn-outline {
+  @apply hover:bg-white hover:text-black border-neutral-300 
+  bg-white  
+  text-neutral-900;
+}
+
+.container-content {
+  @apply container mx-auto;
+}
+
+ ::-webkit-scrollbar {  
+  height: 8px;
+ }
+::-webkit-scrollbar-thumb {
+  @apply  rounded-md bg-neutral-200
+}

@@ -1,0 +1,19 @@
+name: "Deploy website to staging"
+on:
+  push:
+    branches: staging
+jobs:
+  FTP-Deploy-Action:
+    name: Deploy to Cpanel
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+    - name: Upload to Cpanel
+      uses: SamKirkland/FTP-Deploy-Action@3.1.2
+      with:
+        ftp-server: ${{ secrets.FTP_SERVER }}
+        ftp-username:  ${{ secrets.FTP_USER }}   
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: 	/home/${{ secrets.FTP_USER }}/bestpos.breadme.co/
+  
