@@ -1,16 +1,14 @@
-import {
-  QuickServiceImg,
-  RestaurantImg,
-  PizzeriaImg,
-  BarImg,
-  RetailImg,
-  BusinessImg,
-} from "assets/AssetUtil";
 import IcApple from "assets/icons/ic_apple.svg";
 import IcWindow from "assets/icons/ic_window.svg";
 import IcAndroid from "assets/icons/ic_android.svg";
 import IcAmericanFlag from "assets/icons/ic_american_flag.svg";
 import IcSpanishFlag from "assets/icons/ic_spanish_flag.svg";
+import IcRestaurant from "assets/icons/ic_restaurant.svg";
+import IcQuickService from "assets/icons/ic_service1.svg";
+import IcBarClub from "assets/icons/ic_barclub.svg";
+import IcPizza from "assets/icons/ic_pizza.svg";
+import IcSmallBusiness from "assets/icons/ic_small_business.svg";
+import IcRetail from "assets/icons/ic_retail.svg";
 
 import { Locale } from "models/app_configs";
 import { CategoryType } from "models/category_type";
@@ -150,21 +148,21 @@ export const OtherItems = [
 export const CategoryList = [
   {
     title: {
-      [Locale.en]: "Full Service Restaurants",
+      [Locale.en]: "Full Service",
       [Locale.es]: "Restaurantes de servicio completo",
     },
     type: CategoryType.full_service,
-    img: RestaurantImg,
+    icon: IcRestaurant,
     link: getURLByPOSCategory(CategoryType.full_service),
   },
 
   {
     title: {
-      [Locale.en]: "Quick Service Restaurants",
+      [Locale.en]: "Quick Service",
       [Locale.es]: "Restaurantes de servicio rápido",
     },
     type: CategoryType.quick_service,
-    img: QuickServiceImg,
+    icon: IcQuickService,
     link: getURLByPOSCategory(CategoryType.quick_service),
   },
   {
@@ -173,7 +171,7 @@ export const CategoryList = [
       [Locale.es]: "Pizzería",
     },
     type: CategoryType.pizza,
-    img: PizzeriaImg,
+    icon: IcPizza,
     link: getURLByPOSCategory(CategoryType.pizza),
   },
 
@@ -183,7 +181,7 @@ export const CategoryList = [
       [Locale.es]: "Bar",
     },
     type: CategoryType.club,
-    img: BarImg,
+    icon: IcBarClub,
     link: getURLByPOSCategory(CategoryType.club),
   },
   {
@@ -192,7 +190,7 @@ export const CategoryList = [
       [Locale.es]: "Tiendas minoristas",
     },
     type: CategoryType.retail,
-    img: RetailImg,
+    icon: IcRetail,
     link: getURLByPOSCategory(CategoryType.retail),
   },
 
@@ -202,7 +200,7 @@ export const CategoryList = [
       [Locale.es]: "Pequeños emprendimientos",
     },
     type: CategoryType.small_business,
-    img: BusinessImg,
+    icon: IcSmallBusiness,
     link: getURLByPOSCategory(CategoryType.small_business),
   },
 ];
