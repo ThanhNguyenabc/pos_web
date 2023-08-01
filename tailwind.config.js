@@ -20,10 +20,6 @@ module.exports = {
     extend: {
       colors: {
         ...Colors,
-
-        green: {
-          100: "#D1FADF",
-        },
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
