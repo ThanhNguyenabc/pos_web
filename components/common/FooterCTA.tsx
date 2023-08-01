@@ -1,27 +1,41 @@
 import React, { ReactElement } from "react";
 import HeroSection from "./HeroSection";
+import Box from "./Box";
+import ContactForm from "./ContactForm";
+import { submitContact } from "api_client/axios_client";
+import { ContactInfo } from "models/contact_info";
+import { toast } from "react-hot-toast";
+import { SuccessMessage } from "utils/StringUtil";
+import useTrans from "hooks/useTrans";
 
-interface FooterCTAProps {
-  title?: ReactElement | string;
-  des?: string;
-  bgColor?: string;
-  actions?: ReactElement;
-  className?: string;
-}
-export const FooterCTA = ({ title, actions, des, bgColor }: FooterCTAProps) => {
+export const FooterCTA = () => {
+  const { t } = useTrans();
+
+  const sendContactInfo = async (data: ContactInfo) => {
+    submitContact({
+      conversion_funnel: "Contact",
+      ref_url: window.location.href,
+      data: data,
+    });
+    toast.success(SuccessMessage);
+  };
+
   return (
-    <HeroSection
-      className={`py-14 gap-6 items-center md:rounded-2xl md:gap-8 md:my-16 lg:my:20 lg:gap-10 ${bgColor}`}
-    >
-      <div className="flex flex-col gap-4 items-center text-center lg:max-w-[800px]">
-        <p className="txt-heading-medium md:txt-heading-large">{title}</p>
-        {des && (
-          <p className="txt-md-bold md:text-xl text-neutral-700">{des}</p>
-        )}
+    <Box className="bg-accent py-10">
+      <div className="rounded-3xl bg-white max-w-xl p-10 mx-auto">
+        <p className="txt-heading-small text-center md:txt-heading-large">
+          {t("get_in_touch")}
+        </p>
+        <p className="txt-md mt-4 mb-10 text-center text-neutral-700">
+          {t("get_in_touch_message")}
+        </p>
+
+        <ContactForm
+          submitBtnTitle={t("submit")}
+          onSubmitForm={sendContactInfo}
+          submitBtnClassName="w-[150px] md:h-16"
+        />
       </div>
-      <div className="w-full flex flex-col gap-4 justify-center md:flex-row max-w-xl">
-        {actions}
-      </div>
-    </HeroSection>
+    </Box>
   );
 };
