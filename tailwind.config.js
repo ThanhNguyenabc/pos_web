@@ -21,10 +21,6 @@ module.exports = {
       colors: {
         ...Colors,
       },
-      fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        body: ['"Inter"'],
-      },
     },
     keyframes: {
       marquee: {
