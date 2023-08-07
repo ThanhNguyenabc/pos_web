@@ -24,10 +24,10 @@ export const FooterCTA = () => {
     <Box className="bg-accent py-10">
       <div className="rounded-3xl bg-white max-w-xl p-10 mx-auto">
         <p className="txt-heading-small text-center md:txt-heading-large">
-          {t("get_in_touch")}
+          {t("footer_form_title")}
         </p>
         <p className="txt-md mt-4 mb-10 text-center text-neutral-700">
-          {t("get_in_touch_message")}
+          {t("footer_form_desc")}
         </p>
 
         <ContactForm

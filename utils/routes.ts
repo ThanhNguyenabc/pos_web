@@ -4,7 +4,7 @@ class AppRoutes {
   static BlogPage = "/blog";
   static ContactPage = "/contact-us";
   static FreePOSPage = "/free-pos";
-  static QuestionnairePage = "/questionnaire";
+  static QuestionnairePage = "/best-pos-for-your-business";
   static BreadmePage = "/about-breadme";
   static BreadmeQuestionPage = "/bread-me-questions";
   static POSDetailPage = "/product";

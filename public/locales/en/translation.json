@@ -57,8 +57,8 @@
     "zip_code": "Zip Code",
     "email": "Email",
     "submit": "Submit",
-    "category_title": "<span className='text-primary'> Best POS Systems</span> for Your Business",
-    "category_desc": "We&#39;ve put together a list of the best point-of-sale systems for your business. Let us help you pick the right one!",
+    "category_title": "<span className='text-secondary'> Best POS</span> System Providers",
+    "category_desc": "Your Point of Sale system is the core of your restaurant, so picking the right one is important.",
     "view_more": "View more",
     "other_recommend_pos": "Other Recommended POS System",
     "get_pos": "Get a POS",
@@ -97,11 +97,13 @@
     "message": "Message",
     "leave_us_message": "Leave us a message...",
     "send_message": "Send Message",
-    "email_message": "Nuestro amable equipo está aquí para ayudar.",
+    "email_message": "Our friendly team is here to help.",
     "office_message": "Come say hello at our office HQ.",
     "phone_message": "Available 24/7",
     "get_in_touch": "Get in touch",
     "get_in_touch_message": "We’d love to hear from you. Please fill out this form.",
+    "footer_form_title": "Qualify for Free Premium POS",
+    "footer_form_desc": "BestPOS helps businesses secure the best deals on premium POS systems. Sign up to receive deals.",
     "contact_informations": "Contact informations",
     "send_request": "Send Request",
     "type_of_business": "Type of business",
@@ -136,5 +138,6 @@
     "good": "Good",
     "out_standing": "Outstanding",
     "read_review": "Read Review",
-    "free_pos": "Get a free # POS"
+    "free_pos": "Get a free # POS",
+    "last_updated" : "Last updated:"
 }

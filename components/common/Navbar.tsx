@@ -6,23 +6,63 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { Button } from "./Button";
 import { useRouter } from "next/router";
-import AppRoutes from "utils/routes";
 import { MainMenu } from "utils/StringUtil";
 import useTrans from "hooks/useTrans";
 import LanguageSwitcher from "./LanguageSwitcher";
 import Image from "next/image";
 import SideBar from "./SideBar";
 import MenuDrawer from "./MenuDrawer";
+import ColorUtils from "utils/ColorUtils";
+import { Locale } from "models/app_configs";
+import { twMerge } from "tailwind-merge";
+import useSideBar from "stores/useSideBar";
+import { RightSideBarType } from "./RightSideBar";
 
-const phoneNumber = "888-410-2188";
+const phoneNumber = "1-888-410-2188";
 
 const NavItems = [
-  MainMenu["freepos"],
+  MainMenu["questionnaire"],
   MainMenu["posreview"],
-  MainMenu["about"],
   MainMenu["blog"],
+  MainMenu["about"],
   MainMenu["contact"],
 ];
+
+const NavPages = ({ locale }: { locale: Locale }) => {
+  const [curIndex, setIndex] = useState<Number>(-1);
+  const openSideBar = useSideBar((state) => state.openSideBar);
+
+  const handleClick = (index: Number) => () => {
+    if (index == 0) {
+      openSideBar(RightSideBarType.Questionnaire);
+    }
+    index != curIndex && setIndex(index);
+  };
+
+  return (
+    <ul className="px-8 menu-horizontal hidden lg:flex flex-1">
+      {NavItems.map((item, index) => {
+        if (index == 0) {
+        }
+        return (
+          <li className="mr-4 p-2 txt-md-bold" key={`${index}-navbar-item`}>
+            <Link
+              href={item.link}
+              className={twMerge(
+                "rounded-lg hover:text-secondary",
+                index == curIndex && " text-secondary"
+              )}
+              onClick={handleClick(index)}
+            >
+              {item.title[locale]}
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  );
+};
+
 const Navbar = () => {
   const router = useRouter();
   const [isOpenMenu, setOpenMenu] = useState(false);
@@ -64,29 +104,17 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <ul className="menu menu-horizontal hidden lg:flex flex-1">
-        {NavItems.map((item, index) => {
-          return (
-            <li className="ml-3 txt-md-bold" key={`${index}-navbar-item`}>
-              <Link href={item.link} className="rounded-lg">
-                {item.title[locale]}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+      <NavPages locale={locale} />
       <div className="flex flex-row justify-center items-center gap-4 ml-4">
-        <Link href={`tel:${phoneNumber}`} aria-label="phone">
-          <IcPhone className="text-lg" />
-        </Link>
-        <div className="ml-4">
-          <p className="txt-sm text-neutral-600">{t("support")} 24/7</p>
-          <p className="txt-md-bold lg:text-xl">{phoneNumber}</p>
-        </div>
         <Button
-          title={t("find_your_pos")}
-          classname="hidden md:block md:h-12 md:text-base lg:text-base"
-          onClick={() => router.push(AppRoutes.QuestionnairePage)}
+          title={phoneNumber}
+          isOutLine
+          classname="md:px-3 lg:text-base lg:h-12"
+          style={{
+            borderColor: ColorUtils.primary,
+          }}
+          onClick={() => router.push(`tel:${phoneNumber}`)}
+          leftIcon={<IcPhone className="text-lg text-primary" />}
         />
         <LanguageSwitcher />
       </div>
