@@ -103,6 +103,8 @@
     "phone_message": "Disponible 24/7",
     "get_in_touch": "Establecer Contacto",
     "get_in_touch_message": "Nos encantaría saber de usted. Por favor, llene esta información",
+    "footer_form_title": "Qualify for Free Premium POS",
+    "footer_form_desc": "BestPOS helps businesses secure the best deals on premium POS systems. Sign up to receive deals.",
     "contact_informations": "Información de contacto",
     "send_request": "Enviar petición",
     "type_of_business": "Tipo de negocio",
@@ -136,5 +138,7 @@
     "good": "Bueno",
     "out_standing": "Excelente",
     "read_review": "Leer Reseña",
-    "free_pos": "Solicite un sistema # gratis"
+    "free_pos": "Solicite un sistema # gratis",
+    "last_updated" : "última vez actualizado:"
+
 }
