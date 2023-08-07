@@ -81,18 +81,18 @@ const SpecificationView = ({ id, posId }: SpecificationProps) => {
   ];
 
   return (
-    <div id={id} className="flex w-full flex-col gap-6">
-      <p className="txt-heading-xsmal md:txt-heading-small">
+    <div id={id} className="grid grid-cols-1 gap-6 md:grid-cols-3">
+      <p className="col-span-1 txt-heading-xsmal md:txt-heading-small">
         {SpecificationTrans.heading[locale]}
       </p>
-      <table className="table table-row txt-md">
+      <table className="col-span-2 table  txt-md w-full">
         <tbody>
           {items.map((item, index) => {
             const desc =
               typeof item.desc == "object" ? item.desc?.[locale] : item.desc;
             return (
               <tr key={`sp-${index}`}>
-                <th className="font-semibold px-0">{item.title[locale]}</th>
+                <th className="font-semibold">{item.title[locale]}</th>
                 <td className="whitespace-pre-wrap">{desc}</td>
               </tr>
             );

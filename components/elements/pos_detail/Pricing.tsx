@@ -1,7 +1,10 @@
+import { Button } from "components/common/Button";
 import useTrans from "hooks/useTrans";
 import { Locale } from "models/app_configs";
 import React from "react";
 import { moneyFormatter } from "utils/NumberUtil";
+import Badge from "components/common/Badge";
+import ColorUtils from "utils/ColorUtils";
 
 const PricingTrans = {
   title: {
@@ -38,8 +41,8 @@ const PricingPerType = ({
 }) => {
   return (
     <div
-      className={`flex flex-1 flex-col p-4 gap-2 border-2 border-neutral-300  
-      rounded-2xl items-center justify-center text-center ${className}`}
+      className={`flex flex-1 flex-col gap-2
+      items-center justify-center text-center ${className}`}
     >
       <p className="txt-sm-bold md:text-base">{plan}</p>
       <p className="txt-heading-small md:txt-heading-large text-neutral-900">
@@ -55,16 +58,25 @@ export interface PricingProps {
   desc: Array<string>;
   monthlyPrice: number;
   oneTimePurchase: number;
+  productName?: string;
+  onRequestDemo?: () => void;
 }
 
-const Pricing = ({ desc, monthlyPrice, oneTimePurchase, id }: PricingProps) => {
-  const { locale } = useTrans();
+const Pricing = ({
+  desc,
+  monthlyPrice,
+  oneTimePurchase,
+  id,
+  productName,
+  onRequestDemo,
+}: PricingProps) => {
+  const { t, locale } = useTrans();
   return (
-    <div id={id} className="flex flex-col gap-6 md:gap-8">
-      <div className="flex flex-col gap-4 md:gap-6">
-        <p className="txt-heading-xsmal md:txt-heading-small">
-          {PricingTrans.title[locale]}
-        </p>
+    <div id={id} className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-3">
+      <p className="txt-heading-xsmal col-span-1 md:txt-heading-small">
+        {PricingTrans.title[locale]}
+      </p>
+      <div className=" col-span-2 flex flex-col gap-4 md:gap-6">
         <div className="flex flex-col">
           {desc.map((item, index) => (
             <p key={`${index}-desc`} className="txt-md text-neutral-700">
@@ -72,20 +84,54 @@ const Pricing = ({ desc, monthlyPrice, oneTimePurchase, id }: PricingProps) => {
             </p>
           ))}
         </div>
-      </div>
-      <div className="flex flex-row gap-4 w-full md:gap-8">
-        <PricingPerType
-          plan={PricingTrans.monthly_plan[locale]}
-          money={monthlyPrice}
-          desc={PricingTrans.per_month[locale]}
-          className="text-primary"
-        />
-        <PricingPerType
-          plan={PricingTrans.one_time_purchase[locale]}
-          money={oneTimePurchase}
-          desc={PricingTrans.per_station[locale]}
-          className=" bg-blue-light border-none text-secondary"
-        />
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-4">
+          <div className="flex-1 flex flex-col p-6 gap-2 items-center text-center border border-neutral-300 rounded-2xl w-full">
+            <h3 className="txt-large-bold mb-2 md:text-2xl">
+              Get the full price from {productName}
+            </h3>
+
+            <PricingPerType
+              plan={PricingTrans.monthly_plan[locale]}
+              money={monthlyPrice}
+              desc={PricingTrans.per_month[locale]}
+              className="text-primary"
+            />
+            <div className="w-full h-[1px] bg-neutral-300" />
+            <PricingPerType
+              plan={PricingTrans.one_time_purchase[locale]}
+              money={oneTimePurchase}
+              desc={PricingTrans.per_station[locale]}
+              className="text-secondary"
+            />
+          </div>
+          <span className="txt-large-bold self-center">Or</span>
+          <div className="flex-1 flex relative items-center flex-col gap-4 p-6 bg-neutral-dark rounded-2xl text-white text-center">
+            <Badge classname="absolute -top-3  border-none bg-[#CDE762] text-neutral-900 md:py-1">
+              ExtraBread’s Offer
+            </Badge>
+            <div className="mt-1">
+              <h3 className="txt-large-bold md:text-2xl">
+                Save Big on POS Costs
+              </h3>
+              <p className="txt-sm mt-2 md:text-base">
+                Start using {productName} for your business today, with pricing
+                options starting at
+              </p>
+            </div>
+            <span className="txt-md-bold my-4 md:text-xl">
+              Up to <br />
+              <span className="txt-heading-medium md:txt-heading-xlarge">
+                100% off
+              </span>
+            </span>
+            <Button
+              title={t("request_a_demo")}
+              classname="w-full"
+              onClick={onRequestDemo}
+              style={{ backgroundColor: ColorUtils.success }}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

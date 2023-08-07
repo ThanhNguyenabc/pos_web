@@ -90,11 +90,11 @@ const ExpertOpinion = ({ data, id }: ExpertOpinionProps) => {
   ];
 
   return (
-    <div id={id} className="flex flex-col gap-6 md:gap-8">
-      <p className="txt-heading-xsmal md:txt-heading-small">
+    <div id={id} className="grid grid-cols-1 gap-6 lg:grid-cols-3 md:gap-8">
+      <p className="col-span-1 txt-heading-xsmal md:txt-heading-small">
         {ExpertOpinionTrans.heading[locale]}
       </p>
-      <div className="flex flex-col gap-6 md:gap-8 lg:flex-row lg:gap-16 w-full">
+      <div className="col-span-2 flex flex-col gap-6 md:gap-8 w-full">
         <div className="flex flex-1 flex-row gap-8 md:gap-12 lg:gap-16">
           <CustomCircularProgress
             id="expert-progress"
@@ -111,7 +111,7 @@ const ExpertOpinion = ({ data, id }: ExpertOpinionProps) => {
             </p>
           </CustomCircularProgress>
 
-          <div className="flex flex-col gap-4 md:gap-6 w-full">
+          <div className="grid grid-cols-1 gap-4 md:gap-6 w-full lg:grid-cols-2">
             {rateItems.map((item, index) => (
               <RatingItem
                 key={`key-${index}`}
