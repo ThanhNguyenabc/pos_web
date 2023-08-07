@@ -44,23 +44,13 @@ const RequestDemoPOS = () => {
       <SelectedList
         data={CategoryList}
         selectIndex={0}
-        classname={" md:grid-cols-2 lg:grid-cols-3"}
-        itemBuilder={(item, index: number) => {
+        className={" md:grid-cols-2 lg:grid-cols-3"}
+        renderItem={(item, index: number) => {
+          const Icon = item.icon;
           return (
-            <div className="flex flex-row items-center p-3 gap-4 md:flex-col md:justify-center">
-              <div className=" relative w-[80px] md:w-[120px] h-[80px]">
-                <Image
-                  src={item.img}
-                  alt="image"
-                  fill
-                  sizes="95vw"
-                  className=" object-contain"
-                />
-              </div>
-
-              <p className="txt-md-bold md:text-center">
-                {item.title[locale]}
-              </p>
+            <div className="flex flex-row items-center p-3 gap-3 md:gap-2 md:flex-col md:justify-center">
+              <Icon className="text-4xl" />
+              <p className="txt-md-bold md:text-center">{item.title[locale]}</p>
             </div>
           );
         }}
@@ -79,7 +69,20 @@ const RequestDemoPOS = () => {
 
   return (
     <>
-      <HeaderWithBack title={t("request_a_demo")} onClose={closeSidebar} />
+      <HeaderWithBack
+        title={t("request_a_demo")}
+        onClose={closeSidebar}
+        subTitle={
+          <p className="txt-sm max-w-xl text-neutral-700 md:text-center md:ml-3">
+            We'll connect you with the POS provider to setup a demo and get the
+            best deal possible. Go through BestPOS to get the best deal
+            possible.{" "}
+            <span className="text-secondary font-semibold">
+              Up to 100% off!
+            </span>
+          </p>
+        }
+      />
       {PAGE}
     </>
   );

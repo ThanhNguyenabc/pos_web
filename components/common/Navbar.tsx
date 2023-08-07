@@ -40,7 +40,7 @@ const NavPages = ({ locale }: { locale: Locale }) => {
   };
 
   return (
-    <ul className="px-8 menu-horizontal hidden lg:flex flex-1">
+    <ul className="px-4 menu-horizontal hidden lg:flex flex-1">
       {NavItems.map((item, index) => {
         if (index == 0) {
         }
