@@ -7,7 +7,7 @@ import useSWRImmutable from "swr";
 
 import Box from "components/common/Box";
 import { Priority, RecommendColor } from "./pos_card/POSCardTypes";
-import POSCard from "./pos_card/POSCard";
+import POSCardV2 from "./pos_card/POSCard";
 
 const ProductList = ({ type }: { type: string }) => {
   const { t } = useTrans();
@@ -37,7 +37,7 @@ const ProductList = ({ type }: { type: string }) => {
             : "";
 
           items.push(
-            <POSCard
+            <POSCardV2
               key={`card-item-${index}`}
               data={item}
               classname={`${priorityBorder}`}
@@ -60,7 +60,7 @@ const ProductList = ({ type }: { type: string }) => {
             );
           }
         } else {
-          items.push(<POSCard key={`card-item-${index}`} data={item} />);
+          items.push(<POSCardV2 key={`card-item-${index}`} data={item} />);
         }
       });
     return items;

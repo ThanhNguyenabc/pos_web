@@ -21,7 +21,7 @@ export default async function handler(
             .limit(Number(limit))
             .exec();
           return res
-            .setHeader("Cache-Control", "s-maxage=10")
+            .setHeader("Cache-Control", "s-maxage=100")
             .status(200)
             .json({ data: products });
         } else {

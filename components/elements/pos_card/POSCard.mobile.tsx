@@ -1,106 +1,105 @@
 import React from "react";
 import Image from "next/image";
+import IcLike from "assets/icons/ic_like.svg";
+import IcChervonRight from "assets/icons/ic_chervon_right.svg";
+
 import { DefaultImg } from "assets/AssetUtil";
 import { getSystemIcon } from "utils/StringUtil";
 import useSideBar from "stores/useSideBar";
-import { useRouter } from "next/router";
 import AppRoutes from "utils/routes";
-import CustomCircularProgress from "../../common/CustomCircularProgress";
-import RecommendTag from "../../common/RecommendTag";
-import useTrans from "hooks/useTrans";
-import { POSCardProps, RecommendColor } from "./POSCardTypes";
+import CustomCircularProgress from "components/common/CustomCircularProgress";
+import ColorUtils from "utils/ColorUtils";
+import Link from "next/link";
+import { Button } from "components/common/Button";
+import POSCardBusinessType from "./POSCardBusinessType";
 import { RightSideBarType } from "components/common/RightSideBar";
 import { twMerge } from "tailwind-merge";
+import useTrans from "hooks/useTrans";
+import { POSCardProps } from "./POSCardTypes";
 
-const POSCardMobile = ({
-  data,
-  priority,
-  classname,
-  recommendTagProps,
-}: POSCardProps) => {
+const POSCardMobile = ({ data, priority, classname }: POSCardProps) => {
   const openSideBar = useSideBar((state) => state.openSideBar);
-  const router = useRouter();
   const overallRating = data.expert_opinion.overall;
-  const { locale, t } = useTrans();
-
-  const goToDetail = () => {
-    router.push(`${AppRoutes.POSDetailPage}/${data.id}/${data.slug}`);
-  };
-
+  const { id, slug, name } = data;
+  const { t, locale } = useTrans();
   return (
     <div
       className={twMerge(
-        "relative flex flex-col p-3 gap-4 w-full bg-white rounded-2xl shadow-poscard cursor-pointer",
+        `w-full 
+      bg-white shadow-md rounded-2xl overflow-hidden`,
         classname
       )}
-      onClick={goToDetail}
     >
-      {priority && (
-        <span className="absolute left-3 top-[-12px]">
-          <RecommendTag
-            {...RecommendColor[priority as keyof typeof RecommendColor]}
-            {...recommendTagProps}
-          />
-        </span>
-      )}
-      <div className="w-full flex flex-row h-10 items-center justify-between">
-        <Image
-          src={data.logo || DefaultImg}
-          alt="logo-pos"
-          width={80}
-          height={80}
-        />
-        <div className="flex items-center gap-4">
-          {data.os_system?.map((item, index) => {
-            const Icon = getSystemIcon(item);
-            return <Icon key={`item-os-${index}`} className="w-6 h-6" />;
-          })}
+      <div className="flex flex-row border-b border-b-neutral-300">
+        <div className="  flex flex-col justify-center pr-4">
+          {priority === "first" && (
+            <div
+              className="flex flex-row bg-primary text-white px-1 justify-center 
+        items-center gap-2 rounded-br-lg rounded-tl-lg"
+            >
+              <IcLike className="text-sm" />
+              <p className="text-[10px] font-semibold mt-1">MOST RECOMMENDED</p>
+            </div>
+          )}
+          <div className="block w-[140px] pt-1">
+            <Image
+              src={data.logo || DefaultImg}
+              alt="logo-pos"
+              width={140}
+              height={70}
+              quality={80}
+              sizes="20vw"
+              className="object-contain pl-3"
+            />
+          </div>
 
-          <CustomCircularProgress
-            id="card-mobile-progress"
-            className=" h-10 w-10"
-            value={overallRating}
+          <div className="flex flex-rơw gap-2 pl-3 items-center py-2">
+            <CustomCircularProgress
+              id="card-mobile-progress"
+              className="w-[40px] h-fit"
+              value={overallRating}
+            >
+              <p className="txt-sm-bold">{overallRating}</p>
+            </CustomCircularProgress>
+            <div className="flex flex-col">
+              <p className="txt-sm text-neutral-600">
+                {(priority && t("out_standing")) || t("good")}
+              </p>
+              <Link
+                href={`${AppRoutes.POSDetailPage}/${id}/${slug}`}
+                className="inline-flex text-secondary text-xs items-center gap-1"
+              >
+                {t("read_review")}
+                <IcChervonRight className="text-[8px]" />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-1 flex-col gap-5 px-2 items-center justify-end py-3 border-l border-neutral-300">
+          <Link
+            href={AppRoutes.BreadmeQuestionPage}
+            className="text-sm font-semibold leading-5 text-neutral-700 underline"
           >
-            <p className="txt-sm-bold">{overallRating}</p>
-          </CustomCircularProgress>
+            {t("free_pos").replace("#", name)}
+          </Link>
+          <Button
+            title={t("get_started")}
+            classname="rounded-[30px] w-[160px]"
+            style={{ background: ColorUtils.success }}
+            onClick={() => openSideBar(RightSideBarType.RequestDemo)}
+          />
         </div>
       </div>
-      <p className="w-full text-sm text-neutral-700">
-        {data.overview?.[locale]}
-      </p>
-      <div className="flex w-full flex-row h-[48px] gap-2 justify-between">
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            router.push(AppRoutes.BreadmeQuestionPage);
-          }}
-          className="flex flex-row bg-success flex-1 items-center justify-center gap-1 text-white rounded-lg"
-        >
-          <Image
-            src={
-              "https://res.cloudinary.com/dgrym3yz3/image/upload/v1682585827/assets/common/small_breadme_logo_jtzthp.png"
-            }
-            width={16}
-            height={16}
-            className="aspect-square"
-            quality={95}
-            alt="mobile-breadme-logo"
-          />
-          <p className="text-xs font-semibold">{t("get_a_free_pos")}</p>
-        </button>
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            openSideBar(RightSideBarType.RequestDemo);
-          }}
-          className="flex bg-secondary flex-1 items-center justify-center text-white rounded-lg"
-        >
-          <p className=" text-xs font-semibold ">
-            ${data.monthly_price} {t("monthly")}
-          </p>
-        </button>
+
+      <div className="flex-1 flex flex-row p-3">
+        <div className="flex items-center gap-3 border-r border-neutral-300 pr-3">
+          {data.os_system?.map((item, index) => {
+            const Icon = getSystemIcon(item);
+            return <Icon key={`item-os-${index}`} className="w-5 h-5" />;
+          })}
+        </div>
+        <POSCardBusinessType productId={id} />
       </div>
     </div>
   );
