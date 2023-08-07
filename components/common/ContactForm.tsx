@@ -4,6 +4,7 @@ import React, { FormEvent, ReactNode, useState } from "react";
 import { Button } from "./Button";
 import Input from "./Input";
 import PhoneNumberInput from "./PhoneNumberInput";
+import { twMerge } from "tailwind-merge";
 
 interface ContactFormProps {
   nameTitle?: string;
@@ -135,7 +136,7 @@ const ContactForm = ({
       {showSubmitButton && (
         <Button
           title={submitBtnTitle || t("submit")}
-          classname={`mt-4 ${submitBtnClassName}`}
+          classname={twMerge("mt-4", submitBtnClassName)}
           style={{
             background: submitBackground,
           }}
