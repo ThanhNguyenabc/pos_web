@@ -24,7 +24,7 @@ const BreadmeCreditCard = () => {
       selectIndex={value.questionData?.creditCardVolumnId}
       data={BreadmeCreditCardVolumeData}
       selectBorderColor="border-success"
-      itemBuilder={(item, index) => (
+      renderItem={(item, index) => (
         <p className="text-center txt-md-bold md:text-xl p-4">
           {item} {t("per_month")}
         </p>

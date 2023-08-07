@@ -104,7 +104,7 @@ const BreadmeIntroduction = ({
         classname="lg:hidden"
         title={`${t("get_started")}!`}
         style={{
-          background: ColorUtils.neutral_dark,
+          background: ColorUtils["neutral-dark"],
           color: "white",
         }}
       />

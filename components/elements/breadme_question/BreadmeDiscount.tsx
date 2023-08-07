@@ -18,7 +18,7 @@ const BreadmeDiscountQuestion = () => {
       selectIndex={value.questionData?.isDiscountIndex}
       data={YesNoQuestion}
       selectBorderColor="border-success"
-      itemBuilder={(item, index) => (
+      renderItem={(item, index) => (
         <p className="text-center txt-md-bold p-4 md:text-xl">{t(item)}</p>
       )}
       onItemSelected={(selectIndex) => {

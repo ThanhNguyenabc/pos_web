@@ -74,7 +74,7 @@ const BreadmeSaleSystem = () => {
         selectIndex={context.questionData?.saleSystemIndex}
         data={SaleSystemItems}
         itemListClassName="h-16"
-        itemBuilder={(item, index) => {
+        renderItem={(item, index) => {
           if (index == SaleSystemItems.length - 1) {
             return (
               <div className="flex flex-row px-4 my-auto w-full h-full items-center gap-4">
