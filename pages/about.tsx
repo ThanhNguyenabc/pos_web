@@ -18,7 +18,7 @@ import React from "react";
 import useSideBar from "stores/useSideBar";
 import AppRoutes from "utils/routes";
 import HeadTag from "components/common/HeadTag";
-import RightSideBar, { RightSideBarType } from "components/common/RightSideBar";
+import { RightSideBarType } from "components/common/RightSideBar";
 
 const ServiceData = [
   {
@@ -60,10 +60,6 @@ const AboutPage = () => {
     openSideBar(RightSideBarType.RequestDemo);
   };
 
-  const goToContactPage = () => {
-    router.push(AppRoutes.ContactPage);
-  };
-
   const FindPOSBtn = (
     <Button title={t("find_your_pos")} onClick={findPOS} classname="md:h-16" />
   );
@@ -91,13 +87,6 @@ const AboutPage = () => {
           <div className="flex flex-col gap-4 md:flex-row">
             {FindPOSBtn}
             {RequestDemoBtn}
-            <Button
-              title={t("contact_us")}
-              classname="md:h-16"
-              isOutLine
-              rightIcon={<IcRightArrow className=" text-xl" />}
-              onClick={goToContactPage}
-            />
           </div>
         </HeroSection>
         <div className="container-content relative w-full aspect-video">
@@ -148,22 +137,7 @@ const AboutPage = () => {
         />
       </HeroSection>
       <MetricSection />
-      <FooterCTA
-        bgColor="bg-accent md:my-20"
-        actions={
-          <>
-            {FindPOSBtn}
-            <Button
-              title={t("get_free_pos")}
-              classname="md:h-16"
-              style={{ background: "white", color: "black" }}
-              onClick={demoPOS}
-            />
-          </>
-        }
-        title={t("homepage_title")}
-        des={t("homepage_subtitle")}
-      />
+      <FooterCTA />
     </>
   );
 };

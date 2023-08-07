@@ -1,14 +1,14 @@
 import React from "react";
-import Categories from "components/elements/Category";
 import HeadTag from "components/common/HeadTag";
+import { FooterCTA } from "components/common/FooterCTA";
+import POSSystems from "components/elements/POSSytems";
 
-const POSSystems = () => {
+export default function () {
   return (
     <>
       <HeadTag screen="posSystem" />
-      <Categories />
+      <POSSystems />
+      <FooterCTA />
     </>
   );
-};
-
-export default POSSystems;
+}

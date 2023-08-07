@@ -1,10 +1,7 @@
-import IcRightArrow from "assets/icons/ic_right_arrow.svg";
 import HelpingSection from "components/elements/home/HelpingSection";
 import { Button } from "components/common/Button";
 import MetricSection from "components/common/MetricSection";
 import { FooterCTA } from "components/common/FooterCTA";
-import { useRouter } from "next/router";
-import AppRoutes from "utils/routes";
 import useTrans from "hooks/useTrans";
 import Image from "next/image";
 import Box from "components/common/Box";
@@ -16,9 +13,9 @@ import { getListPOS } from "api_client/axios_client";
 import { Product } from "models/product.model";
 import { Locale } from "models/app_configs";
 import HTMLReactParser from "html-react-parser";
-import dayjs from "dayjs";
-
-require("dayjs/locale/es");
+import { getCurrentMonth } from "utils/date_utils";
+import useSideBar from "stores/useSideBar";
+import { RightSideBarType } from "components/common/RightSideBar";
 
 const Hp2Translation = {
   heading: {
@@ -39,10 +36,7 @@ const Hp2Translation = {
     [Locale.es]:
       "Responde algunas preguntas para encontrar el POS que se adapte mejor a tu negocio.",
   },
-  update_date: {
-    [Locale.en]: "Last updated: ",
-    [Locale.es]: "última vez actualizado: ",
-  },
+
   start_now: {
     [Locale.en]: "Start now",
     [Locale.es]: "Empezar",
@@ -59,12 +53,11 @@ export const getServerSideProps = async (
 };
 
 const HomePage = ({ products }: { products: Array<Product> }) => {
-  const router = useRouter();
   const { t, locale } = useTrans();
+  const openSideBar = useSideBar((state) => state.openSideBar);
 
   const findPOS = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    router.push(AppRoutes.QuestionnairePage);
+    openSideBar(RightSideBarType.Questionnaire);
   };
 
   return (
@@ -76,9 +69,7 @@ const HomePage = ({ products }: { products: Array<Product> }) => {
             {HTMLReactParser(Hp2Translation.heading[locale])}
           </h1>
           <span className="txt-md-bold mt-2 lg:mt-6">
-            {`${Hp2Translation.update_date[locale]} ${dayjs()
-              .locale(router.locale || "en")
-              .format("MMMM YYYY")}`}
+            {`${t("last_updated")} ${getCurrentMonth(locale)}`}
           </span>
           <h2 className="hidden txt-md text-neutral-700 sm:block lg:text-start">
             {Hp2Translation.title[locale]}

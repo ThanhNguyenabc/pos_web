@@ -199,18 +199,7 @@ const PartnerPage = () => {
         <ReviewerSection reviews={Feedbacks} />
       </HeroSection>
       <ClientSection />
-      <FooterCTA
-        bgColor="bg-neutral-100"
-        actions={
-          <Button
-            classname="w-full md:w-fit md:h-16"
-            title={PartnerTrans.btnBecomePartner[locale]}
-            onClick={openPartnerForm}
-          />
-        }
-        title={PartnerTrans.footerTitle[locale]}
-        des={PartnerTrans.footerDesc[locale]}
-      />
+      <FooterCTA />
     </>
   );
 };

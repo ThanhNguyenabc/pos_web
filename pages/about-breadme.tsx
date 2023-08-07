@@ -5,7 +5,6 @@ import React from "react";
 import Image from "next/image";
 import ColorUtils from "utils/ColorUtils";
 import Badge from "components/common/Badge";
-import { FooterCTA } from "components/common/FooterCTA";
 import MetricSection from "components/common/MetricSection";
 import BreadmeFeatureSection from "components/elements/breadme/FeatureForFee";
 import ReceiptOptionSection from "components/elements/breadme/ReceiptOptionSection";
@@ -98,11 +97,6 @@ const BreadmePage = () => {
       <ReceiptOptionSection />
       <MetricSection titleColor="text-success" />
       <CommonQuestion />
-      <FooterCTA
-        bgColor="bg-green-100"
-        actions={GetStartNow}
-        title={<span>{HTMLReactParser(t("breadme_footer_title"))}</span>}
-      />
     </>
   );
 };
