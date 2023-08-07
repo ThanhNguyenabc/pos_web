@@ -1,5 +1,5 @@
 export const sendGoogleEvent = (event: string) => {
-  if (window.dataLayer) {
+  if (process.env.NODE_ENV === "production" && window.dataLayer) {
     window.dataLayer.push({ event: event });
   }
 };

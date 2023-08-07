@@ -6,6 +6,7 @@ import SideBar from "./SideBar";
 export enum RightSideBarType {
   "RequestDemo" = "RequestDemo",
   "FindPOS" = "FindPOS",
+  "Questionnaire" = "Questionnaire",
   "ApplyPartner" = "ApplyPartner",
 }
 
@@ -18,6 +19,9 @@ const CMPContent = {
   ),
   [RightSideBarType.ApplyPartner]: dynamic(
     () => import("../elements/partner/ApplyPartner")
+  ),
+  [RightSideBarType.Questionnaire]: dynamic(
+    () => import("components/elements/questionnaire/QuestionnaireForm")
   ),
 };
 

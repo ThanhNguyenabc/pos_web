@@ -7,6 +7,9 @@ import InitialData from "components/elements/InitialData";
 import TagManager from "react-gtm-module";
 import { GTM_ID } from "utils/constants";
 import RightSideBar from "components/common/RightSideBar";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 const Toaster = dynamic(() =>
   import("react-hot-toast").then((res) => res.Toaster)
@@ -22,10 +25,13 @@ export function POSApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <InitialData />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-      <RightSideBar />
+      <main className={inter.className}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+        <RightSideBar />
+      </main>
+
       <Toaster position="top-center" />
     </>
   );
