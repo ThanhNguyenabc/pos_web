@@ -1,49 +1,44 @@
 import SelectedList from "components/common/SelectedList";
 import React, { useEffect } from "react";
-import Image from "next/image";
 import { CategoryList } from "utils/StringUtil";
-import useQuestionnaireStore from "stores/questionnaire_store";
 import useTrans from "hooks/useTrans";
-import { sendGoogleEvent } from "utils/tracking_utils";
+import useQuestionnaireStore, {
+  updateQuestionnaireAns,
+} from "stores/questionnaire_store";
 
 const BusinessQuestion = () => {
-  const questionnaireStore = useQuestionnaireStore();
+  const businessId = useQuestionnaireStore((state) => state.businessId);
+  const updateData = updateQuestionnaireAns();
+
   const { locale } = useTrans();
 
   useEffect(() => {
-    sendGoogleEvent("find_pos_business_type");
+    // sendGoogleEvent("find_pos_business_type");
   }, []);
 
+  console.log("business form");
+
   return (
-    <SelectedList
-      selectIndex={questionnaireStore.data?.businessId}
-      data={CategoryList}
-      classname={"md:grid-cols-2 lg:grid-cols-3 md:gap-6"}
-      itemBuilder={(item, index: number) => {
-        return (
-          <div className="flex h-[80px] flex-row items-center p-3 gap-4 md:h-full md:flex-col">
-            <div className="relative w-[70px] md:w-[120px] aspect-[4/3]">
-              <Image
-                src={item.img}
-                alt="image"
-                fill
-                className="object-cover"
-                sizes="90vw"
-              />
-            </div>
-            <div className="flex flex-1 items-center">
+    <div className="flex flex-col gap-4">
+      <h3 className="txt-large-bold">What best describes your business?</h3>
+      <SelectedList
+        data={CategoryList}
+        selectIndex={businessId}
+        className={" md:grid-cols-2 lg:grid-cols-3"}
+        renderItem={(item, index: number) => {
+          const Icon = item.icon;
+          return (
+            <div className="flex flex-row items-center p-3 gap-3 md:gap-2 md:flex-col md:justify-center">
+              <Icon className="text-4xl" />
               <p className="txt-md-bold md:text-center">{item.title[locale]}</p>
             </div>
-          </div>
-        );
-      }}
-      onItemSelected={(selectedIndex) => {
-        questionnaireStore.setQuestionData({
-          ...questionnaireStore.data,
-          businessId: selectedIndex,
-        });
-      }}
-    />
+          );
+        }}
+        onItemSelected={(index) => {
+          updateData({ businessId: index });
+        }}
+      />
+    </div>
   );
 };
 

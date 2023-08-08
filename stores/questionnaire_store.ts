@@ -1,4 +1,3 @@
-
 import { ContactInfo } from "models/contact_info";
 import { create } from "zustand";
 
@@ -12,49 +11,38 @@ interface QuestionData {
 }
 
 interface QuestionnaireState {
-  isShowQuestion: boolean;
-  currentQuestionIndex: number;
-  previousPageIndex: Array<number>;
-  data: QuestionData;
-  showQuestion: () => void;
-  backToPrevious: () => void;
+  businessId: number;
+  saleSystemIndex: number;
+  numberStationIndex: number;
+  handHeldIndex?: number;
+  discountIndex?: number;
+  contacInfo?: ContactInfo;
   clearStoreData: () => void;
-  setQuestionData: (data: QuestionData, nextNumberPage?: number) => void;
-  onSubmit?: (contactInfo: ContactInfo) => void;
+  updateIndex: (input: { [key: string]: Number }) => void;
 }
 
 const initialData = {
-  isShowQuestion: false,
-  currentQuestionIndex: 0,
-  previousPageIndex: [],
-  data: {
-    businessId: -1,
-    saleSystemIndex: -1,
-    numberStationIndex: -1,
-  },
+  businessId: 0,
+  saleSystemIndex: 0,
+  numberStationIndex: 0,
+  handHeldIndex: 0,
+  discountIndex: 1,
 };
 
 const useQuestionnaireStore = create<QuestionnaireState>((set) => ({
   ...initialData,
   clearStoreData: () => set((state) => ({ ...initialData })),
-  backToPrevious: () =>
-    set((state) => ({
-      ...state,
-      currentQuestionIndex:
-        state.previousPageIndex.length > 0 ? state.previousPageIndex.pop() : 0,
-    })),
-  showQuestion: () => set((state) => ({ ...state, isShowQuestion: true })),
-  setQuestionData: (data: QuestionData, nextNumberPage = 1) => {
+  updateIndex: (input) => {
     set((state) => {
-      const currentIndex = state.currentQuestionIndex;
       return {
         ...state,
-        data: data,
-        previousPageIndex: [...state.previousPageIndex, currentIndex],
-        currentQuestionIndex: currentIndex + nextNumberPage,
+        ...input,
       };
     });
   },
 }));
+
+export const updateQuestionnaireAns = () =>
+  useQuestionnaireStore((state) => state.updateIndex);
 
 export default useQuestionnaireStore;
