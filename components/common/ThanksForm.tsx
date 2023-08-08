@@ -19,7 +19,7 @@ const ThanksYouForm = ({
 
   useEffect(() => {
     sendGoogleEvent(eventName);
-  }, []);
+  }, [eventName]);
 
   return (
     <div

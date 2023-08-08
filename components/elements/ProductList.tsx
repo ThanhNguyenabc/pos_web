@@ -3,20 +3,15 @@ import Loading from "components/common/loading/Loading";
 import useTrans from "hooks/useTrans";
 import { CategoryType } from "models/category_type";
 import React from "react";
-import useSWRImmutable from "swr";
-
+import useSWRImmutable from "swr/immutable";
 import Box from "components/common/Box";
 import { Priority, RecommendColor } from "./pos_card/POSCardTypes";
 import POSCardV2 from "./pos_card/POSCard";
 
 const ProductList = ({ type }: { type: string }) => {
   const { t } = useTrans();
-  const { data, isLoading } = useSWRImmutable(
-    `${type}`,
-    () => getListPOS({ type: type }),
-    {
-      revalidateOnFocus: false,
-    }
+  const { data, isLoading } = useSWRImmutable(`${type}`, () =>
+    getListPOS({ type: type })
   );
 
   const renderItems = () => {
@@ -67,7 +62,7 @@ const ProductList = ({ type }: { type: string }) => {
   };
 
   return (
-    <Box className="flex flex-1 container-content gap-6 items-center">
+    <Box className="flex flex-1 container-content gap-6 items-center min-h-[300px]">
       {isLoading && <Loading />}
       {data && renderItems()}
     </Box>

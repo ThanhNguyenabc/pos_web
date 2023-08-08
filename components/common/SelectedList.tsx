@@ -36,6 +36,7 @@ const ItemList = React.memo(
     });
   }
 );
+ItemList.displayName = "ItemList";
 
 const SelectedList = <T extends object | string>({
   data,
@@ -52,7 +53,7 @@ const SelectedList = <T extends object | string>({
       setIndex(index);
       onItemSelected && onItemSelected(index);
     },
-    []
+    [onItemSelected]
   );
 
   const Items = data.map((item: T, index) => {

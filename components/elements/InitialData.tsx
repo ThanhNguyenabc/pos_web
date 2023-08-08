@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import useAppStore from "stores/app_store";
 
 const InitialData = () => {
-  const { setAppConfig } = useAppStore((state) => state);
+  const setAppConfig = useAppStore((state) => state.setAppConfig);
 
   useEffect(() => {
     getAppConfigs().then((res) => res && setAppConfig(res));
