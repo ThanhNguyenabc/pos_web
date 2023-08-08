@@ -44,25 +44,18 @@ export const MainMenu = {
       [Locale.es]: "Home",
     },
   },
-  freepos: {
-    link: AppRoutes.FreePOSPage,
+  questionnaire: {
+    link: "",
     title: {
-      [Locale.en]: "Free POS",
-      [Locale.es]: "Punto de venta gratuito",
+      [Locale.en]: "Best POS for your business",
+      [Locale.es]: "Cuestionario",
     },
   },
   posreview: {
     link: AppRoutes.POSSystemPage,
     title: {
-      [Locale.en]: "POS Reviews",
+      [Locale.en]: "POS Systems",
       [Locale.es]: "Reseñas de puntos de venta",
-    },
-  },
-  contact: {
-    link: AppRoutes.ContactPage,
-    title: {
-      [Locale.en]: "Contact",
-      [Locale.es]: "Contacto",
     },
   },
   about: {
@@ -75,37 +68,27 @@ export const MainMenu = {
   blog: {
     link: AppRoutes.BlogPage,
     title: {
-      [Locale.en]: "Blog",
+      [Locale.en]: "POS Insights",
       [Locale.es]: "Blog",
     },
   },
-  breadme: {
-    link: AppRoutes.BreadmePage,
-    title: {
-      [Locale.en]: "0% Processing Fee",
-      [Locale.es]: "0% de tarifa de procesamiento",
-    },
-  },
-};
-
-export const ResourceItems = [
-  MainMenu["freepos"],
-  MainMenu["breadme"],
-  {
-    title: {
-      [Locale.en]: "Questionnaire",
-      [Locale.es]: "Cuestionario",
-    },
-    link: AppRoutes.QuestionnairePage,
-  },
-  {
+  partner: {
     title: {
       [Locale.en]: "Partner",
       [Locale.es]: "Pareja",
     },
     link: AppRoutes.PartnerPage,
   },
-];
+  contact: {
+    link: AppRoutes.ContactPage,
+    title: {
+      [Locale.en]: "Contact",
+      [Locale.es]: "Contacto",
+    },
+  },
+};
+
+export const ResourceItems = [MainMenu["questionnaire"], MainMenu["partner"]];
 
 export const OtherItems = [
   MainMenu["about"],
