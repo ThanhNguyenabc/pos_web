@@ -15,7 +15,7 @@ export const CreditCardVolume = () => {
     <SelectedList
       selectIndex={data?.creditVolumeId}
       data={CreditCardVolumeData}
-      itemBuilder={(item, index) => (
+      renderItem={(item, index) => (
         <div className="p-4 border-neutral-300 ">
           <p className="text-center txt-md-bold md:text-xl">{item}</p>
         </div>
