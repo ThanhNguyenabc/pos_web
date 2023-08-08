@@ -19,7 +19,12 @@ const BreadmeDiscountQuestion = () => {
       data={YesNoQuestion}
       selectBorderColor="border-success"
       renderItem={(item, index) => (
-        <p className="text-center txt-md-bold p-4 md:text-xl">{t(item)}</p>
+        <p
+          key={`breame-discount-item-${index}`}
+          className="text-center txt-md-bold p-4 md:text-xl"
+        >
+          {t(item)}
+        </p>
       )}
       onItemSelected={(selectIndex) => {
         value.setQuestionData({

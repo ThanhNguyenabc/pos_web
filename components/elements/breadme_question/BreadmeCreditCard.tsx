@@ -25,7 +25,10 @@ const BreadmeCreditCard = () => {
       data={BreadmeCreditCardVolumeData}
       selectBorderColor="border-success"
       renderItem={(item, index) => (
-        <p className="text-center txt-md-bold md:text-xl p-4">
+        <p
+          key={`breadme-credit-item-${index}`}
+          className="text-center txt-md-bold md:text-xl p-4"
+        >
           {item} {t("per_month")}
         </p>
       )}
