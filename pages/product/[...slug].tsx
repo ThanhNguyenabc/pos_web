@@ -1,6 +1,7 @@
 import { getPOSDetail } from "api_client/axios_client";
 import HeadTag from "components/common/HeadTag";
 import { ProductDetail } from "components/elements/pos_detail/ProductDetail";
+import SimilarPOS from "components/elements/pos_detail/SimilarPOS";
 import useTrans from "hooks/useTrans";
 import { Product } from "models/product.model";
 import { GetServerSidePropsContext } from "next";
@@ -49,6 +50,7 @@ const DetailPage = ({ product }: { product: Product }) => {
     <>
       <HeadTag customTag={meta} />
       <ProductDetail productData={product} />
+      <SimilarPOS />
     </>
   );
 };
