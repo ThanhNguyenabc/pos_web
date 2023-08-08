@@ -1,7 +1,7 @@
 import React from "react";
 import HeroSection from "components/common/HeroSection";
 import Loading from "components/common/loading/Loading";
-import useSWRImmutable from "swr";
+import useSWRImmutable from "swr/immutable";
 import { fetchTestimonials } from "api_client/axios_client";
 import ReviewerSectionV2 from "./ReviewerSection";
 import { Locale } from "models/app_configs";
