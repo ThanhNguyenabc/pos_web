@@ -8,7 +8,7 @@ import Box from "components/common/Box";
 import BusinessCategorySection from "components/elements/home/BusinessCategorySection";
 import TestimonialSectionV2 from "components/elements/home/TestimonialSection";
 import HeadTag from "components/common/HeadTag";
-import { GetServerSidePropsContext } from "next";
+import { GetStaticPropsContext } from "next";
 import { getListPOS } from "api_client/axios_client";
 import { Product } from "models/product.model";
 import { Locale } from "models/app_configs";
@@ -16,6 +16,8 @@ import HTMLReactParser from "html-react-parser";
 import { getCurrentMonth } from "utils/date_utils";
 import useSideBar from "stores/useSideBar";
 import { RightSideBarType } from "components/common/RightSideBar";
+import { cacheTime } from "utils/constants";
+import { fetchProductList } from "./api/products";
 
 const Hp2Translation = {
   heading: {
@@ -43,12 +45,12 @@ const Hp2Translation = {
   },
 };
 
-export const getServerSideProps = async (
-  context: GetServerSidePropsContext
-) => {
-  const products = await getListPOS({ type: "all", limit: 4 });
+export const getStaticProps = async () => {
+  const products = await fetchProductList("all", 4);
+
   return {
-    props: { products },
+    props: { products: JSON.parse(JSON.stringify(products)) },
+    revalidate: cacheTime,
   };
 };
 

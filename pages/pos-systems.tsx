@@ -3,7 +3,7 @@ import HeadTag from "components/common/HeadTag";
 import { FooterCTA } from "components/common/FooterCTA";
 import POSSystems from "components/elements/POSSytems";
 
-export default function () {
+export default function index() {
   return (
     <>
       <HeadTag screen="posSystem" />
