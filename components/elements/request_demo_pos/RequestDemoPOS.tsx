@@ -74,8 +74,8 @@ const RequestDemoPOS = () => {
         onClose={closeSidebar}
         subTitle={
           <p className="txt-sm max-w-xl text-neutral-700 md:text-center md:ml-3">
-            We'll connect you with the POS provider to setup a demo and get the
-            best deal possible. Go through BestPOS to get the best deal
+            We&apos;ll connect you with the POS provider to setup a demo and get
+            the best deal possible. Go through BestPOS to get the best deal
             possible.{" "}
             <span className="text-secondary font-semibold">
               Up to 100% off!
