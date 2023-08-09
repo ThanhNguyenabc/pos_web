@@ -21,6 +21,7 @@ import { RightSideBarType } from "./RightSideBar";
 const phoneNumber = "1-888-410-2188";
 
 const NavItems = [
+  MainMenu["home"],
   MainMenu["questionnaire"],
   MainMenu["posreview"],
   MainMenu["blog"],
@@ -33,16 +34,35 @@ const NavPages = ({ locale }: { locale: Locale }) => {
   const openSideBar = useSideBar((state) => state.openSideBar);
 
   const handleClick = (index: Number) => () => {
-    if (index == 0) {
+    if (index == 1) {
       openSideBar(RightSideBarType.Questionnaire);
     }
     index != curIndex && setIndex(index);
   };
 
   return (
-    <ul className="px-4 menu-horizontal hidden lg:flex flex-1">
+    <ul className="px-4 menu-horizontal hidden lg:flex flex-1 items-center">
       {NavItems.map((item, index) => {
         if (index == 0) {
+          return (
+            <li className=" mr-4" key={`${index}-navbar-item`}>
+              <Link
+                href={item.link}
+                aria-label="logo"
+                onClick={handleClick(index)}
+              >
+                <IcMobileLogo className="block text-[40px] xl:hidden" />
+
+                <Image
+                  src={DesktopLogo}
+                  width={180}
+                  height={44}
+                  className="hidden xl:block max-w-[180px] lg:w[180px] h-auto"
+                  alt="pos-logo"
+                />
+              </Link>
+            </li>
+          );
         }
         return (
           <li className="mr-4 p-2 txt-md-bold" key={`${index}-navbar-item`}>
@@ -91,17 +111,6 @@ const Navbar = () => {
         >
           <IcMenu className="text-2xl" />
         </button>
-        <Link href={MainMenu["home"].link} aria-label="logo">
-          <IcMobileLogo className="text-[40px] xl:hidden" />
-
-          <Image
-            src={DesktopLogo}
-            width={180}
-            height={44}
-            className="hidden xl:block max-w-[180px] lg:w[180px] h-auto"
-            alt="pos-logo"
-          />
-        </Link>
       </div>
 
       <NavPages locale={locale} />
