@@ -5,6 +5,7 @@ import SimilarPOS from "components/elements/pos_detail/SimilarPOS";
 import useTrans from "hooks/useTrans";
 import { Product } from "models/product.model";
 import { GetServerSidePropsContext } from "next";
+import { getProductDetail } from "pages/api/product_detail";
 import React from "react";
 import useAppStore from "stores/app_store";
 import AppRoutes from "utils/routes";
@@ -16,11 +17,11 @@ export const getServerSideProps = async (
   const productID = params?.[0];
 
   if (productID) {
-    const data = await getPOSDetail(productID as string);
+    const data = await getProductDetail(productID);
 
     return {
       props: {
-        product: data,
+        product: JSON.parse(JSON.stringify(data)),
       },
     };
   }
