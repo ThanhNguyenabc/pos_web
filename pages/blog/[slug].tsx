@@ -8,6 +8,7 @@ import HTMLReactParser, {
   domToReact,
   Element,
   HTMLReactParserOptions,
+  attributesToProps,
 } from "html-react-parser";
 import Writer from "components/elements/blog/Writer";
 import dayjs from "dayjs";
@@ -26,18 +27,40 @@ const BlogDetailTrans = {
 const options: HTMLReactParserOptions = {
   replace: (domNode: DOMNode) => {
     if (domNode instanceof Element && domNode.attributes) {
-      if (
-        domNode.name == "h5" ||
-        domNode.name == "h4" ||
-        domNode.name == "h3" ||
-        domNode.name == "h2" ||
-        domNode.name == "h1"
-      )
-        return (
-          <h5 className="txt-heading-xsmal mt-10 mb-4 md:txt-heading-small md:mt-12 md:mb-6 lg:mt-16">
-            {domToReact(domNode.children, options)}
-          </h5>
-        );
+      switch (domNode.name) {
+        case "h5":
+        case "h4":
+        case "h3":
+        case "h2":
+        case "h1":
+          return (
+            <h5 className="txt-heading-xsmal mt-10 mb-4 md:txt-heading-small md:mt-12 md:mb-6 lg:mt-16">
+              {domToReact(domNode.children, options)}
+            </h5>
+          );
+        case "ol":
+          return (
+            <ul className="flex  flex-col list-decimal ml-10 gap-2">
+              {domToReact(domNode.children, options)}
+            </ul>
+          );
+        case "ul":
+          return (
+            <ul className="flex flex-col list-disc ml-10 gap-2">
+              {domToReact(domNode.children, options)}
+            </ul>
+          );
+
+        case "a":
+          const props = attributesToProps(domNode.attribs);
+          return (
+            <a {...props} className=" underline">
+              {domToReact(domNode.children, options)}
+            </a>
+          );
+        default:
+          break;
+      }
     }
   },
 };
@@ -56,12 +79,12 @@ const BlogDetail = () => {
       <div className="flex flex-col container-content">
         <Box className="max-w-[768px] mx-auto">
           <div className="flex flex-row items-center txt-md-bold text-neutral-600 gap-4 self-center md:text-xl">
-            <p>{author}</p>•<p>{date}</p>
+            <span>{author}</span>•<span>{date}</span>
           </div>
           <h2 className="txt-heading-medium font-extrabold text-center my-4 md:txt-heading-xlarge md:my-6">
             {data?.title.rendered}
           </h2>
-          <div className="flex flex-col text-neutral-700 txt-md text-justify md:text-xl">
+          <div className="flex flex-col txt-md gap-5">
             {HTMLReactParser(data?.content?.rendered || "", options)}
           </div>
         </Box>

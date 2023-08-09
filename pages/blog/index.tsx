@@ -9,6 +9,7 @@ import Subcriber from "components/elements/blog/Subcriber";
 import { Locale } from "models/app_configs";
 import useTrans from "hooks/useTrans";
 import HeadTag from "components/common/HeadTag";
+import { Blog } from "models/blog";
 
 const BlogPageTrans = {
   heading: {
@@ -23,9 +24,19 @@ const BlogPageTrans = {
   },
 };
 
-const BlogPage = () => {
+export const getStaticProps = async () => {
+  const posts = await getBlogPosts();
+  return {
+    props: {
+      posts,
+    },
+    revalidate: 60,
+  };
+};
+
+const BlogPage = ({ posts }: { posts: Array<Blog> }) => {
   const { locale } = useTrans();
-  const { data, isLoading } = useSwr("blog-posts", getBlogPosts);
+  // const { data, isLoading } = useSwr("blog-posts", getBlogPosts);
   return (
     <>
       <HeadTag screen="blog" />
@@ -39,9 +50,9 @@ const BlogPage = () => {
               {BlogPageTrans.desc[locale]}
             </p>
           </div>
-          {isLoading && <Loading />}
+          {/* {isLoading && <Loading />} */}
           <div className="flex flex-col gap-8 md:gap-12">
-            {data?.map((item) => {
+            {posts?.map((item) => {
               return (
                 <BlogCard
                   id={item.id}
