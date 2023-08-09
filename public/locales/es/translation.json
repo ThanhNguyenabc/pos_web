@@ -139,6 +139,16 @@
     "out_standing": "Excelente",
     "read_review": "Leer Reseña",
     "free_pos": "Solicite un sistema # gratis",
-    "last_updated" : "última vez actualizado:"
-
+    "last_updated": "última vez actualizado:",
+    "home_page": {
+        "heading": "<span className='text-secondary'>Compare </span> y <span className='text-secondary'> ahorre </span> en un POS hoy",
+        "sub_title": "Entendemos la abrumadora tarea de revisar numerosos sistemas de Punto de Venta disponibles hoy en día. Por eso, estamos en una misión para simplificar las cosas para ti. Nuestro objetivo es ayudarte a seleccionar la solución perfecta de POS que se ajuste a tu negocio como un guante. Echa un vistazo a nuestros comentarios.",
+        "desc": "Responde algunas preguntas para encontrar el POS que se adapte mejor a tu negocio."
+    },
+    "business_category_section": {
+        "heading": "Encuentrael punto de venta adecuado para tu negocio"
+    },
+    "testimonials": {
+        "heading": "Perhaps some captcha settings"
+    }
 }
