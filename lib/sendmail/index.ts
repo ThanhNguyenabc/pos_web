@@ -6,6 +6,10 @@ import Mail from "nodemailer/lib/mailer";
 let mail_receivers: Array<string> = [];
 
 export const sendEmail = async (option: Mail.Options) => {
+  if (process.env.ENV !== "production") {
+    return false;
+  }
+
   const senderMail = `${process.env.SENDER_MAIL_ACCOUNT}`;
 
   try {
@@ -28,7 +32,7 @@ export const sendEmail = async (option: Mail.Options) => {
       },
     });
 
-    const result = await transporter.sendMail({
+    await transporter.sendMail({
       from: senderMail,
       to: mail_receivers,
       ...option,
