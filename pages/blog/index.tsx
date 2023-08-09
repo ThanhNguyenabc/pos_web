@@ -2,14 +2,13 @@ import { getBlogPosts } from "api_client/axios_client";
 import Box from "components/common/Box";
 import BlogCard from "components/elements/blog/BlogCard";
 import React from "react";
-import useSwr from "swr";
 import dayjs from "dayjs";
-import Loading from "components/common/loading/Loading";
 import Subcriber from "components/elements/blog/Subcriber";
 import { Locale } from "models/app_configs";
 import useTrans from "hooks/useTrans";
 import HeadTag from "components/common/HeadTag";
 import { Blog } from "models/blog";
+import { cacheTime } from "utils/constants";
 
 const BlogPageTrans = {
   heading: {
@@ -30,7 +29,7 @@ export const getStaticProps = async () => {
     props: {
       posts,
     },
-    revalidate: 60,
+    revalidate: cacheTime,
   };
 };
 
