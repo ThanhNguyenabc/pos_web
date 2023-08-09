@@ -25,8 +25,6 @@ const HeadTag = ({ screen, customTag }: HeadTagProps) => {
   const description =
     tag?.description?.[locale] ||
     "At BestPOS, let us help you find the best point-of-sale system for you and your business. Speak to one of our representatives and get started today!";
-  const url =
-    tag?.url?.[locale] || `${process.env.NEXT_PUBLIC_API_HOST}${asPath}`;
 
   return (
     <Head>
@@ -34,7 +32,6 @@ const HeadTag = ({ screen, customTag }: HeadTagProps) => {
       <meta name="description" content={description} />
       <meta property={`og:title`} content={title} />
       <meta property={`og:description`} content={description} />
-      <meta property={`og:url`} content={url} />
 
       <meta name="keywords" content={appConfig?.metaTags?.keywords[locale]} />
       <meta name="robots" content="INDEX,FOLLOW" />

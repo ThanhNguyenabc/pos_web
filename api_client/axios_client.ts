@@ -8,7 +8,8 @@ import { Specification } from "models/specification";
 import { SuggestPOSParams } from "models/suggest_pos_request_param";
 import { Testimonial } from "models/testimonial.model";
 
-const API_URL = `${process.env.NEXT_PUBLIC_API_HOST}/api`;
+const API_URL = `/api`;
+
 interface Request {
   baseURL?: string;
   url: string;
