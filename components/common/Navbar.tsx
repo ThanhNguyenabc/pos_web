@@ -55,8 +55,8 @@ const NavPages = ({ locale }: { locale: Locale }) => {
 
                 <Image
                   src={DesktopLogo}
-                  width={180}
-                  height={44}
+                  width={271}
+                  height={60}
                   className="hidden xl:block max-w-[180px] lg:w[180px] h-auto"
                   alt="pos-logo"
                 />

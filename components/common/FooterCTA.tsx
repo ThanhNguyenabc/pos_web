@@ -1,5 +1,4 @@
-import React, { ReactElement } from "react";
-import HeroSection from "./HeroSection";
+import React from "react";
 import Box from "./Box";
 import ContactForm from "./ContactForm";
 import { submitContact } from "api_client/axios_client";

@@ -31,6 +31,7 @@ const Factors = [
     content: "final_decision_desc",
   },
 ];
+
 const HelpingSection = () => {
   const { t } = useTrans();
   return (
