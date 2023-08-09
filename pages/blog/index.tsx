@@ -36,7 +36,6 @@ export const getStaticProps = async () => {
 
 const BlogPage = ({ posts }: { posts: Array<Blog> }) => {
   const { locale } = useTrans();
-  // const { data, isLoading } = useSwr("blog-posts", getBlogPosts);
   return (
     <>
       <HeadTag screen="blog" />

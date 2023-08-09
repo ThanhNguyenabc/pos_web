@@ -1,7 +1,29 @@
-import HTMLReactParser from "html-react-parser";
+import HTMLReactParser, {
+  DOMNode,
+  HTMLReactParserOptions,
+  domToReact,
+  Element,
+  attributesToProps,
+} from "html-react-parser";
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+
+const options: HTMLReactParserOptions = {
+  replace: (domNode: DOMNode) => {
+    if (domNode instanceof Element && domNode.attributes) {
+      switch (domNode.name) {
+        case "p":
+          const props = attributesToProps(domNode.attribs);
+          return (
+            <p {...props} className="txt-sm">
+              {domToReact(domNode.children, options)}
+            </p>
+          );
+      }
+    }
+  },
+};
 
 interface BlogCardProps {
   slug: string;
@@ -34,15 +56,16 @@ const BlogCard = ({
             <Image
               src={urlImage}
               alt="blog-image"
+              priority
               height={200}
               width={200}
-              className="md:w-[300px]"
+              className="md:w-[300px] object-cover"
             />
           </div>
         )}
         <div className="flex flex-1 flex-col gap-2">
           <p className="txt-large-bold">{title}</p>
-          <p className="txt-sm">{HTMLReactParser(subTitle)}</p>
+          {HTMLReactParser(subTitle)}
           <div className="flex flex-col mt-2">
             <p className="txt-md-bold">{author}</p>
             <p className="txt-sm">{date}</p>
