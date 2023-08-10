@@ -22,6 +22,10 @@ const POSCardMobile = ({ data, priority, classname }: POSCardProps) => {
   const overallRating = data.expert_opinion.overall;
   const { id, slug, name } = data;
   const { t, locale } = useTrans();
+  const detailPage = `${AppRoutes.POSDetailPage}/${id}/${slug}`;
+
+  const openDemoDialog = () => openSideBar(RightSideBarType.RequestDemo);
+
   return (
     <div
       className={twMerge(
@@ -41,7 +45,7 @@ const POSCardMobile = ({ data, priority, classname }: POSCardProps) => {
               <p className="text-[10px] font-semibold mt-1">MOST RECOMMENDED</p>
             </div>
           )}
-          <div className="block w-[140px] pt-1">
+          <Link className="block w-[140px] pt-1" href={detailPage}>
             <Image
               src={data.logo || DefaultImg}
               alt="logo-pos"
@@ -51,7 +55,7 @@ const POSCardMobile = ({ data, priority, classname }: POSCardProps) => {
               sizes="20vw"
               className="object-contain pl-3"
             />
-          </div>
+          </Link>
 
           <div className="flex flex-rơw gap-2 pl-3 items-center py-2">
             <CustomCircularProgress
@@ -66,7 +70,7 @@ const POSCardMobile = ({ data, priority, classname }: POSCardProps) => {
                 {(priority && t("out_standing")) || t("good")}
               </p>
               <Link
-                href={`${AppRoutes.POSDetailPage}/${id}/${slug}`}
+                href={detailPage}
                 className="inline-flex text-secondary text-xs items-center gap-1"
               >
                 {t("read_review")}
@@ -77,17 +81,17 @@ const POSCardMobile = ({ data, priority, classname }: POSCardProps) => {
         </div>
 
         <div className="flex flex-1 flex-col gap-5 px-2 items-center justify-end py-3 border-l border-neutral-300">
-          <Link
-            href={AppRoutes.BreadmeQuestionPage}
-            className="text-sm font-semibold leading-5 text-neutral-700 underline"
+          <div
+            onClick={openDemoDialog}
+            className="text-sm font-semibold leading-5 text-neutral-700 underline cursor-pointer"
           >
             {t("free_pos").replace("#", name)}
-          </Link>
+          </div>
           <Button
             title={t("get_started")}
             classname="rounded-[30px] w-[160px]"
             style={{ background: ColorUtils.success }}
-            onClick={() => openSideBar(RightSideBarType.RequestDemo)}
+            onClick={openDemoDialog}
           />
         </div>
       </div>
