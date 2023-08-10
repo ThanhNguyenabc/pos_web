@@ -29,6 +29,8 @@ const POSCardDesktop = ({
   const { id, slug, name } = data;
   const url = `${AppRoutes.POSDetailPage}/${id}/${slug}`;
 
+  const openDemoDialog = () => openSideBar(RightSideBarType.RequestDemo);
+  
   return (
     <div
       className={twMerge(
@@ -47,7 +49,7 @@ const POSCardDesktop = ({
               <p className=" text-xs font-semibold mt-1">MOST RECOMMENDED</p>
             </div>
           )}
-          <div className="block w-[180px] ml-4 my-auto">
+          <Link className="block w-[180px] ml-4 my-auto" href={url}>
             <Image
               src={data.logo || DefaultImg}
               alt="logo-pos"
@@ -57,7 +59,10 @@ const POSCardDesktop = ({
               quality={95}
               className="aspect-[2/1] object-contain"
             />
-          </div>
+          </Link>
+          {/* <div className="block w-[180px] ml-4 my-auto" onClick={}>
+          
+          </div> */}
         </div>
 
         <div className="flex flex-1 flex-col p-4 ml-2">
@@ -97,17 +102,17 @@ const POSCardDesktop = ({
           </Link>
         </div>
         <div className="flex flex-col gap-8 py-8 px-4 items-center self-center">
-          <Link
-            href={AppRoutes.BreadmeQuestionPage}
-            className="text-base font-semibold underline"
+          <div
+            onClick={openDemoDialog}
+            className="text-base font-semibold underline cursor-pointer"
           >
             {t("free_pos").replace("#", name)}
-          </Link>
+          </div>
           <Button
             title={t("get_started")}
             classname="rounded-[30px] w-[210px]"
             style={{ background: ColorUtils.success }}
-            onClick={() => openSideBar(RightSideBarType.RequestDemo)}
+            onClick={openDemoDialog}
           />
         </div>
       </div>
