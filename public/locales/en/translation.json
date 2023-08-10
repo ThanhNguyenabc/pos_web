@@ -141,9 +141,8 @@
     "free_pos": "Get a free # POS",
     "last_updated": "Last updated:",
     "home_page": {
-        "heading": "<span className='text-secondary'>Compare</span> & <span className='text-secondary'> Save</span> on a POS Today",
-        "sub_title": "We understand the overwhelming task of sifting through numerous Point of Sale systems available today. That's why we're on a mission to simplify things for you. Our goal is to help you select the perfect POS solution that suits your business like a glove. Check out our feedback.",
-        "desc": "Answer a few questions to find the POS that fits best for your business."
+        "heading": "Recommended Point of Sale System",
+        "desc": "Our team reviews the best POS systems in the market."
     },
     "business_category_section": {
         "heading": "Find the right point-of-sale for your business"
