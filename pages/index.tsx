@@ -46,11 +46,9 @@ const HomePage = ({ products }: { products: Array<Product> }) => {
           </h1>
 
           <div className="flex flex-col mt-2 gap-4 lg:mt-4">
-            <p className="txt-sm text-neutral-600 lg:text-base lg:text-neutral-700">
-              {t("home_page.desc")}
-            </p>
+            <p className="text-neutral-600">{t("home_page.desc")}</p>
             <Button
-              classname="md:h-16 w-full sm:w-[266px]"
+              classname="md:h-16 w-fit sm:w-[266px]"
               title={t("get_started")}
               onClick={findPOS}
             />
@@ -60,7 +58,7 @@ const HomePage = ({ products }: { products: Array<Product> }) => {
         <div className="hidden max-w-[580px] lg:inline-block">
           <Image
             alt="hp-2-image"
-            src = "https://res.cloudinary.com/dgrym3yz3/image/upload/v1691658186/assets/common/pos_cover_i2ynqk.png"
+            src="https://res.cloudinary.com/dgrym3yz3/image/upload/v1691658186/assets/common/pos_cover_i2ynqk.png"
             width={1170}
             height={640}
             priority
