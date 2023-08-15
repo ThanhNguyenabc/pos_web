@@ -47,7 +47,7 @@ const QuestionData = [
 const FrequentlyQuestion = ({ id }: { id: string }) => {
   const { locale } = useTrans();
   return (
-    <div id={id} className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+    <div id={id} className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-8">
       <p className="col-span-1 txt-heading-xsmal md:txt-heading-small">
         {FrequentlyQuestionTrans.title[locale]}
       </p>

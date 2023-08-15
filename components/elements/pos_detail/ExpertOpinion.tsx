@@ -90,7 +90,7 @@ const ExpertOpinion = ({ data, id }: ExpertOpinionProps) => {
   ];
 
   return (
-    <div id={id} className="grid grid-cols-1 gap-6 lg:grid-cols-3 md:gap-8">
+    <div id={id} className="grid grid-cols-1 gap-4 lg:grid-cols-3 md:gap-8">
       <p className="col-span-1 txt-heading-xsmal md:txt-heading-small">
         {ExpertOpinionTrans.heading[locale]}
       </p>

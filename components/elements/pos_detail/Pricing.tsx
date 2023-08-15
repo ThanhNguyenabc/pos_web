@@ -4,7 +4,7 @@ import { Locale } from "models/app_configs";
 import React from "react";
 import { moneyFormatter } from "utils/NumberUtil";
 import Badge from "components/common/Badge";
-import ColorUtils from "utils/ColorUtils";
+import IcArrow from "assets/icons/ic_right_arrow.svg";
 
 const PricingTrans = {
   title: {
@@ -72,7 +72,7 @@ const Pricing = ({
 }: PricingProps) => {
   const { t, locale } = useTrans();
   return (
-    <div id={id} className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-3">
+    <div id={id} className="grid grid-cols-1 gap-4 md:gap-8 lg:grid-cols-3">
       <p className="txt-heading-xsmal col-span-1 md:txt-heading-small">
         {PricingTrans.title[locale]}
       </p>
@@ -105,15 +105,15 @@ const Pricing = ({
             />
           </div>
           <span className="txt-large-bold self-center">Or</span>
-          <div className="flex-1 flex relative items-center flex-col gap-4 p-6 bg-neutral-dark rounded-2xl text-white text-center">
-            <Badge classname="absolute -top-3  border-none bg-[#CDE762] text-neutral-900 md:py-1">
-              ExtraBread’s Offer
+          <div className="flex-1 flex relative items-center flex-col gap-4 p-6 justify-between bg-neutral-dark rounded-2xl text-white text-center md:p-8">
+            <Badge classname="absolute -top-3  border-none bg-accent text-neutral-900 md:py-1">
+              BestPOS Offer
             </Badge>
-            <div className="mt-1">
+            <div>
               <h3 className="txt-large-bold md:text-2xl">
                 Save Big on POS Costs
               </h3>
-              <p className="txt-sm mt-2 md:text-base">
+              <p className="txt-sm md:text-base">
                 Start using {productName} for your business today, with pricing
                 options starting at
               </p>
@@ -128,7 +128,7 @@ const Pricing = ({
               title={t("request_a_demo")}
               classname="w-full"
               onClick={onRequestDemo}
-              style={{ backgroundColor: ColorUtils.success }}
+              rightIcon={<IcArrow />}
             />
           </div>
         </div>
