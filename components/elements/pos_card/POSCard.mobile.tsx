@@ -6,7 +6,6 @@ import IcChervonRight from "assets/icons/ic_chervon_right.svg";
 import { DefaultImg } from "assets/AssetUtil";
 import { getSystemIcon } from "utils/StringUtil";
 import useSideBar from "stores/useSideBar";
-import AppRoutes from "utils/routes";
 import CustomCircularProgress from "components/common/CustomCircularProgress";
 import ColorUtils from "utils/ColorUtils";
 import Link from "next/link";
@@ -16,12 +15,13 @@ import { RightSideBarType } from "components/common/RightSideBar";
 import { twMerge } from "tailwind-merge";
 import useTrans from "hooks/useTrans";
 import { POSCardProps } from "./POSCardTypes";
+import { AppRoutes } from "utils/routes";
 
 const POSCardMobile = ({ data, priority, classname }: POSCardProps) => {
   const openSideBar = useSideBar((state) => state.openSideBar);
   const overallRating = data.expert_opinion.overall;
   const { id, slug, name } = data;
-  const { t, locale } = useTrans();
+  const { t } = useTrans();
   const detailPage = `${AppRoutes.POSDetailPage}/${id}/${slug}`;
 
   const openDemoDialog = () => openSideBar(RightSideBarType.RequestDemo);
@@ -35,7 +35,7 @@ const POSCardMobile = ({ data, priority, classname }: POSCardProps) => {
       )}
     >
       <div className="flex flex-row border-b border-b-neutral-300">
-        <div className="  flex flex-col justify-center pr-4">
+        <Link className="  flex flex-col justify-center pr-4" href={detailPage}>
           {priority === "first" && (
             <div
               className="flex flex-row bg-primary text-white px-1 justify-center 
@@ -45,7 +45,7 @@ const POSCardMobile = ({ data, priority, classname }: POSCardProps) => {
               <p className="text-[10px] font-semibold mt-1">MOST RECOMMENDED</p>
             </div>
           )}
-          <Link className="block w-[140px] pt-1" href={detailPage}>
+          <div className="block w-[140px] pt-1">
             <Image
               src={data.logo || DefaultImg}
               alt="logo-pos"
@@ -55,7 +55,7 @@ const POSCardMobile = ({ data, priority, classname }: POSCardProps) => {
               sizes="20vw"
               className="object-contain pl-3"
             />
-          </Link>
+          </div>
 
           <div className="flex flex-rơw gap-2 pl-3 items-center py-2">
             <CustomCircularProgress
@@ -69,27 +69,24 @@ const POSCardMobile = ({ data, priority, classname }: POSCardProps) => {
               <p className="txt-sm text-neutral-600">
                 {(priority && t("out_standing")) || t("good")}
               </p>
-              <Link
-                href={detailPage}
-                className="inline-flex text-secondary text-xs items-center gap-1"
-              >
+              <div className="inline-flex text-secondary text-xs items-center gap-1">
                 {t("read_review")}
                 <IcChervonRight className="text-[8px]" />
-              </Link>
+              </div>
             </div>
           </div>
-        </div>
+        </Link>
 
         <div className="flex flex-1 flex-col gap-5 px-2 items-center justify-end py-3 border-l border-neutral-300">
           <div
             onClick={openDemoDialog}
-            className="text-sm font-semibold leading-5 text-neutral-700 underline cursor-pointer"
+            className="text-sm font-semibold leading-5 text-secondary cursor-pointer"
           >
             {t("free_pos").replace("#", name)}
           </div>
           <Button
-            title={t("get_started")}
-            classname="rounded-[30px] w-[160px]"
+            title={t("request_a_demo")}
+            classname="rounded-[30px] w-[160px] text-sm"
             style={{ background: ColorUtils.success }}
             onClick={openDemoDialog}
           />

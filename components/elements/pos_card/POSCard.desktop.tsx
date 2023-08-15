@@ -10,12 +10,12 @@ import useTrans from "hooks/useTrans";
 import { POSCardProps } from "./POSCardTypes";
 import CustomCircularProgress from "components/common/CustomCircularProgress";
 import Link from "next/link";
-import AppRoutes from "utils/routes";
 import { Button } from "components/common/Button";
 import ColorUtils from "utils/ColorUtils";
 import POSCardBusinessType from "./POSCardBusinessType";
 import { RightSideBarType } from "components/common/RightSideBar";
 import { twMerge } from "tailwind-merge";
+import { AppRoutes } from "utils/routes";
 
 const POSCardDesktop = ({
   data,
@@ -30,7 +30,7 @@ const POSCardDesktop = ({
   const url = `${AppRoutes.POSDetailPage}/${id}/${slug}`;
 
   const openDemoDialog = () => openSideBar(RightSideBarType.RequestDemo);
-  
+
   return (
     <div
       className={twMerge(
@@ -60,9 +60,6 @@ const POSCardDesktop = ({
               className="aspect-[2/1] object-contain"
             />
           </Link>
-          {/* <div className="block w-[180px] ml-4 my-auto" onClick={}>
-          
-          </div> */}
         </div>
 
         <div className="flex flex-1 flex-col p-4 ml-2">
@@ -75,7 +72,7 @@ const POSCardDesktop = ({
                   className="flex flex-row items-center gap-2 mt-2"
                   key={`${index}-item-pros`}
                 >
-                  <IcCheckbox className="text-success text-sm" />
+                  <IcCheckbox className="text-secondary text-sm" />
                   <p className="txt-sm flex-1 text-left text-neutral-700">
                     {item}
                   </p>
@@ -84,7 +81,10 @@ const POSCardDesktop = ({
             })}
           </ul>
         </div>
-        <div className="flex flex-col border-l border-neutral-300 border-r gap-1 py-8 px-4 items-center justify-center">
+        <Link
+          className="flex flex-col border-l border-neutral-300 border-r gap-1 py-8 px-4 items-center justify-center"
+          href={url}
+        >
           <CustomCircularProgress
             id="card-desktop-progress"
             className="w-[64px] h-fit"
@@ -92,25 +92,25 @@ const POSCardDesktop = ({
           >
             <p className="txt-large-bold">{overallRating}</p>
           </CustomCircularProgress>
-          <p> {(priority && t("out_standing")) || t("good")}</p>
-          <Link
-            href={url}
-            className="inline-flex text-secondary txt-sm items-center gap-1"
-          >
+          <p className="text-sm text-neutral-600">
+            {" "}
+            {(priority && t("out_standing")) || t("good")}
+          </p>
+          <div className="inline-flex text-secondary txt-sm items-center gap-1">
             {t("read_review")}
             <IcChervonRight className=" text-[9px]" />
-          </Link>
-        </div>
+          </div>
+        </Link>
         <div className="flex flex-col gap-8 py-8 px-4 items-center self-center">
           <div
             onClick={openDemoDialog}
-            className="text-base font-semibold underline cursor-pointer"
+            className="text-base font-semibold text-secondary cursor-pointer"
           >
             {t("free_pos").replace("#", name)}
           </div>
           <Button
-            title={t("get_started")}
-            classname="rounded-[30px] w-[210px]"
+            title={t("request_a_demo")}
+            classname="rounded-[30px] w-[210px] md:text-base lg:text-base"
             style={{ background: ColorUtils.success }}
             onClick={openDemoDialog}
           />

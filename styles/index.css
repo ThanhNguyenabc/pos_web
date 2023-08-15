@@ -6,6 +6,7 @@
   body {
     color: #101828;
     font-family: "Inter", sans-serif;
+    font-size: medium;
   }
   section {
     content-visibility: auto;

@@ -30,7 +30,7 @@ const POSCardBusinessType = ({ productId }: { productId: string }) => {
               className="flex ml-3 gap-1 sm:ml-6 items-center"
             >
               <Icon />
-              <p className="text-xs text-neutral-700 sm:text-sm">{item}</p>
+              <p className="text-xs text-neutral-600 sm:text-sm">{item}</p>
             </div>
           );
         })}
