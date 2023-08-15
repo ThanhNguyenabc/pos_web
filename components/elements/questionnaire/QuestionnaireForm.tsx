@@ -1,17 +1,17 @@
 import Box from "components/common/Box";
 import IconButton from "components/common/IconButton";
 import React from "react";
-import { CategoryList, YesNoQuestion } from "utils/StringUtil";
+import { YesNoQuestion } from "utils/StringUtil";
 import IcClose from "assets/icons/ic_close.svg";
 import { Button } from "components/common/Button";
 import useQuestionnaireStore from "stores/questionnaire_store";
 import { useRouter } from "next/router";
-import AppRoutes from "utils/routes";
 import BusinessQuestion from "./BusinessQuestion";
 import SaleSystemQuestion from "./SaleSystemQuestion";
 import StationQuestion, { StationData } from "./StationQuestion";
 import HandHeldQuestion, { HandHeldData } from "./HandheldQuestion";
 import useSideBar from "stores/useSideBar";
+import { AppRoutes, CategoryList } from "utils/routes";
 
 const QuestionnaireForm = () => {
   const router = useRouter();
@@ -40,6 +40,7 @@ const QuestionnaireForm = () => {
       },
       AppRoutes.SuggestPOSPage
     );
+    closeSideBar();
   };
 
   return (

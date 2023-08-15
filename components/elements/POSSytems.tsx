@@ -1,8 +1,6 @@
 import { useRouter } from "next/router";
-import { CategoryList } from "utils/StringUtil";
 import React from "react";
 import { CategoryType } from "models/category_type";
-import AppRoutes from "utils/routes";
 import ProductList from "./ProductList";
 import useTrans from "hooks/useTrans";
 import HTMLReactParser from "html-react-parser";
@@ -10,6 +8,7 @@ import IcStar from "assets/icons/ic_star.svg";
 import Categories from "components/common/Categories";
 import { Locale } from "models/app_configs";
 import { getCurrentMonth } from "utils/date_utils";
+import { AppRoutes, CategoryList } from "utils/routes";
 
 const ALLTABS = [
   {
@@ -38,7 +37,7 @@ const POSSystems = () => {
           {`${t("last_updated")} ${getCurrentMonth(locale)}`}
         </p>
 
-        <h1 className="txt-heading-medium mt-10 md:mt-0 md:txt-heading-xlarge  mx-auto">
+        <h1 className="txt-heading-medium mx-auto md:txt-heading-xlarge">
           {HTMLReactParser(t("category_title"))}
         </h1>
         <h2 className="txt-md md:text-xl text-neutral-700 mt-4 md:mt-0 mx-auto">

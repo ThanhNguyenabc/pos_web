@@ -2,14 +2,13 @@ import IcRightArrow from "assets/icons/ic_chervon_right.svg";
 import React from "react";
 import { Button } from "components/common/Button";
 import { useRouter } from "next/router";
-import AppRoutes from "utils/routes";
-import { CategoryList } from "utils/StringUtil";
 import HeroSection from "components/common/HeroSection";
 import useTrans from "hooks/useTrans";
 import { Priority } from "../pos_card/POSCardTypes";
 import POSCard from "../pos_card/POSCard";
 import { Product } from "models/product.model";
 import Categories from "components/common/Categories";
+import { AppRoutes, CategoryList } from "utils/routes";
 
 const BusinessCategorySection = ({
   products,
@@ -22,7 +21,7 @@ const BusinessCategorySection = ({
   return (
     <div className="bg-neutral-100">
       <HeroSection className="py-6 pr-0 md:pr-0 md:py-12 lg:py-10 items-center">
-        <h3 className="mr-4 txt-large-bold text-center md:txt-heading-xsmal">
+        <h3 className="mr-4 txt-md-bold text-center md:txt-heading-xsmal">
           {t("business_category_section.heading")}
         </h3>
 

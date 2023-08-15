@@ -16,9 +16,9 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 import useSideBar from "stores/useSideBar";
-import AppRoutes from "utils/routes";
 import HeadTag from "components/common/HeadTag";
 import { RightSideBarType } from "components/common/RightSideBar";
+import { AppRoutes } from "utils/routes";
 
 const ServiceData = [
   {

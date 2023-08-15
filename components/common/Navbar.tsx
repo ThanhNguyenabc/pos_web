@@ -16,7 +16,7 @@ import { Locale } from "models/app_configs";
 import { twMerge } from "tailwind-merge";
 import useSideBar from "stores/useSideBar";
 import { RightSideBarType } from "./RightSideBar";
-import { NavBarItems } from "utils/routes";
+import { AppRoutes, NavBarItems } from "utils/routes";
 
 const phoneNumber = "1-888-410-2188";
 
@@ -94,13 +94,19 @@ const Navbar = () => {
       >
         <MobileMenu onClose={toggleDrawer} />
       </SideBar>
-      <button
-        className="py-2 mr-5 lg:hidden"
-        onClick={toggleDrawer}
-        aria-label="menu-icon"
-      >
-        <IcMenu className="text-2xl" />
-      </button>
+      <div className="flex lg:hidden">
+        <button
+          className="py-2 mr-5 lg:hidden"
+          onClick={toggleDrawer}
+          aria-label="menu-icon"
+        >
+          <IcMenu className="text-2xl" />
+        </button>
+        <Link href={AppRoutes.HomePage}>
+          <IcMobileLogo className="block text-[40px]" />
+        </Link>
+      </div>
+
       <NavMenuList locale={locale} />
       <div className="flex justify-end items-center gap-4 ml-4">
         <Button

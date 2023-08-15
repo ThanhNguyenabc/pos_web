@@ -10,7 +10,6 @@ import BreadmeFeatureSection from "components/elements/breadme/FeatureForFee";
 import ReceiptOptionSection from "components/elements/breadme/ReceiptOptionSection";
 import CommonQuestion from "components/elements/breadme/CommonQuestion";
 import { useRouter } from "next/router";
-import AppRoutes from "utils/routes";
 import HeroSection from "components/common/HeroSection";
 import useSideBar from "stores/useSideBar";
 import useTrans from "hooks/useTrans";
@@ -18,6 +17,7 @@ import HTMLReactParser from "html-react-parser";
 import Box from "components/common/Box";
 import HeadTag from "components/common/HeadTag";
 import { RightSideBarType } from "components/common/RightSideBar";
+import { AppRoutes } from "utils/routes";
 
 const BreadmePage = () => {
   const router = useRouter();

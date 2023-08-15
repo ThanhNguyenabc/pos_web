@@ -1,10 +1,10 @@
 import SelectedList from "components/common/SelectedList";
 import React, { useEffect } from "react";
-import { CategoryList } from "utils/StringUtil";
 import useTrans from "hooks/useTrans";
 import useQuestionnaireStore, {
   updateQuestionnaireAns,
 } from "stores/questionnaire_store";
+import { CategoryList } from "utils/routes";
 
 const BusinessQuestion = () => {
   const businessId = useQuestionnaireStore((state) => state.businessId);

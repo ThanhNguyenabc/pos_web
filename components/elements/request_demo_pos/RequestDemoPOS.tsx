@@ -1,8 +1,6 @@
 import HeaderWithBack from "components/common/HeaderWithBack";
 import SelectedList from "components/common/SelectedList";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import { CategoryList } from "utils/StringUtil";
 import { submitForDemoPOS } from "api_client/axios_client";
 import { ContactInfo } from "models/contact_info";
 import ContactForm from "components/common/ContactForm";
@@ -10,6 +8,7 @@ import ThanksYouForm from "components/common/ThanksForm";
 import useSideBar from "stores/useSideBar";
 import useTrans from "hooks/useTrans";
 import { sendGoogleEvent } from "utils/tracking_utils";
+import { CategoryList } from "utils/routes";
 
 const RequestDemoPOS = () => {
   const [isSubmit, setSubmit] = useState(false);

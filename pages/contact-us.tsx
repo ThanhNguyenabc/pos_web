@@ -9,8 +9,8 @@ import { toast } from "react-hot-toast";
 import { SuccessMessage } from "utils/StringUtil";
 import useTrans from "hooks/useTrans";
 import { useRouter } from "next/router";
-import AppRoutes from "utils/routes";
 import HeadTag from "components/common/HeadTag";
+import { AppRoutes } from "utils/routes";
 
 const ContactItem = ({
   icon,

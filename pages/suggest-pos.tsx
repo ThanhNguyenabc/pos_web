@@ -6,7 +6,6 @@ import { Locale } from "models/app_configs";
 import { SuggestPOSParams } from "models/suggest_pos_request_param";
 import { GetServerSidePropsContext } from "next";
 import React, { useEffect } from "react";
-import AppRoutes from "utils/routes";
 import useSWRImmutable from "swr/immutable";
 import { getSuggestPOS } from "api_client/axios_client";
 import { sendGoogleEvent } from "utils/tracking_utils";
@@ -15,6 +14,7 @@ import POSCard from "components/elements/pos_card/POSCard";
 import { getCurrentMonth } from "utils/date_utils";
 import { Button } from "components/common/Button";
 import Link from "next/link";
+import { AppRoutes } from "utils/routes";
 
 const SuggestPOSTrans = {
   heading: {

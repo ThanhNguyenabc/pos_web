@@ -8,7 +8,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 import ColorUtils from "utils/ColorUtils";
-import AppRoutes from "utils/routes";
+import { AppRoutes } from "utils/routes";
 
 const ReceiptOptionSectionTranslate = {
   title: {

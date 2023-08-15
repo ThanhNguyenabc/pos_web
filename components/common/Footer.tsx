@@ -6,9 +6,9 @@ import useTrans from "hooks/useTrans";
 import Attribute from "models/attribute";
 import Link from "next/link";
 import React from "react";
-import { CategoryList, OtherItems, ResourceItems } from "utils/StringUtil";
 import HeroSection from "./HeroSection";
 import Image from "next/image";
+import { CategoryList, ResourceItems, OtherItems } from "utils/routes";
 
 interface FooterItemProps {
   title: string;

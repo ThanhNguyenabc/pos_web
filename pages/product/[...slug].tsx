@@ -8,7 +8,7 @@ import { GetServerSidePropsContext } from "next";
 import { getProductDetail } from "pages/api/product_detail";
 import React from "react";
 import useAppStore from "stores/app_store";
-import AppRoutes from "utils/routes";
+import { AppRoutes } from "utils/routes";
 
 export const getServerSideProps = async (
   context: GetServerSidePropsContext

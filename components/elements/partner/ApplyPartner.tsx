@@ -7,7 +7,7 @@ import { ContactInfo } from "models/contact_info";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import useSideBar from "stores/useSideBar";
-import AppRoutes from "utils/routes";
+import { AppRoutes } from "utils/routes";
 
 const ApplyPartner = () => {
   const [isSubmit, setSubmit] = useState(false);

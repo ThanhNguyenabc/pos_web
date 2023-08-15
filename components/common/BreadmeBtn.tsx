@@ -3,7 +3,7 @@ import useTrans from "hooks/useTrans";
 import { useRouter } from "next/router";
 import React from "react";
 import ColorUtils from "utils/ColorUtils";
-import AppRoutes from "utils/routes";
+import {AppRoutes} from "utils/routes";
 import PricingBtn from "./PricingBtn";
 
 export const BreadMeBtn = ({ className }: { className?: string }) => {
