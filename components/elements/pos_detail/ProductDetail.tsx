@@ -96,36 +96,45 @@ export const ProductDetail = ({ productData }: { productData: Product }) => {
   }
 
   return (
-    <Box className="flex flex-col container-content py-6 gap-10 lg:gap-16 md:py-8">
+    <Box className="flex flex-col container-content py-6 gap-8 lg:gap-16 md:py-8">
       <div className="grid grid-cols-1 gap-4 md:gap-8 lg:grid-cols-3">
-        <div className="col-span-1 flex flex-col gap-4">
+        <div className="col-span-1 items-center flex flex-col gap-4">
           <span className="txt-sm-bold ">
             {`${t("last_updated")} ${getCurrentMonth(locale)}`}
           </span>
-          <Image
-            src={productData.logo || DefaultImg}
-            alt="pos-logo"
-            width={240}
-            height={120}
-            className="object-contain"
-          />
+          <div className="block w-[120px] aspect-[2] md:w-[240px]">
+            <Image
+              src={productData.logo || DefaultImg}
+              alt="pos-logo"
+              width={240}
+              height={120}
+            />
+          </div>
+
           <Button
             title={t("request_a_demo")}
             style={{ backgroundColor: ColorUtils.success }}
-            classname="rounded-3xl w-fit"
+            classname="hidden rounded-full w-[240px] lg:flex"
             onClick={openDemoDialog}
           />
         </div>
-        <div className="col-span-2 flex flex-col gap-4 md:gap-8  flex-1">
+        <div className="col-span-2 flex flex-col gap-4 md:gap-8 flex-1">
           <p className="txt-md md:text-xl text-neutral-700 whitespace-pre-line">
             {productData.intro?.[locale]}
           </p>
-          <div className="flex items-center gap-3">
+          <div className="hidden items-center gap-3 lg:flex">
             {productData.os_system?.map((item, index) => {
               const Icon = getSystemIcon(item);
               return <Icon key={`item-os-${index}`} className="w-6 h-6" />;
             })}
           </div>
+
+          <Button
+            title={t("request_a_demo")}
+            style={{ backgroundColor: ColorUtils.success }}
+            classname="flex rounded-full w-[222px] self-center lg:hidden"
+            onClick={openDemoDialog}
+          />
         </div>
       </div>
       <div className="block">

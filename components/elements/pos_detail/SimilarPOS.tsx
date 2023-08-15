@@ -5,10 +5,10 @@ import IcRightArrow from "assets/icons/ic_chervon_right.svg";
 import { useRouter } from "next/router";
 import useTrans from "hooks/useTrans";
 import { Button } from "components/common/Button";
-import AppRoutes from "utils/routes";
 import useSWRImmutable from "swr/immutable";
 import { getListPOS } from "api_client/axios_client";
 import Box from "components/common/Box";
+import { AppRoutes } from "utils/routes";
 
 const SimilarPOS = () => {
   const router = useRouter();
