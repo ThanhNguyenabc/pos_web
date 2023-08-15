@@ -7,14 +7,12 @@ import { Locale } from "models/app_configs";
 import Attribute from "models/attribute";
 import Link from "next/link";
 import React from "react";
-import {
-  Languages,
-  MainMenu,
-  OtherItems,
-  ResourceItems,
-} from "utils/StringUtil";
+import { Languages } from "utils/StringUtil";
 import { Button } from "./Button";
 import ColorUtils from "utils/ColorUtils";
+import { NavBarItems } from "utils/routes";
+import useSideBar from "stores/useSideBar";
+import { RightSideBarType } from "./RightSideBar";
 
 const MenuBlock = ({
   title,
@@ -71,8 +69,16 @@ const MultipleLang = () => {
   );
 };
 
-const MenuDrawer = ({ onClose }: { onClose?: () => void }) => {
+const MobileMenu = ({ onClose }: { onClose?: () => void }) => {
   const { t, locale } = useTrans();
+  const openSideBar = useSideBar((state) => state.openSideBar);
+
+  const onMenuClick = (index: number) => () => {
+    if (index === 1) {
+      openSideBar(RightSideBarType.Questionnaire);
+    }
+    onClose?.();
+  };
 
   return (
     <div className="flex-column bg-base-100 px-4">
@@ -83,38 +89,21 @@ const MenuDrawer = ({ onClose }: { onClose?: () => void }) => {
         </button>
       </div>
       <MultipleLang />
-      <div className="flex flex-col gap-8 mt-5 mb-11">
-        <Link
-          href={MainMenu["home"].link}
-          onClick={onClose}
-          className="flex justify-between txt-md-bold items-center"
-        >
-          {MainMenu["home"].title[locale]}
-          <IcChervonRight className="text-[12px]" />
-        </Link>
-        <Link
-          href={MainMenu["posreview"].link}
-          onClick={onClose}
-          className="flex justify-between txt-md-bold items-center"
-        >
-          {MainMenu["posreview"].title[locale]}
-          <IcChervonRight className="text-[12px]" />
-        </Link>
-      </div>
-      <div className="grid grid-cols-1 gap-10 ">
-        <MenuBlock
-          title={t("resources")}
-          items={ResourceItems}
-          closeModal={onClose}
-        />
-        <MenuBlock
-          title={t("company")}
-          items={OtherItems}
-          closeModal={onClose}
-        />
+      <div className="flex flex-col mt-14 gap-10">
+        {NavBarItems.map((item, index) => (
+          <Link
+            key={`mobile-item-${item.title}-${index}`}
+            href={item.link}
+            onClick={onMenuClick(index)}
+            className="flex justify-between txt-md-bold items-center"
+          >
+            {item.title[locale]}
+            <IcChervonRight className="text-[12px]" />
+          </Link>
+        ))}
       </div>
     </div>
   );
 };
 
-export default MenuDrawer;
+export default MobileMenu;

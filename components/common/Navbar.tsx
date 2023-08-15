@@ -6,30 +6,21 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { Button } from "./Button";
 import { useRouter } from "next/router";
-import { MainMenu } from "utils/StringUtil";
 import useTrans from "hooks/useTrans";
 import LanguageSwitcher from "./LanguageSwitcher";
 import Image from "next/image";
 import SideBar from "./SideBar";
-import MenuDrawer from "./MenuDrawer";
+import MobileMenu from "./MobileMenu";
 import ColorUtils from "utils/ColorUtils";
 import { Locale } from "models/app_configs";
 import { twMerge } from "tailwind-merge";
 import useSideBar from "stores/useSideBar";
 import { RightSideBarType } from "./RightSideBar";
+import { NavBarItems } from "utils/routes";
 
 const phoneNumber = "1-888-410-2188";
 
-const NavItems = [
-  MainMenu["home"],
-  MainMenu["questionnaire"],
-  MainMenu["posreview"],
-  MainMenu["blog"],
-  MainMenu["about"],
-  MainMenu["contact"],
-];
-
-const NavPages = ({ locale }: { locale: Locale }) => {
+const NavMenuList = ({ locale }: { locale: Locale }) => {
   const [curIndex, setIndex] = useState<Number>(-1);
   const openSideBar = useSideBar((state) => state.openSideBar);
 
@@ -42,7 +33,7 @@ const NavPages = ({ locale }: { locale: Locale }) => {
 
   return (
     <ul className="px-4 menu-horizontal hidden lg:flex flex-1 items-center">
-      {NavItems.map((item, index) => {
+      {NavBarItems.map((item, index) => {
         if (index == 0) {
           return (
             <li className=" mr-4" key={`${index}-navbar-item`}>
@@ -94,27 +85,24 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex flex-row w-full justify-between items-center px-4 py-[14px] md:px-6">
-      <div className="flex justify-center items-center">
-        <SideBar
-          isOpen={isOpenMenu}
-          closeSideBar={toggleDrawer}
-          direction="left"
-          className=" max-w-md"
-        >
-          <MenuDrawer onClose={toggleDrawer} />
-        </SideBar>
-        <button
-          className="py-2 mr-5 lg:hidden"
-          onClick={toggleDrawer}
-          aria-label="menu-icon"
-        >
-          <IcMenu className="text-2xl" />
-        </button>
-      </div>
-
-      <NavPages locale={locale} />
-      <div className="flex flex-row justify-center items-center gap-4 ml-4">
+    <div className="flex w-full items-center px-4 py-[14px] justify-between lg:justify-normal md:px-6">
+      <SideBar
+        isOpen={isOpenMenu}
+        closeSideBar={toggleDrawer}
+        direction="left"
+        className=" max-w-md"
+      >
+        <MobileMenu onClose={toggleDrawer} />
+      </SideBar>
+      <button
+        className="py-2 mr-5 lg:hidden"
+        onClick={toggleDrawer}
+        aria-label="menu-icon"
+      >
+        <IcMenu className="text-2xl" />
+      </button>
+      <NavMenuList locale={locale} />
+      <div className="flex justify-end items-center gap-4 ml-4">
         <Button
           title={phoneNumber}
           isOutLine
