@@ -6,8 +6,21 @@ import { ContactInfo } from "models/contact_info";
 import { toast } from "react-hot-toast";
 import { SuccessMessage } from "utils/StringUtil";
 import useTrans from "hooks/useTrans";
+import HeroSection from "./HeroSection";
 
-export const FooterCTA = () => {
+interface FooterCTAProps {
+  heading?: string;
+  description?: string;
+  formTitle?: string;
+  formSubTilte?: string;
+}
+
+export const FooterCTA = ({
+  heading,
+  description,
+  formSubTilte: formSubTitle,
+  formTitle,
+}: FooterCTAProps) => {
   const { t } = useTrans();
 
   const sendContactInfo = async (data: ContactInfo) => {
@@ -20,21 +33,29 @@ export const FooterCTA = () => {
   };
 
   return (
-    <Box className="bg-accent py-10">
-      <div className="rounded-3xl bg-white max-w-xl p-10 mx-auto">
-        <p className="txt-heading-small text-center md:txt-heading-large">
-          {t("footer_form_title")}
-        </p>
-        <p className="txt-md mt-4 mb-10 text-center text-neutral-700">
-          {t("footer_form_desc")}
-        </p>
+    <div className="bg-accent">
+      <HeroSection className="lg:flex-row gap-2 justify-between">
+        <div className="flex-1 flex flex-col gap-2 text-center justify-center md:gap-4 lg:text-start  lg:max-w-[480px]">
+          <p className="txt-heading-xsmal lg:txt-heading-large">{heading}</p>
+          <p className="txt-sm text-neutral-700 md:text-base lg:text-xl">
+            {description}
+          </p>
+        </div>
+        <div className="rounded-3xl bg-white px-4 py-6  md:w-[584px] lg:p-10">
+          <p className="txt-large-bold text-center md:txt-heading-medium">
+            {formTitle}
+          </p>
+          <p className="text-xs mt-1 mb-6 text-center text-neutral-700 md:text-base">
+            {formSubTitle}
+          </p>
 
-        <ContactForm
-          submitBtnTitle={t("submit")}
-          onSubmitForm={sendContactInfo}
-          submitBtnClassName="w-[150px] md:h-16"
-        />
-      </div>
-    </Box>
+          <ContactForm
+            submitBtnTitle={t("submit")}
+            onSubmitForm={sendContactInfo}
+            submitBtnClassName="md:h-16  md:w-fit"
+          />
+        </div>
+      </HeroSection>
+    </div>
   );
 };

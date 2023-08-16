@@ -1,4 +1,5 @@
 import React, { ReactElement } from "react";
+import { twMerge } from "tailwind-merge";
 interface InputProps {
   label?: string;
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
@@ -25,18 +26,21 @@ const Input = ({
       )}
       {leftIcon && (
         <span
-          className={`absolute ${
+          className={twMerge(
+            "absolute left-3 w-6 h-6",
             errorMessage ? "bottom-9" : "bottom-3"
-          } left-3 w-6 h-6`}
+          )}
         >
           {leftIcon}
         </span>
       )}
       <input
         {...inputprops}
-        className={`input input-bordered border-2 focus:shadow-lg focus:outline-none focus:border-secondary input-secondary ${focusColor} w-full p-3 ${
-          leftIcon ? "pl-12" : ""
-        }`}
+        className={twMerge(
+          "input input-bordered border-2 focus:shadow-lg focus:outline-none focus:border-secondary w-full p-3",
+          focusColor,
+          leftIcon && "pl-12"
+        )}
       />
 
       {errorMessage && (

@@ -72,7 +72,13 @@ const HomePage = ({ products }: { products: Array<Product> }) => {
       <HelpingSection />
       <MetricSection titleColor="text-secondary" />
       <TestimonialSectionV2 />
-      <FooterCTA />
+      <FooterCTA
+        heading="BestPOS works with all POS providers."
+        description="BestPOS helps businesses secure the best deals on premium POS
+      systems. Get a quote today."
+        formTitle="Fill in to get a quote"
+        formSubTilte="You can save up to 100% of costs on a full POS package."
+      />
     </>
   );
 };

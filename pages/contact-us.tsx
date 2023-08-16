@@ -1,4 +1,3 @@
-import IcLocation from "assets/icons/ic_location.svg";
 import IcPhone from "assets/icons/ic_phone.svg";
 import IcMail from "assets/icons/ic_mail.svg";
 import React, { ReactElement } from "react";
@@ -24,7 +23,7 @@ const ContactItem = ({
   subDesc: string;
 }) => {
   return (
-    <div className="flex flex-col flex-1 gap-2 items-center text-center md:gap-5">
+    <div className="flex flex-col gap-2 items-center text-center md:gap-5">
       <div className=" flex w-12 h-12 p-1 rounded-2xl bg-accent justify-center items-center text-primary">
         {icon}
       </div>
@@ -63,7 +62,7 @@ const ContactPage = () => {
               {t("contact_desc")}
             </h2>
           </div>
-          <div className="flex flex-col gap-10 md:flex-row md:justify-between">
+          <div className="flex flex-col gap-10 md:flex-row justify-center">
             <ContactItem
               icon={<IcMail className="w-6 h-6" />}
               title={t("email")}
@@ -71,12 +70,6 @@ const ContactPage = () => {
               subDesc="info@bestpos.com"
             />
 
-            <ContactItem
-              icon={<IcLocation className="w-6 h-6" />}
-              title={t("office")}
-              desc={t("office_message")}
-              subDesc="Garden City, NY,  United States, New York"
-            />
             <ContactItem
               icon={<IcPhone className="w-5 h-5" />}
               title={t("phone")}

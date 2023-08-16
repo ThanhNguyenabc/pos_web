@@ -6,10 +6,8 @@ import IcSpanishFlag from "assets/icons/ic_spanish_flag.svg";
 
 import { Locale } from "models/app_configs";
 import { SystemOs } from "models/product.model";
-import { AppRoutes } from "./routes";
 
 export const SuccessMessage = "Thank you for filling out the form";
-
 
 export const getSystemIcon = (os: SystemOs): React.ElementType => {
   switch (os) {

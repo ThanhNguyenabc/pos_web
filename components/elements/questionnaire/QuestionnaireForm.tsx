@@ -12,6 +12,7 @@ import StationQuestion, { StationData } from "./StationQuestion";
 import HandHeldQuestion, { HandHeldData } from "./HandheldQuestion";
 import useSideBar from "stores/useSideBar";
 import { AppRoutes, CategoryList } from "utils/routes";
+import DiscountProgram, { DiscountQuestion } from "./DiscountProgram";
 
 const QuestionnaireForm = () => {
   const router = useRouter();
@@ -28,9 +29,9 @@ const QuestionnaireForm = () => {
           business: CategoryList[questionnaireStore.businessId].type,
           salesystem: YesNoQuestion[questionnaireStore.saleSystemIndex],
           discount:
-            questionnaireStore.discountIndex != undefined
-              ? YesNoQuestion[questionnaireStore.discountIndex]
-              : "_",
+            questionnaireStore.discountIndex === DiscountQuestion.length - 1
+              ? "_"
+              : DiscountQuestion[questionnaireStore.discountIndex],
           stations: StationData[questionnaireStore.numberStationIndex].content,
           handheld:
             questionnaireStore.handHeldIndex != undefined
@@ -57,7 +58,7 @@ const QuestionnaireForm = () => {
       <StationQuestion />
 
       <HandHeldQuestion />
-
+      <DiscountProgram />
       <Button
         title="Get Results"
         classname="w-[200px] self-center"

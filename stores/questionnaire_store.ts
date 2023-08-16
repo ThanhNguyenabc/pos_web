@@ -14,8 +14,8 @@ interface QuestionnaireState {
   businessId: number;
   saleSystemIndex: number;
   numberStationIndex: number;
-  handHeldIndex?: number;
-  discountIndex?: number;
+  handHeldIndex: number;
+  discountIndex: number;
   contacInfo?: ContactInfo;
   clearStoreData: () => void;
   updateIndex: (input: { [key: string]: Number }) => void;
@@ -26,12 +26,12 @@ const initialData = {
   saleSystemIndex: 0,
   numberStationIndex: 0,
   handHeldIndex: 0,
-  discountIndex: 1,
+  discountIndex: 0,
 };
 
 const useQuestionnaireStore = create<QuestionnaireState>((set) => ({
   ...initialData,
-  clearStoreData: () => set((state) => ({ ...initialData })),
+  clearStoreData: () => set(() => ({ ...initialData })),
   updateIndex: (input) => {
     set((state) => {
       return {
