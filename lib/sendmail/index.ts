@@ -35,6 +35,7 @@ export const sendEmail = async (option: Mail.Options) => {
     await transporter.sendMail({
       from: senderMail,
       to: mail_receivers,
+      subject: "bestpos",
       ...option,
     });
     return true;
