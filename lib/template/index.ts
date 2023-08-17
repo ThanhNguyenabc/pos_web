@@ -6,7 +6,7 @@ export const getEmailTemplate = async (name: string = "") => {
   let template = cacheTemplate;
   if (template.length == 0) {
     const temp = await readFile(
-      `lib/template/request_demo_email_template.html`,
+      `${process.cwd()}/lib/template/request_demo_email_template.html`,
       "utf-8"
     );
     template = cacheTemplate = temp;
