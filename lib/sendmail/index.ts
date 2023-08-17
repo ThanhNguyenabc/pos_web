@@ -26,6 +26,7 @@ export const sendEmail = async (option: Mail.Options) => {
     let transporter = nodemailer.createTransport({
       service: "gmail",
       host: "smtp.gmail.com",
+      secure: true,
       auth: {
         user: senderMail,
         pass: `${process.env.SENDER_EMAIL_PASSWORD}`,
