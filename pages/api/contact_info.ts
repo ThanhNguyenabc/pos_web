@@ -43,7 +43,7 @@ export default async function handler(
             to: email,
           }),
         ];
-        Promise.all(promises);
+        await Promise.all(promises);
         return res.status(200).json({ data: true });
     }
   } catch (error) {
