@@ -30,8 +30,7 @@ const HeadTag = ({ screen, customTag }: HeadTagProps) => {
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta property={`og:title`} content={title} />
-      <meta property={`og:description`} content={description} />
+
       <meta
         name="google-site-verification"
         content="9Z7pkHHa-SyW7x_jI3OaN3L3OfjbQLCJWujrmVsoK70"
@@ -39,10 +38,14 @@ const HeadTag = ({ screen, customTag }: HeadTagProps) => {
       <meta name="keywords" content={appConfig?.metaTags?.keywords[locale]} />
       <meta name="robots" content="INDEX,FOLLOW" />
       <meta name="msvalidate.01" content="3C6845B8D23659F8E98DDA4C3166E803" />
+
+      <meta property={`og:title`} content={title} />
+      <meta property={`og:description`} content={description} />
       <meta
         property="og:site_name"
         content={appConfig?.metaTags?.pageTags?.home?.description[locale]}
       />
+      <meta  property="og:url"/>
     </Head>
   );
 };

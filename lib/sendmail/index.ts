@@ -6,7 +6,7 @@ import Mail from "nodemailer/lib/mailer";
 let mail_receivers: Array<string> = [];
 
 export const sendEmail = async (option: Mail.Options) => {
-  if (process.env.ENV !== "production") {
+  if (!process.env.ENABLE_SENDING_EMAIL) {
     return false;
   }
 

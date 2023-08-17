@@ -36,7 +36,7 @@ export default async function handler(
             ${content.join("<br>")}`,
           }),
         ];
-        await Promise.all(promises);
+        Promise.all(promises);
         return res.status(200).json({ data: true });
       default:
         break;

@@ -1,4 +1,4 @@
-const siteURL = process.env.NEXT_PUBLIC_API_HOST || "https://bestpos.com";
+const siteURL ="https://bestpos.com";
 
 module.exports = {
   siteUrl: siteURL,
@@ -8,8 +8,6 @@ module.exports = {
 
   exclude: ["/products-sitemap.xml"],
   robotsTxtOptions: {
-    additionalSitemaps: [
-      `${siteURL}/products-sitemap.xml`,
-    ],
+    additionalSitemaps: [`${siteURL}/products-sitemap.xml`],
   },
 };
