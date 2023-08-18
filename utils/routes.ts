@@ -14,7 +14,7 @@ export class AppRoutes {
   static ContactPage = "/contact-us";
   static FreePOSPage = "/free-pos";
   static QuestionnairePage = "/best-pos-for-your-business";
-  static BreadmePage = "/about-breadme";
+  static BreadmePage = "/extrabread";
   static BreadmeQuestionPage = "/bread-me-questions";
   static POSDetailPage = "/product";
   static PartnerPage = "/partner";
