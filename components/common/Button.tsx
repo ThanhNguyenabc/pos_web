@@ -30,7 +30,7 @@ export const Button = ({
           isOutLine
             ? "btn-outline hover:bg-white hover:text-black bg-white border-neutral-300 border-2"
             : "btn-primary border-none text-white"
-        }`,
+        } hover:drop-shadow-custom`,
         classname
       )}
       {...any}

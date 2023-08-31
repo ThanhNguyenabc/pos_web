@@ -8,12 +8,7 @@ export default function index() {
     <>
       <HeadTag screen="posSystem" />
       <POSSystems />
-      <FooterCTA
-        heading="Real advice from real people"
-        description="Speak with a consultant today to find he best POS for your business"
-        formTitle="Qualify for Free Premium POS"
-        formSubTilte="BestPOS helps businesses secure the best deals on premium POS systems. Sign up to receive deals."
-      />
+      <FooterCTA />
     </>
   );
 }
