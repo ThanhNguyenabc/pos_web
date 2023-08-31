@@ -16,6 +16,7 @@ import POSCardBusinessType from "./POSCardBusinessType";
 import { RightSideBarType } from "components/common/RightSideBar";
 import { twMerge } from "tailwind-merge";
 import { AppRoutes } from "utils/routes";
+import RecommendTag from "components/common/RecommendTag";
 
 const POSCardDesktop = ({
   data,
@@ -34,26 +35,21 @@ const POSCardDesktop = ({
   return (
     <div
       className={twMerge(
-        " w-[1000px] bg-white shadow-poscard rounded-2xl",
+        " relative w-[1000px] bg-white shadow-poscard rounded-2xl border-2 border-white  hover:border-secondary",
         classname
       )}
     >
+      <div className="absolute -top-4 ">
+        {priority && recommendTagProps && (
+          <RecommendTag {...recommendTagProps} />
+        )}
+      </div>
       <div className="flex flex-row border-b border-b-neutral-300">
-        <div className="flex flex-col items-start">
-          {priority === "first" && (
-            <div
-              className="flex flex-row bg-primary text-white px-2 py-[6px] justify-center 
-        items-center gap-2 rounded-br-lg rounded-tl-xl"
-            >
-              <IcLike className="text-base" />
-              <p className=" text-xs font-semibold mt-1">MOST RECOMMENDED</p>
-            </div>
-          )}
-          <Link className="block w-[180px] ml-4 my-auto" href={url}>
+        <div className="flex-1 flex flex-col items-start">
+          <Link className="block w-[160px]  ml-4 my-auto" href={url}>
             <Image
               src={data.logo || DefaultImg}
               alt="logo-pos"
-              style={{ width: "auto" }}
               width={160}
               height={80}
               quality={95}
@@ -62,8 +58,10 @@ const POSCardDesktop = ({
           </Link>
         </div>
 
-        <div className="flex flex-1 flex-col p-4 ml-2">
-          <p className="txt-md-bold line-clamp-5">{data.overview?.[locale]}</p>
+        <div className=" flex-1 flex flex-col p-4 ml-2">
+          <p className="txt-md-bold line-clamp-5  w-[380px]">
+            {data.overview?.[locale]}
+          </p>
           <ul className="flex flex-col flex-1 text-left ">
             {data.pros?.[locale]?.map((item, index) => {
               if (index > 3) return;
@@ -82,7 +80,7 @@ const POSCardDesktop = ({
           </ul>
         </div>
         <Link
-          className="flex flex-col border-l border-neutral-300 border-r gap-1 py-8 px-4 items-center justify-center"
+          className=" flex-1 flex flex-col border-l border-neutral-300 border-r gap-1 py-8 px-4 items-center justify-center"
           href={url}
         >
           <CustomCircularProgress
@@ -93,18 +91,17 @@ const POSCardDesktop = ({
             <p className="txt-large-bold">{overallRating}</p>
           </CustomCircularProgress>
           <p className="text-sm text-neutral-600">
-            {" "}
             {(priority && t("out_standing")) || t("good")}
           </p>
-          <div className="inline-flex text-secondary txt-sm items-center gap-1">
+          <div className="inline-flex link-hover text-secondary txt-sm-bold items-center gap-1">
             {t("read_review")}
             <IcChervonRight className=" text-[9px]" />
           </div>
         </Link>
-        <div className="flex flex-col gap-8 py-8 px-4 items-center self-center">
+        <div className="flex-1 flex flex-col gap-8 py-8 px-4 items-center self-center">
           <div
             onClick={openDemoDialog}
-            className="text-base font-semibold text-secondary cursor-pointer"
+            className="text-base link-hover font-semibold text-secondary cursor-pointer px-3 text-center max-w-[230px]"
           >
             {t("free_pos").replace("#", name)}
           </div>
@@ -117,7 +114,7 @@ const POSCardDesktop = ({
         </div>
       </div>
 
-      <div className="flex flex-1 flex-row p-4">
+      <div className="flex flex-row p-4">
         <div className="flex items-center gap-3 border-r border-neutral-300 pr-6">
           {data.os_system?.map((item, index) => {
             const Icon = getSystemIcon(item);

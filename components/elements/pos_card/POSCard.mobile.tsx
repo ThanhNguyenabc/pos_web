@@ -16,8 +16,14 @@ import { twMerge } from "tailwind-merge";
 import useTrans from "hooks/useTrans";
 import { POSCardProps } from "./POSCardTypes";
 import { AppRoutes } from "utils/routes";
+import RecommendTag from "components/common/RecommendTag";
 
-const POSCardMobile = ({ data, priority, classname }: POSCardProps) => {
+const POSCardMobile = ({
+  data,
+  priority,
+  classname,
+  recommendTagProps,
+}: POSCardProps) => {
   const openSideBar = useSideBar((state) => state.openSideBar);
   const overallRating = data.expert_opinion.overall;
   const { id, slug, name } = data;
@@ -30,7 +36,7 @@ const POSCardMobile = ({ data, priority, classname }: POSCardProps) => {
     <div
       className={twMerge(
         `w-full 
-      bg-white shadow-md rounded-2xl overflow-hidden`,
+      bg-white shadow-md rounded-2xl overflow-hidden border-2 border-white hover:border-secondary`,
         classname
       )}
     >
@@ -45,7 +51,7 @@ const POSCardMobile = ({ data, priority, classname }: POSCardProps) => {
               <p className="text-[10px] font-semibold mt-1">MOST RECOMMENDED</p>
             </div>
           )}
-          <div className="block w-[140px] pt-1">
+          <div className="block w-[120px] pt-1">
             <Image
               src={data.logo || DefaultImg}
               alt="logo-pos"
@@ -53,7 +59,7 @@ const POSCardMobile = ({ data, priority, classname }: POSCardProps) => {
               height={70}
               quality={80}
               sizes="20vw"
-              className="object-contain pl-3"
+              className="aspect-[2/1] object-contain ml-3"
             />
           </div>
 
@@ -69,7 +75,7 @@ const POSCardMobile = ({ data, priority, classname }: POSCardProps) => {
               <p className="txt-sm text-neutral-600">
                 {(priority && t("out_standing")) || t("good")}
               </p>
-              <div className="inline-flex text-secondary text-xs items-center gap-1">
+              <div className="inline-flex link-hover text-secondary text-xs items-center gap-1">
                 {t("read_review")}
                 <IcChervonRight className="text-[8px]" />
               </div>
@@ -80,13 +86,13 @@ const POSCardMobile = ({ data, priority, classname }: POSCardProps) => {
         <div className="flex flex-1 flex-col gap-5 px-2 items-center justify-end py-3 border-l border-neutral-300">
           <div
             onClick={openDemoDialog}
-            className="text-sm font-semibold leading-5 text-secondary cursor-pointer"
+            className="text-sm link-hover font-semibold leading-5 text-secondary cursor-pointer"
           >
             {t("free_pos").replace("#", name)}
           </div>
           <Button
             title={t("request_a_demo")}
-            classname="rounded-[30px] w-[160px] text-sm"
+            classname="rounded-[30px] w-[160px] text-sm md:text-sm"
             style={{ background: ColorUtils.success }}
             onClick={openDemoDialog}
           />
