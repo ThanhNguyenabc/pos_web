@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES2016",
     "lib": [
       "dom",
       "dom.iterable",
@@ -34,8 +34,9 @@
     "global.d.ts",
     "utils/ColorUtils.js",
     "server.js",
-    ".next/types/**/*.ts"
-, "lib/mongodb/index.ts"  ],
+    ".next/types/**/*.ts",
+    "lib/mongodb/index.ts"
+, "performance.js"  ],
   "exclude": [
     "node_modules"
   ]

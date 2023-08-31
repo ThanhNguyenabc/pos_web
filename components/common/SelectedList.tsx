@@ -24,7 +24,7 @@ const ItemList = React.memo(
     onClick: () => void;
   }) => {
     const baseItemStyle =
-      "w-full border-2 rounded-lg cursor-pointer hover:border-secondary border-neutral-300";
+      "w-full border-2 rounded-lg cursor-pointer hover:border-secondary hover:bg-blue-light border-neutral-300";
 
     return React.cloneElement(child, {
       className: twMerge(

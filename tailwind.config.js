@@ -21,28 +21,31 @@ module.exports = {
       colors: {
         ...Colors,
       },
-    },
-    keyframes: {
-      marquee: {
-        "0%": { transform: "translateX(0%)" },
-        "100%": { transform: "translateX(-100%)" },
+      boxShadow: {
+        viewmore:
+          "0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06)",
+        poscard:
+          " 0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06)",
       },
-      marquee2: {
-        "0%": { transform: "translateX(100%)" },
-        "100%": { transform: "translateX(0%)" },
+      boxShadow: {
+        viewmore:
+          "0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06)",
+        poscard:
+          " 0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06)",
       },
-    },
-    animation: {
-      "spin-slow-30": "spin 30s linear infinite",
-      "spin-slow-25": "spin 25s linear infinite",
-      "spin-slow-10": "spin 10s linear infinite",
-      "marquee-infinite": "marquee 30s linear infinite",
-    },
-    boxShadow: {
-      viewmore:
-        "0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06)",
-      poscard:
-        " 0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06)",
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        marquee2: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
+      },
+      dropShadow: {
+        custom: "0 3px 3px rgba(0, 0, 0, 0.28)",
+      },
     },
   },
 
