@@ -83,7 +83,12 @@ const SuggestPOSPage = ({ params }: { params: SuggestPOSParams }) => {
           <h1 className="txt-heading-medium text-success max-w-[820px] md:txt-heading-large">
             {SuggestPOSTrans.heading[locale]}
           </h1>
-          <h2 className="txt-md">{SuggestPOSTrans.desc[locale]}</h2>
+          <h2 className="txt-md">
+            {SuggestPOSTrans.desc[locale]}{" "}
+            <Link href={AppRoutes.ContactPage} className="font-semibold underline">
+              Contact us
+            </Link>
+          </h2>
           {suggestProducts && (
             <RecommendPOSCard
               classname="z-1 top-7 md:top-[40px]"
