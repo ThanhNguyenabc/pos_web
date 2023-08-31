@@ -37,11 +37,11 @@ const HelpingSection = () => {
   return (
     <HeroSection className="gap-10 lg:flex-row lg:gap-[100px]">
       <div className=" flex flex-col gap-6 flex-1 lg:max-w-[480px]">
-        <h3 className="txt-heading-medium md:txt-heading-large">
+        <h3 className="txt-heading-medium md:txt-heading-medium whitespace-pre-line">
           {HTMLReactParser(t("helping_section_title"))}
         </h3>
-        <p className="txt-md md:text-lg text-neutral-700">
-          {t("helping_section_desc")}
+        <p className="txt-md mdleading-7 md:text-xl text-neutral-700">
+          {HTMLReactParser(t("helping_section_desc"))}
         </p>
       </div>
       <ul className="flex flex-col flex-1 gap-10 lg:gap-16">
@@ -52,10 +52,8 @@ const HelpingSection = () => {
               <span>
                 <Icon className="text-[64px] md:text-[80px] flex-1" />
               </span>
-              <div className="flex flex-col lg:max-w-md gap-2 md:gap-4">
-                <p className="txt-md-bold md:text-3xl md:font-bold">
-                  {t(item.title)}
-                </p>
+              <div className="flex flex-col lg:max-w-md gap-2">
+                <p className="txt-md-bold md:text-xl">{t(item.title)}</p>
                 <p className="txt-sm md:text-base text-neutral-700">
                   {t(item.content)}
                 </p>
