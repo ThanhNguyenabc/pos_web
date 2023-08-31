@@ -112,12 +112,21 @@ const Navbar = () => {
         <Button
           title={phoneNumber}
           isOutLine
-          classname="md:px-3 lg:text-base lg:h-12"
+          classname="md:px-3 lg:text-base lg:h-12 hover:bg-primary hover:text-white"
           style={{
             borderColor: ColorUtils.primary,
           }}
           onClick={() => router.push(`tel:${phoneNumber}`)}
-          leftIcon={<IcPhone className="text-lg text-primary" />}
+          leftIcon={
+            <IcPhone
+              className="text-lg hover:text-white"
+              style={{
+                path: {
+                  fill: ColorUtils["blue-light"],
+                },
+              }}
+            />
+          }
         />
         <LanguageSwitcher />
       </div>
