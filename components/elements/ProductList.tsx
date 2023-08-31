@@ -5,8 +5,8 @@ import { CategoryType } from "models/category_type";
 import React from "react";
 import useSWRImmutable from "swr/immutable";
 import Box from "components/common/Box";
-import { Priority, RecommendColor } from "./pos_card/POSCardTypes";
-import POSCardV2 from "./pos_card/POSCard";
+import { Priority, RecommendColorConfig } from "./pos_card/POSCardTypes";
+import POSCard from "./pos_card/POSCard";
 
 const ProductList = ({ type }: { type: string }) => {
   const { t } = useTrans();
@@ -25,17 +25,14 @@ const ProductList = ({ type }: { type: string }) => {
               : index == 1
               ? Priority.second
               : Priority.third;
-          const priorityBorder = priority
-            ? `border-2  ${
-                RecommendColor[priority as keyof typeof RecommendColor].border
-              }`
-            : "";
+
+          const customClassName = `${RecommendColorConfig[priority].borderColor}`;
 
           items.push(
-            <POSCardV2
+            <POSCard
               key={`card-item-${index}`}
               data={item}
-              classname={`${priorityBorder}`}
+              classname={customClassName}
               priority={priority}
             />
           );
@@ -55,7 +52,7 @@ const ProductList = ({ type }: { type: string }) => {
             );
           }
         } else {
-          items.push(<POSCardV2 key={`card-item-${index}`} data={item} />);
+          items.push(<POSCard key={`card-item-${index}`} data={item} />);
         }
       });
     return items;
