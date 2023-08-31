@@ -28,10 +28,7 @@ const QuestionnaireForm = () => {
           access: true,
           business: CategoryList[questionnaireStore.businessId].type,
           salesystem: YesNoQuestion[questionnaireStore.saleSystemIndex],
-          discount:
-            questionnaireStore.discountIndex === DiscountQuestion.length - 1
-              ? "_"
-              : DiscountQuestion[questionnaireStore.discountIndex],
+          discount: questionnaireStore.discountIndex == 0 ? "yes" : "no",
           stations: StationData[questionnaireStore.numberStationIndex].content,
           handheld:
             questionnaireStore.handHeldIndex != undefined
@@ -56,7 +53,6 @@ const QuestionnaireForm = () => {
       <BusinessQuestion />
       <SaleSystemQuestion />
       <StationQuestion />
-
       <HandHeldQuestion />
       <DiscountProgram />
       <Button

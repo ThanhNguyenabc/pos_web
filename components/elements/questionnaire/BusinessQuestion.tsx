@@ -1,5 +1,5 @@
 import SelectedList from "components/common/SelectedList";
-import React, { useEffect } from "react";
+import React from "react";
 import useTrans from "hooks/useTrans";
 import useQuestionnaireStore, {
   updateQuestionnaireAns,
@@ -11,12 +11,6 @@ const BusinessQuestion = () => {
   const updateData = updateQuestionnaireAns();
 
   const { locale } = useTrans();
-
-  useEffect(() => {
-    // sendGoogleEvent("find_pos_business_type");
-  }, []);
-
-  console.log("business form");
 
   return (
     <div className="flex flex-col gap-4">

@@ -26,10 +26,6 @@ const HandHeldQuestion = () => {
 
   const { t } = useTrans();
 
-  useEffect(() => {
-    // sendGoogleEvent("find_pos_handhelds_require");
-  }, []);
-
   return (
     <div className="flex flex-col gap-4">
       <h3 className="txt-large-bold">

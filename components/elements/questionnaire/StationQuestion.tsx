@@ -24,10 +24,6 @@ const StationQuestion = () => {
   const updateData = updateQuestionnaireAns();
   const { t } = useTrans();
 
-  useEffect(() => {
-    // sendGoogleEvent("find_pos_stations_require");
-  }, []);
-
   const selectItem = (index: number) => {
     updateData({ numberStationIndex: index });
   };

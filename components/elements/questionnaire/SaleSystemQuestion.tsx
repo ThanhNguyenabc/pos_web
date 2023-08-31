@@ -1,6 +1,6 @@
 import SelectedList from "components/common/SelectedList";
 import useTrans from "hooks/useTrans";
-import React, { useEffect } from "react";
+import React from "react";
 import useQuestionnaireStore, {
   updateQuestionnaireAns,
 } from "stores/questionnaire_store";
@@ -11,10 +11,6 @@ const SaleSystemQuestion = () => {
   const updateData = updateQuestionnaireAns();
   const { t } = useTrans();
 
-  useEffect(() => {
-    // sendGoogleEvent("find_pos_owned_pos");
-  }, []);
-
   return (
     <div className="flex flex-col gap-4 w-full">
       <h3 className="txt-large-bold">
@@ -24,7 +20,6 @@ const SaleSystemQuestion = () => {
         data={YesNoQuestion}
         selectIndex={saleSystemIndex}
         className={" md:grid-cols-2"}
-        selectBorderColor="bg-blue-light border-secondary "
         renderItem={(item, index: number) => {
           return (
             <div className="p-4">

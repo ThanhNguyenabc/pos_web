@@ -5,7 +5,6 @@ import useQuestionnaireStore, {
   updateQuestionnaireAns,
 } from "stores/questionnaire_store";
 import { YesNoQuestion } from "utils/StringUtil";
-import IcQuestion from "assets/icons/ic_question.svg";
 
 export const DiscountQuestion = [...YesNoQuestion, "i_dont_know"];
 
