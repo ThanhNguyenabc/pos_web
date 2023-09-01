@@ -1,7 +1,4 @@
 import Box from "components/common/Box";
-import { BreadMeBtn } from "components/common/BreadmeBtn";
-import PricingBtn from "components/common/PricingBtn";
-import TabList from "components/common/TabList";
 import Image from "next/image";
 import React from "react";
 import useSideBar from "stores/useSideBar";
@@ -13,7 +10,6 @@ import ProsAndCons from "./ProsAndCons";
 import Pricing from "./Pricing";
 import SpecificationView from "./Specification";
 import Loading from "components/common/loading/Loading";
-import { Product } from "models/product.model";
 import useTrans from "hooks/useTrans";
 import PaymentProcessing from "./payment_processing";
 import { Locale } from "models/app_configs";
@@ -21,6 +17,7 @@ import { DefaultImg } from "assets/AssetUtil";
 import { RightSideBarType } from "components/common/RightSideBar";
 import { getCurrentMonth } from "utils/date_utils";
 import { Button } from "components/common/Button";
+import { ProductDetail } from "models/product-detail.model";
 
 const DetailTabs = [
   {
@@ -81,7 +78,11 @@ const DetailTabs = [
   },
 ];
 
-export const ProductDetail = ({ productData }: { productData: Product }) => {
+export const ProductDetailView = ({
+  productData,
+}: {
+  productData: ProductDetail;
+}) => {
   const openSideBar = useSideBar((state) => state.openSideBar);
   const { t, locale } = useTrans();
 
@@ -95,8 +96,32 @@ export const ProductDetail = ({ productData }: { productData: Product }) => {
     );
   }
 
+  const renderImageBlock = () => {
+    const images = [];
+
+    if (!productData.images || productData.images?.length < 2) return <></>;
+
+    for (let i = 1; i < productData.images!.length; i++) {
+      images.push(
+        <div className="block" key={`detail-image-${productData.name}-${i}`}>
+          <Image
+            src={productData.images?.[i] || DefaultImg}
+            alt="pos-pic"
+            className="w-full object-cover aspect-[3/2] lg:h-full"
+            width={290}
+            height={192}
+            blurDataURL={DefaultImg.src}
+            placeholder="blur"
+          />
+        </div>
+      );
+    }
+
+    return <>{images}</>;
+  };
+
   return (
-    <Box className="flex flex-col container-content py-6 gap-8 lg:gap-16 md:py-8">
+    <Box className="flex flex-col container-content py-6 gap-8 lg:gap-16 md:py-8 lg:px-6">
       <div className="grid grid-cols-1 gap-4 md:gap-8 lg:grid-cols-3">
         <div className="col-span-1 items-center flex flex-col gap-4">
           <span className="txt-sm-bold ">
@@ -137,15 +162,25 @@ export const ProductDetail = ({ productData }: { productData: Product }) => {
           />
         </div>
       </div>
-      <div className="block">
-        <Image
-          src={productData.image || DefaultImg}
-          alt="pos-pic"
-          className="object-contain"
-          width={500}
-          height={500}
-        />
+      <div className="grid grid-cols-2 gap-4 lg:grid-rows-2 lg:grid-cols-4 lg:h-[400px]">
+        <div className="block col-span-2 lg:row-span-2">
+          <Image
+            src={productData.images?.[0] || DefaultImg}
+            alt="pos-pic"
+            style={{
+              height: "auto",
+            }}
+            blurDataURL={DefaultImg.src}
+            placeholder="blur"
+            className="w-full aspect-[1.42] object-contain"
+            width={592}
+            height={400}
+          />
+        </div>
+
+        {renderImageBlock()}
       </div>
+
       <ProsAndCons pros={productData.pros} cons={productData.cons} />
       <ExpertOpinion id={DetailTabs[1].id} data={productData.expert_opinion} />
       <SpecificationView id={DetailTabs[2].id} posId={`${productData.id}`} />

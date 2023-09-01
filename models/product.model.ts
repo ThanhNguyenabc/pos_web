@@ -24,14 +24,9 @@ export interface Product {
   one_time_purchase: number;
   os_system?: Array<SystemOs>;
   overview?: Attribute;
-  intro?: Attribute;
+  expert_opinion: ExpertOpinion;
+
   pros: Attribute<Array<string>>;
   cons: Attribute<Array<string>>;
-  expert_opinion: ExpertOpinion;
-  pos_integrations?: Attribute;
-  software?: Attribute;
-  payment_processing?: Attribute;
-  pricing_desc?: Attribute<Array<string>>;
   logo?: string;
-  image?: string;
 }

@@ -1,9 +1,9 @@
 import { getPOSDetail } from "api_client/axios_client";
 import HeadTag from "components/common/HeadTag";
-import { ProductDetail } from "components/elements/pos_detail/ProductDetail";
+import { ProductDetailView } from "components/elements/pos_detail/ProductDetail";
 import SimilarPOS from "components/elements/pos_detail/SimilarPOS";
 import useTrans from "hooks/useTrans";
-import { Product } from "models/product.model";
+import { ProductDetail } from "models/product-detail.model";
 import { GetServerSidePropsContext } from "next";
 import { getProductDetail } from "pages/api/product_detail";
 import React from "react";
@@ -34,7 +34,7 @@ export const getServerSideProps = async (
   };
 };
 
-const DetailPage = ({ product }: { product: Product }) => {
+const DetailPage = ({ product }: { product: ProductDetail }) => {
   const { locale } = useTrans();
   const { appConfig } = useAppStore();
   const meta = appConfig?.metaTags?.pageTags?.productDetail;
@@ -50,7 +50,7 @@ const DetailPage = ({ product }: { product: Product }) => {
   return (
     <>
       <HeadTag customTag={meta} />
-      <ProductDetail productData={product} />
+      <ProductDetailView productData={product} />
       <SimilarPOS />
     </>
   );

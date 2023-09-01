@@ -6,25 +6,15 @@ const ProductSchema = new Schema<Product>({
   name: String,
   slug: String,
   monthly_price: Number,
+  expert_opinion: Object,
   one_time_purchase: Number,
   os_system: [String],
   overview: Object,
-  intro: Object,
   pros: Object,
   cons: Object,
-  expert_opinion: Object,
-  pos_integrations: Object,
-  software: Object,
-  payment_processing: Object,
-  pricing_desc: Object,
   logo: String,
-  image: String,
 });
 
 export const ProductModel: Model<Product> =
   models?.ProductModel ||
   model<Product>("ProductModel", ProductSchema, "products");
-
-export const ProductInfoModel: Model<Product> =
-  models?.ProductInfoModel ||
-  model<Product>("ProductInfoModel", ProductSchema, "product_info");
