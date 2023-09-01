@@ -74,10 +74,28 @@ const NavMenuList = ({ locale }: { locale: Locale }) => {
   );
 };
 
-const Navbar = () => {
+const CallButton = () => {
+  const [iconColor, setIconColor] = useState<string>("text-primary");
   const router = useRouter();
-  const [isOpenMenu, setOpenMenu] = useState(false);
 
+  return (
+    <Button
+      title={phoneNumber}
+      isOutLine
+      onMouseEnter={() => setIconColor("text-white")}
+      onMouseLeave={() => setIconColor("text-primary")}
+      classname="md:px-3 lg:text-base lg:h-12 hover:bg-primary hover:text-white"
+      style={{
+        borderColor: ColorUtils.primary,
+      }}
+      onClick={() => router.push(`tel:${phoneNumber}`)}
+      leftIcon={<IcPhone className={`text-lg ${iconColor}`} />}
+    />
+  );
+};
+
+const Navbar = () => {
+  const [isOpenMenu, setOpenMenu] = useState(false);
   const { t, locale } = useTrans();
 
   const toggleDrawer = () => {
@@ -109,25 +127,7 @@ const Navbar = () => {
 
       <NavMenuList locale={locale} />
       <div className="flex justify-end items-center gap-4 ml-4">
-        <Button
-          title={phoneNumber}
-          isOutLine
-          classname="md:px-3 lg:text-base lg:h-12 hover:bg-primary hover:text-white"
-          style={{
-            borderColor: ColorUtils.primary,
-          }}
-          onClick={() => router.push(`tel:${phoneNumber}`)}
-          leftIcon={
-            <IcPhone
-              className="text-lg hover:text-white"
-              style={{
-                path: {
-                  fill: ColorUtils["blue-light"],
-                },
-              }}
-            />
-          }
-        />
+        <CallButton />
         <LanguageSwitcher />
       </div>
     </div>
