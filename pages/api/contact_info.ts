@@ -22,7 +22,11 @@ export default async function handler(
           `Message: ${message}`,
         ];
 
-        const emailContent = await getEmailTemplate(name);
+        const emailContent = await getEmailTemplate(
+          "Thanks for reaching out to us",
+          "We received your inquiry.",
+          name
+        );
 
         const promises = [
           insertDataToGooglesheet({
@@ -38,7 +42,7 @@ export default async function handler(
           ${content.join("<br>")}`,
           }),
           sendEmail({
-            subject: "Bestpos.com",
+            subject: "We've received your request. 🥳  Here's what's next. 👉",
             html: emailContent,
             to: email,
           }),

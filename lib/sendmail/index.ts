@@ -3,9 +3,9 @@ import { AppConfigModel } from "lib/mongodb/entities/app_config";
 import nodemailer from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
 
-let mail_receivers: Array<string> = [];
-
 export const sendEmail = async (option: Mail.Options) => {
+  let mail_receivers: Array<string> = [];
+
   if (!process.env.ENABLE_SENDING_EMAIL) {
     return false;
   }
@@ -34,7 +34,7 @@ export const sendEmail = async (option: Mail.Options) => {
     });
 
     await transporter.sendMail({
-      from: senderMail,
+      from: `${sendEmail}`,
       to: mail_receivers,
       subject: "bestpos",
       ...option,

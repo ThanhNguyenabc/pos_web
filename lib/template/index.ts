@@ -2,16 +2,18 @@ import { readFile } from "fs/promises";
 import ejs from "ejs";
 import path from "path";
 
-var cacheTemplate: string = "";
-export const getEmailTemplate = async (name: string = "") => {
-  let template = cacheTemplate;
-  if (template.length == 0) {
-    const temp = await readFile(
-      path.resolve("public/request_demo_email_template.html"),
-      "utf-8"
-    );
-    template = cacheTemplate = temp;
-  }
-
-  return ejs.render(template, { name: name.toUpperCase() });
+export const getEmailTemplate = async (
+  heading: string = "",
+  subtitle: string = "",
+  name: string = ""
+) => {
+  const temp = await readFile(
+    path.resolve("public/request_demo_email_template.html"),
+    "utf-8"
+  );
+  return ejs.render(temp, {
+    heading,
+    subtitle,
+    name: name.toUpperCase(),
+  });
 };
