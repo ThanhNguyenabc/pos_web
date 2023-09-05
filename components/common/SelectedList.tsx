@@ -29,7 +29,7 @@ const ItemList = React.memo(
     return React.cloneElement(child, {
       className: twMerge(
         `${baseItemStyle}`,
-        isSelect && selectedColor,
+        isSelect && selectedColor && "bg-blue-light",
         child.props["className"]
       ),
       onClick: onClick,
