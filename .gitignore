@@ -37,5 +37,4 @@ yarn-error.log*
 next-env.d.ts
 *.lock
 .vscode/settings.json
-public/sitemap.xml
-public/robots.txt
+
