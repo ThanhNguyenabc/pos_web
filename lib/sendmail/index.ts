@@ -3,7 +3,10 @@ import { AppConfigModel } from "lib/mongodb/entities/app_config";
 import nodemailer from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
 
-export const sendEmail = async (option: Mail.Options) => {
+export const sendEmail = async (
+  option: Mail.Options,
+  prefix = "BestPOS lead"
+) => {
   let mail_receivers: Array<string> = [];
 
   if (!process.env.ENABLE_SENDING_EMAIL) {
@@ -33,15 +36,22 @@ export const sendEmail = async (option: Mail.Options) => {
       },
     });
 
-    await transporter.sendMail({
-      from: `${sendEmail}`,
-      to: mail_receivers,
+    const res = await transporter.sendMail({
+      from: `${prefix} <${senderMail}>`,
+      to: "salesx@googlegroups.com",
       subject: "bestpos",
       ...option,
     });
+    console.log(res);
     return true;
   } catch (error) {
     console.log("error ", error);
     return false;
   }
 };
+
+export const sendMailToAdmin = async (option: Mail.Options) =>
+  sendEmail(option, "BestPOS lead");
+
+export const sendMailToCustomer = async (option: Mail.Options) =>
+  sendEmail(option, "BestPOS");

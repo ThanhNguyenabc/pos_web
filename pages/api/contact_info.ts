@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { ContactInfo } from "models/contact_info";
 import { insertDataToGooglesheet } from "lib/googlesheet";
 import { DataSubmission } from "models/data_submission";
-import { sendEmail } from "lib/sendmail";
+import { sendMailToAdmin, sendMailToCustomer } from "lib/sendmail";
 import { getEmailTemplate } from "lib/template";
 
 export default async function handler(
@@ -36,12 +36,14 @@ export default async function handler(
             customer_name: name,
             customer_phone: phone,
           }),
-          sendEmail({
+
+          sendMailToAdmin({
             subject: "Bestpos lead - Contact",
-            html: `<b>We have new customer with the following information</b><br>
-          ${content.join("<br>")}`,
+            html: `<b>We have new customer with the following information</b><br>${content.join(
+              "<br>"
+            )}`,
           }),
-          sendEmail({
+          sendMailToCustomer({
             subject: "We've received your request. 🥳  Here's what's next. 👉",
             html: emailContent,
             to: email,
