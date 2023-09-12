@@ -13,11 +13,6 @@ const HeadTag = ({ screen, customTag }: HeadTagProps) => {
   const { appConfig } = useAppStore();
   const { locale, asPath } = useTrans();
 
-  // Only add meta tags on production mode
-  if (process.env.ENV !== "production") {
-    return <></>;
-  }
-
   const tag =
     (screen && appConfig?.metaTags?.pageTags?.[`${screen}`]) || customTag;
 
