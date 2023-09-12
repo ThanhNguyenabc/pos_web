@@ -7,6 +7,7 @@ export enum Locale {
 
 export interface MetaTag {
   url?: Attribute;
+  image?: string;
   title: Attribute;
   description: Attribute;
 }
