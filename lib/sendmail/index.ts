@@ -16,14 +16,12 @@ export const sendEmail = async (
   const senderMail = `${process.env.SENDER_MAIL_ACCOUNT}`;
 
   try {
-    if (mail_receivers.length == 0) {
-      if (process.env.ENV === "production") {
-        await connectMongo();
-        const configs = await AppConfigModel.find({});
-        mail_receivers.push(...(configs?.[0]?.mail_receivers || []));
-      } else {
-        mail_receivers.push(`${process.env.RECEIVER_EMAIL}`);
-      }
+    if (process.env.ENV === "production") {
+      await connectMongo();
+      const configs = await AppConfigModel.find({});
+      mail_receivers.push(...(configs?.[0]?.mail_receivers || []));
+    } else {
+      mail_receivers.push(`${process.env.RECEIVER_EMAIL}`);
     }
 
     let transporter = nodemailer.createTransport({
@@ -38,7 +36,7 @@ export const sendEmail = async (
 
     const res = await transporter.sendMail({
       from: `${prefix} <${senderMail}>`,
-      to: "salesx@googlegroups.com",
+      to: mail_receivers,
       subject: "bestpos",
       ...option,
     });
