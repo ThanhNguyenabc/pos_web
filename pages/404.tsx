@@ -6,5 +6,6 @@ export default function PageNotFound() {
   useEffect(() => {
     router.replace("/");
   }, []);
+  
   return <></>;
 }
