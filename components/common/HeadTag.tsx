@@ -37,11 +37,7 @@ const HeadTag = ({ screen, customTag }: HeadTagProps) => {
       <meta property={`og:title`} content={title} />
       <meta property={`og:description`} content={description} />
       <meta property={`og:image`} content={tag?.image} />
-      <meta
-        property="og:site_name"
-        content={appConfig?.metaTags?.pageTags?.home?.description[locale]}
-      />
-      <meta property="og:url" />
+      <meta property="og:url" content={tag?.url?.[locale]} />
     </Head>
   );
 };
