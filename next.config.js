@@ -43,6 +43,15 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/request-demo-pos",
+        destination: "/?q=request-demo-pos",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
