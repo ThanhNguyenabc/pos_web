@@ -48,7 +48,7 @@ const nextConfig = {
       {
         source: "/request-demo-pos",
         destination: "/?q=request-demo-pos",
-        permanent: false,
+        permanent: true,
       },
     ];
   },

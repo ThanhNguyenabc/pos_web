@@ -35,8 +35,9 @@
     "utils/ColorUtils.js",
     "server.js",
     ".next/types/**/*.ts",
-    "lib/mongodb/index.ts"
-, "performance.js"  ],
+    "lib/mongodb/index.ts",
+    "performance.js"
+  ],
   "exclude": [
     "node_modules"
   ]

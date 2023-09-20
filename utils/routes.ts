@@ -13,7 +13,7 @@ export class AppRoutes {
   static BlogPage = "/blog";
   static ContactPage = "/contact-us";
   static FreePOSPage = "/free-pos";
-  static QuestionnairePage = "/best-pos-for-your-business";
+  static QuestionnairePage = "/pos-questionnaire";
   static BreadmePage = "/extrabread";
   static BreadmeQuestionPage = "/bread-me-questions";
   static POSDetailPage = "/product";
@@ -36,7 +36,7 @@ export const MainMenu = {
   questionnaire: {
     link: "",
     title: {
-      [Locale.en]: "Best POS for your business",
+      [Locale.en]: "POS Questionnaire",
       [Locale.es]: "Cuestionario",
     },
   },

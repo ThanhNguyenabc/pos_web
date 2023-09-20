@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 
 export default function PageNotFound() {
   const router = useRouter();
-    useEffect(() => {
+  useEffect(() => {
     router.replace("/");
   }, []);
 
