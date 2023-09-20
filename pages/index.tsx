@@ -15,6 +15,8 @@ import useSideBar from "stores/useSideBar";
 import { RightSideBarType } from "components/common/RightSideBar";
 import { cacheTime } from "utils/constants";
 import { fetchProductList } from "./api/products";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 export const getStaticProps = async () => {
   const products = await fetchProductList("all", 4);
@@ -27,11 +29,20 @@ export const getStaticProps = async () => {
 
 const HomePage = ({ products }: { products: Array<Product> }) => {
   const { t, locale } = useTrans();
+  const router = useRouter();
+  const { q } = router.query;
+
   const openSideBar = useSideBar((state) => state.openSideBar);
 
   const findPOS = () => {
     openSideBar(RightSideBarType.Questionnaire);
   };
+
+  useEffect(() => {
+    if (q && q == "request-demo-pos") {
+      openSideBar(RightSideBarType.RequestDemo);
+    }
+  }, [router]);
 
   return (
     <>
