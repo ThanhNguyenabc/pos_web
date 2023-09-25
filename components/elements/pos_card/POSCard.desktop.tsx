@@ -23,12 +23,12 @@ const POSCardDesktop = ({
   classname = "",
   priority,
   recommendTagProps,
+  navigateTo = "",
 }: POSCardProps) => {
   const openSideBar = useSideBar((state) => state.openSideBar);
   const { t, locale } = useTrans();
   const overallRating = data.expert_opinion.overall;
   const { id, slug, name } = data;
-  const url = `${AppRoutes.POSDetailPage}/${id}/${slug}`;
 
   const openDemoDialog = () => openSideBar(RightSideBarType.RequestDemo);
 
@@ -46,7 +46,7 @@ const POSCardDesktop = ({
       </div>
       <div className="flex flex-row border-b border-b-neutral-300">
         <div className="flex-1 flex flex-col items-start">
-          <Link className="block w-[160px]  ml-4 my-auto" href={url}>
+          <Link className="block w-[160px]  ml-4 my-auto" href={navigateTo}>
             <Image
               src={data.logo || DefaultImg}
               alt="logo-pos"
@@ -81,7 +81,7 @@ const POSCardDesktop = ({
         </div>
         <Link
           className=" flex-1 flex flex-col border-l border-neutral-300 border-r gap-1 py-8 px-4 items-center justify-center"
-          href={url}
+          href={navigateTo}
         >
           <CustomCircularProgress
             id="card-desktop-progress"

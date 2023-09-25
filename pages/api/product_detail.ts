@@ -22,13 +22,14 @@ export default async function handler(
   }
 }
 
-export const getProductDetail = async (posId: string) => {
+export const getProductDetail = async (slug: string) => {
   await connectMongo();
 
-  const data = await Promise.all([
-    ProductModel.findOne({ id: posId }).exec(),
-    ProductDetailModel.findOne({ productId: posId }).exec(),
-  ]);
+  const product = await ProductModel.findOne({ slug }).exec();
 
-  return { ...data[0]?.toObject(), ...data[1]?.toObject() };
+  const productDetail = await ProductDetailModel.findOne({
+    productId: product?.id,
+  }).exec();
+
+  return { ...product?.toObject(), ...productDetail?.toObject() };
 };

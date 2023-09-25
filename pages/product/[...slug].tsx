@@ -1,27 +1,33 @@
-import { getPOSDetail } from "api_client/axios_client";
 import HeadTag from "components/common/HeadTag";
 import { ProductDetailView } from "components/elements/pos_detail/ProductDetail";
 import SimilarPOS from "components/elements/pos_detail/SimilarPOS";
-import useTrans from "hooks/useTrans";
+import { MetaTag } from "models/app_configs";
 import { ProductDetail } from "models/product-detail.model";
 import { GetServerSidePropsContext } from "next";
+import { getSEOTagByProduct } from "pages/api/configs";
 import { getProductDetail } from "pages/api/product_detail";
 import React from "react";
-import useAppStore from "stores/app_store";
 import { AppRoutes } from "utils/routes";
 
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
   const params = context.query.slug;
-  const productID = params?.[0];
+  const slug = params?.[0];
 
-  if (productID) {
-    const data = await getProductDetail(productID);
+  if (slug) {
+    const data = await Promise.all([
+      getProductDetail(slug),
+      getSEOTagByProduct(slug),
+    ]);
+
+    const productDetail = JSON.parse(JSON.stringify(data?.[0]));
+    const meta_tag = data?.[1] || {};
 
     return {
       props: {
-        product: JSON.parse(JSON.stringify(data)),
+        meta_tag,
+        product: productDetail,
       },
     };
   }
@@ -34,23 +40,17 @@ export const getServerSideProps = async (
   };
 };
 
-const DetailPage = ({ product }: { product: ProductDetail }) => {
-  const { locale } = useTrans();
-  const { appConfig } = useAppStore();
-  const meta = appConfig?.metaTags?.pageTags?.productDetail;
-
-  if (meta && product) {
-    meta.title[locale] =
-      meta?.title?.[locale]?.replace("[name]", product.name) || product.name;
-    meta.description[locale] =
-      meta?.description?.[locale]?.replace("[name]", product.name) ||
-      product.name;
-  }
-
+const DetailPage = ({
+  product,
+  meta_tag,
+}: {
+  product?: ProductDetail;
+  meta_tag?: MetaTag;
+}) => {
   return (
     <>
-      <HeadTag customTag={meta} />
-      <ProductDetailView productData={product} />
+      {meta_tag && <HeadTag tags={meta_tag} />}
+      {product && <ProductDetailView productData={product} />}
       <SimilarPOS />
     </>
   );

@@ -13,9 +13,11 @@ import HTMLReactParser, {
 import Writer from "components/elements/blog/Writer";
 import dayjs from "dayjs";
 import Subcriber from "components/elements/blog/Subcriber";
-import { Locale } from "models/app_configs";
+import { Locale, MetaTag } from "models/app_configs";
 import useTrans from "hooks/useTrans";
 import HeadTag from "components/common/HeadTag";
+import { getSEOTags } from "pages/api/configs";
+import { cacheTime } from "utils/constants";
 
 const BlogDetailTrans = {
   admin: {
@@ -65,7 +67,17 @@ const options: HTMLReactParserOptions = {
   },
 };
 
-const BlogDetail = () => {
+export const getStaticProps = async () => {
+  const data = await getSEOTags("blog");
+  return {
+    props: {
+      seoTag: data,
+    },
+    revalidate: cacheTime,
+  };
+};
+
+const BlogDetail = ({ seoTag }: { seoTag: MetaTag }) => {
   const router = useRouter();
   const { id } = router.query;
   const { data } = useSwr(id, getBlogDetail);
@@ -75,7 +87,7 @@ const BlogDetail = () => {
 
   return (
     <>
-      <HeadTag screen="blog" />
+      <HeadTag tags={seoTag} />
       <div className="flex flex-col container-content">
         <Box className="max-w-[768px] mx-auto">
           <div className="flex flex-row items-center txt-md-bold text-neutral-600 gap-4 self-center md:text-xl">

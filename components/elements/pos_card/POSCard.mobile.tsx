@@ -15,20 +15,18 @@ import { RightSideBarType } from "components/common/RightSideBar";
 import { twMerge } from "tailwind-merge";
 import useTrans from "hooks/useTrans";
 import { POSCardProps } from "./POSCardTypes";
-import { AppRoutes } from "utils/routes";
-import RecommendTag from "components/common/RecommendTag";
 
 const POSCardMobile = ({
   data,
   priority,
   classname,
   recommendTagProps,
+  navigateTo = "",
 }: POSCardProps) => {
   const openSideBar = useSideBar((state) => state.openSideBar);
   const overallRating = data.expert_opinion.overall;
   const { id, slug, name } = data;
   const { t } = useTrans();
-  const detailPage = `${AppRoutes.POSDetailPage}/${id}/${slug}`;
 
   const openDemoDialog = () => openSideBar(RightSideBarType.RequestDemo);
 
@@ -41,7 +39,7 @@ const POSCardMobile = ({
       )}
     >
       <div className="flex flex-row border-b border-b-neutral-300">
-        <Link className="  flex flex-col justify-center pr-4" href={detailPage}>
+        <Link className="  flex flex-col justify-center pr-4" href={navigateTo}>
           {priority === "first" && (
             <div
               className="flex flex-row bg-primary text-white px-1 justify-center 

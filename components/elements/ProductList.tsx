@@ -7,6 +7,7 @@ import useSWRImmutable from "swr/immutable";
 import Box from "components/common/Box";
 import { Priority, RecommendColorConfig } from "./pos_card/POSCardTypes";
 import POSCard from "./pos_card/POSCard";
+import { AppRoutes } from "utils/routes";
 
 const ProductList = ({ type }: { type: string }) => {
   const { t } = useTrans();
