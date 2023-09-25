@@ -17,17 +17,32 @@ import { cacheTime } from "utils/constants";
 import { fetchProductList } from "./api/products";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import { getAppConfigs } from "api_client/axios_client";
+import { getSEOTags } from "./api/configs";
+import { MetaTag } from "models/app_configs";
 
 export const getStaticProps = async () => {
-  const products = await fetchProductList("all", 4);
+  const data = await Promise.all([
+    fetchProductList("all", 4),
+    getSEOTags("home"),
+  ]);
 
   return {
-    props: { products: JSON.parse(JSON.stringify(products)) },
+    props: {
+      products: JSON.parse(JSON.stringify(data?.[0])),
+      seoTags: data?.[1],
+    },
     revalidate: cacheTime,
   };
 };
 
-const HomePage = ({ products }: { products: Array<Product> }) => {
+const HomePage = ({
+  products,
+  seoTags,
+}: {
+  products: Array<Product>;
+  seoTags: MetaTag;
+}) => {
   const { t, locale } = useTrans();
   const router = useRouter();
   const { q } = router.query;
@@ -46,7 +61,7 @@ const HomePage = ({ products }: { products: Array<Product> }) => {
 
   return (
     <>
-      <HeadTag screen="home" />
+      <HeadTag tags={seoTags} />
       <div className="flex flex-col gap-4 items-end mx-auto max-w-[1300px] lg:gap-8 lg:flex-row">
         <Box className="flex-1 pb-4 lg:max-w-[600px] lg:pb-8">
           <span className="txt-md-bold mt-2 lg:mt-6">

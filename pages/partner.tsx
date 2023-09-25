@@ -7,10 +7,12 @@ import MetricSection from "components/common/MetricSection";
 import { RightSideBarType } from "components/common/RightSideBar";
 import ReviewerSection from "components/elements/partner/ReviewerSection";
 import useTrans from "hooks/useTrans";
-import { Locale } from "models/app_configs";
+import { Locale, MetaTag } from "models/app_configs";
 import Image from "next/image";
 import React from "react";
 import useSideBar from "stores/useSideBar";
+import { cacheTime } from "utils/constants";
+import { getSEOTags } from "./api/configs";
 
 const PartnerTrans = {
   heading: {
@@ -127,14 +129,24 @@ const Feedbacks = [
   },
 ];
 
-const PartnerPage = () => {
+export const getStaticProps = async () => {
+  const seoTag = await getSEOTags("home");
+  return {
+    props: {
+      seoTag,
+    },
+    revalidate: cacheTime,
+  };
+};
+
+const PartnerPage = ({ seoTag }: { seoTag: MetaTag }) => {
   const { locale } = useTrans();
   const openSideBar = useSideBar((state) => state.openSideBar);
 
   const openPartnerForm = () => openSideBar(RightSideBarType.ApplyPartner);
   return (
     <>
-      <HeadTag screen="home" />
+      <HeadTag tags={seoTag} />
       <div className="flex flex-col max-w-[1320px] lg:h-[640px] lg:flex-row xl:ml-[calc((100%-1200px)/2)]">
         <HeroSection className="flex-1 gap-4 text-center md:gap-6 lg:text-left my-auto lg:max-w-[50%] lg:py-[80px] xl:py-[120px]">
           <h1

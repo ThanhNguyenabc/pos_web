@@ -17,8 +17,21 @@ import Box from "components/common/Box";
 import HeadTag from "components/common/HeadTag";
 import { RightSideBarType } from "components/common/RightSideBar";
 import { AppRoutes } from "utils/routes";
+import { cacheTime } from "utils/constants";
+import { getSEOTags } from "./api/configs";
+import { MetaTag } from "models/app_configs";
 
-const BreadmePage = () => {
+export const getStaticProps = async () => {
+  const seoTag = await getSEOTags("breadme");
+  return {
+    props: {
+      seoTag,
+    },
+    revalidate: cacheTime,
+  };
+};
+
+const BreadmePage = ({ seoTag }: { seoTag: MetaTag }) => {
   const router = useRouter();
   const { t } = useTrans();
   const openSideBar = useSideBar((state) => state.openSideBar);
@@ -38,7 +51,7 @@ const BreadmePage = () => {
 
   return (
     <>
-      <HeadTag screen="breadme" />
+      <HeadTag tags={seoTag} />
       <div className="bg-green-100">
         <div className="flex flex-col max-w-[1320px] lg:h-[640px] lg:flex-row xl:ml-[calc((100%-1200px)/2)]">
           <HeroSection className="flex-1 gap-6 text-center lg:text-left lg:py-[80px] xl:py-[120px] my-auto">

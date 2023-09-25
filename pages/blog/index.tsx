@@ -4,11 +4,12 @@ import BlogCard from "components/elements/blog/BlogCard";
 import React from "react";
 import dayjs from "dayjs";
 import Subcriber from "components/elements/blog/Subcriber";
-import { Locale } from "models/app_configs";
+import { Locale, MetaTag } from "models/app_configs";
 import useTrans from "hooks/useTrans";
 import HeadTag from "components/common/HeadTag";
 import { Blog } from "models/blog";
 import { cacheTime } from "utils/constants";
+import { getSEOTags } from "pages/api/configs";
 
 const BlogPageTrans = {
   heading: {
@@ -24,20 +25,27 @@ const BlogPageTrans = {
 };
 
 export const getStaticProps = async () => {
-  const posts = await getBlogPosts();
+  const data = await Promise.all([getBlogPosts(), getSEOTags("blog")]);
   return {
     props: {
-      posts,
+      posts: data?.[0],
+      seoTag: data?.[1],
     },
     revalidate: cacheTime,
   };
 };
 
-const BlogPage = ({ posts }: { posts: Array<Blog> }) => {
+const BlogPage = ({
+  posts,
+  seoTag,
+}: {
+  posts: Array<Blog>;
+  seoTag: MetaTag;
+}) => {
   const { locale } = useTrans();
   return (
     <>
-      <HeadTag screen="blog" />
+      <HeadTag tags={seoTag} />
       <div className="flex flex-col container-content h-full">
         <Box className="items-center mx-auto max-w-[768px] mb-12 md:mb-0">
           <div className="flex flex-col gap-4 mb-8 text-center md:gap-6 md:mb-12 lg:mb-16">

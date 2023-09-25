@@ -10,6 +10,19 @@ import useTrans from "hooks/useTrans";
 import { useRouter } from "next/router";
 import HeadTag from "components/common/HeadTag";
 import { AppRoutes } from "utils/routes";
+import { cacheTime } from "utils/constants";
+import { getSEOTags } from "./api/configs";
+import { MetaTag } from "models/app_configs";
+
+export const getStaticProps = async () => {
+  const seoTag = await getSEOTags("contact");
+  return {
+    props: {
+      seoTag,
+    },
+    revalidate: cacheTime,
+  };
+};
 
 const ContactItem = ({
   icon,
@@ -34,7 +47,7 @@ const ContactItem = ({
   );
 };
 
-const ContactPage = () => {
+const ContactPage = ({ seoTag }: { seoTag: MetaTag }) => {
   const { t } = useTrans();
   const router = useRouter();
 
@@ -50,7 +63,7 @@ const ContactPage = () => {
 
   return (
     <>
-      <HeadTag screen="contact" />
+      <HeadTag tags={seoTag} />
       <div className="flex  flex-col py-12 items-center gap-12 md:gap-14 lg:gap-20 md:py-14">
         <div className="flex flex-col container-content w-full px-4 md:px-8 gap-10">
           <div className="flex flex-col gap-4 items-center text-center">

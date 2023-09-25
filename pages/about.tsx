@@ -46,6 +46,7 @@ const ServiceData = [
     image: IcBackup,
   },
 ];
+
 const AboutPage = () => {
   const router = useRouter();
   const { t } = useTrans();

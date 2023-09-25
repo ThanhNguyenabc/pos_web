@@ -24,7 +24,7 @@ export function POSApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <InitialData />
+      {/* <InitialData /> */}
       <main className={inter.className}>
         <Layout>
           <Component {...pageProps} />

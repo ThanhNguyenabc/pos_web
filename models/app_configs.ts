@@ -19,7 +19,9 @@ export interface PageMeta {
   questionnaire?: MetaTag;
   breadme?: MetaTag;
   contact?: MetaTag;
-  productDetail?: MetaTag;
+  products?: {
+    [key: string]: MetaTag;
+  };
   blog?: MetaTag;
   partner?: MetaTag;
   suggestPOS?: MetaTag;

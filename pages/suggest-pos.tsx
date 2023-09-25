@@ -2,7 +2,7 @@ import Box from "components/common/Box";
 import IcArrow from "assets/icons/ic_right_arrow.svg";
 import RecommendPOSCard from "components/elements/recommend_card/RecommendPOSCard";
 import useTrans from "hooks/useTrans";
-import { Locale } from "models/app_configs";
+import { Locale, MetaTag } from "models/app_configs";
 import { SuggestPOSParams } from "models/suggest_pos_request_param";
 import { GetServerSidePropsContext } from "next";
 import React, { useEffect } from "react";
@@ -15,6 +15,7 @@ import { getCurrentMonth } from "utils/date_utils";
 import { Button } from "components/common/Button";
 import Link from "next/link";
 import { AppRoutes } from "utils/routes";
+import { getSEOTags } from "./api/configs";
 
 const SuggestPOSTrans = {
   heading: {
@@ -33,12 +34,16 @@ const SuggestPOSTrans = {
   },
 };
 
-export const getServerSideProps = (context: GetServerSidePropsContext) => {
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
   const { access, business, salesystem, stations, handheld, discount } =
     context.query;
-  if (access)
+  if (access) {
+    const seoTag = await getSEOTags("suggestPOS");
     return {
       props: {
+        seoTag,
         params: {
           business,
           salesystem,
@@ -48,6 +53,7 @@ export const getServerSideProps = (context: GetServerSidePropsContext) => {
         },
       },
     };
+  }
   return {
     redirect: {
       permanent: false,
@@ -57,7 +63,13 @@ export const getServerSideProps = (context: GetServerSidePropsContext) => {
   };
 };
 
-const SuggestPOSPage = ({ params }: { params: SuggestPOSParams }) => {
+const SuggestPOSPage = ({
+  params,
+  seoTag,
+}: {
+  params: SuggestPOSParams;
+  seoTag: MetaTag;
+}) => {
   const { t, locale } = useTrans();
   const key = `${params.business}-${params.discount}-${params.handheld}-${params.salesystem}-${params.stations}`;
   const { data: suggestProducts } = useSWRImmutable(key, () =>
@@ -70,7 +82,7 @@ const SuggestPOSPage = ({ params }: { params: SuggestPOSParams }) => {
 
   return (
     <>
-      <HeadTag screen="suggestPOS" />
+      <HeadTag tags={seoTag} />
       <div className={`flex flex-col bg-neutral-100`}>
         <div className=" block bg-[#D1FADF] h-[240px] md:h-[360px]" />
         <Box
@@ -85,7 +97,10 @@ const SuggestPOSPage = ({ params }: { params: SuggestPOSParams }) => {
           </h1>
           <h2 className="txt-md">
             {SuggestPOSTrans.desc[locale]}{" "}
-            <Link href={AppRoutes.ContactPage} className="font-semibold underline">
+            <Link
+              href={AppRoutes.ContactPage}
+              className="font-semibold underline"
+            >
               Contact us
             </Link>
           </h2>
