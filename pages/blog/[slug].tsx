@@ -67,15 +67,6 @@ const options: HTMLReactParserOptions = {
   },
 };
 
-export const getStaticProps = async () => {
-  const data = await getSEOTags("home");
-  return {
-    props: {
-      seoTag: data,
-    },
-    revalidate: cacheTime,
-  };
-};
 
 const BlogDetail = ({ seoTag }: { seoTag: MetaTag }) => {
   const router = useRouter();
@@ -87,7 +78,6 @@ const BlogDetail = ({ seoTag }: { seoTag: MetaTag }) => {
 
   return (
     <>
-      <HeadTag tags={seoTag} />
       <div className="flex flex-col container-content">
         <Box className="max-w-[768px] mx-auto">
           <div className="flex flex-row items-center txt-md-bold text-neutral-600 gap-4 self-center md:text-xl">
