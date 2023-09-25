@@ -1,5 +1,4 @@
 import IcRightArrow from "assets/icons/ic_right_arrow.svg";
-
 import { Button } from "components/common/Button";
 import React from "react";
 import Image from "next/image";
