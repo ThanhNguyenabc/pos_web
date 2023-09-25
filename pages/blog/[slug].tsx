@@ -2,7 +2,7 @@ import { getBlogDetail } from "api_client/axios_client";
 import Box from "components/common/Box";
 import { useRouter } from "next/router";
 import React from "react";
-import useSwr from "swr";
+import useSwr from "swr/immutable";
 import HTMLReactParser, {
   DOMNode,
   domToReact,
@@ -13,11 +13,8 @@ import HTMLReactParser, {
 import Writer from "components/elements/blog/Writer";
 import dayjs from "dayjs";
 import Subcriber from "components/elements/blog/Subcriber";
-import { Locale, MetaTag } from "models/app_configs";
+import { Locale } from "models/app_configs";
 import useTrans from "hooks/useTrans";
-import HeadTag from "components/common/HeadTag";
-import { getSEOTags } from "pages/api/configs";
-import { cacheTime } from "utils/constants";
 
 const BlogDetailTrans = {
   admin: {
@@ -67,8 +64,7 @@ const options: HTMLReactParserOptions = {
   },
 };
 
-
-const BlogDetail = ({ seoTag }: { seoTag: MetaTag }) => {
+const BlogDetail = () => {
   const router = useRouter();
   const { id } = router.query;
   const { data } = useSwr(id, getBlogDetail);
