@@ -2,7 +2,7 @@ import { getBlogDetail } from "api_client/axios_client";
 import Box from "components/common/Box";
 import { useRouter } from "next/router";
 import React from "react";
-import useSwr from "swr/immutable";
+import useSWRImmutable from "swr/immutable";
 import HTMLReactParser, {
   DOMNode,
   domToReact,
@@ -67,7 +67,7 @@ const options: HTMLReactParserOptions = {
 const BlogDetail = () => {
   const router = useRouter();
   const { id } = router.query;
-  const { data } = useSwr(id, getBlogDetail);
+  const { data } = useSWRImmutable(id, getBlogDetail);
   const { locale } = useTrans();
   const author = BlogDetailTrans.admin[locale];
   const date = dayjs(data?.date).format("YYYY-MM-DD");
