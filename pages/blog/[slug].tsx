@@ -68,7 +68,7 @@ const options: HTMLReactParserOptions = {
 };
 
 export const getStaticProps = async () => {
-  const data = await getSEOTags("blog");
+  const data = await getSEOTags("home");
   return {
     props: {
       seoTag: data,

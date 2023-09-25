@@ -25,11 +25,11 @@ const BlogPageTrans = {
 };
 
 export const getStaticProps = async () => {
-  const data = await Promise.all([getBlogPosts(), getSEOTags("blog")]);
+  const data = await Promise.all([getBlogPosts(), getSEOTags("home")]);
   return {
     props: {
-      posts: data?.[0],
-      seoTag: data?.[1],
+      posts: data?.[0] || [],
+      seoTag: data?.[1] || {},
     },
     revalidate: cacheTime,
   };
@@ -40,9 +40,9 @@ const BlogPage = ({
   seoTag,
 }: {
   posts: Array<Blog>;
-  seoTag: MetaTag;
+  seoTag?: MetaTag;
 }) => {
-  const { locale } = useTrans();
+    const { locale } = useTrans();
   return (
     <>
       <HeadTag tags={seoTag} />
