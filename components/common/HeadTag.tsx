@@ -36,7 +36,7 @@ const HeadTag = ({ tags }: HeadTagProps) => {
 
       <meta property={`og:title`} content={title} />
       <meta property={`og:description`} content={description} />
-      <meta property={`og:image`} content={tags?.image} />
+      <meta property={`og:image`} content={tags?.image || "/thumbnail.webp"} />
       <meta property="og:url" content={tags?.url?.[locale]} />
     </Head>
   );
