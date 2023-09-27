@@ -42,7 +42,7 @@ const BlogPage = ({
   posts: Array<Blog>;
   seoTag?: MetaTag;
 }) => {
-    const { locale } = useTrans();
+  const { locale } = useTrans();
   return (
     <>
       <HeadTag tags={seoTag} />
