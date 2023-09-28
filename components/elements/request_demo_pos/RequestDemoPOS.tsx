@@ -10,7 +10,14 @@ import useTrans from "hooks/useTrans";
 import { sendGoogleEvent } from "utils/tracking_utils";
 import { CategoryList } from "utils/routes";
 
-const RequestDemoPOS = () => {
+interface RequestDemoPOS {
+  showCloseButton?: boolean;
+  afterSubmit?: () => void;
+}
+const RequestDemoPOS = ({
+  showCloseButton = true,
+  afterSubmit,
+}: RequestDemoPOS) => {
   const [isSubmit, setSubmit] = useState(false);
   const [businessType, setBusinessType] = useState(CategoryList[0].title.en);
   const { t, locale } = useTrans();
@@ -26,6 +33,7 @@ const RequestDemoPOS = () => {
       },
     });
     setSubmit(true);
+    afterSubmit && afterSubmit();
   };
 
   useEffect(() => {
@@ -70,7 +78,7 @@ const RequestDemoPOS = () => {
     <>
       <HeaderWithBack
         title={t("request_a_demo")}
-        onClose={closeSidebar}
+        onClose={showCloseButton ? closeSidebar : undefined}
         subTitle={
           <p className="txt-sm max-w-xl text-neutral-700 md:text-center md:ml-3">
             We&apos;ll connect you with the POS provider to setup a demo and get
