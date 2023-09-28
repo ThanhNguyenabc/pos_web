@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { AppRoutes } from "utils/routes";
 
-const index = () => {
+const RequestDemoPage = () => {
   const router = useRouter();
 
   const navigateToHomePage = () => {
@@ -22,4 +22,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default RequestDemoPage;
