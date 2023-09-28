@@ -98,7 +98,6 @@ const MobileMenu = ({ onClose }: { onClose?: () => void }) => {
             className="flex justify-between txt-md-bold items-center"
           >
             {item.title[locale]}
-            <IcChervonRight className="text-[12px]" />
           </Link>
         ))}
       </div>
