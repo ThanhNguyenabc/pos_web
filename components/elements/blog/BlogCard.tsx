@@ -56,10 +56,9 @@ const BlogCard = ({
             <Image
               src={urlImage}
               alt="blog-image"
-              priority
-              height={200}
-              width={200}
-              className="md:w-[300px] object-cover"
+              height={500}
+              width={500}
+              className="md:w-[300px] object-cover aspect-square"
             />
           </div>
         )}
