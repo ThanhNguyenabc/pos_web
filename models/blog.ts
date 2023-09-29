@@ -11,5 +11,5 @@ export interface Blog {
   excerpt: {
     rendered: string;
   };
-  jetpack_featured_media_url?: string;
+  featured_media_src_url?: string;
 }

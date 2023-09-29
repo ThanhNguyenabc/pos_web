@@ -8,7 +8,6 @@ import { Locale, MetaTag } from "models/app_configs";
 import useTrans from "hooks/useTrans";
 import HeadTag from "components/common/HeadTag";
 import { Blog } from "models/blog";
-import { cacheTime } from "utils/constants";
 import { getSEOTags } from "pages/api/configs";
 
 const BlogPageTrans = {
@@ -31,7 +30,7 @@ export const getStaticProps = async () => {
       posts: data?.[0] || [],
       seoTag: data?.[1] || {},
     },
-    revalidate: cacheTime,
+    revalidate: 60,
   };
 };
 
@@ -65,7 +64,7 @@ const BlogPage = ({
                   key={`blog-post-${item.id}`}
                   slug={item.slug}
                   title={item.title.rendered}
-                  urlImage={item.jetpack_featured_media_url}
+                  urlImage={item.featured_media_src_url}
                   subTitle={item.excerpt.rendered}
                   author="Admin"
                   date={dayjs(item.date).format("YYYY-MM-DD")}
