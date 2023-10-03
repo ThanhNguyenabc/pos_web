@@ -19,7 +19,7 @@ const PricingBtn = ({
   color = "secondary",
   className,
   onClick,
-}: PricingBtnProps) => {
+}: PricingBtnProps): React.ReactNode => {
   const { t } = useTrans();
 
   const onClickItem = (e: React.MouseEvent) => {
