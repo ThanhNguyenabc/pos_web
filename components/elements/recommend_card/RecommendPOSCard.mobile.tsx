@@ -73,9 +73,10 @@ const RecommendPOSCardMobile = ({ data, classname = "" }: POSCardProps) => {
         <PricingBtn
           logo={data.logo || ""}
           color={ColorUtils.secondary}
-          desc={`$${data.monthly_price}/month`}
           onClick={() => openSideBar(RightSideBarType.RequestDemo)}
-        />
+        >
+          {`${data.monthly_price}/month`}
+        </PricingBtn>
       </div>
     </div>
   );

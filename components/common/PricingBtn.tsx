@@ -1,20 +1,20 @@
 import useTrans from "hooks/useTrans";
 import Image, { StaticImageData } from "next/image";
-import React, { ReactElement } from "react";
+import React, { ReactElement, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface PricingBtnProps {
   color?: string;
   logo: StaticImageData | string;
   onClick?: () => void;
-  desc: ReactElement | string;
   title?: string;
   className?: string;
+  children?: ReactNode;
 }
 
 const PricingBtn = ({
   logo,
-  desc,
+  children,
   title,
   color = "secondary",
   className,
@@ -52,7 +52,7 @@ const PricingBtn = ({
         <p className="flex-1 text-sm text-neutral-700 md:text-base text-center">
           {title || t("monthly")}
         </p>
-        <p className="txt-md-bold md:text-xl">{desc}</p>
+        <p className="txt-md-bold md:text-xl">{children}</p>
       </div>
 
       <button
