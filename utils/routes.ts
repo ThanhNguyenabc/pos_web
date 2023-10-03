@@ -57,7 +57,7 @@ export const MainMenu = {
   blog: {
     link: AppRoutes.BlogPage,
     title: {
-      [Locale.en]: "POS Insights",
+      [Locale.en]: "Insights",
       [Locale.es]: "Blog",
     },
   },
