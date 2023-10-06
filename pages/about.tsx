@@ -101,7 +101,7 @@ const AboutPage = () => {
         <p className="txt-md text-neutral-700 max-w-[790px]  md:text-xl lg:ml-3">
           In the dynamic world of business technology, finding the ideal
           point-of-sale system can feel like a puzzle waiting to be solved.
-          That's where we step in! At BestPOS, we specialize in being your
+          That&apos;s where we step in! At BestPOS, we specialize in being your
           trusted mediator, seamlessly connecting your business with the right
           POS provider and effortlessly securing the best deal.
         </p>
