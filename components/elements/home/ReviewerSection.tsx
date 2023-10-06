@@ -1,16 +1,18 @@
 import IcRating from "assets/icons/ic_rating.svg";
+import { useMediaQuery } from "hooks/useMediaQuery";
 import useTrans from "hooks/useTrans";
 import { Testimonial } from "models/testimonial.model";
 import React, { useState, useMemo } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { twMerge } from "tailwind-merge";
+import { LG_SCREEN } from "utils/constants";
 
 interface ReviewerSectionProps {
   reviews: Array<Testimonial>;
 }
 
-const ReviewListItem = ({
+const ReviewCardItem = ({
   item,
   className,
 }: {
@@ -33,7 +35,7 @@ const ReviewListItem = ({
   return (
     <div
       className={twMerge(
-        `mt-8  w-full inline-flex text-start flex-col rounded-2xl bg-neutral-100 p-4 gap-2 sm:p-8`,
+        `mt-8 w-full inline-flex text-start flex-col rounded-2xl bg-neutral-100 p-4 gap-2 sm:p-8`,
         className
       )}
     >
@@ -57,12 +59,12 @@ const ReviewListItem = ({
 const SwipeReviewList = ({ items }: { items: Array<React.ReactElement> }) => {
   const [currIndex, setIndex] = useState(0);
   return (
-    <div className="flex flex-col lg:hidden">
+    <div className="flex flex-col">
       <Carousel
         showThumbs={false}
         showIndicators={false}
         axis="horizontal"
-        className="  gap-2"
+        className="gap-2"
         showStatus={false}
         preventMovementUntilSwipeScrollTolerance={true}
         onChange={(index) => {
@@ -93,20 +95,25 @@ const SwipeReviewList = ({ items }: { items: Array<React.ReactElement> }) => {
 };
 
 const ReviewerSectionV2 = ({ reviews }: ReviewerSectionProps) => {
+  const { screenSize } = useMediaQuery();
+
   const renderItem = useMemo(() => {
     const listItems: Array<React.ReactElement> = [];
+
     reviews.forEach((item, index) => {
       listItems.push(
-        <ReviewListItem item={item} key={`${item.jobTitle}-${item.name}`} />
+        <ReviewCardItem item={item} key={`${item.jobTitle}-${item.name}`} />
       );
     });
     return listItems;
   }, [reviews]);
 
+  if (screenSize >= LG_SCREEN)
+    return <div className="columns-2 gap-x-8">{renderItem}</div>;
+
   return (
     <>
       <SwipeReviewList items={renderItem} />
-      <div className="hidden columns-2 gap-x-8 lg:block">{renderItem}</div>
     </>
   );
 };
