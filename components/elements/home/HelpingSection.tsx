@@ -11,13 +11,13 @@ import HTMLReactParser from "html-react-parser";
 const Factors = [
   {
     icon: IcBusiness,
-    title: "business_review",
-    content: "business_review_desc",
+    title: "schedule_a_demo",
+    content: "schedule_a_demo_desc",
   },
   {
     icon: IcSchedule,
-    title: "schedule_a_demo",
-    content: "schedule_a_demo_desc",
+    title: "business_review",
+    content: "business_review_desc",
   },
 
   {
