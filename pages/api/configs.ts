@@ -21,8 +21,11 @@ export const getSEOTags = async (page: keyof PageMeta) => {
   try {
     await connectMongo();
     const data = await AppConfigModel.find({});
-    return data?.[0].metaTags?.pageTags?.[page];
+    return (
+      data?.[0].metaTags?.pageTags?.[page] || data?.[0].metaTags?.pageTags?.home
+    );
   } catch (error) {}
+  return {};
 };
 
 export const getSEOTagByProduct = async (productSlug: string) => {

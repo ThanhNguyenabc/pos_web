@@ -4,15 +4,16 @@ import HeroSection from "components/common/HeroSection";
 import MetricSection from "components/common/MetricSection";
 import useTrans from "hooks/useTrans";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import React from "react";
 import useSideBar from "stores/useSideBar";
 import HeadTag from "components/common/HeadTag";
 import { RightSideBarType } from "components/common/RightSideBar";
-import { AppRoutes } from "utils/routes";
 import TestimonialSectionV2 from "components/elements/home/TestimonialSection";
 import IcCheck from "assets/icons/ic_check.svg";
 import { twMerge } from "tailwind-merge";
+import { getSEOTags } from "./api/configs";
+import { cacheTime } from "utils/constants";
+import { MetaTag } from "models/app_configs";
 
 const ServiceData = [
   {
@@ -60,7 +61,18 @@ const ServiceItem = ({
   );
 };
 
-const AboutPage = () => {
+export const getStaticProps = async () => {
+  const data = await getSEOTags("about");
+
+  return {
+    props: {
+      seoTag: data,
+    },
+    revalidate: cacheTime,
+  };
+};
+
+const AboutPage = ({ seoTag }: { seoTag?: MetaTag }) => {
   const { t } = useTrans();
   const openSideBar = useSideBar((state) => state.openSideBar);
 
@@ -74,7 +86,7 @@ const AboutPage = () => {
 
   return (
     <>
-      <HeadTag />
+      <HeadTag tags={seoTag} />
       <HeroSection className="flex flex-col px-4 py-12 gap-4 md:px-8 md:py-14">
         <h2 className="txt-md-bold text-center text-primary md:text-start">
           {t("about_us_title")}

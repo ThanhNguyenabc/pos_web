@@ -25,6 +25,8 @@ export interface PageMeta {
   blog?: MetaTag;
   partner?: MetaTag;
   suggestPOS?: MetaTag;
+  about?: MetaTag;
+  requestDemoPOS?: MetaTag;
 }
 
 export interface RemoteAppConfig {
