@@ -220,7 +220,7 @@ export const subscribeBlog = async (data: DataSubmission) => {
 export const getBlogPosts = async () => {
   try {
     const result = await fetcher<Array<Blog>>({
-      url: "/posts",
+      url: "/posts?per_page=100",
       baseURL: process.env.NEXT_PUBLIC_WORDPRESS_HOST,
     });
     return result;
