@@ -39,7 +39,10 @@ const POSCardMobile = ({
       )}
     >
       <div className="flex flex-row border-b border-b-neutral-300">
-        <Link className="  flex flex-col justify-center pr-4" href={navigateTo}>
+        <Link
+          className={`flex flex-col justify-center pr-4 .${name.toLowerCase()}`}
+          href={navigateTo}
+        >
           {priority === "first" && (
             <div
               className="flex flex-row bg-primary text-white px-1 justify-center 

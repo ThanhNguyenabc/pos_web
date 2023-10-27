@@ -46,7 +46,10 @@ const POSCardDesktop = ({
       </div>
       <div className="flex flex-row border-b border-b-neutral-300">
         <div className="flex-1 flex flex-col items-start">
-          <Link className="block w-[160px]  ml-4 my-auto" href={navigateTo}>
+          <Link
+            className={`block w-[160px] ml-4 my-auto .${name.toLowerCase()}`}
+            href={navigateTo}
+          >
             <Image
               src={data.logo || DefaultImg}
               alt="logo-pos"
