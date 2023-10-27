@@ -2,7 +2,7 @@ import { NextApiRequest } from "next";
 import { NextApiResponse } from "next";
 import { connectMongo } from "lib/mongodb";
 import { AppConfigModel } from "lib/mongodb/entities/app_config";
-import { PageMeta } from "models/app_configs";
+import { BusinessTypeMeta, PageMeta } from "models/app_configs";
 
 export default async function handler(
   req: NextApiRequest,
@@ -35,4 +35,12 @@ export const getSEOTagByProduct = async (productSlug: string) => {
     return data?.[0].metaTags?.pageTags?.["products"]?.[productSlug];
   } catch (error) {}
   return null;
+};
+
+export const getSEOTagByBusinessType = async (type: string) => {
+  try {
+    const data = (await getSEOTags("businessTypes")) as BusinessTypeMeta;
+    return data[type as keyof BusinessTypeMeta] || {};
+  } catch (error) {}
+  return {};
 };

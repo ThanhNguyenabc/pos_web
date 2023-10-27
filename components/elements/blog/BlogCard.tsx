@@ -63,7 +63,9 @@ const BlogCard = ({
           </div>
         )}
         <div className="flex flex-1 flex-col gap-2">
-          <p className="txt-large-bold">{title}</p>
+          <h3 className="txt-large-bold  whitespace-pre-wrap">
+            {HTMLReactParser(title)}
+          </h3>
           {HTMLReactParser(subTitle)}
           <div className="flex flex-col mt-2">
             <p className="txt-md-bold">{author}</p>

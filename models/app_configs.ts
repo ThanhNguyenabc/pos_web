@@ -12,6 +12,16 @@ export interface MetaTag {
   description: Attribute;
 }
 
+export interface BusinessTypeMeta {
+  popular?: MetaTag;
+  "full-service-restaurants"?: MetaTag;
+  pizza?: MetaTag;
+  "quick-service-restaurants"?: MetaTag;
+  "retail-store": MetaTag;
+  clubs?: MetaTag;
+  "small-business"?: MetaTag;
+}
+
 export interface PageMeta {
   home?: MetaTag;
   freePOS?: MetaTag;
@@ -27,6 +37,7 @@ export interface PageMeta {
   suggestPOS?: MetaTag;
   about?: MetaTag;
   requestDemoPOS?: MetaTag;
+  businessTypes: BusinessTypeMeta;
 }
 
 export interface RemoteAppConfig {

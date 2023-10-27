@@ -8,12 +8,19 @@ import Box from "components/common/Box";
 import { Priority, RecommendColorConfig } from "./pos_card/POSCardTypes";
 import POSCard from "./pos_card/POSCard";
 import { AppRoutes } from "utils/routes";
+import { Product } from "models/product.model";
 
-const ProductList = ({ type }: { type: string }) => {
+const ProductList = ({
+  type,
+  data,
+}: {
+  type: string;
+  data: Array<Product>;
+}) => {
   const { t } = useTrans();
-  const { data, isLoading } = useSWRImmutable(`${type}`, () =>
-    getListPOS({ type: type })
-  );
+  // const { data, isLoading } = useSWRImmutable(`${type}`, () =>
+  //   getListPOS({ type: type })
+  // );
 
   const renderItems = () => {
     let items: Array<React.ReactElement> = [];
@@ -61,7 +68,7 @@ const ProductList = ({ type }: { type: string }) => {
 
   return (
     <Box className="flex flex-1 container-content gap-6 items-center min-h-[300px]">
-      {isLoading && <Loading />}
+      {!data && <Loading />}
       {data && renderItems()}
     </Box>
   );

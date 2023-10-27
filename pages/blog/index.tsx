@@ -24,7 +24,7 @@ const BlogPageTrans = {
 };
 
 export const getStaticProps = async () => {
-  const data = await Promise.all([getBlogPosts(), getSEOTags("home")]);
+  const data = await Promise.all([getBlogPosts(), getSEOTags("blog")]);
   return {
     props: {
       posts: data?.[0] || [],

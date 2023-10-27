@@ -23,7 +23,7 @@ export class AppRoutes {
 }
 
 const getURLByPOSCategory = (type: string) =>
-  `${AppRoutes.POSSystemPage}?type=${type}`;
+  `${AppRoutes.POSSystemPage}/${type}`;
 
 export const MainMenu = {
   home: {
