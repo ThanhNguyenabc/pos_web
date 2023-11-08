@@ -52,18 +52,21 @@ export const getListCategory = async () => {
 };
 
 export const getListPOS = async ({
-  type,
+  type = "",
   limit = 0,
+  fields = "",
 }: {
-  type: string;
+  type?: string;
   limit?: number;
-}) => {
+  fields?: string;
+} = {}) => {
   try {
     const result = await fetcher<ApiResponse<Array<Product>>>({
       url: "/products",
       params: {
         type,
         limit,
+        fields,
       },
     });
 

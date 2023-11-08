@@ -1,14 +1,34 @@
 import HeaderWithBack from "components/common/HeaderWithBack";
-import SelectedList from "components/common/SelectedList";
-import React, { useEffect, useState } from "react";
-import { submitForDemoPOS } from "api_client/axios_client";
-import { ContactInfo } from "models/contact_info";
-import ContactForm from "components/common/ContactForm";
-import ThanksYouForm from "components/common/ThanksForm";
+import React, { forwardRef, useEffect, useState } from "react";
 import useSideBar from "stores/useSideBar";
 import useTrans from "hooks/useTrans";
 import { sendGoogleEvent } from "utils/tracking_utils";
-import { CategoryList } from "utils/routes";
+import dynamic from "next/dynamic";
+import { twMerge } from "tailwind-merge";
+import RequestDemoContactForm from "./RequestDemoContactForm";
+import SystemsQuestion from "./SystemsQuestion";
+import BusinessTypes from "./BusinessTypes";
+import useRequestDemoStore from "stores/request_demo_store";
+
+const ThanksYouForm = dynamic(() => import("components/common/ThanksForm"));
+
+interface RequestDemoSectionProps
+  extends React.HtmlHTMLAttributes<HTMLDivElement> {
+  title: string;
+}
+
+const RequestDemoSection = forwardRef<HTMLDivElement, RequestDemoSectionProps>(
+  ({ title, className, children, ...props }, ref) => (
+    <div
+      ref={ref}
+      className={twMerge(`flex flex-col gap-4`, className)}
+      {...props}
+    >
+      <p className="txt-md-bold">{title}</p>
+      {children}
+    </div>
+  )
+);
 
 interface RequestDemoPOS {
   showCloseButton?: boolean;
@@ -18,61 +38,23 @@ const RequestDemoPOS = ({
   showCloseButton = true,
   afterSubmit,
 }: RequestDemoPOS) => {
-  const [isSubmit, setSubmit] = useState(false);
-  const [businessType, setBusinessType] = useState(CategoryList[0].title.en);
-  const { t, locale } = useTrans();
+  const isSubmittedForm = useRequestDemoStore((store) => store.isSubmittedForm);
+
+  const { t } = useTrans();
   const closeSidebar = useSideBar((state) => state.closeSideBar);
 
-  const submitForm = async (data: ContactInfo) => {
-    submitForDemoPOS({
-      conversion_funnel: "Request Demo POS",
-      ref_url: window.location.href,
-      data: {
-        typeBusiness: businessType,
-        contact: data,
-      },
-    });
-    setSubmit(true);
-    afterSubmit && afterSubmit();
-  };
+  const clearStore = useRequestDemoStore((store) => store.clearStore);
 
   useEffect(() => {
     sendGoogleEvent("request_demo_fill_information");
+    return () => {
+      clearStore();
+    };
   }, []);
 
-  const PAGE = isSubmit ? (
-    <ThanksYouForm
-      className="mt-16 lg:mt-[100px]"
-      eventName="request_demo_lead_form"
-    />
-  ) : (
-    <div className="flex w-full flex-col px-4 py-5 md:px-10">
-      <p className="txt-md-bold mb-4 md:mb-6">{t("type_of_business")}</p>
-      <SelectedList
-        data={CategoryList}
-        selectIndex={0}
-        className={" md:grid-cols-2 lg:grid-cols-3"}
-        renderItem={(item, index: number) => {
-          const Icon = item.icon;
-          return (
-            <div className="flex flex-row items-center p-3 gap-3 md:gap-2 md:flex-col md:justify-center">
-              <Icon className="text-4xl" />
-              <p className="txt-md-bold md:text-center">{item.title[locale]}</p>
-            </div>
-          );
-        }}
-        onItemSelected={(index) => {
-          setBusinessType(CategoryList[index].title.en);
-        }}
-      />
-      <p className="txt-md-bold mt-10 mb-4">{t("contact_informations")}</p>
-      <ContactForm
-        onSubmitForm={submitForm}
-        submitBtnClassName="md:w-fit"
-        submitBtnTitle={t("send_request")}
-      />
-    </div>
-  );
+  useEffect(() => {
+    if (isSubmittedForm) afterSubmit && afterSubmit();
+  }, [isSubmittedForm]);
 
   return (
     <>
@@ -90,7 +72,24 @@ const RequestDemoPOS = ({
           </p>
         }
       />
-      {PAGE}
+      {!isSubmittedForm ? (
+        <div className="flex w-full flex-col gap-4 mb-4 md:gap-8 lg:gap-10 px-4 py-5 md:px-10">
+          <RequestDemoSection title={t("type_of_business")}>
+            <BusinessTypes />
+          </RequestDemoSection>
+          <RequestDemoSection title={"Which POS system are you interested in?"}>
+            <SystemsQuestion />
+          </RequestDemoSection>
+          <RequestDemoSection title={t("contact_informations")}>
+            <RequestDemoContactForm />
+          </RequestDemoSection>
+        </div>
+      ) : (
+        <ThanksYouForm
+          className="mt-16 lg:mt-[100px]"
+          eventName="request_demo_lead_form"
+        />
+      )}
     </>
   );
 };

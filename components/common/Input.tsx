@@ -20,7 +20,7 @@ const Input = ({
   return (
     <div className={`form-control w-full relative ${className}`}>
       {label && (
-        <label className="py-2 txt-sm-bold">
+        <label className="pb-2 txt-sm-bold">
           <span className="label-text">{label}</span>
         </label>
       )}

@@ -13,10 +13,13 @@ export default async function handler(
     switch (req.method) {
       case "POST":
         const { data, conversion_funnel, ref_url } = req.body as DataSubmission;
-        const { contact, typeBusiness } = data as RequestDemoContact;
+        const { contact, typeBusiness, otherPOS, posSystems } =
+          data as RequestDemoContact;
         const { name, phone, email } = contact;
         let content = [
           `Business type: ${typeBusiness}\n`,
+          `Interested POS: ${posSystems}`,
+          `Other interested POS: ${otherPOS || "_"}`,
           `Customer information`,
           `Customer name: ${name}`,
           `Customer email: ${email}`,
@@ -40,7 +43,7 @@ export default async function handler(
           sendMailToAdmin({
             text: "Bespot1",
             subject: "Bestpos lead - Request a demo",
-            html: `<b>We have new data with the following information</b><br>
+            html: `<h3>We have new data with the following information</h3><br>
             ${content.join("<br>")}`,
           }),
           sendMailToCustomer({
