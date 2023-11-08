@@ -5,7 +5,7 @@ import SelectedList from "components/common/SelectedList";
 import useTrans from "hooks/useTrans";
 import { Locale } from "models/app_configs";
 import { BreadmeContext } from "pages/bread-me-questions";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import ColorUtils from "utils/ColorUtils";
 import { sendGoogleEvent } from "utils/tracking_utils";
 
@@ -68,12 +68,16 @@ const BreadmeSaleSystem = () => {
     setOtherSystem(newValue);
   };
 
+  const onItemSelected = useCallback((indexes: Array<number>) => {
+    const index = indexes[0];
+    setCurrentIndex(index);
+  }, []);
+
   return (
     <div className="flex flex-col">
       <SelectedList
         selectIndex={context.questionData?.saleSystemIndex}
         data={SaleSystemItems}
-        itemListClassName="h-16"
         renderItem={(item, index) => {
           if (index == SaleSystemItems.length - 1) {
             return (
@@ -95,7 +99,7 @@ const BreadmeSaleSystem = () => {
             </div>
           );
         }}
-        onItemSelected={setCurrentIndex}
+        onItemSelected={onItemSelected}
       />
       <Button
         classname="mt-[148px]"

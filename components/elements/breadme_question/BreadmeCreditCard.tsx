@@ -23,7 +23,7 @@ const BreadmeCreditCard = () => {
     <SelectedList
       selectIndex={value.questionData?.creditCardVolumnId}
       data={BreadmeCreditCardVolumeData}
-      selectBorderColor="border-success"
+      selectedClassName="border-success"
       renderItem={(item, index) => (
         <p
           key={`breadme-credit-item-${index}`}
@@ -35,7 +35,7 @@ const BreadmeCreditCard = () => {
       onItemSelected={(selectIndex) => {
         value.setQuestionData({
           ...value.questionData,
-          creditCardVolumnId: selectIndex,
+          creditCardVolumnId: selectIndex[0],
         });
       }}
     />

@@ -27,8 +27,8 @@ const SaleSystemQuestion = () => {
             </div>
           );
         }}
-        onItemSelected={(index) => {
-          updateData({ saleSystemIndex: index });
+        onItemSelected={(indexes) => {
+          updateData({ saleSystemIndex: indexes[0] });
         }}
       />
     </div>

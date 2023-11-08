@@ -48,9 +48,9 @@ const DiscountProgram = () => {
             </div>
           );
         }}
-        onItemSelected={(index) => {
+        onItemSelected={(indexes) => {
           updateData({
-            discountIndex: index,
+            discountIndex: indexes[0],
           });
         }}
       />

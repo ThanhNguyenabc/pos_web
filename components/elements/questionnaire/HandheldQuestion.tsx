@@ -44,9 +44,9 @@ const HandHeldQuestion = () => {
             </div>
           );
         }}
-        onItemSelected={(index) => {
+        onItemSelected={(indexes) => {
           updateData({
-            handHeldIndex: index,
+            handHeldIndex: indexes[0],
           });
         }}
       />

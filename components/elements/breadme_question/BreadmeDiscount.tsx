@@ -17,7 +17,7 @@ const BreadmeDiscountQuestion = () => {
     <SelectedList
       selectIndex={value.questionData?.isDiscountIndex}
       data={YesNoQuestion}
-      selectBorderColor="border-success"
+      selectedClassName="border-success"
       renderItem={(item, index) => (
         <p
           key={`breame-discount-item-${index}`}
@@ -29,7 +29,7 @@ const BreadmeDiscountQuestion = () => {
       onItemSelected={(selectIndex) => {
         value.setQuestionData({
           ...value.questionData,
-          isDiscountIndex: selectIndex,
+          isDiscountIndex: selectIndex[0],
         });
       }}
     />

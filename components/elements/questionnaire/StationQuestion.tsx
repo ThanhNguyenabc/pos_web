@@ -24,8 +24,8 @@ const StationQuestion = () => {
   const updateData = updateQuestionnaireAns();
   const { t } = useTrans();
 
-  const selectItem = (index: number) => {
-    updateData({ numberStationIndex: index });
+  const selectItem = (indexes: Array<number>) => {
+    updateData({ numberStationIndex: indexes[0] });
   };
 
   return (

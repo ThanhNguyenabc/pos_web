@@ -11,6 +11,7 @@ export const CreditCardVolume = () => {
     sendGoogleEvent("get_started_cc_volume");
   }, []);
 
+  
   return (
     <SelectedList
       selectIndex={data?.creditVolumeId}
@@ -23,7 +24,7 @@ export const CreditCardVolume = () => {
       onItemSelected={(selectIndex) => {
         setData({
           ...data,
-          creditVolumeId: selectIndex,
+          creditVolumeId: selectIndex[0],
         });
         onNext();
       }}

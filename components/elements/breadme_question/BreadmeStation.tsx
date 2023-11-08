@@ -3,7 +3,7 @@ import SelectedList from "components/common/SelectedList";
 import useTrans from "hooks/useTrans";
 import Image from "next/image";
 import { BreadmeContext } from "pages/bread-me-questions";
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { sendGoogleEvent } from "utils/tracking_utils";
 
 export const BreadmeStationData = [
@@ -29,12 +29,20 @@ const BreadmeStation = () => {
     sendGoogleEvent("breadme_stations");
   }, []);
 
+  const onItemSelected = useCallback((indexes: Array<number>) => {
+    const index = indexes[0];
+    value.setQuestionData({
+      ...value.questionData,
+      numberStationIndex: index,
+    });
+  }, []);
+
   return (
     <SelectedList
       selectIndex={value.questionData?.numberStationIndex}
       data={BreadmeStationData}
       className="md:grid-cols-3 md:gap-8"
-      selectBorderColor="border-success"
+      selectedClassName="border-success"
       renderItem={(item, index: number) => {
         return (
           <div className="card-body flex flex-row items-center p-4 gap-4 md:flex-col">
@@ -48,12 +56,7 @@ const BreadmeStation = () => {
           </div>
         );
       }}
-      onItemSelected={(selectedIndex) => {
-        value.setQuestionData({
-          ...value.questionData,
-          numberStationIndex: selectedIndex,
-        });
-      }}
+      onItemSelected={onItemSelected}
     />
   );
 };

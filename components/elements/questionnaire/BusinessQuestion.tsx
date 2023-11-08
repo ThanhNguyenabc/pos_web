@@ -28,8 +28,8 @@ const BusinessQuestion = () => {
             </div>
           );
         }}
-        onItemSelected={(index) => {
-          updateData({ businessId: index });
+        onItemSelected={(indexes) => {
+          updateData({ businessId: indexes[0] });
         }}
       />
     </div>
