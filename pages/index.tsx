@@ -1,7 +1,7 @@
 import HelpingSection from "components/elements/home/HelpingSection";
 import { Button } from "components/common/Button";
 import MetricSection from "components/common/MetricSection";
-import { FooterCTA } from "components/common/FooterCTA";
+import FooterCTA from "components/common/FooterCTA";
 import useTrans from "hooks/useTrans";
 import Image from "next/image";
 import Box from "components/common/Box";
