@@ -1,5 +1,5 @@
 import HeaderWithBack from "components/common/HeaderWithBack";
-import React, { forwardRef, useEffect, useState } from "react";
+import React, { forwardRef, useEffect } from "react";
 import useSideBar from "stores/useSideBar";
 import useTrans from "hooks/useTrans";
 import { sendGoogleEvent } from "utils/tracking_utils";
@@ -29,6 +29,7 @@ const RequestDemoSection = forwardRef<HTMLDivElement, RequestDemoSectionProps>(
     </div>
   )
 );
+RequestDemoSection.displayName = "RequestDemoSection";
 
 interface RequestDemoPOS {
   showCloseButton?: boolean;
