@@ -1,9 +1,10 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { ContactInfo } from "models/contact_info";
-import { insertDataToGooglesheet } from "lib/googlesheet";
 import { DataSubmission } from "models/data_submission";
 import { sendMailToAdmin, sendMailToCustomer } from "lib/sendmail";
 import { getEmailTemplate } from "lib/template";
+import { sendToAirtable } from "lib/airtable";
+import dayjs from "dayjs";
 
 export default async function handler(
   req: NextApiRequest,
@@ -22,32 +23,37 @@ export default async function handler(
           `Message: ${message}`,
         ];
 
-        const emailContent = await getEmailTemplate(
-          "Thanks for reaching out to us",
-          "We received your inquiry.",
-          name
-        );
-
         const promises = [
-          insertDataToGooglesheet({
-            conversion_funnel,
-            ref_url,
-            data: content.join("\n"),
-            customer_name: name,
-            customer_phone: phone,
+          sendToAirtable({
+            body: {
+              "Ref URL": ref_url,
+              "Conversion Funnel": conversion_funnel,
+              Name: name,
+              Phone: phone,
+              Email: email,
+              Message: message,
+              "Created Date": dayjs().format("MM/DD/YYYY hh:mm"),
+            },
           }),
-
           sendMailToAdmin({
             subject: "Bestpos lead - Contact",
-            html: `<b>We have new customer with the following information</b><br>${content.join(
+            html: `<h3>We have new customer with the following information</h3><br>${content.join(
               "<br>"
             )}`,
           }),
-          sendMailToCustomer({
-            subject: "We've received your request. 🥳  Here's what's next. 👉",
-            html: emailContent,
-            to: email,
-          }),
+          async () => {
+            const customerMail = await getEmailTemplate(
+              "Thanks for reaching out to us",
+              "We received your inquiry.",
+              name
+            );
+            sendMailToCustomer({
+              subject:
+                "We've received your request. 🥳  Here's what's next. 👉",
+              html: customerMail,
+              to: email,
+            });
+          },
         ];
         await Promise.all(promises);
         return res.status(200).json({ data: true });

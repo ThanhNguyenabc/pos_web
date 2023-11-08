@@ -1,8 +1,9 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { ContactInfo } from "models/contact_info";
 import { DataSubmission } from "models/data_submission";
-import { insertDataToGooglesheet } from "lib/googlesheet";
-import { sendEmail } from "lib/sendmail";
+import { sendMailToAdmin } from "lib/sendmail";
+import { sendToAirtable } from "lib/airtable";
+import dayjs from "dayjs";
 
 export default async function handler(
   req: NextApiRequest,
@@ -21,16 +22,17 @@ export default async function handler(
         ];
 
         const promises = [
-          insertDataToGooglesheet({
-            conversion_funnel,
-            ref_url,
-            data: content.join("\n"),
-            customer_name: name,
-            customer_phone: phone,
+          sendToAirtable({
+            body: {
+              "Ref URL": ref_url,
+              "Conversion Funnel": conversion_funnel,
+              Email: email,
+              "Created Date": dayjs().format("MM/DD/YYYY hh:mm"),
+            },
           }),
-          sendEmail({
+          sendMailToAdmin({
             subject: "Bestpos lead - Partner",
-            html: `<b>We have new breadme data with the following information</b><br>
+            html: `<h3>We have new breadme data with the following information</h3><br>
             ${content.join("<br>")}`,
           }),
         ];
