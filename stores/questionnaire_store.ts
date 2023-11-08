@@ -1,15 +1,6 @@
 import { ContactInfo } from "models/contact_info";
 import { create } from "zustand";
 
-interface QuestionData {
-  businessId: number;
-  saleSystemIndex: number;
-  numberStationIndex: number;
-  handHeldIndex?: number;
-  discountIndex?: number;
-  contacInfo?: ContactInfo;
-}
-
 interface QuestionnaireState {
   businessId: number;
   saleSystemIndex: number;
