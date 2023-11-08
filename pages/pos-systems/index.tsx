@@ -7,7 +7,7 @@ import React from "react";
 
 export const getStaticProps = async () => {
   const data = await Promise.all([
-    fetchProductList("all", 0),
+    fetchProductList( ),
     getSEOTagByBusinessType("popular"),
   ]);
   return {

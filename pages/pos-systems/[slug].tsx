@@ -10,7 +10,7 @@ import { CategoryList } from "utils/routes";
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const slug = context.params?.slug as string;
   const data = await Promise.all([
-    fetchProductList(slug, 0),
+    fetchProductList({ type: slug }),
     getSEOTagByBusinessType(slug),
   ]);
   return {

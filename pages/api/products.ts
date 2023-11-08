@@ -11,8 +11,12 @@ export default async function handler(
   try {
     switch (req.method) {
       case "GET":
-        const { type, limit } = req.query;
-        const result = await fetchProductList(type as string, Number(limit));
+        const { type, limit, fields } = req.query;
+        const result = await fetchProductList({
+          type: type && (type as string),
+          limit: limit ? Number(limit) : 0,
+          fields: fields && (fields as string),
+        });
         return res
           .setHeader("Cache-Control", "s-maxage=100")
           .status(200)
@@ -37,14 +41,24 @@ export const getProductById = async (id: string) => {
   return product;
 };
 
-export const fetchProductList = async (type: string, limit: number) => {
+export const fetchProductList = async ({
+  type,
+  limit,
+  fields,
+}: {
+  type?: string;
+  limit?: number;
+  fields?: string;
+} = {}) => {
   await connectMongo();
-  if (type == "all") {
-    const products = await ProductModel.find()
+  let filterKeys;
+  if (fields) filterKeys = fields.replaceAll(",", " ");
+  if (!type || type.length == 0) {
+    const products = await ProductModel.find({}, filterKeys)
       .sort({
         "expert_opinion.overall": -1,
       })
-      .limit(Number(limit))
+      .limit(limit || 0)
       .exec();
 
     return products;
@@ -54,10 +68,13 @@ export const fetchProductList = async (type: string, limit: number) => {
   if (category) {
     const productIds = category.products;
     const productMap: { [item: string]: Product } = {};
-    const products = await ProductModel.find({
-      id: { $in: productIds },
-    })
-      .limit(Number(limit))
+    const products = await ProductModel.find(
+      {
+        id: { $in: productIds },
+      },
+      filterKeys
+    )
+      .limit(limit || 0)
       .exec();
     products.forEach((item) => {
       productMap[item.id] = item;
