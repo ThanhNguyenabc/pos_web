@@ -4,13 +4,11 @@ import { FooterCTA } from "components/common/FooterCTA";
 import HeadTag from "components/common/HeadTag";
 import HeroSection from "components/common/HeroSection";
 import MetricSection from "components/common/MetricSection";
-import { RightSideBarType } from "components/common/RightSideBar";
 import ReviewerSection from "components/elements/partner/ReviewerSection";
 import useTrans from "hooks/useTrans";
 import { Locale, MetaTag } from "models/app_configs";
 import Image from "next/image";
-import React from "react";
-import useSideBar from "stores/useSideBar";
+import React, { useRef } from "react";
 import { cacheTime } from "utils/constants";
 import { getSEOTags } from "./api/configs";
 
@@ -48,6 +46,7 @@ const PartnerTrans = {
       "Ayude a sus clientes a escalar transformando la atención al cliente de un centro de costos a un generador de ganancias.",
   },
 };
+
 const PartnerProgram = [
   {
     title: {
@@ -141,9 +140,15 @@ export const getStaticProps = async () => {
 
 const PartnerPage = ({ seoTag }: { seoTag: MetaTag }) => {
   const { locale } = useTrans();
-  const openSideBar = useSideBar((state) => state.openSideBar);
+  const footerRef = useRef<HTMLDivElement>(null);
 
-  const openPartnerForm = () => openSideBar(RightSideBarType.ApplyPartner);
+  const openPartnerForm = () => {
+    footerRef.current?.scrollIntoView({
+      behavior: "smooth",
+      inline: "nearest",
+    });
+  };
+
   return (
     <>
       <HeadTag tags={seoTag} />
@@ -211,7 +216,7 @@ const PartnerPage = ({ seoTag }: { seoTag: MetaTag }) => {
         <ReviewerSection reviews={Feedbacks} />
       </HeroSection>
       <ClientSection />
-      <FooterCTA />
+      <FooterCTA ref={footerRef} />
     </>
   );
 };
