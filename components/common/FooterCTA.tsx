@@ -34,7 +34,7 @@ export const FooterCTA = ({
 
   return (
     <div className="bg-accent">
-      <HeroSection className="lg:flex-row gap-2 justify-between">
+      <HeroSection className="lg:flex-row gap-2 items-center justify-between">
         <div className="flex-1 flex flex-col gap-2 text-center justify-center md:gap-4 lg:text-start  lg:max-w-[480px]">
           <p className="txt-heading-xsmal lg:txt-heading-large">
             {heading || "BestPOS works with all POS providers."}
@@ -56,7 +56,7 @@ export const FooterCTA = ({
           <ContactForm
             submitBtnTitle={t("submit")}
             onSubmitForm={sendContactInfo}
-            submitBtnClassName="md:h-16  md:w-fit"
+            submitBtnClassName=" md:h-16  md:w-fit"
           />
         </div>
       </HeroSection>
