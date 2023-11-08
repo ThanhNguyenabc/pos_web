@@ -66,6 +66,7 @@ const PhoneNumberInput = ({ title, onChangeValue }: PhoneNumberInputProps) => {
       leftIcon={<IcAmericanFlag className="text-2xl" />}
       inputProps={{
         type: "tel",
+        name: "phone",
         placeholder: "(555) 000-0000",
         onInput: onInput,
         onKeyDown: onKeyDown,
