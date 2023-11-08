@@ -15,7 +15,7 @@ const SimilarPOS = () => {
   const { t } = useTrans();
 
   const { data: products } = useSWRImmutable("similar-pos", () =>
-    getListPOS({ type: "all", limit: 3 })
+    getListPOS({ limit: 3 })
   );
   return (
     <Box className="flex flex-col py-4 items-center gap-4 bg-neutral-100 md:py-10 md:gap-6">

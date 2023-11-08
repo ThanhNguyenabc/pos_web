@@ -23,7 +23,9 @@ import { MetaTag } from "models/app_configs";
 
 export const getStaticProps = async () => {
   const data = await Promise.all([
-    fetchProductList("all", 4),
+    fetchProductList({
+      limit: 4,
+    }),
     getSEOTags("home"),
   ]);
 

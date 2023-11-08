@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import type { AppProps } from "next/app";
 import { Layout } from "components/common/Layout";
 import dynamic from "next/dynamic";
-import InitialData from "components/elements/InitialData";
 import TagManager from "react-gtm-module";
 import { GTM_ID } from "utils/constants";
 import RightSideBar from "components/common/RightSideBar";
@@ -24,7 +23,6 @@ export function POSApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      {/* <InitialData /> */}
       <main className={inter.className}>
         <Layout>
           <Component {...pageProps} />
