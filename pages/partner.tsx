@@ -1,6 +1,6 @@
 import { Button } from "components/common/Button";
 import ClientSection from "components/common/ClientSection";
-import { FooterCTA } from "components/common/FooterCTA";
+import FooterCTA from "components/common/FooterCTA";
 import HeadTag from "components/common/HeadTag";
 import HeroSection from "components/common/HeroSection";
 import MetricSection from "components/common/MetricSection";

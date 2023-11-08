@@ -1,5 +1,5 @@
 import { Button } from "components/common/Button";
-import { FooterCTA } from "components/common/FooterCTA";
+import FooterCTA from "components/common/FooterCTA";
 import HeroSection from "components/common/HeroSection";
 import MetricSection from "components/common/MetricSection";
 import useTrans from "hooks/useTrans";

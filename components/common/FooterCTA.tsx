@@ -14,7 +14,7 @@ interface FooterCTAProps extends React.HTMLAttributes<HTMLDivElement> {
   formSubTilte?: string;
 }
 
-export const FooterCTA = forwardRef<HTMLDivElement, FooterCTAProps>(
+const FooterCTA = forwardRef<HTMLDivElement, FooterCTAProps>(
   ({ heading, description, formSubTilte: formSubTitle, formTitle }, ref) => {
     const { t } = useTrans();
 
@@ -59,3 +59,7 @@ export const FooterCTA = forwardRef<HTMLDivElement, FooterCTAProps>(
     );
   }
 );
+
+FooterCTA.displayName = "FooterCTA";
+
+export default FooterCTA;

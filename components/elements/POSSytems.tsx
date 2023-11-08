@@ -8,7 +8,7 @@ import Categories from "components/common/Categories";
 import { Locale, MetaTag } from "models/app_configs";
 import { getCurrentMonth } from "utils/date_utils";
 import { AppRoutes, CategoryList } from "utils/routes";
-import { FooterCTA } from "components/common/FooterCTA";
+import FooterCTA from "components/common/FooterCTA";
 import HeadTag from "components/common/HeadTag";
 import { Product } from "models/product.model";
 import { useRouter } from "next/router";
