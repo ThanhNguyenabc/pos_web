@@ -1,13 +1,10 @@
-import { getListPOS } from "api_client/axios_client";
 import Loading from "components/common/loading/Loading";
 import useTrans from "hooks/useTrans";
 import { CategoryType } from "models/category_type";
 import React from "react";
-import useSWRImmutable from "swr/immutable";
 import Box from "components/common/Box";
 import { Priority, RecommendColorConfig } from "./pos_card/POSCardTypes";
 import POSCard from "./pos_card/POSCard";
-import { AppRoutes } from "utils/routes";
 import { Product } from "models/product.model";
 
 const ProductList = ({
@@ -18,9 +15,6 @@ const ProductList = ({
   data: Array<Product>;
 }) => {
   const { t } = useTrans();
-  // const { data, isLoading } = useSWRImmutable(`${type}`, () =>
-  //   getListPOS({ type: type })
-  // );
 
   const renderItems = () => {
     let items: Array<React.ReactElement> = [];
