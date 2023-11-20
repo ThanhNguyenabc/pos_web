@@ -86,12 +86,9 @@ const ImageGrid = memo(({ images }: { images?: Array<string> }) => {
   if (!images) return <></>;
   const imageGrid = [];
 
-  const onShowSlide = useCallback(
-    (index: number) => () => {
-      ref.current?.showSlide(index);
-    },
-    []
-  );
+  const onShowSlide = (index: number) => () => {
+    ref.current?.showSlide(index);
+  };
 
   for (let i = 1; i < images!.length; i++) {
     if (i > 4) break;
@@ -135,6 +132,7 @@ const ImageGrid = memo(({ images }: { images?: Array<string> }) => {
     </>
   );
 });
+ImageGrid.displayName = "ImageGrid";
 
 export const ProductDetailView = ({
   productData,
