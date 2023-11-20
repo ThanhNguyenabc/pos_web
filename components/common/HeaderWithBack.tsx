@@ -11,7 +11,7 @@ const HeaderWithBack = ({ onClose, title, subTitle }: HeaderWithBackProps) => {
   return (
     <div className="flex flex-col md:flex-row  p-4 sticky top-0 bg-white z-10">
       {onClose && (
-        <IconButton onClick={onClose} classname="md:w-10 md:h-10">
+        <IconButton onClick={onClose} className="md:w-10 md:h-10">
           <IcClose className="text-base" />
         </IconButton>
       )}

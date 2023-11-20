@@ -1,6 +1,6 @@
 import Box from "components/common/Box";
 import Image from "next/image";
-import React from "react";
+import React, { memo, useCallback, useRef, useState } from "react";
 import useSideBar from "stores/useSideBar";
 import ColorUtils from "utils/ColorUtils";
 import { getSystemIcon } from "utils/StringUtil";
@@ -18,6 +18,8 @@ import { RightSideBarType } from "components/common/RightSideBar";
 import { getCurrentMonth } from "utils/date_utils";
 import { Button } from "components/common/Button";
 import { ProductDetail } from "models/product-detail.model";
+import Slide, { SlideComponent } from "components/common/Slide";
+import index from "pages/pos-systems";
 
 const DetailTabs = [
   {
@@ -78,6 +80,62 @@ const DetailTabs = [
   },
 ];
 
+const ImageGrid = memo(({ images }: { images?: Array<string> }) => {
+  const ref = useRef<SlideComponent>(null);
+
+  if (!images) return <></>;
+  const imageGrid = [];
+
+  const onShowSlide = useCallback(
+    (index: number) => () => {
+      ref.current?.showSlide(index);
+    },
+    []
+  );
+
+  for (let i = 1; i < images!.length; i++) {
+    if (i > 4) break;
+    imageGrid.push(
+      <div className="block" key={`detail-image-${i}`}>
+        <Image
+          src={images[i] || DefaultImg}
+          alt="pos-pic"
+          className="w-full object-cover aspect-[3/2] lg:h-full cursor-pointer hover:scale-105 transition rounded-lg"
+          width={290}
+          onClick={onShowSlide(i)}
+          height={192}
+          blurDataURL={DefaultImg.src}
+          placeholder="blur"
+        />
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <div className="grid grid-cols-2 gap-4 lg:grid-rows-2 lg:grid-cols-4 lg:h-[400px]">
+        <div className="block col-span-2 lg:row-span-2">
+          <Image
+            src={images?.[0] || DefaultImg}
+            alt="pos-pic"
+            style={{
+              height: "auto",
+            }}
+            onClick={onShowSlide(0)}
+            blurDataURL={DefaultImg.src}
+            placeholder="blur"
+            className="w-full aspect-[1.42] object-contain transition hover:scale-105 cursor-pointer"
+            width={592}
+            height={400}
+          />
+        </div>
+        {imageGrid}
+      </div>
+      {images && <Slide ref={ref} images={images} />}
+    </>
+  );
+});
+
 export const ProductDetailView = ({
   productData,
 }: {
@@ -95,30 +153,6 @@ export const ProductDetailView = ({
       </div>
     );
   }
-
-  const renderImageBlock = () => {
-    const images = [];
-
-    if (!productData.images || productData.images?.length < 2) return <></>;
-
-    for (let i = 1; i < productData.images!.length; i++) {
-      images.push(
-        <div className="block" key={`detail-image-${productData.name}-${i}`}>
-          <Image
-            src={productData.images?.[i] || DefaultImg}
-            alt="pos-pic"
-            className="w-full object-cover aspect-[3/2] lg:h-full"
-            width={290}
-            height={192}
-            blurDataURL={DefaultImg.src}
-            placeholder="blur"
-          />
-        </div>
-      );
-    }
-
-    return <>{images}</>;
-  };
 
   return (
     <Box className="flex flex-col container-content py-6 gap-8 lg:gap-16 md:py-8 lg:px-6">
@@ -162,25 +196,8 @@ export const ProductDetailView = ({
           />
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-4 lg:grid-rows-2 lg:grid-cols-4 lg:h-[400px]">
-        <div className="block col-span-2 lg:row-span-2">
-          <Image
-            src={productData.images?.[0] || DefaultImg}
-            alt="pos-pic"
-            style={{
-              height: "auto",
-            }}
-            blurDataURL={DefaultImg.src}
-            placeholder="blur"
-            className="w-full aspect-[1.42] object-contain"
-            width={592}
-            height={400}
-          />
-        </div>
 
-        {renderImageBlock()}
-      </div>
-
+      <ImageGrid images={productData.images} />
       <ProsAndCons pros={productData.pros} cons={productData.cons} />
       <ExpertOpinion id={DetailTabs[1].id} data={productData.expert_opinion} />
       <SpecificationView id={DetailTabs[2].id} posId={`${productData.id}`} />

@@ -48,7 +48,7 @@ const Writer = ({ date, author }: WriterProps) => {
         </div>
       </div>
       <div className="flex flex-1 md:justify-end flex-row gap-3">
-        <IconButton classname="w-fit md:h-12 md:w-fit" onClick={copyClipboard}>
+        <IconButton className="w-fit md:h-12 md:w-fit" onClick={copyClipboard}>
           <div className="flex flex-row gap-[10px] items-center">
             <svg
               width="20"
@@ -69,13 +69,13 @@ const Writer = ({ date, author }: WriterProps) => {
             </p>
           </div>
         </IconButton>
-        <IconButton classname="md:h-12 md:w-12 hover:bg-white">
+        <IconButton className="md:h-12 md:w-12 hover:bg-white">
           <IcFb className="text-2xl" />
         </IconButton>
-        <IconButton classname="md:h-12 md:w-12 hover:bg-white">
+        <IconButton className="md:h-12 md:w-12 hover:bg-white">
           <IcLinkedLn className="text-2xl" />
         </IconButton>
-        <IconButton classname="md:h-12 md:w-12 hover:bg-white">
+        <IconButton className="md:h-12 md:w-12 hover:bg-white">
           <IcInsta className="text-2xl" />
         </IconButton>
       </div>

@@ -56,7 +56,7 @@ const ReviewerSection = ({ reviews }: ReviewerSectionProps) => {
           <IconButton onClick={onBack}>
             <IcBack className="text-xl" />
           </IconButton>
-          <IconButton onClick={onNext} classname="ml-6">
+          <IconButton onClick={onNext} className="ml-6">
             <IcRightArrow className="text-xl" />
           </IconButton>
         </div>

@@ -43,7 +43,7 @@ const QuestionnaireForm = () => {
 
   return (
     <Box className="flex flex-col gap-6 py-8 md:py-10 md:gap-10">
-      <IconButton onClick={closeSideBar} classname="md:w-10 md:h-10">
+      <IconButton onClick={closeSideBar} className="md:w-10 md:h-10">
         <IcClose className="text-base" />
       </IconButton>
       <p className="txt-md-bold p-4 bg-accent  rounded-2xl -mt-4">
