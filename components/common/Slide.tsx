@@ -154,4 +154,5 @@ const Slide = forwardRef<SlideComponent, SlideProps>(
   }
 );
 
+Slide.displayName = "Slider";
 export default Slide;
