@@ -14,7 +14,7 @@ const useTrans = () => {
   const lang = (locale as Locale) || Locale.en;
   const trans = TranslationConfig[lang];
   const t = useCallback(
-    (key: string) => {
+    (key: string,) => {
       const res = key.split(".").reduce((result: object, item) => {
         return (result && result[(item as keyof typeof result) || ""]) || "";
       }, trans);

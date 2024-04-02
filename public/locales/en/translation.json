@@ -150,5 +150,14 @@
     },
     "testimonials": {
         "heading": "See What Our Customers Are Saying"
+    },
+    "cash_discount": {
+        "heading": "Cash Discount Program",
+        "invoice_heading": "Save Money When Using Cash",
+        "invoice_desc": "Upon checkout, the receipt will display two prices reflecting payment options: cash and credit. This practice allows your business to accept the full value of the product or service while maintaining transparency with customers.\n\nIt's important to note that businesses cannot charge separate line items and are required to clearly display both the credit card and cash prices.",
+        "pay_zero_heading": "Pay ZERO CC fees at the end of the month",
+        "pay_zero_desc": "Our cash discount program allows merchants to collect up to 100% of their revenue without all of the extra fees that come with accepting credit cards. The fees for processing the cards come directly to us and we pay all your monthly transactions.\n\nWhen you receive your merchant statement each month, you will always pay <span className='text-primary'>ZERO</span>. A solution that completely eliminates merchant service fees and reduces your credit card fees 100%.",
+        "additional_values": "Additional Values for your Business:",
+        "implement_for_business" : "Ready to implement a Cash Discount Program for your business?"
     }
 }

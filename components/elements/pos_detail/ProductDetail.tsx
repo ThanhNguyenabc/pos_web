@@ -154,6 +154,7 @@ export const ProductDetailView = ({
 
   return (
     <Box className="flex flex-col container-content py-6 gap-8 lg:gap-16 md:py-8 lg:px-6">
+      <ImageGrid images={productData.images} />
       <div className="grid grid-cols-1 gap-4 md:gap-8 lg:grid-cols-3">
         <div className="col-span-1 items-center flex flex-col gap-4">
           <span className="txt-sm-bold ">
@@ -195,7 +196,6 @@ export const ProductDetailView = ({
         </div>
       </div>
 
-      <ImageGrid images={productData.images} />
       <ProsAndCons pros={productData.pros} cons={productData.cons} />
       <ExpertOpinion id={DetailTabs[1].id} data={productData.expert_opinion} />
       <SpecificationView id={DetailTabs[2].id} posId={`${productData.id}`} />

@@ -1,6 +1,8 @@
 // export images
 import DefaultImg from "./images/default-image.webp";
 import Logo from "./images/pos_logo.png";
+import InvoiceImg from "./images/invoice.png";
+import PayZeroImg from "./images/pay_zero.png";
 
 const Station1Img =
   "https://res.cloudinary.com/dgrym3yz3/image/upload/v1681793951/assets/common/station_1_sdk9k5.png";
@@ -33,4 +35,6 @@ export {
   BreadMeImg,
   DefaultImg,
   Logo,
+  InvoiceImg,
+  PayZeroImg,
 };
