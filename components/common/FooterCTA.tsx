@@ -6,16 +6,21 @@ import { toast } from "react-hot-toast";
 import { SuccessMessage } from "utils/StringUtil";
 import useTrans from "hooks/useTrans";
 import HeroSection from "./HeroSection";
+import { twMerge } from "tailwind-merge";
 
 interface FooterCTAProps extends React.HTMLAttributes<HTMLDivElement> {
   heading?: string;
   description?: string;
   formTitle?: string;
   formSubTilte?: string;
+  className?: string;
 }
 
 const FooterCTA = forwardRef<HTMLDivElement, FooterCTAProps>(
-  ({ heading, description, formSubTilte: formSubTitle, formTitle }, ref) => {
+  (
+    { heading, description, formSubTilte: formSubTitle, formTitle, className },
+    ref
+  ) => {
     const { t } = useTrans();
 
     const sendContactInfo = async (data: ContactInfo) => {
@@ -28,7 +33,7 @@ const FooterCTA = forwardRef<HTMLDivElement, FooterCTAProps>(
     };
 
     return (
-      <div className="bg-accent" ref={ref}>
+      <div className={twMerge("bg-accent", className)} ref={ref}>
         <HeroSection className="lg:flex-row gap-2 items-center justify-between">
           <div className="flex-1 flex flex-col gap-2 text-center justify-center md:gap-4 lg:text-start  lg:max-w-[480px]">
             <p className="txt-heading-xsmal lg:txt-heading-large">

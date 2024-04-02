@@ -41,7 +41,7 @@ const POSSystems = ({ seoTag, data }: POSSystemsProps) => {
   return (
     <>
       <HeadTag tags={seoTag} />
-      <div className="flex flex-col pb-12 bg-neutral-100 flex-1">
+      <div className="flex flex-col bg-neutral-100 flex-1">
         <div className="flex flex-col gap-4 py-6 bg-white mb-6 px-4 lg:items-center text-center md:py-10 md:px-12">
           <p className="txt-sm-bold">
             {`${t("last_updated")} ${getCurrentMonth(locale)}`}
@@ -58,7 +58,7 @@ const POSSystems = ({ seoTag, data }: POSSystemsProps) => {
         </div>
 
         <ProductList type={type as string} data={data} />
-        <FooterCTA />
+        <FooterCTA className="mt-12" />
       </div>
     </>
   );
