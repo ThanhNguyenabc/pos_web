@@ -20,6 +20,7 @@ export class AppRoutes {
   static PartnerPage = "/partner";
   static SuggestPOSPage = "/suggest-pos";
   static POSSystemPage = "/pos-systems";
+  static CashDiscount = "/cash-discount-program";
 }
 
 const getURLByPOSCategory = (type: string) =>
@@ -75,6 +76,13 @@ export const MainMenu = {
       [Locale.es]: "Contacto",
     },
   },
+  cash_discount: {
+    link: AppRoutes.CashDiscount,
+    title: {
+      [Locale.en]: "Cash Discount Program",
+      [Locale.es]: "Programa de descuento por pronto pago",
+    },
+  },
 };
 
 export const NavBarItems = [
@@ -86,7 +94,11 @@ export const NavBarItems = [
   MainMenu["contact"],
 ];
 
-export const ResourceItems = [MainMenu["questionnaire"], MainMenu["partner"]];
+export const ResourceItems = [
+  MainMenu["questionnaire"],
+  MainMenu["partner"],
+  MainMenu["cash_discount"],
+];
 
 export const OtherItems = [
   MainMenu["about"],
