@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import IcLike from "assets/icons/ic_like.svg";
 import IcChervonRight from "assets/icons/ic_chervon_right.svg";
 import IcCheckbox from "assets/icons/ic_checkbox.svg";
 import { getSystemIcon } from "utils/StringUtil";
@@ -15,7 +14,6 @@ import ColorUtils from "utils/ColorUtils";
 import POSCardBusinessType from "./POSCardBusinessType";
 import { RightSideBarType } from "components/common/RightSideBar";
 import { twMerge } from "tailwind-merge";
-import { AppRoutes } from "utils/routes";
 import RecommendTag from "components/common/RecommendTag";
 
 const POSCardDesktop = ({

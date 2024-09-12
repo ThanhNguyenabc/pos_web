@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "copy .env.development .env.local &&  node server.js",
+    "dev": "next dev",
     "build": "next build",
     "build:prod": "copy .env.production .env.local && next build",
     "build:staging": "copy .env.staging .env.local && next build",
