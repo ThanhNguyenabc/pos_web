@@ -18,8 +18,8 @@ const FormState = zod.object({
       message: "Phone number is invalid",
     })
     .max(14),
-  message: zod.string(),
-  zipcode: zod.string(),
+  message: zod.string().default(""),
+  zipcode: zod.string().default(""),
 });
 
 interface ContactFormProps {
