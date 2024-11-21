@@ -39,10 +39,10 @@ export const formatUSAPhoneNumber = (
     return { value: phoneNumber, error: "invalid_area_code" };
   }
   return {
-    value: `(${areaCode}) ${phoneNumber.slice(
-      3,
-      6
-    )}-${phoneNumber.slice(6, 10)}`,
+    value: `(${areaCode}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(
+      6,
+      10
+    )}`,
   };
 };
 
@@ -52,4 +52,40 @@ export const moneyFormatter = (money: number) => {
     currency: "USD",
   });
   return formatter.format(money).replace(".00", "");
+};
+
+export const formatUSAPhoneNumberV2 = (
+  value: string
+): {
+  error?: string;
+  value: string;
+} => {
+  const phoneStr = value.replace(/[^\d]/g, "");
+  if (!phoneStr || phoneStr.length < 3)
+    return {
+      value: phoneStr,
+    };
+
+  const strs = [];
+  const areaCode = phoneStr.slice(0, 3);
+  if (!AreaCodes.hasOwnProperty(areaCode))
+    return {
+      value: `(${areaCode})`,
+      error: "invalid_area_code",
+    };
+
+  if (areaCode) {
+    strs.push(`(${areaCode}) `);
+  }
+  const firstGroup = phoneStr.slice(3, 6);
+  if (firstGroup) {
+    strs.push(firstGroup);
+  }
+  const secondGroup = phoneStr.slice(6, 10);
+  if (secondGroup) {
+    strs.push(`-${secondGroup}`);
+  }
+  return {
+    value: strs.join(""),
+  };
 };
